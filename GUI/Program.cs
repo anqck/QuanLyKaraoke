@@ -21,6 +21,9 @@ namespace GUI
 
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
+
+            DAL.DataProvider.InitalizeConnection();
+
             Application.Run(new Form1());
         }
     }
