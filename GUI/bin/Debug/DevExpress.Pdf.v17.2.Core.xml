@@ -5791,7 +5791,7 @@
         <member name="T:DevExpress.Pdf.PdfDocumentPosition">
 
             <summary>
-                <para>Specifies the PDF coordinates of a hit point.
+                <para>Represents the page coordinates of a hit point and the page number.
 </para>
             </summary>
 

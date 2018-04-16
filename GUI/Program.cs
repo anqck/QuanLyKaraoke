@@ -24,7 +24,7 @@ namespace GUI
 
             DAL.DataProvider.InitalizeConnection();
 
-            Application.Run(new Form1());
+            Application.Run(new MainForm());
         }
     }
 }
