@@ -13,9 +13,16 @@ namespace GUI.folderQuanLyPhong
 {
     public partial class ThemPhongMoi : DevExpress.XtraEditors.XtraUserControl
     {
+
+
         public ThemPhongMoi()
         {
             InitializeComponent();
+        }
+
+        private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            
         }
     }
 }
