@@ -91,6 +91,7 @@
             // 
             // PageQuanly
             // 
+            this.PageQuanly.Caption = "PageQuanly";
             this.PageQuanly.Controls.Add(this.splitContainerControl);
             this.PageQuanly.Controls.Add(this.labelTitle);
             this.PageQuanly.Controls.Add(this.wbntQuanlyphong);

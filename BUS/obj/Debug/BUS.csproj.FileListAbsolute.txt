@@ -2,3 +2,4 @@ D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\BUS.dll
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\BUS.pdb
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.dll
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache

@@ -46,6 +46,7 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
@@ -67,6 +68,7 @@
             this.tileItem3 = new DevExpress.XtraEditors.TileItem();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.colTang = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.tileItem4 = new DevExpress.XtraEditors.TileItem();
             this.tileItem5 = new DevExpress.XtraEditors.TileItem();
@@ -264,11 +266,17 @@
             this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaPhong,
             this.colTenPhong,
-            this.colTinhTrangPhong});
+            this.colTinhTrangPhong,
+            this.colTang});
+            this.tileView1.ColumnSet.GroupColumn = this.colTang;
             this.tileView1.FocusBorderColor = System.Drawing.Color.White;
             this.tileView1.GridControl = this.gridControl;
             this.tileView1.Name = "tileView1";
+            this.tileView1.OptionsTiles.IndentBetweenItems = 7;
             this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(422, 196);
+            this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTang, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.tileView1.TileColumns.Add(tableColumnDefinition1);
             this.tileView1.TileColumns.Add(tableColumnDefinition2);
             this.tileView1.TileColumns.Add(tableColumnDefinition3);
@@ -323,11 +331,26 @@
             tileViewItemElement5.RowIndex = 2;
             tileViewItemElement5.Text = "colTinhTrangPhong";
             tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.ColumnIndex = 2;
+            tileViewItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement6.RowIndex = 4;
+            tileViewItemElement6.Text = "colThoiGianThue";
+            tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileView1.TileTemplate.Add(tileViewItemElement1);
             this.tileView1.TileTemplate.Add(tileViewItemElement2);
             this.tileView1.TileTemplate.Add(tileViewItemElement3);
             this.tileView1.TileTemplate.Add(tileViewItemElement4);
             this.tileView1.TileTemplate.Add(tileViewItemElement5);
+            this.tileView1.TileTemplate.Add(tileViewItemElement6);
+            // 
+            // colTang
+            // 
+            this.colTang.Caption = "Tầng";
+            this.colTang.FieldName = "Tang";
+            this.colTang.Name = "colTang";
+            this.colTang.Visible = true;
+            this.colTang.VisibleIndex = 3;
             // 
             // tileItem1
             // 
@@ -484,6 +507,7 @@
             this.TinhtrangPagecontrol.Size = new System.Drawing.Size(1110, 662);
             this.TinhtrangPagecontrol.TabIndex = 5;
             this.TinhtrangPagecontrol.Text = "navigationFrame1";
+            this.TinhtrangPagecontrol.TransitionType = DevExpress.Utils.Animation.Transitions.Push;
             // 
             // PageTinhtrang
             // 
@@ -496,6 +520,7 @@
             // 
             // PageThuephong
             // 
+            this.PageThuephong.Caption = "PageThuephong";
             this.PageThuephong.Controls.Add(this.wbntBack);
             this.PageThuephong.Controls.Add(this.thuePhong1);
             this.PageThuephong.Name = "PageThuephong";
@@ -528,6 +553,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.TinhtrangPagecontrol);
+            this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "TinhTrangPhong";
             this.Padding = new System.Windows.Forms.Padding(3);
@@ -572,5 +598,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageThuephong;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntBack;
         private folderTinhTrangPhong.ThuePhong thuePhong1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colTang;
     }
 }
