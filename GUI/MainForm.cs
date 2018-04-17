@@ -342,7 +342,7 @@ namespace GUI
             {
                 case "menuTinhtrangphong":
                     tinhTrangPhong1.RefreshDataBinding();
-
+                   
                     tinhTrangPhong1.GoToPage(0);
                     break;
                 case "menuQuanlyphong":

@@ -308,3 +308,5 @@ C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.exe
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\BUS.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\BUS.pdb

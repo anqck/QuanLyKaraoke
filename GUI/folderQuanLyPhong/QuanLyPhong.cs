@@ -31,9 +31,11 @@ namespace GUI.folderQuanLyPhong
 
         public void RefreshDataBinding()
         {
+        
             try
             {
                 gridControl.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+
             }
             catch (Exception x)
             {
