@@ -48,7 +48,7 @@ namespace GUI.TinhTrangPhong
 
                 tileAll.Elements[1].Text = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong().Rows.Count.ToString();
 
-
+                grpLoaiPhong.Items.Clear();
                 foreach (DataRow row in DAL.LoaiPhongDAL.LayTatCaLoaiPhong().Rows)
                 {
                     grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
