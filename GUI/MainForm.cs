@@ -343,9 +343,11 @@ namespace GUI
                 case "menuTinhtrangphong":
                     tinhTrangPhong1.RefreshDataBinding();
 
+                    tinhTrangPhong1.GoToPage(0);
                     break;
                 case "menuQuanlyphong":
                     quanLyPhong1.RefreshDataBinding();
+                    quanLyPhong1.GoToPage(0);
                     break;
                 default:
                     break;

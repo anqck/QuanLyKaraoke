@@ -49,7 +49,6 @@ namespace DAL
                 res.Add(row[0].ToString());
             }
 
-
             return res;
         }
     }

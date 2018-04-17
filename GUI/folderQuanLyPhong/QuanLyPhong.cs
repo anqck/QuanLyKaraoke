@@ -40,5 +40,12 @@ namespace GUI.folderQuanLyPhong
 
             }
         }
+
+        internal void GoToPage(int v)
+        {
+            QuanlyPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            QuanlyPagecontrol.SelectedPageIndex = v;
+            QuanlyPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
     }
 }

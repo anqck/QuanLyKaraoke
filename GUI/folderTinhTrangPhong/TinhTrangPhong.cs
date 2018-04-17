@@ -53,5 +53,12 @@ namespace GUI.TinhTrangPhong
 
             }
         }
+
+        internal void GoToPage(int v)
+        {
+            TinhtrangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            TinhtrangPagecontrol.SelectedPageIndex = v;
+            TinhtrangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
     }
 }
