@@ -18,7 +18,6 @@
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem3;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem2;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem4;
         private DevExpress.XtraBars.Navigation.NavigationFrame PageControl;
         private DevExpress.XtraBars.Navigation.NavigationPage pageQuanlyphong;
         private DevExpress.XtraBars.Navigation.NavigationPage pageTinhtrangphong;

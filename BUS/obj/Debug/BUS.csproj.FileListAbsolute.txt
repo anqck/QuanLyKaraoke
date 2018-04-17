@@ -3,3 +3,9 @@ D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\BUS.pdb
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.dll
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.pdb
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\BUS.dll
+C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\BUS.pdb
+C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
+C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.dll
+C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.pdb
