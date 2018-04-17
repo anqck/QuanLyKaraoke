@@ -33,7 +33,7 @@ namespace GUI.TinhTrangPhong
 
         private void windowsUIButtonPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            if (e.Button.Equals(this.wbntThemphong.Buttons[0]))
+            if (e.Button.Equals(this.wbntBack.Buttons[0]))
             {
                 this.TinhtrangPagecontrol.SelectedPageIndex = 0;
             }

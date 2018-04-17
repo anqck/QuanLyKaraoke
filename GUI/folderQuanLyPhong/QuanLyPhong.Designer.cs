@@ -74,6 +74,8 @@
             // 
             // QuanlyPagecontrol
             // 
+            this.QuanlyPagecontrol.Appearance.BackColor = System.Drawing.Color.White;
+            this.QuanlyPagecontrol.Appearance.Options.UseBackColor = true;
             this.QuanlyPagecontrol.Controls.Add(this.PageQuanly);
             this.QuanlyPagecontrol.Controls.Add(this.PageThemphongmoi);
             this.QuanlyPagecontrol.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -89,7 +91,6 @@
             // 
             // PageQuanly
             // 
-            this.PageQuanly.Caption = "PageQuanly";
             this.PageQuanly.Controls.Add(this.splitContainerControl);
             this.PageQuanly.Controls.Add(this.labelTitle);
             this.PageQuanly.Controls.Add(this.wbntQuanlyphong);
@@ -301,6 +302,7 @@
             // 
             // wbntThemphong
             // 
+            this.wbntThemphong.BackColor = System.Drawing.Color.White;
             windowsUIButtonImageOptions2.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntThemphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});

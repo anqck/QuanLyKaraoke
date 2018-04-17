@@ -11,9 +11,9 @@ using DevExpress.XtraEditors;
 
 namespace GUI.folderTinhTrangPhong
 {
-    public partial class ThemPhong : DevExpress.XtraEditors.XtraUserControl
+    public partial class ThuePhong : DevExpress.XtraEditors.XtraUserControl
     {
-        public ThemPhong()
+        public ThuePhong()
         {
             InitializeComponent();
         }

@@ -1,6 +1,6 @@
 ﻿namespace GUI.folderTinhTrangPhong
 {
-    partial class ThemPhong
+    partial class ThuePhong
     {
         /// <summary> 
         /// Required designer variable.

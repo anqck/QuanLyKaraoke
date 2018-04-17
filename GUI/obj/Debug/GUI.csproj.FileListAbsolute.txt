@@ -99,7 +99,6 @@ C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.CoreCompileIn
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\obj\Debug\GUI.exe
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\obj\Debug\GUI.pdb
-C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderTinhTrangPhong.ThemPhong.resources
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.QuanLyPhong.resources
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemPhongMoi.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\GUI.exe
@@ -204,3 +203,4 @@ D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.GenerateResource.
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.exe.licenses
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.exe
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.pdb
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderTinhTrangPhong.ThuePhong.resources
