@@ -19,6 +19,8 @@ namespace GUI
 
             tinhTrangPhong1.RefreshDataBinding();
 
+            DAL.PhongDAL.LayCacTangCoSan();
+
         }
 
         private void BntClose_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
