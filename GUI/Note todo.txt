@@ -1,0 +1,2 @@
+﻿tạo hàm init ( mỗi lần vào trang Thêm mới thì clear các feid)
+nút cancle cần truyền parent vào để Back về home
