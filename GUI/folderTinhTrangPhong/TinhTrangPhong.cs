@@ -16,14 +16,9 @@ namespace GUI.TinhTrangPhong
         public TinhTrangPhong()
         {
             InitializeComponent();
-            try
-            {
-                //gridControl.DataSource = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong;");
-            }
-            catch (Exception e)
-            {
+          
 
-            }
+
         }
 
 
@@ -41,6 +36,19 @@ namespace GUI.TinhTrangPhong
             if (e.Button.Equals(this.wbntThemphong.Buttons[0]))
             {
                 this.TinhtrangPagecontrol.SelectedPageIndex = 0;
+            }
+        }
+
+
+        public void RefreshDataBinding()
+        {
+            try
+            {
+                gridControl.DataSource = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong;");
+            }
+            catch (Exception x)
+            {
+
             }
         }
     }

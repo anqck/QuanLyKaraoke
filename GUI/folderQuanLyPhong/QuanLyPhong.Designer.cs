@@ -31,26 +31,9 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition4 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan2 = new DevExpress.XtraEditors.TableLayout.TableSpan();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement4 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
-            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement5 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            this.colMaPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.colTenPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
-            this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            DevExpress.XtraGrid.Columns.GridColumn colLoaiPhong;
             this.QuanlyPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageQuanly = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -60,45 +43,26 @@
             this.tileItem2 = new DevExpress.XtraEditors.TileItem();
             this.tileItem3 = new DevExpress.XtraEditors.TileItem();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.PageThemphongmoi = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntThemphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.themPhongMoi1 = new GUI.folderQuanLyPhong.ThemPhongMoi();
+            colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.QuanlyPagecontrol)).BeginInit();
             this.QuanlyPagecontrol.SuspendLayout();
             this.PageQuanly.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.PageThemphongmoi.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // colMaPhong
-            // 
-            this.colMaPhong.Caption = "Mã Phòng";
-            this.colMaPhong.FieldName = "MaPhong";
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.Visible = true;
-            this.colMaPhong.VisibleIndex = 0;
-            // 
-            // colTenPhong
-            // 
-            this.colTenPhong.Caption = "Tên Phòng";
-            this.colTenPhong.FieldName = "TenPhong";
-            this.colTenPhong.Name = "colTenPhong";
-            this.colTenPhong.Visible = true;
-            this.colTenPhong.VisibleIndex = 1;
-            // 
-            // colTinhTrangPhong
-            // 
-            this.colTinhTrangPhong.Caption = "colTinhTrangPhong";
-            this.colTinhTrangPhong.FieldName = "TinhTrangPhong";
-            this.colTinhTrangPhong.Name = "colTinhTrangPhong";
-            this.colTinhTrangPhong.Visible = true;
-            this.colTinhTrangPhong.VisibleIndex = 2;
             // 
             // QuanlyPagecontrol
             // 
@@ -117,6 +81,7 @@
             // 
             // PageQuanly
             // 
+            this.PageQuanly.Caption = "PageQuanly";
             this.PageQuanly.Controls.Add(this.splitContainerControl);
             this.PageQuanly.Controls.Add(this.labelTitle);
             this.PageQuanly.Controls.Add(this.wbntQuanlyphong);
@@ -233,88 +198,56 @@
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.gridControl.Location = new System.Drawing.Point(0, 0);
-            this.gridControl.MainView = this.tileView1;
+            this.gridControl.MainView = this.gridView1;
             this.gridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(730, 499);
+            this.gridControl.Size = new System.Drawing.Size(734, 499);
             this.gridControl.TabIndex = 4;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.tileView1});
+            this.gridView1});
             // 
-            // tileView1
+            // gridView1
             // 
-            this.tileView1.Appearance.EmptySpace.BackColor = System.Drawing.Color.White;
-            this.tileView1.Appearance.EmptySpace.BackColor2 = System.Drawing.Color.White;
-            this.tileView1.Appearance.EmptySpace.BorderColor = System.Drawing.Color.White;
-            this.tileView1.Appearance.EmptySpace.Options.UseBackColor = true;
-            this.tileView1.Appearance.EmptySpace.Options.UseBorderColor = true;
-            this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaPhong,
             this.colTenPhong,
-            this.colTinhTrangPhong});
-            this.tileView1.FocusBorderColor = System.Drawing.Color.White;
-            this.tileView1.GridControl = this.gridControl;
-            this.tileView1.Name = "tileView1";
-            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(422, 196);
-            this.tileView1.TileColumns.Add(tableColumnDefinition1);
-            this.tileView1.TileColumns.Add(tableColumnDefinition2);
-            this.tileView1.TileColumns.Add(tableColumnDefinition3);
-            tableRowDefinition1.Length.Value = 27D;
-            tableRowDefinition2.Length.Value = 44D;
-            tableRowDefinition3.Length.Value = 40D;
-            tableRowDefinition4.Length.Value = 37D;
-            tableRowDefinition5.Length.Value = 32D;
-            this.tileView1.TileRows.Add(tableRowDefinition1);
-            this.tileView1.TileRows.Add(tableRowDefinition2);
-            this.tileView1.TileRows.Add(tableRowDefinition3);
-            this.tileView1.TileRows.Add(tableRowDefinition4);
-            this.tileView1.TileRows.Add(tableRowDefinition5);
-            tableSpan1.ColumnSpan = 3;
-            tableSpan2.RowIndex = 2;
-            tableSpan2.RowSpan = 3;
-            this.tileView1.TileSpans.Add(tableSpan1);
-            this.tileView1.TileSpans.Add(tableSpan2);
-            tileViewItemElement1.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11F);
-            tileViewItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.Gray;
-            tileViewItemElement1.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement1.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement1.ColumnIndex = 1;
-            tileViewItemElement1.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement1.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement1.RowIndex = 1;
-            tileViewItemElement1.Text = "MÃ PHÒNG";
-            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement2.Column = this.colMaPhong;
-            tileViewItemElement2.ColumnIndex = 2;
-            tileViewItemElement2.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement2.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement2.RowIndex = 1;
-            tileViewItemElement2.Text = "colMaPhong";
-            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.Column = this.colTenPhong;
-            tileViewItemElement3.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement3.Text = "colTenPhong";
-            tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
-            tileViewItemElement4.ColumnIndex = 1;
-            tileViewItemElement4.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement4.Name = "TÌNH TRẠNG";
-            tileViewItemElement4.RowIndex = 2;
-            tileViewItemElement4.Text = "TÌNH TRẠNG";
-            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement5.Column = this.colTinhTrangPhong;
-            tileViewItemElement5.ColumnIndex = 2;
-            tileViewItemElement5.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement5.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement5.RowIndex = 2;
-            tileViewItemElement5.Text = "colTinhTrangPhong";
-            tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileView1.TileTemplate.Add(tileViewItemElement1);
-            this.tileView1.TileTemplate.Add(tileViewItemElement2);
-            this.tileView1.TileTemplate.Add(tileViewItemElement3);
-            this.tileView1.TileTemplate.Add(tileViewItemElement4);
-            this.tileView1.TileTemplate.Add(tileViewItemElement5);
+            this.colTinhTrangPhong,
+            this.colGhiChu,
+            colLoaiPhong});
+            this.gridView1.GridControl = this.gridControl;
+            this.gridView1.Name = "gridView1";
+            // 
+            // colMaPhong
+            // 
+            this.colMaPhong.Caption = "Mã Phòng";
+            this.colMaPhong.FieldName = "MaPhong";
+            this.colMaPhong.Name = "colMaPhong";
+            this.colMaPhong.Visible = true;
+            this.colMaPhong.VisibleIndex = 0;
+            // 
+            // colTenPhong
+            // 
+            this.colTenPhong.Caption = "Tên Phòng";
+            this.colTenPhong.FieldName = "TenPhong";
+            this.colTenPhong.Name = "colTenPhong";
+            this.colTenPhong.Visible = true;
+            this.colTenPhong.VisibleIndex = 1;
+            // 
+            // colTinhTrangPhong
+            // 
+            this.colTinhTrangPhong.Caption = "Tình trạng phòng";
+            this.colTinhTrangPhong.FieldName = "TinhTrangPhong";
+            this.colTinhTrangPhong.Name = "colTinhTrangPhong";
+            this.colTinhTrangPhong.Visible = true;
+            this.colTinhTrangPhong.VisibleIndex = 2;
+            // 
+            // colGhiChu
+            // 
+            this.colGhiChu.Caption = "Ghi chú";
+            this.colGhiChu.FieldName = "GhiChu";
+            this.colGhiChu.Name = "colGhiChu";
+            this.colGhiChu.Visible = true;
+            this.colGhiChu.VisibleIndex = 3;
             // 
             // labelTitle
             // 
@@ -378,6 +311,14 @@
             this.themPhongMoi1.Size = new System.Drawing.Size(1040, 617);
             this.themPhongMoi1.TabIndex = 5;
             // 
+            // colLoaiPhong
+            // 
+            colLoaiPhong.Caption = "Loại phòng";
+            colLoaiPhong.FieldName = "TenLoaiPhong";
+            colLoaiPhong.Name = "colLoaiPhong";
+            colLoaiPhong.Visible = true;
+            colLoaiPhong.VisibleIndex = 4;
+            // 
             // QuanLyPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -392,7 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
             this.splitContainerControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tileView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.PageThemphongmoi.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -409,14 +350,15 @@
         private DevExpress.XtraEditors.TileItem tileItem2;
         private DevExpress.XtraEditors.TileItem tileItem3;
         private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
-        private DevExpress.XtraGrid.Columns.TileViewColumn colMaPhong;
-        private DevExpress.XtraGrid.Columns.TileViewColumn colTenPhong;
-        private DevExpress.XtraGrid.Columns.TileViewColumn colTinhTrangPhong;
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntQuanlyphong;
         private DevExpress.XtraBars.Navigation.NavigationPage PageThemphongmoi;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntThemphong;
         private ThemPhongMoi themPhongMoi1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn colTinhTrangPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
     }
 }

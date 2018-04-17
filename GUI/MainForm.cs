@@ -16,6 +16,8 @@ namespace GUI
         public MainForm()
         {
             InitializeComponent();
+
+            quanLyPhong1.RefreshDataBinding();
         }
 
         private void BntClose_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
@@ -338,6 +340,23 @@ namespace GUI
         private void MenuBar_SelectedItemChanged(object sender, TileItemEventArgs e)
         {
             PageControl.SelectedPageIndex = GroupMenu.Items.IndexOf(e.Item);
+
+            switch(e.Item.Name)
+            {
+                case "menuTinhtrangphong":
+                    tinhTrangPhong1.RefreshDataBinding();
+                    break;
+                case "menuQuanlyphong":
+                    quanLyPhong1.RefreshDataBinding();
+                    break;
+                default:
+                    break;
+
+
+            }
+            //if (e.Item.Name.Equals("menuTinhtrangphong"))
+            //    tinhTrangPhong1.RefreshDataBinding();
+
         }
             
     }
