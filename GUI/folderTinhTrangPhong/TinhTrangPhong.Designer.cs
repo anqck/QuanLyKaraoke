@@ -28,9 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
@@ -55,6 +52,9 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             this.colMaPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTenPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -62,10 +62,6 @@
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
             this.tileControl2 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
-            this.itemTrong = new DevExpress.XtraEditors.TileItem();
-            this.tileItem2 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.colTang = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -81,6 +77,11 @@
             this.PageThuephong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.thuePhong1 = new GUI.folderTinhTrangPhong.ThuePhong();
+            this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
+            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
+            this.tileItem2 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem9 = new DevExpress.XtraEditors.TileItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -163,85 +164,22 @@
             // 
             // tileControl2
             // 
+            this.tileControl2.AllowDrag = false;
+            this.tileControl2.AllowDragTilesBetweenGroups = false;
+            this.tileControl2.AllowDrop = true;
+            this.tileControl2.AllowItemHover = true;
+            this.tileControl2.AllowSelectedItem = true;
             this.tileControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tileControl2.Groups.Add(this.tileGroup1);
             this.tileControl2.ItemPadding = new System.Windows.Forms.Padding(15, 8, 15, 8);
             this.tileControl2.Location = new System.Drawing.Point(0, 0);
-            this.tileControl2.MaxId = 4;
+            this.tileControl2.MaxId = 9;
             this.tileControl2.Name = "tileControl2";
+            this.tileControl2.RowCount = 10;
+            this.tileControl2.SelectedItem = this.tileItem1;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);
             this.tileControl2.TabIndex = 1;
             this.tileControl2.Text = "tileControl2";
-            // 
-            // tileGroup1
-            // 
-            this.tileGroup1.Items.Add(this.itemTrong);
-            this.tileGroup1.Items.Add(this.tileItem2);
-            this.tileGroup1.Items.Add(this.tileItem3);
-            this.tileGroup1.Name = "tileGroup1";
-            this.tileGroup1.Text = "tileGroup1";
-            // 
-            // itemTrong
-            // 
-            this.itemTrong.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
-            this.itemTrong.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemTrong.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Gray;
-            this.itemTrong.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.itemTrong.AppearanceItem.Normal.Options.UseFont = true;
-            this.itemTrong.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.itemTrong.AppearanceItem.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.itemTrong.AppearanceItem.Pressed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.itemTrong.AppearanceItem.Pressed.ForeColor = System.Drawing.Color.Gray;
-            this.itemTrong.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.itemTrong.AppearanceItem.Pressed.Options.UseFont = true;
-            this.itemTrong.AppearanceItem.Pressed.Options.UseForeColor = true;
-            this.itemTrong.AppearanceItem.Selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.itemTrong.AppearanceItem.Selected.Options.UseBackColor = true;
-            tileItemElement1.Text = "Còn trống";
-            this.itemTrong.Elements.Add(tileItemElement1);
-            this.itemTrong.Id = 0;
-            this.itemTrong.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.itemTrong.Name = "itemTrong";
-            // 
-            // tileItem2
-            // 
-            this.tileItem2.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
-            this.tileItem2.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem2.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Gray;
-            this.tileItem2.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem2.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem2.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem2.AppearanceItem.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tileItem2.AppearanceItem.Pressed.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem2.AppearanceItem.Pressed.ForeColor = System.Drawing.Color.Gray;
-            this.tileItem2.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.tileItem2.AppearanceItem.Pressed.Options.UseFont = true;
-            this.tileItem2.AppearanceItem.Pressed.Options.UseForeColor = true;
-            tileItemElement2.Text = "Đã đặt";
-            this.tileItem2.Elements.Add(tileItemElement2);
-            this.tileItem2.Id = 1;
-            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem2.Name = "tileItem2";
-            // 
-            // tileItem3
-            // 
-            this.tileItem3.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
-            this.tileItem3.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem3.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Gray;
-            this.tileItem3.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem3.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem3.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem3.AppearanceItem.Pressed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.tileItem3.AppearanceItem.Pressed.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem3.AppearanceItem.Pressed.ForeColor = System.Drawing.Color.Gray;
-            this.tileItem3.AppearanceItem.Pressed.Options.UseBackColor = true;
-            this.tileItem3.AppearanceItem.Pressed.Options.UseFont = true;
-            this.tileItem3.AppearanceItem.Pressed.Options.UseForeColor = true;
-            tileItemElement3.Text = "Đã sử dụng";
-            this.tileItem3.Elements.Add(tileItemElement3);
-            this.tileItem3.Id = 2;
-            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem3.Name = "tileItem3";
             // 
             // gridControl
             // 
@@ -546,6 +484,42 @@
             this.thuePhong1.Size = new System.Drawing.Size(1110, 662);
             this.thuePhong1.TabIndex = 5;
             // 
+            // tileGroup3
+            // 
+            this.tileGroup3.Name = "tileGroup3";
+            // 
+            // tileGroup1
+            // 
+            this.tileGroup1.Items.Add(this.tileItem2);
+            this.tileGroup1.Items.Add(this.tileItem3);
+            this.tileGroup1.Items.Add(this.tileItem9);
+            this.tileGroup1.Name = "tileGroup1";
+            this.tileGroup1.Text = "tileGroup1";
+            // 
+            // tileItem2
+            // 
+            tileItemElement1.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement1);
+            this.tileItem2.Id = 5;
+            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem2.Name = "tileItem2";
+            // 
+            // tileItem3
+            // 
+            tileItemElement2.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement2);
+            this.tileItem3.Id = 7;
+            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem3.Name = "tileItem3";
+            // 
+            // tileItem9
+            // 
+            tileItemElement3.Text = "tileItem9";
+            this.tileItem9.Elements.Add(tileItemElement3);
+            this.tileItem9.Id = 8;
+            this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem9.Name = "tileItem9";
+            // 
             // TinhTrangPhong
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -577,10 +551,6 @@
         private DevExpress.XtraEditors.TileControl tileControl1;
         protected DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
         private DevExpress.XtraEditors.TileControl tileControl2;
-        private DevExpress.XtraEditors.TileGroup tileGroup1;
-        private DevExpress.XtraEditors.TileItem itemTrong;
-        private DevExpress.XtraEditors.TileItem tileItem2;
-        private DevExpress.XtraEditors.TileItem tileItem3;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Tile.TileView tileView1;
         private DevExpress.XtraGrid.Columns.TileViewColumn colMaPhong;
@@ -599,5 +569,10 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntBack;
         private folderTinhTrangPhong.ThuePhong thuePhong1;
         private DevExpress.XtraGrid.Columns.TileViewColumn colTang;
+        private DevExpress.XtraEditors.TileGroup tileGroup1;
+        private DevExpress.XtraEditors.TileItem tileItem2;
+        private DevExpress.XtraEditors.TileItem tileItem3;
+        private DevExpress.XtraEditors.TileItem tileItem9;
+        private DevExpress.XtraEditors.TileGroup tileGroup3;
     }
 }
