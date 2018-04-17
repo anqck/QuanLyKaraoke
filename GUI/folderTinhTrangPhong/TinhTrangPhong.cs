@@ -44,7 +44,7 @@ namespace GUI.TinhTrangPhong
         {
             try
             {
-                gridControl.DataSource = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong;");
+                gridControl.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong();
             }
             catch (Exception x)
             {

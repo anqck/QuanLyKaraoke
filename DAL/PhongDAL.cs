@@ -28,6 +28,15 @@ namespace DAL
 
             return res;
         }
- 
+
+        public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong()
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP ;");
+        }
+
+        public static DataTable LayTatCaPhong_TinhTrangPhong()
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong;");
+        }
     }
 }

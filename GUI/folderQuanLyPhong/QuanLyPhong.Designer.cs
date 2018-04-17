@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DevExpress.XtraGrid.Columns.GridColumn colLoaiPhong;
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraGrid.Columns.GridColumn colLoaiPhong;
             this.QuanlyPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageQuanly = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -63,6 +63,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.PageThemphongmoi.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // colLoaiPhong
+            // 
+            colLoaiPhong.Caption = "Loại phòng";
+            colLoaiPhong.FieldName = "TenLoaiPhong";
+            colLoaiPhong.Name = "colLoaiPhong";
+            colLoaiPhong.Visible = true;
+            colLoaiPhong.VisibleIndex = 4;
             // 
             // QuanlyPagecontrol
             // 
@@ -310,14 +318,6 @@
             this.themPhongMoi1.Name = "themPhongMoi1";
             this.themPhongMoi1.Size = new System.Drawing.Size(1040, 617);
             this.themPhongMoi1.TabIndex = 5;
-            // 
-            // colLoaiPhong
-            // 
-            colLoaiPhong.Caption = "Loại phòng";
-            colLoaiPhong.FieldName = "TenLoaiPhong";
-            colLoaiPhong.Name = "colLoaiPhong";
-            colLoaiPhong.Visible = true;
-            colLoaiPhong.VisibleIndex = 4;
             // 
             // QuanLyPhong
             // 
