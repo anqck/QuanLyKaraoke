@@ -77,11 +77,11 @@
     <Compile Include="folderQuanLyPhong\ThemPhongMoi.Designer.cs">
       <DependentUpon>ThemPhongMoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="folderTinhTrangPhong\ThemPhong.cs">
+    <Compile Include="folderTinhTrangPhong\ThuePhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="folderTinhTrangPhong\ThemPhong.Designer.cs">
-      <DependentUpon>ThemPhong.cs</DependentUpon>
+    <Compile Include="folderTinhTrangPhong\ThuePhong.Designer.cs">
+      <DependentUpon>ThuePhong.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -106,8 +106,8 @@
     <EmbeddedResource Include="folderQuanLyPhong\ThemPhongMoi.resx">
       <DependentUpon>ThemPhongMoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="folderTinhTrangPhong\ThemPhong.resx">
-      <DependentUpon>ThemPhong.cs</DependentUpon>
+    <EmbeddedResource Include="folderTinhTrangPhong\ThuePhong.resx">
+      <DependentUpon>ThuePhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

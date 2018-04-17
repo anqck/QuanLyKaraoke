@@ -76,9 +76,9 @@
             this.wbntTinhtrangphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.TinhtrangPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageTinhtrang = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.PageThemphong = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.wbntThemphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.themPhong1 = new GUI.folderTinhTrangPhong.ThemPhong();
+            this.PageThuephong = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.thuePhong1 = new GUI.folderTinhTrangPhong.ThuePhong();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -86,7 +86,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TinhtrangPagecontrol)).BeginInit();
             this.TinhtrangPagecontrol.SuspendLayout();
             this.PageTinhtrang.SuspendLayout();
-            this.PageThemphong.SuspendLayout();
+            this.PageThuephong.SuspendLayout();
             this.SuspendLayout();
             // 
             // colMaPhong
@@ -455,7 +455,7 @@
             // 
             this.wbntTinhtrangphong.BackColor = System.Drawing.Color.DimGray;
             this.wbntTinhtrangphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm phòng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thuê phòng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
@@ -473,13 +473,13 @@
             // TinhtrangPagecontrol
             // 
             this.TinhtrangPagecontrol.Controls.Add(this.PageTinhtrang);
-            this.TinhtrangPagecontrol.Controls.Add(this.PageThemphong);
+            this.TinhtrangPagecontrol.Controls.Add(this.PageThuephong);
             this.TinhtrangPagecontrol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TinhtrangPagecontrol.Location = new System.Drawing.Point(3, 3);
             this.TinhtrangPagecontrol.Name = "TinhtrangPagecontrol";
             this.TinhtrangPagecontrol.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageTinhtrang,
-            this.PageThemphong});
+            this.PageThuephong});
             this.TinhtrangPagecontrol.SelectedPage = this.PageTinhtrang;
             this.TinhtrangPagecontrol.Size = new System.Drawing.Size(1110, 662);
             this.TinhtrangPagecontrol.TabIndex = 5;
@@ -494,33 +494,32 @@
             this.PageTinhtrang.Name = "PageTinhtrang";
             this.PageTinhtrang.Size = new System.Drawing.Size(1110, 662);
             // 
-            // PageThemphong
+            // PageThuephong
             // 
-            this.PageThemphong.Caption = "PageThemphong";
-            this.PageThemphong.Controls.Add(this.wbntThemphong);
-            this.PageThemphong.Controls.Add(this.themPhong1);
-            this.PageThemphong.Name = "PageThemphong";
-            this.PageThemphong.Size = new System.Drawing.Size(1110, 662);
+            this.PageThuephong.Controls.Add(this.wbntBack);
+            this.PageThuephong.Controls.Add(this.thuePhong1);
+            this.PageThuephong.Name = "PageThuephong";
+            this.PageThuephong.Size = new System.Drawing.Size(1110, 662);
             // 
-            // wbntThemphong
+            // wbntBack
             // 
             windowsUIButtonImageOptions2.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.wbntThemphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            this.wbntBack.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.wbntThemphong.Location = new System.Drawing.Point(3, 3);
-            this.wbntThemphong.Name = "wbntThemphong";
-            this.wbntThemphong.Size = new System.Drawing.Size(56, 58);
-            this.wbntThemphong.TabIndex = 0;
-            this.wbntThemphong.Text = "windowsUIButtonPanel2";
-            this.wbntThemphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel2_ButtonClick);
+            this.wbntBack.Location = new System.Drawing.Point(3, 3);
+            this.wbntBack.Name = "wbntBack";
+            this.wbntBack.Size = new System.Drawing.Size(56, 58);
+            this.wbntBack.TabIndex = 0;
+            this.wbntBack.Text = "windowsUIButtonPanel2";
+            this.wbntBack.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel2_ButtonClick);
             // 
-            // themPhong1
+            // thuePhong1
             // 
-            this.themPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.themPhong1.Location = new System.Drawing.Point(0, 0);
-            this.themPhong1.Name = "themPhong1";
-            this.themPhong1.Size = new System.Drawing.Size(1110, 662);
-            this.themPhong1.TabIndex = 5;
+            this.thuePhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thuePhong1.Location = new System.Drawing.Point(0, 0);
+            this.thuePhong1.Name = "thuePhong1";
+            this.thuePhong1.Size = new System.Drawing.Size(1110, 662);
+            this.thuePhong1.TabIndex = 5;
             // 
             // TinhTrangPhong
             // 
@@ -541,7 +540,7 @@
             this.TinhtrangPagecontrol.ResumeLayout(false);
             this.PageTinhtrang.ResumeLayout(false);
             this.PageTinhtrang.PerformLayout();
-            this.PageThemphong.ResumeLayout(false);
+            this.PageThuephong.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -570,8 +569,8 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntTinhtrangphong;
         private DevExpress.XtraBars.Navigation.NavigationFrame TinhtrangPagecontrol;
         private DevExpress.XtraBars.Navigation.NavigationPage PageTinhtrang;
-        private DevExpress.XtraBars.Navigation.NavigationPage PageThemphong;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntThemphong;
-        private folderTinhTrangPhong.ThemPhong themPhong1;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageThuephong;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntBack;
+        private folderTinhTrangPhong.ThuePhong thuePhong1;
     }
 }
