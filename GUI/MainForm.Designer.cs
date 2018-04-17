@@ -19,10 +19,8 @@
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem2;
         private DevExpress.XtraBars.Navigation.NavigationFrame PageControl;
-        private DevExpress.XtraBars.Navigation.NavigationPage pageQuanlyphong;
         private DevExpress.XtraBars.Navigation.NavigationPage pageTinhtrangphong;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
-        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage4;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageQuanlyphong;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private DevExpress.XtraEditors.SearchControl searchControl;
 #pragma warning disable CS0436 // Type conflicts with imported type
