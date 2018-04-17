@@ -45,6 +45,8 @@ namespace GUI.TinhTrangPhong
             try
             {
                 gridControl.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong();
+
+                tileItem2.Elements[1].Text = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong().Rows.Count.ToString();
             }
             catch (Exception x)
             {
