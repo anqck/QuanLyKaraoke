@@ -11,6 +11,11 @@ namespace DAL
     public class PhongDAL
     {
 
+        public static int PhatSinhMaPhong()
+        {
+            return (int)DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.phong;").Rows[0][0] ; 
+        }
+
         public static Dictionary<string, PhongDTO> LayTatCaPhong()
         {
 
@@ -50,6 +55,11 @@ namespace DAL
             }
 
             return res;
+        }
+
+        public static void LuuPhongMoi(PhongDTO phong)
+        {
+            //DAL.DataProvider.ExecuseNonQuery("Insert into ")
         }
     }
 }
