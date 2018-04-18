@@ -19,18 +19,16 @@ namespace GUI.folderQuanLyPhong
         public ThemLoaiPhong()
         {
             InitializeComponent();
-            Worksheet settingsSheet = spreadsheetControl1.Document.Worksheets[0];
-            settingsSheet.Cells[30, 0].SetValue("THỨ 2");
-            settingsSheet.Cells[30, 1].SetValue("THỨ 3");
-            settingsSheet.Cells[30, 2].SetValue("THỨ 4");
-            settingsSheet.Cells[30, 3].SetValue("THỨ 5");
-            settingsSheet.Cells[30, 4].SetValue("THỨ 6");
-            settingsSheet.Cells[30, 5].SetValue("THỨ 7");
-            settingsSheet.Cells[30, 6].SetValue("CHỦ NHẬT");
-            settingsSheet.Cells[30, 7].SetValue("NGÀY LỄ");
-           
+                       
             spreadsheetControl1.WorksheetDisplayArea.SetSize(0, 8, 24);
-
+            spreadsheetControl1.Document.Worksheets[0].DefaultColumnWidthInPixels=165;
+            for (int i = 0; i < 8; i++)
+            {
+                for (int j = 0; j < 24; j++)
+                {
+                    spreadsheetControl1.Document.Worksheets[0].Cells[j,i].Value = 0;
+                }
+            }
 
         }
 
@@ -50,12 +48,22 @@ namespace GUI.folderQuanLyPhong
                 formatHeaderText.LineAlignment = StringAlignment.Center;
                 formatHeaderText.Alignment = StringAlignment.Center;
                 formatHeaderText.Trimming = StringTrimming.EllipsisCharacter;
+                              
+                switch (e.ColumnIndex)
+                {
+                    case 6:
+                        e.Graphics.DrawString("Chủ nhật" , headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
+                        break;
+                    case 7:
+                        e.Graphics.DrawString("Ngày lễ", headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
+                        break;
+                    default:
+                        e.Graphics.DrawString("Thứ " + (e.ColumnIndex + 2).ToString(), headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
+                        break;
+                }
 
-                e.Graphics.DrawString("Thứ " + (e.ColumnIndex + 2).ToString(), headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
-               
-                
             }
-            
+
         }
 
         private void spreadsheetControl1_CustomDrawRowHeader(object sender, CustomDrawRowHeaderEventArgs e)
