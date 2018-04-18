@@ -21,7 +21,14 @@ namespace GUI.folderQuanLyPhong
 
         private void wbntTinhtrangphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            QuanlyPagecontrol.SelectedPageIndex = 1;
+            if (e.Button.Equals(wbntQuanlyphong.Buttons[0]))
+            {
+                QuanlyPagecontrol.SelectedPageIndex = 1;
+            }
+            if (e.Button.Equals(wbntQuanlyphong.Buttons[1]))
+            {
+                QuanlyPagecontrol.SelectedPageIndex = 2;
+            }
         }
 
         private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -48,6 +55,11 @@ namespace GUI.folderQuanLyPhong
             QuanlyPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             QuanlyPagecontrol.SelectedPageIndex = v;
             QuanlyPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
+
+        private void wbntThemloaiphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            QuanlyPagecontrol.SelectedPageIndex = 0;
         }
     }
 }
