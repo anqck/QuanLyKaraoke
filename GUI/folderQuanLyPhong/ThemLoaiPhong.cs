@@ -30,11 +30,8 @@ namespace GUI.folderQuanLyPhong
             settingsSheet.Cells[30, 7].SetValue("NGÀY LỄ");
            
             spreadsheetControl1.WorksheetDisplayArea.SetSize(0, 8, 24);
-            for (int i = 0; i < 24; i++)
-            {
-                settingsSheet.Cells[i, 9].SetValue(i+"h - "+(i+1)+"h");
-            }
-          
+
+
         }
 
         private void spreadsheetControl1_CustomDrawColumnHeader(object sender, DevExpress.XtraSpreadsheet.CustomDrawColumnHeaderEventArgs e)
@@ -45,14 +42,18 @@ namespace GUI.folderQuanLyPhong
             Font headingFont = new Font(e.Font, FontStyle.Regular);
             Worksheet settingsSheet = spreadsheetControl1.Document.Worksheets[0];
             string text = settingsSheet.Cells[30, e.ColumnIndex].DisplayText;
+
             //string text = "cai gi do";
-            if (text != String.Empty)
+            //if (text != String.Empty)
             {
                 StringFormat formatHeaderText = new StringFormat();
                 formatHeaderText.LineAlignment = StringAlignment.Center;
                 formatHeaderText.Alignment = StringAlignment.Center;
                 formatHeaderText.Trimming = StringTrimming.EllipsisCharacter;
-                e.Graphics.DrawString(text, headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
+
+                e.Graphics.DrawString("Thứ " + (e.ColumnIndex + 2).ToString(), headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
+               
+                
             }
             
         }
@@ -66,13 +67,13 @@ namespace GUI.folderQuanLyPhong
             Worksheet settingsSheet = spreadsheetControl1.Document.Worksheets[0];
             string text = settingsSheet.Cells[e.RowIndex,9 ].DisplayText;
             //string text = "cai gi do";
-            if (text != String.Empty)
+            //if (text != String.Empty)
             {
                 StringFormat formatHeaderText = new StringFormat();
                 formatHeaderText.LineAlignment = StringAlignment.Center;
                 formatHeaderText.Alignment = StringAlignment.Center;
                 formatHeaderText.Trimming = StringTrimming.EllipsisCharacter;
-                e.Graphics.DrawString(text, headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
+                e.Graphics.DrawString((e.RowIndex + "h - " + (e.RowIndex + 1) + "h").ToString(), headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
             }
         }
     }
