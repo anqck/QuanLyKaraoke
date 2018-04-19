@@ -23,11 +23,11 @@ namespace GUI.folderQuanLyPhong
         {
             if (e.Button.Equals(wbntQuanlyphong.Buttons[0]))
             {
-                QuanlyPagecontrol.SelectedPageIndex = 1;
+                QuanlyPagecontrol.SelectedPage = PageThemphongmoi;
             }
             if (e.Button.Equals(wbntQuanlyphong.Buttons[1]))
             {
-                QuanlyPagecontrol.SelectedPageIndex = 2;
+                QuanlyPagecontrol.SelectedPage = PageThemloaiphong;
             }
         }
 

@@ -27,7 +27,7 @@ namespace GUI.TinhTrangPhong
          
             if (e.Button.Equals(this.wbntTinhtrangphong.Buttons[0] ))
             {
-                this.TinhtrangPagecontrol.SelectedPageIndex = 1;
+                this.TinhtrangPagecontrol.SelectedPage = PageThuephong;
             }
         }
 
@@ -35,7 +35,7 @@ namespace GUI.TinhTrangPhong
         {
             if (e.Button.Equals(this.wbntBack.Buttons[0]))
             {
-                this.TinhtrangPagecontrol.SelectedPageIndex = 0;
+                this.TinhtrangPagecontrol.SelectedPage = PageTinhtrang;
             }
         }
 

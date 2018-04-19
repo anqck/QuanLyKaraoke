@@ -90,6 +90,36 @@
     <Compile Include="FilterCollectionViewBase.Designer.cs">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderKhachHang\KhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhachHang\KhachHang.Designer.cs">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderKhachHang\LoaiKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhachHang\LoaiKhachHang.Designer.cs">
+      <DependentUpon>LoaiKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderKhachHang\SuaKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhachHang\SuaKhachHang.Designer.cs">
+      <DependentUpon>SuaKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderKhachHang\ThemKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhachHang\ThemKhachHang.Designer.cs">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderKhachHang\ThemLoaiKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhachHang\ThemLoaiKhachHang.Designer.cs">
+      <DependentUpon>ThemLoaiKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderQuanLyPhong\QuanLyPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +160,21 @@
     </Compile>
     <EmbeddedResource Include="FilterCollectionViewBase.resx">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderKhachHang\KhachHang.resx">
+      <DependentUpon>KhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderKhachHang\LoaiKhachHang.resx">
+      <DependentUpon>LoaiKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderKhachHang\SuaKhachHang.resx">
+      <DependentUpon>SuaKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderKhachHang\ThemKhachHang.resx">
+      <DependentUpon>ThemKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderKhachHang\ThemLoaiKhachHang.resx">
+      <DependentUpon>ThemLoaiKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\QuanLyPhong.resx">
       <DependentUpon>QuanLyPhong.cs</DependentUpon>
