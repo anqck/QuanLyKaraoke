@@ -493,3 +493,4 @@ C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.CoreCompileIn
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.exe
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.pdb
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.ThemLoaiKhachHang.resources

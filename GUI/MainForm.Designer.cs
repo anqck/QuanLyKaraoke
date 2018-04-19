@@ -28,6 +28,7 @@
         private folderQuanLyPhong.QuanLyPhong quanLyPhong1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageKhachhang;
         private folderKhachHang.KhachHang khachHang1;
+        private DevExpress.XtraBars.Navigation.NavButton navButtonMinimize;
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
 }

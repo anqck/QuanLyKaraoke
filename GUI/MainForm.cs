@@ -57,9 +57,10 @@ namespace GUI
             this.pageQuanlyphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.quanLyPhong1 = new GUI.folderQuanLyPhong.QuanLyPhong();
             this.pageKhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.khachHang1 = new GUI.folderKhachHang.KhachHang();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
-            this.khachHang1 = new GUI.folderKhachHang.KhachHang();
+            this.navButtonMinimize = new DevExpress.XtraBars.Navigation.NavButton();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PageControl)).BeginInit();
             this.PageControl.SuspendLayout();
@@ -88,6 +89,7 @@ namespace GUI
             this.Doc.Appearance.Options.UseBackColor = true;
             this.Doc.BackColor = System.Drawing.Color.DimGray;
             this.Doc.Buttons.Add(this.navButtonHome);
+            this.Doc.Buttons.Add(this.navButtonMinimize);
             this.Doc.Buttons.Add(this.navButtonClose);
             // 
             // tileNavCategory1
@@ -296,6 +298,14 @@ namespace GUI
             this.pageKhachhang.Name = "pageKhachhang";
             this.pageKhachhang.Size = new System.Drawing.Size(1080, 467);
             // 
+            // khachHang1
+            // 
+            this.khachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.khachHang1.Location = new System.Drawing.Point(0, 0);
+            this.khachHang1.Name = "khachHang1";
+            this.khachHang1.Size = new System.Drawing.Size(1080, 467);
+            this.khachHang1.TabIndex = 0;
+            // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.LightGray;
@@ -326,13 +336,12 @@ namespace GUI
             this.searchControl.Size = new System.Drawing.Size(315, 22);
             this.searchControl.TabIndex = 1;
             // 
-            // khachHang1
+            // navButtonMinimize
             // 
-            this.khachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.khachHang1.Location = new System.Drawing.Point(0, 0);
-            this.khachHang1.Name = "khachHang1";
-            this.khachHang1.Size = new System.Drawing.Size(1080, 467);
-            this.khachHang1.TabIndex = 0;
+            this.navButtonMinimize.Alignment = DevExpress.XtraBars.Navigation.NavButtonAlignment.Right;
+            this.navButtonMinimize.Glyph = ((System.Drawing.Image)(resources.GetObject("navButtonMinimize.Glyph")));
+            this.navButtonMinimize.Name = "navButtonMinimize";
+            this.navButtonMinimize.ElementClick += new DevExpress.XtraBars.Navigation.NavElementClickEventHandler(this.navButtonMinimize_ElementClick);
             // 
             // MainForm
             // 
@@ -383,6 +392,11 @@ namespace GUI
         private void tinhTrangPhong1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void navButtonMinimize_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

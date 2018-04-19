@@ -55,9 +55,9 @@
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.PageThemkhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntThemKhachhang = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.themKhachHang1 = new GUI.folderKhachHang.ThemKhachHang();
             this.PageSuakhachang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntSuakhachhang = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.themKhachHang1 = new GUI.folderKhachHang.ThemKhachHang();
             this.suaKhachHang1 = new GUI.folderKhachHang.SuaKhachHang();
             colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.KhachhangPagecontrol)).BeginInit();
@@ -331,6 +331,7 @@
             // 
             // PageThemkhachhang
             // 
+            this.PageThemkhachhang.Caption = "PageThemkhachhang";
             this.PageThemkhachhang.Controls.Add(this.wbntThemKhachhang);
             this.PageThemkhachhang.Controls.Add(this.themKhachHang1);
             this.PageThemkhachhang.Name = "PageThemkhachhang";
@@ -349,8 +350,17 @@
             this.wbntThemKhachhang.Text = "windowsUIButtonPanel2";
             this.wbntThemKhachhang.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntThemphong_ButtonClick);
             // 
+            // themKhachHang1
+            // 
+            this.themKhachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.themKhachHang1.Location = new System.Drawing.Point(0, 0);
+            this.themKhachHang1.Name = "themKhachHang1";
+            this.themKhachHang1.Size = new System.Drawing.Size(1049, 630);
+            this.themKhachHang1.TabIndex = 1;
+            // 
             // PageSuakhachang
             // 
+            this.PageSuakhachang.Caption = "PageSuakhachang";
             this.PageSuakhachang.Controls.Add(this.wbntSuakhachhang);
             this.PageSuakhachang.Controls.Add(this.suaKhachHang1);
             this.PageSuakhachang.Name = "PageSuakhachang";
@@ -368,14 +378,6 @@
             this.wbntSuakhachhang.TabIndex = 1;
             this.wbntSuakhachhang.Text = "windowsUIButtonPanel2";
             this.wbntSuakhachhang.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntThemloaiphong_ButtonClick);
-            // 
-            // themKhachHang1
-            // 
-            this.themKhachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.themKhachHang1.Location = new System.Drawing.Point(0, 0);
-            this.themKhachHang1.Name = "themKhachHang1";
-            this.themKhachHang1.Size = new System.Drawing.Size(1049, 630);
-            this.themKhachHang1.TabIndex = 1;
             // 
             // suaKhachHang1
             // 
