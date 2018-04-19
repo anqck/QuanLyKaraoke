@@ -22,6 +22,10 @@ namespace GUI.folderKhachHang
         {
             this.KhachhangPagecontrol.SelectedPage= PageKhachhang;
         }
+        private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            this.KhachhangPagecontrol.SelectedPage = PageKhachhang;
+        }
 
         private void wbntThemloaiphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
@@ -37,6 +41,14 @@ namespace GUI.folderKhachHang
             if (e.Button.Equals(wbntKhachhang.Buttons[1]))
             {
                 this.KhachhangPagecontrol.SelectedPage = PageSuakhachang;
+            }
+            if (e.Button.Equals(wbntKhachhang.Buttons[3]))
+            {
+                this.KhachhangPagecontrol.SelectedPage = PageLoaikhachhang;
+            }
+            if (e.Button.Equals(wbntKhachhang.Buttons[4]))
+            {
+                this.KhachhangPagecontrol.SelectedPage = PageThemloaikhachhang;
             }
         }
     }

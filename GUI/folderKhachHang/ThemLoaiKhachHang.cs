@@ -17,5 +17,18 @@ namespace GUI.folderKhachHang
         {
             InitializeComponent();
         }
+
+        private void wbntLoaikhachhang_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            //if (e.Button.Equals(wbntLoaikhachhang.Buttons[0]))
+            //{
+            //    this.LoaikhachhangPagecontrol.SelectedPage = PageThemLoaikhachang;
+            //}
+        }
+
+        private void wbntThemloaikhachhang_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            //this.LoaikhachhangPagecontrol.SelectedPage = PageLoaikhachhang;
+        }
     }
 }

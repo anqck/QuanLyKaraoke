@@ -478,8 +478,10 @@ C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\bin\Debug\ru\DevExpress.XtraVertic
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.FilterCollectionViewBase.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.KhachHang.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.LoaiKhachHang.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.SuaKhachHang.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.ThemKhachHang.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.ThemLoaiKhachHang.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.QuanLyPhong.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemLoaiPhong.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemPhongMoi.resources
@@ -493,4 +495,3 @@ C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.CoreCompileIn
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.exe
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.pdb
-C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.ThemLoaiKhachHang.resources
