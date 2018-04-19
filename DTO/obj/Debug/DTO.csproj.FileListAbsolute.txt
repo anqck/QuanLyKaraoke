@@ -12,3 +12,4 @@ C:\Users\nhann\source\repos\QuanLyKaraoke\DTO\bin\Debug\DTO.pdb
 C:\Users\nhann\source\repos\QuanLyKaraoke\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\nhann\source\repos\QuanLyKaraoke\DTO\obj\Debug\DTO.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\DTO\obj\Debug\DTO.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache

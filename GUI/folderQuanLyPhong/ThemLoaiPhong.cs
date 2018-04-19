@@ -11,6 +11,8 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraScheduler;
 using DevExpress.Spreadsheet;
 using DevExpress.XtraSpreadsheet;
+using DevExpress.Spreadsheet.Export;
+using static DTO.LoaiPhongDTO;
 
 namespace GUI.folderQuanLyPhong
 {
@@ -19,7 +21,8 @@ namespace GUI.folderQuanLyPhong
         public ThemLoaiPhong()
         {
             InitializeComponent();
-                       
+                  
+            //Init spreadsheet     
             spreadsheetControl1.WorksheetDisplayArea.SetSize(0, 8, 24);
             spreadsheetControl1.Document.Worksheets[0].DefaultColumnWidthInPixels=165;
             for (int i = 0; i < 8; i++)
@@ -27,12 +30,15 @@ namespace GUI.folderQuanLyPhong
                 
                 for (int j = 0; j < 24; j++)
                 {
-                    spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value = 0000;
-                    spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
+                    spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value = 1000;
+                    //spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
                 }
             }
 
-            
+            //Phát sinh mã loại phòng
+            textEdit2.Text = BUS.LoaiPhongBUS.PhatSinhLoaiMaPhong().ToString();
+
+  
 
         }
 
@@ -86,6 +92,50 @@ namespace GUI.folderQuanLyPhong
                 formatHeaderText.Alignment = StringAlignment.Center;
                 formatHeaderText.Trimming = StringTrimming.EllipsisCharacter;
                 e.Graphics.DrawString((e.RowIndex + "h - " + (e.RowIndex + 1) + "h").ToString(), headingFont, e.Cache.GetSolidBrush(foreColor), textBounds, formatHeaderText);
+            }
+        }
+
+        private void LuuLoaiPhong()
+        {
+            Range range = spreadsheetControl1.Document.Worksheets[0]["A1:H25"];
+            DataTable dataTable = spreadsheetControl1.Document.Worksheets[0].CreateDataTable(range, true);
+
+            DataTableExporter exporter =    spreadsheetControl1.Document.Worksheets[0].CreateDataTableExporter(range, dataTable, true);
+            exporter.Export();
+            return;
+            
+        }
+
+        private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            for (int i = 0; i < 8; i++)
+            {
+                DonGiaTheoNgay donGiaNgay = new DonGiaTheoNgay();
+
+                DonGiaTheoKhoangThoiGian donGia = new DonGiaTheoKhoangThoiGian();
+                donGia.GioBatDau = 0;
+                donGia.GioKetThuc = 1;
+                donGia.DonGia = Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString());
+                for (int j = 1; j < 24; j++)
+                {
+                    if(donGia.DonGia == Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString()))
+                    {
+                        donGia.GioKetThuc ++;
+                    }
+                    else
+                    {
+                        donGiaNgay.listDonGiaTheoKhoangThoiGian.Add(donGia);
+
+                        donGia = new DonGiaTheoKhoangThoiGian();
+                        donGia.GioBatDau = j;
+                        donGia.GioKetThuc = j+1;
+                        donGia.DonGia = Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString());
+                    }
+                    //spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
+                }
+
+                donGiaNgay.listDonGiaTheoKhoangThoiGian.Add(donGia);
+                return;
             }
         }
     }

@@ -490,3 +490,13 @@ D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\es\DevExpress.XtraVerticalGr
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\ja\DevExpress.XtraVerticalGrid.v17.2.resources.dll
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\ru\DevExpress.XtraVerticalGrid.v17.2.resources.dll
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemLoaiPhong.resources
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\DevExpress.Docs.v17.2.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\DevExpress.Snap.v17.2.Core.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\DevExpress.Pdf.v17.2.Drawing.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\DevExpress.Docs.v17.2.xml
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\DevExpress.Snap.v17.2.Core.xml
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\DevExpress.Pdf.v17.2.Drawing.xml
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\de\DevExpress.Snap.v17.2.Core.resources.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\es\DevExpress.Snap.v17.2.Core.resources.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\ja\DevExpress.Snap.v17.2.Core.resources.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\ru\DevExpress.Snap.v17.2.Core.resources.dll

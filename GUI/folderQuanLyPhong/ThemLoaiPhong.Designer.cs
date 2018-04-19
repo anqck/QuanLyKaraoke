@@ -80,6 +80,7 @@
             this.wbntThemphong.Size = new System.Drawing.Size(1092, 80);
             this.wbntThemphong.TabIndex = 11;
             this.wbntThemphong.Text = "windowsUIButtonPanel1";
+            this.wbntThemphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntThemphong_ButtonClick);
             // 
             // layoutControl1
             // 
@@ -97,6 +98,7 @@
             // 
             // textEdit2
             // 
+            this.textEdit2.Enabled = false;
             this.textEdit2.Location = new System.Drawing.Point(19, 109);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
