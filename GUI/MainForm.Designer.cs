@@ -26,6 +26,8 @@
 #pragma warning disable CS0436 // Type conflicts with imported type
         private TinhTrangPhong.TinhTrangPhong tinhTrangPhong1;
         private folderQuanLyPhong.QuanLyPhong quanLyPhong1;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageKhachhang;
+        private folderKhachHang.KhachHang khachHang1;
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
 }
