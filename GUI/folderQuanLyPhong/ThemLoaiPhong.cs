@@ -24,11 +24,15 @@ namespace GUI.folderQuanLyPhong
             spreadsheetControl1.Document.Worksheets[0].DefaultColumnWidthInPixels=165;
             for (int i = 0; i < 8; i++)
             {
+                
                 for (int j = 0; j < 24; j++)
                 {
-                    spreadsheetControl1.Document.Worksheets[0].Cells[j,i].Value = 0;
+                    spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value = 0000;
+                    spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
                 }
             }
+
+            
 
         }
 
