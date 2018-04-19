@@ -25,20 +25,17 @@ namespace GUI.folderQuanLyPhong
             //Init spreadsheet     
             spreadsheetControl1.WorksheetDisplayArea.SetSize(0, 8, 24);
             spreadsheetControl1.Document.Worksheets[0].DefaultColumnWidthInPixels=165;
-            for (int i = 0; i < 8; i++)
-            {
-                
-                for (int j = 0; j < 24; j++)
-                {
-                    spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value = 1000;
-                    //spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
-                }
-            }
+
+
+           
+        }
+
+        internal void Initialize()
+        {
+            spreadsheetControl1.Document.Worksheets[0]["A1:H25"].Value = 1000;
 
             //Phát sinh mã loại phòng
             textEdit2.Text = BUS.LoaiPhongBUS.PhatSinhLoaiMaPhong().ToString();
-
-  
 
         }
 

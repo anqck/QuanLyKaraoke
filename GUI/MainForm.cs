@@ -19,7 +19,7 @@ namespace GUI
 
             tinhTrangPhong1.RefreshDataBinding();
 
-            DAL.PhongDAL.LayCacTangCoSan();
+           
 
         }
 

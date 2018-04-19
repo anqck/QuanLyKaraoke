@@ -24,10 +24,12 @@ namespace GUI.folderQuanLyPhong
             if (e.Button.Equals(wbntQuanlyphong.Buttons[0]))
             {
                 QuanlyPagecontrol.SelectedPage = PageThemphongmoi;
+                themPhongMoi1.Initialize();
             }
             if (e.Button.Equals(wbntQuanlyphong.Buttons[1]))
             {
                 QuanlyPagecontrol.SelectedPage = PageThemloaiphong;
+                themLoaiPhong1.Initialize();
             }
         }
 

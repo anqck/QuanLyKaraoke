@@ -28,6 +28,13 @@ namespace DTO
         }
 
 
+        public int MaLoaiPhong { get; set; }
+        public string TenLoaiPhong { get; set; }
 
+        public LoaiPhongDTO(int maLoaiPhong, string tenLoaiPhong)
+        {
+            MaLoaiPhong = maLoaiPhong;
+            TenLoaiPhong = tenLoaiPhong;
+        }
     }
 }
