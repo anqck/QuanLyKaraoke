@@ -477,6 +477,11 @@ C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\bin\Debug\ja\DevExpress.XtraVertic
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\bin\Debug\ru\DevExpress.XtraVerticalGrid.v17.2.resources.dll
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.FilterCollectionViewBase.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.DichVu.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.LoaiDichVu.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.SuaDichVu.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.ThemDichVu.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.ThemLoaiDichVu.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.KhachHang.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.LoaiKhachHang.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.SuaKhachHang.resources
@@ -485,6 +490,7 @@ C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.Them
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.QuanLyPhong.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemLoaiPhong.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemPhongMoi.resources
+C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderTinhTrangPhong.ThongTinChiTietPhong.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.folderTinhTrangPhong.ThuePhong.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.MainForm.resources
 C:\Users\nhann\Source\Repos\QuanLyKaraoke\GUI\obj\Debug\GUI.Properties.Resources.resources
