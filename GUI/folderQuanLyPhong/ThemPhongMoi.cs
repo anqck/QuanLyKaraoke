@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DTO;
 using BUS;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+using DevExpress.XtraBars.Docking2010.Customization;
 
 namespace GUI.folderQuanLyPhong
 {
@@ -33,6 +35,7 @@ namespace GUI.folderQuanLyPhong
                 case "btnCancel":
                     //Thông báo mất save??, trở về màn hình chính
                     //BÌNH
+                    
                     break;
             }
             return;

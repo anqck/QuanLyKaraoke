@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraBars.Docking2010.Customization;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 
 namespace GUI
 {
@@ -19,9 +21,12 @@ namespace GUI
 
             tinhTrangPhong1.RefreshDataBinding();
 
-           
+
+
 
         }
+
+
 
         private void BntClose_ElementClick(object sender, DevExpress.XtraBars.Navigation.NavElementEventArgs e)
         {
