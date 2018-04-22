@@ -40,14 +40,15 @@ namespace GUI.folderQuanLyPhong
             listLoaiPhong =  LoaiPhongBUS.LayTatCaLoaiPhong();
             //Nếu không có loại phòng
             //TODO
-
-            foreach(LoaiPhongDTO loaiPhong in listLoaiPhong)
+            cmbLoaiPhong.Properties.Items.Clear();
+            foreach (LoaiPhongDTO loaiPhong in listLoaiPhong)
             {
                 cmbLoaiPhong.Properties.Items.Add(new MyComboBoxItem(loaiPhong.TenLoaiPhong, loaiPhong.MaLoaiPhong));
             }
             cmbLoaiPhong.SelectedIndex = 0;
 
             //Lấy tất cả các tầng
+            cmbTang.Properties.Items.Clear();
             List<string> listTang = ThemPhongBUS.LayCacTangCoSan();
             foreach (string tang in listTang)
             {
