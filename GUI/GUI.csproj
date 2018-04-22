@@ -90,6 +90,36 @@
     <Compile Include="FilterCollectionViewBase.Designer.cs">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderDichVu\DichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDichVu\DichVu.Designer.cs">
+      <DependentUpon>DichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderDichVu\LoaiDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDichVu\LoaiDichVu.Designer.cs">
+      <DependentUpon>LoaiDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderDichVu\SuaDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDichVu\SuaDichVu.Designer.cs">
+      <DependentUpon>SuaDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderDichVu\ThemDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDichVu\ThemDichVu.Designer.cs">
+      <DependentUpon>ThemDichVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderDichVu\ThemLoaiDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDichVu\ThemLoaiDichVu.Designer.cs">
+      <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderKhachHang\KhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +168,12 @@
     <Compile Include="folderQuanLyPhong\ThemPhongMoi.Designer.cs">
       <DependentUpon>ThemPhongMoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderTinhTrangPhong\ThongTinChiTietPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderTinhTrangPhong\ThongTinChiTietPhong.Designer.cs">
+      <DependentUpon>ThongTinChiTietPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderTinhTrangPhong\ThuePhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +198,21 @@
     <EmbeddedResource Include="FilterCollectionViewBase.resx">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderDichVu\DichVu.resx">
+      <DependentUpon>DichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDichVu\LoaiDichVu.resx">
+      <DependentUpon>LoaiDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDichVu\SuaDichVu.resx">
+      <DependentUpon>SuaDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDichVu\ThemDichVu.resx">
+      <DependentUpon>ThemDichVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDichVu\ThemLoaiDichVu.resx">
+      <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\ThemPhongMoi.resx">
       <DependentUpon>ThemPhongMoi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderTinhTrangPhong\ThongTinChiTietPhong.resx">
+      <DependentUpon>ThongTinChiTietPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\ThuePhong.resx">
       <DependentUpon>ThuePhong.cs</DependentUpon>
