@@ -16,8 +16,9 @@ namespace GUI.TinhTrangPhong
         public TinhTrangPhong()
         {
             InitializeComponent();
-          
 
+          //  splitContainerControl.LookAndFeel.SkinName = "mySkin";
+          
 
         }
 
