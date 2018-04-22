@@ -5,6 +5,8 @@ using System.Windows.Forms;
 using DevExpress.UserSkins;
 using DevExpress.Skins;
 using DevExpress.LookAndFeel;
+using System.Reflection;
+using System.ComponentModel;
 
 namespace GUI
 {
@@ -16,6 +18,13 @@ namespace GUI
         [STAThread]
         static void Main()
         {
+
+           Assembly asm = typeof(DevExpress.UserSkins.mySkin).Assembly;
+           DevExpress.Skins.SkinManager.Default.RegisterAssembly(asm);
+           SkinManager.EnableFormSkins();
+
+           UserLookAndFeel.Default.SkinName = "mySkin";
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -26,5 +35,7 @@ namespace GUI
 
             Application.Run(new MainForm());
         }
+
+       
     }
 }
