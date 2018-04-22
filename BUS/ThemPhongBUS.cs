@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DTO;
 
 namespace BUS
 {
@@ -16,6 +17,11 @@ namespace BUS
         public static List<String> LayCacTangCoSan()
         {
             return DAL.PhongDAL.LayCacTangCoSan();
+        }
+
+        public static bool LuuThongTinPhong(PhongDTO phongDTO)
+        {
+            return DAL.PhongDAL.LuuThongTinPhong(phongDTO);
         }
     }
 }

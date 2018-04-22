@@ -25,7 +25,36 @@ namespace GUI.folderQuanLyPhong
 
         private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            
+            switch(e.Button.Properties.Tag.ToString())
+            {
+                case "btnSave":
+                    LuuThongTinPhong();
+                    break;
+                case "btnCancel":
+                    //Thông báo mất save??, trở về màn hình chính
+                    //BÌNH
+                    break;
+            }
+            return;
+        }
+
+        private void LuuThongTinPhong()
+        {
+            //Kiểm tra thông tin nhập vào hợp lệ
+            //BÌNH
+
+            //Lưu
+            PhongDTO phongDTO = new PhongDTO(int.Parse(txtMaPhong.Text),txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong,cmbTang.Text,txtGhiChu.Text,0);
+            if(ThemPhongBUS.LuuThongTinPhong(phongDTO))
+            {
+                //Thông báo thành công
+                //BÌNH
+            }
+            else
+            {
+                //Thông báo thất bại
+                //BÌNH
+            }
         }
 
         internal void Initialize()
@@ -38,8 +67,12 @@ namespace GUI.folderQuanLyPhong
            
             //Lấy tất cả loại phòng vào cmb
             listLoaiPhong =  LoaiPhongBUS.LayTatCaLoaiPhong();
-            //Nếu không có loại phòng
-            //TODO
+            //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
+            if(listLoaiPhong.Count == 0)
+            {
+                //BÌNH
+            }
+
             cmbLoaiPhong.Properties.Items.Clear();
             foreach (LoaiPhongDTO loaiPhong in listLoaiPhong)
             {

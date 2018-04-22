@@ -16,22 +16,43 @@ namespace DAL
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.phong;").Rows[0][0] ); 
         }
 
-        public static Dictionary<string, PhongDTO> LayTatCaPhong()
+        //public static Dictionary<string, PhongDTO> LayTatCaPhong()
+        //{
+
+        //    DataTable dt = DataProvider.ExecuseQuery("Select * FROM phong");
+
+        //    Dictionary<string, PhongDTO> res = new Dictionary<string, PhongDTO>();
+
+        //    for (int i = 0; i < dt.Rows.Count - 1; i++)
+        //    {
+        //        DTO.PhongDTO temp = new PhongDTO();
+        //        temp.MaPhong = dt.Rows[i]["MaPhong"].ToString();
+
+        //        res.Add(temp.MaPhong, temp);
+        //    }
+
+        //    return res;
+        //}
+
+        public static bool LuuThongTinPhong(PhongDTO phongDTO)
         {
-
-            DataTable dt = DataProvider.ExecuseQuery("Select * FROM phong");
-
-            Dictionary<string, PhongDTO> res = new Dictionary<string, PhongDTO>();
-
-            for (int i = 0; i < dt.Rows.Count - 1; i++)
+            try
             {
-                DTO.PhongDTO temp = new PhongDTO();
-                temp.MaPhong = dt.Rows[i]["MaPhong"].ToString();
+                StringBuilder strSQL = new StringBuilder("INSERT INTO quanlykaraoke.phong (MaPhong, TenPhong, MaTinhTrangPhong, MaLoaiPhong, GhiChu, Tang) VALUES('$0','$1','$2','$3','$4','$5')");
+                strSQL.Replace("$0", phongDTO.MaPhong.ToString());
+                strSQL.Replace("$1", phongDTO.TenPhong.ToString());
+                strSQL.Replace("$2", phongDTO.MaTinhTrangPhong.ToString());
+                strSQL.Replace("$3", phongDTO.MaLoaiPhong.ToString());
+                strSQL.Replace("$4", phongDTO.GhiChu.ToString());
+                strSQL.Replace("$5", phongDTO.Tang.ToString());
+                DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
 
-                res.Add(temp.MaPhong, temp);
+                return true;
             }
-
-            return res;
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong()

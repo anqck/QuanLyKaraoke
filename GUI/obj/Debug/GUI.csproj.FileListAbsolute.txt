@@ -500,6 +500,11 @@ D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\ja\DevExpress.XtraVerticalGr
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\bin\Debug\ru\DevExpress.XtraVerticalGrid.v17.2.resources.dll
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.FilterCollectionViewBase.resources
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.DichVu.resources
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.LoaiDichVu.resources
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.SuaDichVu.resources
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.ThemDichVu.resources
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderDichVu.ThemLoaiDichVu.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.KhachHang.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.LoaiKhachHang.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.SuaKhachHang.resources
@@ -508,6 +513,7 @@ D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderKhachHang.ThemLoai
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.QuanLyPhong.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemLoaiPhong.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderQuanLyPhong.ThemPhongMoi.resources
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderTinhTrangPhong.ThongTinChiTietPhong.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.folderTinhTrangPhong.ThuePhong.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.MainForm.resources
 D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\GUI\obj\Debug\GUI.Properties.Resources.resources
