@@ -350,7 +350,6 @@ C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\DevExpress.XtraSpreadshe
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\DevExpress.XtraTreeList.v17.2.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\DevExpress.XtraWizard.v17.2.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\DTO.dll
-C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\KaraokeSkin.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\MySql.Data.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\DevExpress.CodeParser.v17.2.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\GUI\bin\Debug\DevExpress.Diagram.v17.2.Core.dll
