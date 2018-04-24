@@ -83,6 +83,7 @@
             colLoaiPhong.Name = "colLoaiPhong";
             colLoaiPhong.Visible = true;
             colLoaiPhong.VisibleIndex = 4;
+            colLoaiPhong.Width = 119;
             // 
             // QuanlyPagecontrol
             // 
@@ -99,7 +100,7 @@
             this.PageThemphongmoi,
             this.PageThemloaiphong});
             this.QuanlyPagecontrol.SelectedPage = this.PageQuanly;
-            this.QuanlyPagecontrol.Size = new System.Drawing.Size(1040, 617);
+            this.QuanlyPagecontrol.Size = new System.Drawing.Size(1280, 820);
             this.QuanlyPagecontrol.TabIndex = 3;
             this.QuanlyPagecontrol.Text = "navigationFrame1";
             // 
@@ -110,7 +111,7 @@
             this.PageQuanly.Controls.Add(this.labelTitle);
             this.PageQuanly.Controls.Add(this.wbntQuanlyphong);
             this.PageQuanly.Name = "PageQuanly";
-            this.PageQuanly.Size = new System.Drawing.Size(1040, 617);
+            this.PageQuanly.Size = new System.Drawing.Size(1280, 820);
             // 
             // splitContainerControl
             // 
@@ -130,7 +131,7 @@
             this.splitContainerControl.Panel2.Appearance.Options.UseBorderColor = true;
             this.splitContainerControl.Panel2.Controls.Add(this.gridControl);
             this.splitContainerControl.Panel2.Text = "Panel2";
-            this.splitContainerControl.Size = new System.Drawing.Size(1040, 499);
+            this.splitContainerControl.Size = new System.Drawing.Size(1280, 702);
             this.splitContainerControl.SplitterPosition = 125;
             this.splitContainerControl.TabIndex = 8;
             this.splitContainerControl.Text = "splitContainerControl1";
@@ -155,10 +156,9 @@
             this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl2.Position = 6;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
-            this.tileControl2.Size = new System.Drawing.Size(300, 499);
+            this.tileControl2.Size = new System.Drawing.Size(300, 702);
             this.tileControl2.TabIndex = 4;
             this.tileControl2.Text = "tileControl2";
             // 
@@ -172,7 +172,7 @@
             // 
             // tileAll
             // 
-            this.tileAll.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
+            this.tileAll.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.tileAll.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Gray;
             this.tileAll.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileAll.AppearanceItem.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
@@ -279,18 +279,32 @@
             // gridControl
             // 
             this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl.EmbeddedNavigator.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridControl.EmbeddedNavigator.Appearance.Options.UseFont = true;
             this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.gridControl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridControl.Location = new System.Drawing.Point(0, 0);
             this.gridControl.MainView = this.gridView1;
             this.gridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(734, 499);
+            this.gridControl.Size = new System.Drawing.Size(974, 702);
             this.gridControl.TabIndex = 4;
             this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.White;
+            this.gridView1.Appearance.HeaderPanel.BackColor2 = System.Drawing.Color.White;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Teal;
+            this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaPhong,
             this.colTenPhong,
@@ -311,6 +325,7 @@
             this.colMaPhong.Name = "colMaPhong";
             this.colMaPhong.Visible = true;
             this.colMaPhong.VisibleIndex = 0;
+            this.colMaPhong.Width = 110;
             // 
             // colTenPhong
             // 
@@ -319,6 +334,7 @@
             this.colTenPhong.Name = "colTenPhong";
             this.colTenPhong.Visible = true;
             this.colTenPhong.VisibleIndex = 1;
+            this.colTenPhong.Width = 117;
             // 
             // colTinhTrangPhong
             // 
@@ -327,6 +343,7 @@
             this.colTinhTrangPhong.Name = "colTinhTrangPhong";
             this.colTinhTrangPhong.Visible = true;
             this.colTinhTrangPhong.VisibleIndex = 2;
+            this.colTinhTrangPhong.Width = 177;
             // 
             // colGhiChu
             // 
@@ -335,6 +352,7 @@
             this.colGhiChu.Name = "colGhiChu";
             this.colGhiChu.Visible = true;
             this.colGhiChu.VisibleIndex = 3;
+            this.colGhiChu.Width = 191;
             // 
             // labelTitle
             // 
@@ -363,9 +381,9 @@
             this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
-            this.wbntQuanlyphong.Location = new System.Drawing.Point(0, 537);
+            this.wbntQuanlyphong.Location = new System.Drawing.Point(0, 740);
             this.wbntQuanlyphong.Name = "wbntQuanlyphong";
-            this.wbntQuanlyphong.Size = new System.Drawing.Size(1040, 80);
+            this.wbntQuanlyphong.Size = new System.Drawing.Size(1280, 80);
             this.wbntQuanlyphong.TabIndex = 9;
             this.wbntQuanlyphong.Text = "windowsUIButtonPanel1";
             this.wbntQuanlyphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntTinhtrangphong_ButtonClick);
@@ -376,7 +394,7 @@
             this.PageThemphongmoi.Controls.Add(this.wbntThemphong);
             this.PageThemphongmoi.Controls.Add(this.themPhongMoi1);
             this.PageThemphongmoi.Name = "PageThemphongmoi";
-            this.PageThemphongmoi.Size = new System.Drawing.Size(1040, 617);
+            this.PageThemphongmoi.Size = new System.Drawing.Size(1280, 820);
             // 
             // wbntThemphong
             // 
@@ -396,7 +414,7 @@
             this.themPhongMoi1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.themPhongMoi1.Location = new System.Drawing.Point(0, 0);
             this.themPhongMoi1.Name = "themPhongMoi1";
-            this.themPhongMoi1.Size = new System.Drawing.Size(1040, 617);
+            this.themPhongMoi1.Size = new System.Drawing.Size(1280, 820);
             this.themPhongMoi1.TabIndex = 5;
             // 
             // PageThemloaiphong
@@ -405,7 +423,7 @@
             this.PageThemloaiphong.Controls.Add(this.wbntThemloaiphong);
             this.PageThemloaiphong.Controls.Add(this.themLoaiPhong1);
             this.PageThemloaiphong.Name = "PageThemloaiphong";
-            this.PageThemloaiphong.Size = new System.Drawing.Size(1040, 617);
+            this.PageThemloaiphong.Size = new System.Drawing.Size(1280, 820);
             // 
             // wbntThemloaiphong
             // 
@@ -427,7 +445,7 @@
             this.themLoaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.themLoaiPhong1.Location = new System.Drawing.Point(0, 0);
             this.themLoaiPhong1.Name = "themLoaiPhong1";
-            this.themLoaiPhong1.Size = new System.Drawing.Size(1040, 617);
+            this.themLoaiPhong1.Size = new System.Drawing.Size(1280, 820);
             this.themLoaiPhong1.TabIndex = 2;
             // 
             // QuanLyPhong
@@ -436,7 +454,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.QuanlyPagecontrol);
             this.Name = "QuanLyPhong";
-            this.Size = new System.Drawing.Size(1040, 617);
+            this.Size = new System.Drawing.Size(1280, 820);
             ((System.ComponentModel.ISupportInitialize)(this.QuanlyPagecontrol)).EndInit();
             this.QuanlyPagecontrol.ResumeLayout(false);
             this.PageQuanly.ResumeLayout(false);

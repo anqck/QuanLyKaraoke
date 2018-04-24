@@ -51,5 +51,35 @@ namespace GUI.folderKhachHang
                 this.KhachhangPagecontrol.SelectedPage = PageThemloaikhachhang;
             }
         }
+        public void RefreshDataBinding()
+        {
+
+            //try
+            //{
+            //    gridControl.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+
+
+            //    tileAll.Elements[1].Text = ((DataView)gridView1.DataSource).Count.ToString();
+
+            //    grpLoaiPhong.Items.Clear();
+            //    foreach (DataRow row in DAL.LoaiPhongDAL.LayTatCaLoaiPhong().Rows)
+            //    {
+            //        grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
+            //    }
+
+            //}
+            //catch (Exception x)
+            //{
+
+            //}
+        }
+
+        internal void GoToPage(int v)
+        {
+            KhachhangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            KhachhangPagecontrol.SelectedPageIndex = v;
+            KhachhangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
+
     }
 }

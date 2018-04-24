@@ -120,19 +120,19 @@
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="navButtonHome.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        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
+        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
 </value>
   </data>
   <data name="navButtonMinimize.Glyph" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
