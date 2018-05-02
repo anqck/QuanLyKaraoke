@@ -30,13 +30,27 @@
         private folderKhachHang.KhachHang khachHang1;
         private DevExpress.XtraBars.Navigation.NavButton navButtonMinimize;
         private DevExpress.XtraBars.Navigation.TileBarItem menuDichvu;
-        private DevExpress.XtraBars.Navigation.TileBarDropDownContainer tileBarDropDownContainer1;
+        private DevExpress.XtraBars.Navigation.TileBarDropDownContainer tileBarDropDownKhachhang;
         private DevExpress.XtraBars.Navigation.NavigationPage pageNhanvien;
         private DevExpress.XtraEditors.ButtonEdit buttonEdit1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageDichvu;
         private folderDichVu.DichVu dichVu1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageBaocao;
         private DevExpress.XtraEditors.ButtonEdit buttonEdit2;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar1;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup2;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem1;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem2;
+        private DevExpress.XtraBars.Navigation.TileBarDropDownContainer tileBarDropDownContainer1;
+        private DevExpress.XtraBars.Navigation.TileBar tileBarDropDownQuanlyphong;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup1;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem3;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem4;
+        private DevExpress.XtraBars.Navigation.TileBarDropDownContainer tileBarDropDownDichvu;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar2;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup3;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem6;
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
 }

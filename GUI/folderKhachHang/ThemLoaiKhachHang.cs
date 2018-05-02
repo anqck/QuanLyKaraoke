@@ -16,6 +16,7 @@ namespace GUI.folderKhachHang
         public ThemLoaiKhachHang()
         {
             InitializeComponent();
+           // spinEditTien.Properties.DisplayFormat.FormatString = "#.000 VNĐ";
         }
 
         private void wbntLoaikhachhang_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -30,5 +31,6 @@ namespace GUI.folderKhachHang
         {
             //this.LoaikhachhangPagecontrol.SelectedPage = PageLoaikhachhang;
         }
+
     }
 }

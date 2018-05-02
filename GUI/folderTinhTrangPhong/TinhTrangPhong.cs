@@ -8,6 +8,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraBars.Docking2010.Customization;
+using GUI.folderTinhTrangPhong;
 
 namespace GUI.TinhTrangPhong
 {
@@ -25,11 +27,22 @@ namespace GUI.TinhTrangPhong
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-         
-            if (e.Button.Equals(this.wbntTinhtrangphong.Buttons[0] ))
-            {
-                this.TinhtrangPagecontrol.SelectedPage = PageThuephong;
+            switch (e.Button.Properties.Caption)
+           {
+                case "Thuê phòng":
+                {
+                        FlyoutDialog.Show(this.FindForm(), new ThuePhong());
+                        break;
+                }
+                case "Xem phòng":
+                    {
+                        FlyoutDialog.Show(this.FindForm(), new XemPhong());
+                        break;
+                    }
+                default:
+                    break;
             }
+           
         }
 
         private void windowsUIButtonPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)

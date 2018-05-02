@@ -187,6 +187,12 @@
     <Compile Include="folderTinhTrangPhong\ThuePhong.Designer.cs">
       <DependentUpon>ThuePhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderTinhTrangPhong\XemPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderTinhTrangPhong\XemPhong.Designer.cs">
+      <DependentUpon>XemPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\ThuePhong.resx">
       <DependentUpon>ThuePhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderTinhTrangPhong\XemPhong.resx">
+      <DependentUpon>XemPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

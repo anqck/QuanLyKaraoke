@@ -17,5 +17,13 @@ namespace GUI.folderTinhTrangPhong
         {
             InitializeComponent();
         }
+
+        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (e.Equals(this.windowsUIButtonPanel1.Buttons[1]))
+            {
+                //tat cai dialog
+            }
+        }
     }
 }

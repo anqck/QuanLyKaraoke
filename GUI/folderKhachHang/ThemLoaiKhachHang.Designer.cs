@@ -38,9 +38,9 @@
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
             this.memoEdit2 = new DevExpress.XtraEditors.MemoEdit();
             this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.spinEdit2 = new DevExpress.XtraEditors.SpinEdit();
+            this.spinEditTien = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit3 = new DevExpress.XtraEditors.SpinEdit();
-            this.spinEdit4 = new DevExpress.XtraEditors.SpinEdit();
+            this.spinEditPhantramgiamgiasinhnhat = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit6 = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit5 = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -55,19 +55,16 @@
             this.item2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem12 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleLabelItem7 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.item4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.simpleLabelItem9 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.simpleLabelItem6 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.simpleLabelItem8 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.simpleLabelItem5 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.simpleLabelItem4 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.simpleLabelItem3 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem7 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.wbntThemloaikhachhang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
@@ -76,9 +73,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditTien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditPhantramgiamgiasinhnhat.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit6.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit5.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
@@ -93,17 +90,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.item2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.item4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // wbntThemloaikhachhang
@@ -129,9 +123,9 @@
             this.layoutControl2.Controls.Add(this.spinEdit1);
             this.layoutControl2.Controls.Add(this.memoEdit2);
             this.layoutControl2.Controls.Add(this.textEdit8);
-            this.layoutControl2.Controls.Add(this.spinEdit2);
+            this.layoutControl2.Controls.Add(this.spinEditTien);
             this.layoutControl2.Controls.Add(this.spinEdit3);
-            this.layoutControl2.Controls.Add(this.spinEdit4);
+            this.layoutControl2.Controls.Add(this.spinEditPhantramgiamgiasinhnhat);
             this.layoutControl2.Controls.Add(this.spinEdit6);
             this.layoutControl2.Controls.Add(this.spinEdit5);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -168,39 +162,37 @@
             // spinEdit1
             // 
             this.spinEdit1.EditValue = new decimal(new int[] {
-            0,
+            10,
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(837, 280);
+            this.spinEdit1.Location = new System.Drawing.Point(970, 304);
             this.spinEdit1.Name = "spinEdit1";
             this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinEdit1.Properties.Appearance.Options.UseFont = true;
             this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Properties.DisplayFormat.FormatString = "#.000 VNĐ";
+            this.spinEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.spinEdit1.Properties.Increment = new decimal(new int[] {
-            10000,
+            10,
             0,
             0,
             0});
-            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.spinEdit1.Size = new System.Drawing.Size(219, 38);
+            this.spinEdit1.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
+            this.spinEdit1.Size = new System.Drawing.Size(258, 38);
             this.spinEdit1.StyleController = this.layoutControl2;
             this.spinEdit1.TabIndex = 11;
             // 
             // memoEdit2
             // 
             this.memoEdit2.EditValue = "";
-            this.memoEdit2.Location = new System.Drawing.Point(19, 450);
+            this.memoEdit2.Location = new System.Drawing.Point(19, 538);
             this.memoEdit2.Name = "memoEdit2";
             this.memoEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.memoEdit2.Properties.Appearance.Options.UseFont = true;
             this.memoEdit2.Properties.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.memoEdit2.Size = new System.Drawing.Size(1206, 137);
+            this.memoEdit2.Size = new System.Drawing.Size(1206, 34);
             this.memoEdit2.StyleController = this.layoutControl2;
             this.memoEdit2.TabIndex = 9;
             // 
@@ -215,32 +207,33 @@
             this.textEdit8.StyleController = this.layoutControl2;
             this.textEdit8.TabIndex = 6;
             // 
-            // spinEdit2
+            // spinEditTien
             // 
-            this.spinEdit2.EditValue = new decimal(new int[] {
-            0,
+            this.spinEditTien.EditValue = new decimal(new int[] {
+            10,
             0,
             0,
             0});
-            this.spinEdit2.Location = new System.Drawing.Point(837, 236);
-            this.spinEdit2.Name = "spinEdit2";
-            this.spinEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spinEdit2.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinEditTien.Location = new System.Drawing.Point(970, 260);
+            this.spinEditTien.Name = "spinEditTien";
+            this.spinEditTien.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spinEditTien.Properties.Appearance.Options.UseFont = true;
+            this.spinEditTien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit2.Properties.Increment = new decimal(new int[] {
-            10000,
+            this.spinEditTien.Properties.DisplayFormat.FormatString = "#.000 VNĐ";
+            this.spinEditTien.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.spinEditTien.Properties.Increment = new decimal(new int[] {
+            10,
             0,
             0,
             0});
-            this.spinEdit2.Properties.MaxValue = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.spinEdit2.Size = new System.Drawing.Size(219, 38);
-            this.spinEdit2.StyleController = this.layoutControl2;
-            this.spinEdit2.TabIndex = 10;
+            this.spinEditTien.Properties.IsFloatValue = false;
+            this.spinEditTien.Properties.Mask.EditMask = "n";
+            this.spinEditTien.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.None;
+            this.spinEditTien.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
+            this.spinEditTien.Size = new System.Drawing.Size(258, 38);
+            this.spinEditTien.StyleController = this.layoutControl2;
+            this.spinEditTien.TabIndex = 10;
             // 
             // spinEdit3
             // 
@@ -249,7 +242,7 @@
             0,
             0,
             0});
-            this.spinEdit3.Location = new System.Drawing.Point(366, 346);
+            this.spinEdit3.Location = new System.Drawing.Point(366, 402);
             this.spinEdit3.Name = "spinEdit3";
             this.spinEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinEdit3.Properties.Appearance.Options.UseFont = true;
@@ -260,93 +253,97 @@
             0,
             0,
             0});
+            this.spinEdit3.Properties.IsFloatValue = false;
+            this.spinEdit3.Properties.Mask.EditMask = "P0";
+            this.spinEdit3.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.spinEdit3.Properties.MaxValue = new decimal(new int[] {
-            1000,
+            100,
             0,
             0,
             0});
-            this.spinEdit3.Size = new System.Drawing.Size(63, 38);
+            this.spinEdit3.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
+            this.spinEdit3.Size = new System.Drawing.Size(197, 38);
             this.spinEdit3.StyleController = this.layoutControl2;
             this.spinEdit3.TabIndex = 11;
             // 
-            // spinEdit4
+            // spinEditPhantramgiamgiasinhnhat
             // 
-            this.spinEdit4.EditValue = new decimal(new int[] {
+            this.spinEditPhantramgiamgiasinhnhat.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit4.Location = new System.Drawing.Point(366, 258);
-            this.spinEdit4.Name = "spinEdit4";
-            this.spinEdit4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spinEdit4.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit4.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.spinEditPhantramgiamgiasinhnhat.Location = new System.Drawing.Point(366, 282);
+            this.spinEditPhantramgiamgiasinhnhat.Name = "spinEditPhantramgiamgiasinhnhat";
+            this.spinEditPhantramgiamgiasinhnhat.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spinEditPhantramgiamgiasinhnhat.Properties.Appearance.Options.UseFont = true;
+            this.spinEditPhantramgiamgiasinhnhat.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit4.Properties.Increment = new decimal(new int[] {
+            this.spinEditPhantramgiamgiasinhnhat.Properties.Increment = new decimal(new int[] {
             5,
             0,
             0,
             0});
-            this.spinEdit4.Properties.MaxValue = new decimal(new int[] {
-            1000,
+            this.spinEditPhantramgiamgiasinhnhat.Properties.IsFloatValue = false;
+            this.spinEditPhantramgiamgiasinhnhat.Properties.Mask.EditMask = "P0";
+            this.spinEditPhantramgiamgiasinhnhat.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.spinEditPhantramgiamgiasinhnhat.Properties.MaxValue = new decimal(new int[] {
+            100,
             0,
             0,
             0});
-            this.spinEdit4.Size = new System.Drawing.Size(63, 38);
-            this.spinEdit4.StyleController = this.layoutControl2;
-            this.spinEdit4.TabIndex = 11;
+            this.spinEditPhantramgiamgiasinhnhat.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
+            this.spinEditPhantramgiamgiasinhnhat.Size = new System.Drawing.Size(197, 38);
+            this.spinEditPhantramgiamgiasinhnhat.StyleController = this.layoutControl2;
+            this.spinEditPhantramgiamgiasinhnhat.TabIndex = 11;
             // 
             // spinEdit6
             // 
             this.spinEdit6.EditValue = new decimal(new int[] {
-            0,
+            10,
             0,
             0,
             0});
-            this.spinEdit6.Location = new System.Drawing.Point(837, 324);
+            this.spinEdit6.Location = new System.Drawing.Point(970, 380);
             this.spinEdit6.Name = "spinEdit6";
             this.spinEdit6.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinEdit6.Properties.Appearance.Options.UseFont = true;
             this.spinEdit6.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit6.Properties.DisplayFormat.FormatString = "#.000 VNĐ";
+            this.spinEdit6.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.spinEdit6.Properties.Increment = new decimal(new int[] {
-            10000,
+            10,
             0,
             0,
             0});
-            this.spinEdit6.Properties.MaxValue = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.spinEdit6.Size = new System.Drawing.Size(219, 38);
+            this.spinEdit6.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
+            this.spinEdit6.Size = new System.Drawing.Size(258, 38);
             this.spinEdit6.StyleController = this.layoutControl2;
             this.spinEdit6.TabIndex = 10;
             // 
             // spinEdit5
             // 
             this.spinEdit5.EditValue = new decimal(new int[] {
-            0,
+            10,
             0,
             0,
             0});
-            this.spinEdit5.Location = new System.Drawing.Point(837, 368);
+            this.spinEdit5.Location = new System.Drawing.Point(970, 424);
             this.spinEdit5.Name = "spinEdit5";
             this.spinEdit5.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinEdit5.Properties.Appearance.Options.UseFont = true;
             this.spinEdit5.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit5.Properties.DisplayFormat.FormatString = "#.000 VNĐ";
+            this.spinEdit5.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.spinEdit5.Properties.Increment = new decimal(new int[] {
-            10000,
+            10,
             0,
             0,
             0});
-            this.spinEdit5.Properties.MaxValue = new decimal(new int[] {
-            1000000000,
-            0,
-            0,
-            0});
-            this.spinEdit5.Size = new System.Drawing.Size(219, 38);
+            this.spinEdit5.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
+            this.spinEdit5.Size = new System.Drawing.Size(258, 38);
             this.spinEdit5.StyleController = this.layoutControl2;
             this.spinEdit5.TabIndex = 11;
             // 
@@ -362,20 +359,17 @@
             this.layoutControlItem16,
             this.layoutControlItem10,
             this.emptySpaceItem1,
-            this.item3,
-            this.item2,
             this.layoutControlItem12,
-            this.layoutControlItem1,
-            this.simpleLabelItem7,
             this.layoutControlItem4,
-            this.item4,
-            this.simpleLabelItem9,
-            this.simpleLabelItem6,
-            this.simpleLabelItem8,
+            this.item2,
+            this.item3,
             this.emptySpaceItem2,
-            this.simpleLabelItem5,
             this.emptySpaceItem3,
-            this.simpleLabelItem4});
+            this.emptySpaceItem5,
+            this.emptySpaceItem6,
+            this.emptySpaceItem7,
+            this.item4,
+            this.layoutControlItem1});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Size = new System.Drawing.Size(1244, 616);
@@ -432,14 +426,14 @@
             this.layoutControlItem13.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem13.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem13.Control = this.memoEdit2;
-            this.layoutControlItem13.Location = new System.Drawing.Point(0, 396);
+            this.layoutControlItem13.Location = new System.Drawing.Point(0, 484);
             this.layoutControlItem13.Name = "layoutControlItem5";
             this.layoutControlItem13.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem13.OptionsPrint.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem13.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem13.OptionsPrint.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem13.Padding = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.layoutControlItem13.Size = new System.Drawing.Size(1218, 184);
+            this.layoutControlItem13.Size = new System.Drawing.Size(1218, 81);
             this.layoutControlItem13.Spacing = new DevExpress.XtraLayout.Utils.Padding(1, 1, 1, 1);
             this.layoutControlItem13.Text = "Ghi chú";
             this.layoutControlItem13.TextLocation = DevExpress.Utils.Locations.Top;
@@ -487,21 +481,21 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 580);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 565);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1218, 10);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1218, 25);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // item3
             // 
             this.item3.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.item3.AppearanceItemCaption.Options.UseFont = true;
-            this.item3.Control = this.spinEdit4;
+            this.item3.Control = this.spinEditPhantramgiamgiasinhnhat;
             this.item3.CustomizationFormText = "Phần trăm giảm giá tối đa";
-            this.item3.Location = new System.Drawing.Point(0, 220);
+            this.item3.Location = new System.Drawing.Point(0, 244);
             this.item3.Name = "item3";
             this.item3.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 25, 3);
-            this.item3.Size = new System.Drawing.Size(419, 88);
+            this.item3.Size = new System.Drawing.Size(553, 88);
             this.item3.Text = "Phần trăm giảm giá sinh nhật";
             this.item3.TextSize = new System.Drawing.Size(346, 32);
             // 
@@ -511,10 +505,10 @@
             this.item2.AppearanceItemCaption.Options.UseFont = true;
             this.item2.Control = this.spinEdit3;
             this.item2.CustomizationFormText = "Phần trăm giảm giá tối đa";
-            this.item2.Location = new System.Drawing.Point(0, 308);
+            this.item2.Location = new System.Drawing.Point(0, 364);
             this.item2.Name = "item2";
             this.item2.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 25, 3);
-            this.item2.Size = new System.Drawing.Size(419, 88);
+            this.item2.Size = new System.Drawing.Size(553, 88);
             this.item2.Text = "Phần trăm giảm giá";
             this.item2.TextLocation = DevExpress.Utils.Locations.Left;
             this.item2.TextSize = new System.Drawing.Size(346, 32);
@@ -525,14 +519,14 @@
             this.layoutControlItem12.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem12.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem12.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem12.Control = this.spinEdit2;
-            this.layoutControlItem12.Location = new System.Drawing.Point(546, 220);
+            this.layoutControlItem12.Control = this.spinEditTien;
+            this.layoutControlItem12.Location = new System.Drawing.Point(679, 244);
             this.layoutControlItem12.Name = "layoutControlItem9";
             this.layoutControlItem12.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem12.OptionsPrint.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem12.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem12.OptionsPrint.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem12.Size = new System.Drawing.Size(500, 44);
+            this.layoutControlItem12.Size = new System.Drawing.Size(539, 44);
             this.layoutControlItem12.Text = "Số tiền giảm giá tối thiểu";
             this.layoutControlItem12.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem12.TextLocation = DevExpress.Utils.Locations.Left;
@@ -544,25 +538,13 @@
             this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem1.Control = this.spinEdit1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(546, 264);
+            this.layoutControlItem1.Location = new System.Drawing.Point(679, 288);
             this.layoutControlItem1.Name = "item1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(500, 44);
+            this.layoutControlItem1.Size = new System.Drawing.Size(539, 44);
             this.layoutControlItem1.Text = "Số tiền giảm giá tối đa";
             this.layoutControlItem1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(270, 32);
             this.layoutControlItem1.TextToControlDistance = 5;
-            // 
-            // simpleLabelItem7
-            // 
-            this.simpleLabelItem7.AllowHotTrack = false;
-            this.simpleLabelItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleLabelItem7.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem7.Location = new System.Drawing.Point(1046, 264);
-            this.simpleLabelItem7.Name = "simpleLabelItem7";
-            this.simpleLabelItem7.Size = new System.Drawing.Size(172, 44);
-            this.simpleLabelItem7.Text = "VNĐ";
-            this.simpleLabelItem7.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.simpleLabelItem7.TextSize = new System.Drawing.Size(47, 31);
             // 
             // layoutControlItem4
             // 
@@ -570,13 +552,13 @@
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.Control = this.spinEdit6;
             this.layoutControlItem4.CustomizationFormText = "Phần trăm giảm giá tối thiểu";
-            this.layoutControlItem4.Location = new System.Drawing.Point(546, 308);
+            this.layoutControlItem4.Location = new System.Drawing.Point(679, 364);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F);
             this.layoutControlItem4.OptionsPrint.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem4.OptionsPrint.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.OptionsPrint.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem4.Size = new System.Drawing.Size(500, 44);
+            this.layoutControlItem4.Size = new System.Drawing.Size(539, 44);
             this.layoutControlItem4.Text = "Số tiền giảm giá tối thiểu";
             this.layoutControlItem4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
@@ -589,89 +571,13 @@
             this.item4.AppearanceItemCaption.Options.UseFont = true;
             this.item4.Control = this.spinEdit5;
             this.item4.CustomizationFormText = "Phần trăm giảm giá tối đa";
-            this.item4.Location = new System.Drawing.Point(546, 352);
+            this.item4.Location = new System.Drawing.Point(679, 408);
             this.item4.Name = "item4";
-            this.item4.Size = new System.Drawing.Size(500, 44);
+            this.item4.Size = new System.Drawing.Size(539, 44);
             this.item4.Text = "Số tiền giảm giá tối đa";
             this.item4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.item4.TextSize = new System.Drawing.Size(270, 32);
             this.item4.TextToControlDistance = 5;
-            // 
-            // simpleLabelItem9
-            // 
-            this.simpleLabelItem9.AllowHotTrack = false;
-            this.simpleLabelItem9.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleLabelItem9.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem9.Location = new System.Drawing.Point(1046, 352);
-            this.simpleLabelItem9.Name = "simpleLabelItem9";
-            this.simpleLabelItem9.Size = new System.Drawing.Size(172, 44);
-            this.simpleLabelItem9.Text = "VNĐ";
-            this.simpleLabelItem9.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.simpleLabelItem9.TextSize = new System.Drawing.Size(47, 31);
-            // 
-            // simpleLabelItem6
-            // 
-            this.simpleLabelItem6.AllowHotTrack = false;
-            this.simpleLabelItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleLabelItem6.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem6.Location = new System.Drawing.Point(1046, 220);
-            this.simpleLabelItem6.Name = "simpleLabelItem6";
-            this.simpleLabelItem6.Size = new System.Drawing.Size(172, 44);
-            this.simpleLabelItem6.Text = "VNĐ";
-            this.simpleLabelItem6.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.simpleLabelItem6.TextSize = new System.Drawing.Size(47, 31);
-            // 
-            // simpleLabelItem8
-            // 
-            this.simpleLabelItem8.AllowHotTrack = false;
-            this.simpleLabelItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleLabelItem8.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem8.Location = new System.Drawing.Point(1046, 308);
-            this.simpleLabelItem8.Name = "simpleLabelItem8";
-            this.simpleLabelItem8.Size = new System.Drawing.Size(172, 44);
-            this.simpleLabelItem8.Text = "VNĐ";
-            this.simpleLabelItem8.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.simpleLabelItem8.TextSize = new System.Drawing.Size(47, 31);
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(470, 220);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(76, 88);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // simpleLabelItem5
-            // 
-            this.simpleLabelItem5.AllowHotTrack = false;
-            this.simpleLabelItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleLabelItem5.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem5.Location = new System.Drawing.Point(419, 220);
-            this.simpleLabelItem5.Name = "simpleLabelItem5";
-            this.simpleLabelItem5.Size = new System.Drawing.Size(51, 88);
-            this.simpleLabelItem5.Text = "%";
-            this.simpleLabelItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.simpleLabelItem5.TextSize = new System.Drawing.Size(22, 37);
-            // 
-            // emptySpaceItem3
-            // 
-            this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(470, 308);
-            this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(76, 88);
-            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // simpleLabelItem4
-            // 
-            this.simpleLabelItem4.AllowHotTrack = false;
-            this.simpleLabelItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleLabelItem4.AppearanceItemCaption.Options.UseFont = true;
-            this.simpleLabelItem4.Location = new System.Drawing.Point(419, 308);
-            this.simpleLabelItem4.Name = "simpleLabelItem4";
-            this.simpleLabelItem4.Size = new System.Drawing.Size(51, 88);
-            this.simpleLabelItem4.Text = "%";
-            this.simpleLabelItem4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
-            this.simpleLabelItem4.TextSize = new System.Drawing.Size(22, 37);
             // 
             // wbntEmpty
             // 
@@ -711,6 +617,46 @@
             this.simpleLabelItem3.Size = new System.Drawing.Size(0, 0);
             this.simpleLabelItem3.TextSize = new System.Drawing.Size(50, 20);
             // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 332);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(1218, 32);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem3
+            // 
+            this.emptySpaceItem3.AllowHotTrack = false;
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 220);
+            this.emptySpaceItem3.Name = "emptySpaceItem3";
+            this.emptySpaceItem3.Size = new System.Drawing.Size(1218, 24);
+            this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem5
+            // 
+            this.emptySpaceItem5.AllowHotTrack = false;
+            this.emptySpaceItem5.Location = new System.Drawing.Point(0, 452);
+            this.emptySpaceItem5.Name = "emptySpaceItem5";
+            this.emptySpaceItem5.Size = new System.Drawing.Size(1218, 32);
+            this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem6
+            // 
+            this.emptySpaceItem6.AllowHotTrack = false;
+            this.emptySpaceItem6.Location = new System.Drawing.Point(553, 244);
+            this.emptySpaceItem6.Name = "emptySpaceItem6";
+            this.emptySpaceItem6.Size = new System.Drawing.Size(126, 88);
+            this.emptySpaceItem6.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem7
+            // 
+            this.emptySpaceItem7.AllowHotTrack = false;
+            this.emptySpaceItem7.Location = new System.Drawing.Point(553, 364);
+            this.emptySpaceItem7.Name = "emptySpaceItem7";
+            this.emptySpaceItem7.Size = new System.Drawing.Size(126, 88);
+            this.emptySpaceItem7.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // ThemLoaiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -728,9 +674,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditTien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit4.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEditPhantramgiamgiasinhnhat.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit6.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit5.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
@@ -745,17 +691,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.item2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.item4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -767,7 +710,7 @@
         private DevExpress.XtraEditors.TextEdit textEdit6;
         private DevExpress.XtraEditors.TextEdit textEdit7;
         private DevExpress.XtraEditors.TextEdit textEdit8;
-        private DevExpress.XtraEditors.SpinEdit spinEdit2;
+        private DevExpress.XtraEditors.SpinEdit spinEditTien;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
@@ -782,21 +725,18 @@
         private DevExpress.XtraEditors.SpinEdit spinEdit3;
         private DevExpress.XtraLayout.LayoutControlItem item2;
         private DevExpress.XtraEditors.MemoEdit memoEdit2;
-        private DevExpress.XtraEditors.SpinEdit spinEdit4;
+        private DevExpress.XtraEditors.SpinEdit spinEditPhantramgiamgiasinhnhat;
         private DevExpress.XtraLayout.LayoutControlItem item3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraEditors.SpinEdit spinEdit6;
         private DevExpress.XtraEditors.SpinEdit spinEdit5;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem item4;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem5;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem4;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem6;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem7;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem8;
-        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem3;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem6;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem7;
     }
 }
