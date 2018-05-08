@@ -91,6 +91,8 @@
             this.PageThuephong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.thuePhong1 = new GUI.folderTinhTrangPhong.ThuePhong();
+            this.PageXemphong = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.xemPhong1 = new GUI.folderTinhTrangPhong.XemPhong();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
@@ -100,6 +102,7 @@
             this.TinhtrangPagecontrol.SuspendLayout();
             this.PageTinhtrang.SuspendLayout();
             this.PageThuephong.SuspendLayout();
+            this.PageXemphong.SuspendLayout();
             this.SuspendLayout();
             // 
             // colMaPhong
@@ -208,6 +211,7 @@
             this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileControl2.Position = 6;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);
@@ -628,12 +632,14 @@
             // 
             this.TinhtrangPagecontrol.Controls.Add(this.PageTinhtrang);
             this.TinhtrangPagecontrol.Controls.Add(this.PageThuephong);
+            this.TinhtrangPagecontrol.Controls.Add(this.PageXemphong);
             this.TinhtrangPagecontrol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TinhtrangPagecontrol.Location = new System.Drawing.Point(3, 3);
             this.TinhtrangPagecontrol.Name = "TinhtrangPagecontrol";
             this.TinhtrangPagecontrol.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageTinhtrang,
-            this.PageThuephong});
+            this.PageThuephong,
+            this.PageXemphong});
             this.TinhtrangPagecontrol.SelectedPage = this.PageTinhtrang;
             this.TinhtrangPagecontrol.Size = new System.Drawing.Size(1110, 662);
             this.TinhtrangPagecontrol.TabIndex = 5;
@@ -678,6 +684,21 @@
             this.thuePhong1.Size = new System.Drawing.Size(1110, 662);
             this.thuePhong1.TabIndex = 5;
             // 
+            // PageXemphong
+            // 
+            this.PageXemphong.Caption = "PageXemphong";
+            this.PageXemphong.Controls.Add(this.xemPhong1);
+            this.PageXemphong.Name = "PageXemphong";
+            this.PageXemphong.Size = new System.Drawing.Size(1110, 662);
+            // 
+            // xemPhong1
+            // 
+            this.xemPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xemPhong1.Location = new System.Drawing.Point(0, 0);
+            this.xemPhong1.Name = "xemPhong1";
+            this.xemPhong1.Size = new System.Drawing.Size(1110, 662);
+            this.xemPhong1.TabIndex = 0;
+            // 
             // tileGroup3
             // 
             this.tileGroup3.Name = "tileGroup3";
@@ -703,6 +724,7 @@
             this.PageTinhtrang.ResumeLayout(false);
             this.PageTinhtrang.PerformLayout();
             this.PageThuephong.ResumeLayout(false);
+            this.PageXemphong.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -738,5 +760,7 @@
         private DevExpress.XtraEditors.TileItem tileRented;
         private DevExpress.XtraGrid.Columns.TileViewColumn colTenLoaiPhong;
         private DevExpress.XtraEditors.TileGroup grpLoaiPhong;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageXemphong;
+        private folderTinhTrangPhong.XemPhong xemPhong1;
     }
 }

@@ -36,7 +36,8 @@ namespace GUI.TinhTrangPhong
                 }
                 case "Xem phòng":
                     {
-                        FlyoutDialog.Show(this.FindForm(), new XemPhong());
+                        //FlyoutDialog.Show(this.FindForm(), new XemPhong());
+                        this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
                         break;
                     }
                 default:
