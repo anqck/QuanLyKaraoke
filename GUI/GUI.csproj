@@ -127,6 +127,12 @@
     <Compile Include="folderDichVu\ThemLoaiDichVu.Designer.cs">
       <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderKhachHang\ChonKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhachHang\ChonKhachHang.Designer.cs">
+      <DependentUpon>ChonKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderKhachHang\KhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -162,6 +168,18 @@
     </Compile>
     <Compile Include="folderNhanVien\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderNhanVien\SuaNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderNhanVien\SuaNhanVien.Designer.cs">
+      <DependentUpon>SuaNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderNhanVien\ThemNhanVien.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderNhanVien\ThemNhanVien.Designer.cs">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="folderQuanLyPhong\QuanLyPhong.cs">
       <SubType>UserControl</SubType>
@@ -232,6 +250,9 @@
     <EmbeddedResource Include="folderDichVu\ThemLoaiDichVu.resx">
       <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderKhachHang\ChonKhachHang.resx">
+      <DependentUpon>ChonKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +270,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="folderNhanVien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderNhanVien\SuaNhanVien.resx">
+      <DependentUpon>SuaNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderNhanVien\ThemNhanVien.resx">
+      <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\QuanLyPhong.resx">
       <DependentUpon>QuanLyPhong.cs</DependentUpon>

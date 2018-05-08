@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraBars.Docking2010.Customization;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -24,6 +25,11 @@ namespace GUI.folderTinhTrangPhong
             {
                 //tat cai dialog
             }
+        }
+
+        private void bntChonKH_Click(object sender, EventArgs e)
+        {
+            FlyoutDialog.Show(this.FindForm(), new folderKhachHang.ChonKhachHang());
         }
     }
 }
