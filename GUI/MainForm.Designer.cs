@@ -51,6 +51,8 @@
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup3;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem6;
+        private System.Windows.Forms.Timer timer1;
+        private System.ComponentModel.IContainer components;
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
 }

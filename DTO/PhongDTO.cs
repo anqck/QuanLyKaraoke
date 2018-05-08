@@ -24,6 +24,15 @@ namespace DTO
             MaTinhTrangPhong = -1;
         }
 
+        public PhongDTO(int maPhong, string tenPhong, int maLoaiPhong)
+        {
+            MaPhong = maPhong;
+            TenPhong = tenPhong;
+            MaLoaiPhong = maLoaiPhong;
+            Tang = "";
+            GhiChu = "";
+            MaTinhTrangPhong = -1;
+        }
         public PhongDTO(int maPhong, string tenPhong, int maLoaiPhong, string tang,string ghiChu, int maTinhTrangPhong)
         {
             MaPhong = maPhong;

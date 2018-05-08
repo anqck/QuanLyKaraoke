@@ -54,6 +54,7 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement6 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement7 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement8 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement9 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
@@ -67,6 +68,7 @@
             this.colTenPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTenLoaiPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colThoiGianThue = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -94,6 +96,7 @@
             this.PageXemphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.xemPhong1 = new GUI.folderTinhTrangPhong.XemPhong();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
+            this.colMaTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -144,6 +147,15 @@
             this.colTenLoaiPhong.Name = "colTenLoaiPhong";
             this.colTenLoaiPhong.Visible = true;
             this.colTenLoaiPhong.VisibleIndex = 4;
+            // 
+            // colThoiGianThue
+            // 
+            this.colThoiGianThue.Caption = "Thời Gian Thuê";
+            this.colThoiGianThue.FieldName = "colThoiGianThue";
+            this.colThoiGianThue.Name = "colThoiGianThue";
+            this.colThoiGianThue.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.colThoiGianThue.Visible = true;
+            this.colThoiGianThue.VisibleIndex = 5;
             // 
             // labelTitle
             // 
@@ -362,7 +374,9 @@
             this.colTenPhong,
             this.colTinhTrangPhong,
             this.colTang,
-            this.colTenLoaiPhong});
+            this.colTenLoaiPhong,
+            this.colThoiGianThue,
+            this.colMaTinhTrangPhong});
             this.tileView1.ColumnSet.GroupColumn = this.colTang;
             this.tileView1.FocusBorderColor = System.Drawing.Color.White;
             this.tileView1.GridControl = this.gridControl;
@@ -446,36 +460,40 @@
             tileViewItemElement5.Text = "colTinhTrangPhong";
             tileViewItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement6.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileViewItemElement6.Appearance.Normal.ForeColor = System.Drawing.Color.Red;
+            tileViewItemElement6.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             tileViewItemElement6.Appearance.Normal.Options.UseFont = true;
             tileViewItemElement6.Appearance.Normal.Options.UseForeColor = true;
+            tileViewItemElement6.Column = this.colTenLoaiPhong;
             tileViewItemElement6.ColumnIndex = 2;
             tileViewItemElement6.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement6.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement6.RowIndex = 4;
-            tileViewItemElement6.Text = "colThoiGianThue";
+            tileViewItemElement6.RowIndex = 3;
+            tileViewItemElement6.Text = "colTenLoaiPhong";
             tileViewItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement7.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tileViewItemElement7.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             tileViewItemElement7.Appearance.Normal.Options.UseFont = true;
             tileViewItemElement7.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement7.Column = this.colTenLoaiPhong;
-            tileViewItemElement7.ColumnIndex = 2;
+            tileViewItemElement7.ColumnIndex = 1;
             tileViewItemElement7.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement7.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement7.RowIndex = 3;
-            tileViewItemElement7.Text = "colTenLoaiPhong";
+            tileViewItemElement7.Text = "LOẠI PHÒNG";
             tileViewItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            tileViewItemElement8.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            tileViewItemElement8.Appearance.Normal.Options.UseFont = true;
-            tileViewItemElement8.Appearance.Normal.Options.UseForeColor = true;
-            tileViewItemElement8.ColumnIndex = 1;
+            tileViewItemElement8.Column = this.colThoiGianThue;
+            tileViewItemElement8.ColumnIndex = 2;
             tileViewItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement8.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement8.RowIndex = 3;
-            tileViewItemElement8.Text = "LOẠI PHÒNG";
+            tileViewItemElement8.RowIndex = 4;
+            tileViewItemElement8.Text = "tileViewColumn1";
             tileViewItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement9.ColumnIndex = 1;
+            tileViewItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement9.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement9.Name = "element1";
+            tileViewItemElement9.RowIndex = 4;
+            tileViewItemElement9.Text = "element1";
+            tileViewItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileView1.TileTemplate.Add(tileViewItemElement1);
             this.tileView1.TileTemplate.Add(tileViewItemElement2);
             this.tileView1.TileTemplate.Add(tileViewItemElement3);
@@ -484,7 +502,9 @@
             this.tileView1.TileTemplate.Add(tileViewItemElement6);
             this.tileView1.TileTemplate.Add(tileViewItemElement7);
             this.tileView1.TileTemplate.Add(tileViewItemElement8);
+            this.tileView1.TileTemplate.Add(tileViewItemElement9);
             this.tileView1.ItemPress += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemPress);
+            this.tileView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.tileView1_CustomUnboundColumnData);
             // 
             // colTang
             // 
@@ -620,8 +640,8 @@
             // 
             this.wbntTinhtrangphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntTinhtrangphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thuê phòng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xem phòng", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thuê phòng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thuê phòng", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xem phòng", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xem phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton()});
@@ -710,6 +730,14 @@
             // 
             this.tileGroup3.Name = "tileGroup3";
             // 
+            // colMaTinhTrangPhong
+            // 
+            this.colMaTinhTrangPhong.Caption = "Mã Tình Trạng Phòng";
+            this.colMaTinhTrangPhong.FieldName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
+            this.colMaTinhTrangPhong.Visible = true;
+            this.colMaTinhTrangPhong.VisibleIndex = 6;
+            // 
             // TinhTrangPhong
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -769,5 +797,7 @@
         private DevExpress.XtraEditors.TileGroup grpLoaiPhong;
         private DevExpress.XtraBars.Navigation.NavigationPage PageXemphong;
         private folderTinhTrangPhong.XemPhong xemPhong1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colThoiGianThue;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colMaTinhTrangPhong;
     }
 }

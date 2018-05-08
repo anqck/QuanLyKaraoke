@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DTO;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -17,6 +18,12 @@ namespace GUI.folderTinhTrangPhong
         {
             InitializeComponent();
         }
+
+        public ThuePhong(PhongDTO phong)
+        {
+            InitializeComponent();
+        }
+
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
