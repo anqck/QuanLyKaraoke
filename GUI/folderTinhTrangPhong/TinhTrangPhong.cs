@@ -10,27 +10,29 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Customization;
 using GUI.folderTinhTrangPhong;
+using DTO;
 
 namespace GUI.TinhTrangPhong
 {
     public partial class TinhTrangPhong : DevExpress.XtraEditors.XtraUserControl
     {
+        Dictionary<int,ThuePhongDTO> listPhongDangThue;
         public TinhTrangPhong()
         {
             InitializeComponent();
 
-            //  splitContainerControl.LookAndFeel.SkinName = "mySkin";
-            
         }
 
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            switch (e.Button.Properties.Caption)
+            switch (e.Button.Properties.Tag.ToString())
            {
                 case "Thuê phòng":
                 {
-                        FlyoutDialog.Show(this.FindForm(), new ThuePhong());
+                        DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"),(int) tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"));
+                       
+                        FlyoutDialog.Show(this.FindForm(), new ThuePhong(phongDTO));
                         break;
                 }
                 case "Xem phòng":
@@ -60,12 +62,18 @@ namespace GUI.TinhTrangPhong
             {
                 gridControl.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
 
+                //Tính giờ
+                listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
+
+                  
+
                 tileAll.Elements[1].Text = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong().Rows.Count.ToString();
 
                 grpLoaiPhong.Items.Clear();
                 foreach (DataRow row in DAL.LoaiPhongDAL.LayTatCaLoaiPhong().Rows)
                 {
                     grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
+
                 }
 
                 List<String> listLoaiPhongChecked = new List<string>();
@@ -75,6 +83,10 @@ namespace GUI.TinhTrangPhong
                         listLoaiPhongChecked.Add(i.Name);
                 }
                 strFilterLoaiPhong = BUS.TinhTrangPhongBUS.GetFilterString_LoaiPhong(listLoaiPhongChecked);
+
+                
+
+                
             }
             catch (Exception x)
             {
@@ -215,5 +227,35 @@ namespace GUI.TinhTrangPhong
             else
                 tileControl2.SelectedItem = preSelect;
         }
+
+        List<string> timeCount = new List<string>();
+
+        private void tileView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            if (e.Column.FieldName == "colThoiGianThue")
+            {
+                if (e.IsGetData)
+                    if (listPhongDangThue.ContainsKey((int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]) && (int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaTinhTrangPhong"] == 1)
+                    {
+                        e.Value = (DateTime.Now - listPhongDangThue[(int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]].GioThuePhong).ToString("hh':'mm':'ss''");
+                    }
+                    else
+                        e.Value = "";
+
+                if (e.IsSetData);
+            }
+        }
+
+        #region Time
+        internal void UpdateTime()
+        {
+            if (listPhongDangThue == null)
+                return;
+            
+            tileView1.RefreshData();
+
+
+        }
+        #endregion
     }
 }
