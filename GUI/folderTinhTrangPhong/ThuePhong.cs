@@ -8,11 +8,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
-<<<<<<< HEAD
 using DTO;
-=======
 using DevExpress.XtraBars.Docking2010.Customization;
->>>>>>> ChonKH
+
 
 namespace GUI.folderTinhTrangPhong
 {
