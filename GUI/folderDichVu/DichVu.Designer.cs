@@ -28,18 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.Columns.GridColumn colLoaiPhong;
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions18 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions19 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions20 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions21 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions17 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions22 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions23 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions24 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.DichVuPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageDichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -50,26 +49,21 @@
             this.tileItem9 = new DevExpress.XtraEditors.TileItem();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.wbntDichvu = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.PageThemdichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntBackThemKH = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.themDichVu1 = new GUI.folderDichVu.ThemDichVu();
             this.PageSuadichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.windowsUIButtonPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.suaDichVu1 = new GUI.folderDichVu.SuaDichVu();
             this.PageLoaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.loaiDichVu1 = new GUI.folderDichVu.LoaiDichVu();
             this.PageThemloaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.windowsUIButtonPanel4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.themDichVu1 = new GUI.folderDichVu.ThemDichVu();
-            this.suaDichVu1 = new GUI.folderDichVu.SuaDichVu();
-            this.loaiDichVu1 = new GUI.folderDichVu.LoaiDichVu();
             this.themLoaiDichVu1 = new GUI.folderDichVu.ThemLoaiDichVu();
-            colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DichVuPagecontrol)).BeginInit();
             this.DichVuPagecontrol.SuspendLayout();
             this.PageDichvu.SuspendLayout();
@@ -84,14 +78,6 @@
             this.PageLoaidichvu.SuspendLayout();
             this.PageThemloaidichvu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // colLoaiPhong
-            // 
-            colLoaiPhong.Caption = "Loại phòng";
-            colLoaiPhong.FieldName = "TenLoaiPhong";
-            colLoaiPhong.Name = "colLoaiPhong";
-            colLoaiPhong.Visible = true;
-            colLoaiPhong.VisibleIndex = 4;
             // 
             // DichVuPagecontrol
             // 
@@ -191,8 +177,8 @@
             this.tileItem2.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileItem2.AppearanceItem.Selected.Options.UseFont = true;
             this.tileItem2.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement7.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement7);
+            tileItemElement1.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement1);
             this.tileItem2.Id = 5;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem2.Name = "tileItem2";
@@ -213,8 +199,8 @@
             this.tileItem3.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileItem3.AppearanceItem.Selected.Options.UseFont = true;
             this.tileItem3.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement8.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement8);
+            tileItemElement2.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement2);
             this.tileItem3.Id = 7;
             this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem3.Name = "tileItem3";
@@ -235,8 +221,8 @@
             this.tileItem9.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileItem9.AppearanceItem.Selected.Options.UseFont = true;
             this.tileItem9.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement9.Text = "tileItem9";
-            this.tileItem9.Elements.Add(tileItemElement9);
+            tileItemElement3.Text = "tileItem9";
+            this.tileItem9.Elements.Add(tileItemElement3);
             this.tileItem9.Id = 8;
             this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem9.Name = "tileItem9";
@@ -256,46 +242,8 @@
             // 
             // gridView1
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaPhong,
-            this.colTenPhong,
-            this.colTinhTrangPhong,
-            this.colGhiChu,
-            colLoaiPhong});
             this.gridView1.GridControl = this.gridControl;
             this.gridView1.Name = "gridView1";
-            // 
-            // colMaPhong
-            // 
-            this.colMaPhong.Caption = "Mã Phòng";
-            this.colMaPhong.FieldName = "MaPhong";
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.Visible = true;
-            this.colMaPhong.VisibleIndex = 0;
-            // 
-            // colTenPhong
-            // 
-            this.colTenPhong.Caption = "Tên Phòng";
-            this.colTenPhong.FieldName = "TenPhong";
-            this.colTenPhong.Name = "colTenPhong";
-            this.colTenPhong.Visible = true;
-            this.colTenPhong.VisibleIndex = 1;
-            // 
-            // colTinhTrangPhong
-            // 
-            this.colTinhTrangPhong.Caption = "Tình trạng phòng";
-            this.colTinhTrangPhong.FieldName = "TinhTrangPhong";
-            this.colTinhTrangPhong.Name = "colTinhTrangPhong";
-            this.colTinhTrangPhong.Visible = true;
-            this.colTinhTrangPhong.VisibleIndex = 2;
-            // 
-            // colGhiChu
-            // 
-            this.colGhiChu.Caption = "Ghi chú";
-            this.colGhiChu.FieldName = "GhiChu";
-            this.colGhiChu.Name = "colGhiChu";
-            this.colGhiChu.Visible = true;
-            this.colGhiChu.VisibleIndex = 3;
             // 
             // labelTitle
             // 
@@ -316,11 +264,11 @@
             // 
             this.wbntDichvu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntDichvu.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm dịch vụ", true, windowsUIButtonImageOptions18, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa dịch vụ", true, windowsUIButtonImageOptions19, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm dịch vụ", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa dịch vụ", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Loại  dịch vụ", true, windowsUIButtonImageOptions20, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm loại  dịch vụ", true, windowsUIButtonImageOptions21, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Loại  dịch vụ", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm loại  dịch vụ", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntDichvu.Controls.Add(this.searchControl1);
             this.wbntDichvu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntDichvu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -357,15 +305,23 @@
             // wbntBackThemKH
             // 
             this.wbntBackThemKH.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions17.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions5.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntBackThemKH.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions17, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntBackThemKH.Location = new System.Drawing.Point(3, 3);
             this.wbntBackThemKH.Name = "wbntBackThemKH";
             this.wbntBackThemKH.Size = new System.Drawing.Size(56, 58);
             this.wbntBackThemKH.TabIndex = 3;
             this.wbntBackThemKH.Text = "windowsUIButtonPanel2";
             this.wbntBackThemKH.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBack_ButtonClick);
+            // 
+            // themDichVu1
+            // 
+            this.themDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.themDichVu1.Location = new System.Drawing.Point(0, 0);
+            this.themDichVu1.Name = "themDichVu1";
+            this.themDichVu1.Size = new System.Drawing.Size(1062, 671);
+            this.themDichVu1.TabIndex = 5;
             // 
             // PageSuadichvu
             // 
@@ -378,63 +334,15 @@
             // windowsUIButtonPanel2
             // 
             this.windowsUIButtonPanel2.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions22.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.windowsUIButtonPanel2.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions22, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel2.Location = new System.Drawing.Point(3, 3);
             this.windowsUIButtonPanel2.Name = "windowsUIButtonPanel2";
             this.windowsUIButtonPanel2.Size = new System.Drawing.Size(56, 58);
             this.windowsUIButtonPanel2.TabIndex = 3;
             this.windowsUIButtonPanel2.Text = "windowsUIButtonPanel2";
             this.windowsUIButtonPanel2.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBack_ButtonClick);
-            // 
-            // PageLoaidichvu
-            // 
-            this.PageLoaidichvu.Controls.Add(this.windowsUIButtonPanel1);
-            this.PageLoaidichvu.Controls.Add(this.loaiDichVu1);
-            this.PageLoaidichvu.Name = "PageLoaidichvu";
-            this.PageLoaidichvu.Size = new System.Drawing.Size(1062, 671);
-            // 
-            // windowsUIButtonPanel1
-            // 
-            this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions23.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions23, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(3, 3);
-            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(56, 58);
-            this.windowsUIButtonPanel1.TabIndex = 2;
-            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel2";
-            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBack_ButtonClick);
-            // 
-            // PageThemloaidichvu
-            // 
-            this.PageThemloaidichvu.Controls.Add(this.windowsUIButtonPanel4);
-            this.PageThemloaidichvu.Controls.Add(this.themLoaiDichVu1);
-            this.PageThemloaidichvu.Name = "PageThemloaidichvu";
-            this.PageThemloaidichvu.Size = new System.Drawing.Size(1062, 671);
-            // 
-            // windowsUIButtonPanel4
-            // 
-            this.windowsUIButtonPanel4.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions24.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.windowsUIButtonPanel4.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions24, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.windowsUIButtonPanel4.Location = new System.Drawing.Point(3, 3);
-            this.windowsUIButtonPanel4.Name = "windowsUIButtonPanel4";
-            this.windowsUIButtonPanel4.Size = new System.Drawing.Size(56, 58);
-            this.windowsUIButtonPanel4.TabIndex = 3;
-            this.windowsUIButtonPanel4.Text = "windowsUIButtonPanel2";
-            this.windowsUIButtonPanel4.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBack_ButtonClick);
-            // 
-            // themDichVu1
-            // 
-            this.themDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.themDichVu1.Location = new System.Drawing.Point(0, 0);
-            this.themDichVu1.Name = "themDichVu1";
-            this.themDichVu1.Size = new System.Drawing.Size(1062, 671);
-            this.themDichVu1.TabIndex = 5;
             // 
             // suaDichVu1
             // 
@@ -444,6 +352,27 @@
             this.suaDichVu1.Size = new System.Drawing.Size(1062, 671);
             this.suaDichVu1.TabIndex = 4;
             // 
+            // PageLoaidichvu
+            // 
+            this.PageLoaidichvu.Caption = "PageLoaidichvu";
+            this.PageLoaidichvu.Controls.Add(this.windowsUIButtonPanel1);
+            this.PageLoaidichvu.Controls.Add(this.loaiDichVu1);
+            this.PageLoaidichvu.Name = "PageLoaidichvu";
+            this.PageLoaidichvu.Size = new System.Drawing.Size(1062, 671);
+            // 
+            // windowsUIButtonPanel1
+            // 
+            this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.White;
+            windowsUIButtonImageOptions7.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(3, 3);
+            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(56, 58);
+            this.windowsUIButtonPanel1.TabIndex = 2;
+            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel2";
+            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBack_ButtonClick);
+            // 
             // loaiDichVu1
             // 
             this.loaiDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -451,6 +380,27 @@
             this.loaiDichVu1.Name = "loaiDichVu1";
             this.loaiDichVu1.Size = new System.Drawing.Size(1062, 671);
             this.loaiDichVu1.TabIndex = 3;
+            // 
+            // PageThemloaidichvu
+            // 
+            this.PageThemloaidichvu.Caption = "PageThemloaidichvu";
+            this.PageThemloaidichvu.Controls.Add(this.windowsUIButtonPanel4);
+            this.PageThemloaidichvu.Controls.Add(this.themLoaiDichVu1);
+            this.PageThemloaidichvu.Name = "PageThemloaidichvu";
+            this.PageThemloaidichvu.Size = new System.Drawing.Size(1062, 671);
+            // 
+            // windowsUIButtonPanel4
+            // 
+            this.windowsUIButtonPanel4.BackColor = System.Drawing.Color.White;
+            windowsUIButtonImageOptions8.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            this.windowsUIButtonPanel4.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.windowsUIButtonPanel4.Location = new System.Drawing.Point(3, 3);
+            this.windowsUIButtonPanel4.Name = "windowsUIButtonPanel4";
+            this.windowsUIButtonPanel4.Size = new System.Drawing.Size(56, 58);
+            this.windowsUIButtonPanel4.TabIndex = 3;
+            this.windowsUIButtonPanel4.Text = "windowsUIButtonPanel2";
+            this.windowsUIButtonPanel4.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBack_ButtonClick);
             // 
             // themLoaiDichVu1
             // 
@@ -497,10 +447,6 @@
         private DevExpress.XtraEditors.TileItem tileItem9;
         private DevExpress.XtraGrid.GridControl gridControl;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colTenPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colTinhTrangPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntDichvu;
         private DevExpress.XtraEditors.SearchControl searchControl1;

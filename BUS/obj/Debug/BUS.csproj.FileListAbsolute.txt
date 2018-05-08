@@ -4,3 +4,14 @@ C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.csproj
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.csproj.CoreCompileInputs.cache
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\BUS.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\BUS.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\DAL.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\DTO.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\MySql.Data.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\DAL.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\DTO.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\bin\Debug\MySql.Data.xml
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.csprojResolveAssemblyReference.cache
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUS\obj\Debug\BUS.pdb
