@@ -13,7 +13,7 @@ namespace BUS
             String res = "[TenLoaiPhong] = '" + listLoaiPhong[0] + "'" ;
             for(int i = 1; i< listLoaiPhong.Count; i++)
             {
-                res += "or [TenLoaiPhong] = '" + listLoaiPhong[i] + "'";
+                res += " or [TenLoaiPhong] = '" + listLoaiPhong[i] + "'";
             }
 
             return res;
