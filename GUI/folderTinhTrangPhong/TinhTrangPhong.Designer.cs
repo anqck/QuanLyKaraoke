@@ -208,11 +208,13 @@
             this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileControl2.Position = 6;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);
             this.tileControl2.TabIndex = 3;
             this.tileControl2.Text = "tileControl2";
+            this.tileControl2.SelectedItemChanged += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileControl2_SelectedItemChanged);
             this.tileControl2.ItemPress += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileControl2_ItemPress);
             // 
             // grpMacDinh
@@ -349,6 +351,9 @@
             this.tileView1.Appearance.EmptySpace.BorderColor = System.Drawing.Color.White;
             this.tileView1.Appearance.EmptySpace.Options.UseBackColor = true;
             this.tileView1.Appearance.EmptySpace.Options.UseBorderColor = true;
+            this.tileView1.Appearance.ItemSelected.BackColor = System.Drawing.Color.Fuchsia;
+            this.tileView1.Appearance.ItemSelected.BackColor2 = System.Drawing.Color.Fuchsia;
+            this.tileView1.Appearance.ItemSelected.Options.UseBackColor = true;
             this.tileView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaPhong,
             this.colTenPhong,
@@ -359,6 +364,8 @@
             this.tileView1.FocusBorderColor = System.Drawing.Color.White;
             this.tileView1.GridControl = this.gridControl;
             this.tileView1.Name = "tileView1";
+            this.tileView1.OptionsTiles.HighlightFocusedTileOnGridLoad = true;
+            this.tileView1.OptionsTiles.HighlightFocusedTileStyle = DevExpress.XtraGrid.Views.Tile.HighlightFocusedTileStyle.BorderAndContent;
             this.tileView1.OptionsTiles.IndentBetweenItems = 7;
             this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(422, 196);
             this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
@@ -474,6 +481,7 @@
             this.tileView1.TileTemplate.Add(tileViewItemElement6);
             this.tileView1.TileTemplate.Add(tileViewItemElement7);
             this.tileView1.TileTemplate.Add(tileViewItemElement8);
+            this.tileView1.ItemPress += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemPress);
             // 
             // colTang
             // 
