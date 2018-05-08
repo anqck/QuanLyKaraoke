@@ -96,7 +96,11 @@ namespace GUI
             this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
+<<<<<<< HEAD
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+=======
+            this.nhanVien1 = new GUI.folderNhanVien.NhanVien();
+>>>>>>> ChonKH
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -110,7 +114,6 @@ namespace GUI
             this.pageQuanlyphong.SuspendLayout();
             this.pageKhachhang.SuspendLayout();
             this.pageNhanvien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).BeginInit();
             this.pageDichvu.SuspendLayout();
             this.pageBaocao.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).BeginInit();
@@ -567,22 +570,9 @@ namespace GUI
             // pageNhanvien
             // 
             this.pageNhanvien.Caption = "pageNhanvien";
-            this.pageNhanvien.Controls.Add(this.buttonEdit1);
+            this.pageNhanvien.Controls.Add(this.nhanVien1);
             this.pageNhanvien.Name = "pageNhanvien";
             this.pageNhanvien.Size = new System.Drawing.Size(1280, 633);
-            // 
-            // buttonEdit1
-            // 
-            this.buttonEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonEdit1.EditValue = "NHÂN VIÊN";
-            this.buttonEdit1.Location = new System.Drawing.Point(0, 0);
-            this.buttonEdit1.Name = "buttonEdit1";
-            this.buttonEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEdit1.Properties.Appearance.Options.UseFont = true;
-            this.buttonEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit1.Size = new System.Drawing.Size(1280, 104);
-            this.buttonEdit1.TabIndex = 0;
             // 
             // pageDichvu
             // 
@@ -649,11 +639,21 @@ namespace GUI
             this.searchControl.Size = new System.Drawing.Size(315, 22);
             this.searchControl.TabIndex = 1;
             // 
+<<<<<<< HEAD
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+=======
+            // nhanVien1
+            // 
+            this.nhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhanVien1.Location = new System.Drawing.Point(0, 0);
+            this.nhanVien1.Name = "nhanVien1";
+            this.nhanVien1.Size = new System.Drawing.Size(1280, 633);
+            this.nhanVien1.TabIndex = 0;
+>>>>>>> ChonKH
             // 
             // MainForm
             // 
@@ -677,7 +677,6 @@ namespace GUI
             this.pageQuanlyphong.ResumeLayout(false);
             this.pageKhachhang.ResumeLayout(false);
             this.pageNhanvien.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit1.Properties)).EndInit();
             this.pageDichvu.ResumeLayout(false);
             this.pageBaocao.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).EndInit();
