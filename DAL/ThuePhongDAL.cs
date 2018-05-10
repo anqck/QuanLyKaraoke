@@ -58,5 +58,9 @@ namespace DAL
                 return null;
             }
         }
+        public static bool LuuThongTinThuePhong(ThuePhongDTO thuePhongDTO)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

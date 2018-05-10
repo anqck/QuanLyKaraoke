@@ -41,5 +41,27 @@ namespace DAL
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.khachhang, quanlykaraoke.loaikhachhang where quanlykaraoke.khachhang.MaLoaiKH = quanlykaraoke.loaikhachhang.MaLoaiKH ;");
         }
+
+        public static Dictionary<int, KhachHangDTO> LayTatCaKhachHang()
+        {
+            try
+            {
+                Dictionary<int, KhachHangDTO> res = new Dictionary<int, KhachHangDTO>();
+
+                DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.khachhang;");
+                foreach (DataRow row in dt.Rows)
+                {
+                    KhachHangDTO thuePhongDTO = new KhachHangDTO((int)row["MaKH"], row["TenKH"].ToString(), row["CMND"].ToString(), row["SDT"].ToString(), row["DiaChi"].ToString(), (int)row["MaLoaiKH"],(int)row["DiemTichLuy"]);
+                    res.Add(thuePhongDTO.MaKH, thuePhongDTO);
+                }
+
+                return res;
+
+            }
+            catch (Exception e)
+            {
+                return null;
+            }
+        }
     }
 }

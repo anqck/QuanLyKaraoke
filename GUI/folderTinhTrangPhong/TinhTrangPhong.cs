@@ -224,8 +224,7 @@ namespace GUI.TinhTrangPhong
             else
                 tileControl2.SelectedItem = preSelect;
         }
-
-        List<string> timeCount = new List<string>();
+        
 
       
 
@@ -294,7 +293,7 @@ namespace GUI.TinhTrangPhong
         {
             DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"));
 
-            FlyoutDialog.Show(this.FindForm(), new ThuePhong(phongDTO));
+            FlyoutDialog.Show(this.FindForm(), new ThuePhong(phongDTO, OnThuePhongSuccess));
          
         }
         void OnClickBtnXemPhong(object sender, EventArgs e)
@@ -319,6 +318,14 @@ namespace GUI.TinhTrangPhong
         {
             
         }
+        #endregion
+
+        #region CallBack
+        void OnThuePhongSuccess()
+        {
+            
+        }
+
         #endregion
     }
 }

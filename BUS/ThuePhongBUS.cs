@@ -18,5 +18,14 @@ namespace BUS
         {
             return DAL.ThuePhongDAL.LayThongTinPhongDangDuocThue();
         }
+
+        public static bool LuuThongTinThuePhong(ThuePhongDTO thuePhongDTO)
+        {
+            return DAL.ThuePhongDAL.LuuThongTinThuePhong(thuePhongDTO);
+        }
+        public static int PhatSinhMaThuePhong()
+        {
+            return DAL.ThuePhongDAL.PhatSinhMaThuePhong();
+        }
     }
 }
