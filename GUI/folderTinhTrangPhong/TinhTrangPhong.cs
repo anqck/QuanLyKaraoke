@@ -308,6 +308,12 @@ namespace GUI.TinhTrangPhong
         {
             
         }
+
+        private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            this.TinhtrangPagecontrol.SelectedPage = this.PageTinhtrang;
+        }
+
         void OnClickBtnThanhToan(object sender, EventArgs e)
         {
             
