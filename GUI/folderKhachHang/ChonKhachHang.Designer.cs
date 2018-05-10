@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,7 +37,6 @@
             this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiemTichLuy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.windowsUIButtonPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -51,10 +48,11 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 61);
+            this.gridControl1.Location = new System.Drawing.Point(5, 66);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1334, 649);
+            this.gridControl1.Padding = new System.Windows.Forms.Padding(5);
+            this.gridControl1.Size = new System.Drawing.Size(1324, 700);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -147,27 +145,14 @@
             this.colLoaiKhachHang.Visible = true;
             this.colLoaiKhachHang.VisibleIndex = 6;
             // 
-            // windowsUIButtonPanel2
-            // 
-            this.windowsUIButtonPanel2.BackColor = System.Drawing.Color.White;
-            this.windowsUIButtonPanel2.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Chọn", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.windowsUIButtonPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.windowsUIButtonPanel2.Location = new System.Drawing.Point(0, 710);
-            this.windowsUIButtonPanel2.Name = "windowsUIButtonPanel2";
-            this.windowsUIButtonPanel2.Size = new System.Drawing.Size(1334, 61);
-            this.windowsUIButtonPanel2.TabIndex = 14;
-            this.windowsUIButtonPanel2.Text = "windowsUIButtonPanel2";
-            // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.White;
             this.windowsUIButtonPanel1.Controls.Add(this.searchControl1);
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 0);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(5, 5);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1334, 61);
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1324, 61);
             this.windowsUIButtonPanel1.TabIndex = 15;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             // 
@@ -185,7 +170,7 @@
             this.searchControl1.Properties.NullValuePrompt = "Nhập vào để tìm kiếm...";
             this.searchControl1.Properties.ShowClearButton = false;
             this.searchControl1.Properties.ShowSearchButton = false;
-            this.searchControl1.Size = new System.Drawing.Size(919, 34);
+            this.searchControl1.Size = new System.Drawing.Size(909, 34);
             this.searchControl1.TabIndex = 0;
             // 
             // ChonKhachHang
@@ -196,8 +181,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gridControl1);
             this.Controls.Add(this.windowsUIButtonPanel1);
-            this.Controls.Add(this.windowsUIButtonPanel2);
             this.Name = "ChonKhachHang";
+            this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(1334, 771);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
@@ -210,7 +195,6 @@
         #endregion
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel2;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
