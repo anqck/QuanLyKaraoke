@@ -106,7 +106,9 @@
             this.searchControl1.Properties.Appearance.Options.UseFont = true;
             this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
+            new DevExpress.XtraEditors.Repository.SearchButton(),
+            new DevExpress.XtraEditors.Repository.MRUButton()});
+            this.searchControl1.Properties.ShowMRUButton = true;
             this.searchControl1.Size = new System.Drawing.Size(537, 34);
             this.searchControl1.TabIndex = 0;
             // 

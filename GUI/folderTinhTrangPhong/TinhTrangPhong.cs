@@ -21,29 +21,17 @@ namespace GUI.TinhTrangPhong
         {
             InitializeComponent();
 
+            btnThuePhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thuê phòng"];
+            btnThuePhong.Click += OnClickBtnThuePhong;
+
+            btnXemPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Xem phòng"];
+            btnXemPhong.Click += OnClickBtnXemPhong;
         }
 
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            switch (e.Button.Properties.Tag.ToString())
-           {
-                case "Thuê phòng":
-                {
-                        DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"),(int) tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"));
-                       
-                        FlyoutDialog.Show(this.FindForm(), new ThuePhong(phongDTO));
-                        break;
-                }
-                case "Xem phòng":
-                    {
-                        //FlyoutDialog.Show(this.FindForm(), new XemPhong());
-                        this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
-                        break;
-                    }
-                default:
-                    break;
-            }
+            
            
         }
 
@@ -230,6 +218,19 @@ namespace GUI.TinhTrangPhong
 
         List<string> timeCount = new List<string>();
 
+      
+
+        #region Time
+        internal void UpdateTime()
+        {
+            if (listPhongDangThue == null)
+                return;
+            
+            tileView1.RefreshData();
+
+
+        }
+
         private void tileView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             if (e.Column.FieldName == "colThoiGianThue")
@@ -242,24 +243,49 @@ namespace GUI.TinhTrangPhong
                     else
                         e.Value = "";
 
-                if (e.IsSetData);
+                if (e.IsSetData) ;
             }
         }
+
+        private void tileView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            switch(tileView1.GetFocusedRowCellValue(colTinhTrangPhong).ToString())
+            {
+                case "Còn trống":
+                    wbntTinhtrangphong.Buttons["Thuê phòng"].Properties.Visible = true;
+                    //wbntTinhtrangphong.Buttons["Thanh toán"].Properties.Visible = false;
+                    break;
+                case "Đang sử dụng":
+                    wbntTinhtrangphong.Buttons["Thuê phòng"].Properties.Visible = false;
+                    //wbntTinhtrangphong.Buttons["Chuyển pbhòng"].Properties.Visible = true;
+                    //wbntTinhtrangphong.Buttons["Thanh toán"].Properties.Visible = true;
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void SetVisibleWindowsUIButtonPanel(string grpName, bool value)
+        {
+
+        }
+
 
         public string ToCustomString(TimeSpan span)
         {
             return string.Format("{0}:{1}:{2}", span.Days * 24 + span.Hours, span.Minutes, span.Seconds);
         }
-
-        #region Time
-        internal void UpdateTime()
+        void OnClickBtnThuePhong(object sender, EventArgs e)
         {
-            if (listPhongDangThue == null)
-                return;
-            
-            tileView1.RefreshData();
+            DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"));
 
-
+            FlyoutDialog.Show(this.FindForm(), new ThuePhong(phongDTO));
+         
+        }
+        void OnClickBtnXemPhong(object sender, EventArgs e)
+        {
+            this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
         }
         #endregion
     }
