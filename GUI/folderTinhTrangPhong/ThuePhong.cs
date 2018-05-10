@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DTO;
 using DevExpress.XtraBars.Docking2010.Customization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using BUS;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -22,11 +23,21 @@ namespace GUI.folderTinhTrangPhong
             InitializeComponent();
 
             khachHang = null;
+
+            txtKhachHang.Properties.DataSource = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+            txtKhachHang.Properties.DisplayMember = "TenKH";
+            txtKhachHang.Properties.ValueMember = "MaKH";
+
+            txtGioVao.EditValue = DateTime.Now;
+            txtNgayVao.EditValue = DateTime.Now;
         }
 
-        public ThuePhong(PhongDTO phong)
+        public ThuePhong(PhongDTO phong) : this()
         {
-            InitializeComponent();
+            txtMaPhong.Text = phong.MaPhong.ToString();
+            txtTenPhong.Text = phong.TenPhong;
+            txtLoaiPhong.Text = LoaiPhongBUS.LayLoaiPhong(phong).TenLoaiPhong;
+      
         }
 
 
@@ -40,18 +51,48 @@ namespace GUI.folderTinhTrangPhong
 
         private void bntChonKH_Click(object sender, EventArgs e)
         {
+
             folderKhachHang.ChonKhachHang chonKhachHang = new folderKhachHang.ChonKhachHang();
-            switch(XtraDialog.Show(chonKhachHang, "Sign in", MessageBoxButtons.OKCancel))
+            XtraDialogArgs args = new XtraDialogArgs(caption: "Caption", content: chonKhachHang, buttons: new DialogResult[] { DialogResult.OK, DialogResult.Cancel });
+            args.Showing += Args_Showing;
+            args.Caption = "Default Text";
+            args.Buttons = new DialogResult[] { DialogResult.OK, DialogResult.Cancel };
+
+
+            switch (XtraDialog.Show(args))
             {
                 case DialogResult.OK:
                     khachHang = chonKhachHang.LayKhachHangDaChon();
+                    txtKhachHang.EditValue = khachHang.MaKH;
                     break;
                 case DialogResult.Cancel:
                     break;
                 default:
                     break;
             }
+           
+
+
             //FlyoutDialog.Show(this.FindForm(), new folderKhachHang.ChonKhachHang());
+        }
+
+        private void Args_Showing(object sender, XtraMessageShowingArgs e)
+        {
+            e.Form.Text = "Chọn khách hàng";
+            e.Buttons[DialogResult.OK].Text = "Chọn";
+            e.Buttons[DialogResult.Cancel].Text = "Hủy bỏ";
+        }
+
+        private void txtKhachHang_EditValueChanged(object sender, EventArgs e)
+        {
+            DevExpress.XtraGrid.Views.Grid.GridView view =
+
+            txtKhachHang.Properties.View as DevExpress.XtraGrid.Views.Grid.GridView;
+
+            object val = view.GetRowCellValue(view.FocusedRowHandle, "TenKH");
+            
         }
     }
 }
+
+
