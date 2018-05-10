@@ -83,7 +83,7 @@
             colLoaiPhong.Name = "colLoaiPhong";
             colLoaiPhong.Visible = true;
             colLoaiPhong.VisibleIndex = 4;
-            colLoaiPhong.Width = 119;
+            colLoaiPhong.Width = 190;
             // 
             // QuanlyPagecontrol
             // 
@@ -294,34 +294,44 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.BackColor = System.Drawing.Color.White;
             this.gridView1.Appearance.HeaderPanel.BackColor2 = System.Drawing.Color.White;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Teal;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Gray;
             this.gridView1.Appearance.HeaderPanel.Options.UseBackColor = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.ColumnPanelRowHeight = 50;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaPhong,
             this.colTenPhong,
             this.colTinhTrangPhong,
             this.colGhiChu,
             colLoaiPhong});
+            this.gridView1.DetailHeight = 50;
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AutoSelectAllInEditor = false;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsCustomization.AllowGroup = false;
+            this.gridView1.OptionsHint.ShowCellHints = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.RowHeight = 40;
             // 
             // colMaPhong
             // 
+            this.colMaPhong.AppearanceCell.Options.UseTextOptions = true;
+            this.colMaPhong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMaPhong.Caption = "Mã Phòng";
             this.colMaPhong.FieldName = "MaPhong";
+            this.colMaPhong.MaxWidth = 110;
             this.colMaPhong.Name = "colMaPhong";
             this.colMaPhong.Visible = true;
             this.colMaPhong.VisibleIndex = 0;
@@ -334,7 +344,7 @@
             this.colTenPhong.Name = "colTenPhong";
             this.colTenPhong.Visible = true;
             this.colTenPhong.VisibleIndex = 1;
-            this.colTenPhong.Width = 117;
+            this.colTenPhong.Width = 200;
             // 
             // colTinhTrangPhong
             // 
@@ -352,7 +362,7 @@
             this.colGhiChu.Name = "colGhiChu";
             this.colGhiChu.Visible = true;
             this.colGhiChu.VisibleIndex = 3;
-            this.colGhiChu.Width = 191;
+            this.colGhiChu.Width = 277;
             // 
             // labelTitle
             // 
