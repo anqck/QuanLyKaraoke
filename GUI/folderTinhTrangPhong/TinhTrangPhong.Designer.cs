@@ -81,6 +81,7 @@
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.tileView1 = new DevExpress.XtraGrid.Views.Tile.TileView();
             this.colTang = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colMaTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.tileItem1 = new DevExpress.XtraEditors.TileItem();
             this.tileItem4 = new DevExpress.XtraEditors.TileItem();
             this.tileItem5 = new DevExpress.XtraEditors.TileItem();
@@ -96,7 +97,6 @@
             this.PageXemphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.xemPhong1 = new GUI.folderTinhTrangPhong.XemPhong();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.colMaTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
@@ -514,6 +514,14 @@
             this.colTang.Visible = true;
             this.colTang.VisibleIndex = 3;
             // 
+            // colMaTinhTrangPhong
+            // 
+            this.colMaTinhTrangPhong.Caption = "Mã Tình Trạng Phòng";
+            this.colMaTinhTrangPhong.FieldName = "MaTinhTrangPhong";
+            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
+            this.colMaTinhTrangPhong.Visible = true;
+            this.colMaTinhTrangPhong.VisibleIndex = 6;
+            // 
             // tileItem1
             // 
             this.tileItem1.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
@@ -729,14 +737,6 @@
             // tileGroup3
             // 
             this.tileGroup3.Name = "tileGroup3";
-            // 
-            // colMaTinhTrangPhong
-            // 
-            this.colMaTinhTrangPhong.Caption = "Mã Tình Trạng Phòng";
-            this.colMaTinhTrangPhong.FieldName = "MaTinhTrangPhong";
-            this.colMaTinhTrangPhong.Name = "colMaTinhTrangPhong";
-            this.colMaTinhTrangPhong.Visible = true;
-            this.colMaTinhTrangPhong.VisibleIndex = 6;
             // 
             // TinhTrangPhong
             // 

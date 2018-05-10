@@ -237,13 +237,18 @@ namespace GUI.TinhTrangPhong
                 if (e.IsGetData)
                     if (listPhongDangThue.ContainsKey((int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]) && (int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaTinhTrangPhong"] == 1)
                     {
-                        e.Value = (DateTime.Now - listPhongDangThue[(int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]].GioThuePhong).ToString("hh':'mm':'ss''");
+                        e.Value = ToCustomString((DateTime.Now - listPhongDangThue[(int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]].GioThuePhong));
                     }
                     else
                         e.Value = "";
 
                 if (e.IsSetData);
             }
+        }
+
+        public string ToCustomString(TimeSpan span)
+        {
+            return string.Format("{0}:{1}:{2}", span.Days * 24 + span.Hours, span.Minutes, span.Seconds);
         }
 
         #region Time

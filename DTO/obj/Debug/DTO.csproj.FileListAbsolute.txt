@@ -3,3 +3,8 @@ C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\DTO\bin\Debug\DTO.pdb
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\DTO\obj\Debug\DTO.dll
 C:\Users\nhann\source\repos\QuanLyKaraoke\QuanLyKaraoke\DTO\obj\Debug\DTO.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\DTO\bin\Debug\DTO.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\DTO\bin\Debug\DTO.pdb
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\DTO\obj\Debug\DTO.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\DTO\obj\Debug\DTO.pdb

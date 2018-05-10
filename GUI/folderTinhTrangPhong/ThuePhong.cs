@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DTO;
 using DevExpress.XtraBars.Docking2010.Customization;
-
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -37,7 +37,8 @@ namespace GUI.folderTinhTrangPhong
 
         private void bntChonKH_Click(object sender, EventArgs e)
         {
-            FlyoutDialog.Show(this.FindForm(), new folderKhachHang.ChonKhachHang());
+
+           // FlyoutDialog.Show(this.FindForm(), new folderKhachHang.ChonKhachHang());
         }
     }
 }
