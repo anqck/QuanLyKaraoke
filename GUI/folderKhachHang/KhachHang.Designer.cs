@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraGrid.Columns.GridColumn colLoaiPhong;
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KhachHang));
             DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
@@ -56,12 +55,15 @@
             this.tileAvailable = new DevExpress.XtraEditors.TileItem();
             this.tileRented = new DevExpress.XtraEditors.TileItem();
             this.grpLoaiPhong = new DevExpress.XtraEditors.TileGroup();
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemTichLuy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.wbntKhachhang = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
@@ -79,13 +81,12 @@
             this.themLoaiKhachHang2 = new GUI.folderKhachHang.ThemLoaiKhachHang();
             this.wbntThemKhachhang = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntSuakhachhang = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.KhachhangPagecontrol)).BeginInit();
             this.KhachhangPagecontrol.SuspendLayout();
             this.PageKhachhang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.wbntKhachhang.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
@@ -94,14 +95,6 @@
             this.PageLoaikhachhang.SuspendLayout();
             this.PageThemloaikhachhang.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // colLoaiPhong
-            // 
-            colLoaiPhong.Caption = "Loại phòng";
-            colLoaiPhong.FieldName = "TenLoaiPhong";
-            colLoaiPhong.Name = "colLoaiPhong";
-            colLoaiPhong.Visible = true;
-            colLoaiPhong.VisibleIndex = 4;
             // 
             // KhachhangPagecontrol
             // 
@@ -151,7 +144,7 @@
             this.splitContainerControl.Panel2.Appearance.BorderColor = System.Drawing.Color.White;
             this.splitContainerControl.Panel2.Appearance.Options.UseBackColor = true;
             this.splitContainerControl.Panel2.Appearance.Options.UseBorderColor = true;
-            this.splitContainerControl.Panel2.Controls.Add(this.gridControl);
+            this.splitContainerControl.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl.Panel2.Text = "Panel2";
             this.splitContainerControl.Size = new System.Drawing.Size(1049, 513);
             this.splitContainerControl.SplitterPosition = 125;
@@ -178,6 +171,7 @@
             this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileControl2.Position = 6;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 513);
@@ -298,61 +292,104 @@
             this.grpLoaiPhong.Name = "grpLoaiPhong";
             this.grpLoaiPhong.Text = "tileGroup1";
             // 
-            // gridControl
+            // gridControl1
             // 
-            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.gridControl.Location = new System.Drawing.Point(0, 0);
-            this.gridControl.MainView = this.gridView1;
-            this.gridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(743, 513);
-            this.gridControl.TabIndex = 4;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(743, 513);
+            this.gridControl1.TabIndex = 12;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Gray;
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.ColumnPanelRowHeight = 50;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaPhong,
-            this.colTenPhong,
-            this.colTinhTrangPhong,
-            this.colGhiChu,
-            colLoaiPhong});
-            this.gridView1.GridControl = this.gridControl;
+            this.colMaKH,
+            this.colTenKH,
+            this.colCMND,
+            this.colSDT,
+            this.colDiaChi,
+            this.colDiemTichLuy,
+            this.colLoaiKhachHang});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsHint.ShowCellHints = false;
+            this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.RowHeight = 40;
             // 
-            // colMaPhong
+            // colMaKH
             // 
-            this.colMaPhong.Caption = "Mã Phòng";
-            this.colMaPhong.FieldName = "MaPhong";
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.Visible = true;
-            this.colMaPhong.VisibleIndex = 0;
+            this.colMaKH.AppearanceCell.Options.UseTextOptions = true;
+            this.colMaKH.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.colMaKH.Caption = "Mã Khách Hàng";
+            this.colMaKH.FieldName = "MaKH";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.Visible = true;
+            this.colMaKH.VisibleIndex = 0;
             // 
-            // colTenPhong
+            // colTenKH
             // 
-            this.colTenPhong.Caption = "Tên Phòng";
-            this.colTenPhong.FieldName = "TenPhong";
-            this.colTenPhong.Name = "colTenPhong";
-            this.colTenPhong.Visible = true;
-            this.colTenPhong.VisibleIndex = 1;
+            this.colTenKH.Caption = "Tên Khách Hàng";
+            this.colTenKH.FieldName = "TenKH";
+            this.colTenKH.Name = "colTenKH";
+            this.colTenKH.Visible = true;
+            this.colTenKH.VisibleIndex = 1;
             // 
-            // colTinhTrangPhong
+            // colCMND
             // 
-            this.colTinhTrangPhong.Caption = "Tình trạng phòng";
-            this.colTinhTrangPhong.FieldName = "TinhTrangPhong";
-            this.colTinhTrangPhong.Name = "colTinhTrangPhong";
-            this.colTinhTrangPhong.Visible = true;
-            this.colTinhTrangPhong.VisibleIndex = 2;
+            this.colCMND.Caption = "CMND";
+            this.colCMND.FieldName = "CMND";
+            this.colCMND.Name = "colCMND";
+            this.colCMND.Visible = true;
+            this.colCMND.VisibleIndex = 2;
             // 
-            // colGhiChu
+            // colSDT
             // 
-            this.colGhiChu.Caption = "Ghi chú";
-            this.colGhiChu.FieldName = "GhiChu";
-            this.colGhiChu.Name = "colGhiChu";
-            this.colGhiChu.Visible = true;
-            this.colGhiChu.VisibleIndex = 3;
+            this.colSDT.Caption = "Số Điện Thoại";
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 3;
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.Caption = "Địa Chỉ";
+            this.colDiaChi.FieldName = "DiaChi";
+            this.colDiaChi.Name = "colDiaChi";
+            this.colDiaChi.Visible = true;
+            this.colDiaChi.VisibleIndex = 4;
+            // 
+            // colDiemTichLuy
+            // 
+            this.colDiemTichLuy.Caption = "Điểm Tích Lũy";
+            this.colDiemTichLuy.FieldName = "DiemTichLuy";
+            this.colDiemTichLuy.Name = "colDiemTichLuy";
+            this.colDiemTichLuy.Visible = true;
+            this.colDiemTichLuy.VisibleIndex = 5;
+            // 
+            // colLoaiKhachHang
+            // 
+            this.colLoaiKhachHang.Caption = "Loại Khách Hàng";
+            this.colLoaiKhachHang.FieldName = "LoaiKH";
+            this.colLoaiKhachHang.Name = "colLoaiKhachHang";
+            this.colLoaiKhachHang.Visible = true;
+            this.colLoaiKhachHang.VisibleIndex = 6;
             // 
             // labelTitle
             // 
@@ -558,7 +595,7 @@
             this.PageKhachhang.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
             this.splitContainerControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.wbntKhachhang.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
@@ -575,12 +612,6 @@
         private DevExpress.XtraBars.Navigation.NavigationFrame KhachhangPagecontrol;
         private DevExpress.XtraBars.Navigation.NavigationPage PageKhachhang;
         protected DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colTenPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colTinhTrangPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntKhachhang;
         private DevExpress.XtraEditors.SearchControl searchControl1;
@@ -609,5 +640,14 @@
         private DevExpress.XtraEditors.TileItem tileAvailable;
         private DevExpress.XtraEditors.TileItem tileRented;
         private DevExpress.XtraEditors.TileGroup grpLoaiPhong;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colCMND;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiemTichLuy;
+        private DevExpress.XtraGrid.Columns.GridColumn colLoaiKhachHang;
     }
 }

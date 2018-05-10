@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.NhanVienPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageNhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -43,8 +43,6 @@
             this.tileItem2 = new DevExpress.XtraEditors.TileItem();
             this.tileItem3 = new DevExpress.XtraEditors.TileItem();
             this.tileItem9 = new DevExpress.XtraEditors.TileItem();
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.wbntNhanvien = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
@@ -54,17 +52,23 @@
             this.PageSuanhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.windowsUIButtonPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.suaNhanVien1 = new GUI.folderNhanVien.SuaNhanVien();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.NhanVienPagecontrol)).BeginInit();
             this.NhanVienPagecontrol.SuspendLayout();
             this.PageNhanvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.wbntNhanvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.PageThemnhanvien.SuspendLayout();
             this.PageSuanhanvien.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // NhanVienPagecontrol
@@ -88,6 +92,7 @@
             // 
             // PageNhanvien
             // 
+            this.PageNhanvien.Caption = "PageNhanvien";
             this.PageNhanvien.Controls.Add(this.splitContainerControl);
             this.PageNhanvien.Controls.Add(this.labelTitle);
             this.PageNhanvien.Controls.Add(this.wbntNhanvien);
@@ -110,7 +115,7 @@
             this.splitContainerControl.Panel2.Appearance.BorderColor = System.Drawing.Color.White;
             this.splitContainerControl.Panel2.Appearance.Options.UseBackColor = true;
             this.splitContainerControl.Panel2.Appearance.Options.UseBorderColor = true;
-            this.splitContainerControl.Panel2.Controls.Add(this.gridControl);
+            this.splitContainerControl.Panel2.Controls.Add(this.gridControl1);
             this.splitContainerControl.Panel2.Text = "Panel2";
             this.splitContainerControl.Size = new System.Drawing.Size(980, 500);
             this.splitContainerControl.SplitterPosition = 125;
@@ -160,8 +165,8 @@
             this.tileItem2.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileItem2.AppearanceItem.Selected.Options.UseFont = true;
             this.tileItem2.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement1.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement1);
+            tileItemElement7.Text = "tileItem2";
+            this.tileItem2.Elements.Add(tileItemElement7);
             this.tileItem2.Id = 5;
             this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem2.Name = "tileItem2";
@@ -182,8 +187,8 @@
             this.tileItem3.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileItem3.AppearanceItem.Selected.Options.UseFont = true;
             this.tileItem3.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement2.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement2);
+            tileItemElement8.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement8);
             this.tileItem3.Id = 7;
             this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem3.Name = "tileItem3";
@@ -204,29 +209,11 @@
             this.tileItem9.AppearanceItem.Selected.Options.UseBackColor = true;
             this.tileItem9.AppearanceItem.Selected.Options.UseFont = true;
             this.tileItem9.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement3.Text = "tileItem9";
-            this.tileItem9.Elements.Add(tileItemElement3);
+            tileItemElement9.Text = "tileItem9";
+            this.tileItem9.Elements.Add(tileItemElement9);
             this.tileItem9.Id = 8;
             this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem9.Name = "tileItem9";
-            // 
-            // gridControl
-            // 
-            this.gridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.gridControl.Location = new System.Drawing.Point(0, 0);
-            this.gridControl.MainView = this.gridView1;
-            this.gridControl.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(674, 500);
-            this.gridControl.TabIndex = 4;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.gridControl;
-            this.gridView1.Name = "gridView1";
             // 
             // labelTitle
             // 
@@ -247,8 +234,8 @@
             // 
             this.wbntNhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntNhanvien.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm nhân viên", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa nhân viên", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm nhân viên", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa nhân viên", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntNhanvien.Controls.Add(this.searchControl1);
             this.wbntNhanvien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntNhanvien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,6 +263,7 @@
             // 
             // PageThemnhanvien
             // 
+            this.PageThemnhanvien.Caption = "PageThemnhanvien";
             this.PageThemnhanvien.Controls.Add(this.wbntBackThemNV);
             this.PageThemnhanvien.Controls.Add(this.themNhanVien1);
             this.PageThemnhanvien.Name = "PageThemnhanvien";
@@ -284,9 +272,9 @@
             // wbntBackThemNV
             // 
             this.wbntBackThemNV.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions3.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions11.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntBackThemNV.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntBackThemNV.Location = new System.Drawing.Point(3, 3);
             this.wbntBackThemNV.Name = "wbntBackThemNV";
             this.wbntBackThemNV.Size = new System.Drawing.Size(56, 58);
@@ -304,6 +292,7 @@
             // 
             // PageSuanhanvien
             // 
+            this.PageSuanhanvien.Caption = "PageSuanhanvien";
             this.PageSuanhanvien.Controls.Add(this.windowsUIButtonPanel2);
             this.PageSuanhanvien.Controls.Add(this.suaNhanVien1);
             this.PageSuanhanvien.Name = "PageSuanhanvien";
@@ -312,9 +301,9 @@
             // windowsUIButtonPanel2
             // 
             this.windowsUIButtonPanel2.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions4.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions12.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.windowsUIButtonPanel2.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel2.Location = new System.Drawing.Point(3, 3);
             this.windowsUIButtonPanel2.Name = "windowsUIButtonPanel2";
             this.windowsUIButtonPanel2.Size = new System.Drawing.Size(56, 58);
@@ -330,6 +319,72 @@
             this.suaNhanVien1.Size = new System.Drawing.Size(980, 617);
             this.suaNhanVien1.TabIndex = 4;
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(674, 500);
+            this.gridControl1.TabIndex = 13;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Gray;
+            this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
+            this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Options.UseFont = true;
+            this.gridView1.ColumnPanelRowHeight = 50;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn1,
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4});
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsHint.ShowCellHints = false;
+            this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.RowHeight = 40;
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã nhân viên";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 0;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên nhân viên";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 1;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Địa chỉ";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Số điện thoại";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
             // NhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -343,12 +398,12 @@
             this.PageNhanvien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
             this.splitContainerControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.wbntNhanvien.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             this.PageThemnhanvien.ResumeLayout(false);
             this.PageSuanhanvien.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -363,8 +418,6 @@
         private DevExpress.XtraEditors.TileItem tileItem2;
         private DevExpress.XtraEditors.TileItem tileItem3;
         private DevExpress.XtraEditors.TileItem tileItem9;
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntNhanvien;
         private DevExpress.XtraEditors.SearchControl searchControl1;
@@ -374,5 +427,11 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel2;
         private ThemNhanVien themNhanVien1;
         private SuaNhanVien suaNhanVien1;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
     }
 }
