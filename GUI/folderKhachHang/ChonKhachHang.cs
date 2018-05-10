@@ -8,18 +8,30 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DTO;
 
 namespace GUI.folderKhachHang
 {
     public partial class ChonKhachHang : DevExpress.XtraEditors.XtraUserControl
     {
+        DataTable gridDataSource; 
         public ChonKhachHang()
         {
             InitializeComponent();
 
-            gridControl1.DataSource = BUS.KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+            gridDataSource = BUS.KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+            gridControl1.DataSource = gridDataSource;
+
+     
+            searchControl1.Client = gridControl1;
         }
 
+        internal KhachHangDTO LayKhachHangDaChon()
+        {
+            int idxSelectedRow = gridView1.GetFocusedDataSourceRowIndex();
+            return new KhachHangDTO((int)gridDataSource.Rows[idxSelectedRow]["MaKH"], gridDataSource.Rows[idxSelectedRow]["TenKH"].ToString(), gridDataSource.Rows[idxSelectedRow]["CMND"].ToString(), gridDataSource.Rows[idxSelectedRow]["SDT"].ToString(), gridDataSource.Rows[idxSelectedRow]["DiaChi"].ToString(), (int)gridDataSource.Rows[idxSelectedRow]["MaLoaiKH"], (int)gridDataSource.Rows[idxSelectedRow]["DiemTichLuy"]);
+        }
 
+   
     }
 }

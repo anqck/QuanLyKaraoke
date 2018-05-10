@@ -80,7 +80,7 @@
             this.colLoaiKhachHang});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
+            this.gridView1.Name = "gridView1";          
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsHint.ShowCellHints = false;
             this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
@@ -88,6 +88,24 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.RowHeight = 40;
+
+            // 
+            // searchControl1
+            // 
+            this.searchControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchControl1.Location = new System.Drawing.Point(204, 14);
+            this.searchControl1.Name = "searchControl1";
+            this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchControl1.Properties.Appearance.Options.UseFont = true;
+            this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Repository.ClearButton(),
+            new DevExpress.XtraEditors.Repository.SearchButton(),
+            new DevExpress.XtraEditors.Repository.MRUButton()});
+            this.searchControl1.Properties.ShowMRUButton = true;
+            this.searchControl1.Size = new System.Drawing.Size(537, 34);
+            this.searchControl1.TabIndex = 0;
+
             // 
             // colMaKH
             // 

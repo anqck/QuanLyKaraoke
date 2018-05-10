@@ -16,9 +16,12 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThuePhong : DevExpress.XtraEditors.XtraUserControl
     {
+        KhachHangDTO khachHang;
         public ThuePhong()
         {
             InitializeComponent();
+
+            khachHang = null;
         }
 
         public ThuePhong(PhongDTO phong)
@@ -37,7 +40,17 @@ namespace GUI.folderTinhTrangPhong
 
         private void bntChonKH_Click(object sender, EventArgs e)
         {
-            DevExpress.XtraEditors.XtraDialog.Show(new folderKhachHang.ChonKhachHang(), "Sign in", MessageBoxButtons.OKCancel);
+            folderKhachHang.ChonKhachHang chonKhachHang = new folderKhachHang.ChonKhachHang();
+            switch(XtraDialog.Show(chonKhachHang, "Sign in", MessageBoxButtons.OKCancel))
+            {
+                case DialogResult.OK:
+                    khachHang = chonKhachHang.LayKhachHangDaChon();
+                    break;
+                case DialogResult.Cancel:
+                    break;
+                default:
+                    break;
+            }
             //FlyoutDialog.Show(this.FindForm(), new folderKhachHang.ChonKhachHang());
         }
     }

@@ -15,5 +15,27 @@ namespace DTO
         public string DiaChi { get; set; }
         public int MaLoaiKH { get; set; }
         public int DiemTichLuy { get; set; }
+
+        public KhachHangDTO()
+        {
+            MaKH = -1;
+            TenKH = "";
+            CMND = "";
+            SDT = "";
+            DiaChi = "";
+            MaLoaiKH = -1;
+            DiemTichLuy = -1;
+        }
+
+        public KhachHangDTO(int maKH,string tenKH,string cMND, string sDT, string diaChi, int maLoaiKH, int diemTichLuy)
+        {
+            MaKH = maKH;
+            TenKH = tenKH;
+            CMND = cMND;
+            SDT = sDT;
+            DiaChi = diaChi;
+            MaLoaiKH = maLoaiKH;
+            DiemTichLuy = diemTichLuy;
+        }
     }
 }
