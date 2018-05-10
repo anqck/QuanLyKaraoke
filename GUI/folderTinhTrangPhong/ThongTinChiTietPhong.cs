@@ -18,5 +18,10 @@ namespace GUI.folderTinhTrangPhong
         {
             InitializeComponent();
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
