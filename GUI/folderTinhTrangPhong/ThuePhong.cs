@@ -12,6 +12,7 @@ using DTO;
 using DevExpress.XtraBars.Docking2010.Customization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using BUS;
+using DevExpress.Utils;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -38,8 +39,7 @@ namespace GUI.folderTinhTrangPhong
             RefreshDataBinding();
             txtKhachHang.Properties.DisplayMember = "TenKH";
             txtKhachHang.Properties.ValueMember = "MaKH";
-
-            txtGioVao.EditValue = DateTime.Now;
+            
             txtNgayVao.EditValue = DateTime.Now;
         }
 
@@ -51,9 +51,16 @@ namespace GUI.folderTinhTrangPhong
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            if (e.Equals(this.windowsUIButtonPanel1.Buttons[1]))
+            switch(e.Button.Properties.Tag.ToString())
             {
-                //tat cai dialog
+                case "Hủy":
+                    ((FlyoutDialog)this.Parent).Hide();
+                    break;
+                case "Thuê":
+
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -72,8 +79,12 @@ namespace GUI.folderTinhTrangPhong
                 case DialogResult.OK:
                     khachHang = chonKhachHang.LayKhachHangDaChon();
                     txtKhachHang.EditValue = khachHang.MaKH;
+
+
                     break;
                 case DialogResult.Cancel:
+
+
                     break;
                 default:
                     break;
