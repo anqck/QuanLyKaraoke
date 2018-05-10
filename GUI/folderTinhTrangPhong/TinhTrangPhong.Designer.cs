@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+
             DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TinhTrangPhong));
             DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
@@ -95,7 +96,6 @@
             this.PageTinhtrang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PageThuephong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.thuePhong1 = new GUI.folderTinhTrangPhong.ThuePhong();
             this.PageXemphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             this.thongTinChiTietPhong1 = new GUI.folderTinhTrangPhong.ThongTinChiTietPhong();
@@ -698,13 +698,12 @@
             // PageThuephong
             // 
             this.PageThuephong.Caption = "PageThuephong";
-            this.PageThuephong.Controls.Add(this.wbntBack);
-            this.PageThuephong.Controls.Add(this.thuePhong1);
             this.PageThuephong.Name = "PageThuephong";
             this.PageThuephong.Size = new System.Drawing.Size(1110, 662);
             // 
             // wbntBack
             // 
+
             windowsUIButtonImageOptions10.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntBack.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
@@ -715,17 +714,11 @@
             this.wbntBack.Text = "windowsUIButtonPanel2";
             this.wbntBack.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel2_ButtonClick);
             // 
-            // thuePhong1
-            // 
-            this.thuePhong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thuePhong1.Location = new System.Drawing.Point(0, 0);
-            this.thuePhong1.Name = "thuePhong1";
-            this.thuePhong1.Size = new System.Drawing.Size(1110, 662);
-            this.thuePhong1.TabIndex = 5;
-            // 
             // PageXemphong
             // 
+
             this.PageXemphong.Controls.Add(this.thongTinChiTietPhong1);
+
             this.PageXemphong.Name = "PageXemphong";
             this.PageXemphong.Size = new System.Drawing.Size(1110, 662);
             // 
@@ -803,7 +796,8 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageXemphong;
         private DevExpress.XtraGrid.Columns.TileViewColumn colThoiGianThue;
         private DevExpress.XtraGrid.Columns.TileViewColumn colMaTinhTrangPhong;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong,btnXemPhong, btnChuyenPhong;
         private folderTinhTrangPhong.ThongTinChiTietPhong thongTinChiTietPhong1;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong,btnXemPhong, btnDatPhong, btnChuyenPhong, btnThanhToan;
+
     }
 }

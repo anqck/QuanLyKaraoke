@@ -27,5 +27,10 @@ namespace BUS
 
             return res;
         }
+
+        public static LoaiPhongDTO LayLoaiPhong(PhongDTO phong)
+        {
+            return DAL.LoaiPhongDAL.LayLoaiPhong(phong);
+        }
     }
 }

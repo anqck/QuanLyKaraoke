@@ -26,6 +26,15 @@ namespace GUI.TinhTrangPhong
 
             btnXemPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Xem phòng"];
             btnXemPhong.Click += OnClickBtnXemPhong;
+
+            btnDatPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Đặt phòng"];
+            btnDatPhong.Click += OnClickBtnDatPhong;
+
+            btnChuyenPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Chuyển phòng"];
+            btnChuyenPhong.Click += OnClickBtnChuyenPhong;
+
+            btnThanhToan = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thanh toán"];
+            btnChuyenPhong.Click += OnClickBtnThanhToan;
         }
 
 
@@ -252,13 +261,19 @@ namespace GUI.TinhTrangPhong
             switch(tileView1.GetFocusedRowCellValue(colTinhTrangPhong).ToString())
             {
                 case "Còn trống":
-                    wbntTinhtrangphong.Buttons["Thuê phòng"].Properties.Visible = true;
-                    //wbntTinhtrangphong.Buttons["Thanh toán"].Properties.Visible = false;
+                    btnThuePhong.Visible = true;
+
+                    wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
+                    btnChuyenPhong.Visible = false;
+                    btnThanhToan.Visible = false;
+
                     break;
                 case "Đang sử dụng":
-                    wbntTinhtrangphong.Buttons["Thuê phòng"].Properties.Visible = false;
-                    //wbntTinhtrangphong.Buttons["Chuyển pbhòng"].Properties.Visible = true;
-                    //wbntTinhtrangphong.Buttons["Thanh toán"].Properties.Visible = true;
+                    btnThuePhong.Visible = false;
+
+                    wbntTinhtrangphong.Buttons[4].Properties.Visible = true;
+                    btnChuyenPhong.Visible = true;
+                    btnThanhToan.Visible = true;
 
                     break;
                 default:
@@ -266,16 +281,15 @@ namespace GUI.TinhTrangPhong
             }
         }
 
-        private void SetVisibleWindowsUIButtonPanel(string grpName, bool value)
-        {
-
-        }
 
 
         public string ToCustomString(TimeSpan span)
         {
             return string.Format("{0}:{1}:{2}", span.Days * 24 + span.Hours, span.Minutes, span.Seconds);
         }
+        #endregion
+
+        #region Button
         void OnClickBtnThuePhong(object sender, EventArgs e)
         {
             DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"));
@@ -286,6 +300,18 @@ namespace GUI.TinhTrangPhong
         void OnClickBtnXemPhong(object sender, EventArgs e)
         {
             this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
+        }
+        void OnClickBtnDatPhong(object sender, EventArgs e)
+        {
+            
+        }
+        void OnClickBtnChuyenPhong(object sender, EventArgs e)
+        {
+            
+        }
+        void OnClickBtnThanhToan(object sender, EventArgs e)
+        {
+            
         }
         #endregion
     }

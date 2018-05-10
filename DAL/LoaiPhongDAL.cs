@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -18,6 +19,12 @@ namespace DAL
         public static DataTable LayTatCaLoaiPhong()
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong;");
+        }
+
+        public static LoaiPhongDTO LayLoaiPhong(PhongDTO phong)
+        {
+            DataTable resLoaiPhong = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong WHERE quanlykaraoke.loaiphong.MaLP = '" + phong.MaLoaiPhong.ToString() + "';");
+            return new LoaiPhongDTO(Convert.ToInt32(resLoaiPhong.Rows[0]["MaLP"]), resLoaiPhong.Rows[0]["TenLoaiPhong"].ToString());
         }
     }
 }
