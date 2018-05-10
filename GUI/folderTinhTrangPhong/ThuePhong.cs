@@ -18,7 +18,12 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThuePhong : DevExpress.XtraEditors.XtraUserControl
     {
-        KhachHangDTO khachHang;
+        private KhachHangDTO khachHang;
+        private PhongDTO phong;
+
+        private DataTable dataSource_KhachHang;
+        private Action onThuePhongSuccess;
+
         public ThuePhong()
         {
             InitializeComponent();
@@ -30,8 +35,12 @@ namespace GUI.folderTinhTrangPhong
             
         }
 
-        public ThuePhong(PhongDTO phong) : this()
+        public ThuePhong(PhongDTO phong,Action onThuePhongSuccess) : this()
         {
+            this.phong = phong;
+
+            this.onThuePhongSuccess = onThuePhongSuccess;
+
             txtMaPhong.Text = phong.MaPhong.ToString();
             txtTenPhong.Text = phong.TenPhong;
             txtLoaiPhong.Text = LoaiPhongBUS.LayLoaiPhong(phong).TenLoaiPhong;
@@ -39,13 +48,20 @@ namespace GUI.folderTinhTrangPhong
             RefreshDataBinding();
             txtKhachHang.Properties.DisplayMember = "TenKH";
             txtKhachHang.Properties.ValueMember = "MaKH";
-            
+
+
             txtNgayVao.EditValue = DateTime.Now;
+
+            khachHang = KhachHangBUS.LayTatCaKhachHang()[0];
         }
 
         public void RefreshDataBinding()
         {
-            txtKhachHang.Properties.DataSource = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+            dataSource_KhachHang = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+            txtKhachHang.Properties.DataSource = dataSource_KhachHang;
+
+            txtKhachHang.EditValue = 0;           
+            
         }
 
 
@@ -57,6 +73,24 @@ namespace GUI.folderTinhTrangPhong
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
                 case "Thuê":
+                    //Kiểm tra khách hàng
+                    if (khachHang == null)
+                    {
+                        XtraMessageBox.Show("Không có khách hàng nào được chọn!", "Lỗi", MessageBoxButtons.OK);
+                        return;
+                    }
+
+                    if(KhachHangBUS.ThemThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong,khachHang.MaKH,(DateTime)txtNgayVao.EditValue,0,1)))
+                    {
+                        //Thông báo thành công
+                        onThuePhongSuccess();
+
+
+                    }
+                    else
+                    {
+                        //Thông báo thất bại
+                    }
 
                     break;
                 default:
@@ -108,8 +142,18 @@ namespace GUI.folderTinhTrangPhong
 
             txtKhachHang.Properties.View as DevExpress.XtraGrid.Views.Grid.GridView;
 
-            object val = view.GetRowCellValue(view.FocusedRowHandle, "TenKH");
+           
+            //khachHang = new KhachHangDTO((int)dataSource_KhachHang.Rows[idxSelected]["MaKH"], dataSource_KhachHang.Rows[idxSelected]["TenKH"].ToString(), dataSource_KhachHang.Rows[idxSelected]["CMND"].ToString(), dataSource_KhachHang.Rows[idxSelected]["SDT"].ToString(), dataSource_KhachHang.Rows[idxSelected]["DiaChi"].ToString(), (int)dataSource_KhachHang.Rows[idxSelected]["MaLoaiKH"], (int)dataSource_KhachHang.Rows[idxSelected]["DiemTichLuy"]);
+           
             
+        }
+
+        private void gridLookUpEdit1View_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            int idxSelected = gridLookUpEdit1View.GetFocusedDataSourceRowIndex();
+            khachHang = new KhachHangDTO((int)dataSource_KhachHang.Rows[idxSelected]["MaKH"], dataSource_KhachHang.Rows[idxSelected]["TenKH"].ToString(), dataSource_KhachHang.Rows[idxSelected]["CMND"].ToString(), dataSource_KhachHang.Rows[idxSelected]["SDT"].ToString(), dataSource_KhachHang.Rows[idxSelected]["DiaChi"].ToString(), (int)dataSource_KhachHang.Rows[idxSelected]["MaLoaiKH"], (int)dataSource_KhachHang.Rows[idxSelected]["DiemTichLuy"]);
+
+
         }
     }
 }
