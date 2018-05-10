@@ -24,12 +24,9 @@ namespace GUI.folderTinhTrangPhong
 
             khachHang = null;
 
-            txtKhachHang.Properties.DataSource = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
-            txtKhachHang.Properties.DisplayMember = "TenKH";
-            txtKhachHang.Properties.ValueMember = "MaKH";
-
-            txtGioVao.EditValue = DateTime.Now;
-            txtNgayVao.EditValue = DateTime.Now;
+          
+            
+            
         }
 
         public ThuePhong(PhongDTO phong) : this()
@@ -37,7 +34,18 @@ namespace GUI.folderTinhTrangPhong
             txtMaPhong.Text = phong.MaPhong.ToString();
             txtTenPhong.Text = phong.TenPhong;
             txtLoaiPhong.Text = LoaiPhongBUS.LayLoaiPhong(phong).TenLoaiPhong;
-      
+
+            RefreshDataBinding();
+            txtKhachHang.Properties.DisplayMember = "TenKH";
+            txtKhachHang.Properties.ValueMember = "MaKH";
+
+            txtGioVao.EditValue = DateTime.Now;
+            txtNgayVao.EditValue = DateTime.Now;
+        }
+
+        public void RefreshDataBinding()
+        {
+            txtKhachHang.Properties.DataSource = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
         }
 
 

@@ -578,5 +578,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenKhachHang;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
         private DevExpress.XtraGrid.Columns.GridColumn colCMND;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong, btnHuyPhong;
     }
 }
