@@ -16,6 +16,10 @@ namespace GUI.folderKhachHang
         public ChonKhachHang()
         {
             InitializeComponent();
+
+            gridControl1.DataSource = BUS.KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
         }
+
+
     }
 }

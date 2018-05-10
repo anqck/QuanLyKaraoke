@@ -8,7 +8,7 @@ using System.Data;
 
 namespace DAL
 {
-    class KhachHangDAL
+    public class KhachHangDAL
     {
         public static int PhatSinhKH()
         {
@@ -39,7 +39,7 @@ namespace DAL
 
         public static DataTable LayTatCaKhachHang_LoaiKhachHang()
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.khachhang, quanlykaraoke.loaikhachhang where quanlykaraoke.khachhang.MaLoaiKH = quanlykaraoke.loaikhachhang.MaTinhTrangPhong ;");
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.khachhang, quanlykaraoke.loaikhachhang where quanlykaraoke.khachhang.MaLoaiKH = quanlykaraoke.loaikhachhang.MaLoaiKH ;");
         }
     }
 }

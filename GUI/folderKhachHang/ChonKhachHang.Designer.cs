@@ -35,6 +35,13 @@
             this.windowsUIButtonPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
+            this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDiemTichLuy = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.windowsUIButtonPanel1.SuspendLayout();
@@ -54,6 +61,14 @@
             // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaKH,
+            this.colTenKH,
+            this.colCMND,
+            this.colSDT,
+            this.colDiaChi,
+            this.colDiemTichLuy,
+            this.colLoaiKhachHang});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
@@ -95,6 +110,62 @@
             this.searchControl1.Size = new System.Drawing.Size(537, 34);
             this.searchControl1.TabIndex = 0;
             // 
+            // colMaKH
+            // 
+            this.colMaKH.Caption = "Mã Khách Hàng";
+            this.colMaKH.FieldName = "MaKH";
+            this.colMaKH.Name = "colMaKH";
+            this.colMaKH.Visible = true;
+            this.colMaKH.VisibleIndex = 0;
+            // 
+            // colTenKH
+            // 
+            this.colTenKH.Caption = "Tên Khách Hàng";
+            this.colTenKH.FieldName = "TenKH";
+            this.colTenKH.Name = "colTenKH";
+            this.colTenKH.Visible = true;
+            this.colTenKH.VisibleIndex = 1;
+            // 
+            // colCMND
+            // 
+            this.colCMND.Caption = "CMND";
+            this.colCMND.FieldName = "CMND";
+            this.colCMND.Name = "colCMND";
+            this.colCMND.Visible = true;
+            this.colCMND.VisibleIndex = 2;
+            // 
+            // colSDT
+            // 
+            this.colSDT.Caption = "Số Điện Thoại";
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 3;
+            // 
+            // colDiaChi
+            // 
+            this.colDiaChi.Caption = "Địa Chỉ";
+            this.colDiaChi.FieldName = "DiaChi";
+            this.colDiaChi.Name = "colDiaChi";
+            this.colDiaChi.Visible = true;
+            this.colDiaChi.VisibleIndex = 4;
+            // 
+            // colDiemTichLuy
+            // 
+            this.colDiemTichLuy.Caption = "Điểm Tích Lũy";
+            this.colDiemTichLuy.FieldName = "DiemTichLuy";
+            this.colDiemTichLuy.Name = "colDiemTichLuy";
+            this.colDiemTichLuy.Visible = true;
+            this.colDiemTichLuy.VisibleIndex = 5;
+            // 
+            // colLoaiKhachHang
+            // 
+            this.colLoaiKhachHang.Caption = "Loại Khách Hàng";
+            this.colLoaiKhachHang.FieldName = "LoaiKH";
+            this.colLoaiKhachHang.Name = "colLoaiKhachHang";
+            this.colLoaiKhachHang.Visible = true;
+            this.colLoaiKhachHang.VisibleIndex = 6;
+            // 
             // ChonKhachHang
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -120,5 +191,12 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel2;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private DevExpress.XtraEditors.SearchControl searchControl1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenKH;
+        private DevExpress.XtraGrid.Columns.GridColumn colCMND;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
+        private DevExpress.XtraGrid.Columns.GridColumn colDiemTichLuy;
+        private DevExpress.XtraGrid.Columns.GridColumn colLoaiKhachHang;
     }
 }

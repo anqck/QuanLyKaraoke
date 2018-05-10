@@ -37,8 +37,8 @@ namespace GUI.folderTinhTrangPhong
 
         private void bntChonKH_Click(object sender, EventArgs e)
         {
-
-           // FlyoutDialog.Show(this.FindForm(), new folderKhachHang.ChonKhachHang());
+            DevExpress.XtraEditors.XtraDialog.Show(new folderKhachHang.ChonKhachHang(), "Sign in", MessageBoxButtons.OKCancel);
+            //FlyoutDialog.Show(this.FindForm(), new folderKhachHang.ChonKhachHang());
         }
     }
 }
