@@ -34,7 +34,7 @@ namespace GUI.TinhTrangPhong
             btnChuyenPhong.Click += OnClickBtnChuyenPhong;
 
             btnThanhToan = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thanh toán"];
-            btnChuyenPhong.Click += OnClickBtnThanhToan;
+            btnThanhToan.Click += OnClickBtnThanhToan;
         }
 
 
@@ -67,7 +67,7 @@ namespace GUI.TinhTrangPhong
                 tileAll.Elements[1].Text = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong().Rows.Count.ToString();
 
                 grpLoaiPhong.Items.Clear();
-                foreach (DataRow row in DAL.LoaiPhongDAL.LayTatCaLoaiPhong().Rows)
+                foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable().Rows)
                 {
                     grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
 
@@ -212,6 +212,10 @@ namespace GUI.TinhTrangPhong
 
         #endregion
 
+        private void tileView1_ItemDoubleClick(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
+        {
+            DisplayTinhTrangPhongWithSelectedTile();
+        }
         private void tileView1_ItemPress(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
         {
             
@@ -298,7 +302,9 @@ namespace GUI.TinhTrangPhong
         }
         void OnClickBtnXemPhong(object sender, EventArgs e)
         {
-            this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
+            DisplayTinhTrangPhongWithSelectedTile();
+
+
         }
         void OnClickBtnDatPhong(object sender, EventArgs e)
         {
@@ -318,14 +324,26 @@ namespace GUI.TinhTrangPhong
         {
             
         }
+
+        
         #endregion
 
         #region CallBack
         void OnThuePhongSuccess()
         {
-            
+            DisplayTinhTrangPhongWithSelectedTile();
         }
 
         #endregion
+
+
+        void DisplayTinhTrangPhongWithSelectedTile()
+        {
+            DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString() , tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
+
+            thongTinChiTietPhong1.RefreshDataBinding(phongDTO);
+            
+            this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
+        }
     }
 }

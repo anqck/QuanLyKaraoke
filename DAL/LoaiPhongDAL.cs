@@ -16,9 +16,22 @@ namespace DAL
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.loaiphong;").Rows[0][0]);
         }
 
-        public static DataTable LayTatCaLoaiPhong()
+        public static DataTable LayTatCaLoaiPhong_DataTable()
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong;");
+        }
+
+        public static List<LoaiPhongDTO> LayTatCaLoaiPhong_List()
+        {
+            List<LoaiPhongDTO> res = new List<LoaiPhongDTO>();
+
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong;");
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add(new LoaiPhongDTO(Convert.ToInt32(row["MaLP"]), row["TenLoaiPhong"].ToString()));
+            }
+
+            return res;
         }
 
         public static LoaiPhongDTO LayLoaiPhong(PhongDTO phong)

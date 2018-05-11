@@ -48,7 +48,7 @@ namespace GUI.folderQuanLyPhong
 
             //Lưu
             PhongDTO phongDTO = new PhongDTO(int.Parse(txtMaPhong.Text),txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong,cmbTang.Text,txtGhiChu.Text,0);
-            if(ThemPhongBUS.LuuThongTinPhong(phongDTO))
+            if(PhongBUS.LuuThongTinPhong(phongDTO))
             {
                 //Thông báo thành công
                 //BÌNH
@@ -65,11 +65,11 @@ namespace GUI.folderQuanLyPhong
 
 
             //Phát sinh mã loại phòng
-            txtMaPhong.Text = BUS.ThemPhongBUS.PhatSinhMaPhong().ToString();
+            txtMaPhong.Text = BUS.PhongBUS.PhatSinhMaPhong().ToString();
 
            
             //Lấy tất cả loại phòng vào cmb
-            listLoaiPhong =  LoaiPhongBUS.LayTatCaLoaiPhong();
+            listLoaiPhong =  LoaiPhongBUS.LayTatCaLoaiPhong_List();
             //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
             if(listLoaiPhong.Count == 0)
             {
@@ -85,7 +85,7 @@ namespace GUI.folderQuanLyPhong
 
             //Lấy tất cả các tầng
             cmbTang.Properties.Items.Clear();
-            List<string> listTang = ThemPhongBUS.LayCacTangCoSan();
+            List<string> listTang = PhongBUS.LayCacTangCoSan();
             foreach (string tang in listTang)
             {
                 cmbTang.Properties.Items.Add(tang);

@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KhachHangDTO.cs" />
+    <Compile Include="LoaiKhachHangDTO.cs" />
     <Compile Include="LoaiPhongDTO.cs" />
     <Compile Include="PhongDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

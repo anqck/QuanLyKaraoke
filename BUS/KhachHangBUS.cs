@@ -26,5 +26,9 @@ namespace BUS
         {
             throw new NotImplementedException();
         }
+        public static KhachHangDTO LayKhachHang(int maKH)
+        {
+            return DAL.KhachHangDAL.LayKhachHang(maKH);
+        }
     }
 }

@@ -7,7 +7,7 @@ using DTO;
 
 namespace BUS
 {
-    public class ThemPhongBUS
+    public class PhongBUS
     {
         public static int PhatSinhMaPhong()
         {

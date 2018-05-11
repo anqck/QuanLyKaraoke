@@ -63,5 +63,12 @@ namespace DAL
                 return null;
             }
         }
+        public static KhachHangDTO LayKhachHang(int maKH)
+        {
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.khachhang WHERE MaKH = '"+maKH.ToString()+"';");
+
+            return new KhachHangDTO((int)dt.Rows[0]["MaKH"], dt.Rows[0]["TenKH"].ToString(), dt.Rows[0]["CMND"].ToString(), dt.Rows[0]["SDT"].ToString(), dt.Rows[0]["DiaChi"].ToString(), (int)dt.Rows[0]["MaLoaiKH"], (int)dt.Rows[0]["DiemTichLuy"]);
+
+        }
     }
 }

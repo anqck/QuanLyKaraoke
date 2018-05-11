@@ -15,17 +15,14 @@ namespace BUS
             return DAL.LoaiPhongDAL.PhatSinhMaLoaiPhong();
         }
 
-        public static List<LoaiPhongDTO> LayTatCaLoaiPhong()
+        public static DataTable LayTatCaLoaiPhong_DataTable()
         {
-            List<LoaiPhongDTO> res = new List<LoaiPhongDTO>();
+            return DAL.LoaiPhongDAL.LayTatCaLoaiPhong_DataTable();
+        }
 
-            DataTable dt =  DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong;");
-            foreach(DataRow row in dt.Rows)
-            {
-                res.Add(new LoaiPhongDTO(Convert.ToInt32(row["MaLP"]),row["TenLoaiPhong"].ToString()));
-            }
-
-            return res;
+        public static List<LoaiPhongDTO> LayTatCaLoaiPhong_List()
+        {
+            return DAL.LoaiPhongDAL.LayTatCaLoaiPhong_List();
         }
 
         public static LoaiPhongDTO LayLoaiPhong(PhongDTO phong)

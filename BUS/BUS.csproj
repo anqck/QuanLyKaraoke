@@ -41,10 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KhachHangBUS.cs" />
+    <Compile Include="LoaiKhachHangBUS.cs" />
     <Compile Include="LoaiPhongBUS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ThanhToanBUS.cs" />
-    <Compile Include="ThemPhongBUS.cs" />
+    <Compile Include="PhongBUS.cs" />
     <Compile Include="ThuePhongBUS.cs" />
     <Compile Include="TinhTrangPhongBUS.cs" />
   </ItemGroup>

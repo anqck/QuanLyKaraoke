@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="KhachHangDAL.cs" />
+    <Compile Include="LoaiKhachHangDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="PhongDAL.cs" />
     <Compile Include="DataProvider.cs" />

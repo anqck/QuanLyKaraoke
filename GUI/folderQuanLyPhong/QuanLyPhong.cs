@@ -49,7 +49,7 @@ namespace GUI.folderQuanLyPhong
                 tileAll.Elements[1].Text = ((DataView)gridView1.DataSource).Count.ToString();
 
                 grpLoaiPhong.Items.Clear();
-                foreach (DataRow row in DAL.LoaiPhongDAL.LayTatCaLoaiPhong().Rows)
+                foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable().Rows)
                 {
                     grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
                 }
