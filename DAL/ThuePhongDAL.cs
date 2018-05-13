@@ -15,7 +15,7 @@ namespace DAL
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.thuephong;").Rows[0][0]);
         }
 
-        public static bool LuuThongTinPhong(ThuePhongDTO thuephongDTO)
+        public static bool LuuThongTinThuePhong(ThuePhongDTO thuephongDTO)
         {
             try
             {
@@ -23,7 +23,7 @@ namespace DAL
                 strSQL.Replace("$0", thuephongDTO.MaThuePhong.ToString());
                 strSQL.Replace("$1", thuephongDTO.MaPhong.ToString());
                 strSQL.Replace("$2", thuephongDTO.MaKH.ToString());
-                strSQL.Replace("$3", thuephongDTO.GioThuePhong.ToString());
+                strSQL.Replace("$3", thuephongDTO.GioThuePhong.ToString("yyyy-MM-dd HH:mm:ss.fff"));
                 strSQL.Replace("$4", thuephongDTO.TienTraTruoc.ToString());
                 strSQL.Replace("$5", thuephongDTO.MaTrangThaiThuePhong.ToString());
                 DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
@@ -58,9 +58,6 @@ namespace DAL
                 return null;
             }
         }
-        public static bool LuuThongTinThuePhong(ThuePhongDTO thuePhongDTO)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 }

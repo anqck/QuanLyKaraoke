@@ -80,10 +80,7 @@ namespace GUI.TinhTrangPhong
                         listLoaiPhongChecked.Add(i.Name);
                 }
                 strFilterLoaiPhong = BUS.TinhTrangPhongBUS.GetFilterString_LoaiPhong(listLoaiPhongChecked);
-
-                
-
-                
+  
             }
             catch (Exception x)
             {
@@ -261,9 +258,26 @@ namespace GUI.TinhTrangPhong
 
         private void tileView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            if (tileView1.GetFocusedRowCellValue(colTinhTrangPhong) == null)
+            {
+                btnXemPhong.Visible = false;
+                wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
+                btnDatPhong.Visible = false;
+                btnThuePhong.Visible = false;
+
+                wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
+                btnChuyenPhong.Visible = false;
+                btnThanhToan.Visible = false;
+                return;
+            }
+                
             switch(tileView1.GetFocusedRowCellValue(colTinhTrangPhong).ToString())
             {
                 case "Còn trống":
+                    btnXemPhong.Visible = true;
+                    wbntTinhtrangphong.Buttons[1].Properties.Visible = true;
+                    btnDatPhong.Visible = true;
+
                     btnThuePhong.Visible = true;
 
                     wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
@@ -272,6 +286,10 @@ namespace GUI.TinhTrangPhong
 
                     break;
                 case "Đang sử dụng":
+                    btnXemPhong.Visible = true;
+                    wbntTinhtrangphong.Buttons[1].Properties.Visible = true;
+                    btnDatPhong.Visible = true;
+
                     btnThuePhong.Visible = false;
 
                     wbntTinhtrangphong.Buttons[4].Properties.Visible = true;
@@ -288,7 +306,7 @@ namespace GUI.TinhTrangPhong
 
         public string ToCustomString(TimeSpan span)
         {
-            return string.Format("{0}:{1}:{2}", span.Days * 24 + span.Hours, span.Minutes, span.Seconds);
+            return string.Format("{0}:{1:D2}:{2:D2}", span.Days * 24 + span.Hours, span.Minutes, span.Seconds);
         }
         #endregion
 
@@ -332,6 +350,8 @@ namespace GUI.TinhTrangPhong
         void OnThuePhongSuccess()
         {
             DisplayTinhTrangPhongWithSelectedTile();
+
+            RefreshDataBinding();
         }
 
         #endregion

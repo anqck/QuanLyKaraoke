@@ -39,10 +39,6 @@
             this.bntChonKH = new DevExpress.XtraEditors.SimpleButton();
             this.txtKhachHang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -51,14 +47,18 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
+            this.colMaKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties.CalendarTimeProperties)).BeginInit();
@@ -77,13 +77,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -107,7 +107,7 @@
             this.layoutControl1.Controls.Add(this.txtLoaiPhong);
             this.layoutControl1.Controls.Add(this.bntChonKH);
             this.layoutControl1.Controls.Add(this.txtKhachHang);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.txtTienTraTruoc);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 87);
@@ -237,70 +237,6 @@
             this.gridLookUpEdit1View.RowHeight = 40;
             this.gridLookUpEdit1View.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridLookUpEdit1View_FocusedRowChanged);
             // 
-            // colMaKhachHang
-            // 
-            this.colMaKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colMaKhachHang.AppearanceCell.Options.UseFont = true;
-            this.colMaKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colMaKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colMaKhachHang.AppearanceHeader.Options.UseFont = true;
-            this.colMaKhachHang.AppearanceHeader.Options.UseForeColor = true;
-            this.colMaKhachHang.Caption = "Mã Khách Hàng";
-            this.colMaKhachHang.FieldName = "MaKH";
-            this.colMaKhachHang.Name = "colMaKhachHang";
-            this.colMaKhachHang.OptionsColumn.AllowEdit = false;
-            this.colMaKhachHang.Visible = true;
-            this.colMaKhachHang.VisibleIndex = 0;
-            this.colMaKhachHang.Width = 100;
-            // 
-            // colTenKhachHang
-            // 
-            this.colTenKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTenKhachHang.AppearanceCell.Options.UseFont = true;
-            this.colTenKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTenKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colTenKhachHang.AppearanceHeader.Options.UseFont = true;
-            this.colTenKhachHang.AppearanceHeader.Options.UseForeColor = true;
-            this.colTenKhachHang.Caption = "Tên Khách Hàng";
-            this.colTenKhachHang.FieldName = "TenKH";
-            this.colTenKhachHang.Name = "colTenKhachHang";
-            this.colTenKhachHang.OptionsColumn.AllowEdit = false;
-            this.colTenKhachHang.Visible = true;
-            this.colTenKhachHang.VisibleIndex = 1;
-            this.colTenKhachHang.Width = 93;
-            // 
-            // colSDT
-            // 
-            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colSDT.AppearanceCell.Options.UseFont = true;
-            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colSDT.AppearanceHeader.Options.UseFont = true;
-            this.colSDT.AppearanceHeader.Options.UseForeColor = true;
-            this.colSDT.Caption = "SĐT";
-            this.colSDT.FieldName = "SDT";
-            this.colSDT.Name = "colSDT";
-            this.colSDT.OptionsColumn.AllowEdit = false;
-            this.colSDT.Visible = true;
-            this.colSDT.VisibleIndex = 2;
-            this.colSDT.Width = 93;
-            // 
-            // colCMND
-            // 
-            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceCell.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colCMND.AppearanceHeader.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Options.UseForeColor = true;
-            this.colCMND.Caption = "CMND";
-            this.colCMND.FieldName = "CMND";
-            this.colCMND.Name = "colCMND";
-            this.colCMND.OptionsColumn.AllowEdit = false;
-            this.colCMND.Visible = true;
-            this.colCMND.VisibleIndex = 3;
-            this.colCMND.Width = 96;
-            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -402,6 +338,33 @@
             this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem5.TextVisible = false;
             // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem2.Control = this.txtTienTraTruoc;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 123);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(1103, 40);
+            this.layoutControlItem2.Text = "Tiền trả trước";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(134, 28);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(344, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 40);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(735, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(10, 40);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
             // layoutControl2
             // 
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -448,42 +411,92 @@
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
-            // textEdit1
+            // txtTienTraTruoc
             // 
-            this.textEdit1.Location = new System.Drawing.Point(154, 139);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(959, 34);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 14;
+            this.txtTienTraTruoc.Location = new System.Drawing.Point(154, 139);
+            this.txtTienTraTruoc.Name = "txtTienTraTruoc";
+            this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
+            this.txtTienTraTruoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTienTraTruoc.Properties.DisplayFormat.FormatString = "###,###,##0 VNĐ";
+            this.txtTienTraTruoc.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtTienTraTruoc.Properties.EditFormat.FormatString = "###,###,###";
+            this.txtTienTraTruoc.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtTienTraTruoc.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtTienTraTruoc.Properties.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtTienTraTruoc.Properties.Mask.EditMask = "###,###,###,###";
+            this.txtTienTraTruoc.Size = new System.Drawing.Size(959, 34);
+            this.txtTienTraTruoc.StyleController = this.layoutControl1;
+            this.txtTienTraTruoc.TabIndex = 14;
             // 
-            // layoutControlItem2
+            // colMaKhachHang
             // 
-            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem2.Control = this.textEdit1;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 123);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1103, 40);
-            this.layoutControlItem2.Text = "Tiền trả trước";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(134, 28);
+            this.colMaKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaKhachHang.AppearanceCell.Options.UseFont = true;
+            this.colMaKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colMaKhachHang.AppearanceHeader.Options.UseFont = true;
+            this.colMaKhachHang.AppearanceHeader.Options.UseForeColor = true;
+            this.colMaKhachHang.Caption = "Mã Khách Hàng";
+            this.colMaKhachHang.FieldName = "MaKH";
+            this.colMaKhachHang.Name = "colMaKhachHang";
+            this.colMaKhachHang.OptionsColumn.AllowEdit = false;
+            this.colMaKhachHang.Visible = true;
+            this.colMaKhachHang.VisibleIndex = 0;
+            this.colMaKhachHang.Width = 100;
             // 
-            // emptySpaceItem1
+            // colTenKhachHang
             // 
-            this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(344, 0);
-            this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(10, 40);
-            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.colTenKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenKhachHang.AppearanceCell.Options.UseFont = true;
+            this.colTenKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colTenKhachHang.AppearanceHeader.Options.UseFont = true;
+            this.colTenKhachHang.AppearanceHeader.Options.UseForeColor = true;
+            this.colTenKhachHang.Caption = "Tên Khách Hàng";
+            this.colTenKhachHang.FieldName = "TenKH";
+            this.colTenKhachHang.Name = "colTenKhachHang";
+            this.colTenKhachHang.OptionsColumn.AllowEdit = false;
+            this.colTenKhachHang.Visible = true;
+            this.colTenKhachHang.VisibleIndex = 1;
+            this.colTenKhachHang.Width = 93;
             // 
-            // emptySpaceItem2
+            // colSDT
             // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(735, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(10, 40);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceCell.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colSDT.AppearanceHeader.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Options.UseForeColor = true;
+            this.colSDT.Caption = "SĐT";
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.OptionsColumn.AllowEdit = false;
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 2;
+            this.colSDT.Width = 93;
+            // 
+            // colCMND
+            // 
+            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceCell.Options.UseFont = true;
+            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colCMND.AppearanceHeader.Options.UseFont = true;
+            this.colCMND.AppearanceHeader.Options.UseForeColor = true;
+            this.colCMND.Caption = "CMND";
+            this.colCMND.FieldName = "CMND";
+            this.colCMND.Name = "colCMND";
+            this.colCMND.OptionsColumn.AllowEdit = false;
+            this.colCMND.Visible = true;
+            this.colCMND.VisibleIndex = 3;
+            this.colCMND.Width = 96;
             // 
             // ThuePhong
             // 
@@ -514,13 +527,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -553,9 +566,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
         private DevExpress.XtraGrid.Columns.GridColumn colCMND;
         private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong, btnHuyPhong;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
+        private DevExpress.XtraEditors.SpinEdit txtTienTraTruoc;
     }
 }

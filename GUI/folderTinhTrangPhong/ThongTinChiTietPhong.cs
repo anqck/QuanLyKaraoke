@@ -60,6 +60,8 @@ namespace GUI.folderTinhTrangPhong
                 txtLoaiKH.EditValue = BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenKH;
                 txtSDT.EditValue = khachHang.SDT;
                 txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
+
+
             }
             else
             {
@@ -70,9 +72,18 @@ namespace GUI.folderTinhTrangPhong
         private void DisplayControlForRented(bool dangDuocThue)
         {
             if(dangDuocThue)
+            {
                 grpKhachHang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                grpThuePhong.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+
+            }
+                
             else
+            {
                 grpKhachHang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                grpThuePhong.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+            }
+               
         }
     }
 }

@@ -80,12 +80,13 @@ namespace GUI.folderTinhTrangPhong
                         return;
                     }
 
-                    if(KhachHangBUS.ThemThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong,khachHang.MaKH,(DateTime)txtNgayVao.EditValue,0,1)))
+
+                    if(ThuePhongBUS.LuuThongTinThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong,khachHang.MaKH,(DateTime)txtNgayVao.EditValue,Convert.ToDouble(txtTienTraTruoc.EditValue),1))&&PhongBUS.CapNhatTinhTrangPhong(phong,1))
                     {
                         //Thông báo thành công
                         onThuePhongSuccess();
 
-
+                        ((FlyoutDialog)this.Parent).Hide();
                     }
                     else
                     {

@@ -16,6 +16,24 @@ namespace DAL
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.phong;").Rows[0][0] ); 
         }
 
+        public static bool CapNhatTinhTrangPhong(PhongDTO phongDTO,int maTinhTrangPhong)
+        {
+            try
+            {
+                StringBuilder strSQL = new StringBuilder("UPDATE quanlykaraoke.phong SET MaTinhTrangPhong = '$0' WHERE MaPhong = '$1'");
+                strSQL.Replace("$1", phongDTO.MaPhong.ToString());
+                strSQL.Replace("$0", maTinhTrangPhong.ToString());
+
+                DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         //public static Dictionary<string, PhongDTO> LayTatCaPhong()
         //{
 

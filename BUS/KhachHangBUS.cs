@@ -22,10 +22,7 @@ namespace BUS
             return DAL.KhachHangDAL.LayTatCaKhachHang();
         }
 
-        public static bool ThemThuePhong(ThuePhongDTO thuePhongDTO)
-        {
-            throw new NotImplementedException();
-        }
+
         public static KhachHangDTO LayKhachHang(int maKH)
         {
             return DAL.KhachHangDAL.LayKhachHang(maKH);
