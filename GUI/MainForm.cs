@@ -89,17 +89,14 @@ namespace GUI
             this.pageKhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.khachHang1 = new GUI.folderKhachHang.KhachHang();
             this.pageNhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.nhanVien1 = new GUI.folderNhanVien.NhanVien();
             this.pageDichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.dichVu1 = new GUI.folderDichVu.DichVu();
             this.pageBaocao = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
-
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-
-            this.nhanVien1 = new GUI.folderNhanVien.NhanVien();
-
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -452,7 +449,7 @@ namespace GUI
             this.tileBarItem5.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem5.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem5.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.Text = "Loại dịch vụ";
+            tileItemElement9.Text = "Dịch vụ";
             tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileBarItem5.Elements.Add(tileItemElement9);
             this.tileBarItem5.Id = 0;
@@ -464,12 +461,13 @@ namespace GUI
             this.tileBarItem6.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem6.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem6.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement10.Text = "Cái gì đó";
+            tileItemElement10.Text = "Loại dịch vụ";
             tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileBarItem6.Elements.Add(tileItemElement10);
             this.tileBarItem6.Id = 1;
             this.tileBarItem6.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem6.Name = "tileBarItem6";
+            this.tileBarItem6.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem_LoaiDV_ItemClick);
             // 
             // menuBaocao
             // 
@@ -573,6 +571,14 @@ namespace GUI
             this.pageNhanvien.Name = "pageNhanvien";
             this.pageNhanvien.Size = new System.Drawing.Size(1280, 633);
             // 
+            // nhanVien1
+            // 
+            this.nhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.nhanVien1.Location = new System.Drawing.Point(0, 0);
+            this.nhanVien1.Name = "nhanVien1";
+            this.nhanVien1.Size = new System.Drawing.Size(1280, 633);
+            this.nhanVien1.TabIndex = 0;
+            // 
             // pageDichvu
             // 
             this.pageDichvu.Caption = "pageDichvu";
@@ -638,21 +644,11 @@ namespace GUI
             this.searchControl.Size = new System.Drawing.Size(315, 22);
             this.searchControl.TabIndex = 1;
             // 
-
             // timer1
             // 
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-
-            // nhanVien1
-            // 
-            this.nhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.nhanVien1.Location = new System.Drawing.Point(0, 0);
-            this.nhanVien1.Name = "nhanVien1";
-            this.nhanVien1.Size = new System.Drawing.Size(1280, 633);
-            this.nhanVien1.TabIndex = 0;
-
             // 
             // MainForm
             // 
@@ -713,8 +709,8 @@ namespace GUI
                     break;
                 case "menuDichvu":
                     PageControl.SelectedPage = pageDichvu;
-                   // khachHang1.RefreshDataBinding();
-                   // khachHang1.GoToPage(0);
+                    dichVu1.RefreshDataBinding();
+                    dichVu1.GoToPage(0);
                     break;
                 case "menuBaocao":
                     PageControl.SelectedPage = pageBaocao;
@@ -744,6 +740,17 @@ namespace GUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             tinhTrangPhong1.UpdateTime();
+        }
+
+        private void tileItem_LoaiDV_ItemClick(object sender, TileItemEventArgs e)
+        {
+            
+            MenuBar.HideDropDownWindow();
+
+            PageControl.SelectedPage = pageDichvu;
+            dichVu1.GoToPage(3);
+
+
         }
     }
 }
