@@ -28,5 +28,9 @@ namespace BUS
         {
             return DAL.LoaiDichVuDAL.LayTatCaLoaiDichVu_DataTable();
         }
+        public static bool XoaLoaiDichVu(int maLDV)
+        {
+            return DAL.LoaiDichVuDAL.XoaLoaiDichVu(maLDV);
+        }
     }
 }

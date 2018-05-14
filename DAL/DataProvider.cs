@@ -46,8 +46,12 @@ namespace DAL
             conn.Close();
 
             return dt;
-
             
+        }
+
+        public static MySqlConnection getConnection()
+        {
+            return conn;
         }
     }
 }

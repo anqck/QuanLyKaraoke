@@ -17,11 +17,16 @@ namespace GUI.folderDichVu
         DataTable dtLoaiDichVu;
         DataTable dtDichVu;
 
+        Action themLoaiDichVu;
+
         public LoaiDichVu()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
 
-            
+        public void SetActionThemLoaiDichVu(Action action)
+        {
+            themLoaiDichVu = action;
         }
         public void RefreshDataBinding()
         {
@@ -34,10 +39,10 @@ namespace GUI.folderDichVu
                 dataset.Tables.Add(dtLoaiDichVu);
                 dataset.Tables.Add(dtDichVu);
 
-                dataset.Relations.Add("ThongTinChiTietDichVu", dataset.Tables["loaidichvu"].Columns["MaLDV"], dataset.Tables["dichvu"].Columns["MaLDV"]);
+                dataset.Relations.Add("Thông tin chi tiết dịch vụ", dataset.Tables["loaidichvu"].Columns["MaLDV"], dataset.Tables["dichvu"].Columns["MaLDV"]);
 
                 gridControl1.DataSource = dataset.Tables["loaidichvu"];
-                gridControl1.LevelTree.Nodes.Add("ThongTinChiTietDichVu", cardView1);
+                gridControl1.LevelTree.Nodes.Add("Thông tin chi tiết dịch vụ", tileView1);
 
 
             //}
@@ -66,12 +71,36 @@ namespace GUI.folderDichVu
             switch(e.Button.Properties.Tag.ToString())
             {
                 case "Thêm Loại Dịch Vụ":
-
+                    //themLoaiDichVu();
                     break;
                 case "Sửa Loại Dịch Vụ":
 
                     break;
                 case "Xóa Loại Dịch Vụ":
+                    //Kiểm tra xem có chọn dòng nào không
+                    if(gridView1.GetFocusedRow() == null)
+                    {
+                        //BÌNH
+
+                        return;
+                    }
+
+                    //Kiểm tra xem loại dịch vụ đó còn dịch vụ nào không
+                    if (BUS.DichVuBUS.DemSoLuongDichVu((int)gridView1.GetFocusedRowCellValue(colMaLDV) )!= 0)
+                    {
+                        XtraMessageBox.Show("Chỉ có thể xóa những loại dịch vụ không có dịch vụ nào!", "Lỗi", MessageBoxButtons.OK);
+                        return;
+                    }
+                    //Thông báo xác nhận
+                    if (XtraMessageBox.Show("Bạn có chắc xóa loại dịch vụ '" + gridView1.GetFocusedRowCellValue(colTenLDV).ToString() +"' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        BUS.LoaiDichVuBUS.XoaLoaiDichVu((int)gridView1.GetFocusedRowCellValue(colMaLDV));
+
+                        //Thông báo thành công/thất bại
+                        XtraMessageBox.Show("Xóa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK);
+                        RefreshDataBinding();
+                    }
+
 
                     break;
             }

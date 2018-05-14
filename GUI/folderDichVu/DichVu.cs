@@ -17,6 +17,9 @@ namespace GUI.folderDichVu
         public DichVu()
         {
             InitializeComponent();
+
+            themDichVu1.actionBack = GoToHomePage;
+            loaiDichVu1.SetActionThemLoaiDichVu(GoToThemLoaiDichVuPage);
         }
 
         private void wbntDichvu_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -36,13 +39,14 @@ namespace GUI.folderDichVu
             }
             if (e.Button.Equals(wbntDichvu.Buttons[4]))
             {
-                this.DichVuPagecontrol.SelectedPage = PageThemloaidichvu;
+                GoToThemLoaiDichVuPage();
             }
         }
 
         private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            this.DichVuPagecontrol.SelectedPage = PageDichvu;
+            GoToHomePage();
+            
         }
 
         private void tileItem2_ItemClick(object sender, TileItemEventArgs e)
@@ -84,7 +88,7 @@ namespace GUI.folderDichVu
         {
             try
             {
-                gridControl1.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+                gridControl1.DataSource = DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu();
 
            
 
@@ -104,6 +108,16 @@ namespace GUI.folderDichVu
             }
         }
 
+
+        void GoToHomePage()
+        {
+            this.DichVuPagecontrol.SelectedPage = PageDichvu;
+        }
+
+        void GoToThemLoaiDichVuPage()
+        {
+            this.DichVuPagecontrol.SelectedPage = PageThemloaidichvu;
+        }
         internal void GoToPage(int v)
         {
             DichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;

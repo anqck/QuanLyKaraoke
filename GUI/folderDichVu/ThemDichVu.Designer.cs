@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemDichVu));
             this.wbntThemdichvu = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.wbntBackThemKH = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleLabelItem2 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.txt = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtMaDV = new DevExpress.XtraEditors.TextEdit();
+            this.txtTenDichVu = new DevExpress.XtraEditors.TextEdit();
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.comboBoxEdit2 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.txtDonVi = new DevExpress.XtraEditors.TextEdit();
+            this.cmbLoaiDV = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtDonGia = new DevExpress.XtraEditors.SpinEdit();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
@@ -52,16 +55,17 @@
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.wbntEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txt.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaDV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenDichVu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDonVi.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbLoaiDV.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
@@ -79,11 +83,8 @@
             // 
             this.wbntThemdichvu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntThemdichvu.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton()});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
             this.wbntThemdichvu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntThemdichvu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntThemdichvu.ForeColor = System.Drawing.Color.White;
@@ -92,11 +93,13 @@
             this.wbntThemdichvu.Size = new System.Drawing.Size(997, 80);
             this.wbntThemdichvu.TabIndex = 12;
             this.wbntThemdichvu.Text = "windowsUIButtonPanel1";
+            this.wbntThemdichvu.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntThemdichvu_ButtonClick);
             // 
             // wbntEmpty
             // 
             this.wbntEmpty.BackColor = System.Drawing.Color.White;
             this.wbntEmpty.ContentAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.wbntEmpty.Controls.Add(this.wbntBackThemKH);
             this.wbntEmpty.Dock = System.Windows.Forms.DockStyle.Left;
             this.wbntEmpty.Location = new System.Drawing.Point(0, 0);
             this.wbntEmpty.Name = "wbntEmpty";
@@ -104,6 +107,19 @@
             this.wbntEmpty.Size = new System.Drawing.Size(68, 528);
             this.wbntEmpty.TabIndex = 4;
             this.wbntEmpty.Text = "windowsUIButtonPanel1";
+            // 
+            // wbntBackThemKH
+            // 
+            this.wbntBackThemKH.BackColor = System.Drawing.Color.White;
+            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            this.wbntBackThemKH.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.wbntBackThemKH.Location = new System.Drawing.Point(3, 3);
+            this.wbntBackThemKH.Name = "wbntBackThemKH";
+            this.wbntBackThemKH.Size = new System.Drawing.Size(56, 58);
+            this.wbntBackThemKH.TabIndex = 4;
+            this.wbntBackThemKH.Text = "windowsUIButtonPanel2";
+            this.wbntBackThemKH.Click += new System.EventHandler(this.wbntBackThemKH_Click);
             // 
             // emptySpaceItem1
             // 
@@ -133,12 +149,12 @@
             // layoutControl1
             // 
             this.layoutControl1.BackColor = System.Drawing.Color.White;
-            this.layoutControl1.Controls.Add(this.txt);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.txtMaDV);
+            this.layoutControl1.Controls.Add(this.txtTenDichVu);
             this.layoutControl1.Controls.Add(this.memoEdit1);
-            this.layoutControl1.Controls.Add(this.textEdit3);
-            this.layoutControl1.Controls.Add(this.comboBoxEdit2);
-            this.layoutControl1.Controls.Add(this.spinEdit1);
+            this.layoutControl1.Controls.Add(this.txtDonVi);
+            this.layoutControl1.Controls.Add(this.cmbLoaiDV);
+            this.layoutControl1.Controls.Add(this.txtDonGia);
             this.layoutControl1.Controls.Add(this.pictureEdit1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Location = new System.Drawing.Point(68, 0);
@@ -149,27 +165,30 @@
             this.layoutControl1.TabIndex = 14;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // txt
+            // txtMaDV
             // 
-            this.txt.Location = new System.Drawing.Point(225, 83);
-            this.txt.Name = "txt";
-            this.txt.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt.Properties.Appearance.Options.UseFont = true;
-            this.txt.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.txt.Size = new System.Drawing.Size(312, 40);
-            this.txt.StyleController = this.layoutControl1;
-            this.txt.TabIndex = 5;
+            this.txtMaDV.Location = new System.Drawing.Point(225, 83);
+            this.txtMaDV.Name = "txtMaDV";
+            this.txtMaDV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDV.Properties.Appearance.Options.UseFont = true;
+            this.txtMaDV.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.txtMaDV.Properties.ReadOnly = true;
+            this.txtMaDV.Size = new System.Drawing.Size(312, 40);
+            this.txtMaDV.StyleController = this.layoutControl1;
+            this.txtMaDV.TabIndex = 5;
             // 
-            // textEdit1
+            // txtTenDichVu
             // 
-            this.textEdit1.Location = new System.Drawing.Point(225, 135);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.textEdit1.Size = new System.Drawing.Size(312, 40);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 6;
+            this.txtTenDichVu.Location = new System.Drawing.Point(225, 135);
+            this.txtTenDichVu.Name = "txtTenDichVu";
+            this.txtTenDichVu.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenDichVu.Properties.Appearance.Options.UseFont = true;
+            this.txtTenDichVu.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.txtTenDichVu.Properties.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenDichVu_Properties_Validating);
+            this.txtTenDichVu.Size = new System.Drawing.Size(312, 40);
+            this.txtTenDichVu.StyleController = this.layoutControl1;
+            this.txtTenDichVu.TabIndex = 6;
+            this.txtTenDichVu.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.txtTenDichVu_InvalidValue);
             // 
             // memoEdit1
             // 
@@ -183,61 +202,64 @@
             this.memoEdit1.StyleController = this.layoutControl1;
             this.memoEdit1.TabIndex = 9;
             // 
-            // textEdit3
+            // txtDonVi
             // 
-            this.textEdit3.Location = new System.Drawing.Point(19, 275);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.textEdit3.Size = new System.Drawing.Size(256, 40);
-            this.textEdit3.StyleController = this.layoutControl1;
-            this.textEdit3.TabIndex = 6;
+            this.txtDonVi.Location = new System.Drawing.Point(19, 275);
+            this.txtDonVi.Name = "txtDonVi";
+            this.txtDonVi.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi.Properties.Appearance.Options.UseFont = true;
+            this.txtDonVi.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.txtDonVi.Properties.NullText = "Chai, Cái,...";
+            this.txtDonVi.Properties.Validating += new System.ComponentModel.CancelEventHandler(this.txtDonVi_Properties_Validating);
+            this.txtDonVi.Size = new System.Drawing.Size(256, 40);
+            this.txtDonVi.StyleController = this.layoutControl1;
+            this.txtDonVi.TabIndex = 6;
             // 
-            // comboBoxEdit2
+            // cmbLoaiDV
             // 
-            this.comboBoxEdit2.Location = new System.Drawing.Point(225, 187);
-            this.comboBoxEdit2.Name = "comboBoxEdit2";
-            this.comboBoxEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit2.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.comboBoxEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbLoaiDV.Location = new System.Drawing.Point(225, 187);
+            this.cmbLoaiDV.Name = "cmbLoaiDV";
+            this.cmbLoaiDV.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoaiDV.Properties.Appearance.Options.UseFont = true;
+            this.cmbLoaiDV.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.cmbLoaiDV.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit2.Size = new System.Drawing.Size(312, 40);
-            this.comboBoxEdit2.StyleController = this.layoutControl1;
-            this.comboBoxEdit2.TabIndex = 8;
+            this.cmbLoaiDV.Size = new System.Drawing.Size(312, 40);
+            this.cmbLoaiDV.StyleController = this.layoutControl1;
+            this.cmbLoaiDV.TabIndex = 8;
             // 
-            // spinEdit1
+            // txtDonGia
             // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
+            this.txtDonGia.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(287, 274);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtDonGia.Location = new System.Drawing.Point(287, 274);
+            this.txtDonGia.Name = "txtDonGia";
+            this.txtDonGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonGia.Properties.Appearance.Options.UseFont = true;
+            this.txtDonGia.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.txtDonGia.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.spinEdit1.Size = new System.Drawing.Size(250, 40);
-            this.spinEdit1.StyleController = this.layoutControl1;
-            this.spinEdit1.TabIndex = 10;
+            this.txtDonGia.Properties.DisplayFormat.FormatString = "###,###,###,##0 VNĐ";
+            this.txtDonGia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDonGia.Properties.Mask.EditMask = "###,###,###,###";
+            this.txtDonGia.Size = new System.Drawing.Size(250, 40);
+            this.txtDonGia.StyleController = this.layoutControl1;
+            this.txtDonGia.TabIndex = 10;
             // 
             // pictureEdit1
             // 
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
             this.pictureEdit1.Location = new System.Drawing.Point(546, 116);
             this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit1.Properties.InitialImageOptions.Image")));
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Size = new System.Drawing.Size(367, 202);
             this.pictureEdit1.StyleController = this.layoutControl1;
             this.pictureEdit1.TabIndex = 11;
+            this.pictureEdit1.Click += new System.EventHandler(this.pictureEdit1_Click);
             // 
             // layoutControlGroup2
             // 
@@ -281,7 +303,7 @@
             this.layoutControlItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem2.Control = this.txt;
+            this.layoutControlItem2.Control = this.txtMaDV;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 64);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -342,7 +364,7 @@
             this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem1.Control = this.textEdit1;
+            this.layoutControlItem1.Control = this.txtTenDichVu;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 116);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.OptionsPrint.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -361,7 +383,7 @@
             this.layoutControlItem4.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem4.Control = this.comboBoxEdit2;
+            this.layoutControlItem4.Control = this.cmbLoaiDV;
             this.layoutControlItem4.CustomizationFormText = "Loại khách hàng";
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 168);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -382,7 +404,7 @@
             this.layoutControlItem8.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem8.Control = this.textEdit3;
+            this.layoutControlItem8.Control = this.txtDonVi;
             this.layoutControlItem8.CustomizationFormText = "Tên khách hàng";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 220);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -392,7 +414,7 @@
             this.layoutControlItem8.OptionsPrint.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem8.Size = new System.Drawing.Size(268, 88);
             this.layoutControlItem8.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlItem8.Text = "Đơn vị";
+            this.layoutControlItem8.Text = "Đơn vị tính";
             this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Top;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(202, 32);
             // 
@@ -402,7 +424,7 @@
             this.layoutControlItem9.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem9.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem9.Control = this.spinEdit1;
+            this.layoutControlItem9.Control = this.txtDonGia;
             this.layoutControlItem9.CustomizationFormText = "Điểm tích lũy";
             this.layoutControlItem9.Location = new System.Drawing.Point(268, 220);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -425,16 +447,17 @@
             this.Controls.Add(this.wbntThemdichvu);
             this.Name = "ThemDichVu";
             this.Size = new System.Drawing.Size(997, 608);
+            this.wbntEmpty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txt.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaDV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTenDichVu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDonVi.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbLoaiDV.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
@@ -457,12 +480,12 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem2;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit txt;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtMaDV;
+        private DevExpress.XtraEditors.TextEdit txtTenDichVu;
         private DevExpress.XtraEditors.MemoEdit memoEdit1;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit2;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private DevExpress.XtraEditors.TextEdit txtDonVi;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbLoaiDV;
+        private DevExpress.XtraEditors.SpinEdit txtDonGia;
         private DevExpress.XtraEditors.PictureEdit pictureEdit1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
@@ -474,5 +497,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntBackThemKH;
     }
 }

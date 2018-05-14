@@ -39,5 +39,17 @@ namespace DAL
 
             return res;
         }
+        public static bool XoaLoaiDichVu(int maLDV)
+        {
+            try
+            {
+                DAL.DataProvider.ExecuseQuery("DELECT FROM quanlykaraoke.loaidichvu WHERE MaLDV = '" + maLDV.ToString() + "';");
+                return true;
+            }
+                catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

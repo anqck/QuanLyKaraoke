@@ -31,6 +31,17 @@ namespace DTO
             SetHinhAnh(hinhAnh);
         }
 
+        public DichVuDTO(int maDV, string tenDV, double donGia, string donVi, Image hinhAnh, int maLoaiDV)
+        {
+            MaDV = maDV;
+            TenDV = tenDV;
+            DonGia = donGia;
+            DonVi = donVi;
+            MaLoaiDV = maLoaiDV;
+
+            HinhAnh = hinhAnh;
+        }
+
         public void SetHinhAnh(byte[] byteArrayIn)
         {
             Image returnImage = null;
