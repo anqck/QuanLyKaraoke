@@ -3,3 +3,6 @@
 ################################################################################
 
 /GUI/bin/Debug
+*.cache
+*.cache
+GUI/obj/Debug/DesignTimeResolveAssemblyReferences.cache

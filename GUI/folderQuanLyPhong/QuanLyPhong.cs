@@ -26,11 +26,11 @@ namespace GUI.folderQuanLyPhong
                 QuanlyPagecontrol.SelectedPage = PageThemphongmoi;
                 themPhongMoi1.Initialize();
             }
-            if (e.Button.Equals(wbntQuanlyphong.Buttons[1]))
+            if (e.Button.Equals(wbntQuanlyphong.Buttons[2]))
             {
-                QuanlyPagecontrol.SelectedPage = PageThemloaiphong;
-                themLoaiPhong1.Initialize();
+                QuanlyPagecontrol.SelectedPage = PageSuaphong;
             }
+
         }
 
         private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -152,5 +152,10 @@ namespace GUI.folderQuanLyPhong
         }
 
         #endregion
+
+        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            QuanlyPagecontrol.SelectedPageIndex = 0;
+        }
     }
 }

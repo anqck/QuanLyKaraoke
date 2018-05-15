@@ -61,9 +61,9 @@
             this.PageThemphongmoi = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntThemphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.themPhongMoi1 = new GUI.folderQuanLyPhong.ThemPhongMoi();
-            this.PageThemloaiphong = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.wbntThemloaiphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.themLoaiPhong1 = new GUI.folderQuanLyPhong.ThemLoaiPhong();
+            this.PageSuaphong = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.suaPhong1 = new GUI.folderQuanLyPhong.SuaPhong();
             colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.QuanlyPagecontrol)).BeginInit();
             this.QuanlyPagecontrol.SuspendLayout();
@@ -73,7 +73,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.PageThemphongmoi.SuspendLayout();
-            this.PageThemloaiphong.SuspendLayout();
+            this.PageSuaphong.SuspendLayout();
             this.SuspendLayout();
             // 
             // colLoaiPhong
@@ -91,14 +91,14 @@
             this.QuanlyPagecontrol.Appearance.Options.UseBackColor = true;
             this.QuanlyPagecontrol.Controls.Add(this.PageQuanly);
             this.QuanlyPagecontrol.Controls.Add(this.PageThemphongmoi);
-            this.QuanlyPagecontrol.Controls.Add(this.PageThemloaiphong);
+            this.QuanlyPagecontrol.Controls.Add(this.PageSuaphong);
             this.QuanlyPagecontrol.Dock = System.Windows.Forms.DockStyle.Fill;
             this.QuanlyPagecontrol.Location = new System.Drawing.Point(0, 0);
             this.QuanlyPagecontrol.Name = "QuanlyPagecontrol";
             this.QuanlyPagecontrol.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageQuanly,
             this.PageThemphongmoi,
-            this.PageThemloaiphong});
+            this.PageSuaphong});
             this.QuanlyPagecontrol.SelectedPage = this.PageQuanly;
             this.QuanlyPagecontrol.Size = new System.Drawing.Size(1280, 820);
             this.QuanlyPagecontrol.TabIndex = 3;
@@ -384,9 +384,8 @@
             this.wbntQuanlyphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntQuanlyphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm phòng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm loại phòng", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa phòng", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton()});
             this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -427,36 +426,34 @@
             this.themPhongMoi1.Size = new System.Drawing.Size(1280, 820);
             this.themPhongMoi1.TabIndex = 5;
             // 
-            // PageThemloaiphong
+            // PageSuaphong
             // 
-            this.PageThemloaiphong.Caption = "PageThemloaiphong";
-            this.PageThemloaiphong.Controls.Add(this.wbntThemloaiphong);
-            this.PageThemloaiphong.Controls.Add(this.themLoaiPhong1);
-            this.PageThemloaiphong.Name = "PageThemloaiphong";
-            this.PageThemloaiphong.Size = new System.Drawing.Size(1280, 820);
+            this.PageSuaphong.Caption = "PageSuaphong";
+            this.PageSuaphong.Controls.Add(this.windowsUIButtonPanel1);
+            this.PageSuaphong.Controls.Add(this.suaPhong1);
+            this.PageSuaphong.Name = "PageSuaphong";
+            this.PageSuaphong.Size = new System.Drawing.Size(1280, 820);
             // 
-            // wbntThemloaiphong
+            // windowsUIButtonPanel1
             // 
-            this.wbntThemloaiphong.BackColor = System.Drawing.Color.White;
+            this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.White;
             windowsUIButtonImageOptions4.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.wbntThemloaiphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.wbntThemloaiphong.Location = new System.Drawing.Point(3, 3);
-            this.wbntThemloaiphong.Name = "wbntThemloaiphong";
-            this.wbntThemloaiphong.Size = new System.Drawing.Size(56, 58);
-            this.wbntThemloaiphong.TabIndex = 1;
-            this.wbntThemloaiphong.Text = "windowsUIButtonPanel2";
-            this.wbntThemloaiphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntThemloaiphong_ButtonClick);
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(3, 3);
+            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(56, 58);
+            this.windowsUIButtonPanel1.TabIndex = 1;
+            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel2";
+            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
-            // themLoaiPhong1
+            // suaPhong1
             // 
-            this.themLoaiPhong1.Appearance.BackColor = System.Drawing.Color.White;
-            this.themLoaiPhong1.Appearance.Options.UseBackColor = true;
-            this.themLoaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.themLoaiPhong1.Location = new System.Drawing.Point(0, 0);
-            this.themLoaiPhong1.Name = "themLoaiPhong1";
-            this.themLoaiPhong1.Size = new System.Drawing.Size(1280, 820);
-            this.themLoaiPhong1.TabIndex = 2;
+            this.suaPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suaPhong1.Location = new System.Drawing.Point(0, 0);
+            this.suaPhong1.Name = "suaPhong1";
+            this.suaPhong1.Size = new System.Drawing.Size(1280, 820);
+            this.suaPhong1.TabIndex = 5;
             // 
             // QuanLyPhong
             // 
@@ -474,7 +471,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.PageThemphongmoi.ResumeLayout(false);
-            this.PageThemloaiphong.ResumeLayout(false);
+            this.PageSuaphong.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -495,14 +492,14 @@
         private DevExpress.XtraGrid.Columns.GridColumn colTenPhong;
         private DevExpress.XtraGrid.Columns.GridColumn colTinhTrangPhong;
         private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
-        private DevExpress.XtraBars.Navigation.NavigationPage PageThemloaiphong;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntThemloaiphong;
-        private ThemLoaiPhong themLoaiPhong1;
         private DevExpress.XtraEditors.TileControl tileControl2;
         private DevExpress.XtraEditors.TileGroup grpMacDinh;
         private DevExpress.XtraEditors.TileItem tileAll;
         private DevExpress.XtraEditors.TileItem tileAvailable;
         private DevExpress.XtraEditors.TileItem tileRented;
         private DevExpress.XtraEditors.TileGroup grpLoaiPhong;
+        private DevExpress.XtraBars.Navigation.NavigationPage PageSuaphong;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
+        private SuaPhong suaPhong1;
     }
 }
