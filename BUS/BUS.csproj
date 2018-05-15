@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DichVuBUS.cs" />
+    <Compile Include="DonGia_LoaiPhongBUS.cs" />
     <Compile Include="KhachHangBUS.cs" />
     <Compile Include="LoaiDichVuBUS.cs" />
     <Compile Include="LoaiKhachHangBUS.cs" />

@@ -58,6 +58,13 @@ namespace DAL
                 return null;
             }
         }
+        public static ThuePhongDTO LayThongTinPhongDangThue(PhongDTO phong)
+        {
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.thuephong, quanlykaraoke.trangthaithuephong WHERE quanlykaraoke.thuephong.MaTrangThaiThuePhong = quanlykaraoke.trangthaithuephong.MaTrangThaiThuePhong AND quanlykaraoke.trangthaithuephong.LoaiTrangThai = 'Đang thuê' AND  quanlykaraoke.thuephong.MaPhong = '" + phong.MaPhong.ToString()+"';");
+
+            return new ThuePhongDTO((int)dt.Rows[0]["MaThuePhong"], (int)dt.Rows[0]["MaPhong"], (int)dt.Rows[0]["MaKH"], DateTime.Parse(dt.Rows[0]["GioThuePhong"].ToString()), (double)dt.Rows[0]["TienTraTruoc"], (int)dt.Rows[0]["MaTrangThaiThuePhong"]);
+
+        }
 
     }
 }

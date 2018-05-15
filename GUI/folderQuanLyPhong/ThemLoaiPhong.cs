@@ -105,35 +105,40 @@ namespace GUI.folderQuanLyPhong
 
         private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
+            DonGiaTheoTuan giaTheoTuan = new DonGiaTheoTuan();
+            giaTheoTuan.MaLoaiPhong = Convert.ToInt32(textEdit2.Text);
+
             for (int i = 0; i < 8; i++)
             {
                 DonGiaTheoNgay donGiaNgay = new DonGiaTheoNgay();
+                donGiaNgay.SetNgayTrongTuan(i);
 
-                DonGiaTheoKhoangThoiGian donGia = new DonGiaTheoKhoangThoiGian();
-                donGia.GioBatDau = 0;
-                donGia.GioKetThuc = 1;
-                donGia.DonGia = Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString());
+                DonGiaTheoKhoangThoiGian donGia = new DonGiaTheoKhoangThoiGian(new DTO.ThongTinThanhToanTheoNgay.Gio(0,0,0), new DTO.ThongTinThanhToanTheoNgay.Gio(1, 0, 0), Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString()));
+
                 for (int j = 1; j < 24; j++)
                 {
                     if(donGia.DonGia == Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString()))
                     {
-                        donGia.GioKetThuc ++;
+                        donGia.GioKetThuc.AddHour(1);
                     }
                     else
                     {
                         donGiaNgay.listDonGiaTheoKhoangThoiGian.Add(donGia);
 
-                        donGia = new DonGiaTheoKhoangThoiGian();
-                        donGia.GioBatDau = j;
-                        donGia.GioKetThuc = j+1;
+                        donGia = new DonGiaTheoKhoangThoiGian(new DTO.ThongTinThanhToanTheoNgay.Gio(j, 0, 0), new DTO.ThongTinThanhToanTheoNgay.Gio(j + 1, 0, 0), Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString()));
+
+    
                         donGia.DonGia = Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString());
                     }
                     //spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
                 }
 
                 donGiaNgay.listDonGiaTheoKhoangThoiGian.Add(donGia);
-                return;
+
+                giaTheoTuan.listDonGiaTheoNgay.Add(donGiaNgay);
+                
             }
+            BUS.DonGia_LoaiPhongBUS.ThemDonGiaTheoKhoangThoiGian(giaTheoTuan);
         }
     }
 }

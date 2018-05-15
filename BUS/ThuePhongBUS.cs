@@ -15,6 +15,10 @@ namespace BUS
 
         }
 
+        public static ThuePhongDTO LayThongTinPhongDangThue(PhongDTO maPhong)
+        {
+            return DAL.ThuePhongDAL.LayThongTinPhongDangThue(maPhong);
+        }
         public static Dictionary<int,ThuePhongDTO> LayThongTinCacPhongDangDuocThue()
         {
             return DAL.ThuePhongDAL.LayThongTinPhongDangDuocThue();
