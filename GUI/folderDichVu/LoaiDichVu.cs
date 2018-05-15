@@ -71,7 +71,7 @@ namespace GUI.folderDichVu
             switch(e.Button.Properties.Tag.ToString())
             {
                 case "Thêm Loại Dịch Vụ":
-                    //themLoaiDichVu();
+                    LoaiDichVuPagecontrol.SelectedPage = PageThemloaidichvu;
                     break;
                 case "Sửa Loại Dịch Vụ":
 
@@ -104,6 +104,11 @@ namespace GUI.folderDichVu
 
                     break;
             }
+        }
+
+        private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            LoaiDichVuPagecontrol.SelectedPage = PageLoaidichvu;
         }
     }
 }

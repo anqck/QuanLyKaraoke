@@ -33,14 +33,7 @@ namespace GUI.folderDichVu
             {
                 this.DichVuPagecontrol.SelectedPage = PageSuadichvu;
             }
-            if (e.Button.Equals(wbntDichvu.Buttons[3]))
-            {
-                this.DichVuPagecontrol.SelectedPage = PageLoaidichvu;
-            }
-            if (e.Button.Equals(wbntDichvu.Buttons[4]))
-            {
-                GoToThemLoaiDichVuPage();
-            }
+         
         }
 
         private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)

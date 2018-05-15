@@ -53,6 +53,11 @@
         private System.Windows.Forms.Timer timer1;
         private System.ComponentModel.IContainer components;
         private folderNhanVien.NhanVien nhanVien1;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageLoaikhachhang;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageLoaidichvu;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageLoaiphong;
+        private folderKhachHang.LoaiKhachHang loaiKhachHang1;
+        private folderDichVu.LoaiDichVu loaiDichVu1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }

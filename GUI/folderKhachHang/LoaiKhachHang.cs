@@ -17,5 +17,19 @@ namespace GUI.folderKhachHang
         {
             InitializeComponent();
         }
+
+        private void windowsUIButtonPanel4_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            LoaiKhachHangPagecontrol.SelectedPage = PageLoaikhachhang;
+        }
+
+        private void wbntLoaikhachhang_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (e.Button.Equals(wbntLoaikhachhang.Buttons[0]))
+            {
+                this.LoaiKhachHangPagecontrol.SelectedPage = PageThemloaikhachhang;
+            }
+            
+        }
     }
 }
