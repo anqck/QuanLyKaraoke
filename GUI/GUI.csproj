@@ -115,6 +115,12 @@
     <Compile Include="folderDichVu\SuaDichVu.Designer.cs">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderDichVu\SuaLoaiDichVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDichVu\SuaLoaiDichVu.Designer.cs">
+      <DependentUpon>SuaLoaiDichVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderDichVu\ThemDichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,11 +187,29 @@
     <Compile Include="folderNhanVien\ThemNhanVien.Designer.cs">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderQuanLyPhong\LoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderQuanLyPhong\LoaiPhong.Designer.cs">
+      <DependentUpon>LoaiPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderQuanLyPhong\QuanLyPhong.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="folderQuanLyPhong\QuanLyPhong.Designer.cs">
       <DependentUpon>QuanLyPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderQuanLyPhong\SuaLoaiPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderQuanLyPhong\SuaLoaiPhong.Designer.cs">
+      <DependentUpon>SuaLoaiPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderQuanLyPhong\SuaPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderQuanLyPhong\SuaPhong.Designer.cs">
+      <DependentUpon>SuaPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="folderQuanLyPhong\ThemLoaiPhong.cs">
       <SubType>UserControl</SubType>
@@ -244,6 +268,9 @@
     <EmbeddedResource Include="folderDichVu\SuaDichVu.resx">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderDichVu\SuaLoaiDichVu.resx">
+      <DependentUpon>SuaLoaiDichVu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ThemDichVu.resx">
       <DependentUpon>ThemDichVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -277,8 +304,17 @@
     <EmbeddedResource Include="folderNhanVien\ThemNhanVien.resx">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderQuanLyPhong\LoaiPhong.resx">
+      <DependentUpon>LoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\QuanLyPhong.resx">
       <DependentUpon>QuanLyPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderQuanLyPhong\SuaLoaiPhong.resx">
+      <DependentUpon>SuaLoaiPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderQuanLyPhong\SuaPhong.resx">
+      <DependentUpon>SuaPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\ThemLoaiPhong.resx">
       <DependentUpon>ThemLoaiPhong.cs</DependentUpon>

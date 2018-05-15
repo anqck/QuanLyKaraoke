@@ -74,7 +74,7 @@ namespace GUI.folderDichVu
                     LoaiDichVuPagecontrol.SelectedPage = PageThemloaidichvu;
                     break;
                 case "Sửa Loại Dịch Vụ":
-
+                    LoaiDichVuPagecontrol.SelectedPage = PageSualoaidichvu;
                     break;
                 case "Xóa Loại Dịch Vụ":
                     //Kiểm tra xem có chọn dòng nào không
@@ -107,6 +107,11 @@ namespace GUI.folderDichVu
         }
 
         private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            LoaiDichVuPagecontrol.SelectedPage = PageLoaidichvu;
+        }
+
+        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             LoaiDichVuPagecontrol.SelectedPage = PageLoaidichvu;
         }
