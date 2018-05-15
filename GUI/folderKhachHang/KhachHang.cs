@@ -42,14 +42,7 @@ namespace GUI.folderKhachHang
             {
                 this.KhachhangPagecontrol.SelectedPage = PageSuakhachang;
             }
-            if (e.Button.Equals(wbntKhachhang.Buttons[3]))
-            {
-                this.KhachhangPagecontrol.SelectedPage = PageLoaikhachhang;
-            }
-            if (e.Button.Equals(wbntKhachhang.Buttons[4]))
-            {
-                this.KhachhangPagecontrol.SelectedPage = PageThemloaikhachhang;
-            }
+         
         }
         public void RefreshDataBinding()
         {
