@@ -85,5 +85,10 @@ namespace GUI.folderTinhTrangPhong
             }
                
         }
+
+        private void wbntQuanlyphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+
+        }
     }
 }

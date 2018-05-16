@@ -874,6 +874,7 @@
             this.wbntQuanlyphong.Size = new System.Drawing.Size(1367, 67);
             this.wbntQuanlyphong.TabIndex = 13;
             this.wbntQuanlyphong.Text = "windowsUIButtonPanel1";
+            this.wbntQuanlyphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntQuanlyphong_ButtonClick);
             // 
             // ThongTinChiTietPhong
             // 
