@@ -115,11 +115,11 @@
     <Compile Include="FilterCollectionViewBase.Designer.cs">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
     </Compile>
-    <Compile Include="FilterControlDiaglog.cs">
+    <Compile Include="FilterControlDialog.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="FilterControlDiaglog.Designer.cs">
-      <DependentUpon>FilterControlDiaglog.cs</DependentUpon>
+    <Compile Include="FilterControlDialog.Designer.cs">
+      <DependentUpon>FilterControlDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="folderDichVu\ChonDichVu.cs">
       <SubType>UserControl</SubType>
@@ -303,8 +303,8 @@
     <EmbeddedResource Include="FilterCollectionViewBase.resx">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FilterControlDiaglog.resx">
-      <DependentUpon>FilterControlDiaglog.cs</DependentUpon>
+    <EmbeddedResource Include="FilterControlDialog.resx">
+      <DependentUpon>FilterControlDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ChonDichVu.resx">
       <DependentUpon>ChonDichVu.cs</DependentUpon>
