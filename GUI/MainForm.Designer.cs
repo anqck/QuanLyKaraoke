@@ -59,6 +59,7 @@
         private folderKhachHang.LoaiKhachHang loaiKhachHang1;
         private folderDichVu.LoaiDichVu loaiDichVu1;
         private folderQuanLyPhong.LoaiPhong loaiPhong1;
+        private DevExpress.XtraEditors.FilterControl filterControl1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }

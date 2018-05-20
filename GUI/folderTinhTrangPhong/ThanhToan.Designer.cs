@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThanhToan));
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThanhToan));
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
+            this.xrDesignBarManager1 = new DevExpress.XtraReports.UserDesigner.XRDesignBarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
             this.recentlyUsedItemsComboBox1 = new DevExpress.XtraReports.UserDesigner.RecentlyUsedItemsComboBox();
             this.designRepositoryItemComboBox1 = new DevExpress.XtraReports.UserDesigner.DesignRepositoryItemComboBox();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -73,13 +80,9 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
-            this.xrDesignBarManager1 = new DevExpress.XtraReports.UserDesigner.XRDesignBarManager(this.components);
             this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             this.snapControl = new DevExpress.Snap.SnapControl();
+            ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -114,8 +117,61 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // xrDesignBarManager1
+            // 
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlTop);
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlBottom);
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlLeft);
+            this.xrDesignBarManager1.DockControls.Add(this.barDockControlRight);
+            this.xrDesignBarManager1.FontNameBox = this.recentlyUsedItemsComboBox1;
+            this.xrDesignBarManager1.FontNameEdit = null;
+            this.xrDesignBarManager1.FontSizeBox = this.designRepositoryItemComboBox1;
+            this.xrDesignBarManager1.FontSizeEdit = null;
+            this.xrDesignBarManager1.Form = this;
+            this.xrDesignBarManager1.FormattingToolbar = null;
+            this.xrDesignBarManager1.HintStaticItem = null;
+            this.xrDesignBarManager1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("xrDesignBarManager1.ImageStream")));
+            this.xrDesignBarManager1.LayoutToolbar = null;
+            this.xrDesignBarManager1.MaxItemId = 76;
+            this.xrDesignBarManager1.Toolbar = null;
+            this.xrDesignBarManager1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
+            this.xrDesignBarManager1.Updates.AddRange(new string[] {
+            "Toolbox"});
+            this.xrDesignBarManager1.ZoomItem = null;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Manager = this.xrDesignBarManager1;
+            this.barDockControlTop.Size = new System.Drawing.Size(1549, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 823);
+            this.barDockControlBottom.Manager = this.xrDesignBarManager1;
+            this.barDockControlBottom.Size = new System.Drawing.Size(1549, 0);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Manager = this.xrDesignBarManager1;
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 823);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1549, 0);
+            this.barDockControlRight.Manager = this.xrDesignBarManager1;
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 823);
             // 
             // recentlyUsedItemsComboBox1
             // 
@@ -548,7 +604,10 @@
             this.wbntQuanlyphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntQuanlyphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm Dịch Vụ", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Dịch Vụ", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Dịch Vụ", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In hóa đơn", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thanh toán", -1, false)});
             this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
@@ -557,60 +616,7 @@
             this.wbntQuanlyphong.Size = new System.Drawing.Size(1549, 61);
             this.wbntQuanlyphong.TabIndex = 21;
             this.wbntQuanlyphong.Text = "windowsUIButtonPanel1";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.xrDesignBarManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1549, 0);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 823);
-            this.barDockControlBottom.Manager = this.xrDesignBarManager1;
-            this.barDockControlBottom.Size = new System.Drawing.Size(1549, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlLeft.Manager = this.xrDesignBarManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 823);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1549, 0);
-            this.barDockControlRight.Manager = this.xrDesignBarManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 823);
-            // 
-            // xrDesignBarManager1
-            // 
-            this.xrDesignBarManager1.DockControls.Add(this.barDockControlTop);
-            this.xrDesignBarManager1.DockControls.Add(this.barDockControlBottom);
-            this.xrDesignBarManager1.DockControls.Add(this.barDockControlLeft);
-            this.xrDesignBarManager1.DockControls.Add(this.barDockControlRight);
-            this.xrDesignBarManager1.FontNameBox = this.recentlyUsedItemsComboBox1;
-            this.xrDesignBarManager1.FontNameEdit = null;
-            this.xrDesignBarManager1.FontSizeBox = this.designRepositoryItemComboBox1;
-            this.xrDesignBarManager1.FontSizeEdit = null;
-            this.xrDesignBarManager1.Form = this;
-            this.xrDesignBarManager1.FormattingToolbar = null;
-            this.xrDesignBarManager1.HintStaticItem = null;
-            this.xrDesignBarManager1.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("xrDesignBarManager1.ImageStream")));
-            this.xrDesignBarManager1.LayoutToolbar = null;
-            this.xrDesignBarManager1.MaxItemId = 76;
-            this.xrDesignBarManager1.Toolbar = null;
-            this.xrDesignBarManager1.TransparentEditorsMode = DevExpress.Utils.DefaultBoolean.True;
-            this.xrDesignBarManager1.Updates.AddRange(new string[] {
-            "Toolbox"});
-            this.xrDesignBarManager1.ZoomItem = null;
+            this.wbntQuanlyphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntQuanlyphong_ButtonClick);
             // 
             // reportDesigner1
             // 
@@ -649,6 +655,7 @@
             this.Controls.Add(this.barDockControlTop);
             this.Name = "ThanhToan";
             this.Size = new System.Drawing.Size(1549, 823);
+            ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -683,7 +690,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

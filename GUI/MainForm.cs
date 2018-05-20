@@ -21,7 +21,7 @@ namespace GUI
 
             tinhTrangPhong1.RefreshDataBinding();
 
-
+         
 
 
         }
@@ -99,10 +99,11 @@ namespace GUI
             this.pageLoaikhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.loaiKhachHang1 = new GUI.folderKhachHang.LoaiKhachHang();
             this.pageLoaiphong = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.loaiPhong1 = new GUI.folderQuanLyPhong.LoaiPhong();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.loaiPhong1 = new GUI.folderQuanLyPhong.LoaiPhong();
+            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -614,6 +615,7 @@ namespace GUI
             // pageBaocao
             // 
             this.pageBaocao.Caption = "pageBaocao";
+            this.pageBaocao.Controls.Add(this.filterControl1);
             this.pageBaocao.Controls.Add(this.buttonEdit2);
             this.pageBaocao.Name = "pageBaocao";
             this.pageBaocao.Size = new System.Drawing.Size(1280, 633);
@@ -668,6 +670,14 @@ namespace GUI
             this.pageLoaiphong.Name = "pageLoaiphong";
             this.pageLoaiphong.Size = new System.Drawing.Size(1280, 633);
             // 
+            // loaiPhong1
+            // 
+            this.loaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loaiPhong1.Location = new System.Drawing.Point(0, 0);
+            this.loaiPhong1.Name = "loaiPhong1";
+            this.loaiPhong1.Size = new System.Drawing.Size(1280, 633);
+            this.loaiPhong1.TabIndex = 0;
+            // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.LightGray;
@@ -704,13 +714,14 @@ namespace GUI
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // loaiPhong1
+            // filterControl1
             // 
-            this.loaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.loaiPhong1.Location = new System.Drawing.Point(0, 0);
-            this.loaiPhong1.Name = "loaiPhong1";
-            this.loaiPhong1.Size = new System.Drawing.Size(1280, 633);
-            this.loaiPhong1.TabIndex = 0;
+            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.filterControl1.Location = new System.Drawing.Point(418, 237);
+            this.filterControl1.Name = "filterControl1";
+            this.filterControl1.Size = new System.Drawing.Size(509, 297);
+            this.filterControl1.TabIndex = 1;
+            this.filterControl1.Text = "filterControl1";
             // 
             // MainForm
             // 

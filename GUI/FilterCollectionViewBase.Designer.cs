@@ -30,6 +30,9 @@
         {
             this.labelControl = new DevExpress.XtraEditors.LabelControl();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
+            this.filterEditorControl1 = new DevExpress.XtraFilterEditor.FilterEditorControl();
+            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
+            this.filterControl2 = new DevExpress.XtraEditors.FilterControl();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
             this.splitContainerControl.SuspendLayout();
             this.SuspendLayout();
@@ -62,11 +65,49 @@
             this.splitContainerControl.Name = "splitContainerControl";
             this.splitContainerControl.Panel1.MinSize = 260;
             this.splitContainerControl.Panel1.Text = "Panel1";
+            this.splitContainerControl.Panel2.Controls.Add(this.filterControl2);
+            this.splitContainerControl.Panel2.Controls.Add(this.filterControl1);
+            this.splitContainerControl.Panel2.Controls.Add(this.filterEditorControl1);
             this.splitContainerControl.Panel2.Text = "Panel2";
             this.splitContainerControl.Size = new System.Drawing.Size(1149, 516);
             this.splitContainerControl.SplitterPosition = 246;
             this.splitContainerControl.TabIndex = 9;
             this.splitContainerControl.Text = "splitContainerControl1";
+            // 
+            // filterEditorControl1
+            // 
+            this.filterEditorControl1.AllowAggregateEditing = DevExpress.XtraEditors.FilterControlAllowAggregateEditing.Aggregate;
+            this.filterEditorControl1.AppearanceEmptyValueColor = System.Drawing.Color.Empty;
+            this.filterEditorControl1.AppearanceFieldNameColor = System.Drawing.Color.Empty;
+            this.filterEditorControl1.AppearanceGroupOperatorColor = System.Drawing.Color.Empty;
+            this.filterEditorControl1.AppearanceOperatorColor = System.Drawing.Color.Empty;
+            this.filterEditorControl1.AppearanceValueColor = System.Drawing.Color.Empty;
+            this.filterEditorControl1.Location = new System.Drawing.Point(1, 137);
+            this.filterEditorControl1.Name = "filterEditorControl1";
+            this.filterEditorControl1.ShowGroupCommandsIcon = true;
+            this.filterEditorControl1.Size = new System.Drawing.Size(542, 285);
+            this.filterEditorControl1.TabIndex = 0;
+            this.filterEditorControl1.Text = "filterEditorControl1";
+            // 
+            // filterControl1
+            // 
+            this.filterControl1.AllowAggregateEditing = DevExpress.XtraEditors.FilterControlAllowAggregateEditing.Aggregate;
+            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.filterControl1.Location = new System.Drawing.Point(558, 137);
+            this.filterControl1.Name = "filterControl1";
+            this.filterControl1.Size = new System.Drawing.Size(298, 285);
+            this.filterControl1.TabIndex = 1;
+            this.filterControl1.Text = "filterControl1";
+            this.filterControl1.PopupMenuShowing += new DevExpress.XtraEditors.Filtering.PopupMenuShowingEventHandler(this.filterControl1_PopupMenuShowing);
+            // 
+            // filterControl2
+            // 
+            this.filterControl2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.filterControl2.Location = new System.Drawing.Point(212, 27);
+            this.filterControl2.Name = "filterControl2";
+            this.filterControl2.Size = new System.Drawing.Size(200, 100);
+            this.filterControl2.TabIndex = 2;
+            this.filterControl2.Text = "filterControl2";
             // 
             // FilterCollectionViewBase
             // 
@@ -86,5 +127,8 @@
 
         protected DevExpress.XtraEditors.LabelControl labelControl;
         protected DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
+        private DevExpress.XtraEditors.FilterControl filterControl1;
+        private DevExpress.XtraFilterEditor.FilterEditorControl filterEditorControl1;
+        private DevExpress.XtraEditors.FilterControl filterControl2;
     }
 }

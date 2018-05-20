@@ -11,6 +11,11 @@ namespace DAL
 {
     public class ThanhToanDAL
     {
+        public static int PhatSinhMaHoaDon()
+        {
+            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.hoadon;").Rows[0][0]);
+        }
+
         public static List<DonGiaTheoKhoangThoiGian> LayTatCaCacDonGiaNamTrongKhoang(Ngay ngay)
         {
             List<DonGiaTheoKhoangThoiGian> list = new List<DonGiaTheoKhoangThoiGian>();

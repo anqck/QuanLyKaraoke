@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DTO;
+using System.Data;
 
 namespace BUS
 {
@@ -27,6 +28,11 @@ namespace BUS
         public static bool CapNhatTinhTrangPhong(PhongDTO phong, int maTinhTrangPhong)
         {
             return DAL.PhongDAL.CapNhatTinhTrangPhong(phong,maTinhTrangPhong);
+        }
+
+        public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong()
+        {
+            return DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
         }
     }
 }

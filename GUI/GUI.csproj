@@ -115,6 +115,12 @@
     <Compile Include="FilterCollectionViewBase.Designer.cs">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FilterControlDiaglog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FilterControlDiaglog.Designer.cs">
+      <DependentUpon>FilterControlDiaglog.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderDichVu\ChonDichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -292,8 +298,13 @@
     <Compile Include="folderTinhTrangPhong\TinhTrangPhong.Designer.cs">
       <DependentUpon>TinhTrangPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="VietnameseEditorsLocalizer.cs" />
+    <Compile Include="VietnameseGridLocalizer.cs" />
     <EmbeddedResource Include="FilterCollectionViewBase.resx">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FilterControlDiaglog.resx">
+      <DependentUpon>FilterControlDiaglog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ChonDichVu.resx">
       <DependentUpon>ChonDichVu.cs</DependentUpon>

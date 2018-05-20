@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DTO;
+using DevExpress.XtraGrid.Localization;
 
 namespace GUI.folderDichVu
 {
@@ -20,6 +21,9 @@ namespace GUI.folderDichVu
 
             themDichVu1.actionBack = GoToHomePage;
             loaiDichVu1.SetActionThemLoaiDichVu(GoToThemLoaiDichVuPage);
+
+            
+
         }
 
         private void wbntDichvu_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -33,7 +37,11 @@ namespace GUI.folderDichVu
             {
                 this.DichVuPagecontrol.SelectedPage = PageSuadichvu;
             }
-         
+            if (e.Button.Equals(wbntDichvu.Buttons[2]))
+            {
+
+                DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show( this.FindForm(), new FilterControlDialog(gridControl1));
+            }
         }
 
         private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -134,3 +142,4 @@ namespace GUI.folderDichVu
         }
     }
 }
+

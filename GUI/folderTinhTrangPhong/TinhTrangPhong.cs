@@ -341,7 +341,7 @@ namespace GUI.TinhTrangPhong
         void OnClickBtnThanhToan(object sender, EventArgs e)
         {
             BUS.ThanhToanBUS.TinhTienThuePhong( new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong")),DateTime.Now);
-
+            DisplayThanhToanPhongWithSelectedTile();
         }
 
         
@@ -365,6 +365,14 @@ namespace GUI.TinhTrangPhong
             thongTinChiTietPhong1.RefreshDataBinding(phongDTO);
             
             this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
+        }
+        void DisplayThanhToanPhongWithSelectedTile()
+        {
+            DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString(), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
+
+            thanhToan1.RefreshDataBinding(phongDTO);
+
+            this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
         }
     }
 }
