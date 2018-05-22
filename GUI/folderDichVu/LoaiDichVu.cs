@@ -28,10 +28,18 @@ namespace GUI.folderDichVu
         {
             themLoaiDichVu = action;
         }
+
+        public void GoToHomePage()
+        {
+            LoaiDichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            LoaiDichVuPagecontrol.SelectedPageIndex = 0;
+            LoaiDichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
+
         public void RefreshDataBinding()
         {
-            //try
-            //{
+            try
+            {
                 dtLoaiDichVu = BUS.LoaiDichVuBUS.LayTatCaLoaiDichVu_DataTable();
                 dtDichVu = BUS.DichVuBUS.LayTatCaDichVu_DataTable();
 
@@ -45,11 +53,11 @@ namespace GUI.folderDichVu
                 gridControl1.LevelTree.Nodes.Add("Thông tin chi tiết dịch vụ", tileView1);
 
 
-            //}
-            //catch (Exception x)
-            //{
+            }
+            catch (Exception x)
+            {
 
-            //}
+            }
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

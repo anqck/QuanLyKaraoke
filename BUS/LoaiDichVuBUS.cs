@@ -10,6 +10,11 @@ namespace BUS
 {
     public class LoaiDichVuBUS
     {
+        public static string GetFilterString_LoaiDichVu(String strLDV)
+        {
+
+            return "[TenLDV] = '" + strLDV + "'";
+        }
         public static int PhatSinhLoaiDichVu()
         {
             return DAL.LoaiDichVuDAL.PhatSinhMaLoaiDV();

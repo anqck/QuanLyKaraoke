@@ -10,6 +10,8 @@ namespace BUS
 {
     public static class DichVuBUS
     {
+        
+
         public static int PhatSinhMaDichVu()
         {
             return DAL.DichVuDAL.PhatSinhMaDichVu();

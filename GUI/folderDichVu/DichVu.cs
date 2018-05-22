@@ -10,11 +10,13 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DTO;
 using DevExpress.XtraGrid.Localization;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 
 namespace GUI.folderDichVu
 {
     public partial class DichVu : DevExpress.XtraEditors.XtraUserControl
     {
+        Action goToQuanLyDichVu;
         public DichVu()
         {
             InitializeComponent();
@@ -23,26 +25,37 @@ namespace GUI.folderDichVu
             loaiDichVu1.SetActionThemLoaiDichVu(GoToThemLoaiDichVuPage);
 
             
-
+            
         }
 
         private void wbntDichvu_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            if (e.Button.Equals(wbntDichvu.Buttons[0]))
+            switch(e.Button.Properties.Tag.ToString())
             {
-                themDichVu1.Initialize();
-                this.DichVuPagecontrol.SelectedPage = PageThemdichvu;
+                case "Thêm Dịch Vụ":
+                    themDichVu1.Initialize();
+                    this.DichVuPagecontrol.SelectedPage = PageThemdichvu;
+                    break;
+                case "Sửa Dịch Vụ":
+                    this.DichVuPagecontrol.SelectedPage = PageSuadichvu;
+                    break;
+                case "Quản Lý Loại Dịch Vụ":
+                    goToQuanLyDichVu();
+                    break;
+                case "Button":
+                    break;
             }
-            if (e.Button.Equals(wbntDichvu.Buttons[1]))
-            {
-                this.DichVuPagecontrol.SelectedPage = PageSuadichvu;
-            }
+     
             if (e.Button.Equals(wbntDichvu.Buttons[2]))
             {
 
-                DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show( this.FindForm(), new FilterControlDialog(gridControl1));
+
+
+
+        DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show( this.FindForm(), new FilterControlDialog(gridControl1));
             }
         }
+
 
         private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
@@ -67,6 +80,12 @@ namespace GUI.folderDichVu
             t.AppearanceItem.Normal.Options.UseBorderColor = true;
             t.AppearanceItem.Normal.Options.UseFont = true;
             t.AppearanceItem.Normal.Options.UseForeColor = true;
+            t.AppearanceItem.Selected.BackColor = System.Drawing.Color.RoyalBlue;
+            t.AppearanceItem.Selected.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            t.AppearanceItem.Selected.ForeColor = System.Drawing.Color.White;
+            t.AppearanceItem.Selected.Options.UseBackColor = true;
+            t.AppearanceItem.Selected.Options.UseFont = true;
+            t.AppearanceItem.Selected.Options.UseForeColor = true;
 
 
 
@@ -139,6 +158,33 @@ namespace GUI.folderDichVu
                 this.RefreshDataBinding();
                 return;
             }
+        }
+        public void AddGoToLoaiDichVu(Action goToHomeLoaiDichVu)
+        {
+            goToQuanLyDichVu = goToHomeLoaiDichVu;
+        }
+
+        private void tileControl2_ItemPress(object sender, TileItemEventArgs e)
+        {
+            
+        }
+
+        String strFilterLoaiDV;
+        private void tileControl2_SelectedItemChanged(object sender, TileItemEventArgs e)
+        {
+            if (e.Item == tileAll)
+            {
+                gridView1.ActiveFilter.Clear();
+                return;
+            }
+            else
+            {
+                strFilterLoaiDV = BUS.LoaiDichVuBUS.GetFilterString_LoaiDichVu(e.Item.Name.ToString());
+                gridView1.ActiveFilterString = strFilterLoaiDV;
+            }
+
+
+           
         }
     }
 }
