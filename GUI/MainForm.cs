@@ -21,7 +21,7 @@ namespace GUI
 
             tinhTrangPhong1.RefreshDataBinding();
 
-         
+            dichVu1.AddGoToLoaiDichVu(GoToHomeLoaiDichVu);
 
 
         }
@@ -823,8 +823,15 @@ namespace GUI
             
             MenuBar.HideDropDownWindow();
 
+            GoToHomeLoaiDichVu();
+
+
+        }
+
+        public void GoToHomeLoaiDichVu()
+        {
+            loaiDichVu1.RefreshDataBinding();
             PageControl.SelectedPage = pageLoaidichvu;
-      
         }
 
         private void tileBarItem_LoaiKH_ItemClick(object sender, TileItemEventArgs e)

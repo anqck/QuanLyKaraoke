@@ -88,7 +88,12 @@ namespace GUI.folderTinhTrangPhong
 
         private void wbntQuanlyphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-
+            switch(e.Button.Properties.Tag.ToString())
+            {
+                case "Thêm Dịch Vụ":
+                    DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), new folderDichVu.ChonDichVu());
+                    break;
+            }
         }
     }
 }

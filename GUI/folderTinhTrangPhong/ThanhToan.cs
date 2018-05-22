@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DTO;
+using BUS;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -17,6 +18,10 @@ namespace GUI.folderTinhTrangPhong
         public ThanhToan()
         {
             InitializeComponent();
+
+            snapControl.DataSource = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+            snapControl.LoadDocument("C:\\Users\\Public\\Documents\\DevExpress Demos 17.1\\Components\\WinForms\\DevExpress.HybridApp.Win\\CS\\DevExpress.HybridApp.Win\\Resources\\MailMerge\\1.snx", DevExpress.Snap.Core.API.SnapDocumentFormat.Snap);
+            snapControl.ReadOnly = true;
 
             //snapControl.Document.DataSource = ds;
         }

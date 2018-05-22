@@ -115,7 +115,14 @@ namespace GUI.folderDichVu
 
         private void pictureEdit1_Click(object sender, EventArgs e)
         {
-            pictureEdit1.LoadImage();
+            
+            
+        }
+
+        private void pictureEdit1_Properties_MouseDown(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+                pictureEdit1.LoadImage();
         }
     }
 }
