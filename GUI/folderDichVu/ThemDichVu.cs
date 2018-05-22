@@ -75,7 +75,9 @@ namespace GUI.folderDichVu
                     {
                         //Thông báo thành công
                         //BÌNH
-                        actionBack();
+
+                        if (ThongBaoHuyKoLuuDichVu())
+                            actionBack();
                     }
                     else
                     {
@@ -84,33 +86,66 @@ namespace GUI.folderDichVu
                     }
                     break;
                 case "Hủy":
-                    actionBack();
+                    if(ThongBaoHuyKoLuuDichVu())
+                        actionBack();
                     break;
                 default:
                     break;
             }
         }
 
-        private void wbntBackThemKH_Click(object sender, EventArgs e)
+        private void wbntBackThemDV_Click(object sender, EventArgs e)
         {
-            actionBack();
+            if(ThongBaoHuyKoLuuDichVu())
+                actionBack();
+        }
+        bool ThongBaoHuyKoLuuDichVu()
+        {
+            return true;
         }
 
-        private void txtTenDichVu_InvalidValue(object sender, DevExpress.XtraEditors.Controls.InvalidValueExceptionEventArgs e)
-        {
-            
-        }
 
+
+        bool KiemTraHopLeCacGiaTriNhapVao()
+        {
+            if (txtTenDichVu.Text == "")
+            {
+                return false;
+            }
+            else if (txtDonVi.Text == "")
+            {
+                return false;
+            }
+            return true;
+        }
         private void txtTenDichVu_Properties_Validating(object sender, CancelEventArgs e)
         {
             if ((sender as TextEdit).Text == "")
+            {
                 txtTenDichVu.ErrorText = "Tên dịch vụ không được để trống";
+                wbntThemdichvu.Buttons[0].Properties.Enabled = false;
+            }
+            else
+            {
+                if(KiemTraHopLeCacGiaTriNhapVao())
+                    wbntThemdichvu.Buttons[0].Properties.Enabled = true;
+            }
+                
         }
 
         private void txtDonVi_Properties_Validating(object sender, CancelEventArgs e)
         {
             if ((sender as TextEdit).Text == "")
+            {
                 txtDonVi.ErrorText = "Đơn vị tính không được để trống";
+                wbntThemdichvu.Buttons[0].Properties.Enabled = false;
+            }
+            else
+            {
+                if (KiemTraHopLeCacGiaTriNhapVao())
+                    wbntThemdichvu.Buttons[0].Properties.Enabled = true;
+            }
+
         }
 
         private void pictureEdit1_Click(object sender, EventArgs e)

@@ -17,17 +17,17 @@ namespace GUI.folderDichVu
         DataTable dtLoaiDichVu;
         DataTable dtDichVu;
 
-        Action themLoaiDichVu;
-
+        Action GoToDichVu;
         public LoaiDichVu()
         {
-            InitializeComponent();            
+            InitializeComponent();
         }
 
-        public void SetActionThemLoaiDichVu(Action action)
+
+        internal void AddGoToDichVu(Action goToHomeDichVu)
         {
-            themLoaiDichVu = action;
-        }
+            GoToDichVu = goToHomeDichVu;
+        } 
 
         public void GoToHomePage()
         {
@@ -78,6 +78,10 @@ namespace GUI.folderDichVu
         {
             switch(e.Button.Properties.Tag.ToString())
             {
+                case "Quản Lý Dịch Vụ":
+                    GoToDichVu();
+                    break;
+                    
                 case "Thêm Loại Dịch Vụ":
                     LoaiDichVuPagecontrol.SelectedPage = PageThemloaidichvu;
                     break;

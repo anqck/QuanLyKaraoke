@@ -22,7 +22,7 @@ namespace GUI.folderDichVu
             InitializeComponent();
 
             themDichVu1.actionBack = GoToHomePage;
-            loaiDichVu1.SetActionThemLoaiDichVu(GoToThemLoaiDichVuPage);
+            
 
             
             
@@ -42,18 +42,13 @@ namespace GUI.folderDichVu
                 case "Quản Lý Loại Dịch Vụ":
                     goToQuanLyDichVu();
                     break;
-                case "Button":
+
+                case "Bộ Lọc":
+                    DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), new FilterControlDialog(gridControl1));
                     break;
             }
      
-            if (e.Button.Equals(wbntDichvu.Buttons[2]))
-            {
 
-
-
-
-        DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show( this.FindForm(), new FilterControlDialog(gridControl1));
-            }
         }
 
 
@@ -134,10 +129,7 @@ namespace GUI.folderDichVu
             this.DichVuPagecontrol.SelectedPage = PageDichvu;
         }
 
-        void GoToThemLoaiDichVuPage()
-        {
-            this.DichVuPagecontrol.SelectedPage = PageThemloaidichvu;
-        }
+    
         internal void GoToPage(int v)
         {
             DichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
@@ -147,12 +139,7 @@ namespace GUI.folderDichVu
 
         private void DichVuPagecontrol_SelectedPageChanging(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangingEventArgs e)
         {
-            if(e.Page == PageLoaidichvu)
-            {
-                loaiDichVu1.RefreshDataBinding();
-                return;
-            }
-
+           
             if(e.Page == PageDichvu)
             {
                 this.RefreshDataBinding();
@@ -181,10 +168,17 @@ namespace GUI.folderDichVu
             {
                 strFilterLoaiDV = BUS.LoaiDichVuBUS.GetFilterString_LoaiDichVu(e.Item.Name.ToString());
                 gridView1.ActiveFilterString = strFilterLoaiDV;
+                
             }
 
 
            
+        }
+
+        private void gridView1_ColumnFilterChanged(object sender, EventArgs e)
+        {
+            if (gridView1.ActiveFilterString == "")
+                tileControl2.SelectedItem = tileAll;
         }
     }
 }

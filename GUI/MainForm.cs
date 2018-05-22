@@ -22,7 +22,7 @@ namespace GUI
             tinhTrangPhong1.RefreshDataBinding();
 
             dichVu1.AddGoToLoaiDichVu(GoToHomeLoaiDichVu);
-
+            loaiDichVu1.AddGoToDichVu(GoToHomeDichVu);
 
         }
 
@@ -831,7 +831,15 @@ namespace GUI
         public void GoToHomeLoaiDichVu()
         {
             loaiDichVu1.RefreshDataBinding();
+            loaiDichVu1.GoToHomePage();
             PageControl.SelectedPage = pageLoaidichvu;
+        }
+
+        public void GoToHomeDichVu()
+        {
+            dichVu1.RefreshDataBinding();
+            dichVu1.GoToPage(0);
+            PageControl.SelectedPage = pageDichvu;
         }
 
         private void tileBarItem_LoaiKH_ItemClick(object sender, TileItemEventArgs e)

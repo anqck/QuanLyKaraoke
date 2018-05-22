@@ -119,7 +119,7 @@
             this.wbntBackThemKH.Size = new System.Drawing.Size(56, 58);
             this.wbntBackThemKH.TabIndex = 4;
             this.wbntBackThemKH.Text = "windowsUIButtonPanel2";
-            this.wbntBackThemKH.Click += new System.EventHandler(this.wbntBackThemKH_Click);
+            this.wbntBackThemKH.Click += new System.EventHandler(this.wbntBackThemDV_Click);
             // 
             // emptySpaceItem1
             // 
@@ -188,7 +188,6 @@
             this.txtTenDichVu.Size = new System.Drawing.Size(312, 40);
             this.txtTenDichVu.StyleController = this.layoutControl1;
             this.txtTenDichVu.TabIndex = 6;
-            this.txtTenDichVu.InvalidValue += new DevExpress.XtraEditors.Controls.InvalidValueExceptionEventHandler(this.txtTenDichVu_InvalidValue);
             // 
             // memoEdit1
             // 
