@@ -35,6 +35,12 @@ namespace GUI.TinhTrangPhong
 
             btnThanhToan = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thanh toán"];
             btnThanhToan.Click += OnClickBtnThanhToan;
+
+           
+
+            var colCheck = tileView1.Columns.AddVisible("Check");
+            colCheck.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
+            tileView1.ColumnSet.CheckedColumn = colCheck;
         }
 
 
@@ -215,7 +221,7 @@ namespace GUI.TinhTrangPhong
         }
         private void tileView1_ItemPress(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
         {
-            
+            //e.Item.Checked = true;
         }
 
         private void tileControl2_SelectedItemChanged(object sender, TileItemEventArgs e)
@@ -235,11 +241,15 @@ namespace GUI.TinhTrangPhong
             if (listPhongDangThue == null)
                 return;
             
+            if (this.TinhtrangPagecontrol.SelectedPage == PageXemphong)
+                thongTinChiTietPhong1.UpdateTime();
+
             tileView1.RefreshData();
 
 
         }
 
+        private List<int> checkedRows = new List<int>();
         private void tileView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             if (e.Column.FieldName == "colThoiGianThue")
@@ -253,6 +263,20 @@ namespace GUI.TinhTrangPhong
                         e.Value = "";
 
                 if (e.IsSetData) ;
+            }
+            else if (e.Column.FieldName == "Check")
+            {
+                if (e.IsGetData)
+                    e.Value = checkedRows.Contains(e.ListSourceRowIndex);
+
+                if (e.IsSetData)
+                {
+                    if (System.Convert.ToBoolean(e.Value))
+                        checkedRows.Add(e.ListSourceRowIndex);
+                    else
+                        checkedRows.Remove(e.ListSourceRowIndex);
+                }
+               
             }
         }
 
@@ -350,9 +374,11 @@ namespace GUI.TinhTrangPhong
         #region CallBack
         void OnThuePhongSuccess()
         {
+            RefreshDataBinding();
+
             DisplayTinhTrangPhongWithSelectedTile();
 
-            RefreshDataBinding();
+            
         }
 
         #endregion
@@ -362,6 +388,7 @@ namespace GUI.TinhTrangPhong
         {
             DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString() , tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
 
+            thongTinChiTietPhong1.SetActionThanhToanButton(DisplayThanhToanPhongWithSelectedTile);
             thongTinChiTietPhong1.RefreshDataBinding(phongDTO);
             
             this.TinhtrangPagecontrol.SelectedPage = PageXemphong;

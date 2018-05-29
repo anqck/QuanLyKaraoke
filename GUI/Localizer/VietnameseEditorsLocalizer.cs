@@ -14,6 +14,14 @@ namespace GUI
         {
             switch (id)
             {
+                case StringId.FilterCriteriaToStringFunctionStartsWith: return "Bắt đầu với";
+                case StringId.FilterCriteriaToStringFunctionEndsWith: return "Kết thúc với";
+                case StringId.FilterCriteriaToStringFunctionContains: return "Chứa";
+                case StringId.FilterCriteriaToStringFunctionIsNull: return "Rỗng";
+                case StringId.FilterCriteriaToStringFunctionIsNullOrEmpty: return "Rỗng hoặc trống";
+                case StringId.FilterCriteriaToStringIsNotNull: return "Không rỗng";
+                case StringId.FilterCriteriaToStringBetween: return "Giữa";
+
                 // ... 
                 case StringId.NavigatorTextStringFormat: return "Zeile {0} von {1}";
                 case StringId.PictureEditMenuCut: return "Ausschneiden";

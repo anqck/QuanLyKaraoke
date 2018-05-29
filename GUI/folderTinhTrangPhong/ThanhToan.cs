@@ -15,13 +15,18 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThanhToan : DevExpress.XtraEditors.XtraUserControl
     {
+        private PhongDTO phong;
+        private KhachHangDTO khachHang;
+        private HoaDonDTO hoaDon;
+        private ThuePhongDTO thuePhong;
+
         public ThanhToan()
         {
             InitializeComponent();
 
-            snapControl.DataSource = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
-            snapControl.LoadDocument("C:\\Users\\Public\\Documents\\DevExpress Demos 17.1\\Components\\WinForms\\DevExpress.HybridApp.Win\\CS\\DevExpress.HybridApp.Win\\Resources\\MailMerge\\1.snx", DevExpress.Snap.Core.API.SnapDocumentFormat.Snap);
-            snapControl.ReadOnly = true;
+            //snapControl.DataSource = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+            //snapControl.LoadDocument("C:\\Users\\Public\\Documents\\DevExpress Demos 17.1\\Components\\WinForms\\DevExpress.HybridApp.Win\\CS\\DevExpress.HybridApp.Win\\Resources\\MailMerge\\1.snx", DevExpress.Snap.Core.API.SnapDocumentFormat.Snap);
+            //snapControl.ReadOnly = true;
 
             //snapControl.Document.DataSource = ds;
         }

@@ -49,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DichVuDAL.cs" />
+    <Compile Include="DichVuPhongDAL.cs" />
     <Compile Include="DonGia_LoaiPhongDAL.cs" />
+    <Compile Include="HoaDonDAL.cs" />
     <Compile Include="KhachHangDAL.cs" />
     <Compile Include="LoaiDichVuDAL.cs" />
     <Compile Include="LoaiKhachHangDAL.cs" />

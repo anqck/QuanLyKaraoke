@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
@@ -41,6 +42,7 @@
             this.tileControl2 = new DevExpress.XtraEditors.TileControl();
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileAll = new DevExpress.XtraEditors.TileItem();
+            this.tileFilter = new DevExpress.XtraEditors.TileItem();
             this.grpLoaiDichVu = new DevExpress.XtraEditors.TileGroup();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -134,7 +136,7 @@
             this.tileControl2.IndentBetweenGroups = 30;
             this.tileControl2.ItemPadding = new System.Windows.Forms.Padding(15, 8, 15, 8);
             this.tileControl2.Location = new System.Drawing.Point(0, 0);
-            this.tileControl2.MaxId = 9;
+            this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.tileControl2.RowCount = 10;
@@ -148,6 +150,7 @@
             // tileGroup1
             // 
             this.tileGroup1.Items.Add(this.tileAll);
+            this.tileGroup1.Items.Add(this.tileFilter);
             this.tileGroup1.Name = "tileGroup1";
             this.tileGroup1.Text = "tileGroup1";
             // 
@@ -174,6 +177,28 @@
             this.tileAll.Name = "tileAll";
             this.tileAll.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem2_ItemClick);
             // 
+            // tileFilter
+            // 
+            this.tileFilter.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
+            this.tileFilter.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Gray;
+            this.tileFilter.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileFilter.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Gray;
+            this.tileFilter.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.tileFilter.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.tileFilter.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileFilter.AppearanceItem.Normal.Options.UseForeColor = true;
+            this.tileFilter.AppearanceItem.Selected.BackColor = System.Drawing.Color.RoyalBlue;
+            this.tileFilter.AppearanceItem.Selected.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileFilter.AppearanceItem.Selected.ForeColor = System.Drawing.Color.White;
+            this.tileFilter.AppearanceItem.Selected.Options.UseBackColor = true;
+            this.tileFilter.AppearanceItem.Selected.Options.UseFont = true;
+            this.tileFilter.AppearanceItem.Selected.Options.UseForeColor = true;
+            tileItemElement2.Text = "Bộ lọc";
+            this.tileFilter.Elements.Add(tileItemElement2);
+            this.tileFilter.Id = 10;
+            this.tileFilter.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileFilter.Name = "tileFilter";
+            // 
             // grpLoaiDichVu
             // 
             this.grpLoaiDichVu.Name = "grpLoaiDichVu";
@@ -186,6 +211,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(756, 553);
             this.gridControl1.TabIndex = 13;
+            this.gridControl1.Tag = "GridDichVu";
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -413,5 +439,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colLoaiDV;
         private DevExpress.XtraGrid.Columns.GridColumn colHinhAnhDV;
         private DevExpress.XtraEditors.TileGroup grpLoaiDichVu;
+        private DevExpress.XtraEditors.TileItem tileFilter;
     }
 }

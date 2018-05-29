@@ -518,6 +518,7 @@
             this.colTang.Caption = "Tầng";
             this.colTang.FieldName = "Tang";
             this.colTang.Name = "colTang";
+            this.colTang.OptionsColumn.AllowEdit = false;
             this.colTang.Visible = true;
             this.colTang.VisibleIndex = 3;
             // 
@@ -682,8 +683,8 @@
             this.TinhtrangPagecontrol.Name = "TinhtrangPagecontrol";
             this.TinhtrangPagecontrol.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.PageTinhtrang,
-            this.PageThanhtoan,
-            this.PageXemphong});
+            this.PageXemphong,
+            this.PageThanhtoan});
             this.TinhtrangPagecontrol.SelectedPage = this.PageTinhtrang;
             this.TinhtrangPagecontrol.Size = new System.Drawing.Size(1110, 662);
             this.TinhtrangPagecontrol.TabIndex = 5;
@@ -693,7 +694,6 @@
             // 
             // PageTinhtrang
             // 
-            this.PageTinhtrang.Caption = "PageTinhtrang";
             this.PageTinhtrang.Controls.Add(this.splitContainerControl);
             this.PageTinhtrang.Controls.Add(this.labelTitle);
             this.PageTinhtrang.Controls.Add(this.wbntTinhtrangphong);
@@ -702,7 +702,6 @@
             // 
             // PageThanhtoan
             // 
-            this.PageThanhtoan.Caption = "PageThanhtoan";
             this.PageThanhtoan.Controls.Add(this.thanhToan1);
             this.PageThanhtoan.Name = "PageThanhtoan";
             this.PageThanhtoan.Size = new System.Drawing.Size(1110, 662);
@@ -719,7 +718,6 @@
             // 
             // PageXemphong
             // 
-            this.PageXemphong.Caption = "PageXemphong";
             this.PageXemphong.Controls.Add(this.wbntThemphong);
             this.PageXemphong.Controls.Add(this.thongTinChiTietPhong1);
             this.PageXemphong.Name = "PageXemphong";

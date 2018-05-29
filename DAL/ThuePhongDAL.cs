@@ -19,13 +19,12 @@ namespace DAL
         {
             try
             {
-                StringBuilder strSQL = new StringBuilder("INSERT INTO quanlykaraoke.thuephong (MaThuePhong, MaPhong, MaKH, GioThuePhong, TienTraTruoc, MaTrangThaiThuePhong) VALUES('$0','$1','$2','$3','$4','$5')");
+                StringBuilder strSQL = new StringBuilder("INSERT INTO quanlykaraoke.thuephong (MaThuePhong, MaPhong,  GioThuePhong, GioTraPhong, MaHoaDon) VALUES('$0','$1','$2',$3,'$4')");
                 strSQL.Replace("$0", thuephongDTO.MaThuePhong.ToString());
                 strSQL.Replace("$1", thuephongDTO.MaPhong.ToString());
-                strSQL.Replace("$2", thuephongDTO.MaKH.ToString());
-                strSQL.Replace("$3", thuephongDTO.GioThuePhong.ToString("yyyy-MM-dd HH:mm:ss.fff"));
-                strSQL.Replace("$4", thuephongDTO.TienTraTruoc.ToString());
-                strSQL.Replace("$5", thuephongDTO.MaTrangThaiThuePhong.ToString());
+                strSQL.Replace("$2", thuephongDTO.GioThuePhong.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                strSQL.Replace("$3", (DateTime.Equals(DateTime.MinValue, thuephongDTO.GioTraPhong) ? ("NULL") : ("'" + thuephongDTO.GioTraPhong.ToString("yyyy-MM-dd HH:mm:ss.fff") + "'")));
+                strSQL.Replace("$4", thuephongDTO.MaHoaDon.ToString());
                 DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
 
                 return true;
@@ -43,10 +42,10 @@ namespace DAL
             {
                 Dictionary<int,ThuePhongDTO> res = new Dictionary<int, ThuePhongDTO>();
 
-                DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.thuephong, quanlykaraoke.trangthaithuephong WHERE quanlykaraoke.thuephong.MaTrangThaiThuePhong = quanlykaraoke.trangthaithuephong.MaTrangThaiThuePhong AND quanlykaraoke.trangthaithuephong.LoaiTrangThai = 'Đang thuê' ;");
+                DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM thuephong WHERE thuephong.MaHoaDon IN (SELECT hoadon.MaHoaDon FROM hoadon WHERE hoadon.TongTienThanhToan IS NULL) AND  (thuephong.GioTraPhong  IS NULL )");
                 foreach (DataRow row in dt.Rows)
                 {
-                    ThuePhongDTO thuePhongDTO = new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], (int)row["MaKH"], DateTime.Parse(row["GioThuePhong"].ToString()), (double)row["TienTraTruoc"], (int)row["MaTrangThaiThuePhong"]);
+                    ThuePhongDTO thuePhongDTO = new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()), (row["GioTraPhong"].ToString()=="") ?(DateTime.MinValue):DateTime.Parse(row["GioTraPhong"].ToString()),(int)row["MaHoaDon"]);
                     res.Add(thuePhongDTO.MaPhong,thuePhongDTO);
                 }
 
@@ -60,11 +59,11 @@ namespace DAL
         }
         public static ThuePhongDTO LayThongTinPhongDangThue(PhongDTO phong)
         {
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.thuephong, quanlykaraoke.trangthaithuephong WHERE quanlykaraoke.thuephong.MaTrangThaiThuePhong = quanlykaraoke.trangthaithuephong.MaTrangThaiThuePhong AND quanlykaraoke.trangthaithuephong.LoaiTrangThai = 'Đang thuê' AND  quanlykaraoke.thuephong.MaPhong = '" + phong.MaPhong.ToString()+"';");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM thuephong WHERE thuephong.MaHoaDon IN (SELECT hoadon.MaHoaDon FROM hoadon WHERE hoadon.TongTienThanhToan IS NULL) AND  (thuephong.GioTraPhong  IS NULL ) AND  quanlykaraoke.thuephong.MaPhong = '" + phong.MaPhong.ToString() + "';");
 
-            return new ThuePhongDTO((int)dt.Rows[0]["MaThuePhong"], (int)dt.Rows[0]["MaPhong"], (int)dt.Rows[0]["MaKH"], DateTime.Parse(dt.Rows[0]["GioThuePhong"].ToString()), (double)dt.Rows[0]["TienTraTruoc"], (int)dt.Rows[0]["MaTrangThaiThuePhong"]);
+            return new ThuePhongDTO((int)dt.Rows[0]["MaThuePhong"], (int)dt.Rows[0]["MaPhong"],  DateTime.Parse(dt.Rows[0]["GioThuePhong"].ToString()), (dt.Rows[0]["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["GioTraPhong"].ToString()), (int)dt.Rows[0]["MaHoaDon"]);
 
         }
-
+            
     }
 }

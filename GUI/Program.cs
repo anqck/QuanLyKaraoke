@@ -35,6 +35,8 @@ namespace GUI
 
             DevExpress.XtraGrid.Localization.GridLocalizer.Active = new VietnameseGridLocalizer();
             DevExpress.XtraEditors.Controls.Localizer.Active = new VietnameseEditorsLocalizer();
+          
+
 
             Application.Run(new MainForm());
         }

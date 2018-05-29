@@ -34,7 +34,10 @@ namespace BUS
             return DAL.DichVuDAL.LayTatCaDichVu_Dictionary();
         }
 
-
+        public static DichVuDTO LayThongTinDichVu(int maDichVu)
+        {
+            return DAL.DichVuDAL.LayThongTinDichVu(maDichVu);
+        }
 
         public static List<DichVuDTO> LayTatCaDichVu_List()
         {

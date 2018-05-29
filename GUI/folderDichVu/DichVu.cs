@@ -17,13 +17,15 @@ namespace GUI.folderDichVu
     public partial class DichVu : DevExpress.XtraEditors.XtraUserControl
     {
         Action goToQuanLyDichVu;
+        FilterControlDialog filterDialog;
+        String strFilterDialog;
         public DichVu()
         {
             InitializeComponent();
 
             themDichVu1.actionBack = GoToHomePage;
-            
 
+            tileFilter.Visible = false;
             
             
         }
@@ -44,7 +46,31 @@ namespace GUI.folderDichVu
                     break;
 
                 case "Bộ Lọc":
-                    DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), new FilterControlDialog(gridControl1));
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction action = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction() { Caption = "BỘ LỌC", Description = "Close the application?" };
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand command1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand() { Text = "Lọc", Result = System.Windows.Forms.DialogResult.Yes };
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand command2 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand() { Text = "Hủy", Result = System.Windows.Forms.DialogResult.No };
+                    action.Commands.Add(command1);
+                    action.Commands.Add(command2);
+                    FlyoutProperties properties = new FlyoutProperties();
+                    properties.ButtonSize = new Size(160, 50);
+                    properties.Style = FlyoutStyle.MessageBox;
+
+                     filterDialog = new FilterControlDialog(gridControl1, gridView1.ActiveFilterString.ToString());
+
+                    if (DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), filterDialog, action, properties) == DialogResult.Yes)
+                    {
+                        if (filterDialog.GetFilterString() == "")
+                            return;
+
+                        gridView1.ActiveFilterString = strFilterDialog =filterDialog.GetFilterString();
+                        tileControl2.SelectedItem = tileFilter;
+                        tileFilter.Visible = true;
+                        
+                    }
+                        
+
+
+                    //DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), new FilterControlDialog(gridControl1), properties);
                     break;
             }
      
@@ -161,11 +187,19 @@ namespace GUI.folderDichVu
         {
             if (e.Item == tileAll)
             {
-                gridView1.ActiveFilter.Clear();
-                return;
+                gridView1.ActiveFilterEnabled = false;
+                gridView1.ActiveFilterString = "";
+             
+            }
+            else if (e.Item == tileFilter)
+            {
+                gridView1.ActiveFilterEnabled = true;
+                gridView1.ActiveFilterString = strFilterDialog; 
+       
             }
             else
             {
+                gridView1.ActiveFilterEnabled = true;
                 strFilterLoaiDV = BUS.LoaiDichVuBUS.GetFilterString_LoaiDichVu(e.Item.Name.ToString());
                 gridView1.ActiveFilterString = strFilterLoaiDV;
                 
@@ -178,7 +212,11 @@ namespace GUI.folderDichVu
         private void gridView1_ColumnFilterChanged(object sender, EventArgs e)
         {
             if (gridView1.ActiveFilterString == "")
+            {
                 tileControl2.SelectedItem = tileAll;
+                tileFilter.Visible = false;
+            }
+                
         }
     }
 }

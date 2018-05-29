@@ -15,6 +15,7 @@ namespace GUI
             string ret = "";
             switch (id)
             {
+                
                 // ...  
                 //case GridStringId.GridGroupPanelText: return "Ziehen Sie eine Spaltenüberschrift in diesen Bereich, um nach dieser zu gruppieren";
                 //case GridStringId.MenuColumnClearSorting: return "Sortierung entfernen";
@@ -32,7 +33,7 @@ namespace GUI
                 //case GridStringId.MenuColumnFilter: return "Kann gruppieren";
                 //case GridStringId.MenuColumnClearFilter: return "Filter aufheben";
                 //case GridStringId.MenuColumnBestFitAllColumns: return "Optimale Breite (alle Spalten)";
-  
+
                 // ...  
                 default:
                     ret = base.GetLocalizedString(id);

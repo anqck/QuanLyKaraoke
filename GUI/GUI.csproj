@@ -283,6 +283,7 @@
     <Compile Include="folderTinhTrangPhong\XemPhong.Designer.cs">
       <DependentUpon>XemPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="Localizer\VietnameseDXMessageBoxLocalizer.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -298,91 +299,118 @@
     <Compile Include="folderTinhTrangPhong\TinhTrangPhong.Designer.cs">
       <DependentUpon>TinhTrangPhong.cs</DependentUpon>
     </Compile>
-    <Compile Include="VietnameseEditorsLocalizer.cs" />
-    <Compile Include="VietnameseGridLocalizer.cs" />
+    <Compile Include="Localizer\VietnameseEditorsLocalizer.cs" />
+    <Compile Include="Localizer\VietnameseGridLocalizer.cs" />
     <EmbeddedResource Include="FilterCollectionViewBase.resx">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="FilterControlDialog.resx">
       <DependentUpon>FilterControlDialog.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ChonDichVu.resx">
       <DependentUpon>ChonDichVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\DichVu.resx">
       <DependentUpon>DichVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\LoaiDichVu.resx">
       <DependentUpon>LoaiDichVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\SuaDichVu.resx">
       <DependentUpon>SuaDichVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\SuaLoaiDichVu.resx">
       <DependentUpon>SuaLoaiDichVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ThemDichVu.resx">
       <DependentUpon>ThemDichVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ThemLoaiDichVu.resx">
       <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\ChonKhachHang.resx">
       <DependentUpon>ChonKhachHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\KhachHang.resx">
       <DependentUpon>KhachHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\LoaiKhachHang.resx">
       <DependentUpon>LoaiKhachHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\SuaKhachHang.resx">
       <DependentUpon>SuaKhachHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\ThemKhachHang.resx">
       <DependentUpon>ThemKhachHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\ThemLoaiKhachHang.resx">
       <DependentUpon>ThemLoaiKhachHang.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderNhanVien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderNhanVien\SuaNhanVien.resx">
       <DependentUpon>SuaNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderNhanVien\ThemNhanVien.resx">
       <DependentUpon>ThemNhanVien.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\LoaiPhong.resx">
       <DependentUpon>LoaiPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\QuanLyPhong.resx">
       <DependentUpon>QuanLyPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\SuaLoaiPhong.resx">
       <DependentUpon>SuaLoaiPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\SuaPhong.resx">
       <DependentUpon>SuaPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\ThemLoaiPhong.resx">
       <DependentUpon>ThemLoaiPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderQuanLyPhong\ThemPhongMoi.resx">
       <DependentUpon>ThemPhongMoi.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\Hoadon.resx">
       <DependentUpon>Hoadon.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\ThanhToan.resx">
       <DependentUpon>ThanhToan.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\ThongTinChiTietPhong.resx">
       <DependentUpon>ThongTinChiTietPhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\ThuePhong.resx">
       <DependentUpon>ThuePhong.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\XemPhong.resx">
       <DependentUpon>XemPhong.cs</DependentUpon>
@@ -434,6 +462,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Note todo.txt" />
+    <None Include="Resources\No_Image_Available.png" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

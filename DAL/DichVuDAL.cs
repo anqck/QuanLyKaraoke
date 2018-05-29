@@ -134,5 +134,11 @@ namespace DAL
         {
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) FROM quanlykaraoke.dichvu WHERE quanlykaraoke.dichvu.MaLDV = '"+maLoaiDV.ToString()+"';").Rows[0][0]);
         }
+        public static DichVuDTO LayThongTinDichVu(int maDichVu)
+        {
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dichvu WHERE quanlykaraoke.dichvu.MaDV = '"+maDichVu.ToString()+"';");
+
+            return new DichVuDTO((int)dt.Rows[0]["MaDV"], dt.Rows[0]["TenDV"].ToString(), (double)dt.Rows[0]["DonGia"], dt.Rows[0]["DonVi"].ToString(), (byte[])dt.Rows[0]["HinhAnhDV"], (int)dt.Rows[0]["MaLDV"]);
+        }
     }
 }

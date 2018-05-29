@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Text;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using BUS;
+using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraEditors;
-using DevExpress.XtraScheduler;
 using DTO;
+using System;
+using System.Data;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -17,7 +13,13 @@ namespace GUI.folderTinhTrangPhong
     {
         private PhongDTO phong;
         private KhachHangDTO khachHang;
+        private HoaDonDTO hoaDon;
         private ThuePhongDTO thuePhong;
+
+        DataTable dichVuPhong;
+        //Dictionary<DichVuPhongDTO> listDichVuPhong;
+
+
 
         public ThongTinChiTietPhong()
         {
@@ -33,12 +35,22 @@ namespace GUI.folderTinhTrangPhong
         {
 
         }
-   
+
 
         public void InitializeControl()
         {
-            
 
+
+        }
+        void RefreshDataBindingDichVuPhong()
+        {
+            dichVuPhong = DichVuPhongBUS.LayTatCaDichVuPhong_DichVu(thuePhong);
+            gridControl1.DataSource = dichVuPhong;
+
+            if (gridView1.RowCount == 0)
+                wbntQuanlyphong.Buttons[1].Properties.Visible = false;
+            else
+                wbntQuanlyphong.Buttons[1].Properties.Visible = true;
         }
         public void RefreshDataBinding(PhongDTO phongDTO)
         {
@@ -47,13 +59,14 @@ namespace GUI.folderTinhTrangPhong
             txtLoaiPhong.EditValue = BUS.LoaiPhongBUS.LayLoaiPhong(phongDTO).TenLoaiPhong;
             txtTang.EditValue = phongDTO.Tang;
 
-            Dictionary<int, ThuePhongDTO> listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
-            if (listPhongDangThue.ContainsKey(phongDTO.MaPhong))
+            //Dictionary<int, ThuePhongDTO> listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
+            if (phongDTO.MaTinhTrangPhong == 1)
             {
                 DisplayControlForRented(true);
 
-                thuePhong = listPhongDangThue[phongDTO.MaPhong];
-                khachHang = BUS.KhachHangBUS.LayKhachHang(thuePhong.MaKH);
+                thuePhong = BUS.ThuePhongBUS.LayThongTinPhongDangThue(phongDTO);
+                hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhong.MaHoaDon);
+                khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
 
                 txtMaKH.EditValue = khachHang.MaKH;
                 txtTenKH.EditValue = khachHang.TenKH;
@@ -61,7 +74,12 @@ namespace GUI.folderTinhTrangPhong
                 txtSDT.EditValue = khachHang.SDT;
                 txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
 
+                txtNgayGioVao.EditValue = thuePhong.GioThuePhong.ToString("dd-MM-yyyy hh:mm:ss");
+                txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
 
+                txtSoGio.EditValue = ToCustomString((DateTime.Now - thuePhong.GioThuePhong));
+
+                RefreshDataBindingDichVuPhong();
             }
             else
             {
@@ -71,29 +89,127 @@ namespace GUI.folderTinhTrangPhong
 
         private void DisplayControlForRented(bool dangDuocThue)
         {
-            if(dangDuocThue)
+            if (dangDuocThue)
             {
+                tabbedControlGroup1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                 grpKhachHang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
                 grpThuePhong.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Always;
+                gridControl1.Visible = true;
 
             }
-                
+
             else
             {
+                tabbedControlGroup1.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 grpKhachHang.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
                 grpThuePhong.Visibility = DevExpress.XtraLayout.Utils.LayoutVisibility.Never;
+                gridControl1.Visible = false;
             }
-               
+
         }
 
         private void wbntQuanlyphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            switch(e.Button.Properties.Tag.ToString())
+            switch (e.Button.Properties.Tag.ToString())
             {
                 case "Thêm Dịch Vụ":
-                    DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), new folderDichVu.ChonDichVu());
+                    folderDichVu.ChonDichVu chonDichVu = new folderDichVu.ChonDichVu();
+
+                    XtraDialogArgs args = new XtraDialogArgs(caption: "Chọn dịch vụ", content: chonDichVu, buttons: new DialogResult[] { DialogResult.OK, DialogResult.Cancel });
+                    args.Showing += Args_Showing;
+
+
+                    if (XtraDialog.Show(args) == DialogResult.OK)
+                    {
+                        foreach (int dichVu_Key in chonDichVu.GetSelectedDichVu().Keys)
+                        {
+                            DichVuPhongBUS.LuuThongTinDichVuPhong(new DichVuPhongDTO(DichVuPhongBUS.PhatSinhMaDichVuPhong(), thuePhong.MaThuePhong, dichVu_Key, DateTime.Now, chonDichVu.GetSelectedDichVu()[dichVu_Key], DichVuBUS.LayThongTinDichVu(dichVu_Key).DonGia));
+                            //DichVuBUS.LayThongTinDichVu(dichVu_Key);
+                        }
+
+                        RefreshDataBindingDichVuPhong();
+                    }
+                    break;
+
+                case "Thanh Toán":
+                    goToThanhToan();
                     break;
             }
+        }
+
+        private void Args_Showing(object sender, XtraMessageShowingArgs e)
+        {
+            e.Buttons[DialogResult.OK].Text = "Chọn";
+            e.Buttons[DialogResult.Cancel].Text = "Hủy bỏ";
+        }
+        public void UpdateTime()
+        {
+            if (tabbedControlGroup1.Visible == true)
+            {
+                txtSoGio.EditValue = ToCustomString((DateTime.Now - thuePhong.GioThuePhong));
+            }
+        }
+
+        public string ToCustomString(TimeSpan span)
+        {
+            return string.Format("{0}:{1:D2}:{2:D2}", span.Days * 24 + span.Hours, span.Minutes, span.Seconds);
+        }
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+                wbntQuanlyphong.Buttons[1].Properties.Visible = false;
+            else
+                wbntQuanlyphong.Buttons[1].Properties.Visible = true;
+        }
+
+        private void gridView2_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            if (e.Column.FieldName == "colSoLuong")
+            {
+                if (e.IsGetData)
+                {
+                    e.Value = dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"];
+                }
+                if (e.IsSetData)
+                {
+                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), (int)e.Value, (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]));
+                    RefreshDataBindingDichVuPhong();
+                }
+
+            }
+            else if (e.Column.FieldName == "colDonGia")
+            {
+                if (e.IsGetData)
+                {
+                    e.Value = Convert.ToInt32(dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]) ;
+                }
+                if (e.IsSetData)
+                {
+                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), (int)e.Value, (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]));
+                    RefreshDataBindingDichVuPhong();
+                }
+
+            }
+            else if (e.Column.FieldName == "colThanhTien")
+            {
+                if (e.IsGetData)
+                {
+                    e.Value = Convert.ToInt32(dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"]) * (double)dichVuPhong.Rows[e.ListSourceRowIndex]["DonGia"];
+                }
+                
+
+            }
+
+        }
+
+        Action goToThanhToan;
+
+        
+        public void SetActionThanhToanButton(Action action)
+        {
+            goToThanhToan = action;
+           
         }
     }
 }

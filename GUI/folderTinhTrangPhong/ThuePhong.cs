@@ -80,8 +80,11 @@ namespace GUI.folderTinhTrangPhong
                         return;
                     }
 
-
-                    if(ThuePhongBUS.LuuThongTinThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong,khachHang.MaKH,(DateTime)txtNgayVao.EditValue,Convert.ToDouble(txtTienTraTruoc.EditValue),1))&&PhongBUS.CapNhatTinhTrangPhong(phong,1))
+                    //NOTE Tài khoản thanh toán
+                    
+                    if (HoaDonBUS.LuuThongTinThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong,(DateTime)txtNgayVao.EditValue, DateTime.MinValue, HoaDonBUS.PhatSinhMaHoaDon()), 
+                        new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(),0,Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "",khachHang.MaKH))
+                        &&PhongBUS.CapNhatTinhTrangPhong(phong,1))
                     {
                         //Thông báo thành công
                         onThuePhongSuccess();

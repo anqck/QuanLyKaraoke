@@ -93,6 +93,7 @@ namespace GUI
             this.pageDichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.dichVu1 = new GUI.folderDichVu.DichVu();
             this.pageBaocao = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
             this.pageLoaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.loaiDichVu1 = new GUI.folderDichVu.LoaiDichVu();
@@ -103,7 +104,6 @@ namespace GUI
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -620,6 +620,15 @@ namespace GUI
             this.pageBaocao.Name = "pageBaocao";
             this.pageBaocao.Size = new System.Drawing.Size(1280, 633);
             // 
+            // filterControl1
+            // 
+            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.filterControl1.Location = new System.Drawing.Point(418, 237);
+            this.filterControl1.Name = "filterControl1";
+            this.filterControl1.Size = new System.Drawing.Size(509, 297);
+            this.filterControl1.TabIndex = 1;
+            this.filterControl1.Text = "filterControl1";
+            // 
             // buttonEdit2
             // 
             this.buttonEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -713,15 +722,6 @@ namespace GUI
             this.timer1.Enabled = true;
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // filterControl1
-            // 
-            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.filterControl1.Location = new System.Drawing.Point(418, 237);
-            this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(509, 297);
-            this.filterControl1.TabIndex = 1;
-            this.filterControl1.Text = "filterControl1";
             // 
             // MainForm
             // 

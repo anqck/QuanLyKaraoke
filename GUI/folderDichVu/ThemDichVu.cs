@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BUS;
 using DTO;
+using GUI.Properties;
 
 namespace GUI.folderDichVu
 {
@@ -54,6 +55,8 @@ namespace GUI.folderDichVu
 
             txtTenDichVu.Text = "";
             txtDonVi.Text = "";
+            txtDonGia.Text = "0";
+            pictureEdit1.Image = (Image)Resources.ResourceManager.GetObject("No_Image_Available");
             ValidateChildren();
         }
 
@@ -71,7 +74,7 @@ namespace GUI.folderDichVu
 
 
                     //Lưu thông tinh
-                    if(DichVuBUS.LuuThongTinDichVu(new DichVuDTO(Convert.ToInt32(txtMaDV.Text),txtTenDichVu.Text, Convert.ToDouble(txtDonGia.EditValue), txtDonVi.Text, pictureEdit1.Image, listLoaiDichVu[cmbLoaiDV.SelectedIndex].MaLoaiDV)))
+                    if(DichVuBUS.LuuThongTinDichVu(new DichVuDTO(Convert.ToInt32(txtMaDV.Text),txtTenDichVu.Text, Convert.ToDouble(txtDonGia.EditValue), txtDonVi.Text, resizeImage(pictureEdit1.Image), listLoaiDichVu[cmbLoaiDV.SelectedIndex].MaLoaiDV)))
                     {
                         //Thông báo thành công
                         //BÌNH
@@ -92,6 +95,17 @@ namespace GUI.folderDichVu
                 default:
                     break;
             }
+        }
+
+        public Image resizeImage(Image img, int width = 300, int height = 300)
+        {
+            Bitmap b = new Bitmap(width, height);
+            Graphics g = Graphics.FromImage((Image)b);
+
+            g.DrawImage(img, 0, 0, width, height);
+            g.Dispose();
+
+            return (Image)b;
         }
 
         private void wbntBackThemDV_Click(object sender, EventArgs e)
@@ -158,6 +172,11 @@ namespace GUI.folderDichVu
         {
             if(e.Button == MouseButtons.Left)
                 pictureEdit1.LoadImage();
+        }
+
+        private void pictureEdit1_Properties_ImageChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

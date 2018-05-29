@@ -34,5 +34,7 @@ namespace BUS
         {
             return DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
         }
+
+    
     }
 }
