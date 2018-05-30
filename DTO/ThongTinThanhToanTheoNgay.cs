@@ -48,7 +48,7 @@ namespace DTO
             }
             public override string ToString()
             {
-                return hour + ":" + minute + ":" + second;
+                return hour.ToString("00") + ":" + minute.ToString("00") + ":" + second.ToString("00");
             }
 
             public static TimeSpan CalcTimeSpan(Gio gioBatDau, Gio gioKetThuc)

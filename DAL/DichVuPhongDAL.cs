@@ -48,9 +48,30 @@ namespace DAL
             return DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dichvuphong,quanlykaraoke.dichvu,quanlykaraoke.loaidichvu  WHERE quanlykaraoke.dichvuphong.MaThuePhong = '" + thuePhongDTO.MaThuePhong+ "' AND quanlykaraoke.dichvuphong.MaDV = quanlykaraoke.dichvu.MaDV AND quanlykaraoke.dichvu.MaLDV = quanlykaraoke.loaidichvu.MaLDV;");
 
         }
-        public static void UpdateDichVuPhong(DichVuPhongDTO dichVuPhongDTO)
+        public static bool UpdateDichVuPhong(DichVuPhongDTO dichVuPhongDTO)
         {
-            DataProvider.ExecuseNonQuery("UPDATE  quanlykaraoke.dichvuphong SET  quanlykaraoke.dichvuphong.SoLuong = '"+dichVuPhongDTO.SoLuong+ "',  quanlykaraoke.dichvuphong.Gia ='" + dichVuPhongDTO.DonGia + "' WHERE  quanlykaraoke.dichvuphong.MaDVP = '" + dichVuPhongDTO.MaDVP + "';");
+            try
+            {
+                DataProvider.ExecuseNonQuery("UPDATE  quanlykaraoke.dichvuphong SET  quanlykaraoke.dichvuphong.SoLuong = '" + dichVuPhongDTO.SoLuong + "',  quanlykaraoke.dichvuphong.Gia ='" + dichVuPhongDTO.DonGia + "' WHERE  quanlykaraoke.dichvuphong.MaDVP = '" + dichVuPhongDTO.MaDVP + "';");
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+
+        }
+        public static bool XoaDichVuPhong(int maDVP)
+        {
+            try
+            {
+                DataProvider.ExecuseNonQuery("DELETE FROM  quanlykaraoke.dichvuphong  WHERE  quanlykaraoke.dichvuphong.MaDVP = '" + maDVP + "';");
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
 
         }
     }

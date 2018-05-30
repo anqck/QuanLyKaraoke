@@ -29,5 +29,9 @@ namespace BUS
         {
             DichVuPhongDAL.UpdateDichVuPhong(dichVuPhongDTO);
         }
+        public static bool XoaDichVuPhong(int maDVP)
+        {
+            return DichVuPhongDAL.XoaDichVuPhong(maDVP);
+        }
     }
 }

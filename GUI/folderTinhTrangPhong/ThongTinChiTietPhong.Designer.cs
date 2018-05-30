@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraScheduler.TimeRuler timeRuler7 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler8 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler9 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.schedulerControl1 = new DevExpress.XtraScheduler.SchedulerControl();
@@ -84,9 +84,11 @@
             this.colTenDichVu = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLoaiDV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDonVi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colThoiGianThem = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoLuong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colDonGia = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.colThanhTien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -95,8 +97,6 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.colThoiGianThem = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemSpinEdit2 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerControl1)).BeginInit();
@@ -144,12 +144,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -186,11 +186,11 @@
             this.schedulerControl1.Start = new System.DateTime(2018, 4, 20, 0, 0, 0, 0);
             this.schedulerControl1.TabIndex = 0;
             this.schedulerControl1.Text = "schedulerControl1";
-            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler7);
+            this.schedulerControl1.Views.DayView.TimeRulers.Add(timeRuler4);
             this.schedulerControl1.Views.FullWeekView.Enabled = true;
-            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler8);
+            this.schedulerControl1.Views.FullWeekView.TimeRulers.Add(timeRuler5);
             this.schedulerControl1.Views.WeekView.Enabled = false;
-            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler9);
+            this.schedulerControl1.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
             // 
             // layoutControl1
             // 
@@ -753,6 +753,7 @@
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "Tổng thành tiền", this.colThanhTien, "###,###,###,##0 VNĐ")});
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsCustomization.AllowFilter = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsHint.ShowCellHints = false;
             this.gridView1.OptionsMenu.ShowFooterItem = true;
             this.gridView1.OptionsMenu.ShowGroupSummaryEditorItem = true;
@@ -797,28 +798,41 @@
             this.colDonVi.VisibleIndex = 1;
             this.colDonVi.Width = 116;
             // 
+            // colThoiGianThem
+            // 
+            this.colThoiGianThem.Caption = "Thời gian thêm";
+            this.colThoiGianThem.DisplayFormat.FormatString = "dd-MM-yyyy hh:mm:ss";
+            this.colThoiGianThem.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colThoiGianThem.FieldName = "ThoiGian";
+            this.colThoiGianThem.Name = "colThoiGianThem";
+            this.colThoiGianThem.OptionsColumn.AllowEdit = false;
+            this.colThoiGianThem.OptionsColumn.ReadOnly = true;
+            this.colThoiGianThem.Visible = true;
+            this.colThoiGianThem.VisibleIndex = 3;
+            this.colThoiGianThem.Width = 158;
+            // 
             // colSoLuong
             // 
             this.colSoLuong.Caption = "Số lượng";
             this.colSoLuong.ColumnEdit = this.repositoryItemSpinEdit1;
-            this.colSoLuong.DisplayFormat.FormatString = "###,###";
+            this.colSoLuong.DisplayFormat.FormatString = "###,###.0";
             this.colSoLuong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colSoLuong.FieldName = "colSoLuong";
             this.colSoLuong.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.Value;
             this.colSoLuong.Name = "colSoLuong";
-            this.colSoLuong.UnboundType = DevExpress.Data.UnboundColumnType.Integer;
+            this.colSoLuong.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.colSoLuong.Visible = true;
             this.colSoLuong.VisibleIndex = 4;
-            this.colSoLuong.Width = 158;
+            this.colSoLuong.Width = 152;
             // 
             // repositoryItemSpinEdit1
             // 
             this.repositoryItemSpinEdit1.AutoHeight = false;
             this.repositoryItemSpinEdit1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit1.EditFormat.FormatString = "###,###";
+            this.repositoryItemSpinEdit1.EditFormat.FormatString = "###,###.0";
             this.repositoryItemSpinEdit1.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemSpinEdit1.Mask.EditMask = "###,###";
+            this.repositoryItemSpinEdit1.Mask.EditMask = "###,###.0";
             this.repositoryItemSpinEdit1.Name = "repositoryItemSpinEdit1";
             // 
             // colDonGia
@@ -827,12 +841,27 @@
             this.colDonGia.ColumnEdit = this.repositoryItemSpinEdit2;
             this.colDonGia.DisplayFormat.FormatString = "###,###,###,##0 VNĐ";
             this.colDonGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.colDonGia.FieldName = "DonGia";
+            this.colDonGia.FieldName = "colDonGia";
             this.colDonGia.Name = "colDonGia";
-            this.colDonGia.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
+            this.colDonGia.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.colDonGia.Visible = true;
             this.colDonGia.VisibleIndex = 5;
-            this.colDonGia.Width = 147;
+            this.colDonGia.Width = 269;
+            // 
+            // repositoryItemSpinEdit2
+            // 
+            this.repositoryItemSpinEdit2.AutoHeight = false;
+            this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemSpinEdit2.EditFormat.FormatString = "###,###,###,##0 VNĐ";
+            this.repositoryItemSpinEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.repositoryItemSpinEdit2.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.repositoryItemSpinEdit2.Mask.EditMask = "###,###,###,##0 VNĐ";
+            this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
             // 
             // colThanhTien
             // 
@@ -844,7 +873,7 @@
             this.colThanhTien.OptionsColumn.AllowEdit = false;
             this.colThanhTien.OptionsColumn.ReadOnly = true;
             this.colThanhTien.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colThanhTien", "TỔNG: {0:###,###,###,##0 VNĐ}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colThanhTien", "<color=gray>TOTAL SALES</color><br><b>{0:c}</b>")});
             this.colThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colThanhTien.Visible = true;
             this.colThanhTien.VisibleIndex = 6;
@@ -919,12 +948,12 @@
             // 
             this.wbntQuanlyphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntQuanlyphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm Dịch Vụ", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm Dịch Vụ", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Dịch Vụ", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Dịch Vụ", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm Dịch Vụ", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm Dịch Vụ", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Dịch Vụ", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Dịch Vụ", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton(),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh Toán", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thanh Toán", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh Toán", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thanh Toán", -1, false)});
             this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
@@ -934,34 +963,6 @@
             this.wbntQuanlyphong.TabIndex = 13;
             this.wbntQuanlyphong.Text = "windowsUIButtonPanel1";
             this.wbntQuanlyphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntQuanlyphong_ButtonClick);
-            // 
-            // colThoiGianThem
-            // 
-            this.colThoiGianThem.Caption = "Thời gian thêm";
-            this.colThoiGianThem.DisplayFormat.FormatString = "dd-MM-yyyy hh:mm:ss";
-            this.colThoiGianThem.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colThoiGianThem.FieldName = "ThoiGian";
-            this.colThoiGianThem.Name = "colThoiGianThem";
-            this.colThoiGianThem.OptionsColumn.AllowEdit = false;
-            this.colThoiGianThem.OptionsColumn.ReadOnly = true;
-            this.colThoiGianThem.Visible = true;
-            this.colThoiGianThem.VisibleIndex = 3;
-            this.colThoiGianThem.Width = 158;
-            // 
-            // repositoryItemSpinEdit2
-            // 
-            this.repositoryItemSpinEdit2.AutoHeight = false;
-            this.repositoryItemSpinEdit2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemSpinEdit2.EditFormat.FormatString = "###,###,###,##0 VNĐ";
-            this.repositoryItemSpinEdit2.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.repositoryItemSpinEdit2.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.repositoryItemSpinEdit2.Mask.EditMask = "###,###,###,##0 VNĐ";
-            this.repositoryItemSpinEdit2.Name = "repositoryItemSpinEdit2";
             // 
             // ThongTinChiTietPhong
             // 
@@ -1022,12 +1023,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit2)).EndInit();
             this.ResumeLayout(false);
 
         }

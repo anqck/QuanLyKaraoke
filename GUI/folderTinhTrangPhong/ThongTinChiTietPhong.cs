@@ -130,7 +130,11 @@ namespace GUI.folderTinhTrangPhong
                         RefreshDataBindingDichVuPhong();
                     }
                     break;
+                case "Xóa Dịch Vụ":
+                    DichVuPhongBUS.XoaDichVuPhong((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
 
+                    RefreshDataBindingDichVuPhong();
+                    break;
                 case "Thanh Toán":
                     goToThanhToan();
                     break;
@@ -173,7 +177,7 @@ namespace GUI.folderTinhTrangPhong
                 }
                 if (e.IsSetData)
                 {
-                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), (int)e.Value, (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]));
+                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), Convert.ToDouble(e.Value), (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]));
                     RefreshDataBindingDichVuPhong();
                 }
 
@@ -186,7 +190,7 @@ namespace GUI.folderTinhTrangPhong
                 }
                 if (e.IsSetData)
                 {
-                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), (int)e.Value, (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]));
+                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), (double)dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"], Convert.ToDouble(e.Value)));
                     RefreshDataBindingDichVuPhong();
                 }
 
@@ -195,7 +199,7 @@ namespace GUI.folderTinhTrangPhong
             {
                 if (e.IsGetData)
                 {
-                    e.Value = Convert.ToInt32(dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"]) * (double)dichVuPhong.Rows[e.ListSourceRowIndex]["DonGia"];
+                    e.Value = Convert.ToInt32(dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"]) * (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"];
                 }
                 
 
