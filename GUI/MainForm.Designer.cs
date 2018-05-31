@@ -60,23 +60,13 @@
         private folderDichVu.LoaiDichVu loaiDichVu1;
         private folderQuanLyPhong.LoaiPhong loaiPhong1;
         private DevExpress.XtraEditors.FilterControl filterControl1;
+        private System.Windows.Forms.Label lbTimedate;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraEditors.PictureEdit picNV;
-        private DevExpress.XtraEditors.SimpleButton bntDangXuat;
-        private DevExpress.XtraGauges.Win.GaugeControl gaugeControl2;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge Date;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent2;
-        private DevExpress.XtraGauges.Win.GaugeControl gaugeControl1;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalGauge Clock;
-        private DevExpress.XtraGauges.Win.Gauges.Digital.DigitalBackgroundLayerComponent digitalBackgroundLayerComponent1;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.SimpleLabelItem lbUser;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.SimpleLabelItem lbLoaiNV;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
