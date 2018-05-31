@@ -16,6 +16,11 @@ namespace GUI.folderTinhTrangPhong
         public ThongTinChiTietNhieuPhong()
         {
             InitializeComponent();
+
+            this.TabControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.TabControl.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.TabControl.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
+            this.TabControl.LookAndFeel.UseDefaultLookAndFeel = false;
         }
     }
 }

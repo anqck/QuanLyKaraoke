@@ -99,7 +99,7 @@
             this.thanhToan1 = new GUI.folderTinhTrangPhong.ThanhToan();
             this.PageXemphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntThemphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.thongTinChiTietPhong1 = new GUI.folderTinhTrangPhong.ThongTinChiTietPhong();
+            this.thongTinChiTietNhieuPhong1 = new GUI.folderTinhTrangPhong.ThongTinChiTietNhieuPhong();
             this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
@@ -228,7 +228,6 @@
             this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl2.Position = 6;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);
@@ -694,6 +693,7 @@
             // 
             // PageTinhtrang
             // 
+            this.PageTinhtrang.Caption = "PageTinhtrang";
             this.PageTinhtrang.Controls.Add(this.splitContainerControl);
             this.PageTinhtrang.Controls.Add(this.labelTitle);
             this.PageTinhtrang.Controls.Add(this.wbntTinhtrangphong);
@@ -702,6 +702,7 @@
             // 
             // PageThanhtoan
             // 
+            this.PageThanhtoan.Caption = "PageThanhtoan";
             this.PageThanhtoan.Controls.Add(this.thanhToan1);
             this.PageThanhtoan.Name = "PageThanhtoan";
             this.PageThanhtoan.Size = new System.Drawing.Size(1110, 662);
@@ -718,8 +719,9 @@
             // 
             // PageXemphong
             // 
+            this.PageXemphong.Caption = "PageXemphong";
             this.PageXemphong.Controls.Add(this.wbntThemphong);
-            this.PageXemphong.Controls.Add(this.thongTinChiTietPhong1);
+            this.PageXemphong.Controls.Add(this.thongTinChiTietNhieuPhong1);
             this.PageXemphong.Name = "PageXemphong";
             this.PageXemphong.Size = new System.Drawing.Size(1110, 662);
             // 
@@ -736,15 +738,13 @@
             this.wbntThemphong.Text = "windowsUIButtonPanel2";
             this.wbntThemphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntThemphong_ButtonClick);
             // 
-            // thongTinChiTietPhong1
+            // thongTinChiTietNhieuPhong1
             // 
-            this.thongTinChiTietPhong1.Appearance.BackColor = System.Drawing.Color.White;
-            this.thongTinChiTietPhong1.Appearance.Options.UseBackColor = true;
-            this.thongTinChiTietPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.thongTinChiTietPhong1.Location = new System.Drawing.Point(0, 0);
-            this.thongTinChiTietPhong1.Name = "thongTinChiTietPhong1";
-            this.thongTinChiTietPhong1.Size = new System.Drawing.Size(1110, 662);
-            this.thongTinChiTietPhong1.TabIndex = 0;
+            this.thongTinChiTietNhieuPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thongTinChiTietNhieuPhong1.Location = new System.Drawing.Point(0, 0);
+            this.thongTinChiTietNhieuPhong1.Name = "thongTinChiTietNhieuPhong1";
+            this.thongTinChiTietNhieuPhong1.Size = new System.Drawing.Size(1110, 662);
+            this.thongTinChiTietNhieuPhong1.TabIndex = 2;
             // 
             // wbntBack
             // 
@@ -822,9 +822,9 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageXemphong;
         private DevExpress.XtraGrid.Columns.TileViewColumn colThoiGianThue;
         private DevExpress.XtraGrid.Columns.TileViewColumn colMaTinhTrangPhong;
-        private folderTinhTrangPhong.ThongTinChiTietPhong thongTinChiTietPhong1;
         private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong,btnXemPhong, btnDatPhong, btnChuyenPhong, btnThanhToan;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntThemphong;
         private folderTinhTrangPhong.ThanhToan thanhToan1;
+        private folderTinhTrangPhong.ThongTinChiTietNhieuPhong thongTinChiTietNhieuPhong1;
     }
 }

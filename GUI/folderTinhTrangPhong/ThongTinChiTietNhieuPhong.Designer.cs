@@ -28,67 +28,93 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.ChiTietPhong1 = new DevExpress.XtraBars.Navigation.TabPane();
-            this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            ((System.ComponentModel.ISupportInitialize)(this.ChiTietPhong1)).BeginInit();
-            this.ChiTietPhong1.SuspendLayout();
+            this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.thongTinChiTietPhong1 = new GUI.folderTinhTrangPhong.ThongTinChiTietPhong();
+            this.TabControl = new DevExpress.XtraTab.XtraTabControl();
+            this.tab1 = new DevExpress.XtraTab.XtraTabPage();
+            this.wbntEmpty.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TabControl)).BeginInit();
+            this.TabControl.SuspendLayout();
+            this.tab1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ChiTietPhong1
+            // wbntEmpty
             // 
-            this.ChiTietPhong1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChiTietPhong1.Appearance.Options.UseFont = true;
-            this.ChiTietPhong1.Controls.Add(this.tabNavigationPage1);
-            this.ChiTietPhong1.Controls.Add(this.tabNavigationPage2);
-            this.ChiTietPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ChiTietPhong1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChiTietPhong1.Location = new System.Drawing.Point(0, 0);
-            this.ChiTietPhong1.Name = "ChiTietPhong1";
-            this.ChiTietPhong1.PageProperties.AppearanceCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChiTietPhong1.PageProperties.AppearanceCaption.Options.UseFont = true;
-            this.ChiTietPhong1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
-            this.tabNavigationPage1,
-            this.tabNavigationPage2});
-            this.ChiTietPhong1.RegularSize = new System.Drawing.Size(1064, 625);
-            this.ChiTietPhong1.SelectedPage = this.tabNavigationPage2;
-            this.ChiTietPhong1.Size = new System.Drawing.Size(1064, 625);
-            this.ChiTietPhong1.TabIndex = 0;
-            this.ChiTietPhong1.Text = "tabControl";
+            this.wbntEmpty.BackColor = System.Drawing.Color.White;
+            this.wbntEmpty.ContentAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.wbntEmpty.Controls.Add(this.wbntQuanlyphong);
+            this.wbntEmpty.Dock = System.Windows.Forms.DockStyle.Left;
+            this.wbntEmpty.Location = new System.Drawing.Point(0, 0);
+            this.wbntEmpty.Name = "wbntEmpty";
+            this.wbntEmpty.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.wbntEmpty.Size = new System.Drawing.Size(68, 625);
+            this.wbntEmpty.TabIndex = 8;
+            this.wbntEmpty.Text = "windowsUIButtonPanel1";
             // 
-            // tabNavigationPage1
+            // wbntQuanlyphong
             // 
-            this.tabNavigationPage1.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNavigationPage1.Appearance.Options.UseFont = true;
-            this.tabNavigationPage1.Caption = "Phòng 1";
-            this.tabNavigationPage1.Name = "tabNavigationPage1";
-            this.tabNavigationPage1.Size = new System.Drawing.Size(1042, 569);
+            this.wbntQuanlyphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
+            this.wbntQuanlyphong.Location = new System.Drawing.Point(0, 558);
+            this.wbntQuanlyphong.Name = "wbntQuanlyphong";
+            this.wbntQuanlyphong.Size = new System.Drawing.Size(68, 67);
+            this.wbntQuanlyphong.TabIndex = 22;
+            this.wbntQuanlyphong.Text = "windowsUIButtonPanel1";
             // 
-            // tabNavigationPage2
+            // thongTinChiTietPhong1
             // 
-            this.tabNavigationPage2.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabNavigationPage2.Appearance.Options.UseFont = true;
-            this.tabNavigationPage2.Caption = "Phòng 2";
-            this.tabNavigationPage2.Name = "tabNavigationPage2";
-            this.tabNavigationPage2.Size = new System.Drawing.Size(1042, 569);
+            this.thongTinChiTietPhong1.Appearance.BackColor = System.Drawing.Color.White;
+            this.thongTinChiTietPhong1.Appearance.Options.UseBackColor = true;
+            this.thongTinChiTietPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thongTinChiTietPhong1.Location = new System.Drawing.Point(0, 0);
+            this.thongTinChiTietPhong1.Name = "thongTinChiTietPhong1";
+            this.thongTinChiTietPhong1.Size = new System.Drawing.Size(989, 591);
+            this.thongTinChiTietPhong1.TabIndex = 0;
+            // 
+            // TabControl
+            // 
+            this.TabControl.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.TabControl.BorderStylePage = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.TabControl.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TabControl.Location = new System.Drawing.Point(68, 0);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedTabPage = this.tab1;
+            this.TabControl.Size = new System.Drawing.Size(996, 625);
+            this.TabControl.TabIndex = 1;
+            this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tab1});
+            // 
+            // tab1
+            // 
+            this.tab1.Controls.Add(this.thongTinChiTietPhong1);
+            this.tab1.Name = "tab1";
+            this.tab1.Size = new System.Drawing.Size(989, 591);
+            this.tab1.Text = "Phòng 1";
             // 
             // ThongTinChiTietNhieuPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.ChiTietPhong1);
+            this.Controls.Add(this.TabControl);
+            this.Controls.Add(this.wbntEmpty);
             this.Name = "ThongTinChiTietNhieuPhong";
             this.Size = new System.Drawing.Size(1064, 625);
-            ((System.ComponentModel.ISupportInitialize)(this.ChiTietPhong1)).EndInit();
-            this.ChiTietPhong1.ResumeLayout(false);
+            this.wbntEmpty.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TabControl)).EndInit();
+            this.TabControl.ResumeLayout(false);
+            this.tab1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.XtraBars.Navigation.TabPane ChiTietPhong1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
-        private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
+        private ThongTinChiTietPhong thongTinChiTietPhong1;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntEmpty;
+        private DevExpress.XtraTab.XtraTabControl TabControl;
+        private DevExpress.XtraTab.XtraTabPage tab1;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntQuanlyphong;
     }
 }

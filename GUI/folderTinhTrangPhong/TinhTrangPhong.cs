@@ -242,7 +242,7 @@ namespace GUI.TinhTrangPhong
                 return;
             
             if (this.TinhtrangPagecontrol.SelectedPage == PageXemphong)
-                thongTinChiTietPhong1.UpdateTime();
+                //thongTinChiTietPhong1.UpdateTime();
 
             tileView1.RefreshData();
 
@@ -388,8 +388,8 @@ namespace GUI.TinhTrangPhong
         {
             DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString() , tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
 
-            thongTinChiTietPhong1.SetActionThanhToanButton(DisplayThanhToanPhongWithSelectedTile);
-            thongTinChiTietPhong1.RefreshDataBinding(phongDTO);
+            //thongTinChiTietPhong1.SetActionThanhToanButton(DisplayThanhToanPhongWithSelectedTile);
+            //thongTinChiTietPhong1.RefreshDataBinding(phongDTO);
             
             this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
         }
