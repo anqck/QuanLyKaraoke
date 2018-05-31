@@ -21,6 +21,9 @@ namespace GUI.folderDichVu
         public LoaiDichVu()
         {
             InitializeComponent();
+
+            themLoaiDichVu1.actionBack = GoToHomePageWithAnimation;
+            suaLoaiDichVu1.actionBack = GoToHomePageWithAnimation;
         }
 
 
@@ -29,11 +32,17 @@ namespace GUI.folderDichVu
             GoToDichVu = goToHomeDichVu;
         } 
 
-        public void GoToHomePage()
+        public void GoToHomePageWithoutAnimation()
         {
             LoaiDichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             LoaiDichVuPagecontrol.SelectedPageIndex = 0;
             LoaiDichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
+
+        public void GoToHomePageWithAnimation()
+        {
+                     LoaiDichVuPagecontrol.SelectedPageIndex = 0;
+            
         }
 
         public void RefreshDataBinding()
@@ -62,6 +71,13 @@ namespace GUI.folderDichVu
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
+            if(gridView1.RowCount == 0 )
+            {
+                wbntSuadichvu.Buttons[1].Properties.Enabled = false;
+                wbntSuadichvu.Buttons[2].Properties.Enabled = false;
+                return;
+            }
+
             if (e.FocusedRowHandle == 0 || e.FocusedRowHandle == 1)
             {
                 wbntSuadichvu.Buttons[1].Properties.Enabled = false;
@@ -69,8 +85,12 @@ namespace GUI.folderDichVu
             }
             else
             {
-                wbntSuadichvu.Buttons[2].Properties.Enabled = true;
-                wbntSuadichvu.Buttons[2].Properties.Enabled = false;
+                wbntSuadichvu.Buttons[1].Properties.Enabled = true;
+
+                if(gridView1.GetVisibleDetailRelationIndex(gridView1.FocusedRowHandle) != -1)
+                    wbntSuadichvu.Buttons[2].Properties.Enabled = true;
+                else
+                    wbntSuadichvu.Buttons[2].Properties.Enabled = false;
             }
         }
 
@@ -83,10 +103,14 @@ namespace GUI.folderDichVu
                     break;
                     
                 case "Thêm Loại Dịch Vụ":
+                   
                     LoaiDichVuPagecontrol.SelectedPage = PageThemloaidichvu;
                     break;
                 case "Sửa Loại Dịch Vụ":
+                    suaLoaiDichVu1.RefreshDataBinding(new DTO.LoaiDichVuDTO((int)dtLoaiDichVu.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaLDV"], dtLoaiDichVu.Rows[gridView1.GetFocusedDataSourceRowIndex()]["TenLDV"].ToString()));
                     LoaiDichVuPagecontrol.SelectedPage = PageSualoaidichvu;
+
+
                     break;
                 case "Xóa Loại Dịch Vụ":
                     //Kiểm tra xem có chọn dòng nào không
@@ -126,6 +150,18 @@ namespace GUI.folderDichVu
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             LoaiDichVuPagecontrol.SelectedPage = PageLoaidichvu;
+        }
+
+        private void LoaiDichVuPagecontrol_SelectedPageChanging(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangingEventArgs e)
+        {
+            if(e.Page == PageLoaidichvu)
+            {
+                RefreshDataBinding();
+            }
+            else if(e.Page == PageThemloaidichvu)
+            {
+                themLoaiDichVu1.Initialize();
+            }
         }
     }
 }

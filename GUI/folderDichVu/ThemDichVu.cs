@@ -79,8 +79,8 @@ namespace GUI.folderDichVu
                         //Thông báo thành công
                         //BÌNH
 
-                        if (ThongBaoHuyKoLuuDichVu())
-                            actionBack();
+                       
+                        actionBack();
                     }
                     else
                     {
@@ -113,8 +113,9 @@ namespace GUI.folderDichVu
             if(ThongBaoHuyKoLuuDichVu())
                 actionBack();
         }
-        bool ThongBaoHuyKoLuuDichVu()
+        private bool ThongBaoHuyKoLuuDichVu()
         {
+            //Bình
             return true;
         }
 

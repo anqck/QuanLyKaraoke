@@ -131,7 +131,7 @@ namespace GUI.folderDichVu
             {
                 gridControl1.DataSource = DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu();
 
-           
+                tileControl2.SelectedItem = tileAll;
 
                 grpLoaiDichVu.Items.Clear();
                 foreach (LoaiDichVuDTO loaiDV in BUS.LoaiDichVuBUS.LayTatCaLoaiDichVu_List())

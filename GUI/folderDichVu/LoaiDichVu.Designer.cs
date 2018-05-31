@@ -47,8 +47,6 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.colTenDichVu = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colHinhAnhDV = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colDonGia = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -63,10 +61,8 @@
             this.PageLoaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.PageThemloaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.themLoaiDichVu1 = new GUI.folderDichVu.ThemLoaiDichVu();
             this.PageSualoaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.suaLoaiDichVu1 = new GUI.folderDichVu.SuaLoaiDichVu();
             ((System.ComponentModel.ISupportInitialize)(this.tileView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -279,6 +275,7 @@
             this.LoaiDichVuPagecontrol.Size = new System.Drawing.Size(1014, 714);
             this.LoaiDichVuPagecontrol.TabIndex = 18;
             this.LoaiDichVuPagecontrol.Text = "navigationFrame1";
+            this.LoaiDichVuPagecontrol.SelectedPageChanging += new DevExpress.XtraBars.Navigation.SelectedPageChangingEventHandler(this.LoaiDichVuPagecontrol_SelectedPageChanging);
             // 
             // PageLoaidichvu
             // 
@@ -308,26 +305,13 @@
             // PageThemloaidichvu
             // 
             this.PageThemloaidichvu.Caption = "PageThemloaidichvu";
-            this.PageThemloaidichvu.Controls.Add(this.wbntBack);
             this.PageThemloaidichvu.Controls.Add(this.themLoaiDichVu1);
             this.PageThemloaidichvu.Name = "PageThemloaidichvu";
             this.PageThemloaidichvu.Size = new System.Drawing.Size(1014, 714);
             // 
-            // wbntBack
-            // 
-            this.wbntBack.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions5.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.wbntBack.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.wbntBack.Location = new System.Drawing.Point(3, 3);
-            this.wbntBack.Name = "wbntBack";
-            this.wbntBack.Size = new System.Drawing.Size(56, 58);
-            this.wbntBack.TabIndex = 3;
-            this.wbntBack.Text = "windowsUIButtonPanel2";
-            this.wbntBack.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBack_ButtonClick);
-            // 
             // themLoaiDichVu1
             // 
+            this.themLoaiDichVu1.actionBack = null;
             this.themLoaiDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.themLoaiDichVu1.Location = new System.Drawing.Point(0, 0);
             this.themLoaiDichVu1.Name = "themLoaiDichVu1";
@@ -337,23 +321,9 @@
             // PageSualoaidichvu
             // 
             this.PageSualoaidichvu.Caption = "PageSualoaidichvu";
-            this.PageSualoaidichvu.Controls.Add(this.windowsUIButtonPanel1);
             this.PageSualoaidichvu.Controls.Add(this.suaLoaiDichVu1);
             this.PageSualoaidichvu.Name = "PageSualoaidichvu";
             this.PageSualoaidichvu.Size = new System.Drawing.Size(1014, 714);
-            // 
-            // windowsUIButtonPanel1
-            // 
-            this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(3, 3);
-            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(56, 58);
-            this.windowsUIButtonPanel1.TabIndex = 4;
-            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel2";
-            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
             // suaLoaiDichVu1
             // 
@@ -399,10 +369,8 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageLoaidichvu;
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Navigation.NavigationPage PageThemloaidichvu;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntBack;
         private ThemLoaiDichVu themLoaiDichVu1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSualoaidichvu;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private SuaLoaiDichVu suaLoaiDichVu1;
     }
 }

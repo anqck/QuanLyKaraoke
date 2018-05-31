@@ -831,7 +831,7 @@ namespace GUI
         public void GoToHomeLoaiDichVu()
         {
             loaiDichVu1.RefreshDataBinding();
-            loaiDichVu1.GoToHomePage();
+            loaiDichVu1.GoToHomePageWithoutAnimation();
             PageControl.SelectedPage = pageLoaidichvu;
         }
 

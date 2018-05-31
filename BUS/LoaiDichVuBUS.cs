@@ -37,5 +37,19 @@ namespace BUS
         {
             return DAL.LoaiDichVuDAL.XoaLoaiDichVu(maLDV);
         }
+        public static int PhatSinhMaDichVu()
+        {
+            return DAL.LoaiDichVuDAL.PhatSinhMaDichVu();
+        }
+        public static bool LuuThongTinLoaiDichVu(LoaiDichVuDTO loaiDichVuDTO)
+        {
+            return DAL.LoaiDichVuDAL.LuuThongTinLoaiDichVu(loaiDichVuDTO);
+        }
+        public static bool SuaThongTinLoaiDichVu(LoaiDichVuDTO loaiDichVuDTO)
+        {
+            return DAL.LoaiDichVuDAL.SuaThongTinLoaiDichVu(loaiDichVuDTO);
+        }
+
+
     }
 }
