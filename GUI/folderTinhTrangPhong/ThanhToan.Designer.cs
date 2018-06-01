@@ -53,6 +53,7 @@
             this.repositoryItemSpinEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colType = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
@@ -64,6 +65,7 @@
             this.textEdit13 = new DevExpress.XtraEditors.TextEdit();
             this.textEdit9 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colPhongf = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgay = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKhoangThoiGian = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoGio = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -96,8 +98,6 @@
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             this.snapControl = new DevExpress.Snap.SnapControl();
-            this.colPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colPhongf = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
@@ -385,6 +385,14 @@
             this.colType.FieldName = "colType";
             this.colType.Name = "colType";
             // 
+            // colPhong
+            // 
+            this.colPhong.Caption = "Phòng";
+            this.colPhong.FieldName = "MaPhong";
+            this.colPhong.Name = "colPhong";
+            this.colPhong.Visible = true;
+            this.colPhong.VisibleIndex = 6;
+            // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.wbntEmpty);
@@ -537,6 +545,14 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNgay, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn6, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridLookUpEdit1View.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridLookUpEdit1View_CustomUnboundColumnData);
+            // 
+            // colPhongf
+            // 
+            this.colPhongf.Caption = "Phòng";
+            this.colPhongf.FieldName = "Phong";
+            this.colPhongf.Name = "colPhongf";
+            this.colPhongf.Visible = true;
+            this.colPhongf.VisibleIndex = 4;
             // 
             // colNgay
             // 
@@ -884,22 +900,6 @@
             this.snapControl.Size = new System.Drawing.Size(614, 762);
             this.snapControl.TabIndex = 22;
             this.snapControl.Text = "snapControl1";
-            // 
-            // colPhong
-            // 
-            this.colPhong.Caption = "Phòng";
-            this.colPhong.FieldName = "MaPhong";
-            this.colPhong.Name = "colPhong";
-            this.colPhong.Visible = true;
-            this.colPhong.VisibleIndex = 6;
-            // 
-            // colPhongf
-            // 
-            this.colPhongf.Caption = "Phòng";
-            this.colPhongf.FieldName = "Phong";
-            this.colPhongf.Name = "colPhongf";
-            this.colPhongf.Visible = true;
-            this.colPhongf.VisibleIndex = 4;
             // 
             // ThanhToan
             // 

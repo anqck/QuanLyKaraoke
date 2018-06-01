@@ -73,7 +73,7 @@ namespace GUI.folderTinhTrangPhong
                         dr["GioBD"] = dongia.GioBatDau.hour * 3600 + dongia.GioBatDau.minute * 60 + dongia.GioBatDau.second;
                         dr["DonGia"] = dongia.DonGia;
                         dr["SoLuong"] = ThongTinThanhToanTheoNgay.Gio.CalcTimeSpan(dongia.GioBatDau, dongia.GioKetThuc).TotalHours;
-                        dr["Phong"] = thuePhong.MaPhong;
+                        dr["Phong"] = PhongBUS.LayThongTinPhong(thuePhong.MaPhong).TenPhong;
                         tienGio.Rows.Add(dr);
                     }
 

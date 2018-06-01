@@ -38,5 +38,41 @@ namespace DAL
             }
             return true;
         }
+
+        public static Dictionary<string, DonGiaTheoNgay> LayDonGia(LoaiPhongDTO loaiPhongDTO)
+        {
+            DataTable dt = DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE quanlykaraoke.dongia_loaiphong.MaLoaiPhong = '"+loaiPhongDTO.MaLoaiPhong+"'");
+            Dictionary<string, DonGiaTheoNgay> res = new Dictionary<string, DonGiaTheoNgay>();
+
+            foreach (DataRow row in dt.Rows)
+            {
+                if(!res.Keys.Contains(row["Thu"]))
+                {
+                    
+                    res.Add(row["Thu"].ToString(),new DonGiaTheoNgay(row["Thu"].ToString()));
+                }
+                res[row["Thu"].ToString()].listDonGiaTheoKhoangThoiGian.Add(new DonGiaTheoKhoangThoiGian(new ThongTinThanhToanTheoNgay.Gio((TimeSpan)row["GioBatDau"]), new ThongTinThanhToanTheoNgay.Gio((TimeSpan)row["GioKetThuc"]), (double)row["DonGia"]));
+            }       
+            return res;
+        }
+
+        public static DataTable LayTatCaDonGia_DataTable()
+        {
+           return  DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong ");
+           
+        }
+        public static bool XoaCacDonGiaPhong(LoaiPhongDTO loaiPhongDTO)
+        {
+           try
+            {
+                DataProvider.ExecuseNonQuery("DELETE FROM quanlykaraoke.dongia_loaiphong WHERE quanlykaraoke.dongia_loaiphong.MaLoaiPhong = '"+loaiPhongDTO.MaLoaiPhong+"'");
+
+                return true;
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

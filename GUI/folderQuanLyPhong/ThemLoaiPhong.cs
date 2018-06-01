@@ -32,10 +32,14 @@ namespace GUI.folderQuanLyPhong
 
         internal void Initialize()
         {
-            spreadsheetControl1.Document.Worksheets[0]["A1:H25"].Value = 1000;
+            spreadsheetControl1.Document.Worksheets[0]["A1:H25"].Value = 50000;
+            spreadsheetControl1.Document.Worksheets[0]["A1:H25"].NumberFormat = "###,###,##0";
+            
 
             //Phát sinh mã loại phòng
             textEdit2.Text = BUS.LoaiPhongBUS.PhatSinhLoaiMaPhong().ToString();
+
+            ValidateChildren();
 
         }
 
@@ -92,53 +96,92 @@ namespace GUI.folderQuanLyPhong
             }
         }
 
-        private void LuuLoaiPhong()
-        {
-            Range range = spreadsheetControl1.Document.Worksheets[0]["A1:H25"];
-            DataTable dataTable = spreadsheetControl1.Document.Worksheets[0].CreateDataTable(range, true);
-
-            DataTableExporter exporter =    spreadsheetControl1.Document.Worksheets[0].CreateDataTableExporter(range, dataTable, true);
-            exporter.Export();
-            return;
-            
-        }
 
         private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            DonGiaTheoTuan giaTheoTuan = new DonGiaTheoTuan();
-            giaTheoTuan.MaLoaiPhong = Convert.ToInt32(textEdit2.Text);
-
-            for (int i = 0; i < 8; i++)
+            switch(e.Button.Properties.Tag.ToString())
             {
-                DonGiaTheoNgay donGiaNgay = new DonGiaTheoNgay();
-                donGiaNgay.SetNgayTrongTuan(i);
-
-                DonGiaTheoKhoangThoiGian donGia = new DonGiaTheoKhoangThoiGian(new DTO.ThongTinThanhToanTheoNgay.Gio(0,0,0), new DTO.ThongTinThanhToanTheoNgay.Gio(1, 0, 0), Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString()));
-
-                for (int j = 1; j < 24; j++)
-                {
-                    if(donGia.DonGia == Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString()))
+                case "Thêm":
+                    if (txtTenLoaiPhong.Text == "")
                     {
-                        donGia.GioKetThuc.AddHour(1);
+                        txtTenLoaiPhong.ErrorText = "Tên loại phòng không được để trống";
+                        return;
                     }
-                    else
+
+                    DonGiaTheoTuan giaTheoTuan = new DonGiaTheoTuan();
+                    giaTheoTuan.MaLoaiPhong = Convert.ToInt32(textEdit2.Text);
+
+                    for (int i = 0; i < 8; i++)
                     {
+                        for (int j = 0; j < 24; j++)
+                        {
+                            if (spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString() == "")
+                            {
+                                //Thông báo có cell trống
+                                //BÌNH
+
+                                return;
+                            }
+                        }
+                    }
+
+                    for (int i = 0; i < 8; i++)
+                    {
+                        DonGiaTheoNgay donGiaNgay = new DonGiaTheoNgay();
+                        donGiaNgay.SetNgayTrongTuan(i);
+
+                        DonGiaTheoKhoangThoiGian donGia = new DonGiaTheoKhoangThoiGian(new DTO.ThongTinThanhToanTheoNgay.Gio(0, 0, 0), new DTO.ThongTinThanhToanTheoNgay.Gio(1, 0, 0), Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString()));
+
+                        for (int j = 1; j < 24; j++)
+                        {
+                            if (donGia.DonGia == Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString()))
+                            {
+                                donGia.GioKetThuc.AddHour(1);
+                            }
+                            else
+                            {
+                                donGiaNgay.listDonGiaTheoKhoangThoiGian.Add(donGia);
+
+                                donGia = new DonGiaTheoKhoangThoiGian(new DTO.ThongTinThanhToanTheoNgay.Gio(j, 0, 0), new DTO.ThongTinThanhToanTheoNgay.Gio(j + 1, 0, 0), Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString()));
+
+
+                                donGia.DonGia = Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString());
+                            }
+                            //spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
+                        }
+
                         donGiaNgay.listDonGiaTheoKhoangThoiGian.Add(donGia);
 
-                        donGia = new DonGiaTheoKhoangThoiGian(new DTO.ThongTinThanhToanTheoNgay.Gio(j, 0, 0), new DTO.ThongTinThanhToanTheoNgay.Gio(j + 1, 0, 0), Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[0, i].Value.ToString()));
+                        giaTheoTuan.listDonGiaTheoNgay.Add(donGiaNgay);
 
-    
-                        donGia.DonGia = Convert.ToInt32(spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString());
                     }
-                    //spreadsheetControl1.Document.Worksheets[0].Cells[j, i].NumberFormat = "##.000";
-                }
+                    BUS.DonGia_LoaiPhongBUS.ThemDonGiaTheoKhoangThoiGian(giaTheoTuan);
 
-                donGiaNgay.listDonGiaTheoKhoangThoiGian.Add(donGia);
+                    //Thông báo thành công
+                    //BÌNH
+                    break;
+                case "Hủy":
+                    break;
 
-                giaTheoTuan.listDonGiaTheoNgay.Add(donGiaNgay);
-                
             }
-            BUS.DonGia_LoaiPhongBUS.ThemDonGiaTheoKhoangThoiGian(giaTheoTuan);
+         
+        }
+
+        private void textEdit1_Properties_Validating(object sender, CancelEventArgs e)
+        {
+            if(txtTenLoaiPhong.Text == "")
+            {
+                txtTenLoaiPhong.ErrorText = "Tên loại phòng không được để trống";
+            }
+            else
+            {
+                txtTenLoaiPhong.ErrorText = "";
+            }
+        }
+
+        private void txtTenLoaiPhong_TextChanged(object sender, EventArgs e)
+        {
+            Validate();
         }
     }
 }

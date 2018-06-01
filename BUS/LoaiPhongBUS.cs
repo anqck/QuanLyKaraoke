@@ -29,5 +29,9 @@ namespace BUS
         {
             return DAL.LoaiPhongDAL.LayLoaiPhong(phong);
         }
+        public static bool XoaLoaiPhong(LoaiPhongDTO loaiPhongDTO)
+        {
+            return DAL.LoaiPhongDAL.XoaLoaiPhong(loaiPhongDTO);
+        }
     }
 }

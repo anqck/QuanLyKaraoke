@@ -204,5 +204,10 @@ namespace DAL
 
             return true;
         }
+        public static DataTable LayTatCaDichVu_LoaiDichVu_KM()
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dichvu, quanlykaraoke.loaidichvu where quanlykaraoke.dichvu.MaLDV = quanlykaraoke.loaidichvu.MaLDV AND   loaidichvu.MaLDV = '3'  );");
+
+        }
     }
 }

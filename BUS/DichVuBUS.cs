@@ -62,5 +62,9 @@ namespace BUS
         {
             return DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu_ExceptHuyVaKM();
         }
+        public static DataTable LayTatCaDichVu_LoaiDichVu_KM()
+        {
+            return DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu_KM();
+        }
     }
 }

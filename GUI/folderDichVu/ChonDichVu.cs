@@ -33,9 +33,26 @@ namespace GUI.folderDichVu
             {
                 listSoLuong.Add(0);
                
-            }
+            }          
+        }
 
-          
+        public ChonDichVu(bool boolChonKhuyenMai)
+        {
+            InitializeComponent();
+            showOnlySelected = false;
+
+            if(!boolChonKhuyenMai)
+                gridControl2.DataSource = dataSource = BUS.DichVuBUS.LayTatCaDichVu_LoaiDichVu_ExceptHuyVaKM();
+            else
+                gridControl2.DataSource = dataSource = BUS.DichVuBUS.LayTatCaDichVu_LoaiDichVu_KM();
+
+            listSelectedRow = new Dictionary<int, int>();
+            listSoLuong = new List<int>();
+            for (int i = 0; i < gridView2.DataRowCount; i++)
+            {
+                listSoLuong.Add(0);
+
+            }
         }
 
         private void gridView2_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)

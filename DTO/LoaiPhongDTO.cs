@@ -45,6 +45,12 @@ namespace DTO
                 listDonGiaTheoKhoangThoiGian = new List<DonGiaTheoKhoangThoiGian>();
            }
 
+            public DonGiaTheoNgay(string strThu)
+            {
+                NgayTrongTuan = strThu;
+                listDonGiaTheoKhoangThoiGian = new List<DonGiaTheoKhoangThoiGian>();
+            }
+
             public void SetNgayTrongTuan(int i)
             {
                 switch(i)

@@ -39,5 +39,17 @@ namespace DAL
             DataTable resLoaiPhong = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong WHERE quanlykaraoke.loaiphong.MaLP = '" + phong.MaLoaiPhong.ToString() + "';");
             return new LoaiPhongDTO(Convert.ToInt32(resLoaiPhong.Rows[0]["MaLP"]), resLoaiPhong.Rows[0]["TenLoaiPhong"].ToString());
         }
+        public static bool XoaLoaiPhong(LoaiPhongDTO loaiPhongDTO)
+        {
+            try
+            {
+                DAL.DataProvider.ExecuseNonQuery("DELETE FROM quanlykaraoke.loaiphong WHERE quanlykaraoke.loaiphong.MaLP = '"+loaiPhongDTO.MaLoaiPhong+"';");
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }
