@@ -37,21 +37,21 @@ namespace GUI
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement34 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement35 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement36 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement37 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement38 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement39 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.bntHome = new DevExpress.XtraBars.Navigation.NavButton();
             this.btnClose = new DevExpress.XtraBars.Navigation.NavButton();
             this.Doc = new DevExpress.XtraBars.Navigation.TileNavPane();
@@ -104,6 +104,13 @@ namespace GUI
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.lbTimedate = new System.Windows.Forms.Label();
+            this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -125,6 +132,13 @@ namespace GUI
             this.pageLoaiphong.SuspendLayout();
             this.windowsUIButtonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
+            this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             this.SuspendLayout();
             // 
             // bntHome
@@ -143,7 +157,7 @@ namespace GUI
             // 
             this.Doc.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Doc.Appearance.Options.UseBackColor = true;
-            this.Doc.BackColor = System.Drawing.Color.DimGray;
+            this.Doc.BackColor = System.Drawing.Color.White;
             this.Doc.Buttons.Add(this.navButtonHome);
             this.Doc.Buttons.Add(this.navButtonMinimize);
             this.Doc.Buttons.Add(this.navButtonClose);
@@ -158,8 +172,12 @@ namespace GUI
             this.Doc.DefaultCategory.Tile.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
             this.Doc.Dock = System.Windows.Forms.DockStyle.Top;
             this.Doc.Location = new System.Drawing.Point(0, 0);
+            this.Doc.LookAndFeel.SkinMaskColor = System.Drawing.Color.Red;
+            this.Doc.LookAndFeel.SkinMaskColor2 = System.Drawing.Color.Red;
+            this.Doc.LookAndFeel.SkinName = "Office 2010 Blue";
+            this.Doc.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.Doc.Name = "Doc";
-            this.Doc.Size = new System.Drawing.Size(1280, 40);
+            this.Doc.Size = new System.Drawing.Size(1637, 40);
             this.Doc.TabIndex = 3;
             this.Doc.Text = "tileNavPane1";
             // 
@@ -222,7 +240,7 @@ namespace GUI
             this.MenuBar.SelectedItem = this.menuTinhtrangphong;
             this.MenuBar.SelectionBorderWidth = 2;
             this.MenuBar.SelectionColorMode = DevExpress.XtraBars.Navigation.SelectionColorMode.UseItemBackColor;
-            this.MenuBar.Size = new System.Drawing.Size(1280, 147);
+            this.MenuBar.Size = new System.Drawing.Size(1637, 147);
             this.MenuBar.TabIndex = 4;
             this.MenuBar.TabStop = false;
             this.MenuBar.Text = "tileBar";
@@ -245,9 +263,9 @@ namespace GUI
             this.menuTinhtrangphong.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(106)))), ((int)(((byte)(123)))));
             this.menuTinhtrangphong.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuTinhtrangphong.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            tileItemElement1.Text = "Màn hình chính";
-            this.menuTinhtrangphong.Elements.Add(tileItemElement1);
+            tileItemElement31.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement31.Text = "Màn hình chính";
+            this.menuTinhtrangphong.Elements.Add(tileItemElement31);
             this.menuTinhtrangphong.Id = 10;
             this.menuTinhtrangphong.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuTinhtrangphong.Name = "menuTinhtrangphong";
@@ -258,10 +276,10 @@ namespace GUI
             this.menuQuanlyphong.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuQuanlyphong.DropDownControl = this.tileBarDropDownContainer1;
             this.menuQuanlyphong.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            tileItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.NoScale;
-            tileItemElement4.Text = "Quản lý phòng";
-            this.menuQuanlyphong.Elements.Add(tileItemElement4);
+            tileItemElement32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            tileItemElement32.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.NoScale;
+            tileItemElement32.Text = "Quản lý phòng";
+            this.menuQuanlyphong.Elements.Add(tileItemElement32);
             this.menuQuanlyphong.Id = 4;
             this.menuQuanlyphong.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuQuanlyphong.Name = "menuQuanlyphong";
@@ -305,9 +323,9 @@ namespace GUI
             this.tileBarItem3.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem3.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement2.Text = "Loại phòng";
-            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem3.Elements.Add(tileItemElement2);
+            tileItemElement23.Text = "Loại phòng";
+            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem3.Elements.Add(tileItemElement23);
             this.tileBarItem3.Id = 0;
             this.tileBarItem3.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem3.Name = "tileBarItem3";
@@ -318,9 +336,9 @@ namespace GUI
             this.tileBarItem4.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem4.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem4.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement3.Text = "Cái gì đó";
-            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem4.Elements.Add(tileItemElement3);
+            tileItemElement33.Text = "Cái gì đó";
+            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem4.Elements.Add(tileItemElement33);
             this.tileBarItem4.Id = 1;
             this.tileBarItem4.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem4.Name = "tileBarItem4";
@@ -331,9 +349,9 @@ namespace GUI
             this.menuKhachhang.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuKhachhang.DropDownControl = this.tileBarDropDownKhachhang;
             this.menuKhachhang.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            tileItemElement7.Text = "Khách hàng";
-            this.menuKhachhang.Elements.Add(tileItemElement7);
+            tileItemElement34.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            tileItemElement34.Text = "Khách hàng";
+            this.menuKhachhang.Elements.Add(tileItemElement34);
             this.menuKhachhang.Id = 6;
             this.menuKhachhang.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuKhachhang.Name = "menuKhachhang";
@@ -377,9 +395,9 @@ namespace GUI
             this.tileBarItem1.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem1.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement5.Text = "Loại khách hàng";
-            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem1.Elements.Add(tileItemElement5);
+            tileItemElement25.Text = "Loại khách hàng";
+            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem1.Elements.Add(tileItemElement25);
             this.tileBarItem1.Id = 0;
             this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem1.Name = "tileBarItem1";
@@ -390,9 +408,9 @@ namespace GUI
             this.tileBarItem2.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem2.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement6.Text = "Cái gì đó";
-            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem2.Elements.Add(tileItemElement6);
+            tileItemElement35.Text = "Cái gì đó";
+            tileItemElement35.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem2.Elements.Add(tileItemElement35);
             this.tileBarItem2.Id = 1;
             this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem2.Name = "tileBarItem2";
@@ -402,9 +420,9 @@ namespace GUI
             this.menuNhanvien.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(195)))), ((int)(((byte)(96)))));
             this.menuNhanvien.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuNhanvien.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            tileItemElement8.Text = "Nhân viên";
-            this.menuNhanvien.Elements.Add(tileItemElement8);
+            tileItemElement36.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            tileItemElement36.Text = "Nhân viên";
+            this.menuNhanvien.Elements.Add(tileItemElement36);
             this.menuNhanvien.Id = 9;
             this.menuNhanvien.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuNhanvien.Name = "menuNhanvien";
@@ -415,9 +433,9 @@ namespace GUI
             this.menuDichvu.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuDichvu.DropDownControl = this.tileBarDropDownDichvu;
             this.menuDichvu.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            tileItemElement11.Text = "Dịch vụ";
-            this.menuDichvu.Elements.Add(tileItemElement11);
+            tileItemElement37.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            tileItemElement37.Text = "Dịch vụ";
+            this.menuDichvu.Elements.Add(tileItemElement37);
             this.menuDichvu.Id = 11;
             this.menuDichvu.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuDichvu.Name = "menuDichvu";
@@ -461,9 +479,9 @@ namespace GUI
             this.tileBarItem5.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem5.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem5.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement9.Text = "Dịch vụ";
-            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem5.Elements.Add(tileItemElement9);
+            tileItemElement28.Text = "Dịch vụ";
+            tileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem5.Elements.Add(tileItemElement28);
             this.tileBarItem5.Id = 0;
             this.tileBarItem5.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem5.Name = "tileBarItem5";
@@ -473,9 +491,9 @@ namespace GUI
             this.tileBarItem6.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem6.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem6.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement10.Text = "Loại dịch vụ";
-            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem6.Elements.Add(tileItemElement10);
+            tileItemElement38.Text = "Loại dịch vụ";
+            tileItemElement38.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem6.Elements.Add(tileItemElement38);
             this.tileBarItem6.Id = 1;
             this.tileBarItem6.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem6.Name = "tileBarItem6";
@@ -486,11 +504,11 @@ namespace GUI
             this.menuBaocao.AppearanceItem.Normal.BackColor = System.Drawing.Color.Gray;
             this.menuBaocao.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuBaocao.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            tileItemElement12.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement12.ImageOptions.ImageSize = new System.Drawing.Size(40, 40);
-            tileItemElement12.Text = "Báo cáo";
-            this.menuBaocao.Elements.Add(tileItemElement12);
+            tileItemElement39.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            tileItemElement39.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement39.ImageOptions.ImageSize = new System.Drawing.Size(40, 40);
+            tileItemElement39.Text = "Báo cáo";
+            this.menuBaocao.Elements.Add(tileItemElement39);
             this.menuBaocao.Id = 5;
             this.menuBaocao.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuBaocao.Name = "menuBaocao";
@@ -523,7 +541,7 @@ namespace GUI
             this.pageLoaidichvu,
             this.pageLoaiphong});
             this.PageControl.SelectedPage = this.pageTinhtrangphong;
-            this.PageControl.Size = new System.Drawing.Size(1280, 633);
+            this.PageControl.Size = new System.Drawing.Size(1637, 633);
             this.PageControl.TabIndex = 5;
             this.PageControl.Text = "navigationFrame";
             this.PageControl.TransitionAnimationProperties.FrameCount = 5000;
@@ -537,7 +555,7 @@ namespace GUI
             this.pageTinhtrangphong.Controls.Add(this.tileBarDropDownKhachhang);
             this.pageTinhtrangphong.Controls.Add(this.tinhTrangPhong1);
             this.pageTinhtrangphong.Name = "pageTinhtrangphong";
-            this.pageTinhtrangphong.Size = new System.Drawing.Size(1280, 633);
+            this.pageTinhtrangphong.Size = new System.Drawing.Size(1637, 633);
             // 
             // tinhTrangPhong1
             // 
@@ -548,7 +566,7 @@ namespace GUI
             this.tinhTrangPhong1.Margin = new System.Windows.Forms.Padding(5);
             this.tinhTrangPhong1.Name = "tinhTrangPhong1";
             this.tinhTrangPhong1.Padding = new System.Windows.Forms.Padding(3);
-            this.tinhTrangPhong1.Size = new System.Drawing.Size(1280, 633);
+            this.tinhTrangPhong1.Size = new System.Drawing.Size(1637, 633);
             this.tinhTrangPhong1.TabIndex = 0;
             this.tinhTrangPhong1.Load += new System.EventHandler(this.tinhTrangPhong1_Load);
             // 
@@ -557,14 +575,14 @@ namespace GUI
             this.pageQuanlyphong.Caption = "pageQuanlyphong";
             this.pageQuanlyphong.Controls.Add(this.quanLyPhong1);
             this.pageQuanlyphong.Name = "pageQuanlyphong";
-            this.pageQuanlyphong.Size = new System.Drawing.Size(1280, 633);
+            this.pageQuanlyphong.Size = new System.Drawing.Size(1637, 633);
             // 
             // quanLyPhong1
             // 
             this.quanLyPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.quanLyPhong1.Location = new System.Drawing.Point(0, 0);
             this.quanLyPhong1.Name = "quanLyPhong1";
-            this.quanLyPhong1.Size = new System.Drawing.Size(1280, 633);
+            this.quanLyPhong1.Size = new System.Drawing.Size(1637, 633);
             this.quanLyPhong1.TabIndex = 0;
             // 
             // pageKhachhang
@@ -572,14 +590,14 @@ namespace GUI
             this.pageKhachhang.Caption = "pageKhachhang";
             this.pageKhachhang.Controls.Add(this.khachHang1);
             this.pageKhachhang.Name = "pageKhachhang";
-            this.pageKhachhang.Size = new System.Drawing.Size(1280, 633);
+            this.pageKhachhang.Size = new System.Drawing.Size(1637, 633);
             // 
             // khachHang1
             // 
             this.khachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.khachHang1.Location = new System.Drawing.Point(0, 0);
             this.khachHang1.Name = "khachHang1";
-            this.khachHang1.Size = new System.Drawing.Size(1280, 633);
+            this.khachHang1.Size = new System.Drawing.Size(1637, 633);
             this.khachHang1.TabIndex = 0;
             // 
             // pageNhanvien
@@ -587,14 +605,14 @@ namespace GUI
             this.pageNhanvien.Caption = "pageNhanvien";
             this.pageNhanvien.Controls.Add(this.nhanVien1);
             this.pageNhanvien.Name = "pageNhanvien";
-            this.pageNhanvien.Size = new System.Drawing.Size(1280, 633);
+            this.pageNhanvien.Size = new System.Drawing.Size(1637, 633);
             // 
             // nhanVien1
             // 
             this.nhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nhanVien1.Location = new System.Drawing.Point(0, 0);
             this.nhanVien1.Name = "nhanVien1";
-            this.nhanVien1.Size = new System.Drawing.Size(1280, 633);
+            this.nhanVien1.Size = new System.Drawing.Size(1637, 633);
             this.nhanVien1.TabIndex = 0;
             // 
             // pageDichvu
@@ -602,14 +620,14 @@ namespace GUI
             this.pageDichvu.Caption = "pageDichvu";
             this.pageDichvu.Controls.Add(this.dichVu1);
             this.pageDichvu.Name = "pageDichvu";
-            this.pageDichvu.Size = new System.Drawing.Size(1280, 633);
+            this.pageDichvu.Size = new System.Drawing.Size(1637, 633);
             // 
             // dichVu1
             // 
             this.dichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dichVu1.Location = new System.Drawing.Point(0, 0);
             this.dichVu1.Name = "dichVu1";
-            this.dichVu1.Size = new System.Drawing.Size(1280, 633);
+            this.dichVu1.Size = new System.Drawing.Size(1637, 633);
             this.dichVu1.TabIndex = 0;
             // 
             // pageBaocao
@@ -618,7 +636,7 @@ namespace GUI
             this.pageBaocao.Controls.Add(this.filterControl1);
             this.pageBaocao.Controls.Add(this.buttonEdit2);
             this.pageBaocao.Name = "pageBaocao";
-            this.pageBaocao.Size = new System.Drawing.Size(1280, 633);
+            this.pageBaocao.Size = new System.Drawing.Size(1637, 633);
             // 
             // filterControl1
             // 
@@ -639,7 +657,7 @@ namespace GUI
             this.buttonEdit2.Properties.Appearance.Options.UseFont = true;
             this.buttonEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit2.Size = new System.Drawing.Size(1280, 152);
+            this.buttonEdit2.Size = new System.Drawing.Size(1637, 152);
             this.buttonEdit2.TabIndex = 0;
             // 
             // pageLoaidichvu
@@ -647,14 +665,14 @@ namespace GUI
             this.pageLoaidichvu.Caption = "pageLoaidichvu";
             this.pageLoaidichvu.Controls.Add(this.loaiDichVu1);
             this.pageLoaidichvu.Name = "pageLoaidichvu";
-            this.pageLoaidichvu.Size = new System.Drawing.Size(1280, 633);
+            this.pageLoaidichvu.Size = new System.Drawing.Size(1637, 633);
             // 
             // loaiDichVu1
             // 
             this.loaiDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loaiDichVu1.Location = new System.Drawing.Point(0, 0);
             this.loaiDichVu1.Name = "loaiDichVu1";
-            this.loaiDichVu1.Size = new System.Drawing.Size(1280, 633);
+            this.loaiDichVu1.Size = new System.Drawing.Size(1637, 633);
             this.loaiDichVu1.TabIndex = 0;
             // 
             // pageLoaikhachhang
@@ -662,14 +680,14 @@ namespace GUI
             this.pageLoaikhachhang.Caption = "pageLoaikhachhang";
             this.pageLoaikhachhang.Controls.Add(this.loaiKhachHang1);
             this.pageLoaikhachhang.Name = "pageLoaikhachhang";
-            this.pageLoaikhachhang.Size = new System.Drawing.Size(1280, 633);
+            this.pageLoaikhachhang.Size = new System.Drawing.Size(1637, 633);
             // 
             // loaiKhachHang1
             // 
             this.loaiKhachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loaiKhachHang1.Location = new System.Drawing.Point(0, 0);
             this.loaiKhachHang1.Name = "loaiKhachHang1";
-            this.loaiKhachHang1.Size = new System.Drawing.Size(1280, 633);
+            this.loaiKhachHang1.Size = new System.Drawing.Size(1637, 633);
             this.loaiKhachHang1.TabIndex = 0;
             // 
             // pageLoaiphong
@@ -677,24 +695,24 @@ namespace GUI
             this.pageLoaiphong.Caption = "pageLoaiphong";
             this.pageLoaiphong.Controls.Add(this.loaiPhong1);
             this.pageLoaiphong.Name = "pageLoaiphong";
-            this.pageLoaiphong.Size = new System.Drawing.Size(1280, 633);
+            this.pageLoaiphong.Size = new System.Drawing.Size(1637, 633);
             // 
             // loaiPhong1
             // 
             this.loaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loaiPhong1.Location = new System.Drawing.Point(0, 0);
             this.loaiPhong1.Name = "loaiPhong1";
-            this.loaiPhong1.Size = new System.Drawing.Size(1280, 633);
+            this.loaiPhong1.Size = new System.Drawing.Size(1637, 633);
             this.loaiPhong1.TabIndex = 0;
             // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.LightGray;
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt phòng", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel1.Controls.Add(this.searchControl);
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 286);
@@ -723,9 +741,101 @@ namespace GUI
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // lbTimedate
+            // 
+            this.lbTimedate.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTimedate.AutoSize = true;
+            this.lbTimedate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.lbTimedate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimedate.ForeColor = System.Drawing.Color.White;
+            this.lbTimedate.Location = new System.Drawing.Point(1254, 5);
+            this.lbTimedate.Name = "lbTimedate";
+            this.lbTimedate.Size = new System.Drawing.Size(233, 32);
+            this.lbTimedate.TabIndex = 7;
+            this.lbTimedate.Text = "11:29:23   31/5/2018";
+            // 
+            // layoutControl1
+            // 
+            this.layoutControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.layoutControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
+            this.layoutControl1.Controls.Add(this.pictureBox1);
+            this.layoutControl1.Location = new System.Drawing.Point(1327, 40);
+            this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.Root = this.layoutControlGroup1;
+            this.layoutControl1.Size = new System.Drawing.Size(310, 145);
+            this.layoutControl1.TabIndex = 8;
+            this.layoutControl1.Text = "layoutControl1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(189, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(118, 92);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
+            // layoutControlGroup1
+            // 
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.emptySpaceItem1,
+            this.simpleLabelItem1});
+            this.layoutControlGroup1.Name = "layoutControlGroup1";
+            this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
+            this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
+            this.layoutControlGroup1.Size = new System.Drawing.Size(310, 145);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.layoutControlItem1.Control = this.pictureBox1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(186, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(124, 122);
+            this.layoutControlItem1.Text = "TAN PHAT";
+            this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Bottom;
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(76, 20);
+            // 
+            // emptySpaceItem1
+            // 
+            this.emptySpaceItem1.AllowHotTrack = false;
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem1.Name = "emptySpaceItem1";
+            this.emptySpaceItem1.Size = new System.Drawing.Size(186, 145);
+            this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // simpleLabelItem1
+            // 
+            this.simpleLabelItem1.AllowHotTrack = false;
+            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.DimGray;
+            this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.simpleLabelItem1.AppearanceItemCaption.Options.UseForeColor = true;
+            this.simpleLabelItem1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.simpleLabelItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.simpleLabelItem1.Location = new System.Drawing.Point(186, 122);
+            this.simpleLabelItem1.Name = "simpleLabelItem1";
+            this.simpleLabelItem1.Size = new System.Drawing.Size(124, 23);
+            this.simpleLabelItem1.Text = "Nhân viên";
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(76, 17);
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(1280, 820);
+            this.ClientSize = new System.Drawing.Size(1637, 820);
+            this.Controls.Add(this.layoutControl1);
+            this.Controls.Add(this.lbTimedate);
             this.Controls.Add(this.PageControl);
             this.Controls.Add(this.MenuBar);
             this.Controls.Add(this.Doc);
@@ -753,7 +863,15 @@ namespace GUI
             this.pageLoaiphong.ResumeLayout(false);
             this.windowsUIButtonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
+            this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -816,6 +934,9 @@ namespace GUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             tinhTrangPhong1.UpdateTime();
+            lbTimedate.Text = DateTime.Now.ToString("dd/MM/yyyy")+ "   " + DateTime.Now.ToString("hh:mm: ss") ;
+            //Clock.Text = DateTime.Now.ToString("hh:mm:ss");
+            // Date.Text = DateTime.Now.ToString("dd MM yyyy");
         }
 
         private void tileItem_LoaiDV_ItemClick(object sender, TileItemEventArgs e)

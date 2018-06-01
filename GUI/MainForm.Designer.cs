@@ -60,6 +60,13 @@
         private folderDichVu.LoaiDichVu loaiDichVu1;
         private folderQuanLyPhong.LoaiPhong loaiPhong1;
         private DevExpress.XtraEditors.FilterControl filterControl1;
+        private System.Windows.Forms.Label lbTimedate;
+        private DevExpress.XtraLayout.LayoutControl layoutControl1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
+        private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
