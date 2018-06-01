@@ -16,6 +16,7 @@ namespace GUI.folderDichVu
 {
     public partial class DichVu : DevExpress.XtraEditors.XtraUserControl
     {
+        DataTable dichVu;
         Action goToQuanLyDichVu;
         FilterControlDialog filterDialog;
         String strFilterDialog;
@@ -24,7 +25,7 @@ namespace GUI.folderDichVu
             InitializeComponent();
 
             themDichVu1.actionBack = GoToHomePage;
-
+            suaDichVu1.actionBack = GoToHomePage;
             tileFilter.Visible = false;
             
             
@@ -39,6 +40,7 @@ namespace GUI.folderDichVu
                     this.DichVuPagecontrol.SelectedPage = PageThemdichvu;
                     break;
                 case "Sửa Dịch Vụ":
+                    suaDichVu1.RefreshDataBinding((int)dichVu.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDV"]);
                     this.DichVuPagecontrol.SelectedPage = PageSuadichvu;
                     break;
                 case "Quản Lý Loại Dịch Vụ":
@@ -129,7 +131,7 @@ namespace GUI.folderDichVu
         {
             try
             {
-                gridControl1.DataSource = DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu();
+                gridControl1.DataSource = dichVu =DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu();
 
                 tileControl2.SelectedItem = tileAll;
 

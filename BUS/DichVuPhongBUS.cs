@@ -25,6 +25,12 @@ namespace BUS
         {
             return DichVuPhongDAL.LayTatCaDichVuPhong_DichVu_LoaiDV(thuePhongDTO);
         }
+
+        public static DataTable LayTatCaDichVuPhong_DichVu(HoaDonDTO hoaDonDTO)
+        {
+            return DichVuPhongDAL.LayTatCaDichVuPhong_DichVu_LoaiDV(hoaDonDTO);
+        }
+
         public static void UpdateDichVuPhong(DichVuPhongDTO dichVuPhongDTO)
         {
             DichVuPhongDAL.UpdateDichVuPhong(dichVuPhongDTO);

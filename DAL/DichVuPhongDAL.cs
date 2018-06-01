@@ -74,5 +74,10 @@ namespace DAL
             }
 
         }
+        public static DataTable LayTatCaDichVuPhong_DichVu_LoaiDV(HoaDonDTO hoaDonDTO)
+        {
+            return DataProvider.ExecuseQuery("SELECT MaDVP,thuephong.MaThuePhong, dichvuphong.MaDV, ThoiGian,SoLuong, Gia, TenDV, DonVi, dichvu.MaLDV, TenLDV FROM quanlykaraoke.dichvuphong,quanlykaraoke.dichvu,quanlykaraoke.loaidichvu,quanlykaraoke.thuephong  WHERE quanlykaraoke.thuephong.MaHoaDon = '" + hoaDonDTO.MaHoaDon + "' AND quanlykaraoke.dichvuphong.MaDV = quanlykaraoke.dichvu.MaDV AND quanlykaraoke.dichvu.MaLDV = quanlykaraoke.loaidichvu.MaLDV;");
+
+        }
     }
 }

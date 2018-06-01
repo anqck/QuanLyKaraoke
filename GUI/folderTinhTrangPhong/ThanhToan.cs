@@ -34,65 +34,93 @@ namespace GUI.folderTinhTrangPhong
 
             //snapControl.Document.DataSource = ds;
         }
-        public void RefreshDataBinding(PhongDTO phongDTO)
+        public void RefreshDataBinding(ThuePhongDTO thuePhongDTO)
         {
-            this.phong = phongDTO;
-            this.thuePhong = BUS.ThuePhongBUS.LayThongTinPhongDangThue(phongDTO);
-            this.hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhong.MaHoaDon);
+            this.hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhongDTO.MaHoaDon);
+
+            this.thuePhong = thuePhongDTO;
+
+
             this.khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
-             dichVuPhong = BUS.DichVuPhongBUS.LayTatCaDichVuPhong_DichVu(thuePhong);
+
+
 
             RefreshDataBindingDichVuPhong();
 
-            ThanhToanBUS.ThongTinThanhToan t = ThanhToanBUS.TinhTienThuePhong(phong, DateTime.Now);
+
+
+           
             tienGio = new DataTable();
             tienGio.Columns.Add(new DataColumn("Ngay"));
             tienGio.Columns.Add(new DataColumn("KhoangThoiGian"));
             tienGio.Columns.Add(new DataColumn("DonGia"));
             tienGio.Columns.Add(new DataColumn("SoLuong"));
-            tienGio.Columns.Add(new DataColumn("GioBD", typeof(double)));          
+            tienGio.Columns.Add(new DataColumn("GioBD", typeof(double)));
+            tienGio.Columns.Add(new DataColumn("Phong"));
 
-            foreach(DTO.ThongTinThanhToanTheoNgay ngay in t.listThongTin)
+            double TongTien = 0;
+            foreach (ThuePhongDTO thuePhong in HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon))
             {
-              
-                foreach(LoaiPhongDTO.DonGiaTheoKhoangThoiGian dongia in ngay.listDonGiaTheoKhoangThoiGian)
+                foreach (DTO.ThongTinThanhToanTheoNgay ngay in ThanhToanBUS.TinhTienThuePhong(thuePhong, DateTime.Now).listThongTin)
                 {
-                    DataRow dr = tienGio.NewRow();
+                    TongTien += ngay.TongThanhTien;
+                    foreach (LoaiPhongDTO.DonGiaTheoKhoangThoiGian dongia in ngay.listDonGiaTheoKhoangThoiGian)
+                    {
+                        DataRow dr = tienGio.NewRow();
 
-                    dr["Ngay"] = ngay.ngay.Thu + " (" + ngay.ngay.date.ToString("dd-MM-yyyy") + ")" ;
-                    dr["KhoangThoiGian"] = dongia.GioBatDau + " - " + dongia.GioKetThuc;
-                    dr["GioBD"] = dongia.GioBatDau.hour * 3600 + dongia.GioBatDau.minute * 60 + dongia.GioBatDau.second; 
-                    dr["DonGia"] = dongia.DonGia ;
-                    dr["SoLuong"] = ThongTinThanhToanTheoNgay.Gio.CalcTimeSpan(dongia.GioBatDau, dongia.GioKetThuc).TotalHours;
+                        dr["Ngay"] = ngay.ngay.Thu + " (" + ngay.ngay.date.ToString("dd-MM-yyyy") + ")";
+                        dr["KhoangThoiGian"] = dongia.GioBatDau + " - " + dongia.GioKetThuc;
+                        dr["GioBD"] = dongia.GioBatDau.hour * 3600 + dongia.GioBatDau.minute * 60 + dongia.GioBatDau.second;
+                        dr["DonGia"] = dongia.DonGia;
+                        dr["SoLuong"] = ThongTinThanhToanTheoNgay.Gio.CalcTimeSpan(dongia.GioBatDau, dongia.GioKetThuc).TotalHours;
+                        dr["Phong"] = thuePhong.MaPhong;
+                        tienGio.Rows.Add(dr);
+                    }
 
-                    tienGio.Rows.Add(dr);
-                }                   
-               
-                //if(ngay.ngay.date.DayOfYear == )
+                    if (ngay.ngay.date.DayOfYear == DateTime.Now.DayOfYear)
+                    {
+                        DataRow dr = dichVuPhong.NewRow();
+
+                        dr["MaDVP"] = DichVuPhongBUS.PhatSinhMaDichVuPhong();
+                        dr["MaThuePhong"] = thuePhong.MaThuePhong;
+                        dr["MaDV"] = 1;
+                        dr["ThoiGian"] = DateTime.Now;
+                        dr["SoLuong"] = 1.0;
+                        dr["Gia"] = -1000; 
+                        dr["TenDV"] = "Khuyến mãi sinh nhật";
+                        dr["DonVi"] = "VNĐ";
+                        dr["MaLDV"] = 3;
+                        dr["TenLDV"] = "Khuyến mãi";
+                        dr["colType"] = "Khuyến mãi";
+
+                        dichVuPhong.Rows.Add(dr);
+                    }
+                }
             }
+            
+
             textEdit9.Properties.DataSource = tienGio;
 
 
-           
+            gridControl1.DataSource = dichVuPhong;
 
-           textEdit9.Properties.DisplayMember = t.TongThanhTien.ToString("###,###,###,##0 VNĐ");
-            textEdit9.Properties.ValueMember = t.TongThanhTien.ToString("###,###,###,##0 VNĐ");
-            textEdit9.Properties.NullText = t.TongThanhTien .ToString("###,###,###,##0 VNĐ");
-            //gridView1.group
+            //textEdit9.Properties.DisplayMember = t.TongThanhTien.ToString("###,###,###,##0 VNĐ");
+            // textEdit9.Properties.ValueMember = t.TongThanhTien.ToString("###,###,###,##0 VNĐ");
+            textEdit9.Properties.NullText = TongTien.ToString("###,###,###,##0 VNĐ");
 
-            //doc.Document.DataSource = BUS.PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+            gridView1.ExpandAllGroups();
         }
 
         void RefreshDataBindingDichVuPhong()
         {
-            dichVuPhong = DichVuPhongBUS.LayTatCaDichVuPhong_DichVu(thuePhong);
+            dichVuPhong = DichVuPhongBUS.LayTatCaDichVuPhong_DichVu(hoaDon);
             dichVuPhong.Columns.Add(new DataColumn("colType"));
             foreach (DataRow row in dichVuPhong.Rows)
             {
                 row["colType"] = "Dịch Vụ";
             }
 
-            gridControl1.DataSource = dichVuPhong;
+          
 
             //if (gridView1.RowCount == 0)
             //    wbntQuanlyphong.Buttons[1].Properties.Visible = false;
@@ -126,6 +154,7 @@ namespace GUI.folderTinhTrangPhong
                     break;
 
                 case "Thanh toán":
+                    
 
                     break;
             }
@@ -141,7 +170,8 @@ namespace GUI.folderTinhTrangPhong
 
         private void gridView1_GroupRowCollapsing(object sender, DevExpress.XtraGrid.Views.Base.RowAllowEventArgs e)
         {
-            e.Allow = false;
+            if(e.RowHandle != -2)
+                e.Allow = false;
         }
 
 
@@ -178,8 +208,15 @@ namespace GUI.folderTinhTrangPhong
                 }
                 if (e.IsSetData)
                 {
-                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), Convert.ToDouble(e.Value), (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]));
-                    RefreshDataBindingDichVuPhong();
+                    if (dichVuPhong.Rows[e.ListSourceRowIndex]["colType"].ToString() == "Dịch Vụ")
+                    {
+                        DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), Convert.ToDouble(e.Value), (double)dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"]));
+                        RefreshDataBindingDichVuPhong();
+                    }
+                    else
+                    {
+                        dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"] = e.Value;
+                    }
                 }
 
             }
@@ -191,8 +228,16 @@ namespace GUI.folderTinhTrangPhong
                 }
                 if (e.IsSetData)
                 {
-                    DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), (double)dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"], Convert.ToDouble(e.Value)));
-                    RefreshDataBindingDichVuPhong();
+                    if(dichVuPhong.Rows[e.ListSourceRowIndex]["colType"].ToString() == "Dịch Vụ")
+                    {
+                        DichVuPhongBUS.UpdateDichVuPhong(new DichVuPhongDTO((int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDVP"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaThuePhong"], (int)dichVuPhong.Rows[e.ListSourceRowIndex]["MaDV"], DateTime.Parse(dichVuPhong.Rows[e.ListSourceRowIndex]["ThoiGian"].ToString()), (double)dichVuPhong.Rows[e.ListSourceRowIndex]["SoLuong"], Convert.ToDouble(e.Value)));
+                        RefreshDataBindingDichVuPhong();
+                    }
+                    else
+                    {
+                        dichVuPhong.Rows[e.ListSourceRowIndex]["Gia"] = e.Value;
+                    }
+                    
                 }
 
             }

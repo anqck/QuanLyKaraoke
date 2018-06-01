@@ -48,5 +48,9 @@ namespace BUS
         {
             return DAL.DichVuDAL.DemSoLuongDichVu(maLoaiDV);
         }
+        public static bool CapNhatThongTinDichVu(DichVuDTO dichVuDTO)
+        {
+            return DAL.DichVuDAL.CapNhatThongTinDichVu(dichVuDTO);
+        }
     }
 }

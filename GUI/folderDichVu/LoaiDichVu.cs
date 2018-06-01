@@ -78,7 +78,7 @@ namespace GUI.folderDichVu
                 return;
             }
 
-            if (e.FocusedRowHandle == 0 || e.FocusedRowHandle == 1)
+            if (e.FocusedRowHandle == 0 || e.FocusedRowHandle == 1 || e.FocusedRowHandle == 2)
             {
                 wbntSuadichvu.Buttons[1].Properties.Enabled = false;
                 wbntSuadichvu.Buttons[2].Properties.Enabled = false;
@@ -127,6 +127,7 @@ namespace GUI.folderDichVu
                         XtraMessageBox.Show("Chỉ có thể xóa những loại dịch vụ không có dịch vụ nào!", "Lỗi", MessageBoxButtons.OK);
                         return;
                     }
+
                     //Thông báo xác nhận
                     if (XtraMessageBox.Show("Bạn có chắc xóa loại dịch vụ '" + gridView1.GetFocusedRowCellValue(colTenLDV).ToString() +"' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
                     {

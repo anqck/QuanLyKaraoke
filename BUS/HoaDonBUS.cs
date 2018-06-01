@@ -26,5 +26,10 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayThongTinHoaDonDangThue(maHoaDon);
         }
+
+        public static List<ThuePhongDTO> LayTatCaCacThuePhong(int maHoaDon)
+        {
+            return DAL.HoaDonDAL.LayTatCaCacThuePhong(maHoaDon);
+        }
     }
 }

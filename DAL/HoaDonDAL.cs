@@ -50,5 +50,19 @@ namespace DAL
             return new HoaDonDTO((int)dt.Rows[0]["MaHoaDon"], (int)dt.Rows[0]["MaNhanVienThanhToan"], (dt.Rows[0]["TongTienThanhToan"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["TienTraTruoc"]), (dt.Rows[0]["TienTraTruoc"].ToString() == "")?(-1):((double)dt.Rows[0]["TienTraTruoc"]), (dt.Rows[0]["NgayThanhToan"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["NgayThanhToan"].ToString()), (dt.Rows[0]["SoTienKhuyenMai"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["SoTienKhuyenMai"]), dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaKH"]);
 
         }
+        public static List<ThuePhongDTO> LayTatCaCacThuePhong(int maHoaDon)
+        {
+            List<ThuePhongDTO> res = new List<ThuePhongDTO>();
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, thuephong WHERE hoadon.MaHoaDon = '" + maHoaDon.ToString() + "' AND thuephong.MaHoaDon = hoadon.MaHoaDon;");
+
+            foreach(DataRow row in dt.Rows)
+            {
+                res.Add(new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()),  (dt.Rows[0]["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["GioTraPhong"].ToString()), (int)dt.Rows[0]["MaHoaDon"]));
+            }
+
+            return res;
+            
+
+        }
     }
 }

@@ -54,11 +54,12 @@
             // 
             // wbntQuanlyphong
             // 
+            this.wbntQuanlyphong.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.wbntQuanlyphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
-            this.wbntQuanlyphong.Location = new System.Drawing.Point(0, 558);
+            this.wbntQuanlyphong.Location = new System.Drawing.Point(0, 552);
             this.wbntQuanlyphong.Name = "wbntQuanlyphong";
             this.wbntQuanlyphong.Size = new System.Drawing.Size(68, 67);
             this.wbntQuanlyphong.TabIndex = 22;

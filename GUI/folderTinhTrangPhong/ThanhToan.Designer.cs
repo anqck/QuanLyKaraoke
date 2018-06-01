@@ -96,6 +96,8 @@
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             this.snapControl = new DevExpress.Snap.SnapControl();
+            this.colPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colPhongf = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
@@ -234,9 +236,10 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn5,
-            this.colType});
+            this.colType,
+            this.colPhong});
             this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.GroupCount = 1;
+            this.gridView1.GroupCount = 2;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colThanhTien", this.gridColumn5, "{0:n0} VNĐ")});
             this.gridView1.Name = "gridView1";
@@ -246,7 +249,8 @@
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.RowHeight = 40;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colType, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colType, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colPhong, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.GroupRowCollapsing += new DevExpress.XtraGrid.Views.Base.RowAllowEventHandler(this.gridView1_GroupRowCollapsing);
             this.gridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
             // 
@@ -467,27 +471,27 @@
             // 
             // textEdit12
             // 
-            this.textEdit12.Location = new System.Drawing.Point(397, 526);
+            this.textEdit12.Location = new System.Drawing.Point(343, 526);
             this.textEdit12.Name = "textEdit12";
             this.textEdit12.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit12.Properties.Appearance.Options.UseFont = true;
-            this.textEdit12.Size = new System.Drawing.Size(522, 34);
+            this.textEdit12.Size = new System.Drawing.Size(576, 34);
             this.textEdit12.StyleController = this.layoutControl1;
             this.textEdit12.TabIndex = 19;
             // 
             // textEdit13
             // 
-            this.textEdit13.Location = new System.Drawing.Point(397, 566);
+            this.textEdit13.Location = new System.Drawing.Point(343, 566);
             this.textEdit13.Name = "textEdit13";
             this.textEdit13.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit13.Properties.Appearance.Options.UseFont = true;
-            this.textEdit13.Size = new System.Drawing.Size(522, 34);
+            this.textEdit13.Size = new System.Drawing.Size(576, 34);
             this.textEdit13.StyleController = this.layoutControl1;
             this.textEdit13.TabIndex = 20;
             // 
             // textEdit9
             // 
-            this.textEdit9.Location = new System.Drawing.Point(397, 486);
+            this.textEdit9.Location = new System.Drawing.Point(343, 486);
             this.textEdit9.Name = "textEdit9";
             this.textEdit9.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit9.Properties.Appearance.Options.UseFont = true;
@@ -503,13 +507,14 @@
             this.repositoryItemTextEdit2});
             this.textEdit9.Properties.Popup += new System.EventHandler(this.textEdit9_Properties_Popup);
             this.textEdit9.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.textEdit9_Properties_EditValueChanging);
-            this.textEdit9.Size = new System.Drawing.Size(522, 34);
+            this.textEdit9.Size = new System.Drawing.Size(576, 34);
             this.textEdit9.StyleController = this.layoutControl1;
             this.textEdit9.TabIndex = 18;
             // 
             // gridLookUpEdit1View
             // 
             this.gridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colPhongf,
             this.colNgay,
             this.colKhoangThoiGian,
             this.colSoGio,
@@ -517,7 +522,7 @@
             this.colThanhTien,
             this.gridColumn6});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridLookUpEdit1View.GroupCount = 1;
+            this.gridLookUpEdit1View.GroupCount = 2;
             this.gridLookUpEdit1View.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colThanhTien", this.colThanhTien, "{0:n0} VNĐ")});
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
@@ -528,6 +533,7 @@
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.gridLookUpEdit1View.OptionsView.ShowIndicator = false;
             this.gridLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colPhongf, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colNgay, DevExpress.Data.ColumnSortOrder.Ascending),
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn6, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridLookUpEdit1View.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridLookUpEdit1View_CustomUnboundColumnData);
@@ -688,7 +694,7 @@
             this.emptySpaceItem3.AllowHotTrack = false;
             this.emptySpaceItem3.Location = new System.Drawing.Point(6, 510);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(191, 40);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(137, 40);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem4
@@ -696,7 +702,7 @@
             this.emptySpaceItem4.AllowHotTrack = false;
             this.emptySpaceItem4.Location = new System.Drawing.Point(6, 550);
             this.emptySpaceItem4.Name = "emptySpaceItem4";
-            this.emptySpaceItem4.Size = new System.Drawing.Size(191, 40);
+            this.emptySpaceItem4.Size = new System.Drawing.Size(137, 40);
             this.emptySpaceItem4.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -786,9 +792,9 @@
             this.layoutControlItem15.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem15.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem15.Control = this.textEdit13;
-            this.layoutControlItem15.Location = new System.Drawing.Point(197, 550);
+            this.layoutControlItem15.Location = new System.Drawing.Point(143, 550);
             this.layoutControlItem15.Name = "layoutControlItem15";
-            this.layoutControlItem15.Size = new System.Drawing.Size(712, 40);
+            this.layoutControlItem15.Size = new System.Drawing.Size(766, 40);
             this.layoutControlItem15.Text = "Tiền thanh toán";
             this.layoutControlItem15.TextSize = new System.Drawing.Size(180, 32);
             // 
@@ -797,9 +803,9 @@
             this.layoutControlItem14.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem14.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem14.Control = this.textEdit12;
-            this.layoutControlItem14.Location = new System.Drawing.Point(197, 510);
+            this.layoutControlItem14.Location = new System.Drawing.Point(143, 510);
             this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(712, 40);
+            this.layoutControlItem14.Size = new System.Drawing.Size(766, 40);
             this.layoutControlItem14.Text = "Thành tiền";
             this.layoutControlItem14.TextSize = new System.Drawing.Size(180, 28);
             // 
@@ -809,7 +815,7 @@
             this.emptySpaceItem1.CustomizationFormText = "emptySpaceItem3";
             this.emptySpaceItem1.Location = new System.Drawing.Point(6, 470);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(191, 40);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(137, 40);
             this.emptySpaceItem1.Text = "emptySpaceItem3";
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -818,9 +824,9 @@
             this.layoutControlItem13.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem13.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem13.Control = this.textEdit9;
-            this.layoutControlItem13.Location = new System.Drawing.Point(197, 470);
+            this.layoutControlItem13.Location = new System.Drawing.Point(143, 470);
             this.layoutControlItem13.Name = "layoutControlItem13";
-            this.layoutControlItem13.Size = new System.Drawing.Size(712, 40);
+            this.layoutControlItem13.Size = new System.Drawing.Size(766, 40);
             this.layoutControlItem13.Text = "Tiền giờ";
             this.layoutControlItem13.TextSize = new System.Drawing.Size(180, 28);
             // 
@@ -878,6 +884,22 @@
             this.snapControl.Size = new System.Drawing.Size(614, 762);
             this.snapControl.TabIndex = 22;
             this.snapControl.Text = "snapControl1";
+            // 
+            // colPhong
+            // 
+            this.colPhong.Caption = "Phòng";
+            this.colPhong.FieldName = "MaPhong";
+            this.colPhong.Name = "colPhong";
+            this.colPhong.Visible = true;
+            this.colPhong.VisibleIndex = 6;
+            // 
+            // colPhongf
+            // 
+            this.colPhongf.Caption = "Phòng";
+            this.colPhongf.FieldName = "Phong";
+            this.colPhongf.Name = "colPhongf";
+            this.colPhongf.Visible = true;
+            this.colPhongf.VisibleIndex = 4;
             // 
             // ThanhToan
             // 
@@ -1003,5 +1025,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn colSoGio;
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn colPhongf;
     }
 }

@@ -17,6 +17,8 @@ namespace GUI.TinhTrangPhong
     public partial class TinhTrangPhong : DevExpress.XtraEditors.XtraUserControl
     {
         Dictionary<int,ThuePhongDTO> listPhongDangThue;
+        DataTable danhSachPhong;
+        private List<int> checkedRows;
         public TinhTrangPhong()
         {
             InitializeComponent();
@@ -36,8 +38,8 @@ namespace GUI.TinhTrangPhong
             btnThanhToan = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thanh toán"];
             btnThanhToan.Click += OnClickBtnThanhToan;
 
-           
 
+            checkedRows = new List<int>();
             var colCheck = tileView1.Columns.AddVisible("Check");
             colCheck.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             tileView1.ColumnSet.CheckedColumn = colCheck;
@@ -63,12 +65,12 @@ namespace GUI.TinhTrangPhong
         {
             try
             {
-                gridControl.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+                gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
 
                 //Tính giờ
                 listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
 
-                  
+                
 
                 tileAll.Elements[1].Text = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong().Rows.Count.ToString();
 
@@ -221,7 +223,10 @@ namespace GUI.TinhTrangPhong
         }
         private void tileView1_ItemPress(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventArgs e)
         {
-            //e.Item.Checked = true;
+            checkedRows.Clear();
+            tileView1.RefreshData();
+            //checkedRows.Add(tileView1.GetFocusedDataSourceRowIndex());
+            
         }
 
         private void tileControl2_SelectedItemChanged(object sender, TileItemEventArgs e)
@@ -249,7 +254,7 @@ namespace GUI.TinhTrangPhong
 
         }
 
-        private List<int> checkedRows = new List<int>();
+        
         private void tileView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
         {
             if (e.Column.FieldName == "colThoiGianThue")
@@ -272,9 +277,83 @@ namespace GUI.TinhTrangPhong
                 if (e.IsSetData)
                 {
                     if (System.Convert.ToBoolean(e.Value))
-                        checkedRows.Add(e.ListSourceRowIndex);
+                    {
+                        checkedRows.Add(e.ListSourceRowIndex);                   
+
+
+                        tileView1.FocusedRowHandle = -1;
+
+                        foreach(int idx in checkedRows)
+                        {
+                            if(danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0)
+                            {
+                                btnXemPhong.Visible = false;
+                                wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
+                                btnDatPhong.Visible = false;
+                                btnThuePhong.Visible = false;
+
+                                wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
+                                btnChuyenPhong.Visible = false;
+                                btnThanhToan.Visible = false;
+                                break;
+                            }
+                            else
+                            {
+                                btnXemPhong.Visible = false;
+                                wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
+                                btnDatPhong.Visible = true;
+
+                                btnThuePhong.Visible = true;
+
+                                wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
+                                btnChuyenPhong.Visible = false;
+                                btnThanhToan.Visible = false;
+
+                            }
+                        }
+                    }
+                        
                     else
+                    {
                         checkedRows.Remove(e.ListSourceRowIndex);
+
+
+                        if( checkedRows.Count >= 1)                                               
+                        {
+                            tileView1.FocusedRowHandle = -1;
+                            foreach (int idx in checkedRows)
+                            {
+                                if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0)
+                                {
+                                    btnXemPhong.Visible = false;
+                                    wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
+                                    btnDatPhong.Visible = false;
+                                    btnThuePhong.Visible = false;
+
+                                    wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
+                                    btnChuyenPhong.Visible = false;
+                                    btnThanhToan.Visible = false;
+                                    break;
+                                }
+                                else
+                                {
+                                    btnXemPhong.Visible = false;
+                                    wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
+                                    btnDatPhong.Visible = true;
+
+                                    btnThuePhong.Visible = true;
+
+                                    wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
+                                    btnChuyenPhong.Visible = false;
+                                    btnThanhToan.Visible = false;
+
+                                }
+                            }
+                        }
+                        else if (checkedRows.Count == 0)
+                            tileView1.FocusedRowHandle = 0;
+                    }
+
                 }
                
             }
@@ -364,7 +443,7 @@ namespace GUI.TinhTrangPhong
 
         void OnClickBtnThanhToan(object sender, EventArgs e)
         {
-            BUS.ThanhToanBUS.TinhTienThuePhong( new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong")),DateTime.Now);
+            //BUS.ThanhToanBUS.TinhTienThuePhong( new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong")),DateTime.Now);
             DisplayThanhToanPhongWithSelectedTile();
         }
 
@@ -393,11 +472,22 @@ namespace GUI.TinhTrangPhong
             
             this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
         }
+
+        private void tileView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+
+        }
+
         void DisplayThanhToanPhongWithSelectedTile()
         {
-            DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString(), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
+            //DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString(), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
 
-            thanhToan1.RefreshDataBinding(phongDTO);
+           
+
+
+            thanhToan1.RefreshDataBinding(listPhongDangThue[(int)((DataView)tileView1.DataSource)[tileView1.GetSelectedRows()[0]]["MaPhong"]]);
+
+            
 
             this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
         }

@@ -20,13 +20,13 @@ namespace BUS
        
 
       
-        public static ThongTinThanhToan TinhTienThuePhong(PhongDTO phong,DateTime gioKetThuc)
+        public static ThongTinThanhToan TinhTienThuePhong(ThuePhongDTO thuePhongDTO, DateTime gioKetThuc)
         {
             ThongTinThanhToan thongTinThanhToan = new ThongTinThanhToan();
             List<ThongTinThanhToanTheoNgay> res = new List<ThongTinThanhToanTheoNgay>();
 
 
-            ThuePhongDTO thuePhongDTO = ThuePhongBUS.LayThongTinPhongDangThue(phong);
+            //ThuePhongDTO thuePhongDTO = ThuePhongBUS.LayThongTinPhongDangThue(phong);
 
             List<Ngay> listNgay = new List<Ngay>();
             for (var day = thuePhongDTO.GioThuePhong.Date; day.Date <= gioKetThuc.Date; day = day.AddDays(1))

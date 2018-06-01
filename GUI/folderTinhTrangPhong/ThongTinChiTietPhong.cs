@@ -215,5 +215,10 @@ namespace GUI.folderTinhTrangPhong
             goToThanhToan = action;
            
         }
+
+        private void ThongTinChiTietPhong_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
