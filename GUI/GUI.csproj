@@ -164,6 +164,12 @@
     <Compile Include="folderDichVu\ThemLoaiDichVu.Designer.cs">
       <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderHoaDon\TimHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderHoaDon\TimHoaDon.Designer.cs">
+      <DependentUpon>TimHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderKhachHang\ChonKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -349,6 +355,9 @@
     <EmbeddedResource Include="folderDichVu\ThemLoaiDichVu.resx">
       <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderHoaDon\TimHoaDon.resx">
+      <DependentUpon>TimHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\ChonKhachHang.resx">
       <DependentUpon>ChonKhachHang.cs</DependentUpon>

@@ -35,23 +35,23 @@ namespace GUI
              
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            DevExpress.XtraEditors.TileItemElement tileItemElement31 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement32 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement23 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement33 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement34 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement25 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement35 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement36 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement37 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement28 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement38 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement39 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement7 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement6 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement8 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement9 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.bntHome = new DevExpress.XtraBars.Navigation.NavButton();
             this.btnClose = new DevExpress.XtraBars.Navigation.NavButton();
             this.Doc = new DevExpress.XtraBars.Navigation.TileNavPane();
@@ -80,6 +80,7 @@ namespace GUI
             this.tileBarGroup3 = new DevExpress.XtraBars.Navigation.TileBarGroup();
             this.tileBarItem5 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem6 = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.menuHoaDon = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.menuBaocao = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.PageControl = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.pageTinhtrangphong = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -101,9 +102,10 @@ namespace GUI
             this.loaiKhachHang1 = new GUI.folderKhachHang.LoaiKhachHang();
             this.pageLoaiphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.loaiPhong1 = new GUI.folderQuanLyPhong.LoaiPhong();
+            this.pageHoadon = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.lbTimedate = new System.Windows.Forms.Label();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -111,6 +113,7 @@ namespace GUI
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.timHoaDon1 = new GUI.folderHoaDon.TimHoaDon();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -130,6 +133,7 @@ namespace GUI
             this.pageLoaidichvu.SuspendLayout();
             this.pageLoaikhachhang.SuspendLayout();
             this.pageLoaiphong.SuspendLayout();
+            this.pageHoadon.SuspendLayout();
             this.windowsUIButtonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -231,7 +235,7 @@ namespace GUI
             this.MenuBar.ItemSize = 80;
             this.MenuBar.Location = new System.Drawing.Point(0, 40);
             this.MenuBar.Margin = new System.Windows.Forms.Padding(2, 2, 5, 0);
-            this.MenuBar.MaxId = 12;
+            this.MenuBar.MaxId = 13;
             this.MenuBar.MaximumSize = new System.Drawing.Size(0, 150);
             this.MenuBar.MinimumSize = new System.Drawing.Size(117, 0);
             this.MenuBar.Name = "MenuBar";
@@ -254,6 +258,7 @@ namespace GUI
             this.GroupMenu.Items.Add(this.menuKhachhang);
             this.GroupMenu.Items.Add(this.menuNhanvien);
             this.GroupMenu.Items.Add(this.menuDichvu);
+            this.GroupMenu.Items.Add(this.menuHoaDon);
             this.GroupMenu.Items.Add(this.menuBaocao);
             this.GroupMenu.Name = "GroupMenu";
             this.GroupMenu.Text = "GROUP GÌ ĐÓ";
@@ -263,9 +268,9 @@ namespace GUI
             this.menuTinhtrangphong.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(106)))), ((int)(((byte)(123)))));
             this.menuTinhtrangphong.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuTinhtrangphong.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement31.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            tileItemElement31.Text = "Màn hình chính";
-            this.menuTinhtrangphong.Elements.Add(tileItemElement31);
+            tileItemElement1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            tileItemElement1.Text = "Màn hình chính";
+            this.menuTinhtrangphong.Elements.Add(tileItemElement1);
             this.menuTinhtrangphong.Id = 10;
             this.menuTinhtrangphong.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuTinhtrangphong.Name = "menuTinhtrangphong";
@@ -276,10 +281,10 @@ namespace GUI
             this.menuQuanlyphong.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuQuanlyphong.DropDownControl = this.tileBarDropDownContainer1;
             this.menuQuanlyphong.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement32.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
-            tileItemElement32.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.NoScale;
-            tileItemElement32.Text = "Quản lý phòng";
-            this.menuQuanlyphong.Elements.Add(tileItemElement32);
+            tileItemElement4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            tileItemElement4.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.NoScale;
+            tileItemElement4.Text = "Quản lý phòng";
+            this.menuQuanlyphong.Elements.Add(tileItemElement4);
             this.menuQuanlyphong.Id = 4;
             this.menuQuanlyphong.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuQuanlyphong.Name = "menuQuanlyphong";
@@ -323,9 +328,9 @@ namespace GUI
             this.tileBarItem3.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem3.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement23.Text = "Loại phòng";
-            tileItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem3.Elements.Add(tileItemElement23);
+            tileItemElement2.Text = "Loại phòng";
+            tileItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem3.Elements.Add(tileItemElement2);
             this.tileBarItem3.Id = 0;
             this.tileBarItem3.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem3.Name = "tileBarItem3";
@@ -336,9 +341,9 @@ namespace GUI
             this.tileBarItem4.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem4.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem4.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement33.Text = "Cái gì đó";
-            tileItemElement33.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem4.Elements.Add(tileItemElement33);
+            tileItemElement3.Text = "Cái gì đó";
+            tileItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem4.Elements.Add(tileItemElement3);
             this.tileBarItem4.Id = 1;
             this.tileBarItem4.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem4.Name = "tileBarItem4";
@@ -349,9 +354,9 @@ namespace GUI
             this.menuKhachhang.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuKhachhang.DropDownControl = this.tileBarDropDownKhachhang;
             this.menuKhachhang.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement34.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
-            tileItemElement34.Text = "Khách hàng";
-            this.menuKhachhang.Elements.Add(tileItemElement34);
+            tileItemElement7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            tileItemElement7.Text = "Khách hàng";
+            this.menuKhachhang.Elements.Add(tileItemElement7);
             this.menuKhachhang.Id = 6;
             this.menuKhachhang.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuKhachhang.Name = "menuKhachhang";
@@ -395,9 +400,9 @@ namespace GUI
             this.tileBarItem1.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem1.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement25.Text = "Loại khách hàng";
-            tileItemElement25.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem1.Elements.Add(tileItemElement25);
+            tileItemElement5.Text = "Loại khách hàng";
+            tileItemElement5.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem1.Elements.Add(tileItemElement5);
             this.tileBarItem1.Id = 0;
             this.tileBarItem1.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem1.Name = "tileBarItem1";
@@ -408,9 +413,9 @@ namespace GUI
             this.tileBarItem2.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem2.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement35.Text = "Cái gì đó";
-            tileItemElement35.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem2.Elements.Add(tileItemElement35);
+            tileItemElement6.Text = "Cái gì đó";
+            tileItemElement6.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem2.Elements.Add(tileItemElement6);
             this.tileBarItem2.Id = 1;
             this.tileBarItem2.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem2.Name = "tileBarItem2";
@@ -420,9 +425,9 @@ namespace GUI
             this.menuNhanvien.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(159)))), ((int)(((byte)(195)))), ((int)(((byte)(96)))));
             this.menuNhanvien.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuNhanvien.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement36.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
-            tileItemElement36.Text = "Nhân viên";
-            this.menuNhanvien.Elements.Add(tileItemElement36);
+            tileItemElement8.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image3")));
+            tileItemElement8.Text = "Nhân viên";
+            this.menuNhanvien.Elements.Add(tileItemElement8);
             this.menuNhanvien.Id = 9;
             this.menuNhanvien.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuNhanvien.Name = "menuNhanvien";
@@ -433,9 +438,9 @@ namespace GUI
             this.menuDichvu.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuDichvu.DropDownControl = this.tileBarDropDownDichvu;
             this.menuDichvu.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement37.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
-            tileItemElement37.Text = "Dịch vụ";
-            this.menuDichvu.Elements.Add(tileItemElement37);
+            tileItemElement11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image4")));
+            tileItemElement11.Text = "Dịch vụ";
+            this.menuDichvu.Elements.Add(tileItemElement11);
             this.menuDichvu.Id = 11;
             this.menuDichvu.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuDichvu.Name = "menuDichvu";
@@ -479,9 +484,9 @@ namespace GUI
             this.tileBarItem5.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem5.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem5.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement28.Text = "Dịch vụ";
-            tileItemElement28.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem5.Elements.Add(tileItemElement28);
+            tileItemElement9.Text = "Dịch vụ";
+            tileItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem5.Elements.Add(tileItemElement9);
             this.tileBarItem5.Id = 0;
             this.tileBarItem5.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem5.Name = "tileBarItem5";
@@ -491,24 +496,33 @@ namespace GUI
             this.tileBarItem6.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tileBarItem6.AppearanceItem.Normal.Options.UseFont = true;
             this.tileBarItem6.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement38.Text = "Loại dịch vụ";
-            tileItemElement38.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            this.tileBarItem6.Elements.Add(tileItemElement38);
+            tileItemElement10.Text = "Loại dịch vụ";
+            tileItemElement10.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.tileBarItem6.Elements.Add(tileItemElement10);
             this.tileBarItem6.Id = 1;
             this.tileBarItem6.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.tileBarItem6.Name = "tileBarItem6";
             this.tileBarItem6.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.tileItem_LoaiDV_ItemClick);
+            // 
+            // menuHoaDon
+            // 
+            this.menuHoaDon.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement12.Text = "Hóa đơn";
+            this.menuHoaDon.Elements.Add(tileItemElement12);
+            this.menuHoaDon.Id = 12;
+            this.menuHoaDon.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.menuHoaDon.Name = "menuHoaDon";
             // 
             // menuBaocao
             // 
             this.menuBaocao.AppearanceItem.Normal.BackColor = System.Drawing.Color.Gray;
             this.menuBaocao.AppearanceItem.Normal.Options.UseBackColor = true;
             this.menuBaocao.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement39.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
-            tileItemElement39.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
-            tileItemElement39.ImageOptions.ImageSize = new System.Drawing.Size(40, 40);
-            tileItemElement39.Text = "Báo cáo";
-            this.menuBaocao.Elements.Add(tileItemElement39);
+            tileItemElement13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image5")));
+            tileItemElement13.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.Stretch;
+            tileItemElement13.ImageOptions.ImageSize = new System.Drawing.Size(40, 40);
+            tileItemElement13.Text = "Báo cáo";
+            this.menuBaocao.Elements.Add(tileItemElement13);
             this.menuBaocao.Id = 5;
             this.menuBaocao.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuBaocao.Name = "menuBaocao";
@@ -526,6 +540,7 @@ namespace GUI
             this.PageControl.Controls.Add(this.pageLoaidichvu);
             this.PageControl.Controls.Add(this.pageLoaikhachhang);
             this.PageControl.Controls.Add(this.pageLoaiphong);
+            this.PageControl.Controls.Add(this.pageHoadon);
             this.PageControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PageControl.Location = new System.Drawing.Point(0, 187);
             this.PageControl.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -539,7 +554,8 @@ namespace GUI
             this.pageBaocao,
             this.pageLoaikhachhang,
             this.pageLoaidichvu,
-            this.pageLoaiphong});
+            this.pageLoaiphong,
+            this.pageHoadon});
             this.PageControl.SelectedPage = this.pageTinhtrangphong;
             this.PageControl.Size = new System.Drawing.Size(1637, 633);
             this.PageControl.TabIndex = 5;
@@ -705,14 +721,21 @@ namespace GUI
             this.loaiPhong1.Size = new System.Drawing.Size(1637, 633);
             this.loaiPhong1.TabIndex = 0;
             // 
+            // pageHoadon
+            // 
+            this.pageHoadon.Caption = "pageHoadon";
+            this.pageHoadon.Controls.Add(this.timHoaDon1);
+            this.pageHoadon.Name = "pageHoadon";
+            this.pageHoadon.Size = new System.Drawing.Size(1637, 633);
+            // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.LightGray;
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm mới", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt phòng", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel1.Controls.Add(this.searchControl);
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 286);
@@ -831,6 +854,14 @@ namespace GUI
             this.simpleLabelItem1.Text = "Nhân viên";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(76, 17);
             // 
+            // timHoaDon1
+            // 
+            this.timHoaDon1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timHoaDon1.Location = new System.Drawing.Point(0, 0);
+            this.timHoaDon1.Name = "timHoaDon1";
+            this.timHoaDon1.Size = new System.Drawing.Size(1637, 633);
+            this.timHoaDon1.TabIndex = 0;
+            // 
             // MainForm
             // 
             this.ClientSize = new System.Drawing.Size(1637, 820);
@@ -861,6 +892,7 @@ namespace GUI
             this.pageLoaidichvu.ResumeLayout(false);
             this.pageLoaikhachhang.ResumeLayout(false);
             this.pageLoaiphong.ResumeLayout(false);
+            this.pageHoadon.ResumeLayout(false);
             this.windowsUIButtonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -910,6 +942,11 @@ namespace GUI
                     PageControl.SelectedPage = pageBaocao;
                    // khachHang1.RefreshDataBinding();
                    // khachHang1.GoToPage(0);
+                    break;
+                case "menuHoaDon":
+                    PageControl.SelectedPage = pageHoadon;
+                    // khachHang1.RefreshDataBinding();
+                    // khachHang1.GoToPage(0);
                     break;
                 default:
                     break;
