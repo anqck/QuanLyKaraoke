@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThanhToan));
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraReports.UserDesigner.XRDesignPanelListener xrDesignPanelListener1 = new DevExpress.XtraReports.UserDesigner.XRDesignPanelListener();
-            this.xrDesignBarManager1 = new DevExpress.XtraReports.UserDesigner.XRDesignBarManager();
+            this.xrDesignBarManager1 = new DevExpress.XtraReports.UserDesigner.XRDesignBarManager(this.components);
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
             this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
@@ -73,7 +74,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController();
+            this.reportDesigner1 = new DevExpress.XtraReports.UserDesigner.XRDesignMdiController(this.components);
             this.snapControl = new DevExpress.Snap.SnapControl();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
@@ -226,7 +227,7 @@
             // 
             // textEdit2
             // 
-            this.textEdit2.Location = new System.Drawing.Point(591, 65);
+            this.textEdit2.Location = new System.Drawing.Point(497, 65);
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit2.Properties.Appearance.Options.UseFont = true;
@@ -240,17 +241,17 @@
             this.textEdit1.Name = "textEdit1";
             this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(136, 34);
+            this.textEdit1.Size = new System.Drawing.Size(77, 34);
             this.textEdit1.StyleController = this.layoutControl1;
             this.textEdit1.TabIndex = 6;
             // 
             // textEdit10
             // 
-            this.textEdit10.Location = new System.Drawing.Point(869, 65);
+            this.textEdit10.Location = new System.Drawing.Point(767, 65);
             this.textEdit10.Name = "textEdit10";
             this.textEdit10.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit10.Properties.Appearance.Options.UseFont = true;
-            this.textEdit10.Size = new System.Drawing.Size(50, 34);
+            this.textEdit10.Size = new System.Drawing.Size(152, 34);
             this.textEdit10.StyleController = this.layoutControl1;
             this.textEdit10.TabIndex = 14;
             // 
@@ -281,18 +282,18 @@
             this.textEdit3.Name = "textEdit3";
             this.textEdit3.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit3.Properties.Appearance.Options.UseFont = true;
-            this.textEdit3.Size = new System.Drawing.Size(136, 34);
+            this.textEdit3.Size = new System.Drawing.Size(77, 34);
             this.textEdit3.StyleController = this.layoutControl1;
             this.textEdit3.TabIndex = 22;
             // 
             // textEdit4
             // 
-            this.textEdit4.Location = new System.Drawing.Point(591, 105);
+            this.textEdit4.Location = new System.Drawing.Point(497, 105);
             this.textEdit4.MenuManager = this.xrDesignBarManager1;
             this.textEdit4.Name = "textEdit4";
             this.textEdit4.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit4.Properties.Appearance.Options.UseFont = true;
-            this.textEdit4.Size = new System.Drawing.Size(328, 34);
+            this.textEdit4.Size = new System.Drawing.Size(422, 34);
             this.textEdit4.StyleController = this.layoutControl1;
             this.textEdit4.TabIndex = 23;
             // 
@@ -358,7 +359,7 @@
             this.layoutControlItem1.Control = this.textEdit1;
             this.layoutControlItem1.Location = new System.Drawing.Point(6, 49);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(326, 40);
+            this.layoutControlItem1.Size = new System.Drawing.Size(267, 40);
             this.layoutControlItem1.Text = "Mã hóa đơn";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(180, 28);
             // 
@@ -367,7 +368,7 @@
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.textEdit2;
-            this.layoutControlItem3.Location = new System.Drawing.Point(391, 49);
+            this.layoutControlItem3.Location = new System.Drawing.Point(297, 49);
             this.layoutControlItem3.Name = "layoutControlItem3";
             this.layoutControlItem3.Size = new System.Drawing.Size(322, 40);
             this.layoutControlItem3.Text = "Ngày thanh toán";
@@ -419,9 +420,9 @@
             this.layoutControlItem11.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem11.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem11.Control = this.textEdit10;
-            this.layoutControlItem11.Location = new System.Drawing.Point(731, 49);
+            this.layoutControlItem11.Location = new System.Drawing.Point(629, 49);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(178, 40);
+            this.layoutControlItem11.Size = new System.Drawing.Size(280, 40);
             this.layoutControlItem11.Text = "Tiền trả trước";
             this.layoutControlItem11.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem11.TextSize = new System.Drawing.Size(117, 28);
@@ -463,7 +464,7 @@
             this.layoutControlItem5.Control = this.textEdit3;
             this.layoutControlItem5.Location = new System.Drawing.Point(6, 89);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(326, 40);
+            this.layoutControlItem5.Size = new System.Drawing.Size(267, 40);
             this.layoutControlItem5.Text = "Mã khách hàng";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(180, 28);
             // 
@@ -481,9 +482,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(332, 49);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(273, 49);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(59, 80);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(24, 80);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem6
@@ -491,18 +492,18 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.textEdit4;
-            this.layoutControlItem6.Location = new System.Drawing.Point(391, 89);
+            this.layoutControlItem6.Location = new System.Drawing.Point(297, 89);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(518, 40);
+            this.layoutControlItem6.Size = new System.Drawing.Size(612, 40);
             this.layoutControlItem6.Text = "Tên khách hàng";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(180, 28);
             // 
             // emptySpaceItem5
             // 
             this.emptySpaceItem5.AllowHotTrack = false;
-            this.emptySpaceItem5.Location = new System.Drawing.Point(713, 49);
+            this.emptySpaceItem5.Location = new System.Drawing.Point(619, 49);
             this.emptySpaceItem5.Name = "emptySpaceItem5";
-            this.emptySpaceItem5.Size = new System.Drawing.Size(18, 40);
+            this.emptySpaceItem5.Size = new System.Drawing.Size(10, 40);
             this.emptySpaceItem5.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem2

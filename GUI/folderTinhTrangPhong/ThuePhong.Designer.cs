@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
+
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-=======
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
->>>>>>> CLOCK_USER
+
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtNgayVao = new DevExpress.XtraEditors.DateEdit();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
@@ -56,21 +53,11 @@
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-<<<<<<< HEAD
+
             this.gridLookUpEdit1 = new DevExpress.XtraEditors.GridLookUpEdit();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-=======
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txtPhong = new DevExpress.XtraEditors.GridLookUpEdit();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.bntChonPhong = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
->>>>>>> CLOCK_USER
+
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties.CalendarTimeProperties)).BeginInit();
@@ -88,24 +75,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhong.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
->>>>>>> CLOCK_USER
+
             this.SuspendLayout();
             // 
             // layoutControl1
             // 
-<<<<<<< HEAD
+
             this.layoutControl1.AllowDrop = true;
-=======
->>>>>>> CLOCK_USER
+
             this.layoutControl1.Appearance.Control.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Appearance.Control.Options.UseFont = true;
             this.layoutControl1.Appearance.ControlDisabled.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -118,26 +99,22 @@
             this.layoutControl1.Appearance.ControlFocused.Options.UseFont = true;
             this.layoutControl1.Appearance.ControlReadOnly.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Appearance.ControlReadOnly.Options.UseFont = true;
-<<<<<<< HEAD
+
             this.layoutControl1.Controls.Add(this.gridLookUpEdit1);
-=======
-            this.layoutControl1.Controls.Add(this.txtPhong);
->>>>>>> CLOCK_USER
+
             this.layoutControl1.Controls.Add(this.txtNgayVao);
             this.layoutControl1.Controls.Add(this.txtGhiChu);
             this.layoutControl1.Controls.Add(this.bntChonKH);
             this.layoutControl1.Controls.Add(this.txtKhachHang);
             this.layoutControl1.Controls.Add(this.txtTienTraTruoc);
-            this.layoutControl1.Controls.Add(this.bntChonPhong);
+//            this.layoutControl1.Controls.Add(this.bntChonPhong);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 87);
             this.layoutControl1.Name = "layoutControl1";
-<<<<<<< HEAD
+
             this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(707, 351, 812, 500);
-=======
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(707, 354, 812, 500);
->>>>>>> CLOCK_USER
+
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.Options.UseBackColor = true;
@@ -158,11 +135,9 @@
             // txtNgayVao
             // 
             this.txtNgayVao.EditValue = null;
-<<<<<<< HEAD
+
             this.txtNgayVao.Location = new System.Drawing.Point(185, 56);
-=======
-            this.txtNgayVao.Location = new System.Drawing.Point(154, 99);
->>>>>>> CLOCK_USER
+
             this.txtNgayVao.Name = "txtNgayVao";
             this.txtNgayVao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -184,19 +159,13 @@
             // txtGhiChu
             // 
             this.txtGhiChu.EditValue = "Không";
-<<<<<<< HEAD
+
             this.txtGhiChu.Location = new System.Drawing.Point(185, 179);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
             this.txtGhiChu.Size = new System.Drawing.Size(928, 417);
-=======
-            this.txtGhiChu.Location = new System.Drawing.Point(154, 222);
-            this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(959, 374);
->>>>>>> CLOCK_USER
+
             this.txtGhiChu.StyleController = this.layoutControl1;
             this.txtGhiChu.TabIndex = 9;
             // 
@@ -204,7 +173,6 @@
             // 
             this.bntChonKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bntChonKH.Appearance.Options.UseFont = true;
-            this.bntChonKH.Location = new System.Drawing.Point(909, 96);
             this.bntChonKH.Location = new System.Drawing.Point(909, 139);
             this.bntChonKH.Name = "bntChonKH";
             this.bntChonKH.Size = new System.Drawing.Size(204, 37);
@@ -215,11 +183,9 @@
             // 
             // txtKhachHang
             // 
-<<<<<<< HEAD
+
             this.txtKhachHang.Location = new System.Drawing.Point(185, 96);
-=======
-            this.txtKhachHang.Location = new System.Drawing.Point(154, 139);
->>>>>>> CLOCK_USER
+
             this.txtKhachHang.Name = "txtKhachHang";
             this.txtKhachHang.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtKhachHang.Properties.Appearance.Options.UseFont = true;
@@ -320,11 +286,9 @@
             0,
             0,
             0});
-<<<<<<< HEAD
+
             this.txtTienTraTruoc.Location = new System.Drawing.Point(185, 139);
-=======
-            this.txtTienTraTruoc.Location = new System.Drawing.Point(154, 182);
->>>>>>> CLOCK_USER
+
             this.txtTienTraTruoc.Name = "txtTienTraTruoc";
             this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
@@ -355,14 +319,9 @@
             this.layoutControlItem4,
             this.layoutControlItem5,
             this.layoutControlItem2,
-<<<<<<< HEAD
+
             this.layoutControlItem3});
-=======
-            this.emptySpaceItem1,
-            this.emptySpaceItem2,
-            this.layoutControlItem3,
-            this.layoutControlItem10});
->>>>>>> CLOCK_USER
+
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Size = new System.Drawing.Size(1129, 612);
@@ -373,7 +332,6 @@
             this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem1.Control = this.txtKhachHang;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 80);
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 123);
             this.layoutControlItem1.Name = "layoutControlItem1";
             this.layoutControlItem1.Size = new System.Drawing.Size(893, 43);
@@ -385,10 +343,8 @@
             this.layoutControlItem6.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem6.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem6.Control = this.txtGhiChu;
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 163);
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 206);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(1103, 423);
             this.layoutControlItem6.Size = new System.Drawing.Size(1103, 380);
             this.layoutControlItem6.Text = "Ghi chú";
             this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
@@ -399,7 +355,6 @@
             this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.Control = this.txtNgayVao;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 83);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(1103, 40);
@@ -409,7 +364,6 @@
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.bntChonKH;
-            this.layoutControlItem5.Location = new System.Drawing.Point(893, 80);
             this.layoutControlItem5.Location = new System.Drawing.Point(893, 123);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(210, 43);
@@ -421,7 +375,6 @@
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.txtTienTraTruoc;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 123);
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 166);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(1103, 40);
@@ -466,13 +419,10 @@
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-<<<<<<< HEAD
+
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thuê", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thuê", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
-=======
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thuê", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thuê", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
->>>>>>> CLOCK_USER
+
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 699);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -481,7 +431,7 @@
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
-<<<<<<< HEAD
+
             // gridLookUpEdit1
             // 
             this.gridLookUpEdit1.Location = new System.Drawing.Point(185, 16);
@@ -494,27 +444,13 @@
             this.gridLookUpEdit1.Size = new System.Drawing.Size(928, 34);
             this.gridLookUpEdit1.StyleController = this.layoutControl1;
             this.gridLookUpEdit1.TabIndex = 15;
-=======
-            // txtPhong
-            // 
-            this.txtPhong.EditValue = "";
-            this.txtPhong.Location = new System.Drawing.Point(154, 56);
-            this.txtPhong.Name = "txtPhong";
-            this.txtPhong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPhong.Properties.Appearance.Options.UseFont = true;
-            this.txtPhong.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtPhong.Properties.PopupView = this.gridView1;
-            this.txtPhong.Size = new System.Drawing.Size(749, 34);
-            this.txtPhong.StyleController = this.layoutControl1;
-            this.txtPhong.TabIndex = 15;
->>>>>>> CLOCK_USER
+
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
-<<<<<<< HEAD
+
             this.layoutControlItem3.Control = this.gridLookUpEdit1;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -524,67 +460,12 @@
             // 
             // gridView1
             // 
-=======
-            this.layoutControlItem3.Control = this.txtPhong;
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 40);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(893, 43);
-            this.layoutControlItem3.Text = "Phòng";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(134, 28);
-            // 
-            // gridView1
-            // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaPhong,
-            this.colTenPhong,
-            this.colLoaiPhong});
->>>>>>> CLOCK_USER
+
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
-<<<<<<< HEAD
-=======
-            // 
-            // bntChonPhong
-            // 
-            this.bntChonPhong.Location = new System.Drawing.Point(909, 56);
-            this.bntChonPhong.Name = "bntChonPhong";
-            this.bntChonPhong.Size = new System.Drawing.Size(204, 37);
-            this.bntChonPhong.StyleController = this.layoutControl1;
-            this.bntChonPhong.TabIndex = 16;
-            this.bntChonPhong.Text = "Chọn Phòng";
-            // 
-            // layoutControlItem10
-            // 
-            this.layoutControlItem10.Control = this.bntChonPhong;
-            this.layoutControlItem10.Location = new System.Drawing.Point(893, 40);
-            this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(210, 43);
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem10.TextVisible = false;
-            // 
-            // colMaPhong
-            // 
-            this.colMaPhong.Caption = "Mã phòng";
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.Visible = true;
-            this.colMaPhong.VisibleIndex = 0;
-            // 
-            // colTenPhong
-            // 
-            this.colTenPhong.Caption = "Tên phòng";
-            this.colTenPhong.Name = "colTenPhong";
-            this.colTenPhong.Visible = true;
-            this.colTenPhong.VisibleIndex = 1;
-            // 
-            // colLoaiPhong
-            // 
-            this.colLoaiPhong.Caption = "Loại phòng";
-            this.colLoaiPhong.Name = "colLoaiPhong";
-            this.colLoaiPhong.Visible = true;
-            this.colLoaiPhong.VisibleIndex = 2;
->>>>>>> CLOCK_USER
+
             // 
             // ThuePhong
             // 
@@ -615,16 +496,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-<<<<<<< HEAD
+
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-=======
-            ((System.ComponentModel.ISupportInitialize)(this.txtPhong.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
->>>>>>> CLOCK_USER
+
             this.ResumeLayout(false);
 
         }
@@ -653,20 +529,10 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong, btnHuyPhong;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SpinEdit txtTienTraTruoc;
-<<<<<<< HEAD
+
         private DevExpress.XtraEditors.GridLookUpEdit gridLookUpEdit1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-=======
-        private DevExpress.XtraEditors.GridLookUpEdit txtPhong;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colTenPhong;
-        private DevExpress.XtraGrid.Columns.GridColumn colLoaiPhong;
-        private DevExpress.XtraEditors.SimpleButton bntChonPhong;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
->>>>>>> CLOCK_USER
+
     }
 }
