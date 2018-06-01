@@ -260,6 +260,12 @@
     <Compile Include="folderTinhTrangPhong\ChiTietThanhToanPhong.Designer.cs">
       <DependentUpon>ChiTietThanhToanPhong.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderTinhTrangPhong\DatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderTinhTrangPhong\DatPhong.Designer.cs">
+      <DependentUpon>DatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderTinhTrangPhong\Hoadon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -423,6 +429,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\ChiTietThanhToanPhong.resx">
       <DependentUpon>ChiTietThanhToanPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderTinhTrangPhong\DatPhong.resx">
+      <DependentUpon>DatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\Hoadon.resx">
       <DependentUpon>Hoadon.cs</DependentUpon>

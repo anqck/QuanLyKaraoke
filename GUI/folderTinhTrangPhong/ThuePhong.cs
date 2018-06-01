@@ -41,9 +41,9 @@ namespace GUI.folderTinhTrangPhong
 
             this.onThuePhongSuccess = onThuePhongSuccess;
 
-            txtMaPhong.Text = phong.MaPhong.ToString();
-            txtTenPhong.Text = phong.TenPhong;
-            txtLoaiPhong.Text = LoaiPhongBUS.LayLoaiPhong(phong).TenLoaiPhong;
+            //txtMaPhong.Text = phong.MaPhong.ToString();
+            //txtTenPhong.Text = phong.TenPhong;
+            //txtLoaiPhong.Text = LoaiPhongBUS.LayLoaiPhong(phong).TenLoaiPhong;
 
             RefreshDataBinding();
             txtKhachHang.Properties.DisplayMember = "TenKH";

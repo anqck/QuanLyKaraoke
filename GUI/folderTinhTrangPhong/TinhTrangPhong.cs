@@ -47,12 +47,7 @@ namespace GUI.TinhTrangPhong
             
         }
 
-
-        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            
-           
-        }
+             
 
         private void windowsUIButtonPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
@@ -438,7 +433,7 @@ namespace GUI.TinhTrangPhong
         }
         void OnClickBtnDatPhong(object sender, EventArgs e)
         {
-            
+            FlyoutDialog.Show(this.FindForm(), new DatPhong());
         }
         void OnClickBtnChuyenPhong(object sender, EventArgs e)
         {
@@ -487,6 +482,11 @@ namespace GUI.TinhTrangPhong
         private void tileView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void windowsUIButtonPanel1_ButtonClick_1(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            this.TinhtrangPagecontrol.SelectedPage = PageTinhtrang;
         }
 
         void DisplayThanhToanPhongWithSelectedTile()
