@@ -55,7 +55,7 @@
             this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.txtGioTraPhong = new DevExpress.XtraEditors.TextEdit();
             this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -117,7 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoGio.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGioTraPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -211,7 +211,7 @@
             this.layoutControl1.Controls.Add(this.memoEdit1);
             this.layoutControl1.Controls.Add(this.simpleButton2);
             this.layoutControl1.Controls.Add(this.txtTienTraTruoc);
-            this.layoutControl1.Controls.Add(this.textEdit1);
+            this.layoutControl1.Controls.Add(this.txtGioTraPhong);
             this.layoutControl1.Controls.Add(this.textEdit2);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Left;
             this.layoutControl1.Location = new System.Drawing.Point(1, 1);
@@ -341,6 +341,9 @@
             this.txtNgayGioVao.Properties.Appearance.Options.UseFont = true;
             this.txtNgayGioVao.Properties.Appearance.Options.UseTextOptions = true;
             this.txtNgayGioVao.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtNgayGioVao.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+            this.txtNgayGioVao.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtNgayGioVao.Properties.ReadOnly = true;
             this.txtNgayGioVao.Size = new System.Drawing.Size(380, 34);
             this.txtNgayGioVao.StyleController = this.layoutControl1;
             this.txtNgayGioVao.TabIndex = 14;
@@ -353,6 +356,9 @@
             this.txtSoGio.Properties.Appearance.Options.UseFont = true;
             this.txtSoGio.Properties.Appearance.Options.UseTextOptions = true;
             this.txtSoGio.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtSoGio.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+            this.txtSoGio.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtSoGio.Properties.ReadOnly = true;
             this.txtSoGio.Size = new System.Drawing.Size(380, 34);
             this.txtSoGio.StyleController = this.layoutControl1;
             this.txtSoGio.TabIndex = 15;
@@ -397,15 +403,20 @@
             this.txtTienTraTruoc.StyleController = this.layoutControl1;
             this.txtTienTraTruoc.TabIndex = 17;
             // 
-            // textEdit1
+            // txtGioTraPhong
             // 
-            this.textEdit1.Location = new System.Drawing.Point(173, 230);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Size = new System.Drawing.Size(380, 34);
-            this.textEdit1.StyleController = this.layoutControl1;
-            this.textEdit1.TabIndex = 19;
+            this.txtGioTraPhong.Location = new System.Drawing.Point(173, 230);
+            this.txtGioTraPhong.Name = "txtGioTraPhong";
+            this.txtGioTraPhong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioTraPhong.Properties.Appearance.Options.UseFont = true;
+            this.txtGioTraPhong.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtGioTraPhong.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtGioTraPhong.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+            this.txtGioTraPhong.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtGioTraPhong.Properties.ReadOnly = true;
+            this.txtGioTraPhong.Size = new System.Drawing.Size(380, 34);
+            this.txtGioTraPhong.StyleController = this.layoutControl1;
+            this.txtGioTraPhong.TabIndex = 19;
             // 
             // textEdit2
             // 
@@ -413,6 +424,9 @@
             this.textEdit2.Name = "textEdit2";
             this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textEdit2.Properties.Appearance.Options.UseFont = true;
+            this.textEdit2.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+            this.textEdit2.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.textEdit2.Properties.ReadOnly = true;
             this.textEdit2.Size = new System.Drawing.Size(380, 34);
             this.textEdit2.StyleController = this.layoutControl1;
             this.textEdit2.TabIndex = 20;
@@ -523,8 +537,8 @@
             // 
             this.tabbedControlGroup1.Location = new System.Drawing.Point(0, 145);
             this.tabbedControlGroup1.Name = "tabbedControlGroup1";
-            this.tabbedControlGroup1.SelectedTabPage = this.grpThuePhong;
-            this.tabbedControlGroup1.SelectedTabPageIndex = 0;
+            this.tabbedControlGroup1.SelectedTabPage = this.grpHoaDon;
+            this.tabbedControlGroup1.SelectedTabPageIndex = 2;
             this.tabbedControlGroup1.Size = new System.Drawing.Size(571, 264);
             this.tabbedControlGroup1.TabPages.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.grpThuePhong,
@@ -572,7 +586,7 @@
             // 
             this.layoutControlItem17.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem17.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem17.Control = this.textEdit1;
+            this.layoutControlItem17.Control = this.txtGioTraPhong;
             this.layoutControlItem17.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem17.Name = "layoutControlItem17";
             this.layoutControlItem17.Size = new System.Drawing.Size(541, 40);
@@ -996,7 +1010,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtSoGio.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGioTraPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
@@ -1098,7 +1112,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colThoiGianThem;
         private DevExpress.XtraEditors.Repository.RepositoryItemSpinEdit repositoryItemSpinEdit2;
         private DevExpress.XtraLayout.LayoutControlGroup grpHoaDon;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit txtGioTraPhong;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem5;
         private DevExpress.XtraEditors.TextEdit textEdit2;

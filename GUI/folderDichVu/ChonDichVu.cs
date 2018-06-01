@@ -25,7 +25,7 @@ namespace GUI.folderDichVu
             InitializeComponent();
             showOnlySelected = false;
 
-            gridControl2.DataSource = dataSource = DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu();
+            gridControl2.DataSource = dataSource = BUS.DichVuBUS.LayTatCaDichVu_LoaiDichVu_ExceptHuyVaKM();
 
             listSelectedRow = new Dictionary<int, int>();
             listSoLuong = new List<int>();

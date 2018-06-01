@@ -307,6 +307,18 @@
     </Compile>
     <Compile Include="Localizer\VietnameseEditorsLocalizer.cs" />
     <Compile Include="Localizer\VietnameseGridLocalizer.cs" />
+    <Compile Include="SplashScreen1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen1.Designer.cs">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WaitForm1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm1.Designer.cs">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FilterCollectionViewBase.resx">
       <DependentUpon>FilterCollectionViewBase.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -440,6 +452,12 @@
     </Compile>
     <EmbeddedResource Include="folderTinhTrangPhong\TinhTrangPhong.resx">
       <DependentUpon>TinhTrangPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm1.resx">
+      <DependentUpon>WaitForm1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.manifest" />
     <None Include="Properties\Settings.settings">

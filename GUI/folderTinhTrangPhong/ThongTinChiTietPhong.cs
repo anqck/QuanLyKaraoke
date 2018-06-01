@@ -11,7 +11,7 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThongTinChiTietPhong : DevExpress.XtraEditors.XtraUserControl
     {
-        private PhongDTO phong;
+        public PhongDTO phong { get; set; }
         private KhachHangDTO khachHang;
         private HoaDonDTO hoaDon;
         private ThuePhongDTO thuePhong;
@@ -54,8 +54,10 @@ namespace GUI.folderTinhTrangPhong
         }
         public void RefreshDataBinding(PhongDTO phongDTO)
         {
+            phong = phongDTO;
+
             txtMaPhong.EditValue = phongDTO.MaPhong;
-            txtTenPhong.EditValue = phongDTO.MaPhong;
+            txtTenPhong.EditValue = phongDTO.TenPhong;
             txtLoaiPhong.EditValue = BUS.LoaiPhongBUS.LayLoaiPhong(phongDTO).TenLoaiPhong;
             txtTang.EditValue = phongDTO.Tang;
 
@@ -75,6 +77,7 @@ namespace GUI.folderTinhTrangPhong
                 txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
 
                 txtNgayGioVao.EditValue = thuePhong.GioThuePhong.ToString("dd-MM-yyyy hh:mm:ss");
+                txtGioTraPhong.EditValue = (thuePhong.GioTraPhong == DateTime.MinValue)?"Chưa có": thuePhong.GioTraPhong.ToString("dd-MM-yyyy hh:mm:ss");
                 txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
 
                 txtSoGio.EditValue = ToCustomString((DateTime.Now - thuePhong.GioThuePhong));
@@ -131,9 +134,14 @@ namespace GUI.folderTinhTrangPhong
                     }
                     break;
                 case "Xóa Dịch Vụ":
-                    DichVuPhongBUS.XoaDichVuPhong((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
+                    if (XtraMessageBox.Show("Bạn có chắc muốn xóa dịch vụ '" + dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["TenDV"] + "' ?", "Xác nhận", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    {
+                        DichVuPhongBUS.XoaDichVuPhong((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
 
-                    RefreshDataBindingDichVuPhong();
+
+                        RefreshDataBindingDichVuPhong();
+                    }
+                   
                     break;
                 case "Thanh Toán":
                     goToThanhToan();

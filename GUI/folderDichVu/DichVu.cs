@@ -131,7 +131,7 @@ namespace GUI.folderDichVu
         {
             try
             {
-                gridControl1.DataSource = dichVu =DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu();
+                gridControl1.DataSource = dichVu =BUS.DichVuBUS.LayTatCaDichVu_LoaiDichVu();
 
                 tileControl2.SelectedItem = tileAll;
 

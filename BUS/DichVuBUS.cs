@@ -52,5 +52,15 @@ namespace BUS
         {
             return DAL.DichVuDAL.CapNhatThongTinDichVu(dichVuDTO);
         }
+
+        public static DataTable LayTatCaDichVu_LoaiDichVu()
+        {
+            return DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu();
+        }
+
+        public static DataTable LayTatCaDichVu_LoaiDichVu_ExceptHuyVaKM()
+        {
+            return DAL.DichVuDAL.LayTatCaDichVu_LoaiDichVu_ExceptHuyVaKM();
+        }
     }
 }

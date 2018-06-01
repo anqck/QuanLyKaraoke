@@ -90,6 +90,11 @@ namespace DAL
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dichvu, quanlykaraoke.loaidichvu where quanlykaraoke.dichvu.MaLDV = quanlykaraoke.loaidichvu.MaLDV ;");
         }
 
+        public static DataTable LayTatCaDichVu_LoaiDichVu_ExceptHuyVaKM()
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dichvu, quanlykaraoke.loaidichvu where quanlykaraoke.dichvu.MaLDV = quanlykaraoke.loaidichvu.MaLDV AND loaidichvu.MaLDV NOT IN ( SELECT loaidichvu.MaLDV FROM quanlykaraoke.loaidichvu  WHERE  loaidichvu.MaLDV = '3' OR loaidichvu.MaLDV = '2' );");
+        }
+
         public static Dictionary<int, DichVuDTO> LayTatCaDichVu_Dictionary()
         {
             try

@@ -8,11 +8,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DTO;
+using BUS;
 
 namespace GUI.folderTinhTrangPhong
 {
     public partial class ThongTinChiTietNhieuPhong : DevExpress.XtraEditors.XtraUserControl
     {
+        private HoaDonDTO hoaDon;
+
         public ThongTinChiTietNhieuPhong()
         {
             InitializeComponent();
@@ -22,5 +26,53 @@ namespace GUI.folderTinhTrangPhong
             //this.TabControl.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             //this.TabControl.LookAndFeel.UseDefaultLookAndFeel = false;
         }
+
+        private void thongTinChiTietPhong1_Load(object sender, EventArgs e)
+        {
+
+        }
+        public void RefreshDataBinding(ThuePhongDTO thuePhongDTO,Action goToThanhToan)
+        {
+            TabControl.TabPages.Clear();
+
+            this.hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhongDTO.MaHoaDon);
+
+
+            foreach (ThuePhongDTO thuePhong in HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon))
+            {
+                ThongTinChiTietPhong thongTinChiTietPhong = new ThongTinChiTietPhong();
+                thongTinChiTietPhong.RefreshDataBinding(PhongBUS.LayThongTinPhong(thuePhong.MaPhong));
+                thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
+                DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
+
+                // 
+                // thongTinChiTietPhong1
+                // 
+                thongTinChiTietPhong.Appearance.BackColor = System.Drawing.Color.White;
+                thongTinChiTietPhong.Appearance.Options.UseBackColor = true;
+                thongTinChiTietPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+                thongTinChiTietPhong.Location = new System.Drawing.Point(0, 0);
+                thongTinChiTietPhong.Name = "thongTinChiTietPhong1";
+                thongTinChiTietPhong.Size = new System.Drawing.Size(989, 591);
+                thongTinChiTietPhong.TabIndex = 0;
+                thongTinChiTietPhong.Load += new System.EventHandler(this.thongTinChiTietPhong1_Load);
+
+                // 
+                // tab1
+                // 
+                xtraTab.Controls.Add(thongTinChiTietPhong);
+                xtraTab.Name = thongTinChiTietPhong.phong.MaPhong.ToString();
+                xtraTab.Size = new System.Drawing.Size(989, 591);
+                xtraTab.Text = thongTinChiTietPhong.phong.TenPhong;
+                // 
+                this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] { xtraTab });
+
+            }
+        }
+        public void UpdateTime()
+        {
+            ((ThongTinChiTietPhong)TabControl.SelectedTabPage.Controls[0]).UpdateTime();
+        }
+  
     }
 }

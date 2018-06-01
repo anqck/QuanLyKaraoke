@@ -102,5 +102,10 @@ namespace DAL
         {
             //DAL.DataProvider.ExecuseNonQuery("Insert into ")
         }
+        public static PhongDTO LayThongTinPhong(int maPhong)
+        {
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong WHERE quanlykaraoke.phong.MaPhong = '"+maPhong+"';");
+            return new PhongDTO((int)dt.Rows[0]["MaPhong"], dt.Rows[0]["TenPhong"].ToString(), (int)dt.Rows[0]["MaLoaiPhong"], dt.Rows[0]["Tang"].ToString(), dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangPhong"]);
+        }
     }
 }
