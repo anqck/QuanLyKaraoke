@@ -53,7 +53,7 @@ namespace GUI.folderQuanLyPhong
                     DataView view = rowView.CreateChildView("Thông tin phòng");         
                     if (view.Count == 0)
                     {
-                        LoaiPhongBUS.XoaLoaiPhong(new DTO.LoaiPhongDTO((int)dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["MaLP"], dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["TenLoaiPhong"].ToString()))
+                        LoaiPhongBUS.XoaLoaiPhong(new DTO.LoaiPhongDTO((int)dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["MaLP"], dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["TenLoaiPhong"].ToString()));
                         //Thông báo xóa loại phòng thành công
                         //BÌNH
                     }
