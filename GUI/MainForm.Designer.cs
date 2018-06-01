@@ -67,6 +67,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
+        private DevExpress.XtraBars.Navigation.TileBarItem menuHoaDon;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageHoadon;
+        private folderHoaDon.TimHoaDon timHoaDon1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
