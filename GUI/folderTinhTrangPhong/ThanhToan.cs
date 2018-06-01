@@ -99,16 +99,16 @@ namespace GUI.folderTinhTrangPhong
             }
             
 
-            textEdit9.Properties.DataSource = tienGio;
+            //textEdit9.Properties.DataSource = tienGio;
 
 
-            gridControl1.DataSource = dichVuPhong;
+            //gridControl1.DataSource = dichVuPhong;
 
             //textEdit9.Properties.DisplayMember = t.TongThanhTien.ToString("###,###,###,##0 VNĐ");
             // textEdit9.Properties.ValueMember = t.TongThanhTien.ToString("###,###,###,##0 VNĐ");
-            textEdit9.Properties.NullText = TongTien.ToString("###,###,###,##0 VNĐ");
+           // textEdit9.Properties.NullText = TongTien.ToString("###,###,###,##0 VNĐ");
 
-            gridView1.ExpandAllGroups();
+            //gridView1.ExpandAllGroups();
         }
 
         void RefreshDataBindingDichVuPhong()
@@ -127,7 +127,7 @@ namespace GUI.folderTinhTrangPhong
             //else
             //    wbntQuanlyphong.Buttons[1].Properties.Visible = true;
 
-            gridView1.ExpandAllGroups();
+            //gridView1.ExpandAllGroups();
         }
 
         private void wbntQuanlyphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)

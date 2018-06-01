@@ -164,6 +164,12 @@
     <Compile Include="folderDichVu\ThemLoaiDichVu.Designer.cs">
       <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderHoaDon\TimHoaDon.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderHoaDon\TimHoaDon.Designer.cs">
+      <DependentUpon>TimHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderKhachHang\ChonKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -254,6 +260,18 @@
     <Compile Include="folderQuanLyPhong\ThemPhongMoi.Designer.cs">
       <DependentUpon>ThemPhongMoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderTinhTrangPhong\ChiTietThanhToanPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderTinhTrangPhong\ChiTietThanhToanPhong.Designer.cs">
+      <DependentUpon>ChiTietThanhToanPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderTinhTrangPhong\DatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderTinhTrangPhong\DatPhong.Designer.cs">
+      <DependentUpon>DatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderTinhTrangPhong\Hoadon.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -291,6 +309,12 @@
       <DependentUpon>XemPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Localizer\VietnameseDXMessageBoxLocalizer.cs" />
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -356,6 +380,9 @@
       <DependentUpon>ThemLoaiDichVu.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderHoaDon\TimHoaDon.resx">
+      <DependentUpon>TimHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\ChonKhachHang.resx">
       <DependentUpon>ChonKhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -415,6 +442,12 @@
       <DependentUpon>ThemPhongMoi.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderTinhTrangPhong\ChiTietThanhToanPhong.resx">
+      <DependentUpon>ChiTietThanhToanPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderTinhTrangPhong\DatPhong.resx">
+      <DependentUpon>DatPhong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\Hoadon.resx">
       <DependentUpon>Hoadon.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -436,6 +469,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="folderTinhTrangPhong\XemPhong.resx">
       <DependentUpon>XemPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

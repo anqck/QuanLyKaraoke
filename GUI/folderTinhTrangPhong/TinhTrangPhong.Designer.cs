@@ -68,6 +68,7 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.colMaPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTenPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -96,6 +97,7 @@
             this.TinhtrangPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageTinhtrang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.PageThanhtoan = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.thanhToan1 = new GUI.folderTinhTrangPhong.ThanhToan();
             this.PageXemphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.wbntThemphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
@@ -672,7 +674,6 @@
             this.wbntTinhtrangphong.Size = new System.Drawing.Size(1110, 80);
             this.wbntTinhtrangphong.TabIndex = 9;
             this.wbntTinhtrangphong.Text = "windowsUIButtonPanel1";
-            this.wbntTinhtrangphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
             // 
             // TinhtrangPagecontrol
             // 
@@ -705,9 +706,23 @@
             // PageThanhtoan
             // 
             this.PageThanhtoan.Caption = "PageThanhtoan";
+            this.PageThanhtoan.Controls.Add(this.windowsUIButtonPanel1);
             this.PageThanhtoan.Controls.Add(this.thanhToan1);
             this.PageThanhtoan.Name = "PageThanhtoan";
             this.PageThanhtoan.Size = new System.Drawing.Size(1110, 662);
+            // 
+            // windowsUIButtonPanel1
+            // 
+            this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.White;
+            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(3, 3);
+            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(56, 58);
+            this.windowsUIButtonPanel1.TabIndex = 2;
+            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel2";
+            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick_1);
             // 
             // thanhToan1
             // 
@@ -730,9 +745,9 @@
             // wbntThemphong
             // 
             this.wbntThemphong.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions7.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntThemphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntThemphong.Location = new System.Drawing.Point(3, 3);
             this.wbntThemphong.Name = "wbntThemphong";
             this.wbntThemphong.Size = new System.Drawing.Size(56, 58);
@@ -750,9 +765,9 @@
             // 
             // wbntBack
             // 
-            windowsUIButtonImageOptions7.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions8.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntBack.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntBack.Location = new System.Drawing.Point(3, 3);
             this.wbntBack.Name = "wbntBack";
             this.wbntBack.Size = new System.Drawing.Size(56, 58);
@@ -828,5 +843,6 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntThemphong;
         private folderTinhTrangPhong.ThanhToan thanhToan1;
         private folderTinhTrangPhong.ThongTinChiTietNhieuPhong thongTinChiTietNhieuPhong1;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
     }
 }
