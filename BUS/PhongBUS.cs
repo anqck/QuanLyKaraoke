@@ -30,6 +30,11 @@ namespace BUS
             return DAL.PhongDAL.CapNhatTinhTrangPhong(phong,maTinhTrangPhong);
         }
 
+        public static bool CapNhatTinhTrangPhong(int maPhong, int maTinhTrangPhong)
+        {
+            return DAL.PhongDAL.CapNhatTinhTrangPhong(maPhong, maTinhTrangPhong);
+        }
+
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong()
         {
             return DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();

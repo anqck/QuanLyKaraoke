@@ -42,9 +42,17 @@ namespace GUI.folderDichVu
             showOnlySelected = false;
 
             if(!boolChonKhuyenMai)
+            {
+                grpLoaiDichVu.Visible = false;
                 gridControl2.DataSource = dataSource = BUS.DichVuBUS.LayTatCaDichVu_LoaiDichVu_ExceptHuyVaKM();
+            }
+               
             else
+            {
+                grpLoaiDichVu.Visible = true;
                 gridControl2.DataSource = dataSource = BUS.DichVuBUS.LayTatCaDichVu_LoaiDichVu_KM();
+            }
+              
 
             listSelectedRow = new Dictionary<int, int>();
             listSoLuong = new List<int>();
@@ -129,6 +137,7 @@ namespace GUI.folderDichVu
 
         private void tileSelected_ItemClick(object sender, TileItemEventArgs e)
         {
+            gridView2.ActiveFilterString = "";
             showOnlySelected = true;
             gridView2.RefreshData();
 
@@ -136,6 +145,7 @@ namespace GUI.folderDichVu
 
         private void tileAll_ItemClick(object sender, TileItemEventArgs e)
         {
+            gridView2.ActiveFilterString = "";
             showOnlySelected = false;
             gridView2.RefreshData();
         }
@@ -148,8 +158,7 @@ namespace GUI.folderDichVu
                     return;
 
                  e.Visible = listSelectedRow.ContainsKey((int)gridView2.GetRowCellValue(e.ListSourceRow, colMaDichVu));
-                  e.Handled = true;
-                
+                  e.Handled = true;           
 
                    
             }
@@ -158,6 +167,20 @@ namespace GUI.folderDichVu
         public Dictionary<int, int> GetSelectedDichVu()
         {
             return listSelectedRow;
+        }
+
+        private void tileDichVu_ItemClick(object sender, TileItemEventArgs e)
+        {
+            gridView2.ActiveFilterString = "[TenLDV] != 'Khuyến mãi'";
+            showOnlySelected = false;
+            gridView2.RefreshData();
+        }
+
+        private void tileKhuyenMai_ItemClick(object sender, TileItemEventArgs e)
+        {
+            gridView2.ActiveFilterString = "[TenLDV] = 'Khuyến mãi'";
+            showOnlySelected = false;
+            gridView2.RefreshData();
         }
     }
 }

@@ -111,7 +111,7 @@ namespace GUI.folderTinhTrangPhong
 
                     
                     //Phát sinh hóa đơn
-                    HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), 0, Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "", khachHang.MaKH);
+                    HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), -1, Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "", khachHang.MaKH);
                     HoaDonBUS.LuuThongTinHoaDon(hoaDon);
 
                     foreach(PhongDTO phong in selectedPhong.Values)

@@ -36,5 +36,9 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaCacThuePhong(maHoaDon);
         }
+        public static bool CapNhatHoaDonDaThanhToan(HoaDonDTO hoaDonDTO)
+        {
+            return DAL.HoaDonDAL.CapNhatHoaDonDaThanhToan(hoaDonDTO);
+        }
     }
 }

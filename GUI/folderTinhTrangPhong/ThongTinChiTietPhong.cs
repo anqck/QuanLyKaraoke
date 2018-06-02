@@ -116,7 +116,7 @@ namespace GUI.folderTinhTrangPhong
             switch (e.Button.Properties.Tag.ToString())
             {
                 case "Thêm Dịch Vụ":
-                    folderDichVu.ChonDichVu chonDichVu = new folderDichVu.ChonDichVu();
+                    folderDichVu.ChonDichVu chonDichVu = new folderDichVu.ChonDichVu(false);
 
                     XtraDialogArgs args = new XtraDialogArgs(caption: "Chọn dịch vụ", content: chonDichVu, buttons: new DialogResult[] { DialogResult.OK, DialogResult.Cancel });
                     args.Showing += Args_Showing;

@@ -33,6 +33,23 @@ namespace DAL
                 return false;
             }
         }
+        public static bool CapNhatTinhTrangPhong(int maPhong, int maTinhTrangPhong)
+        {
+            try
+            {
+                StringBuilder strSQL = new StringBuilder("UPDATE quanlykaraoke.phong SET MaTinhTrangPhong = '$0' WHERE MaPhong = '$1'");
+                strSQL.Replace("$1", maPhong.ToString());
+                strSQL.Replace("$0", maTinhTrangPhong.ToString());
+
+                DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
 
         //public static Dictionary<string, PhongDTO> LayTatCaPhong()
         //{

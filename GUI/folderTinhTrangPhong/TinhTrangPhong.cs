@@ -23,6 +23,8 @@ namespace GUI.TinhTrangPhong
         {
             InitializeComponent();
 
+            thanhToan1.goBackHome = GoToHome;
+
             btnThuePhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thuê phòng"];
             btnThuePhong.Click += OnClickBtnThuePhong;
 
@@ -101,6 +103,13 @@ namespace GUI.TinhTrangPhong
             TinhtrangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             TinhtrangPagecontrol.SelectedPageIndex = v;
             TinhtrangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
+
+        internal void GoToHome()
+        {
+            RefreshDataBinding();
+            TinhtrangPagecontrol.SelectedPageIndex = 0;
+
         }
 
 
