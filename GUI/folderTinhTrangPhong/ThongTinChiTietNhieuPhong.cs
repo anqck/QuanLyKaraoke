@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DTO;
 using BUS;
+using DevExpress.XtraTab;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -64,9 +65,19 @@ namespace GUI.folderTinhTrangPhong
                 xtraTab.Name = thongTinChiTietPhong.phong.MaPhong.ToString();
                 xtraTab.Size = new System.Drawing.Size(989, 591);
                 xtraTab.Text = thongTinChiTietPhong.phong.TenPhong;
+                xtraTab.Tag = thongTinChiTietPhong.phong.MaPhong;
                 // 
                 this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] { xtraTab });
 
+            }
+
+            foreach(XtraTabPage tab in this.TabControl.TabPages)
+            {
+                if((int)tab.Tag == thuePhongDTO.MaPhong)
+                {
+                    this.TabControl.SelectedTabPage = tab;
+                    break;
+                }
             }
         }
         public void UpdateTime()

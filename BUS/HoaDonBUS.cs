@@ -20,6 +20,11 @@ namespace BUS
         {
             return HoaDonDAL.LuuThongTinHoaDon(hoaDonDTO) && ThuePhongBUS.LuuThongTinThuePhong(thuePhongDTO)  ;
 
+        }
+
+        public static bool LuuThongTinHoaDon( HoaDonDTO hoaDonDTO)
+        {
+            return HoaDonDAL.LuuThongTinHoaDon(hoaDonDTO);
 
         }
         public static HoaDonDTO LayThongTinHoaDonDangThue(int maHoaDon)

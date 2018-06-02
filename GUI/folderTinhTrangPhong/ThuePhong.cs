@@ -18,10 +18,13 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThuePhong : DevExpress.XtraEditors.XtraUserControl
     {
+        Dictionary<int,PhongDTO> selectedPhong;
+
         private KhachHangDTO khachHang;
         private PhongDTO phong;
 
         private DataTable dataSource_KhachHang;
+        private DataTable dtPhong;
         private Action onThuePhongSuccess;
 
         public ThuePhong()
@@ -30,14 +33,15 @@ namespace GUI.folderTinhTrangPhong
 
             khachHang = null;
 
-          
-            
-            
+
+            selectedPhong = new Dictionary<int, PhongDTO>();
+
+
         }
 
-        public ThuePhong(PhongDTO phong,Action onThuePhongSuccess) : this()
+        public ThuePhong(List<PhongDTO> listPhong, Action onThuePhongSuccess) : this()
         {
-            this.phong = phong;
+            //this.phong = phong;
 
             this.onThuePhongSuccess = onThuePhongSuccess;
 
@@ -46,18 +50,40 @@ namespace GUI.folderTinhTrangPhong
             //txtLoaiPhong.Text = LoaiPhongBUS.LayLoaiPhong(phong).TenLoaiPhong;
 
             RefreshDataBinding();
+
             txtKhachHang.Properties.DisplayMember = "TenKH";
             txtKhachHang.Properties.ValueMember = "MaKH";
 
 
-            txtNgayVao.EditValue = DateTime.Now;
+            txtGioVao.EditValue = DateTime.Now;
 
             khachHang = KhachHangBUS.LayTatCaKhachHang()[0];
+
+            foreach (PhongDTO phong in listPhong)
+            {
+                selectedPhong.Add(phong.MaPhong, phong);
+            }
+
+           
+
+            //for (int i = 0; i < gridView1.RowCount; i++)
+            //{
+                //var rowHandle = gridView1.GetVisibleRowHandle(i);
+                //var row = gridView1.GetRow(rowHandle);
+
+                //if (selectedPhong.Values.Contains())
+                //{
+                //    gvMainEditView.SelectRow(i);
+                //}
+
+            
         }
 
         public void RefreshDataBinding()
         {
             dataSource_KhachHang = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+            txtPhong.Properties.DataSource = dtPhong = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan();
+
             txtKhachHang.Properties.DataSource = dataSource_KhachHang;
 
             txtKhachHang.EditValue = 0;           
@@ -81,20 +107,27 @@ namespace GUI.folderTinhTrangPhong
                     }
 
                     //NOTE Tài khoản thanh toán
+                    //BÌNH
+
                     
-                    if (HoaDonBUS.LuuThongTinThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong,(DateTime)txtNgayVao.EditValue, DateTime.MinValue, HoaDonBUS.PhatSinhMaHoaDon()), 
-                        new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(),0,Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "",khachHang.MaKH))
-                        &&PhongBUS.CapNhatTinhTrangPhong(phong,1))
+                    //Phát sinh hóa đơn
+                    HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), 0, Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "", khachHang.MaKH);
+                    HoaDonBUS.LuuThongTinHoaDon(hoaDon);
+
+                    foreach(PhongDTO phong in selectedPhong.Values)
                     {
+                        ThuePhongBUS.LuuThongTinThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong, (DateTime)txtGioVao.EditValue, DateTime.MinValue, hoaDon.MaHoaDon));
+                        PhongBUS.CapNhatTinhTrangPhong(phong, 1);
+                    }
+
+                   
+                    
                         //Thông báo thành công
                         onThuePhongSuccess();
 
                         ((FlyoutDialog)this.Parent).Hide();
-                    }
-                    else
-                    {
-                        //Thông báo thất bại
-                    }
+                    
+                 
 
                     break;
                 default:
@@ -159,7 +192,102 @@ namespace GUI.folderTinhTrangPhong
 
 
         }
+
+        private void txtPhong_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            var editor = sender as GridLookUpEdit;
+            var view = editor.Properties.View;
+            var selectedRowsCount = view.GetSelectedRows().Count();
+
+            
+
+            e.DisplayText = "";
+
+            if (selectedPhong.Count == 0)
+            {
+                windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
+                txtPhong.ErrorText = "Không có phòng nào được chọn";
+                return;
+            }
+            else
+            {
+                windowsUIButtonPanel1.Buttons[0].Properties.Visible = true;
+                txtPhong.ErrorText = "";
+            }
+                
+
+         
+            for (int i = 0; i < selectedPhong.Values.Count; i++)
+            {
                
+                e.DisplayText += selectedPhong.Values.ToList()[i].TenPhong;
+                if (i != selectedPhong.Values.Count - 1)
+                    e.DisplayText += "; ";
+            }
+            
+         
+
+        }
+
+        private void txtPhong_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        {
+            (sender as GridLookUpEdit).LookAndFeel.UpdateStyleSettings();
+
+        }
+
+        private void gridView1_CustomUnboundColumnData(object sender, DevExpress.XtraGrid.Views.Base.CustomColumnDataEventArgs e)
+        {
+            //if(e.Column.FieldName == "colCheck")
+            //{
+            //    if (e.IsGetData)
+            //        e.Value = selectedPhong.Keys.Contains((int)dtPhong.Rows[e.ListSourceRowIndex]["MaPhong"]);
+
+            //    if (e.IsSetData)
+            //    {
+            //        if (selectedPhong.Keys.Contains((int)dtPhong.Rows[e.ListSourceRowIndex]["MaPhong"]))
+            //            selectedPhong.Remove((int)dtPhong.Rows[e.ListSourceRowIndex]["MaPhong"]);
+            //        else
+            //            selectedPhong.Add((int)dtPhong.Rows[e.ListSourceRowIndex]["MaPhong"],new PhongDTO((int)dtPhong.Rows[e.ListSourceRowIndex]["MaPhong"], dtPhong.Rows[e.ListSourceRowIndex]["TenPhong"].ToString(), (int)dtPhong.Rows[e.ListSourceRowIndex]["MaLP"]));
+            //    }
+                   
+                    
+            //}
+        }
+
+        private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+
+            if (e.Action == CollectionChangeAction.Remove)
+                selectedPhong.Remove((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]);
+            else if (e.Action == CollectionChangeAction.Add)
+            {
+                if(!selectedPhong.Keys.Contains((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]))
+                    selectedPhong.Add((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], new PhongDTO((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], dtPhong.Rows[e.ControllerRow]["TenPhong"].ToString(), (int)dtPhong.Rows[e.ControllerRow]["MaLP"]));
+
+            }
+
+        }
+
+        private void txtPhong_Properties_Popup(object sender, EventArgs e)
+        {
+            GridLookUpEdit edit = (GridLookUpEdit)sender;
+             for (int i = 0; i < dtPhong.Rows.Count; i++)
+            {
+                foreach (PhongDTO phong in selectedPhong.Values)
+                {
+                    if (phong.MaPhong == (int)dtPhong.Rows[i]["MaPhong"])
+                    {
+
+                        edit.Properties.View.SelectRow(i);
+                        break;
+                    }
+                }
+
+            }
+            
+        }
+
+      
     }
 }
 

@@ -34,6 +34,10 @@ namespace BUS
         {
             return DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
         }
+        public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan()
+        {
+            return DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan();
+        }
 
         public static PhongDTO LayThongTinPhong(int maPhong)
         {

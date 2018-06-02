@@ -1012,6 +1012,7 @@ namespace GUI
         private void tileBarItem_LoaiPhong_ItemClick(object sender, TileItemEventArgs e)
         {
             MenuBar.HideDropDownWindow();
+            loaiPhong1.             RefreshDataBinding();
             PageControl.SelectedPage = pageLoaiphong;
         }
     }

@@ -44,11 +44,35 @@ namespace GUI.folderTinhTrangPhong
             this.khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
 
 
+            foreach (ThuePhongDTO thuePhong in HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon))
+            {
+                //ChiTietThanhToanPhong chiTietThanhToanPhongThanhToan = new ThongTinChiTietPhong();
+                //thongTinChiTietPhong.RefreshDataBinding(PhongBUS.LayThongTinPhong(thuePhong.MaPhong));
+                //thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
+                //DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
+
+                //// 
+                //// chiTietThanhToanPhong1
+                //// 
+                //chiTietThanhToanPhongThanhToan.Location = new System.Drawing.Point(37, 187);
+                //chiTietThanhToanPhongThanhToan.Name = "chiTietThanhToanPhong1";
+                //chiTietThanhToanPhongThanhToan.Size = new System.Drawing.Size(867, 414);
+                //chiTietThanhToanPhongThanhToan.TabIndex = 25;
+
+                //// 
+                //// tab1
+                //// 
+                //xtraTab.Controls.Add(thongTinChiTietPhong);
+                //xtraTab.Name = thongTinChiTietPhong.phong.MaPhong.ToString();
+                //xtraTab.Size = new System.Drawing.Size(989, 591);
+                //xtraTab.Text = thongTinChiTietPhong.phong.TenPhong;
+                //xtraTab.Tag = thongTinChiTietPhong.phong.MaPhong;
+                //// 
+                //this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] { xtraTab });
+
+            }
 
             RefreshDataBindingDichVuPhong();
-
-
-
            
             tienGio = new DataTable();
             tienGio.Columns.Add(new DataColumn("Ngay"));
