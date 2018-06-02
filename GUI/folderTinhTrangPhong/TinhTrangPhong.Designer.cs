@@ -39,6 +39,7 @@
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
+            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition3 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
@@ -46,6 +47,10 @@
             DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition5 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraEditors.TableLayout.TableSpan tableSpan2 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan3 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan4 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan5 = new DevExpress.XtraEditors.TableLayout.TableSpan();
+            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan6 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
@@ -73,6 +78,7 @@
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTenLoaiPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colThoiGianThue = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colGrpImg = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -161,6 +167,15 @@
             this.colThoiGianThue.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.colThoiGianThue.Visible = true;
             this.colThoiGianThue.VisibleIndex = 5;
+            // 
+            // colGrpImg
+            // 
+            this.colGrpImg.Caption = "tileViewColumn1";
+            this.colGrpImg.FieldName = "colGrpImg";
+            this.colGrpImg.Name = "colGrpImg";
+            this.colGrpImg.UnboundType = DevExpress.Data.UnboundColumnType.Object;
+            this.colGrpImg.Visible = true;
+            this.colGrpImg.VisibleIndex = 7;
             // 
             // labelTitle
             // 
@@ -381,7 +396,8 @@
             this.colTang,
             this.colTenLoaiPhong,
             this.colThoiGianThue,
-            this.colMaTinhTrangPhong});
+            this.colMaTinhTrangPhong,
+            this.colGrpImg});
             this.tileView1.ColumnSet.GroupColumn = this.colTang;
             this.tileView1.FocusBorderColor = System.Drawing.Color.White;
             this.tileView1.GridControl = this.gridControl;
@@ -396,11 +412,13 @@
             tableColumnDefinition1.Length.Value = 54D;
             tableColumnDefinition2.Length.Value = 138D;
             tableColumnDefinition3.Length.Value = 206D;
+            tableColumnDefinition4.Length.Value = 40D;
             this.tileView1.TileColumns.Add(tableColumnDefinition1);
             this.tileView1.TileColumns.Add(tableColumnDefinition2);
             this.tileView1.TileColumns.Add(tableColumnDefinition3);
-            tableRowDefinition1.Length.Value = 27D;
-            tableRowDefinition2.Length.Value = 44D;
+            this.tileView1.TileColumns.Add(tableColumnDefinition4);
+            tableRowDefinition1.Length.Value = 32D;
+            tableRowDefinition2.Length.Value = 39D;
             tableRowDefinition3.Length.Value = 40D;
             tableRowDefinition4.Length.Value = 37D;
             tableRowDefinition5.Length.Value = 32D;
@@ -412,8 +430,24 @@
             tableSpan1.ColumnSpan = 3;
             tableSpan2.RowIndex = 2;
             tableSpan2.RowSpan = 3;
+            tableSpan3.ColumnIndex = 2;
+            tableSpan3.ColumnSpan = 2;
+            tableSpan3.RowIndex = 1;
+            tableSpan4.ColumnIndex = 2;
+            tableSpan4.ColumnSpan = 2;
+            tableSpan4.RowIndex = 2;
+            tableSpan5.ColumnIndex = 2;
+            tableSpan5.ColumnSpan = 2;
+            tableSpan5.RowIndex = 3;
+            tableSpan6.ColumnIndex = 2;
+            tableSpan6.ColumnSpan = 2;
+            tableSpan6.RowIndex = 4;
             this.tileView1.TileSpans.Add(tableSpan1);
             this.tileView1.TileSpans.Add(tableSpan2);
+            this.tileView1.TileSpans.Add(tableSpan3);
+            this.tileView1.TileSpans.Add(tableSpan4);
+            this.tileView1.TileSpans.Add(tableSpan5);
+            this.tileView1.TileSpans.Add(tableSpan6);
             tileViewItemElement1.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             tileViewItemElement1.Appearance.Normal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             tileViewItemElement1.Appearance.Normal.Options.UseFont = true;
@@ -485,19 +519,22 @@
             tileViewItemElement7.RowIndex = 3;
             tileViewItemElement7.Text = "LOẠI PHÒNG";
             tileViewItemElement7.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement8.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            tileViewItemElement8.Appearance.Normal.ForeColor = System.Drawing.Color.Red;
+            tileViewItemElement8.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement8.Appearance.Normal.Options.UseForeColor = true;
             tileViewItemElement8.Column = this.colThoiGianThue;
             tileViewItemElement8.ColumnIndex = 2;
             tileViewItemElement8.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement8.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement8.RowIndex = 4;
-            tileViewItemElement8.Text = "tileViewColumn1";
+            tileViewItemElement8.Text = "colThoiGianThue";
             tileViewItemElement8.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement9.ColumnIndex = 1;
+            tileViewItemElement9.Column = this.colGrpImg;
+            tileViewItemElement9.ColumnIndex = 3;
             tileViewItemElement9.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement9.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement9.Name = "element1";
-            tileViewItemElement9.RowIndex = 4;
-            tileViewItemElement9.Text = "element1";
+            tileViewItemElement9.Text = "colGrpImg";
             tileViewItemElement9.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileView1.TileTemplate.Add(tileViewItemElement1);
             this.tileView1.TileTemplate.Add(tileViewItemElement2);
@@ -691,6 +728,7 @@
             this.TinhtrangPagecontrol.Text = "navigationFrame1";
             this.TinhtrangPagecontrol.TransitionAnimationProperties.FrameCount = 10000;
             this.TinhtrangPagecontrol.TransitionAnimationProperties.FrameInterval = 1000;
+            this.TinhtrangPagecontrol.SelectedPageChanging += new DevExpress.XtraBars.Navigation.SelectedPageChangingEventHandler(this.TinhtrangPagecontrol_SelectedPageChanging);
             // 
             // PageTinhtrang
             // 
@@ -713,6 +751,7 @@
             this.thanhToan1.Appearance.BackColor = System.Drawing.Color.White;
             this.thanhToan1.Appearance.Options.UseBackColor = true;
             this.thanhToan1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thanhToan1.goBackHome = null;
             this.thanhToan1.Location = new System.Drawing.Point(0, 0);
             this.thanhToan1.Name = "thanhToan1";
             this.thanhToan1.Size = new System.Drawing.Size(1110, 662);
@@ -827,5 +866,6 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntThemphong;
         private folderTinhTrangPhong.ThanhToan thanhToan1;
         private folderTinhTrangPhong.ThongTinChiTietNhieuPhong thongTinChiTietNhieuPhong1;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colGrpImg;
     }
 }

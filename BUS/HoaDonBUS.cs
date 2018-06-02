@@ -40,5 +40,13 @@ namespace BUS
         {
             return DAL.HoaDonDAL.CapNhatHoaDonDaThanhToan(hoaDonDTO);
         }
+        public static int  DemSoLuongPhongDangConDuocThueHienTai(HoaDonDTO hoaDonDTO)
+        {
+            return DAL.HoaDonDAL.DemSoLuongPhongDangConDuocThueHienTai(hoaDonDTO);
+        }
+        public static int DemSoLuongThuePhong(int maHoaDon)
+        {
+            return DAL.HoaDonDAL.DemSoLuongThuePhong(maHoaDon);
+        }
     }
 }

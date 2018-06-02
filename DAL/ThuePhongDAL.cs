@@ -64,6 +64,18 @@ namespace DAL
             return new ThuePhongDTO((int)dt.Rows[0]["MaThuePhong"], (int)dt.Rows[0]["MaPhong"],  DateTime.Parse(dt.Rows[0]["GioThuePhong"].ToString()), (dt.Rows[0]["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["GioTraPhong"].ToString()), (int)dt.Rows[0]["MaHoaDon"]);
 
         }
-            
+        public static bool CapNhatThongTinThuePhong(ThuePhongDTO thuePhongDTO)
+        {
+            DAL.DataProvider.ExecuseQuery("UPDATE thuephong SET thuephong.GioTraPhong = '"+thuePhongDTO.GioTraPhong.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', thuephong.GioThuePhong = '" + thuePhongDTO.GioThuePhong.ToString("yyyy-MM-dd HH:mm:ss.fff") + "' WHERE thuephong.MaThuePhong = '"+thuePhongDTO.MaThuePhong+"'  ;");
+            return true;
+        }
+        public static ThuePhongDTO LayThongTinThuePhong(int maThuePhong)
+        {
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM thuephong WHERE thuephong.MaThuePhong = '"+maThuePhong+"';");
+
+            return new ThuePhongDTO((int)dt.Rows[0]["MaThuePhong"], (int)dt.Rows[0]["MaPhong"], DateTime.Parse(dt.Rows[0]["GioThuePhong"].ToString()), (dt.Rows[0]["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["GioTraPhong"].ToString()), (int)dt.Rows[0]["MaHoaDon"]);
+
+        }
+
     }
 }

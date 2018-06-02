@@ -57,7 +57,7 @@ namespace DAL
 
             foreach(DataRow row in dt.Rows)
             {
-                res.Add(new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()),  (dt.Rows[0]["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["GioTraPhong"].ToString()), (int)dt.Rows[0]["MaHoaDon"]));
+                res.Add(new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()),  (row["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(row["GioTraPhong"].ToString()), (int)row["MaHoaDon"]));
             }
 
             return res;
@@ -69,6 +69,14 @@ namespace DAL
             DataProvider.ExecuseNonQuery("UPDATE hoadon SET hoadon.MaNhanVienThanhToan = '"+ hoaDonDTO .MaNhanVienThanhToan+ "' ,  hoadon.TongTienThanhToan = '" + hoaDonDTO.TongTienThanhToan + "' ,  hoadon.NgayThanhToan = '" + hoaDonDTO.NgayThanhToan.ToString("yyyy-MM-dd HH:mm:ss.fff") + "' , hoadon.SoTienKhuyenMai = '" + hoaDonDTO.SoTienKhuyenMai + "' WHERE hoadon.MaHoaDon = '" + hoaDonDTO.MaHoaDon + "';");
 
                 return true;
+        }
+        public static int DemSoLuongPhongDangConDuocThueHienTai(HoaDonDTO hoaDonDTO)
+        {
+            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT COUNT(*) FROM quanlykaraoke.hoadon, quanlykaraoke.thuephong WHERE hoadon.MaHoaDon = thuephong.MaHoaDon AND thuephong.GioTraPhong is NULL AND thuephong.MaHoaDon = '"+hoaDonDTO.MaHoaDon+"' ;").Rows[0][0]);
+        }
+        public static int DemSoLuongThuePhong(int maHoaDon)
+        {
+            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT COUNT(*) FROM quanlykaraoke.hoadon, quanlykaraoke.thuephong WHERE hoadon.MaHoaDon = thuephong.MaHoaDon  AND thuephong.MaHoaDon = '" + maHoaDon + "' ;").Rows[0][0]);
         }
     }
 }

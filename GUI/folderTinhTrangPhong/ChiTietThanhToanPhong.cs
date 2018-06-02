@@ -78,7 +78,7 @@ namespace GUI.folderTinhTrangPhong
             tienGio.Columns.Add(new DataColumn("Phong"));
 
             TongTien = 0;
-            foreach (DTO.ThongTinThanhToanTheoNgay ngay in ThanhToanBUS.TinhTienThuePhong(thuePhong, DateTime.Now).listThongTin)
+            foreach (DTO.ThongTinThanhToanTheoNgay ngay in ThanhToanBUS.TinhTienThuePhong(thuePhong, txtGioRa.Time).listThongTin)
             {
                 TongTien += ngay.TongThanhTien;
                 foreach (LoaiPhongDTO.DonGiaTheoKhoangThoiGian dongia in ngay.listDonGiaTheoKhoangThoiGian)

@@ -526,6 +526,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Note todo.txt" />
+    <None Include="Resources\singleIcon.png" />
+    <None Include="Resources\grpIcon.png" />
     <None Include="Resources\No_Image_Available.png" />
   </ItemGroup>
   <ItemGroup>

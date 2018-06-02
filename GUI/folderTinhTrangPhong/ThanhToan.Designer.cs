@@ -255,6 +255,8 @@
             this.txtTienTraTruoc.Name = "txtTienTraTruoc";
             this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
+            this.txtTienTraTruoc.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtTienTraTruoc.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtTienTraTruoc.Properties.Mask.EditMask = "###,###,##0 VNĐ";
             this.txtTienTraTruoc.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTienTraTruoc.Properties.Mask.UseMaskAsDisplayFormat = true;

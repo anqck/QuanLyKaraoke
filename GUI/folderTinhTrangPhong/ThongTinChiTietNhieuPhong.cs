@@ -42,7 +42,7 @@ namespace GUI.folderTinhTrangPhong
             foreach (ThuePhongDTO thuePhong in HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon))
             {
                 ThongTinChiTietPhong thongTinChiTietPhong = new ThongTinChiTietPhong();
-                thongTinChiTietPhong.RefreshDataBinding(PhongBUS.LayThongTinPhong(thuePhong.MaPhong));
+                thongTinChiTietPhong.RefreshDataBinding(PhongBUS.LayThongTinPhong(thuePhong.MaPhong), thuePhong);
                 thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
                 DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
 
@@ -79,6 +79,44 @@ namespace GUI.folderTinhTrangPhong
                     break;
                 }
             }
+        }
+
+        public void RefreshDataBinding(PhongDTO phongDTO, Action goToThanhToan)
+        {
+            TabControl.TabPages.Clear();
+
+            
+
+       
+                ThongTinChiTietPhong thongTinChiTietPhong = new ThongTinChiTietPhong();
+                thongTinChiTietPhong.RefreshDataBinding(phongDTO);
+                thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
+                DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
+
+                // 
+                // thongTinChiTietPhong1
+                // 
+                thongTinChiTietPhong.Appearance.BackColor = System.Drawing.Color.White;
+                thongTinChiTietPhong.Appearance.Options.UseBackColor = true;
+                thongTinChiTietPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+                thongTinChiTietPhong.Location = new System.Drawing.Point(0, 0);
+                thongTinChiTietPhong.Name = "thongTinChiTietPhong1";
+                thongTinChiTietPhong.Size = new System.Drawing.Size(989, 591);
+                thongTinChiTietPhong.TabIndex = 0;
+                thongTinChiTietPhong.Load += new System.EventHandler(this.thongTinChiTietPhong1_Load);
+
+                // 
+                // tab1
+                // 
+                xtraTab.Controls.Add(thongTinChiTietPhong);
+                xtraTab.Name = thongTinChiTietPhong.phong.MaPhong.ToString();
+                xtraTab.Size = new System.Drawing.Size(989, 591);
+                xtraTab.Text = thongTinChiTietPhong.phong.TenPhong;
+                xtraTab.Tag = thongTinChiTietPhong.phong.MaPhong;
+                // 
+                this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] { xtraTab });
+
+      
         }
         public void UpdateTime()
         {

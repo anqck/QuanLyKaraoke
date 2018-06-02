@@ -432,6 +432,7 @@
             this.txtGioVao.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtGioVao.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.txtGioVao.Properties.Mask.EditMask = "dd/MM/yy HH:mm:ss";
+            this.txtGioVao.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtGioVao.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
             this.txtGioVao.Size = new System.Drawing.Size(200, 34);
             this.txtGioVao.StyleController = this.layoutControl1;
@@ -450,6 +451,7 @@
             this.txtGioRa.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtGioRa.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.txtGioRa.Properties.Mask.EditMask = "dd/MM/yy HH:mm:ss";
+            this.txtGioRa.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtGioRa.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
             this.txtGioRa.Size = new System.Drawing.Size(200, 34);
             this.txtGioRa.StyleController = this.layoutControl1;

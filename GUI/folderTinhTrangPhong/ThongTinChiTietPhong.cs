@@ -52,7 +52,7 @@ namespace GUI.folderTinhTrangPhong
             else
                 wbntQuanlyphong.Buttons[1].Properties.Visible = true;
         }
-        public void RefreshDataBinding(PhongDTO phongDTO)
+        public void RefreshDataBinding(PhongDTO phongDTO, ThuePhongDTO thuePhongDTO = null)
         {
             phong = phongDTO;
 
@@ -61,12 +61,17 @@ namespace GUI.folderTinhTrangPhong
             txtLoaiPhong.EditValue = BUS.LoaiPhongBUS.LayLoaiPhong(phongDTO).TenLoaiPhong;
             txtTang.EditValue = phongDTO.Tang;
 
-            //Dictionary<int, ThuePhongDTO> listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
-            if (phongDTO.MaTinhTrangPhong == 1)
+
+            //Phòng trống
+            if (thuePhongDTO == null)
+            {
+                DisplayControlForRented(false);
+            }
+            else
             {
                 DisplayControlForRented(true);
 
-                thuePhong = BUS.ThuePhongBUS.LayThongTinPhongDangThue(phongDTO);
+                thuePhong = thuePhongDTO;
                 hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhong.MaHoaDon);
                 khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
 
@@ -77,18 +82,26 @@ namespace GUI.folderTinhTrangPhong
                 txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
 
                 txtNgayGioVao.EditValue = thuePhong.GioThuePhong.ToString("dd-MM-yyyy hh:mm:ss");
-                txtGioTraPhong.EditValue = (thuePhong.GioTraPhong == DateTime.MinValue)?"Chưa có": thuePhong.GioTraPhong.ToString("dd-MM-yyyy hh:mm:ss");
+                txtGioTraPhong.EditValue = (thuePhong.GioTraPhong == DateTime.MinValue) ? "Chưa có" : thuePhong.GioTraPhong.ToString("dd-MM-yyyy hh:mm:ss");
                 txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
 
-                txtSoGio.EditValue = ToCustomString((DateTime.Now - thuePhong.GioThuePhong));
+                //Phòng đang được thuê
+                if (thuePhongDTO.GioTraPhong == DateTime.MinValue)
+                {
+                    txtSoGio.EditValue = ToCustomString((DateTime.Now - thuePhong.GioThuePhong));
+                }
+                else //Phòng đã được trả
+                {
+                    txtSoGio.EditValue = ToCustomString((thuePhong.GioTraPhong - thuePhong.GioThuePhong));
+                }
 
                 RefreshDataBindingDichVuPhong();
-            }
-            else
-            {
-                DisplayControlForRented(false);
-            }
+            }          
+
+            
         }
+
+    
 
         private void DisplayControlForRented(bool dangDuocThue)
         {
@@ -143,6 +156,23 @@ namespace GUI.folderTinhTrangPhong
                     }
                    
                     break;
+                case "Trả Phòng":
+                    
+                    //Đếm số lượng phòng đã trả trong hóa đơn / Nếu hóa đơn còn 1 phòng chuyển qua thanh toán
+                    //if(HoaDonBUS.DemSoLuongPhongDangConDuocThueHienTai(hoaDon))
+
+                    //Xác nhận trả phòng
+                    //BÌNH
+
+                    ThuePhongBUS.CapNhatThonginThuePhong(new ThuePhongDTO(thuePhong.MaThuePhong,thuePhong.MaPhong,thuePhong.GioThuePhong, DateTime.Now,thuePhong.MaHoaDon));
+                    PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 0);
+
+                    //Thông báo thành công
+                    //BÌNH
+
+                    RefreshDataBinding(phong,ThuePhongBUS.LayThongTinThuePhong(thuePhong.MaThuePhong));
+
+                    break;
                 case "Thanh Toán":
                     goToThanhToan();
                     break;
@@ -158,7 +188,8 @@ namespace GUI.folderTinhTrangPhong
         {
             if (tabbedControlGroup1.Visible == true)
             {
-                txtSoGio.EditValue = ToCustomString((DateTime.Now - thuePhong.GioThuePhong));
+                if(thuePhong.GioTraPhong == DateTime.MinValue)
+                    txtSoGio.EditValue = ToCustomString((DateTime.Now - thuePhong.GioThuePhong));
             }
         }
 
