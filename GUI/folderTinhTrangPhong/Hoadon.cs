@@ -15,24 +15,25 @@ namespace GUI.folderTinhTrangPhong
             InitializeComponent();
         }
 
-        public void BindingData(DataSet dsHoaDon)
+        public void BindingData(DataTable dsHoaDon, double TongTienGio,double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
         {
-            DataSource = dsHoaDon.Tables[0];
-            //DataMember =
+            DataSource = dsHoaDon;
+            DataMember = "dichvuphong";
 
-            //detailTenDV.DataBindings.Add("Text", Nothing, dsHoaDon.Columns("clmSTT").Caption)
+            //MaDV, ThoiGian,SoLuong,Gia, TenDV, TenLDV
 
-                // Specify labels' bindings depending on the report's data binding mode.
-            if (Settings.Default.UserDesignerOptions.DataBindingMode == DataBindingMode.Bindings)
-            {
-                detailTenDV.DataBindings.Add("Text", null, "customQuery.CategoryName");
-                //labelDetail.DataBindings.Add("Text", null, "customQuery.ProductName");
-            }
-            else
-            {
-                detailTenDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "[CategoryName]"));
-                
-            }
+
+            GroupField groupField = new GroupField("MaThuePhong");
+            GroupHeader1.GroupFields.Add(groupField);
+
+
+            //Group Header
+            xrLabel3.DataBindings.Add("Text", null, "MaThuePhong");
+
+
+            //Detail
+            detailTenDV.DataBindings.Add("Text", null, "TenDV");
+          
         }
 
     }

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(reportHoaDon));
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.detailTable = new DevExpress.XtraReports.UI.XRTable();
             this.detailTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -98,6 +97,7 @@
             this.customerNameRow = new DevExpress.XtraReports.UI.XRTableRow();
             this.customerName = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.headerTable)).BeginInit();
@@ -227,7 +227,6 @@
             // 
             // vendorLogo2
             // 
-            this.vendorLogo2.Image = ((System.Drawing.Image)(resources.GetObject("vendorLogo2.Image")));
             this.vendorLogo2.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.BottomLeft;
             this.vendorLogo2.LocationFloat = new DevExpress.Utils.PointFloat(10.00187F, 13.99994F);
             this.vendorLogo2.Name = "vendorLogo2";
@@ -426,6 +425,7 @@
             // GroupHeader1
             // 
             this.GroupHeader1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel3,
             this.headerTable});
             this.GroupHeader1.HeightF = 91.66667F;
             this.GroupHeader1.Name = "GroupHeader1";
@@ -524,7 +524,6 @@
             // 
             // vendorLogo
             // 
-            this.vendorLogo.Image = ((System.Drawing.Image)(resources.GetObject("vendorLogo.Image")));
             this.vendorLogo.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.TopRight;
             this.vendorLogo.LocationFloat = new DevExpress.Utils.PointFloat(591.9971F, 9.536743E-06F);
             this.vendorLogo.Name = "vendorLogo";
@@ -930,6 +929,14 @@
             this.xrLabel1.StylePriority.UseForeColor = false;
             this.xrLabel1.Text = "17/5/2018";
             // 
+            // xrLabel3
+            // 
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(95.00095F, 10F);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 96F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel3.Text = "xrLabel3";
+            // 
             // reportHoaDon
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1026,5 +1033,6 @@
         private DevExpress.XtraReports.UI.XRTableRow customerNameRow;
         private DevExpress.XtraReports.UI.XRTableCell customerName;
         private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel3;
     }
 }

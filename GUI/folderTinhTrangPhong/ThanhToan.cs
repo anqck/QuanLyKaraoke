@@ -17,10 +17,14 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThanhToan : DevExpress.XtraEditors.XtraUserControl
     {
+        //DataSet dsHoaDon;
+        DataSet dsDichVuPhong;
 
         private KhachHangDTO khachHang;
         private HoaDonDTO hoaDon;
         private ThuePhongDTO thuePhong;
+
+        reportHoaDon reportHoaDon;
 
         public Action goBackHome { get; set; }
 
@@ -30,6 +34,9 @@ namespace GUI.folderTinhTrangPhong
         {
             InitializeComponent();
 
+            reportHoaDon = new reportHoaDon();
+
+            dsDichVuPhong = new DataSet();
 
         }
         public void RefreshDataBinding(ThuePhongDTO thuePhongDTO)
@@ -40,9 +47,13 @@ namespace GUI.folderTinhTrangPhong
 
             txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
             txtNgayThanhToan.Time = DateTime.Now;
-            
-            
-           
+
+            //dsHoaDon = new DataSet();
+            //dsHoaDon.Tables.Add(HoaDonBUS.LayThongTinHoaDon_DataTable(hoaDon.MaHoaDon));
+            //dsHoaDon.Tables.Add(HoaDonBUS.LayTatCaCacThuePhong_DataTable(hoaDon.MaHoaDon));
+            //dsHoaDon.Relations.Add("Danh sách thuê phòng", dsHoaDon.Tables[0].Columns["MaHoaDon"], dsHoaDon.Tables[1].Columns["MaHoaDon"]);
+
+
 
             this.tabbedControlGroup1.Clear();
             foreach (ThuePhongDTO thuePhong in HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon))
@@ -101,6 +112,10 @@ namespace GUI.folderTinhTrangPhong
         {
             this.hoaDon = hoaDonDTO;       
             this.khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
+
+            //dsHoaDon = new DataSet();
+            //dsHoaDon.Tables.Add(HoaDonBUS.LayThongTinHoaDon_DataTable(hoaDon.MaHoaDon));
+            //dsHoaDon.Tables.Add(HoaDonBUS.LayTatCaCacThuePhong_DataTable(hoaDon.MaHoaDon));
 
             txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
             txtNgayThanhToan.Time = DateTime.Now;
@@ -164,11 +179,13 @@ namespace GUI.folderTinhTrangPhong
             CalcTongTien_UpdateHoaDon();
         }
 
-        DataSet dsDichVuPhong;
+
+        
         public void CalcTongTien_UpdateHoaDon()
         {
             double TongTienGio = 0, TongTienKhuyenMai = 0, TongTienDichVu = 0;
-            dsDichVuPhong = new DataSet();
+            dsDichVuPhong.Tables.Clear();
+           
 
             foreach (DevExpress.XtraLayout.LayoutControlGroup layoutGroup in this.tabbedControlGroup1.TabPages)
             {
@@ -181,18 +198,32 @@ namespace GUI.folderTinhTrangPhong
 
             }
 
-            DataTable MergedDataTable = new DataTable();
+            DataTable MergedDataTable = new DataTable("dichvuphong");
             for (int i =0; i < dsDichVuPhong.Tables.Count;i++)
             {
                 MergedDataTable.Merge(dsDichVuPhong.Tables[i]);
             }
+
+            //if(dsHoaDon.Tables.Count == 3)
+            //{
+            //    dsHoaDon.Relations.RemoveAt(1);
+            //    dsHoaDon.Tables[2].Constraints.Clear();
+            //    dsHoaDon.Tables.RemoveAt(2);
+                
+            //}
+            //dsHoaDon.Tables.Add(MergedDataTable);
+            //dsHoaDon.Relations.Add("Danh sách dịch vụ thuê phòng", dsHoaDon.Tables[1].Columns["MaThuePhong"], dsHoaDon.Tables[2].Columns["MaThuePhong"]);
+            
+
 
             txtTongTienGio.EditValue = TongTienGio;
             txtTongTienKhuyenMai.EditValue = TongTienKhuyenMai;
             txtTongTienDichVu.EditValue = TongTienDichVu;
             txtTongTienThanhToan.EditValue = TongTienGio + TongTienKhuyenMai + TongTienDichVu - Convert.ToDouble(txtTienTraTruoc.EditValue);
 
-
+            reportHoaDon.BindingData(MergedDataTable,khachHang, TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue));
+            reportHoaDon.CreateDocument();
+            documentViewer1.DocumentSource = reportHoaDon;
         }
 
        

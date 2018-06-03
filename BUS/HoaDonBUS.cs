@@ -35,6 +35,10 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaCacThuePhong(maHoaDon);
         }
+        public static DataTable LayTatCaCacThuePhong_DataTable(int maHoaDon)
+        {
+            return DAL.HoaDonDAL.LayTatCaCacThuePhong_DataTable(maHoaDon);
+        }
         public static bool CapNhatHoaDonDaThanhToan(HoaDonDTO hoaDonDTO)
         {
             return DAL.HoaDonDAL.CapNhatHoaDonDaThanhToan(hoaDonDTO);
@@ -80,6 +84,10 @@ namespace BUS
         public static HoaDonDTO LayThongTinHoaDon(int maHoaDon)
         {
             return DAL.HoaDonDAL.LayThongTinHoaDon(maHoaDon);
+        }
+        public static DataTable LayThongTinHoaDon_DataTable(int maHoaDon)
+        {
+            return DAL.HoaDonDAL.LayThongTinHoaDon_DataTable(maHoaDon);
         }
     }
 }

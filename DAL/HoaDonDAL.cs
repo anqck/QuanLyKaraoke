@@ -68,6 +68,11 @@ namespace DAL
            return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH;");
         }
 
+        public static DataTable LayThongTinHoaDon_DataTable(int maHoaDon)
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon WHERE hoadon.MaHoaDon = '" + maHoaDon.ToString() + "';");
+        }
+
         public static HoaDonDTO LayThongTinHoaDonDangThue(int maHoaDon)
         {
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon WHERE hoadon.MaHoaDon = '" + maHoaDon.ToString() + "';");
@@ -88,6 +93,10 @@ namespace DAL
             return res;
             
 
+        }
+        public static DataTable LayTatCaCacThuePhong_DataTable(int maHoaDon)
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM  thuephong WHERE thuephong.MaHoaDon = '" + maHoaDon.ToString() + "';");
         }
         public static bool CapNhatHoaDonDaThanhToan(HoaDonDTO hoaDonDTO)
         {
