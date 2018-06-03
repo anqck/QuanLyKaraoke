@@ -48,5 +48,25 @@ namespace BUS
         {
             return DAL.KhachHangDAL.CapNhatThongTinKhachHang(khachHangDTO);
         }
+
+        public static bool CapNhatDiemTichLuy(int maKH, double diemTichLuy)
+        {
+            return DAL.KhachHangDAL.CapNhatDiemTichLuy(maKH, diemTichLuy);
+        }
+
+        public static LoaiKhachHangDTO LayLoaiKhachHangCoTheDatDuoc(KhachHangDTO khachHang)
+        {
+            LoaiKhachHangDTO loaiKhachHangDto = DAL.KhachHangDAL.LayLoaiKhachHangCoTheDatDuoc(khachHang);
+            LoaiKhachHangDTO loaiKhachHangHienTai = LoaiKhachHangBUS.LayLoaiKhachHang(khachHang);
+            if (loaiKhachHangDto.SoDiemDeDatDuoc < loaiKhachHangHienTai.SoDiemDeDatDuoc)
+                return loaiKhachHangHienTai;
+            else
+                return loaiKhachHangDto;
+
+        }
+        public static bool CapNhatLoaiKhachHang(int maKH, int maLoaiKH)
+        {
+            return DAL.KhachHangDAL.CapNhatLoaiKhachHang(maKH, maLoaiKH);
+        }
     }
 }

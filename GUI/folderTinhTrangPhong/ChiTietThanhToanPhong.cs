@@ -62,7 +62,7 @@ namespace GUI.folderTinhTrangPhong
             {
                 
                 //Sinh nhật
-                if (ngay.ngay.date.Day == khachHangDTO.NgaySinh.Day && ngay.ngay.date.Month == khachHangDTO.NgaySinh.Month)
+                if (ngay.ngay.date.Day == khachHangDTO.NgaySinh.Day && ngay.ngay.date.Month == khachHangDTO.NgaySinh.Month && khachHangDTO.MaKH != 0)
                 {
                     
                     if (TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat > loaiKhachHang.SoTienGiamGiaSinhNhat_Max)
@@ -72,7 +72,8 @@ namespace GUI.folderTinhTrangPhong
                     else
                         dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat);
 
-                    listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
+                    if (dichVuPhongDTO.DonGia != 0)
+                        listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
                 }
 
              
@@ -86,7 +87,8 @@ namespace GUI.folderTinhTrangPhong
             else
                 dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, TongTien * loaiKhachHang.PhanTramGiamGia);
 
-            listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
+            if(dichVuPhongDTO.DonGia != 0 && khachHangDTO.MaKH != 0)
+                listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
 
             RefreshDataBindingDichVuPhong();
 

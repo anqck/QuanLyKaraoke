@@ -49,30 +49,30 @@ namespace DAL
 
         public static Dictionary<int, KhachHangDTO> LayTatCaKhachHang()
         {
-            try
-            {
+            //try
+            //{
                 Dictionary<int, KhachHangDTO> res = new Dictionary<int, KhachHangDTO>();
 
                 DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.khachhang;");
                 foreach (DataRow row in dt.Rows)
                 {
-                    KhachHangDTO thuePhongDTO = new KhachHangDTO((int)row["MaKH"], row["TenKH"].ToString(), row["CMND"].ToString(), row["SDT"].ToString(), row["DiaChi"].ToString(), (int)row["MaLoaiKH"],(int)row["DiemTichLuy"], (DateTime)row["DiemTichLuy"]);
+                    KhachHangDTO thuePhongDTO = new KhachHangDTO((int)row["MaKH"], row["TenKH"].ToString(), row["CMND"].ToString(), row["SDT"].ToString(), row["DiaChi"].ToString(), (int)row["MaLoaiKH"],(double)row["DiemTichLuy"], (dt.Rows[0]["NgaySinh"].ToString() == "") ? (DateTime.MinValue) : ((DateTime)dt.Rows[0]["NgaySinh"]));
                     res.Add(thuePhongDTO.MaKH, thuePhongDTO);
                 }
 
                 return res;
 
-            }
-            catch (Exception e)
-            {
-                return null;
-            }
+            //}
+            //catch (Exception e)
+            //{
+            //    return null;
+            //}
         }
         public static KhachHangDTO LayKhachHang(int maKH)
         {
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.khachhang WHERE MaKH = '"+maKH.ToString()+"';");
 
-            return new KhachHangDTO((int)dt.Rows[0]["MaKH"], dt.Rows[0]["TenKH"].ToString(), dt.Rows[0]["CMND"].ToString(), dt.Rows[0]["SDT"].ToString(), dt.Rows[0]["DiaChi"].ToString(), (int)dt.Rows[0]["MaLoaiKH"], (int)dt.Rows[0]["DiemTichLuy"], (dt.Rows[0]["NgaySinh"].ToString()=="")?(DateTime.MinValue):((DateTime)dt.Rows[0]["NgaySinh"]));
+            return new KhachHangDTO((int)dt.Rows[0]["MaKH"], dt.Rows[0]["TenKH"].ToString(), dt.Rows[0]["CMND"].ToString(), dt.Rows[0]["SDT"].ToString(), dt.Rows[0]["DiaChi"].ToString(), (int)dt.Rows[0]["MaLoaiKH"], (double)dt.Rows[0]["DiemTichLuy"], (dt.Rows[0]["NgaySinh"].ToString()=="")?(DateTime.MinValue):((DateTime)dt.Rows[0]["NgaySinh"]));
 
         }
         public static bool CapNhatThongTinKhachHang(KhachHangDTO khachHangDTO)
@@ -101,6 +101,17 @@ namespace DAL
 
 
         }
+        public static bool CapNhatDiemTichLuy(int maKH, double diemTichLuy)
+        {
+            StringBuilder strSQL = new StringBuilder("UPDATE  quanlykaraoke.khachhang SET  DiemTichLuy = '@1' WHERE MaKH = '@0' ");
+            strSQL.Replace("@0", maKH.ToString());
+            strSQL.Replace("@1", diemTichLuy.ToString());
+
+            // Console.WriteLine(strSQL);
+            DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
+
+            return true;
+        }
         public static bool XoaKhachHang(int maKH)
         {
             try
@@ -118,6 +129,16 @@ namespace DAL
         public static DataTable LayTatCaKhachHang_DataTable()
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM khachhang;");
+        }
+        public static LoaiKhachHangDTO LayLoaiKhachHangCoTheDatDuoc(KhachHangDTO khachHang)
+        {
+            DataTable resLoaiKH = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaikhachhang WHERE SoDiemDeDatDuoc < '"+ khachHang .DiemTichLuy+ "' ORDER BY SoDiemDeDatDuoc DESC LIMIT 1;");
+            return new LoaiKhachHangDTO(Convert.ToInt32(resLoaiKH.Rows[0]["MaLoaiKH"]), resLoaiKH.Rows[0]["TenLoaiKH"].ToString(), (int)resLoaiKH.Rows[0]["SoDiemDeDatDuoc"], (double)resLoaiKH.Rows[0]["PhanTramGiamGia"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiThieu"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiDa"], (double)resLoaiKH.Rows[0]["PhanTramGiamGia_SinhNhat"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiThieu_SinhNhat"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiDa_SinhNhat"]);
+        }
+        public static bool CapNhatLoaiKhachHang(int maKH, int maLoaiKH)
+        {
+             DAL.DataProvider.ExecuseNonQuery("UPDATE khachhang SET khachhang.MaLoaiKH = '"+maLoaiKH+"' WHERE MaKH = '"+maKH+"';");
+            return true;
         }
     }
 }

@@ -52,7 +52,7 @@ namespace GUI.folderKhachHang
             txxtCMND.Text = "";
             txxtSDT.Text = "";
             txxtDiaChi.Text = "";
-            spinEdit1.EditValue = 0;
+            txtDiemTichLuy.EditValue = 0;
             ValidateChildren();
         }
 
@@ -69,7 +69,7 @@ namespace GUI.folderKhachHang
                         return;
 
                     //Lưu thông tinh
-                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(spinEdit1.EditValue),  txtNgaySinh.DateTime)))
+                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToDouble(txtDiemTichLuy.EditValue),  txtNgaySinh.DateTime)))
                     {
                         //Thông báo thành công
                         //BÌNH

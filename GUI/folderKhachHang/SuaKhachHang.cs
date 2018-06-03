@@ -85,7 +85,7 @@ namespace GUI.folderKhachHang
                         return;
 
                     //Lưu thông tinh
-                    if (KhachHangBUS.CapNhatThongTinKhachHang(new KhachHangDTO(Convert.ToInt32(txtMaKH.Text), txtTenKH.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, listLoaiKH[cmbLoaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(txtDiemtichluy.EditValue),txtNgaySinh.DateTime )))
+                    if (KhachHangBUS.CapNhatThongTinKhachHang(new KhachHangDTO(Convert.ToInt32(txtMaKH.Text), txtTenKH.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, listLoaiKH[cmbLoaiKH.SelectedIndex].MaLoaiKH, Convert.ToDouble(txtDiemtichluy.EditValue),txtNgaySinh.DateTime )))
                     {
                         //Thông báo thành công
                         XtraMessageBox.Show("Cập nhật khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

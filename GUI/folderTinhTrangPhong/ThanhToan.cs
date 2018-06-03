@@ -211,6 +211,20 @@ namespace GUI.folderTinhTrangPhong
                         PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong,0);
                     }
 
+                    if(khachHang.MaLoaiKH != 0)
+                    {
+                        KhachHangBUS.CapNhatDiemTichLuy(khachHang.MaKH, khachHang.DiemTichLuy + ThamSoBUS.QuyDoiDiem((double)txtTongTienThanhToan.EditValue));
+                        khachHang.DiemTichLuy = khachHang.DiemTichLuy + ThamSoBUS.QuyDoiDiem((double)txtTongTienThanhToan.EditValue);
+
+                        LoaiKhachHangDTO loaiKhachHangCoThe = KhachHangBUS.LayLoaiKhachHangCoTheDatDuoc(khachHang);
+                        if (khachHang.MaLoaiKH != loaiKhachHangCoThe.MaLoaiKH)
+                        {
+                            KhachHangBUS.CapNhatLoaiKhachHang(khachHang.MaKH, loaiKhachHangCoThe.MaLoaiKH);
+                            XtraMessageBox.Show("Khách hàng được cập nhật lên loại '" + loaiKhachHangCoThe.TenLoaiKH + "'! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                    }
+                    
 
                     goBackHome();
 

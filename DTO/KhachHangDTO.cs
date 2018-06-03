@@ -14,7 +14,7 @@ namespace DTO
         public string SDT { get; set; }
         public string DiaChi { get; set; }
         public int MaLoaiKH { get; set; }
-        public int DiemTichLuy { get; set; }
+        public double DiemTichLuy { get; set; }
 
         public DateTime NgaySinh { get; set; }
         public KhachHangDTO()
@@ -28,7 +28,7 @@ namespace DTO
             DiemTichLuy = -1;
         }
 
-        public KhachHangDTO(int maKH,string tenKH,string cMND, string sDT, string diaChi, int maLoaiKH, int diemTichLuy, DateTime ngaySinh)
+        public KhachHangDTO(int maKH,string tenKH,string cMND, string sDT, string diaChi, int maLoaiKH, double diemTichLuy, DateTime ngaySinh)
         {
             MaKH = maKH;
             TenKH = tenKH;

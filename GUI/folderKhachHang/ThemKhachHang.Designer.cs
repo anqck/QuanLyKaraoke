@@ -39,7 +39,7 @@
             this.txxtCMND = new DevExpress.XtraEditors.TextEdit();
             this.txxtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxloaiKH = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.txtDiemTichLuy = new DevExpress.XtraEditors.SpinEdit();
             this.txxtSDT = new DevExpress.XtraEditors.ButtonEdit();
             this.txtNgaySinh = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -64,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txxtCMND.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxloaiKH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiemTichLuy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).BeginInit();
@@ -118,7 +118,7 @@
             this.layoutControl1.Controls.Add(this.txxtCMND);
             this.layoutControl1.Controls.Add(this.txxtDiaChi);
             this.layoutControl1.Controls.Add(this.comboBoxloaiKH);
-            this.layoutControl1.Controls.Add(this.spinEdit1);
+            this.layoutControl1.Controls.Add(this.txtDiemTichLuy);
             this.layoutControl1.Controls.Add(this.txxtSDT);
             this.layoutControl1.Controls.Add(this.txtNgaySinh);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -192,27 +192,27 @@
             this.comboBoxloaiKH.StyleController = this.layoutControl1;
             this.comboBoxloaiKH.TabIndex = 8;
             // 
-            // spinEdit1
+            // txtDiemTichLuy
             // 
-            this.spinEdit1.EditValue = new decimal(new int[] {
+            this.txtDiemTichLuy.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(765, 287);
-            this.spinEdit1.Name = "spinEdit1";
-            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
-            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.txtDiemTichLuy.Location = new System.Drawing.Point(765, 287);
+            this.txtDiemTichLuy.Name = "txtDiemTichLuy";
+            this.txtDiemTichLuy.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDiemTichLuy.Properties.Appearance.Options.UseFont = true;
+            this.txtDiemTichLuy.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.spinEdit1.Properties.MaxValue = new decimal(new int[] {
+            this.txtDiemTichLuy.Properties.MaxValue = new decimal(new int[] {
             1000,
             0,
             0,
             0});
-            this.spinEdit1.Size = new System.Drawing.Size(248, 38);
-            this.spinEdit1.StyleController = this.layoutControl1;
-            this.spinEdit1.TabIndex = 10;
+            this.txtDiemTichLuy.Size = new System.Drawing.Size(248, 38);
+            this.txtDiemTichLuy.StyleController = this.layoutControl1;
+            this.txtDiemTichLuy.TabIndex = 10;
             // 
             // txxtSDT
             // 
@@ -345,7 +345,7 @@
             this.layoutControlItem9.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem9.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem9.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem9.Control = this.spinEdit1;
+            this.layoutControlItem9.Control = this.txtDiemTichLuy;
             this.layoutControlItem9.CustomizationFormText = "Điểm tích lũy";
             this.layoutControlItem9.Location = new System.Drawing.Point(478, 271);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -509,7 +509,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txxtCMND.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxloaiKH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDiemTichLuy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgaySinh.Properties)).EndInit();
@@ -547,7 +547,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxloaiKH;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private DevExpress.XtraEditors.SpinEdit txtDiemTichLuy;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
         private DevExpress.XtraEditors.ButtonEdit txxtSDT;
