@@ -59,6 +59,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
@@ -79,6 +80,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -106,14 +108,14 @@
             this.gridControl1.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemSpinEdit1,
             this.repositoryItemSpinEdit3});
-            this.gridControl1.Size = new System.Drawing.Size(653, 141);
+            this.gridControl1.Size = new System.Drawing.Size(653, 145);
             this.gridControl1.TabIndex = 18;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
             // 
-            this.gridView1.ColumnPanelRowHeight = 40;
+            this.gridView1.ColumnPanelRowHeight = 30;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn4,
@@ -134,7 +136,7 @@
             this.gridView1.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
-            this.gridView1.RowHeight = 40;
+            this.gridView1.RowHeight = 30;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colType, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.CustomDrawFooterCell += new DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventHandler(this.gridView1_CustomDrawFooterCell);
@@ -147,7 +149,7 @@
             // 
             this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn1.AppearanceCell.Options.UseFont = true;
-            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.Caption = "Tên";
             this.gridColumn1.FieldName = "TenDV";
@@ -162,7 +164,7 @@
             // 
             this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn4.AppearanceCell.Options.UseFont = true;
-            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.Caption = "Đơn vị";
             this.gridColumn4.FieldName = "DonVi";
@@ -177,7 +179,7 @@
             // 
             this.gridColumn7.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn7.AppearanceCell.Options.UseFont = true;
-            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn7.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn7.AppearanceHeader.Options.UseFont = true;
             this.gridColumn7.Caption = "Thời gian thêm";
             this.gridColumn7.DisplayFormat.FormatString = "dd/MM hh:mm";
@@ -196,7 +198,7 @@
             this.gridColumn2.AppearanceCell.Options.UseFont = true;
             this.gridColumn2.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.Caption = "Số lượng";
             this.gridColumn2.ColumnEdit = this.repositoryItemSpinEdit3;
@@ -224,7 +226,7 @@
             this.gridColumn3.AppearanceCell.Options.UseFont = true;
             this.gridColumn3.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.Caption = "Đơn giá";
             this.gridColumn3.ColumnEdit = this.repositoryItemSpinEdit1;
@@ -258,7 +260,7 @@
             this.gridColumn5.AppearanceCell.Options.UseFont = true;
             this.gridColumn5.AppearanceCell.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.Caption = "Thành tiền";
             this.gridColumn5.DisplayFormat.FormatString = "###,###,##0 VNĐ";
@@ -278,7 +280,7 @@
             // 
             this.colType.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colType.AppearanceCell.Options.UseFont = true;
-            this.colType.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colType.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colType.AppearanceHeader.Options.UseFont = true;
             this.colType.Caption = " ";
             this.colType.FieldName = "colType";
@@ -286,7 +288,7 @@
             // 
             // txtTongTienPhong
             // 
-            this.txtTongTienPhong.Location = new System.Drawing.Point(412, 243);
+            this.txtTongTienPhong.Location = new System.Drawing.Point(472, 243);
             this.txtTongTienPhong.Name = "txtTongTienPhong";
             this.txtTongTienPhong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTongTienPhong.Properties.Appearance.Options.UseFont = true;
@@ -295,13 +297,13 @@
             this.txtTongTienPhong.Properties.Mask.EditMask = "###,###,###,##0 VNĐ";
             this.txtTongTienPhong.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTongTienPhong.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtTongTienPhong.Size = new System.Drawing.Size(257, 34);
+            this.txtTongTienPhong.Size = new System.Drawing.Size(197, 34);
             this.txtTongTienPhong.StyleController = this.layoutControl1;
             this.txtTongTienPhong.TabIndex = 20;
             // 
             // txtTienGio
             // 
-            this.txtTienGio.Location = new System.Drawing.Point(386, 183);
+            this.txtTienGio.Location = new System.Drawing.Point(472, 203);
             this.txtTienGio.Name = "txtTienGio";
             this.txtTienGio.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienGio.Properties.Appearance.Options.UseFont = true;
@@ -316,7 +318,7 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2});
             this.txtTienGio.Properties.EditValueChanging += new DevExpress.XtraEditors.Controls.ChangingEventHandler(this.txtTienGio_Properties_EditValueChanging);
-            this.txtTienGio.Size = new System.Drawing.Size(283, 34);
+            this.txtTienGio.Size = new System.Drawing.Size(197, 34);
             this.txtTienGio.StyleController = this.layoutControl1;
             this.txtTienGio.TabIndex = 19;
             this.txtTienGio.Popup += new System.EventHandler(this.txtTienGio_Properties_Popup);
@@ -421,9 +423,9 @@
             // txtGioVao
             // 
             this.txtGioVao.EditValue = null;
-            this.txtGioVao.Location = new System.Drawing.Point(105, 163);
+            this.txtGioVao.Location = new System.Drawing.Point(131, 167);
             this.txtGioVao.Name = "txtGioVao";
-            this.txtGioVao.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioVao.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGioVao.Properties.Appearance.Options.UseFont = true;
             this.txtGioVao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -434,16 +436,16 @@
             this.txtGioVao.Properties.Mask.EditMask = "dd/MM/yy HH:mm:ss";
             this.txtGioVao.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtGioVao.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
-            this.txtGioVao.Size = new System.Drawing.Size(200, 34);
+            this.txtGioVao.Size = new System.Drawing.Size(174, 30);
             this.txtGioVao.StyleController = this.layoutControl1;
             this.txtGioVao.TabIndex = 19;
             // 
             // txtGioRa
             // 
             this.txtGioRa.EditValue = null;
-            this.txtGioRa.Location = new System.Drawing.Point(105, 203);
+            this.txtGioRa.Location = new System.Drawing.Point(131, 203);
             this.txtGioRa.Name = "txtGioRa";
-            this.txtGioRa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGioRa.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGioRa.Properties.Appearance.Options.UseFont = true;
             this.txtGioRa.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -453,7 +455,7 @@
             this.txtGioRa.Properties.Mask.EditMask = "dd/MM/yy HH:mm:ss";
             this.txtGioRa.Properties.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
             this.txtGioRa.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
-            this.txtGioRa.Size = new System.Drawing.Size(200, 34);
+            this.txtGioRa.Size = new System.Drawing.Size(174, 30);
             this.txtGioRa.StyleController = this.layoutControl1;
             this.txtGioRa.TabIndex = 19;
             // 
@@ -465,9 +467,10 @@
             this.layoutControlItem1,
             this.emptySpaceItem1,
             this.layoutControlItem4,
-            this.layoutControlItem2,
             this.layoutControlItem3,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem2,
+            this.emptySpaceItem2});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Size = new System.Drawing.Size(685, 293);
@@ -478,7 +481,7 @@
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(659, 147);
+            this.layoutControlItem1.Size = new System.Drawing.Size(659, 151);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -487,19 +490,21 @@
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 227);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(234, 40);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(295, 40);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem4
             // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem4.Control = this.txtGioVao;
             this.layoutControlItem4.CustomizationFormText = "Tiền giờ";
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 147);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 151);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(295, 40);
+            this.layoutControlItem4.Size = new System.Drawing.Size(295, 36);
             this.layoutControlItem4.Text = "Giờ vào: ";
             this.layoutControlItem4.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(84, 17);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(110, 17);
             this.layoutControlItem4.TextToControlDistance = 5;
             // 
             // layoutControlItem2
@@ -511,32 +516,30 @@
             this.layoutControlItem2.Control = this.txtTienGio;
             this.layoutControlItem2.ControlAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             this.layoutControlItem2.FillControlToClientArea = false;
-            this.layoutControlItem2.Location = new System.Drawing.Point(295, 147);
+            this.layoutControlItem2.Location = new System.Drawing.Point(295, 187);
             this.layoutControlItem2.MinSize = new System.Drawing.Size(131, 40);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(364, 80);
+            this.layoutControlItem2.Size = new System.Drawing.Size(364, 40);
             this.layoutControlItem2.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem2.Text = "Tiền giờ";
-            this.layoutControlItem2.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(70, 28);
-            this.layoutControlItem2.TextToControlDistance = 5;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(157, 28);
             // 
             // layoutControlItem3
             // 
             this.layoutControlItem3.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.Control = this.txtTongTienPhong;
-            this.layoutControlItem3.Location = new System.Drawing.Point(234, 227);
+            this.layoutControlItem3.Location = new System.Drawing.Point(295, 227);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(425, 40);
+            this.layoutControlItem3.Size = new System.Drawing.Size(364, 40);
             this.layoutControlItem3.Text = "Tổng tiền phòng";
-            this.layoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.AutoSize;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(157, 28);
-            this.layoutControlItem3.TextToControlDistance = 5;
             // 
             // layoutControlItem5
             // 
+            this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.txtGioRa;
             this.layoutControlItem5.CustomizationFormText = "Tiền giờ";
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 187);
@@ -544,8 +547,16 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(295, 40);
             this.layoutControlItem5.Text = "Giờ trả phòng: ";
             this.layoutControlItem5.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(84, 17);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(110, 17);
             this.layoutControlItem5.TextToControlDistance = 5;
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(295, 151);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(364, 36);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // ChiTietThanhToanPhong
             // 
@@ -575,6 +586,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -612,5 +624,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemTextEdit repositoryItemTextEdit2;
         private DevExpress.XtraEditors.TimeEdit txtGioVao;
         private DevExpress.XtraEditors.TimeEdit txtGioRa;
+        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem2;
     }
 }
