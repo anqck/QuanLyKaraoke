@@ -411,6 +411,10 @@ namespace GUI.folderTinhTrangPhong
             }
 
         }
-        
+        public DataTable GetDichVuPhong_DataTable()
+        {
+            return dichVuPhong;
+        }
+
     }
 }

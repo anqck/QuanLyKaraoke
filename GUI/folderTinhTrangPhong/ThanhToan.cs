@@ -51,7 +51,7 @@ namespace GUI.folderTinhTrangPhong
                 ChiTietThanhToanPhong chiTietThanhToanPhongThanhToan = new ChiTietThanhToanPhong();
                 DevExpress.XtraLayout.LayoutControlGroup layoutGrp = new DevExpress.XtraLayout.LayoutControlGroup();
                 DevExpress.XtraLayout.LayoutControlItem layoutItem = new DevExpress.XtraLayout.LayoutControlItem();
-                chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien;
+                chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien_UpdateHoaDon;
                 chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
 
 
@@ -94,7 +94,7 @@ namespace GUI.folderTinhTrangPhong
             this.tabbedControlGroup1.SelectedTabPageIndex = 0;
 
             txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
-            CalcTongTien();
+            CalcTongTien_UpdateHoaDon();
         }
 
         public void RefreshDataBinding_ReadOnly(HoaDonDTO hoaDonDTO)
@@ -119,7 +119,7 @@ namespace GUI.folderTinhTrangPhong
                 ChiTietThanhToanPhong chiTietThanhToanPhongThanhToan = new ChiTietThanhToanPhong();
                 DevExpress.XtraLayout.LayoutControlGroup layoutGrp = new DevExpress.XtraLayout.LayoutControlGroup();
                 DevExpress.XtraLayout.LayoutControlItem layoutItem = new DevExpress.XtraLayout.LayoutControlItem();
-                chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien;
+                chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien_UpdateHoaDon;
                 chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
 
 
@@ -161,24 +161,38 @@ namespace GUI.folderTinhTrangPhong
             }
             this.tabbedControlGroup1.SelectedTabPageIndex = 0;
 
-            CalcTongTien();
+            CalcTongTien_UpdateHoaDon();
         }
 
-        public void CalcTongTien()
+        DataSet dsDichVuPhong;
+        public void CalcTongTien_UpdateHoaDon()
         {
             double TongTienGio = 0, TongTienKhuyenMai = 0, TongTienDichVu = 0;
-           
+            dsDichVuPhong = new DataSet();
+
             foreach (DevExpress.XtraLayout.LayoutControlGroup layoutGroup in this.tabbedControlGroup1.TabPages)
             {
                 TongTienGio += ((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienGio();
                 TongTienKhuyenMai+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienKhuyenMai();
                 TongTienDichVu+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienDichVu();
+
+                dsDichVuPhong.Tables.Add(((ChiTietThanhToanPhong)layoutGroup.Tag).GetDichVuPhong_DataTable());
+
+
+            }
+
+            DataTable MergedDataTable = new DataTable();
+            for (int i =0; i < dsDichVuPhong.Tables.Count;i++)
+            {
+                MergedDataTable.Merge(dsDichVuPhong.Tables[i]);
             }
 
             txtTongTienGio.EditValue = TongTienGio;
             txtTongTienKhuyenMai.EditValue = TongTienKhuyenMai;
             txtTongTienDichVu.EditValue = TongTienDichVu;
             txtTongTienThanhToan.EditValue = TongTienGio + TongTienKhuyenMai + TongTienDichVu - Convert.ToDouble(txtTienTraTruoc.EditValue);
+
+
         }
 
        
@@ -241,7 +255,7 @@ namespace GUI.folderTinhTrangPhong
         {
             
             HoaDonBUS.CapNhatTienTraTruoc(hoaDon, Convert.ToDouble(txtTienTraTruoc.EditValue));
-            CalcTongTien();
+            CalcTongTien_UpdateHoaDon();
         }
     }
 
