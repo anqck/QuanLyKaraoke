@@ -18,6 +18,7 @@ namespace GUI.folderQuanLyPhong
         public Action actionBack { get; set; }
         PhongDTO phongDTO;
         List<LoaiPhongDTO> listLoaiPhong;
+        List<TinhTrangPhongDTO> listTinhTrangPhong;
         public SuaPhong()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace GUI.folderQuanLyPhong
             //Lấy tất cả loại phòng vào cmb
             listLoaiPhong = LoaiPhongBUS.LayTatCaLoaiPhong_List();
             //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
+
             if (listLoaiPhong.Count == 0)
             {
                 //BÌNH
@@ -45,7 +47,18 @@ namespace GUI.folderQuanLyPhong
                 if (loaiPhong.MaLoaiPhong == phongDTO.MaLoaiPhong)
                     cmbLoaiPhong.SelectedIndex = cmbLoaiPhong.Properties.Items.Count - 1;
             }
-            
+
+            //Lấy tất cả tinh trang phong vào cmb
+            listTinhTrangPhong = PhongBUS.LayTatCaTinhTrangPhong_List();
+            //combobox tinh trang phong
+
+            cmbTinhTrangPhong.Properties.Items.Clear();
+            foreach (TinhTrangPhongDTO tinhtrang in listTinhTrangPhong)
+            {
+                cmbTinhTrangPhong.Properties.Items.Add(new MyComboBoxItem(tinhtrang.TinhTrangPhong, tinhtrang.MaTinhTrangPhong));
+                if (tinhtrang.MaTinhTrangPhong == phongDTO.MaTinhTrangPhong)
+                    cmbTinhTrangPhong.SelectedIndex = cmbTinhTrangPhong.Properties.Items.Count - 1;
+            }
 
             //Lấy tất cả các tầng
             cmbTang.Properties.Items.Clear();
@@ -97,7 +110,7 @@ namespace GUI.folderQuanLyPhong
                         return;
 
                     //Lưu thông tinh
-                    if (PhongBUS.CapNhatThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong, cmbTang.Text, txtGhiChu.Text, 0)))
+                    if (PhongBUS.CapNhatThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong, cmbTang.Text, txtGhiChu.Text, listTinhTrangPhong[cmbTinhTrangPhong.SelectedIndex].MaTinhTrangPhong)))
                     {
                         //Thông báo thành công
                         //BÌNH

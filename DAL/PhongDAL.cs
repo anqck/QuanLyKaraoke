@@ -141,7 +141,20 @@ namespace DAL
             return res;
         }
 
-      
+        public static List<TinhTrangPhongDTO> LayTatCaTinhTrangPhong_List()
+        {
+            List<TinhTrangPhongDTO> res = new List<TinhTrangPhongDTO>();
+
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.tinhtrangphong;");
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add(new TinhTrangPhongDTO(Convert.ToInt32(row["MaTinhTrangPhong"]), row["TinhTrangPhong"].ToString()));
+            }
+
+            return res;
+        }
+
+
 
         public static void LuuPhongMoi(PhongDTO phong)
         {

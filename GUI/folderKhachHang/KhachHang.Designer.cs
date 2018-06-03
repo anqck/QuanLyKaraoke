@@ -62,7 +62,6 @@
             this.PageThemkhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.themKhachHang3 = new GUI.folderKhachHang.ThemKhachHang();
             this.PageSuakhachang = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.windowsUIButtonPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.suaKhachHang3 = new GUI.folderKhachHang.SuaKhachHang();
             this.PageLoaikhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
@@ -391,7 +390,6 @@
             // PageSuakhachang
             // 
             this.PageSuakhachang.Caption = "PageSuakhachang";
-            this.PageSuakhachang.Controls.Add(this.windowsUIButtonPanel2);
             this.PageSuakhachang.Controls.Add(this.suaKhachHang3);
             this.PageSuakhachang.Name = "PageSuakhachang";
             this.PageSuakhachang.Size = new System.Drawing.Size(1049, 630);
@@ -544,7 +542,6 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private ThemKhachHang themKhachHang2;
         private SuaKhachHang suaKhachHang2;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel2;
         private ThemLoaiKhachHang themLoaiKhachHang1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageThemloaikhachhang;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel4;
