@@ -26,7 +26,10 @@ namespace BUS
             return DAL.KhachHangDAL.LayTatCaKhachHang();
         }
 
-
+        public static bool XoaKhachHang(int maKH)
+        {
+            return DAL.KhachHangDAL.XoaKhachHang(maKH);
+        }
         public static KhachHangDTO LayKhachHang(int maKH)
         {
             return DAL.KhachHangDAL.LayKhachHang(maKH);
@@ -34,6 +37,10 @@ namespace BUS
         public static int PhatSinhMaKH()
         {
             return DAL.KhachHangDAL.PhatSinhKH();
+        }
+        public static bool CapNhatThongTinKhachHang(KhachHangDTO khachHangDTO)
+        {
+            return DAL.KhachHangDAL.CapNhatThongTinKhachHang(khachHangDTO);
         }
     }
 }

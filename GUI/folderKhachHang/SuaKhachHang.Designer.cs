@@ -136,6 +136,7 @@
             this.txtTenKH.Size = new System.Drawing.Size(694, 40);
             this.txtTenKH.StyleController = this.layoutControl1;
             this.txtTenKH.TabIndex = 6;
+            this.txtTenKH.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenKH_Validating);
             // 
             // cmbLoaiKH
             // 

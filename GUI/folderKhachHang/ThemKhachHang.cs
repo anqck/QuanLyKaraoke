@@ -32,11 +32,11 @@ namespace GUI.folderKhachHang
             listLoaiKH = BUS.LoaiKhachHangBUS.LayTatCaLoaiKhachHang_List();
 
 
-            ////Nếu không có loại phòng, thông báo cần tạo loại phòng trước
-            //if (listLoaiDichVu.Count == 0)
-            //{
-            //    //BÌNH
-            //}
+            if (listLoaiKH.Count == 0)
+            {
+                //BÌNH
+                XtraMessageBox.Show("Cần thêm loại khách hàng trước!", "Thông báo", MessageBoxButtons.OK);
+            }
 
             comboBoxloaiKH.Properties.Items.Clear();
             foreach (LoaiKhachHangDTO loaiKH in listLoaiKH)
@@ -45,11 +45,12 @@ namespace GUI.folderKhachHang
             }
             comboBoxloaiKH.SelectedIndex = 0;
 
-            //txtTenDichVu.Text = "";
-            //txtDonVi.Text = "";
-            //txtDonGia.Text = "0";
-            //pictureEdit1.Image = (Image)Resources.ResourceManager.GetObject("No_Image_Available");
-            //ValidateChildren();
+            txxtTenKh.Text = "";
+            txxtCMND.Text = "";
+            txxtSDT.Text = "";
+            txxtDiaChi.Text = "";
+            spinEdit1.EditValue = 0;
+            ValidateChildren();
         }
 
         private void wbntThemkhachhang_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -65,10 +66,11 @@ namespace GUI.folderKhachHang
                         return;
 
                     //Lưu thông tinh
-                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, 5)))
+                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(spinEdit1.EditValue) )))
                     {
                         //Thông báo thành công
                         //BÌNH
+                        XtraMessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK);
                         actionBack();
 
                     }
@@ -76,6 +78,7 @@ namespace GUI.folderKhachHang
                     {
                         //Thông báo thất bại
                         //BÌNH
+                        XtraMessageBox.Show("Thêm khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK);
                     }
 
                     break;
@@ -93,6 +96,38 @@ namespace GUI.folderKhachHang
         private bool ThongBaoHuyKoLuuDichVu()
         {
             //Bình
+            if (XtraMessageBox.Show("Bạn có chắc hủy thêm khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        private void txxtTenKh_Validating(object sender, CancelEventArgs e)
+        {
+            if ((sender as TextEdit).Text == "")
+            {
+                txxtTenKh.ErrorText = "Tên khách hàng không được để trống";
+                wbntThemkhachhang.Buttons[0].Properties.Enabled = false;
+            }
+            else
+            {
+                if (KiemTraHopLeCacGiaTriNhapVao())
+                    wbntThemkhachhang.Buttons[0].Properties.Enabled = true;
+            }
+        }
+
+        private bool KiemTraHopLeCacGiaTriNhapVao()
+        {
+            if (txxtTenKh.Text == "")
+            {
+                return false;
+            }
+            //if (txxtSDT.Text == "")
+            //{
+            //    return false;
+            //}
+       
             return true;
         }
     }

@@ -154,6 +154,7 @@
             this.txxtTenKh.Size = new System.Drawing.Size(720, 40);
             this.txxtTenKh.StyleController = this.layoutControl1;
             this.txxtTenKh.TabIndex = 6;
+            this.txxtTenKh.Validating += new System.ComponentModel.CancelEventHandler(this.txxtTenKh_Validating);
             // 
             // memoEdit1
             // 

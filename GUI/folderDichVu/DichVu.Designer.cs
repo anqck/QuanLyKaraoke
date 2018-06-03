@@ -364,6 +364,7 @@
             // 
             // PageSuadichvu
             // 
+            this.PageSuadichvu.Caption = "PageSuadichvu";
             this.PageSuadichvu.Controls.Add(this.windowsUIButtonPanel2);
             this.PageSuadichvu.Controls.Add(this.suaDichVu1);
             this.PageSuadichvu.Name = "PageSuadichvu";
