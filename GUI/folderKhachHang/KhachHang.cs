@@ -16,6 +16,8 @@ namespace GUI.folderKhachHang
 {
     public partial class KhachHang : DevExpress.XtraEditors.XtraUserControl
     {
+        public Action goToLoaiKhachHang { get; set; }
+
         DataTable khachHang;
 
         FilterControlDialog filterDialog;
@@ -26,10 +28,12 @@ namespace GUI.folderKhachHang
             InitializeComponent();
             themKhachHang3.actionBack = GoToHomePage;
             suaKhachHang3.actionBack = GoToHomePage;
-           
+
+            tileFilter.Visible = false;
         }
         void GoToHomePage()
         {
+            RefreshDataBinding();
             this.KhachhangPagecontrol.SelectedPage = PageKhachhang;
         }
 
@@ -91,6 +95,9 @@ namespace GUI.folderKhachHang
 
 
                     break;
+                case "Quản lý loại khách hàng":
+                    goToLoaiKhachHang();
+                    break;
                     //case "Xóa":
                     //    //Thông báo xác nhận
                     //    if (XtraMessageBox.Show("Bạn có chắc xóa khách hàng '" + gridView1.GetFocusedRowCellValue(colTenKH).ToString() + "' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
@@ -115,8 +122,8 @@ namespace GUI.folderKhachHang
         public void RefreshDataBinding()
         {
 
-            try
-            {
+            //try
+            //{
                 gridControl1.DataSource = khachHang = BUS.KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
 
                 tileControl2.SelectedItem = tileAll;
@@ -124,17 +131,17 @@ namespace GUI.folderKhachHang
                 grpLoaiKH.Items.Clear();
                 foreach (DTO.LoaiKhachHangDTO loaiKH in BUS.LoaiKhachHangBUS.LayTatCaLoaiKhachHang_List())
                 {
-                    grpLoaiKH.Items.Add(NewTileItem(loaiKH.TenKH.ToString()));
+                    grpLoaiKH.Items.Add(NewTileItem(loaiKH.TenLoaiKH.ToString()));
 
                 }
 
 
 
-            }
-            catch (Exception x)
-            {
+            //}
+            //catch (Exception x)
+            //{
 
-            }
+            //}
         }
         
         private TileItem NewTileItem(String name)
@@ -196,7 +203,27 @@ namespace GUI.folderKhachHang
             }
 
         }
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+            {
+                wbntKhachhang.Buttons[1].Properties.Enabled = false;
 
+                return;
+            }
+
+            if (e.FocusedRowHandle == 0 )
+            {
+                wbntKhachhang.Buttons[1].Properties.Enabled = false;
+
+            }
+            else
+            {
+                wbntKhachhang.Buttons[1].Properties.Enabled = true;
+
+
+            }
+        }
         String strFilterLoaiKH;
         private void tileControl2_SelectedItemChanged(object sender, TileItemEventArgs e)
         {
@@ -219,6 +246,12 @@ namespace GUI.folderKhachHang
                 gridView1.ActiveFilterString = strFilterLoaiKH;
 
             }
+        }
+        public void GoToHomePageWithoutAnimation()
+        {
+            KhachhangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            KhachhangPagecontrol.SelectedPageIndex = 0;
+            KhachhangPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
         }
     }
 }

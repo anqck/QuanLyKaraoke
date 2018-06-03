@@ -1,6 +1,6 @@
 ﻿namespace GUI.folderKhachHang
 {
-    partial class ThemLoaiKhachHang
+    partial class SuaLoaiKhachHang
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.wbntThemloaikhachhang = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.txtMaLoaiKhachHang = new DevExpress.XtraEditors.TextEdit();
@@ -101,9 +101,9 @@
             // wbntThemloaikhachhang
             // 
             this.wbntThemloaikhachhang.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions5.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions1.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntThemloaikhachhang.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntThemloaikhachhang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.wbntThemloaikhachhang.Location = new System.Drawing.Point(74, 0);
             this.wbntThemloaikhachhang.Name = "wbntThemloaikhachhang";
@@ -134,7 +134,7 @@
             // 
             // txtMaLoaiKhachHang
             // 
-            this.txtMaLoaiKhachHang.Location = new System.Drawing.Point(369, 83);
+            this.txtMaLoaiKhachHang.Location = new System.Drawing.Point(348, 83);
             this.txtMaLoaiKhachHang.Name = "txtMaLoaiKhachHang";
             this.txtMaLoaiKhachHang.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaLoaiKhachHang.Properties.Appearance.Options.UseFont = true;
@@ -146,24 +146,22 @@
             this.txtMaLoaiKhachHang.Properties.AppearanceReadOnly.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtMaLoaiKhachHang.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
             this.txtMaLoaiKhachHang.Properties.ReadOnly = true;
-            this.txtMaLoaiKhachHang.Size = new System.Drawing.Size(856, 40);
+            this.txtMaLoaiKhachHang.Size = new System.Drawing.Size(877, 40);
             this.txtMaLoaiKhachHang.StyleController = this.layoutControl2;
             this.txtMaLoaiKhachHang.TabIndex = 5;
             // 
             // txtTenLoaiKhachHang
             // 
-            this.txtTenLoaiKhachHang.Location = new System.Drawing.Point(369, 135);
+            this.txtTenLoaiKhachHang.Location = new System.Drawing.Point(348, 135);
             this.txtTenLoaiKhachHang.Name = "txtTenLoaiKhachHang";
             this.txtTenLoaiKhachHang.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenLoaiKhachHang.Properties.Appearance.Options.UseFont = true;
             this.txtTenLoaiKhachHang.Properties.Appearance.Options.UseTextOptions = true;
             this.txtTenLoaiKhachHang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.txtTenLoaiKhachHang.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.txtTenLoaiKhachHang.Properties.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenLoaiKhachHang_Properties_Validating);
-            this.txtTenLoaiKhachHang.Size = new System.Drawing.Size(856, 40);
+            this.txtTenLoaiKhachHang.Size = new System.Drawing.Size(877, 40);
             this.txtTenLoaiKhachHang.StyleController = this.layoutControl2;
             this.txtTenLoaiKhachHang.TabIndex = 6;
-            this.txtTenLoaiKhachHang.EditValueChanged += new System.EventHandler(this.txtTenLoaiKhachHang_EditValueChanged);
             // 
             // txtSoTienGiamGia_Max
             // 
@@ -227,7 +225,7 @@
             0,
             0,
             0});
-            this.txtPhanTramGiamGiaSinhNhat.Location = new System.Drawing.Point(366, 366);
+            this.txtPhanTramGiamGiaSinhNhat.Location = new System.Drawing.Point(345, 366);
             this.txtPhanTramGiamGiaSinhNhat.Name = "txtPhanTramGiamGiaSinhNhat";
             this.txtPhanTramGiamGiaSinhNhat.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhanTramGiamGiaSinhNhat.Properties.Appearance.Options.UseFont = true;
@@ -245,8 +243,7 @@
             0,
             0,
             0});
-            this.txtPhanTramGiamGiaSinhNhat.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
-            this.txtPhanTramGiamGiaSinhNhat.Size = new System.Drawing.Size(197, 38);
+            this.txtPhanTramGiamGiaSinhNhat.Size = new System.Drawing.Size(218, 38);
             this.txtPhanTramGiamGiaSinhNhat.StyleController = this.layoutControl2;
             this.txtPhanTramGiamGiaSinhNhat.TabIndex = 11;
             // 
@@ -257,7 +254,7 @@
             0,
             0,
             0});
-            this.txtPhanTramGiamGia.Location = new System.Drawing.Point(366, 268);
+            this.txtPhanTramGiamGia.Location = new System.Drawing.Point(345, 268);
             this.txtPhanTramGiamGia.Name = "txtPhanTramGiamGia";
             this.txtPhanTramGiamGia.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPhanTramGiamGia.Properties.Appearance.Options.UseFont = true;
@@ -271,12 +268,11 @@
             this.txtPhanTramGiamGia.Properties.Mask.EditMask = "##0.0%";
             this.txtPhanTramGiamGia.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtPhanTramGiamGia.Properties.MaxValue = new decimal(new int[] {
-            1,
+            11,
             0,
             0,
             0});
-            this.txtPhanTramGiamGia.Properties.SpinStyle = DevExpress.XtraEditors.Controls.SpinStyles.Horizontal;
-            this.txtPhanTramGiamGia.Size = new System.Drawing.Size(197, 38);
+            this.txtPhanTramGiamGia.Size = new System.Drawing.Size(218, 38);
             this.txtPhanTramGiamGia.StyleController = this.layoutControl2;
             this.txtPhanTramGiamGia.TabIndex = 11;
             // 
@@ -341,7 +337,7 @@
             0,
             0,
             0});
-            this.txtSoDiemDeDatDuoc.Location = new System.Drawing.Point(369, 187);
+            this.txtSoDiemDeDatDuoc.Location = new System.Drawing.Point(348, 187);
             this.txtSoDiemDeDatDuoc.Name = "txtSoDiemDeDatDuoc";
             this.txtSoDiemDeDatDuoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoDiemDeDatDuoc.Properties.Appearance.Options.UseFont = true;
@@ -353,9 +349,11 @@
             this.txtSoDiemDeDatDuoc.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.txtSoDiemDeDatDuoc.Properties.Mask.EditMask = "n";
             this.txtSoDiemDeDatDuoc.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtSoDiemDeDatDuoc.Size = new System.Drawing.Size(856, 40);
+            this.txtSoDiemDeDatDuoc.Properties.Validating += new System.ComponentModel.CancelEventHandler(this.txtTenLoaiKhachHang_Properties_Validating);
+            this.txtSoDiemDeDatDuoc.Size = new System.Drawing.Size(877, 40);
             this.txtSoDiemDeDatDuoc.StyleController = this.layoutControl2;
             this.txtSoDiemDeDatDuoc.TabIndex = 6;
+            this.txtSoDiemDeDatDuoc.EditValueChanged += new System.EventHandler(this.txtTenLoaiKhachHang_EditValueChanged);
             // 
             // layoutControlGroup1
             // 
@@ -398,8 +396,8 @@
             this.simpleLabelItem1.Name = "simpleLabelItem2";
             this.simpleLabelItem1.Size = new System.Drawing.Size(1218, 54);
             this.simpleLabelItem1.Spacing = new DevExpress.XtraLayout.Utils.Padding(5, 5, 5, 5);
-            this.simpleLabelItem1.Text = "THÊM LOẠI KHÁCH HÀNG";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(346, 38);
+            this.simpleLabelItem1.Text = "SỬA LOẠI KHÁCH HÀNG";
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(325, 38);
             // 
             // layoutControlItem8
             // 
@@ -418,7 +416,7 @@
             this.layoutControlItem8.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
             this.layoutControlItem8.Text = "Mã loại khách hàng";
             this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(346, 32);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(325, 32);
             // 
             // emptySpaceItem4
             // 
@@ -445,7 +443,7 @@
             this.layoutControlItem16.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
             this.layoutControlItem16.Text = "Tên loại khách hàng";
             this.layoutControlItem16.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem16.TextSize = new System.Drawing.Size(346, 32);
+            this.layoutControlItem16.TextSize = new System.Drawing.Size(325, 32);
             // 
             // layoutControlItem10
             // 
@@ -465,7 +463,7 @@
             this.layoutControlItem10.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
             this.layoutControlItem10.Text = "Số điểm để đạt được";
             this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem10.TextSize = new System.Drawing.Size(346, 32);
+            this.layoutControlItem10.TextSize = new System.Drawing.Size(325, 32);
             // 
             // emptySpaceItem1
             // 
@@ -526,7 +524,7 @@
             this.item2.Size = new System.Drawing.Size(553, 88);
             this.item2.Text = "Phần trăm giảm giá sinh nhật";
             this.item2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.item2.TextSize = new System.Drawing.Size(346, 32);
+            this.item2.TextSize = new System.Drawing.Size(325, 32);
             // 
             // item3
             // 
@@ -539,7 +537,7 @@
             this.item3.Padding = new DevExpress.XtraLayout.Utils.Padding(3, 3, 25, 3);
             this.item3.Size = new System.Drawing.Size(553, 88);
             this.item3.Text = "Phần trăm giảm giá ";
-            this.item3.TextSize = new System.Drawing.Size(346, 32);
+            this.item3.TextSize = new System.Drawing.Size(325, 32);
             // 
             // emptySpaceItem2
             // 
@@ -624,9 +622,9 @@
             // windowsUIButtonPanel4
             // 
             this.windowsUIButtonPanel4.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions2.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.windowsUIButtonPanel4.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.windowsUIButtonPanel4.Location = new System.Drawing.Point(5, 3);
             this.windowsUIButtonPanel4.Name = "windowsUIButtonPanel4";
             this.windowsUIButtonPanel4.Size = new System.Drawing.Size(56, 58);
@@ -638,8 +636,8 @@
             // 
             this.windowsUIButtonPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.ForeColor = System.Drawing.Color.White;
@@ -658,7 +656,7 @@
             this.simpleLabelItem3.Size = new System.Drawing.Size(0, 0);
             this.simpleLabelItem3.TextSize = new System.Drawing.Size(50, 20);
             // 
-            // ThemLoaiKhachHang
+            // SuaLoaiKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -666,7 +664,7 @@
             this.Controls.Add(this.wbntThemloaikhachhang);
             this.Controls.Add(this.wbntEmpty);
             this.Controls.Add(this.windowsUIButtonPanel1);
-            this.Name = "ThemLoaiKhachHang";
+            this.Name = "SuaLoaiKhachHang";
             this.Size = new System.Drawing.Size(1318, 696);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);

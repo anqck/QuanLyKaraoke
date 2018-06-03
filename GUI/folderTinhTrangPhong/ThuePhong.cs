@@ -189,7 +189,7 @@ namespace GUI.folderTinhTrangPhong
         private void gridLookUpEdit1View_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             int idxSelected = gridLookUpEdit1View.GetFocusedDataSourceRowIndex();
-            khachHang = new KhachHangDTO((int)dataSource_KhachHang.Rows[idxSelected]["MaKH"], dataSource_KhachHang.Rows[idxSelected]["TenKH"].ToString(), dataSource_KhachHang.Rows[idxSelected]["CMND"].ToString(), dataSource_KhachHang.Rows[idxSelected]["SDT"].ToString(), dataSource_KhachHang.Rows[idxSelected]["DiaChi"].ToString(), (int)dataSource_KhachHang.Rows[idxSelected]["MaLoaiKH"], (int)dataSource_KhachHang.Rows[idxSelected]["DiemTichLuy"]);
+            khachHang = new KhachHangDTO((int)dataSource_KhachHang.Rows[idxSelected]["MaKH"], dataSource_KhachHang.Rows[idxSelected]["TenKH"].ToString(), dataSource_KhachHang.Rows[idxSelected]["CMND"].ToString(), dataSource_KhachHang.Rows[idxSelected]["SDT"].ToString(), dataSource_KhachHang.Rows[idxSelected]["DiaChi"].ToString(), (int)dataSource_KhachHang.Rows[idxSelected]["MaLoaiKH"], (int)dataSource_KhachHang.Rows[idxSelected]["DiemTichLuy"], (DateTime)dataSource_KhachHang.Rows[idxSelected]["NgaySinh"]);
 
 
         }

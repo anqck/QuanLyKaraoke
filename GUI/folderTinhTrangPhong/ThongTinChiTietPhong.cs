@@ -79,7 +79,7 @@ namespace GUI.folderTinhTrangPhong
 
                 txtMaKH.EditValue = khachHang.MaKH;
                 txtTenKH.EditValue = khachHang.TenKH;
-                txtLoaiKH.EditValue = BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenKH;
+                txtLoaiKH.EditValue = BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenLoaiKH;
                 txtSDT.EditValue = khachHang.SDT;
                 txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
 
@@ -320,7 +320,7 @@ namespace GUI.folderTinhTrangPhong
 
                     txtMaKH.EditValue = khachHang.MaKH;
                     txtTenKH.EditValue = khachHang.TenKH;
-                    txtLoaiKH.EditValue = BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenKH;
+                    txtLoaiKH.EditValue = BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenLoaiKH;
                     txtSDT.EditValue = khachHang.SDT;
                     txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
 
@@ -346,5 +346,11 @@ namespace GUI.folderTinhTrangPhong
             this.RefreshDataBinding(phong, thuePhong);
         }
 
+        private void txtTienTraTruoc_TextChanged(object sender, EventArgs e)
+        {
+
+            HoaDonBUS.CapNhatTienTraTruoc(hoaDon, Convert.ToDouble(txtTienTraTruoc.EditValue));
+ 
+        }
     }
 }

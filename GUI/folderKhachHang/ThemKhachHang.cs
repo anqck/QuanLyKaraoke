@@ -19,6 +19,8 @@ namespace GUI.folderKhachHang
         public ThemKhachHang()
         {
             InitializeComponent();
+
+            
         }
         internal void Initialize()
         {
@@ -41,10 +43,11 @@ namespace GUI.folderKhachHang
             comboBoxloaiKH.Properties.Items.Clear();
             foreach (LoaiKhachHangDTO loaiKH in listLoaiKH)
             {
-                comboBoxloaiKH.Properties.Items.Add(new MyComboBoxItem(loaiKH.TenKH, loaiKH.MaLoaiKH));
+                comboBoxloaiKH.Properties.Items.Add(new MyComboBoxItem(loaiKH.TenLoaiKH, loaiKH.MaLoaiKH));
             }
             comboBoxloaiKH.SelectedIndex = 0;
 
+            txtNgaySinh.DateTime = DateTime.Now;
             txxtTenKh.Text = "";
             txxtCMND.Text = "";
             txxtSDT.Text = "";
@@ -66,11 +69,11 @@ namespace GUI.folderKhachHang
                         return;
 
                     //Lưu thông tinh
-                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(spinEdit1.EditValue) )))
+                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(spinEdit1.EditValue),  txtNgaySinh.DateTime)))
                     {
                         //Thông báo thành công
                         //BÌNH
-                        XtraMessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         actionBack();
 
                     }
@@ -78,7 +81,7 @@ namespace GUI.folderKhachHang
                     {
                         //Thông báo thất bại
                         //BÌNH
-                        XtraMessageBox.Show("Thêm khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
                     break;
@@ -95,12 +98,10 @@ namespace GUI.folderKhachHang
         
         private bool ThongBaoHuyThemKhachHang()
         {
-            //Bình
-            if (XtraMessageBox.Show("Bạn có chắc hủy thêm khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
+            if (XtraMessageBox.Show("Bạn có chắc muốn thoát khỏi màn hình này (Mọi thông tin không được lưu sẽ bị mất) ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 return true;
-            }
-            return false;
+            else
+                return false;
         }
 
         private void txxtTenKh_Validating(object sender, CancelEventArgs e)
@@ -108,13 +109,13 @@ namespace GUI.folderKhachHang
             if ((sender as TextEdit).Text == "")
             {
                 txxtTenKh.ErrorText = "Tên khách hàng không được để trống";
-                wbntThemkhachhang.Buttons[0].Properties.Enabled = false;
+                wbButton.Buttons[0].Properties.Enabled = false;
             }
             else
             {
                 txxtTenKh.ErrorText = null;
                 if (KiemTraHopLeCacGiaTriNhapVao())
-                    wbntThemkhachhang.Buttons[0].Properties.Enabled = true;
+                    wbButton.Buttons[0].Properties.Enabled = true;
             }
         }
 

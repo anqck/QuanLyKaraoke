@@ -25,6 +25,8 @@ namespace GUI.folderTinhTrangPhong
         DataTable tienGio;
         DataTable dichVuPhong;
 
+        LoaiKhachHangDTO loaiKhachHang;
+
         Dictionary<int, DichVuPhongDTO> listKhuyenMai;
 
         double TongTien ;
@@ -40,7 +42,7 @@ namespace GUI.folderTinhTrangPhong
         }
 
        
-        public void RefreshDataBinding(ThuePhongDTO thuePhongDTO)
+        public void RefreshDataBinding(ThuePhongDTO thuePhongDTO, KhachHangDTO khachHangDTO)
         {
             this.thuePhong = thuePhongDTO;
 
@@ -49,22 +51,48 @@ namespace GUI.folderTinhTrangPhong
 
             listKhuyenMai = new Dictionary<int, DichVuPhongDTO>();
 
+            RefreshDataBindingTienGio();
+      
 
+             loaiKhachHang = LoaiKhachHangBUS.LayLoaiKhachHang(khachHangDTO);
+
+            DichVuPhongDTO dichVuPhongDTO;
             //Kiểm tra các ngày đặt biệt
             foreach (DTO.ThongTinThanhToanTheoNgay ngay in ThanhToanBUS.TinhTienThuePhong(thuePhong, DateTime.Now).listThongTin)
             {
-                if (ngay.ngay.date.DayOfYear == DateTime.Now.DayOfYear)
+                
+                //Sinh nhật
+                if (ngay.ngay.date.Day == khachHangDTO.NgaySinh.Day && ngay.ngay.date.Month == khachHangDTO.NgaySinh.Month)
                 {
-                    DichVuPhongDTO dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -1000);
+                    
+                    if (TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat > loaiKhachHang.SoTienGiamGiaSinhNhat_Max)
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGiaSinhNhat_Max);
+                    else if ((TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat < loaiKhachHang.SoTienGiamGiaSinhNhat_Min))
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGiaSinhNhat_Min);
+                    else
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat);
 
-                    listKhuyenMai.Add(dichVuPhongDTO.MaDVP,dichVuPhongDTO);
+                    listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
                 }
+
+             
             }
 
-            RefreshDataBindingTienGio();
+            //KM Loại KH
+            if (TongTien * loaiKhachHang.PhanTramGiamGia > loaiKhachHang.SoTienGiamGia_Max)
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count+1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGia_Max);
+            else if ((TongTien * loaiKhachHang.PhanTramGiamGia < loaiKhachHang.SoTienGiamGia_Min))
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGia_Min);
+            else
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, TongTien * loaiKhachHang.PhanTramGiamGia);
+
+            listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
+
             RefreshDataBindingDichVuPhong();
 
-           
+
+
+
         }
         public void RefreshDataBinding_ReadOnly(ThuePhongDTO thuePhong)
         {
@@ -123,7 +151,7 @@ namespace GUI.folderTinhTrangPhong
         internal void AddButtonXoaDichVu(WindowsUIButton windowsUIButton)
         {
             ButtonXoaDichVu = windowsUIButton;
-            ButtonXoaDichVu.Click += XoaDichVu;
+          
         }
 
         void RefreshDataBindingDichVuPhong()
@@ -341,20 +369,23 @@ namespace GUI.folderTinhTrangPhong
                 CalcTongTienAction();
             }
         }
-        void XoaDichVu(object sender, EventArgs e)
+        public void XoaDichVu()
         {
-            if (XtraMessageBox.Show("Bạn có chắc muốn xóa dịch vụ/khuyến mãi "+dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["TenDV"] + "' ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Bạn có chắc muốn xóa dịch vụ/khuyến mãi " + dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["TenDV"] + "' ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
             {
-                if (dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["colType"].ToString() == "Khuyến mãi")
-                    listKhuyenMai.Remove((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
-                else
-                    DichVuPhongBUS.XoaDichVuPhong((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
-
-
-                RefreshDataBindingDichVuPhong();
-                CalcTongTienAction();
+                return;
             }
+
+            if (dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["colType"].ToString() == "Khuyến mãi")
+                listKhuyenMai.Remove((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
+            else
+                DichVuPhongBUS.XoaDichVuPhong((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
+
+
+            RefreshDataBindingDichVuPhong();
+            CalcTongTienAction();
         }
+     
 
         private void Args_Showing(object sender, XtraMessageShowingArgs e)
         {

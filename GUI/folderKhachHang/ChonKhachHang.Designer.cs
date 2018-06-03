@@ -39,6 +39,7 @@
             this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
+            this.colNgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.windowsUIButtonPanel1.SuspendLayout();
@@ -74,6 +75,7 @@
             this.colCMND,
             this.colSDT,
             this.colDiaChi,
+            this.colNgaySinh,
             this.colDiemTichLuy,
             this.colLoaiKhachHang});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
@@ -140,10 +142,10 @@
             // colLoaiKhachHang
             // 
             this.colLoaiKhachHang.Caption = "Loại Khách Hàng";
-            this.colLoaiKhachHang.FieldName = "LoaiKH";
+            this.colLoaiKhachHang.FieldName = "TenLoaiKH";
             this.colLoaiKhachHang.Name = "colLoaiKhachHang";
             this.colLoaiKhachHang.Visible = true;
-            this.colLoaiKhachHang.VisibleIndex = 6;
+            this.colLoaiKhachHang.VisibleIndex = 7;
             // 
             // windowsUIButtonPanel1
             // 
@@ -172,6 +174,16 @@
             this.searchControl1.Properties.ShowSearchButton = false;
             this.searchControl1.Size = new System.Drawing.Size(909, 34);
             this.searchControl1.TabIndex = 0;
+            // 
+            // colNgaySinh
+            // 
+            this.colNgaySinh.Caption = "Ngày Sinh";
+            this.colNgaySinh.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.colNgaySinh.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colNgaySinh.FieldName = "NgaySinh";
+            this.colNgaySinh.Name = "colNgaySinh";
+            this.colNgaySinh.Visible = true;
+            this.colNgaySinh.VisibleIndex = 6;
             // 
             // ChonKhachHang
             // 
@@ -204,5 +216,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn colDiemTichLuy;
         private DevExpress.XtraGrid.Columns.GridColumn colLoaiKhachHang;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgaySinh;
     }
 }

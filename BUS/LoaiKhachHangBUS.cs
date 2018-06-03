@@ -24,9 +24,31 @@ namespace BUS
         {
             return DAL.LoaiKhachHangDAL.LayLoaiKhachHang(khachHang);
         }
+
+        public static LoaiKhachHangDTO LayLoaiKhachHang(int maLoaiKH)
+        {
+            return DAL.LoaiKhachHangDAL.LayLoaiKhachHang(maLoaiKH);
+        }
         public static string GetFilterString_LoaiKhachHang(string str)
         {
             return "[TenLoaiKH] = '" + str + "'";
+        }
+
+        public static bool LuuThongTinLoaiKhachHang(LoaiKhachHangDTO loaiKhachHangDTO)
+        {
+            return DAL.LoaiKhachHangDAL.LuuThongTinLoaiKhachHang(loaiKhachHangDTO);
+        }
+        public static DataTable LayTatCaLoaiKhachHang_DataTable()
+        {
+            return DAL.LoaiKhachHangDAL.LayTatCaLoaiKhachHang_DataTable();
+        }
+        public static bool CapNhatThongTinLoaiKhachHang(LoaiKhachHangDTO loaiKhachHangDTO)
+        {
+            return DAL.LoaiKhachHangDAL.CapNhatThongTinLoaiKhachHang(loaiKhachHangDTO);
+        }
+        public static bool XoaLoaiKhachHang(int maLoaiKH)
+        {
+            return DAL.LoaiKhachHangDAL.XoaLoaiKhachHang(maLoaiKH);
         }
     }
 }

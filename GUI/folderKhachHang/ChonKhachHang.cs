@@ -29,7 +29,7 @@ namespace GUI.folderKhachHang
         internal KhachHangDTO LayKhachHangDaChon()
         {
             int idxSelectedRow = gridView1.GetFocusedDataSourceRowIndex();
-            return new KhachHangDTO((int)gridDataSource.Rows[idxSelectedRow]["MaKH"], gridDataSource.Rows[idxSelectedRow]["TenKH"].ToString(), gridDataSource.Rows[idxSelectedRow]["CMND"].ToString(), gridDataSource.Rows[idxSelectedRow]["SDT"].ToString(), gridDataSource.Rows[idxSelectedRow]["DiaChi"].ToString(), (int)gridDataSource.Rows[idxSelectedRow]["MaLoaiKH"], (int)gridDataSource.Rows[idxSelectedRow]["DiemTichLuy"]);
+            return new KhachHangDTO((int)gridDataSource.Rows[idxSelectedRow]["MaKH"], gridDataSource.Rows[idxSelectedRow]["TenKH"].ToString(), gridDataSource.Rows[idxSelectedRow]["CMND"].ToString(), gridDataSource.Rows[idxSelectedRow]["SDT"].ToString(), gridDataSource.Rows[idxSelectedRow]["DiaChi"].ToString(), (int)gridDataSource.Rows[idxSelectedRow]["MaLoaiKH"], (int)gridDataSource.Rows[idxSelectedRow]["DiemTichLuy"], (DateTime)gridDataSource.Rows[idxSelectedRow]["NgaySinh"]);
         }
 
    

@@ -21,6 +21,8 @@ namespace GUI.folderKhachHang
         public SuaKhachHang()
         {
             InitializeComponent();
+
+    
         }
         public void RefreshDataBinding(int maKH)
         {
@@ -43,12 +45,13 @@ namespace GUI.folderKhachHang
                 cmbLoaiKH.Properties.Items.Clear();
                 foreach (LoaiKhachHangDTO loaiKH in listLoaiKH)
                 {
-                    cmbLoaiKH.Properties.Items.Add(new MyComboBoxItem(loaiKH.TenKH, loaiKH.MaLoaiKH));
+                    cmbLoaiKH.Properties.Items.Add(new MyComboBoxItem(loaiKH.TenLoaiKH, loaiKH.MaLoaiKH));
                     if (loaiKH.MaLoaiKH == khachHangDTO.MaLoaiKH)
                         cmbLoaiKH.SelectedIndex = cmbLoaiKH.Properties.Items.Count - 1;
                 }
 
 
+                txtNgaySinh.DateTime = khachHangDTO.NgaySinh;
                 txtMaKH.EditValue = khachHangDTO.MaKH.ToString();
                 txtTenKH.EditValue = khachHangDTO.TenKH;
                 txtCMND.EditValue = khachHangDTO.CMND;
@@ -82,7 +85,7 @@ namespace GUI.folderKhachHang
                         return;
 
                     //Lưu thông tinh
-                    if (KhachHangBUS.CapNhatThongTinKhachHang(new KhachHangDTO(Convert.ToInt32(txtMaKH.Text), txtTenKH.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, listLoaiKH[cmbLoaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(txtDiemtichluy.EditValue) )))
+                    if (KhachHangBUS.CapNhatThongTinKhachHang(new KhachHangDTO(Convert.ToInt32(txtMaKH.Text), txtTenKH.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, listLoaiKH[cmbLoaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(txtDiemtichluy.EditValue),txtNgaySinh.DateTime )))
                     {
                         //Thông báo thành công
                         XtraMessageBox.Show("Cập nhật khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -105,11 +108,10 @@ namespace GUI.folderKhachHang
         }
         bool ThongBaoHuyCapNhatKhachHang()
         {
-            if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
+            if (XtraMessageBox.Show("Bạn có chắc muốn thoát khỏi màn hình này (Mọi thông tin không được lưu sẽ bị mất) ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 return true;
-            }
-            return false;
+            else
+                return false;
         }
 
         private void txtTenKH_Validating(object sender, CancelEventArgs e)

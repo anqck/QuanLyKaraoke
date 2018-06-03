@@ -23,8 +23,12 @@ namespace GUI
 
             dichVu1.AddGoToLoaiDichVu(GoToHomeLoaiDichVu);
             loaiDichVu1.AddGoToDichVu(GoToHomeDichVu);
+
             quanLyPhong1.goToQuanLyLoaiPhong = GoToHomeLoaiPhong;
             loaiPhong1.goToQuanLyPhong = GoToHomePhong;
+
+            khachHang1.goToLoaiKhachHang = GoToHomeLoaiKhachHang;
+            loaiKhachHang1.goToKhachHang = GoToHomeKhachHang;
         }
 
 
@@ -987,7 +991,6 @@ namespace GUI
         {
             
             MenuBar.HideDropDownWindow();
-
             GoToHomeLoaiDichVu();
 
 
@@ -998,6 +1001,20 @@ namespace GUI
             loaiDichVu1.RefreshDataBinding();
             loaiDichVu1.GoToHomePageWithoutAnimation();
             PageControl.SelectedPage = pageLoaidichvu;
+        }
+
+        public void GoToHomeKhachHang()
+        {
+            khachHang1.RefreshDataBinding();
+            khachHang1.GoToHomePageWithoutAnimation();
+            PageControl.SelectedPage = pageKhachhang;
+        }
+
+        public void GoToHomeLoaiKhachHang()
+        {
+            loaiKhachHang1.RefreshDataBinding();
+            loaiKhachHang1.GoToHomePageWithoutAnimation();
+            PageControl.SelectedPage = pageLoaikhachhang;
         }
 
         public void GoToHomeDichVu()
@@ -1023,6 +1040,7 @@ namespace GUI
         private void tileBarItem_LoaiKH_ItemClick(object sender, TileItemEventArgs e)
         {
             MenuBar.HideDropDownWindow();
+            GoToHomeLoaiKhachHang();
             PageControl.SelectedPage = pageLoaikhachhang;
 
         }

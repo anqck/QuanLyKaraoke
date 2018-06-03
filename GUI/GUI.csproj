@@ -194,6 +194,12 @@
     <Compile Include="folderKhachHang\SuaKhachHang.Designer.cs">
       <DependentUpon>SuaKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderKhachHang\SuaLoaiKhachHang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhachHang\SuaLoaiKhachHang.Designer.cs">
+      <DependentUpon>SuaLoaiKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderKhachHang\ThemKhachHang.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -404,6 +410,9 @@
     <EmbeddedResource Include="folderKhachHang\SuaKhachHang.resx">
       <DependentUpon>SuaKhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderKhachHang\SuaLoaiKhachHang.resx">
+      <DependentUpon>SuaLoaiKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\ThemKhachHang.resx">
       <DependentUpon>ThemKhachHang.cs</DependentUpon>

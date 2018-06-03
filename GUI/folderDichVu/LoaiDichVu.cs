@@ -34,6 +34,7 @@ namespace GUI.folderDichVu
 
         public void GoToHomePageWithoutAnimation()
         {
+            RefreshDataBinding();
             LoaiDichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             LoaiDichVuPagecontrol.SelectedPageIndex = 0;
             LoaiDichVuPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
@@ -41,8 +42,8 @@ namespace GUI.folderDichVu
 
         public void GoToHomePageWithAnimation()
         {
-                     LoaiDichVuPagecontrol.SelectedPageIndex = 0;
-            
+            RefreshDataBinding();
+             LoaiDichVuPagecontrol.SelectedPageIndex = 0;            
         }
 
         public void RefreshDataBinding()

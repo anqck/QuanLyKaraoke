@@ -15,7 +15,11 @@ namespace DAL
     {
         public static int PhatSinhMaDichVu()
         {
-            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.dichvu;").Rows[0][0]);
+            DataTable dt = DataProvider.ExecuseQuery("SELECT quanlykaraoke.dichvu.MaDV FROM quanlykaraoke.dichvu ORDER BY quanlykaraoke.dichvu.MaDV DESC LIMIT 1;");
+            if (dt.Rows.Count == 0)
+                return 1;
+            else
+                return Convert.ToInt32(dt.Rows[0][0]) + 1;
         }
 
         public static bool LuuThongTinDichVu(DichVuDTO dichVuDTO)

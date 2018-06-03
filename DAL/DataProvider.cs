@@ -13,7 +13,7 @@ namespace DAL
 {
     public class DataProvider
     {
-        private static string connStr = "server=localhost;user=root;database=quanlykaraoke;port=3306;password=1";
+        private static string connStr = "server=localhost;user=root;database=quanlykaraoke;port=3306;password=1;Convert Zero Datetime=True";
         private static MySqlConnection conn;
 
         public static void InitalizeConnection()

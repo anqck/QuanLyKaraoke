@@ -55,7 +55,7 @@ namespace GUI
                     cmbLoaiKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     foreach (LoaiKhachHangDTO loaiKH in listLoaiKhachHang)
                     {
-                        cmbLoaiKH.Items.Add(new MyComboBoxItem(loaiKH.TenKH, loaiKH.MaLoaiKH));
+                        cmbLoaiKH.Items.Add(new MyComboBoxItem(loaiKH.TenLoaiKH, loaiKH.MaLoaiKH));
                     }
 
                     break;

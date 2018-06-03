@@ -17,7 +17,7 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThanhToan : DevExpress.XtraEditors.XtraUserControl
     {
-        private PhongDTO phong;
+
         private KhachHangDTO khachHang;
         private HoaDonDTO hoaDon;
         private ThuePhongDTO thuePhong;
@@ -30,11 +30,7 @@ namespace GUI.folderTinhTrangPhong
         {
             InitializeComponent();
 
-            //snapControl.DataSource = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
-            //snapControl.LoadDocument("C:\\Users\\Public\\Documents\\DevExpress Demos 17.1\\Components\\WinForms\\DevExpress.HybridApp.Win\\CS\\DevExpress.HybridApp.Win\\Resources\\MailMerge\\1.snx", DevExpress.Snap.Core.API.SnapDocumentFormat.Snap);
-            //snapControl.ReadOnly = true;
 
-            //snapControl.Document.DataSource = ds;
         }
         public void RefreshDataBinding(ThuePhongDTO thuePhongDTO)
         {
@@ -44,7 +40,7 @@ namespace GUI.folderTinhTrangPhong
 
             txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
             txtNgayThanhToan.Time = DateTime.Now;
-            txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
+            
             
            
 
@@ -59,7 +55,7 @@ namespace GUI.folderTinhTrangPhong
                 chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
 
 
-                chiTietThanhToanPhongThanhToan.RefreshDataBinding(thuePhong);
+                chiTietThanhToanPhongThanhToan.RefreshDataBinding(thuePhong, khachHang);
                 chiTietThanhToanPhongThanhToan.GetTongTienGio();
                 //thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
                 //DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
@@ -97,6 +93,7 @@ namespace GUI.folderTinhTrangPhong
             }
             this.tabbedControlGroup1.SelectedTabPageIndex = 0;
 
+            txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
             CalcTongTien();
         }
 
@@ -192,6 +189,9 @@ namespace GUI.folderTinhTrangPhong
             {
                 case "Thêm Dịch Vụ":
                     ((ChiTietThanhToanPhong)tabbedControlGroup1.SelectedTabPage.Tag).ThemDichVu();
+                    break;
+                case "Xóa Dịch Vụ":
+                    ((ChiTietThanhToanPhong)tabbedControlGroup1.SelectedTabPage.Tag).XoaDichVu();
                     break;
 
                 case "Thanh toán":

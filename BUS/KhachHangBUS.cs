@@ -30,13 +30,19 @@ namespace BUS
         {
             return DAL.KhachHangDAL.XoaKhachHang(maKH);
         }
+
+        public static DataTable LayTatCaKhachHang_DataTable()
+        {
+            return DAL.KhachHangDAL.LayTatCaKhachHang_DataTable();
+        }
+
         public static KhachHangDTO LayKhachHang(int maKH)
         {
             return DAL.KhachHangDAL.LayKhachHang(maKH);
         }
         public static int PhatSinhMaKH()
         {
-            return DAL.KhachHangDAL.PhatSinhKH();
+            return DAL.KhachHangDAL.PhatSinhMaKH();
         }
         public static bool CapNhatThongTinKhachHang(KhachHangDTO khachHangDTO)
         {
