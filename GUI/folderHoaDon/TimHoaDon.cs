@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using BUS;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+using DevExpress.XtraGrid.Views.Grid;
+using DevExpress.XtraGrid.Views.Grid.ViewInfo;
 
 namespace GUI.folderHoaDon
 {
@@ -27,7 +29,7 @@ namespace GUI.folderHoaDon
             InitializeComponent();
 
             rangeControl1.RangeChanged += OnRangeChanged;
-
+            thanhToan1.goBackHome = GoBackHome;
             
         }
 
@@ -148,6 +150,10 @@ namespace GUI.folderHoaDon
         {
             switch(e.Button.Properties.Tag.ToString())
             {
+                case "Xem Hóa Đơn":
+                    thanhToan1.RefreshDataBinding_ReadOnly(HoaDonBUS.LayThongTinHoaDon((int)dtHoaDon.Rows[gridViewHoaDon.GetFocusedDataSourceRowIndex()]["MaHoaDon"]));
+                    navigationFrame1.SelectedPage = navigationPage2;
+                    break;
                 case "Bộ Lọc":
                     DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction action = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction() { Caption = "BỘ LỌC", Description = "Close the application?" };
                     DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand command1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand() { Text = "Lọc", Result = System.Windows.Forms.DialogResult.Yes };
@@ -205,6 +211,16 @@ namespace GUI.folderHoaDon
             //}
             //chartControl.Series["Doanh thu theo thuê phòng"].Visible = true;
             //chartControl.Animate();
+        }
+
+        private void gridViewHoaDon_DoubleClick(object sender, EventArgs e)
+        {
+         
+        }
+
+        public void GoBackHome()
+        {
+            navigationFrame1.SelectedPage = navigationPage1;
         }
     }
 }

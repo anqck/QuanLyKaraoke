@@ -54,6 +54,7 @@
             this.txtTongTienDichVu = new DevExpress.XtraEditors.TextEdit();
             this.txtTongTienKhuyenMai = new DevExpress.XtraEditors.TextEdit();
             this.txtNgayThanhToan = new DevExpress.XtraEditors.TimeEdit();
+            this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.labelThanhtoan = new DevExpress.XtraLayout.SimpleLabelItem();
             this.emptySpaceItem4 = new DevExpress.XtraLayout.EmptySpaceItem();
@@ -80,7 +81,6 @@
             this.snapControl = new DevExpress.Snap.SnapControl();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.windowsUIButtonPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
             ((System.ComponentModel.ISupportInitialize)(this.xrDesignBarManager1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.recentlyUsedItemsComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.designRepositoryItemComboBox1)).BeginInit();
@@ -94,6 +94,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTienDichVu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTienKhuyenMai.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayThanhToan.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelThanhtoan)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).BeginInit();
@@ -116,7 +117,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             this.windowsUIButtonPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // xrDesignBarManager1
@@ -357,6 +357,36 @@
             this.txtNgayThanhToan.Size = new System.Drawing.Size(50, 34);
             this.txtNgayThanhToan.StyleController = this.layoutControl1;
             this.txtNgayThanhToan.TabIndex = 5;
+            // 
+            // txtTienTraTruoc
+            // 
+            this.txtTienTraTruoc.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtTienTraTruoc.Location = new System.Drawing.Point(699, 63);
+            this.txtTienTraTruoc.Name = "txtTienTraTruoc";
+            this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
+            this.txtTienTraTruoc.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtTienTraTruoc.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtTienTraTruoc.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.White;
+            this.txtTienTraTruoc.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtTienTraTruoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtTienTraTruoc.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtTienTraTruoc.Properties.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.txtTienTraTruoc.Properties.Mask.EditMask = "###,###,##0 VNĐ";
+            this.txtTienTraTruoc.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtTienTraTruoc.Size = new System.Drawing.Size(220, 34);
+            this.txtTienTraTruoc.StyleController = this.layoutControl1;
+            this.txtTienTraTruoc.TabIndex = 14;
+            this.txtTienTraTruoc.EditValueChanged += new System.EventHandler(this.txtTienTraTruoc_EditValueChanged);
             // 
             // layoutControlGroup1
             // 
@@ -652,29 +682,6 @@
             this.windowsUIButtonPanel2.Text = "windowsUIButtonPanel2";
             this.windowsUIButtonPanel2.Click += new System.EventHandler(this.windowsUIButtonPanel2_Click);
             // 
-            // txtTienTraTruoc
-            // 
-            this.txtTienTraTruoc.Location = new System.Drawing.Point(699, 63);
-            this.txtTienTraTruoc.Name = "txtTienTraTruoc";
-            this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
-            this.txtTienTraTruoc.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtTienTraTruoc.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtTienTraTruoc.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtTienTraTruoc.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txtTienTraTruoc.Properties.Increment = new decimal(new int[] {
-            1000,
-            0,
-            0,
-            0});
-            this.txtTienTraTruoc.Properties.Mask.EditMask = "###,###,##0 VNĐ";
-            this.txtTienTraTruoc.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtTienTraTruoc.Size = new System.Drawing.Size(220, 34);
-            this.txtTienTraTruoc.StyleController = this.layoutControl1;
-            this.txtTienTraTruoc.TabIndex = 14;
-            this.txtTienTraTruoc.EditValueChanged += new System.EventHandler(this.txtTienTraTruoc_EditValueChanged);
-            // 
             // ThanhToan
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -704,6 +711,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTienDichVu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTongTienKhuyenMai.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayThanhToan.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.labelThanhtoan)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem4)).EndInit();
@@ -726,7 +734,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             this.windowsUIButtonPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -19,6 +19,7 @@ namespace DTO
         public string GhiChu { get; set; }
         public int MaKH { get; set; }
 
+
         public HoaDonDTO(int maHoaDon, int maNhanVienThanhToan, double tongTienThanhToan, double tienTraTruoc, DateTime ngayThanhToan, double soTienKhuyenMai, string ghiChu, int maKH)
         {
             MaHoaDon = maHoaDon;

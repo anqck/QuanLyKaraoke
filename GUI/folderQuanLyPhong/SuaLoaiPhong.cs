@@ -18,6 +18,7 @@ namespace GUI.folderQuanLyPhong
 {
     public partial class SuaLoaiPhong : DevExpress.XtraEditors.XtraUserControl
     {
+        public Action goToHomeLoaiPhong { get; set; }
         LoaiPhongDTO loaiPhong;
 
         public SuaLoaiPhong()
@@ -147,7 +148,7 @@ namespace GUI.folderQuanLyPhong
                             if (spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString() == "")
                             {
                                 //Thông báo có cell trống
-                                //BÌNH
+                                XtraMessageBox.Show("Không thể thêm được do có đơn giá trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 return;
                             }
@@ -187,13 +188,22 @@ namespace GUI.folderQuanLyPhong
                     BUS.DonGia_LoaiPhongBUS.ThemDonGiaTheoKhoangThoiGian(giaTheoTuan);
 
                     //Thông báo thành công
-                    //BÌNH
+                    XtraMessageBox.Show("Sửa loại phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    goToHomeLoaiPhong();
                     break;
                 case "Hủy":
+                    if (XtraMessageBox.Show("Bạn có muốn thoát khỏi thêm phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        goToHomeLoaiPhong();
                     break;
 
             }
 
+        }
+
+        private void wbntBack_themloaiphong_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có muốn thoát khỏi thêm phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                goToHomeLoaiPhong();
         }
     }
 }

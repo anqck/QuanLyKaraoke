@@ -39,7 +39,7 @@ namespace GUI.folderQuanLyPhong
                     {
                         //Thông báo thành công
                         //BÌNH
-                        XtraMessageBox.Show("Thêm phòng thành công!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         actionBack();
 
                     }
@@ -47,7 +47,7 @@ namespace GUI.folderQuanLyPhong
                     {
                         //Thông báo thất bại
                         //BÌNH
-                        XtraMessageBox.Show("Thêm phòng thất bại!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm phòng thất bại!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
 
                     break;
@@ -65,7 +65,7 @@ namespace GUI.folderQuanLyPhong
         private bool ThongBaoHuyThemPhong()
         {
             //Bình
-            if (XtraMessageBox.Show("Bạn có chắc hủy thêm khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn có chắc hủy thêm phòng ?", "Xác nhận", MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.OK)
             {
                 return true;
             }
@@ -98,8 +98,8 @@ namespace GUI.folderQuanLyPhong
             //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
             if(listLoaiPhong.Count == 0)
             {
-                //BÌNH
-                XtraMessageBox.Show("Cần thêm loại phòng trước!", "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Cần phải thêm loại phòng trước!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
+                actionBack();
             }
 
             cmbLoaiPhong.Properties.Items.Clear();
@@ -112,12 +112,7 @@ namespace GUI.folderQuanLyPhong
             //Lấy tất cả các tầng
             cmbTang.Properties.Items.Clear();
             List<string> listTang = PhongBUS.LayCacTangCoSan();
-            //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
-            if (listLoaiPhong.Count == 0)
-            {
-                //BÌNH
-                XtraMessageBox.Show("Cần thêm các tầng trước!", "Thông báo", MessageBoxButtons.OK);
-            }
+           
 
             foreach (string tang in listTang)
             {

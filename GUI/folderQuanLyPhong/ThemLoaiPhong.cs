@@ -13,11 +13,13 @@ using DevExpress.Spreadsheet;
 using DevExpress.XtraSpreadsheet;
 using DevExpress.Spreadsheet.Export;
 using static DTO.LoaiPhongDTO;
+using BUS;
 
 namespace GUI.folderQuanLyPhong
 {
     public partial class ThemLoaiPhong : DevExpress.XtraEditors.XtraUserControl
     {
+        public Action goToHomeLoaiPhong { get; set; }
         public ThemLoaiPhong()
         {
             InitializeComponent();
@@ -37,7 +39,7 @@ namespace GUI.folderQuanLyPhong
             
 
             //Phát sinh mã loại phòng
-            textEdit2.Text = BUS.LoaiPhongBUS.PhatSinhLoaiMaPhong().ToString();
+            textEdit2.Text = BUS.LoaiPhongBUS.PhatSinhLoaiMaLoaiPhong().ToString();
 
             ValidateChildren();
 
@@ -118,7 +120,8 @@ namespace GUI.folderQuanLyPhong
                             if (spreadsheetControl1.Document.Worksheets[0].Cells[j, i].Value.ToString() == "")
                             {
                                 //Thông báo có cell trống
-                                //BÌNH
+
+                                XtraMessageBox.Show("Không thể thêm được do có đơn giá trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                                 return;
                             }
@@ -155,12 +158,18 @@ namespace GUI.folderQuanLyPhong
                         giaTheoTuan.listDonGiaTheoNgay.Add(donGiaNgay);
 
                     }
+                    BUS.LoaiPhongBUS.ThemLoaiPhong(LoaiPhongBUS.PhatSinhLoaiMaLoaiPhong(), txtTenLoaiPhong.Text);
                     BUS.DonGia_LoaiPhongBUS.ThemDonGiaTheoKhoangThoiGian(giaTheoTuan);
 
                     //Thông báo thành công
-                    //BÌNH
+    
+                    XtraMessageBox.Show("Thêm loại phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    goToHomeLoaiPhong();
                     break;
                 case "Hủy":
+                    if (XtraMessageBox.Show("Bạn có muốn thoát khỏi thêm phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                        goToHomeLoaiPhong();
+
                     break;
 
             }
@@ -182,6 +191,17 @@ namespace GUI.folderQuanLyPhong
         private void txtTenLoaiPhong_TextChanged(object sender, EventArgs e)
         {
             Validate();
+        }
+
+        private void wbntBack_themloaiphong_Click(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Bạn có muốn thoát khỏi thêm phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                goToHomeLoaiPhong();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
         }
     }
 }

@@ -23,7 +23,8 @@ namespace GUI
 
             dichVu1.AddGoToLoaiDichVu(GoToHomeLoaiDichVu);
             loaiDichVu1.AddGoToDichVu(GoToHomeDichVu);
-
+            quanLyPhong1.goToQuanLyLoaiPhong = GoToHomeLoaiPhong;
+            loaiPhong1.goToQuanLyPhong = GoToHomePhong;
         }
 
 
@@ -923,7 +924,7 @@ namespace GUI
                 case "menuQuanlyphong":
                     PageControl.SelectedPage = pageQuanlyphong;
                     quanLyPhong1.RefreshDataBinding();
-                    quanLyPhong1.GoToPage(0);
+                    quanLyPhong1.GoToPage_WithoutAnimation(0);
                     break;
                 case "menuKhachhang":
                     PageControl.SelectedPage = pageKhachhang;
@@ -1004,6 +1005,19 @@ namespace GUI
             dichVu1.RefreshDataBinding();
             dichVu1.GoToPage(0);
             PageControl.SelectedPage = pageDichvu;
+        }
+
+        public void GoToHomePhong()
+        {
+            quanLyPhong1.RefreshDataBinding();
+            quanLyPhong1.GoToPage_WithoutAnimation(0);
+            PageControl.SelectedPage = pageQuanlyphong;
+        }
+        public void GoToHomeLoaiPhong()
+        {
+            loaiPhong1.RefreshDataBinding();
+            loaiPhong1.GoToPage_WithoutAnimation(0);
+            PageControl.SelectedPage = pageLoaiphong;
         }
 
         private void tileBarItem_LoaiKH_ItemClick(object sender, TileItemEventArgs e)

@@ -86,11 +86,9 @@ namespace GUI.folderDichVu
             else
             {
                 wbntSuadichvu.Buttons[1].Properties.Enabled = true;
-
-                if(gridView1.GetVisibleDetailRelationIndex(gridView1.FocusedRowHandle) != -1)
-                    wbntSuadichvu.Buttons[2].Properties.Enabled = true;
-                else
-                    wbntSuadichvu.Buttons[2].Properties.Enabled = false;
+                wbntSuadichvu.Buttons[2].Properties.Enabled = true;
+                
+            
             }
         }
 
@@ -116,25 +114,28 @@ namespace GUI.folderDichVu
                     //Kiểm tra xem có chọn dòng nào không
                     if(gridView1.GetFocusedRow() == null)
                     {
-                        //BÌNH
+                 
 
                         return;
                     }
 
                     //Kiểm tra xem loại dịch vụ đó còn dịch vụ nào không
-                    if (BUS.DichVuBUS.DemSoLuongDichVu((int)gridView1.GetFocusedRowCellValue(colMaLDV) )!= 0)
+                    DataRowView rowView = gridView1.GetRow(gridView1.FocusedRowHandle) as DataRowView;
+                    DataView view = rowView.CreateChildView("Thông tin chi tiết dịch vụ");
+                    if (view.Count != 0)
                     {
-                        XtraMessageBox.Show("Chỉ có thể xóa những loại dịch vụ không có dịch vụ nào!", "Lỗi", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Chỉ có thể xóa những loại dịch vụ không tồn tại dịch vụ nào!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
+                
 
                     //Thông báo xác nhận
-                    if (XtraMessageBox.Show("Bạn có chắc xóa loại dịch vụ '" + gridView1.GetFocusedRowCellValue(colTenLDV).ToString() +"' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    if (XtraMessageBox.Show("Bạn có chắc xóa loại dịch vụ '" + gridView1.GetFocusedRowCellValue(colTenLDV).ToString() +"' ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
                         BUS.LoaiDichVuBUS.XoaLoaiDichVu((int)gridView1.GetFocusedRowCellValue(colMaLDV));
 
                         //Thông báo thành công/thất bại
-                        XtraMessageBox.Show("Xóa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Xóa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         RefreshDataBinding();
                     }
 
@@ -143,15 +144,6 @@ namespace GUI.folderDichVu
             }
         }
 
-        private void wbntBack_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            LoaiDichVuPagecontrol.SelectedPage = PageLoaidichvu;
-        }
-
-        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            LoaiDichVuPagecontrol.SelectedPage = PageLoaidichvu;
-        }
 
         private void LoaiDichVuPagecontrol_SelectedPageChanging(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangingEventArgs e)
         {

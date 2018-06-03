@@ -37,7 +37,7 @@ namespace GUI.folderKhachHang
                 if (listLoaiKH.Count == 0)
                 {
                     //BÌNH
-                    XtraMessageBox.Show("Cần thêm loại khách hàng trước!", "Thông báo", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Cần thêm loại khách hàng trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 cmbLoaiKH.Properties.Items.Clear();
@@ -85,16 +85,14 @@ namespace GUI.folderKhachHang
                     if (KhachHangBUS.CapNhatThongTinKhachHang(new KhachHangDTO(Convert.ToInt32(txtMaKH.Text), txtTenKH.Text, txtCMND.Text, txtSDT.Text, txtDiaChi.Text, listLoaiKH[cmbLoaiKH.SelectedIndex].MaLoaiKH, Convert.ToInt32(txtDiemtichluy.EditValue) )))
                     {
                         //Thông báo thành công
-                        //BÌNH
-                        XtraMessageBox.Show("Cập nhật khách hàng thành công!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Cập nhật khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         actionBack();
                     }
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
-                        XtraMessageBox.Show("Cập nhật khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Cập nhật khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case "Hủy":

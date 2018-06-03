@@ -16,6 +16,7 @@ namespace DTO
 
         public int MaHoaDon { get; set; }
 
+        public double TienGio { get; set; }
 
         public ThuePhongDTO()
         {
@@ -24,7 +25,7 @@ namespace DTO
            
         }
 
-        public ThuePhongDTO(int maThuePhong, int maPhong, DateTime gioThuePhong, DateTime gioTraPhong, int maHoaDon)
+        public ThuePhongDTO(int maThuePhong, int maPhong, DateTime gioThuePhong, DateTime gioTraPhong, int maHoaDon,double tienGio)
         {
             MaThuePhong = maThuePhong;
             MaPhong = maPhong;
@@ -33,6 +34,7 @@ namespace DTO
             GioTraPhong = gioTraPhong;
 
             MaHoaDon = maHoaDon;
+            TienGio = tienGio;
         }
     }
 }

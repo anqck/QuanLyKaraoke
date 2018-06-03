@@ -93,6 +93,8 @@
             // colDonGia
             // 
             this.colDonGia.Caption = "Đơn Giá";
+            this.colDonGia.DisplayFormat.FormatString = "###,###,##0 VNĐ";
+            this.colDonGia.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDonGia.FieldName = "DonGia";
             this.colDonGia.Name = "colDonGia";
             this.colDonGia.Visible = true;
@@ -327,6 +329,7 @@
             // 
             // suaLoaiDichVu1
             // 
+            this.suaLoaiDichVu1.actionBack = null;
             this.suaLoaiDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.suaLoaiDichVu1.Location = new System.Drawing.Point(0, 0);
             this.suaLoaiDichVu1.Name = "suaLoaiDichVu1";

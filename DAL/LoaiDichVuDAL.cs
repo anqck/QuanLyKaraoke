@@ -45,7 +45,7 @@ namespace DAL
         {
             try
             {
-                DAL.DataProvider.ExecuseQuery("DELECT FROM quanlykaraoke.loaidichvu WHERE MaLDV = '" + maLDV.ToString() + "';");
+                DAL.DataProvider.ExecuseQuery("DELETE FROM quanlykaraoke.loaidichvu WHERE MaLDV = '" + maLDV.ToString() + "';");
                 return true;
             }
                 catch(Exception e)

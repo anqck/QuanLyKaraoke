@@ -51,5 +51,22 @@ namespace DAL
                 return false;
             }
         }
+        public static bool ThemLoaiPhong(int maLoaiPhong, string strTenLoaiPhong)
+        {
+            DAL.DataProvider.ExecuseNonQuery("INSERT INTO loaiphong(MaLP,TenLoaiPhong) VALUES ('"+maLoaiPhong.ToString()+"','"+ strTenLoaiPhong + "');");
+            return true;
+        }
+        public static bool XoaDonGiaPhong(int maLoaiPhong)
+        {
+            try
+            {
+                DAL.DataProvider.ExecuseNonQuery("DELETE FROM quanlykaraoke.dongia_loaiphong WHERE quanlykaraoke.dongia_loaiphong.MaLoaiPhong = '" + maLoaiPhong + "';");
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
     }
 }

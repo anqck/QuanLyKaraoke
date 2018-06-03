@@ -76,5 +76,10 @@ namespace BUS
         {
             return DAL.HoaDonDAL.CapNhatTienTraTruoc(hoaDonDTO, tienTraTruoc);
         }
+
+        public static HoaDonDTO LayThongTinHoaDon(int maHoaDon)
+        {
+            return DAL.HoaDonDAL.LayThongTinHoaDon(maHoaDon);
+        }
     }
 }

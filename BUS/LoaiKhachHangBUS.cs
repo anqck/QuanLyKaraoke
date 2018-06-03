@@ -24,5 +24,9 @@ namespace BUS
         {
             return DAL.LoaiKhachHangDAL.LayLoaiKhachHang(khachHang);
         }
+        public static string GetFilterString_LoaiKhachHang(string str)
+        {
+            return "[TenLoaiKH] = '" + str + "'";
+        }
     }
 }

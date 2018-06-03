@@ -10,7 +10,7 @@ namespace BUS
 {
     public class LoaiPhongBUS
     {
-        public static int PhatSinhLoaiMaPhong()
+        public static int PhatSinhLoaiMaLoaiPhong()
         {
             return DAL.LoaiPhongDAL.PhatSinhMaLoaiPhong();
         }
@@ -32,6 +32,18 @@ namespace BUS
         public static bool XoaLoaiPhong(LoaiPhongDTO loaiPhongDTO)
         {
             return DAL.LoaiPhongDAL.XoaLoaiPhong(loaiPhongDTO);
+        }
+        public static string GetFilterString_LoaiPhong(string str)
+        {
+            return "[TenLoaiPhong] = '" + str + "'";
+        }
+        public static bool ThemLoaiPhong(int maLoaiPhong, string strTenLoaiPhong)
+        {
+            return DAL.LoaiPhongDAL.ThemLoaiPhong(maLoaiPhong, strTenLoaiPhong);
+        }
+        public static bool XoaDonGiaPhong(int maLoaiPhong)
+        {
+            return DAL.LoaiPhongDAL.XoaDonGiaPhong(maLoaiPhong);
         }
     }
 }

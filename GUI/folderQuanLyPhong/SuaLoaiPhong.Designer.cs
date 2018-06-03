@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SuaLoaiPhong));
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.wbntSualoaiphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -41,6 +42,8 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.spreadsheetControl1 = new DevExpress.XtraSpreadsheet.SpreadsheetControl();
+            this.wbntBack_themloaiphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.wbntEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLoaiPhong.Properties)).BeginInit();
@@ -55,8 +58,8 @@
             // 
             this.wbntSualoaiphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntSualoaiphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Lưu", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Lưu", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Lưu", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Lưu", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
             this.wbntSualoaiphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntSualoaiphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntSualoaiphong.ForeColor = System.Drawing.Color.White;
@@ -71,6 +74,7 @@
             // 
             this.wbntEmpty.BackColor = System.Drawing.Color.White;
             this.wbntEmpty.ContentAlignment = System.Drawing.ContentAlignment.TopCenter;
+            this.wbntEmpty.Controls.Add(this.wbntBack_themloaiphong);
             this.wbntEmpty.Dock = System.Windows.Forms.DockStyle.Left;
             this.wbntEmpty.Location = new System.Drawing.Point(0, 0);
             this.wbntEmpty.Name = "wbntEmpty";
@@ -226,6 +230,19 @@
             this.spreadsheetControl1.CustomDrawColumnHeader += new DevExpress.XtraSpreadsheet.CustomDrawColumnHeaderEventHandler(this.spreadsheetControl1_CustomDrawColumnHeader);
             this.spreadsheetControl1.CustomDrawRowHeader += new DevExpress.XtraSpreadsheet.CustomDrawRowHeaderEventHandler(this.spreadsheetControl1_CustomDrawRowHeader);
             // 
+            // wbntBack_themloaiphong
+            // 
+            this.wbntBack_themloaiphong.BackColor = System.Drawing.Color.White;
+            windowsUIButtonImageOptions3.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            this.wbntBack_themloaiphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.wbntBack_themloaiphong.Location = new System.Drawing.Point(4, 3);
+            this.wbntBack_themloaiphong.Name = "wbntBack_themloaiphong";
+            this.wbntBack_themloaiphong.Size = new System.Drawing.Size(56, 58);
+            this.wbntBack_themloaiphong.TabIndex = 4;
+            this.wbntBack_themloaiphong.Text = "windowsUIButtonPanel2";
+            this.wbntBack_themloaiphong.Click += new System.EventHandler(this.wbntBack_themloaiphong_Click);
+            // 
             // SuaLoaiPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -236,6 +253,7 @@
             this.Controls.Add(this.wbntSualoaiphong);
             this.Name = "SuaLoaiPhong";
             this.Size = new System.Drawing.Size(1188, 773);
+            this.wbntEmpty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtMaLoaiPhong.Properties)).EndInit();
@@ -260,5 +278,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraSpreadsheet.SpreadsheetControl spreadsheetControl1;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntBack_themloaiphong;
     }
 }

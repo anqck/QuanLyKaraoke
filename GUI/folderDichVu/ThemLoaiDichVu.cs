@@ -57,19 +57,20 @@ namespace GUI.folderDichVu
                     if (BUS.LoaiDichVuBUS.LuuThongTinLoaiDichVu(new LoaiDichVuDTO(int.Parse(txtMaLoaiDV.Text),txtTenLoaiDV.Text)))
                     {
                         //Thông báo thành công
-                        //BÌNH
+                        XtraMessageBox.Show("Thêm loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        if (ThongBaoHuyKoLuuDichVu())
+
+
                             actionBack();
                     }
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                        XtraMessageBox.Show("Thêm loại dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case "Hủy":
-                    if (ThongBaoHuyKoLuuDichVu()) ;
+                    if (ThongBaoHuyKoLuuDichVu()) 
                         actionBack();
                     break;
                 default:
@@ -78,12 +79,27 @@ namespace GUI.folderDichVu
         }
         bool ThongBaoHuyKoLuuDichVu()
         {
-            return true;
+            if (XtraMessageBox.Show("Bạn có chắc muốn thoát khỏi màn hình này (Mọi thông tin không được lưu sẽ bị mất) ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                return true;
+            else
+                return false;
         }
 
         private void layoutControlItem1_Click(object sender, EventArgs e)
         {
             ValidateChildren();
+        }
+
+        private void txtTenLoaiDV_EditValueChanged(object sender, EventArgs e)
+        {
+            ValidateChildren();
+        }
+
+        private void wbntBack_Click(object sender, EventArgs e)
+        {
+
+            if (ThongBaoHuyKoLuuDichVu())
+                actionBack();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace BUS
             ThongTinThanhToan thongTinThanhToan = new ThongTinThanhToan();
             List<ThongTinThanhToanTheoNgay> res = new List<ThongTinThanhToanTheoNgay>();
 
-
+            int maLoaiPhong = PhongBUS.LayThongTinPhong(thuePhongDTO.MaPhong).MaLoaiPhong;
             //ThuePhongDTO thuePhongDTO = ThuePhongBUS.LayThongTinPhongDangThue(phong);
 
             List<Ngay> listNgay = new List<Ngay>();
@@ -55,7 +55,7 @@ namespace BUS
 
             for(int i = 0; i < listNgay.Count; i++)
             {
-                res.Add(TinhTienTheoNgay(listNgay[i]));
+                res.Add(TinhTienTheoNgay(listNgay[i], maLoaiPhong));
                 thongTinThanhToan.TongThanhTien += res[i].TongThanhTien;
             }
 
@@ -65,16 +65,16 @@ namespace BUS
             return thongTinThanhToan;
         }
 
-        public static ThongTinThanhToanTheoNgay TinhTienTheoNgay(Ngay ngay)
+        public static ThongTinThanhToanTheoNgay TinhTienTheoNgay(Ngay ngay,int maLoaiPhong)
         {
             ThongTinThanhToanTheoNgay res = new ThongTinThanhToanTheoNgay();
             
-            res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayDonGiaMaGioBatDauVaGioKetThucNamTrong(ngay));
+            res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayDonGiaMaGioBatDauVaGioKetThucNamTrong(ngay, maLoaiPhong));
             if(res.listDonGiaTheoKhoangThoiGian.Count == 0)
             {
-                res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayTatCaCacDonGiaNamTrongKhoang(ngay));
-                res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayDonGiaMaGioBatDauNamTrong(ngay));
-                res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayDonGiaMaGiaKetThucNamTrong(ngay));
+                res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayTatCaCacDonGiaNamTrongKhoang(ngay, maLoaiPhong));
+                res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayDonGiaMaGioBatDauNamTrong(ngay, maLoaiPhong));
+                res.listDonGiaTheoKhoangThoiGian.AddRange(ThanhToanDAL.LayDonGiaMaGiaKetThucNamTrong(ngay, maLoaiPhong));
             }
             
 

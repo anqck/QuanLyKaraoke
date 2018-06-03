@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ThemDichVu));
             this.wbntThemdichvu = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
@@ -81,8 +81,8 @@
             // 
             this.wbntThemdichvu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntThemdichvu.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
             this.wbntThemdichvu.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntThemdichvu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntThemdichvu.ForeColor = System.Drawing.Color.White;
@@ -109,9 +109,9 @@
             // wbntBackThemKH
             // 
             this.wbntBackThemKH.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions3.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntBackThemKH.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntBackThemKH.Location = new System.Drawing.Point(3, 3);
             this.wbntBackThemKH.Name = "wbntBackThemKH";
             this.wbntBackThemKH.Size = new System.Drawing.Size(56, 58);
@@ -185,6 +185,7 @@
             this.txtTenDichVu.Size = new System.Drawing.Size(312, 40);
             this.txtTenDichVu.StyleController = this.layoutControl1;
             this.txtTenDichVu.TabIndex = 6;
+            this.txtTenDichVu.EditValueChanged += new System.EventHandler(this.txtTenDichVu_EditValueChanged);
             // 
             // txtDonVi
             // 
@@ -198,6 +199,7 @@
             this.txtDonVi.Size = new System.Drawing.Size(256, 40);
             this.txtDonVi.StyleController = this.layoutControl1;
             this.txtDonVi.TabIndex = 6;
+            this.txtDonVi.EditValueChanged += new System.EventHandler(this.txtTenDichVu_EditValueChanged);
             // 
             // cmbLoaiDV
             // 
@@ -229,6 +231,11 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtDonGia.Properties.DisplayFormat.FormatString = "###,###,###,##0 VNĐ";
             this.txtDonGia.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtDonGia.Properties.Increment = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.txtDonGia.Properties.Mask.EditMask = "###,###,###,###";
             this.txtDonGia.Size = new System.Drawing.Size(250, 40);
             this.txtDonGia.StyleController = this.layoutControl1;
@@ -240,7 +247,6 @@
             this.pictureEdit1.Location = new System.Drawing.Point(546, 116);
             this.pictureEdit1.Name = "pictureEdit1";
             this.pictureEdit1.Properties.InitialImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("pictureEdit1.Properties.InitialImageOptions.Image")));
-            this.pictureEdit1.Properties.OptionsMask.MaskType = DevExpress.XtraEditors.Controls.PictureEditMaskType.Circle;
             this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
             this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
             this.pictureEdit1.Properties.ImageChanged += new System.EventHandler(this.pictureEdit1_Properties_ImageChanged);

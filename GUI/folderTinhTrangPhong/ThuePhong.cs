@@ -21,11 +21,10 @@ namespace GUI.folderTinhTrangPhong
         Dictionary<int,PhongDTO> selectedPhong;
 
         private KhachHangDTO khachHang;
-        private PhongDTO phong;
 
         private DataTable dataSource_KhachHang;
         private DataTable dtPhong;
-        private Action onThuePhongSuccess;
+        private Action<ThuePhongDTO> onThuePhongSuccess;
 
         public ThuePhong()
         {
@@ -39,7 +38,7 @@ namespace GUI.folderTinhTrangPhong
 
         }
 
-        public ThuePhong(List<PhongDTO> listPhong, Action onThuePhongSuccess) : this()
+        public ThuePhong(List<PhongDTO> listPhong, Action<ThuePhongDTO> onThuePhongSuccess) : this()
         {
             //this.phong = phong;
 
@@ -114,16 +113,18 @@ namespace GUI.folderTinhTrangPhong
                     HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), -1, Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "", khachHang.MaKH);
                     HoaDonBUS.LuuThongTinHoaDon(hoaDon);
 
+                    ThuePhongDTO tp = null;
                     foreach(PhongDTO phong in selectedPhong.Values)
                     {
-                        ThuePhongBUS.LuuThongTinThuePhong(new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong, (DateTime)txtGioVao.EditValue, DateTime.MinValue, hoaDon.MaHoaDon));
+                        tp = new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), phong.MaPhong, (DateTime)txtGioVao.EditValue, DateTime.MinValue, hoaDon.MaHoaDon, double.NaN);
+                        ThuePhongBUS.LuuThongTinThuePhong(tp);
                         PhongBUS.CapNhatTinhTrangPhong(phong, 1);
                     }
 
                    
                     
                         //Thông báo thành công
-                        onThuePhongSuccess();
+                        onThuePhongSuccess(tp);
 
                         ((FlyoutDialog)this.Parent).Hide();
                     
@@ -287,7 +288,7 @@ namespace GUI.folderTinhTrangPhong
             
         }
 
-      
+
     }
 }
 

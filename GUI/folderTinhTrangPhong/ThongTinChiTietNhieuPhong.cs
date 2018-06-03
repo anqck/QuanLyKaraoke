@@ -19,7 +19,7 @@ namespace GUI.folderTinhTrangPhong
         public Action goBackHome { get; set; }
         private HoaDonDTO hoaDon;
 
-        private Action goToThanhToan;
+        private Action<ThuePhongDTO> goToThanhToan;
         private ThuePhongDTO thuePhongDTO;
 
         public ThongTinChiTietNhieuPhong()
@@ -36,7 +36,7 @@ namespace GUI.folderTinhTrangPhong
         {
 
         }
-        public void RefreshDataBinding(ThuePhongDTO thuePhongDTO,Action goToThanhToan)
+        public void RefreshDataBinding(ThuePhongDTO thuePhongDTO,Action<ThuePhongDTO> goToThanhToan)
         {
             this.goToThanhToan = goToThanhToan;
             this.thuePhongDTO = thuePhongDTO;
@@ -88,7 +88,7 @@ namespace GUI.folderTinhTrangPhong
             }
         }
 
-        public void RefreshDataBinding(PhongDTO phongDTO, Action goToThanhToan)
+        public void RefreshDataBinding(PhongDTO phongDTO, Action<ThuePhongDTO> goToThanhToan)
         {
             TabControl.TabPages.Clear();
 

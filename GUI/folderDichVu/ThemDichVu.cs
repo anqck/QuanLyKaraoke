@@ -43,8 +43,7 @@ namespace GUI.folderDichVu
             //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
             if (listLoaiDichVu.Count == 0)
             {
-                //BÌNH
-                XtraMessageBox.Show("Cần thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK);
+                XtraMessageBox.Show("Cần thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             cmbLoaiDV.Properties.Items.Clear();
@@ -79,7 +78,7 @@ namespace GUI.folderDichVu
                     {
                         //Thông báo thành công
                         //BÌNH
-                        XtraMessageBox.Show("Thêm dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         actionBack();
                     }
@@ -87,7 +86,7 @@ namespace GUI.folderDichVu
                     {
                         //Thông báo thất bại
                         //BÌNH
-                        XtraMessageBox.Show("Thêm dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK);
+                        XtraMessageBox.Show("Thêm dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case "Hủy":
@@ -117,12 +116,10 @@ namespace GUI.folderDichVu
         }
         private bool ThongBaoHuyKoLuuDichVu()
         {
-            //Bình
-            if (XtraMessageBox.Show("Bạn có chắc hủy thêm dịch vụ ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
+            if (XtraMessageBox.Show("Bạn có chắc muốn thoát khỏi màn hình này (Mọi thông tin không được lưu sẽ bị mất) ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                 return true;
-            }
-            return false;
+            else
+                return false;
         }
 
 
@@ -184,6 +181,11 @@ namespace GUI.folderDichVu
         private void pictureEdit1_Properties_ImageChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void txtTenDichVu_EditValueChanged(object sender, EventArgs e)
+        {
+            ValidateChildren();
         }
     }
 }

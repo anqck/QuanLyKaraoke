@@ -33,6 +33,7 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.wbntSuadichvu = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtMaLoaiDV = new DevExpress.XtraEditors.TextEdit();
             this.txtTenLoaiDV = new DevExpress.XtraEditors.TextEdit();
@@ -40,7 +41,6 @@
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.wbntBack = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -81,6 +81,19 @@
             this.wbntEmpty.TabIndex = 15;
             this.wbntEmpty.Text = "windowsUIButtonPanel1";
             // 
+            // wbntBack
+            // 
+            this.wbntBack.BackColor = System.Drawing.Color.White;
+            windowsUIButtonImageOptions3.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            this.wbntBack.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            this.wbntBack.Location = new System.Drawing.Point(3, 3);
+            this.wbntBack.Name = "wbntBack";
+            this.wbntBack.Size = new System.Drawing.Size(56, 58);
+            this.wbntBack.TabIndex = 4;
+            this.wbntBack.Text = "windowsUIButtonPanel2";
+            this.wbntBack.Click += new System.EventHandler(this.wbntBack_Click);
+            // 
             // layoutControl1
             // 
             this.layoutControl1.BackColor = System.Drawing.Color.White;
@@ -118,6 +131,7 @@
             this.txtTenLoaiDV.Size = new System.Drawing.Size(596, 40);
             this.txtTenLoaiDV.StyleController = this.layoutControl1;
             this.txtTenLoaiDV.TabIndex = 6;
+            this.txtTenLoaiDV.EditValueChanged += new System.EventHandler(this.txtTenLoaiDV_EditValueChanged);
             // 
             // layoutControlGroup2
             // 
@@ -187,18 +201,6 @@
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(273, 32);
             this.layoutControlItem1.Click += new System.EventHandler(this.layoutControlItem1_Click);
-            // 
-            // wbntBack
-            // 
-            this.wbntBack.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions3.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.wbntBack.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.wbntBack.Location = new System.Drawing.Point(3, 3);
-            this.wbntBack.Name = "wbntBack";
-            this.wbntBack.Size = new System.Drawing.Size(56, 58);
-            this.wbntBack.TabIndex = 4;
-            this.wbntBack.Text = "windowsUIButtonPanel2";
             // 
             // ThemLoaiDichVu
             // 

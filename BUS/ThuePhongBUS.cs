@@ -38,7 +38,7 @@ namespace BUS
         {
             return DAL.ThuePhongDAL.PhatSinhMaThuePhong();
         }
-        public static bool CapNhatThonginThuePhong(ThuePhongDTO thuePhongDTO)
+        public static bool CapNhatThongTinThuePhong(ThuePhongDTO thuePhongDTO)
         {
             return DAL.ThuePhongDAL.CapNhatThongTinThuePhong(thuePhongDTO);
         }

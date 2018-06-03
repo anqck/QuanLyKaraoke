@@ -109,6 +109,12 @@ namespace GUI.folderTinhTrangPhong
             txtNgayThanhToan.Time = DateTime.Now;
             txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
 
+            txtTienTraTruoc.ReadOnly = true;
+            wbntQuanlyphong.Buttons[0].Properties.Visible = false;
+            wbntQuanlyphong.Buttons[1].Properties.Visible = false;
+            wbntQuanlyphong.Buttons[2].Properties.Visible = false;
+            wbntQuanlyphong.Buttons[4].Properties.Visible = false;
+
             this.tabbedControlGroup1.Clear();
             foreach (ThuePhongDTO thuePhong in HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon))
             {
@@ -120,7 +126,7 @@ namespace GUI.folderTinhTrangPhong
                 chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
 
 
-                chiTietThanhToanPhongThanhToan.RefreshDataBinding(thuePhong);
+                chiTietThanhToanPhongThanhToan.RefreshDataBinding_ReadOnly(thuePhong);
                 chiTietThanhToanPhongThanhToan.GetTongTienGio();
                 //thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
                 //DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
@@ -195,11 +201,13 @@ namespace GUI.folderTinhTrangPhong
                     hoaDon.TongTienThanhToan = (double)txtTongTienThanhToan.EditValue;
                     hoaDon.NgayThanhToan = txtNgayThanhToan.Time;
                     hoaDon.SoTienKhuyenMai = (double)txtTongTienKhuyenMai.EditValue;
+                    //hoaDon.TienGio = (double)txtTongTienGio.EditValue;
 
                     HoaDonBUS.CapNhatHoaDonDaThanhToan(hoaDon);
                     foreach (DevExpress.XtraLayout.LayoutControlGroup layoutGroup in this.tabbedControlGroup1.TabPages)
                     {
                         ((ChiTietThanhToanPhong)layoutGroup.Tag).LuuKhuyenMai();
+                        ((ChiTietThanhToanPhong)layoutGroup.Tag).CapNhatThongTinThuePhong();
                         PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong,0);
                     }
 

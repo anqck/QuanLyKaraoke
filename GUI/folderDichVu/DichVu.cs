@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DTO;
 using DevExpress.XtraGrid.Localization;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
+using BUS;
 
 namespace GUI.folderDichVu
 {
@@ -36,6 +37,15 @@ namespace GUI.folderDichVu
             switch(e.Button.Properties.Tag.ToString())
             {
                 case "Thêm Dịch Vụ":
+
+                 
+                    //Nếu không có loại dv, thông báo cần tạo loại phòng trước
+                    if (LoaiDichVuBUS.LayTatCaLoaiDichVu_List().Count == 0)
+                    {
+                        XtraMessageBox.Show("Cần phải thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                     themDichVu1.Initialize();
                     this.DichVuPagecontrol.SelectedPage = PageThemdichvu;
                     break;
@@ -86,10 +96,6 @@ namespace GUI.folderDichVu
             
         }
 
-        private void tileItem2_ItemClick(object sender, TileItemEventArgs e)
-        {
-
-        }
 
         private TileItem NewTileItem(String name)
         {
@@ -179,10 +185,7 @@ namespace GUI.folderDichVu
             goToQuanLyDichVu = goToHomeLoaiDichVu;
         }
 
-        private void tileControl2_ItemPress(object sender, TileItemEventArgs e)
-        {
-            
-        }
+    
 
         String strFilterLoaiDV;
         private void tileControl2_SelectedItemChanged(object sender, TileItemEventArgs e)
@@ -219,6 +222,28 @@ namespace GUI.folderDichVu
                 tileFilter.Visible = false;
             }
                 
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (gridView1.RowCount == 0)
+            {
+                wbntDichvu.Buttons[1].Properties.Enabled = false;
+                
+                return;
+            }
+
+            if (e.FocusedRowHandle == 0 || e.FocusedRowHandle == 1 )
+            {
+                wbntDichvu.Buttons[1].Properties.Enabled = false;
+
+            }
+            else
+            {
+                wbntDichvu.Buttons[1].Properties.Enabled = true;
+
+
+            }
         }
     }
 }

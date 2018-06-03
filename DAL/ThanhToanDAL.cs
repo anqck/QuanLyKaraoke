@@ -13,14 +13,18 @@ namespace DAL
     {
         public static int PhatSinhMaHoaDon()
         {
-            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.hoadon;").Rows[0][0]);
+            DataTable dt =DataProvider.ExecuseQuery("SELECT quanlykaraoke.hoadon.MaHoaDon FROM quanlykaraoke.hoadon ORDER BY quanlykaraoke.hoadon.MaHoaDon DESC LIMIT 1;");
+            if (dt.Rows.Count == 0)
+                return 1;
+            else
+                return Convert.ToInt32(dt.Rows[0][0]) + 1;
         }
 
-        public static List<DonGiaTheoKhoangThoiGian> LayTatCaCacDonGiaNamTrongKhoang(Ngay ngay)
+        public static List<DonGiaTheoKhoangThoiGian> LayTatCaCacDonGiaNamTrongKhoang(Ngay ngay, int maLoaiPhong)
         {
             List<DonGiaTheoKhoangThoiGian> list = new List<DonGiaTheoKhoangThoiGian>();
 
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau >= '"+ngay.GioBatDau.ToString()+"' and GioKetThuc <= '"+ ngay.GioKetThuc.ToString() + "' and Thu = '"+ngay.Thu+"';");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau >= '"+ngay.GioBatDau.ToString()+"' and GioKetThuc <= '"+ ngay.GioKetThuc.ToString() + "' and Thu = '"+ngay.Thu+"' and MaLoaiPhong = '"+maLoaiPhong+"';");
 
             foreach(DataRow row in dt.Rows)
             {
@@ -30,9 +34,9 @@ namespace DAL
 
             return list;
         }
-        public static List<DonGiaTheoKhoangThoiGian> LayDonGiaMaGioBatDauNamTrong(Ngay ngay)
+        public static List<DonGiaTheoKhoangThoiGian> LayDonGiaMaGioBatDauNamTrong(Ngay ngay, int maLoaiPhong)
         {
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau < '" + ngay.GioBatDau.ToString() + "' and GioKetThuc > '" + ngay.GioBatDau.ToString() + "' and Thu = '" + ngay.Thu + "';");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau < '" + ngay.GioBatDau.ToString() + "' and GioKetThuc > '" + ngay.GioBatDau.ToString() + "' and Thu = '" + ngay.Thu + "' and MaLoaiPhong = '" + maLoaiPhong + "';");
 
             List<DonGiaTheoKhoangThoiGian> list = new List<DonGiaTheoKhoangThoiGian>();
 
@@ -44,9 +48,9 @@ namespace DAL
 
             return list;
         }
-        public static List<DonGiaTheoKhoangThoiGian> LayDonGiaMaGiaKetThucNamTrong(Ngay ngay)
+        public static List<DonGiaTheoKhoangThoiGian> LayDonGiaMaGiaKetThucNamTrong(Ngay ngay, int maLoaiPhong)
         {
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau < '" + ngay.GioKetThuc.ToString() + "' and GioKetThuc > '" + ngay.GioKetThuc.ToString() + "' and Thu = '" + ngay.Thu + "';");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau < '" + ngay.GioKetThuc.ToString() + "' and GioKetThuc > '" + ngay.GioKetThuc.ToString() + "' and Thu = '" + ngay.Thu + "' and MaLoaiPhong = '" + maLoaiPhong + "';");
 
             List<DonGiaTheoKhoangThoiGian> list = new List<DonGiaTheoKhoangThoiGian>();
 
@@ -58,9 +62,9 @@ namespace DAL
 
             return list;
         }
-        public static List<DonGiaTheoKhoangThoiGian> LayDonGiaMaGioBatDauVaGioKetThucNamTrong(Ngay ngay)
+        public static List<DonGiaTheoKhoangThoiGian> LayDonGiaMaGioBatDauVaGioKetThucNamTrong(Ngay ngay, int maLoaiPhong)
         {
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau < '" + ngay.GioKetThuc.ToString() + "' and GioKetThuc > '" + ngay.GioKetThuc.ToString() + "' and GioBatDau < '" + ngay.GioBatDau.ToString() + "' and GioKetThuc > '" + ngay.GioBatDau.ToString() + "'and Thu = '" + ngay.Thu + "';");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dongia_loaiphong WHERE GioBatDau < '" + ngay.GioKetThuc.ToString() + "' and GioKetThuc > '" + ngay.GioKetThuc.ToString() + "' and GioBatDau < '" + ngay.GioBatDau.ToString() + "' and GioKetThuc > '" + ngay.GioBatDau.ToString() + "'and Thu = '" + ngay.Thu + "' and MaLoaiPhong = '" + maLoaiPhong + "';");
 
             List<DonGiaTheoKhoangThoiGian> list = new List<DonGiaTheoKhoangThoiGian>();
 

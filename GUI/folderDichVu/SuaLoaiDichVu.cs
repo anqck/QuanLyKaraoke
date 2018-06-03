@@ -69,19 +69,19 @@ namespace GUI.folderDichVu
                     if (txtTenLDV.Text == "")
                         return;
 
-                    //Lưu thông tinh
+                    //Lưu thông tin
                     if (BUS.LoaiDichVuBUS.SuaThongTinLoaiDichVu(new LoaiDichVuDTO(int.Parse(txtMaLDV.Text), txtTenLDV.Text)))
                     {
                         //Thông báo thành công
-                        //BÌNH
+                        XtraMessageBox.Show("Sửa loại dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        if (ThongBaoHuyKoLuuDichVu()) 
-                            actionBack();
+
+                        actionBack();
                     }
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                        XtraMessageBox.Show("Sửa loại dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case "Hủy":
@@ -95,7 +95,10 @@ namespace GUI.folderDichVu
 
         private bool ThongBaoHuyKoLuuDichVu()
         {
-            return true;
+            if (XtraMessageBox.Show("Bạn có chắc muốn thoát khỏi màn hình này (Mọi thông tin không được lưu sẽ bị mất) ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                return true;
+            else
+                return false;
         }
 
         private void windowsUIButtonPanel1_Click(object sender, EventArgs e)

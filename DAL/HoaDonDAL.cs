@@ -33,6 +33,7 @@ namespace DAL
                 strSQL.Replace("$5", hoaDonDTO.GhiChu.ToString());
                 strSQL.Replace("$6", hoaDonDTO.MaKH.ToString());
                 strSQL.Replace("$7", hoaDonDTO.TienTraTruoc.ToString());
+
                 DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
 
                 return true;
@@ -81,7 +82,7 @@ namespace DAL
 
             foreach(DataRow row in dt.Rows)
             {
-                res.Add(new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()),  (row["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(row["GioTraPhong"].ToString()), (int)row["MaHoaDon"]));
+                res.Add(new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()),  (row["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(row["GioTraPhong"].ToString()), (int)row["MaHoaDon"], (dt.Rows[0]["TienGio"].ToString() == "") ? (Double.NaN) : ((double)dt.Rows[0]["TienGio"])));
             }
 
             return res;
@@ -142,6 +143,13 @@ namespace DAL
             DataProvider.ExecuseNonQuery("UPDATE hoadon SET hoadon.TienTraTruoc = '" + tienTraTruoc + "'  WHERE hoadon.MaHoaDon = '" + hoaDonDTO.MaHoaDon + "';");
 
             return true;
+        }
+        public static HoaDonDTO LayThongTinHoaDon(int maHoaDon)
+        {
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon WHERE hoadon.MaHoaDon = '" + maHoaDon.ToString() + "';");
+
+            return new HoaDonDTO((int)dt.Rows[0]["MaHoaDon"], (dt.Rows[0]["MaNhanVienThanhToan"].ToString() == "") ? (-1) : ((int)dt.Rows[0]["MaNhanVienThanhToan"]), (dt.Rows[0]["TongTienThanhToan"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["TienTraTruoc"]), (dt.Rows[0]["TienTraTruoc"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["TienTraTruoc"]), (dt.Rows[0]["NgayThanhToan"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["NgayThanhToan"].ToString()), (dt.Rows[0]["SoTienKhuyenMai"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["SoTienKhuyenMai"]), dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaKH"]);
+
         }
 
 

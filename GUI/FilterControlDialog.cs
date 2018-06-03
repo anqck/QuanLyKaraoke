@@ -17,7 +17,7 @@ namespace GUI
     public partial class FilterControlDialog : DevExpress.XtraEditors.XtraUserControl
     {
         RepositoryItemComboBox cmbLoaiDV;
-        
+        RepositoryItemComboBox cmbLoaiKH;
 
         public FilterControlDialog()
         {
@@ -47,6 +47,18 @@ namespace GUI
                     }
 
                     break;
+                case "GridKhachHang":
+                    //Lấy tất cả loại phòng vào cmb
+                    List<LoaiKhachHangDTO> listLoaiKhachHang = BUS.LoaiKhachHangBUS.LayTatCaLoaiKhachHang_List();
+                    cmbLoaiKH = new RepositoryItemComboBox();
+                    cmbLoaiKH.AppearanceDropDown.Font = new System.Drawing.Font("Segoe UI", 12.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    cmbLoaiKH.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                    foreach (LoaiKhachHangDTO loaiKH in listLoaiKhachHang)
+                    {
+                        cmbLoaiKH.Items.Add(new MyComboBoxItem(loaiKH.TenKH, loaiKH.MaLoaiKH));
+                    }
+
+                    break;
             }
         }
 
@@ -56,6 +68,11 @@ namespace GUI
             {                         
 
                 e.CustomRepositoryItem = cmbLoaiDV;
+            }
+            else if (e.CurrentNode.FirstOperand.PropertyName == "TenLoaiKH")
+            {
+
+                e.CustomRepositoryItem = cmbLoaiKH;
             }
 
         }

@@ -36,7 +36,7 @@ namespace GUI.folderDichVu
                 if (listLoaiDichVu.Count == 0)
                 {
                     //BÌNH
-                    XtraMessageBox.Show("Cần thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK);
+                    XtraMessageBox.Show("Cần thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 cmbLoaiDV.Properties.Items.Clear();
@@ -75,8 +75,7 @@ namespace GUI.folderDichVu
         bool ThongBaoHuyKoLuuDichVu()
         {
 
-            //Bình
-            if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật dịch vụ ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật dịch vụ ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 return true;
             }
@@ -99,16 +98,16 @@ namespace GUI.folderDichVu
                     if (DichVuBUS.CapNhatThongTinDichVu(new DichVuDTO(Convert.ToInt32(txtMaDV.Text), txtTenDV.Text, Convert.ToDouble(txtDonGia.EditValue), txtDonVi.Text, (pictureEdit1.Image), listLoaiDichVu[cmbLoaiDV.SelectedIndex].MaLoaiDV)))
                     {
                         //Thông báo thành công
-                        //BÌNH
-                        XtraMessageBox.Show("Cập nhật dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK);
+       
+                        XtraMessageBox.Show("Cập nhật dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         actionBack();
                     }
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
-                        XtraMessageBox.Show("Cập nhật dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK);
+  
+                        XtraMessageBox.Show("Cập nhật dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
                 case "Hủy":

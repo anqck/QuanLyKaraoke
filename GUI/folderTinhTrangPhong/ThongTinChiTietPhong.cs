@@ -1,5 +1,6 @@
 ﻿using BUS;
 using DevExpress.XtraBars.Docking2010;
+using DevExpress.XtraBars.Docking2010.Customization;
 using DevExpress.XtraEditors;
 using DTO;
 using System;
@@ -163,7 +164,11 @@ namespace GUI.folderTinhTrangPhong
                 case "Hủy Phòng":
 
                     //Thông báo xác nhận
-                    //BÌNH
+                    if (XtraMessageBox.Show("Bạn có chắc hủy thuê phòng này ?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return ;
+                    }
+            
 
                     ThuePhongBUS.XoaCacDichVuPhong(thuePhong);
                     ThuePhongBUS.XoaThuePhong(thuePhong);
@@ -179,24 +184,39 @@ namespace GUI.folderTinhTrangPhong
                 case "Trả Phòng":
                     
                     //Đếm số lượng phòng đã trả trong hóa đơn / Nếu hóa đơn còn 1 phòng chuyển qua thanh toán
-                    //if(HoaDonBUS.DemSoLuongPhongDangConDuocThueHienTai(hoaDon))
-
+                    if(HoaDonBUS.DemSoLuongPhongDangConDuocThueHienTai(hoaDon) == 1)
+                    {
+                        XtraMessageBox.Show("Hóa đơn chỉ còn lại 1 phòng! Vui lòng thanh toán", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                     //Xác nhận trả phòng
-                    //BÌNH
+                    if (XtraMessageBox.Show("Bạn có chắc trả phòng này ?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return;
+                    }
+                    
 
-                    ThuePhongBUS.CapNhatThonginThuePhong(new ThuePhongDTO(thuePhong.MaThuePhong,thuePhong.MaPhong,thuePhong.GioThuePhong, DateTime.Now,thuePhong.MaHoaDon));
+                    ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(thuePhong.MaThuePhong,thuePhong.MaPhong,thuePhong.GioThuePhong, DateTime.Now,thuePhong.MaHoaDon,Double.NaN));
                     PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 0);
 
                     //Thông báo thành công
-                    //BÌNH
+                    XtraMessageBox.Show("Trả phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     RefreshDataBinding(phong,ThuePhongBUS.LayThongTinThuePhong(thuePhong.MaThuePhong));
 
                     break;
                 case "Thanh Toán":
-                    goToThanhToan();
+                    goToThanhToan(thuePhong);
+                    break;
+                case "Thuê Thêm Phòng":
+                    FlyoutDialog.Show(this.FindForm(), new ThemPhongVaoHoaDon(hoaDon, OnThueThemPhongSuccess));
                     break;
             }
+        }
+
+        void OnThueThemPhongSuccess()
+        {
+            ((ThongTinChiTietNhieuPhong)Parent.Parent.Parent).OnXoaPhong();
         }
 
         private void Args_Showing(object sender, XtraMessageShowingArgs e)
@@ -266,10 +286,10 @@ namespace GUI.folderTinhTrangPhong
 
         }
 
-        Action goToThanhToan;
+        Action<ThuePhongDTO> goToThanhToan;
 
         
-        public void SetActionThanhToanButton(Action action)
+        public void SetActionThanhToanButton(Action<ThuePhongDTO> action)
         {
             goToThanhToan = action;
            

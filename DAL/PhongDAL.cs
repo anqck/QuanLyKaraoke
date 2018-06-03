@@ -115,6 +115,10 @@ namespace DAL
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP ;");
         }
+        public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung()
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP AND (phong.MaTinhTrangPhong = '0' OR phong.MaTinhTrangPhong = '1' OR phong.MaTinhTrangPhong = '2');");
+        }
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan()
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP AND quanlykaraoke.phong.MaTinhTrangPhong ='0' ;");

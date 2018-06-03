@@ -66,7 +66,7 @@ namespace GUI.TinhTrangPhong
         {
             try
             {
-                gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+                gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung();
 
                 //Tính giờ
                 listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
@@ -499,11 +499,11 @@ namespace GUI.TinhTrangPhong
         #endregion
 
         #region CallBack
-        void OnThuePhongSuccess()
+        void OnThuePhongSuccess(ThuePhongDTO thuePhong)
         {
             RefreshDataBinding();
 
-            DisplayTinhTrangPhongWithSelectedTile();
+            DisplayTinhTrangPhongWithSelectedTile(thuePhong);
 
             
         }
@@ -511,29 +511,42 @@ namespace GUI.TinhTrangPhong
         #endregion
 
 
-        void DisplayTinhTrangPhongWithSelectedTile()
+        void DisplayTinhTrangPhongWithSelectedTile(ThuePhongDTO thuePhong = null)
         {
-            DTO.PhongDTO phongDTO;
-            if (checkedRows.Count != 0)
-            {
-                phongDTO =new DTO.PhongDTO((int)danhSachPhong.Rows[checkedRows[0]]["MaPhong"], danhSachPhong.Rows[checkedRows[0]]["TenPhong"].ToString(), (int)danhSachPhong.Rows[checkedRows[0]]["MaLoaiPhong"]);
+            
+            //if (checkedRows.Count != 0)
+            //{
+            //    phongDTO =new DTO.PhongDTO((int)danhSachPhong.Rows[checkedRows[0]]["MaPhong"], danhSachPhong.Rows[checkedRows[0]]["TenPhong"].ToString(), (int)danhSachPhong.Rows[checkedRows[0]]["MaLoaiPhong"]);
                 
 
-            }
-            else
-            {
-                phongDTO =new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
+            //}
+            //else
+            //{
+            //    phongDTO =
 
 
-            }
+            //}
 
            
 
             DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
-            if(listPhongDangThue.ContainsKey(phongDTO.MaPhong))
-                 thongTinChiTietNhieuPhong1.RefreshDataBinding(listPhongDangThue[phongDTO.MaPhong], DisplayThanhToanPhongWithSelectedTile);
+            if(thuePhong == null)
+            {
+                if (listPhongDangThue.ContainsKey((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong")))
+                    thongTinChiTietNhieuPhong1.RefreshDataBinding(listPhongDangThue[(int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong")], DisplayThanhToanPhongWithSelectedTile);
+
+                else
+                    thongTinChiTietNhieuPhong1.RefreshDataBinding(new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong")), DisplayThanhToanPhongWithSelectedTile);
+
+                
+            }
             else
-                thongTinChiTietNhieuPhong1.RefreshDataBinding(phongDTO, DisplayThanhToanPhongWithSelectedTile);
+            {
+                thongTinChiTietNhieuPhong1.RefreshDataBinding(thuePhong, DisplayThanhToanPhongWithSelectedTile);
+                
+            }
+
+
             DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
             this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
         }
@@ -554,16 +567,17 @@ namespace GUI.TinhTrangPhong
                 RefreshDataBinding();
         }
 
-        void DisplayThanhToanPhongWithSelectedTile()
+        void DisplayThanhToanPhongWithSelectedTile(ThuePhongDTO thuePhong=null)
         {
             //DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString(), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
 
-           
 
+            if (thuePhong == null)
 
-            thanhToan1.RefreshDataBinding(listPhongDangThue[(int)danhSachPhong.Rows[tileView1.GetFocusedDataSourceRowIndex()]["MaPhong"]]);
+                thanhToan1.RefreshDataBinding(listPhongDangThue[(int)danhSachPhong.Rows[tileView1.GetFocusedDataSourceRowIndex()]["MaPhong"]]);
+            else
+                thanhToan1.RefreshDataBinding(thuePhong);
 
-            
 
             this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
         }

@@ -19,9 +19,14 @@ namespace GUI.folderQuanLyPhong
         DataTable dtDonGiaPhong;
         DataTable dtPhong;
 
+        public Action goToQuanLyPhong { get; set; }
+
         public LoaiPhong()
         {
             InitializeComponent();
+
+            themLoaiPhong1.goToHomeLoaiPhong = GoToHomePage_WithAnimation;
+            suaLoaiPhong1.goToHomeLoaiPhong = GoToHomePage_WithAnimation;
         }
 
         private void wbntBack_themloaiphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -47,23 +52,32 @@ namespace GUI.folderQuanLyPhong
                     LoaiPhongPagecontrol.SelectedPage = PageSualoaiphong;
                     break;
                 case "Xóa Loại Phòng":
+                    //Xác nhận xóa?
+                    if (XtraMessageBox.Show("Bạn có chắc muốn xóa loại phòng '" + dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["TenLoaiPhong"].ToString() + "' ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
+                        return;
+
                     //Kiểm tra xem loại phòng có phòng nào không
 
                     DataRowView rowView = gridViewLoaiPhong.GetRow(gridViewLoaiPhong.FocusedRowHandle) as DataRowView;
                     DataView view = rowView.CreateChildView("Thông tin phòng");         
                     if (view.Count == 0)
                     {
+                        LoaiPhongBUS.XoaDonGiaPhong((int)dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["MaLP"]);
                         LoaiPhongBUS.XoaLoaiPhong(new DTO.LoaiPhongDTO((int)dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["MaLP"], dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["TenLoaiPhong"].ToString()));
                         //Thông báo xóa loại phòng thành công
-                        //BÌNH
+                        XtraMessageBox.Show("Xóa loại phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshDataBinding();
                     }
                     else
                     {
                         //Thông báo không thể xóa loại phòng do có phòng có loại phòng đó
-                        //BÌNH
+                        XtraMessageBox.Show("Không thể xóa loại phòng do tồn tại phòng chứa mã phòng này!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         return;
                     }
+                    break;
+                case "Quản Lý Phòng":
+                    goToQuanLyPhong();
                     break;
             }
         }
@@ -118,5 +132,21 @@ namespace GUI.folderQuanLyPhong
                 wbntLoaiphong.Buttons[2].Properties.Visible = true;
             }
         }
+        public void GoToPage_WithoutAnimation(int v)
+        {
+            LoaiPhongPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            LoaiPhongPagecontrol.SelectedPageIndex = v;
+            LoaiPhongPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
+
+        public void GoToHomePage_WithAnimation()
+        {
+
+            RefreshDataBinding();
+            LoaiPhongPagecontrol.SelectedPageIndex = 0;
+        
+        }
+
+
     }
 }

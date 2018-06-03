@@ -66,7 +66,26 @@ namespace GUI.folderTinhTrangPhong
 
            
         }
+        public void RefreshDataBinding_ReadOnly(ThuePhongDTO thuePhong)
+        {
+            this.thuePhong = thuePhong;
 
+            txtGioVao.Time = thuePhong.GioThuePhong;
+            txtGioRa.Time = (thuePhong.GioTraPhong == DateTime.MinValue) ? DateTime.Now : thuePhong.GioTraPhong;
+            //txtTienGio.EditValue = (double)thuePhong
+
+            dichVuPhong = DichVuPhongBUS.LayTatCaDichVuPhong_DichVu(thuePhong);
+            dichVuPhong.Columns.Add(new DataColumn("colType"));
+            foreach (DataRow row in dichVuPhong.Rows)
+            {
+                if((int)row["MaLDV"] == 3 )
+                    row["colType"] = "Khuyến mãi";
+                else
+                    row["colType"] = "Dịch vụ";
+            }
+
+            gridControl1.DataSource = dichVuPhong;
+        }
         void RefreshDataBindingTienGio()
         {
             tienGio = new DataTable();
@@ -223,6 +242,11 @@ namespace GUI.folderTinhTrangPhong
             
         }
 
+        internal void CapNhatThongTinThuePhong()
+        {
+            ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(thuePhong.MaThuePhong, thuePhong.MaPhong, txtGioVao.Time, txtGioRa.Time, thuePhong.MaHoaDon, TongTien));
+        }
+
         private void txtTienGio_Properties_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
         {
             e.Cancel = true;
@@ -354,5 +378,6 @@ namespace GUI.folderTinhTrangPhong
             }
 
         }
+        
     }
 }
