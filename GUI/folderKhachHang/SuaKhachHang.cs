@@ -98,14 +98,14 @@ namespace GUI.folderKhachHang
                     }
                     break;
                 case "Hủy":
-                    if (ThongBaoHuyKoLuuDichVu())
+                    if (ThongBaoHuyCapNhatKhachHang())
                         actionBack();
                     break;
                 default:
                     break;
             }
         }
-        bool ThongBaoHuyKoLuuDichVu()
+        bool ThongBaoHuyCapNhatKhachHang()
         {
             if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
@@ -123,6 +123,7 @@ namespace GUI.folderKhachHang
             }
             else
             {
+                txtTenKH.ErrorText = null;
                 if (KiemTraHopLeCacGiaTriNhapVao())
                     wbntSuakhachhang.Buttons[0].Properties.Enabled = true;
             }
@@ -140,6 +141,17 @@ namespace GUI.folderKhachHang
             //}
 
             return true;
+        }
+
+        private void txtTenKH_EditValueChanged(object sender, EventArgs e)
+        {
+            txtTenKH_Validating(sender, new CancelEventArgs());
+        }
+
+        private void wbntBackThemKH_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (ThongBaoHuyCapNhatKhachHang())
+                actionBack();
         }
     }
 }

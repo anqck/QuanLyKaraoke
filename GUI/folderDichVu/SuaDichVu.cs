@@ -180,5 +180,11 @@ namespace GUI.folderDichVu
 
             return (Image)b;
         }
+
+        private void windowsUIButtonPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (ThongBaoHuyKoLuuDichVu())
+                actionBack();
+        }
     }
 }

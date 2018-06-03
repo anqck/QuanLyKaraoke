@@ -84,7 +84,7 @@ namespace DAL
                 strSQL.Replace("@5", khachHangDTO.MaLoaiKH.ToString());
                 strSQL.Replace("@6", khachHangDTO.DiemTichLuy.ToString());
 
-                Console.WriteLine(strSQL);
+               // Console.WriteLine(strSQL);
                 DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
                 
                 return true;
@@ -100,7 +100,7 @@ namespace DAL
         {
             try
             {
-                Console.WriteLine("DELECTE FROM quanlykaraoke.khachhang WHERE MaKH = '" + maKH.ToString() + "';");
+                //Console.WriteLine("DELECTE FROM quanlykaraoke.khachhang WHERE MaKH = '" + maKH.ToString() + "';");
                 DAL.DataProvider.ExecuseQuery("DELETE FROM quanlykaraoke.khachhang WHERE MaKH = '" + maKH.ToString() + "';");
                 
                 return true;

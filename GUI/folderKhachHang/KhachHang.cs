@@ -55,23 +55,23 @@ namespace GUI.folderKhachHang
                     suaKhachHang3.RefreshDataBinding((int)khachHang.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaKH"]);
                     this.KhachhangPagecontrol.SelectedPage = PageSuakhachang;
                     break;
-                case "Xóa":
-                    //Thông báo xác nhận
-                    if (XtraMessageBox.Show("Bạn có chắc xóa khách hàng '" + gridView1.GetFocusedRowCellValue(colTenKH).ToString() + "' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
-                    {
+                //case "Xóa":
+                //    //Thông báo xác nhận
+                //    if (XtraMessageBox.Show("Bạn có chắc xóa khách hàng '" + gridView1.GetFocusedRowCellValue(colTenKH).ToString() + "' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                //    {
                        
-                        if (BUS.KhachHangBUS.XoaKhachHang((int)gridView1.GetFocusedRowCellValue(colMaKH)))
-                        {
+                //        if (BUS.KhachHangBUS.XoaKhachHang((int)gridView1.GetFocusedRowCellValue(colMaKH)))
+                //        {
 
-                            //Thông báo thành công/thất bại
-                            XtraMessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK);
-                            RefreshDataBinding();
-                        }
-                        else
-                            //Thông báo thành công/thất bại
-                            XtraMessageBox.Show("Xóa khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK);
-                    }
-                    break;
+                //            //Thông báo thành công/thất bại
+                //            XtraMessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK);
+                //            RefreshDataBinding();
+                //        }
+                //        else
+                //            //Thông báo thành công/thất bại
+                //            XtraMessageBox.Show("Xóa khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK);
+                //    }
+                //    break;
             }
 
            

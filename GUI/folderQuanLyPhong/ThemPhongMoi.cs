@@ -17,7 +17,7 @@ namespace GUI.folderQuanLyPhong
 {
     public partial class ThemPhongMoi : DevExpress.XtraEditors.XtraUserControl
     {
-
+        public Action actionBack { get; set; }
         List<LoaiPhongDTO> listLoaiPhong;
 
         public ThemPhongMoi()
@@ -29,35 +29,60 @@ namespace GUI.folderQuanLyPhong
         {
             switch(e.Button.Properties.Tag.ToString())
             {
-                case "btnSave":
-                    LuuThongTinPhong();
+                case "Thêm":
+                    //Kiểm tra thông tin hợp lệ
+                    if (txtTenPhong.Text == "")
+                        return;
+
+                    //Lưu thông tinh
+                    if (PhongBUS.LuuThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong, cmbTang.Text, txtGhiChu.Text, 0)) )
+                    {
+                        //Thông báo thành công
+                        //BÌNH
+                        XtraMessageBox.Show("Thêm phòng thành công!", "Thông báo", MessageBoxButtons.OK);
+                        actionBack();
+
+                    }
+                    else
+                    {
+                        //Thông báo thất bại
+                        //BÌNH
+                        XtraMessageBox.Show("Thêm phòng thất bại!", "Thông báo", MessageBoxButtons.OK);
+                    }
+
                     break;
-                case "btnCancel":
-                    //Thông báo mất save??, trở về màn hình chính
-                    //BÌNH
-                    
+
+                case "Hủy":
+                    if (ThongBaoHuyThemPhong())
+                        actionBack();
+                    break;
+                default:
                     break;
             }
-            return;
+           
         }
 
-        private void LuuThongTinPhong()
+        private bool ThongBaoHuyThemPhong()
         {
-            //Kiểm tra thông tin nhập vào hợp lệ
-            //BÌNH
+            //Bình
+            if (XtraMessageBox.Show("Bạn có chắc hủy thêm khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                return true;
+            }
+            return false;
+        }
+        private bool KiemTraHopLeCacGiaTriNhapVao()
+        {
+            if (txtTenPhong.Text == "")
+            {
+                return false;
+            }
+            //if (txxtSDT.Text == "")
+            //{
+            //    return false;
+            //}
 
-            //Lưu
-            PhongDTO phongDTO = new PhongDTO(int.Parse(txtMaPhong.Text),txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong,cmbTang.Text,txtGhiChu.Text,0);
-            if(PhongBUS.LuuThongTinPhong(phongDTO))
-            {
-                //Thông báo thành công
-                //BÌNH
-            }
-            else
-            {
-                //Thông báo thất bại
-                //BÌNH
-            }
+            return true;
         }
 
         internal void Initialize()
@@ -74,6 +99,7 @@ namespace GUI.folderQuanLyPhong
             if(listLoaiPhong.Count == 0)
             {
                 //BÌNH
+                XtraMessageBox.Show("Cần thêm loại phòng trước!", "Thông báo", MessageBoxButtons.OK);
             }
 
             cmbLoaiPhong.Properties.Items.Clear();
@@ -86,11 +112,47 @@ namespace GUI.folderQuanLyPhong
             //Lấy tất cả các tầng
             cmbTang.Properties.Items.Clear();
             List<string> listTang = PhongBUS.LayCacTangCoSan();
+            //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
+            if (listLoaiPhong.Count == 0)
+            {
+                //BÌNH
+                XtraMessageBox.Show("Cần thêm các tầng trước!", "Thông báo", MessageBoxButtons.OK);
+            }
+
             foreach (string tang in listTang)
             {
                 cmbTang.Properties.Items.Add(tang);
             }
+
             cmbTang.SelectedIndex = 0;
+            txtTenPhong.Text = "";
+
+        }
+
+        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (ThongBaoHuyThemPhong())
+                actionBack();
+        }
+
+        private void txtTenPhong_Validating(object sender, CancelEventArgs e)
+        {
+            if ((sender as TextEdit).Text == "")
+            {
+                txtTenPhong.ErrorText = "Tên phòng không được để trống";
+                wbntThemphong.Buttons[0].Properties.Enabled = false;
+            }
+            else
+            {
+                txtTenPhong.ErrorText = null;
+                if (KiemTraHopLeCacGiaTriNhapVao())
+                    wbntThemphong.Buttons[0].Properties.Enabled = true;
+            }
+        }
+
+        private void txtTenPhong_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            txtTenPhong_Validating(sender, new CancelEventArgs());
         }
     }
 }
