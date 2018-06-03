@@ -30,5 +30,15 @@ namespace GUI.folderTinhTrangPhong
                     break;
             }
         }
+
+        private void txtPhong_Properties_Popup(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPhong_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+
+        }
     }
 }

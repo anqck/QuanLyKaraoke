@@ -481,7 +481,7 @@ namespace GUI.TinhTrangPhong
         }
         void OnClickBtnChuyenPhong(object sender, EventArgs e)
         {
-            
+            FlyoutDialog.Show(this.FindForm(), new ChuyenPhong());
         }
 
         private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)

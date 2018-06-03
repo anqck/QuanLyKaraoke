@@ -35,6 +35,10 @@ namespace GUI.folderTinhTrangPhong
             //snapControl.ReadOnly = true;
 
             //snapControl.Document.DataSource = ds;
+           // Hoadon hoaDon = new Hoadon();
+           // documentViewer1.PrintingSystem = hoaDon.PrintingSystem;
+            //hoaDon.CreateDocument();
+          
         }
         public void RefreshDataBinding(ThuePhongDTO thuePhongDTO)
         {
@@ -163,19 +167,19 @@ namespace GUI.folderTinhTrangPhong
 
         public void CalcTongTien()
         {
-            double TongTienGio = 0, TongTienKhuyenMai = 0, TongTienDichVu = 0;
+            //double TongTienGio = 0, TongTienKhuyenMai = 0, TongTienDichVu = 0;
            
-            foreach (DevExpress.XtraLayout.LayoutControlGroup layoutGroup in this.tabbedControlGroup1.TabPages)
-            {
-                TongTienGio += ((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienGio();
-                TongTienKhuyenMai+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienKhuyenMai();
-                TongTienDichVu+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienDichVu();
-            }
+            //foreach (DevExpress.XtraLayout.LayoutControlGroup layoutGroup in this.tabbedControlGroup1.TabPages)
+            //{
+            //    TongTienGio += ((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienGio();
+            //    TongTienKhuyenMai+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienKhuyenMai();
+            //    TongTienDichVu+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienDichVu();
+            //}
 
-            txtTongTienGio.EditValue = TongTienGio;
-            txtTongTienKhuyenMai.EditValue = TongTienKhuyenMai;
-            txtTongTienDichVu.EditValue = TongTienDichVu;
-            txtTongTienThanhToan.EditValue = TongTienGio + TongTienKhuyenMai + TongTienDichVu - Convert.ToDouble(txtTienTraTruoc.EditValue);
+            //txtTongTienGio.EditValue = TongTienGio;
+            //txtTongTienKhuyenMai.EditValue = TongTienKhuyenMai;
+            //txtTongTienDichVu.EditValue = TongTienDichVu;
+            //txtTongTienThanhToan.EditValue = TongTienGio + TongTienKhuyenMai + TongTienDichVu - Convert.ToDouble(txtTienTraTruoc.EditValue);
         }
 
        

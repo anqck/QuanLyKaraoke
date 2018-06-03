@@ -6,9 +6,9 @@ using DevExpress.XtraReports.UI;
 
 namespace GUI.folderTinhTrangPhong
 {
-    public partial class Hoadon : DevExpress.XtraReports.UI.XtraReport
+    public partial class HoaDon : DevExpress.XtraReports.UI.XtraReport
     {
-        public Hoadon()
+        public HoaDon()
         {
             InitializeComponent();
         }
