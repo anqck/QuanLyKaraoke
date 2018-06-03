@@ -36,6 +36,12 @@ namespace DAL
             }
         }
 
+        public static bool XoaCacDichVuPhong(ThuePhongDTO thuePhongDTO)
+        {
+            DAL.DataProvider.ExecuseNonQuery("DELETE FROM dichvuphong WHERE dichvuphong.MaThuePhong = '"+thuePhongDTO.MaThuePhong+"';");
+            return true;
+        }
+
         public static Dictionary<int,ThuePhongDTO> LayThongTinPhongDangDuocThue()
         {
             try
@@ -75,6 +81,11 @@ namespace DAL
 
             return new ThuePhongDTO((int)dt.Rows[0]["MaThuePhong"], (int)dt.Rows[0]["MaPhong"], DateTime.Parse(dt.Rows[0]["GioThuePhong"].ToString()), (dt.Rows[0]["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["GioTraPhong"].ToString()), (int)dt.Rows[0]["MaHoaDon"]);
 
+        }
+        public static bool XoaThuePhong(ThuePhongDTO thuePhongDTO)
+        {
+            DAL.DataProvider.ExecuseNonQuery("DELETE FROM thuephong WHERE thuephong.MaThuePhong = '" + thuePhongDTO.MaThuePhong + "';");
+            return true;
         }
 
     }

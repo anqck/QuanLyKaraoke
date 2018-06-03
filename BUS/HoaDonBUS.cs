@@ -2,9 +2,8 @@
 using DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BUS
 {
@@ -18,11 +17,11 @@ namespace BUS
 
         public static bool LuuThongTinThuePhong(ThuePhongDTO thuePhongDTO, HoaDonDTO hoaDonDTO)
         {
-            return HoaDonDAL.LuuThongTinHoaDon(hoaDonDTO) && ThuePhongBUS.LuuThongTinThuePhong(thuePhongDTO)  ;
+            return HoaDonDAL.LuuThongTinHoaDon(hoaDonDTO) && ThuePhongBUS.LuuThongTinThuePhong(thuePhongDTO);
 
         }
 
-        public static bool LuuThongTinHoaDon( HoaDonDTO hoaDonDTO)
+        public static bool LuuThongTinHoaDon(HoaDonDTO hoaDonDTO)
         {
             return HoaDonDAL.LuuThongTinHoaDon(hoaDonDTO);
 
@@ -40,13 +39,42 @@ namespace BUS
         {
             return DAL.HoaDonDAL.CapNhatHoaDonDaThanhToan(hoaDonDTO);
         }
-        public static int  DemSoLuongPhongDangConDuocThueHienTai(HoaDonDTO hoaDonDTO)
+        public static int DemSoLuongPhongDangConDuocThueHienTai(HoaDonDTO hoaDonDTO)
         {
             return DAL.HoaDonDAL.DemSoLuongPhongDangConDuocThueHienTai(hoaDonDTO);
         }
         public static int DemSoLuongThuePhong(int maHoaDon)
         {
             return DAL.HoaDonDAL.DemSoLuongThuePhong(maHoaDon);
+        }
+        public static DataTable LayTatCaCacHoaDon_KhachHang()
+        {
+            return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang();
+        }
+        public static bool UpdateGhiChu(int maHoaDon,string strGhiChu)
+        {
+            return DAL.HoaDonDAL.UpdateGhiChu(maHoaDon, strGhiChu);
+        }
+        public static bool UpdateKhachHang(int maHoaDon, int maKH)
+        {
+            return DAL.HoaDonDAL.UpdateKhachHang(maHoaDon, maKH);
+        }
+
+        public static bool XoaHoaDon(HoaDonDTO hoaDon)
+        {
+            return DAL.HoaDonDAL.XoaHoaDon(hoaDon);
+        }
+        public static DataTable LayTatCaDichVu_Phong_DichVuPhong()
+        {
+            return DAL.HoaDonDAL.LayTatCaDichVu_Phong_DichVuPhong();
+        }
+        public static Dictionary<int,double>  GetTongDoanhThuTheoThang(int Nam)
+        {
+            return DAL.HoaDonDAL.GetTongDoanhThuTheoThang(Nam);
+        }
+        public static bool CapNhatTienTraTruoc(HoaDonDTO hoaDonDTO, double tienTraTruoc)
+        {
+            return DAL.HoaDonDAL.CapNhatTienTraTruoc(hoaDonDTO, tienTraTruoc);
         }
     }
 }

@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Customization;
 using GUI.folderTinhTrangPhong;
 using DTO;
+using BUS;
 
 namespace GUI.TinhTrangPhong
 {
@@ -24,6 +25,7 @@ namespace GUI.TinhTrangPhong
             InitializeComponent();
 
             thanhToan1.goBackHome = GoToHome;
+            thongTinChiTietNhieuPhong1.goBackHome = GoToHome;
 
             btnThuePhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thuê phòng"];
             btnThuePhong.Click += OnClickBtnThuePhong;
@@ -71,7 +73,9 @@ namespace GUI.TinhTrangPhong
 
                 
 
-                tileAll.Elements[1].Text = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong().Rows.Count.ToString();
+                tileAll.Elements[1].Text = danhSachPhong.Rows.Count.ToString();
+                tileAvailable.Elements[1].Text = PhongBUS.DemSoLuongPhong(0).ToString();
+                tileRented.Elements[1].Text = PhongBUS.DemSoLuongPhong(1).ToString();
 
                 grpLoaiPhong.Items.Clear();
                 foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable().Rows)

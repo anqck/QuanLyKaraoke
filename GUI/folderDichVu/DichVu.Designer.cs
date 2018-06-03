@@ -385,6 +385,7 @@
             // 
             // suaDichVu1
             // 
+            this.suaDichVu1.actionBack = null;
             this.suaDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.suaDichVu1.Location = new System.Drawing.Point(0, 0);
             this.suaDichVu1.Name = "suaDichVu1";

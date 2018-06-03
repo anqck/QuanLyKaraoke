@@ -48,6 +48,10 @@ namespace BUS
         {
             return DAL.PhongDAL.LayThongTinPhong(maPhong);
         }
+        public static int DemSoLuongPhong(int maTinhTrangPhong)
+        {
+            return DAL.PhongDAL.DemSoLuongPhong(maTinhTrangPhong);
+        }
 
     }
 }

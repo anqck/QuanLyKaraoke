@@ -43,6 +43,30 @@ namespace DAL
             }
 
         }
+
+        public static bool UpdateGhiChu(int maHoaDon, string strGhiChu)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE hoadon SET hoadon.GhiChu = '" + strGhiChu + "'  WHERE hoadon.MaHoaDon = '" + maHoaDon + "';");
+
+            return true;
+        }
+
+        public static DataTable LayTatCaDichVu_Phong_DichVuPhong()
+        {
+            return DataProvider.ExecuseQuery("SELECT thuephong.MaHoaDon, dichvu.TenDV, dichvuphong.ThoiGian, dichvuphong.SoLuong, dichvuphong.Gia, phong.TenPhong, dichvu.MaLDV FROM thuephong, dichvuphong, phong, dichvu WHERE thuephong.MaThuePhong = dichvuphong.MaThuePhong AND thuephong.MaPhong = phong.MaPhong AND dichvuphong.MaDV = dichvu.MaDV ;");
+        }
+
+        public static bool UpdateKhachHang(int maHoaDon, int maKH)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE hoadon SET hoadon.MaKH = '" + maKH + "'  WHERE hoadon.MaHoaDon = '" + maHoaDon + "';");
+            return true;
+        }
+
+        public static DataTable LayTatCaCacHoaDon_KhachHang()
+        {
+           return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH;");
+        }
+
         public static HoaDonDTO LayThongTinHoaDonDangThue(int maHoaDon)
         {
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon WHERE hoadon.MaHoaDon = '" + maHoaDon.ToString() + "';");
@@ -78,5 +102,48 @@ namespace DAL
         {
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT COUNT(*) FROM quanlykaraoke.hoadon, quanlykaraoke.thuephong WHERE hoadon.MaHoaDon = thuephong.MaHoaDon  AND thuephong.MaHoaDon = '" + maHoaDon + "' ;").Rows[0][0]);
         }
+        public static bool XoaHoaDon(HoaDonDTO hoaDon)
+        {
+            DAL.DataProvider.ExecuseNonQuery("DELETE FROM hoadon WHERE hoadon.MaHoaDon = '" + hoaDon.MaHoaDon + "';");
+            return true;
+        }
+        public static Dictionary<int, double> GetTongDoanhThuTheoThang(int Nam)
+        {
+            Dictionary<int, double> res = new Dictionary<int, double>();
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT Month(NgayThanhToan), SUM(TongTienThanhToan) FROM hoadon WHERE Year(NgayThanhToan) = '"+ Nam + "' GROUP BY Month(NgayThanhToan);");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add((int)row["Month(NgayThanhToan)"], (double) row["SUM(TongTienThanhToan)"]);
+            }
+
+            return res;
+        }
+
+        public static Dictionary<int, double> GetTongDoanhThuTheoNam()
+        {
+            Dictionary<int, double> res = new Dictionary<int, double>();
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT Year(NgayThanhToan), SUM(TongTienThanhToan) FROM hoadon WHERE NgayThanhToan is not nULL GROUP BY Year(NgayThanhToan);");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add((int)row["Year(NgayThanhToan)"], (double)row["SUM(TongTienThanhToan)"]);
+            }
+
+            return res;
+        }
+
+        public static int GetNamThanhToanDauTien()
+        {
+            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Min(Year(NgayThanhToan)) FROM hoadon WHERE NgayThanhToan is not nULL GROUP BY Year(NgayThanhToan) ;").Rows[0][0]);
+        }
+        public static bool CapNhatTienTraTruoc(HoaDonDTO hoaDonDTO, double tienTraTruoc)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE hoadon SET hoadon.TienTraTruoc = '" + tienTraTruoc + "'  WHERE hoadon.MaHoaDon = '" + hoaDonDTO.MaHoaDon + "';");
+
+            return true;
+        }
+
+
     }
 }

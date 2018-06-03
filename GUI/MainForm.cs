@@ -946,7 +946,11 @@ namespace GUI
                    // khachHang1.GoToPage(0);
                     break;
                 case "menuHoaDon":
+                    DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
+                    timHoaDon1.RefreshDataBinding();
+                  
                     PageControl.SelectedPage = pageHoadon;
+                    DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
                     // khachHang1.RefreshDataBinding();
                     // khachHang1.GoToPage(0);
                     break;
@@ -973,7 +977,7 @@ namespace GUI
         private void timer1_Tick(object sender, EventArgs e)
         {
             tinhTrangPhong1.UpdateTime();
-            lbTimedate.Text = DateTime.Now.ToString("dd/MM/yyyy")+ "   " + DateTime.Now.ToString("hh:mm: ss") ;
+            lbTimedate.Text = DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss") ;
             //Clock.Text = DateTime.Now.ToString("hh:mm:ss");
             // Date.Text = DateTime.Now.ToString("dd MM yyyy");
         }

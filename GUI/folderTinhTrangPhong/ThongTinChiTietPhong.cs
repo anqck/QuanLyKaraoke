@@ -61,6 +61,7 @@ namespace GUI.folderTinhTrangPhong
             txtLoaiPhong.EditValue = BUS.LoaiPhongBUS.LayLoaiPhong(phongDTO).TenLoaiPhong;
             txtTang.EditValue = phongDTO.Tang;
 
+          
 
             //Phòng trống
             if (thuePhongDTO == null)
@@ -84,6 +85,9 @@ namespace GUI.folderTinhTrangPhong
                 txtNgayGioVao.EditValue = thuePhong.GioThuePhong.ToString("dd-MM-yyyy hh:mm:ss");
                 txtGioTraPhong.EditValue = (thuePhong.GioTraPhong == DateTime.MinValue) ? "Chưa có" : thuePhong.GioTraPhong.ToString("dd-MM-yyyy hh:mm:ss");
                 txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
+
+                txtMaHoaDon.EditValue = hoaDon.MaHoaDon;
+                txtGhiChu.EditValue = hoaDon.GhiChu;
 
                 //Phòng đang được thuê
                 if (thuePhongDTO.GioTraPhong == DateTime.MinValue)
@@ -155,6 +159,22 @@ namespace GUI.folderTinhTrangPhong
                         RefreshDataBindingDichVuPhong();
                     }
                    
+                    break;
+                case "Hủy Phòng":
+
+                    //Thông báo xác nhận
+                    //BÌNH
+
+                    ThuePhongBUS.XoaCacDichVuPhong(thuePhong);
+                    ThuePhongBUS.XoaThuePhong(thuePhong);
+                    PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 0);
+                    if (HoaDonBUS.DemSoLuongThuePhong(hoaDon.MaHoaDon) == 0)
+                    {
+                        HoaDonBUS.XoaHoaDon(hoaDon);
+                    }
+
+                    ((ThongTinChiTietNhieuPhong)Parent.Parent.Parent).OnXoaPhong();
+
                     break;
                 case "Trả Phòng":
                     
@@ -255,9 +275,56 @@ namespace GUI.folderTinhTrangPhong
            
         }
 
-        private void ThongTinChiTietPhong_Load(object sender, EventArgs e)
+
+
+        private void txtGhiChu_EditValueChanged(object sender, EventArgs e)
+        {
+            HoaDonBUS.UpdateGhiChu(hoaDon.MaHoaDon,txtGhiChu.Text);
+        }
+
+        private void simpleButton2_Click(object sender, EventArgs e)
         {
 
+            folderKhachHang.ChonKhachHang chonKhachHang = new folderKhachHang.ChonKhachHang();
+            XtraDialogArgs args = new XtraDialogArgs(caption: "Caption", content: chonKhachHang, buttons: new DialogResult[] { DialogResult.OK, DialogResult.Cancel });
+            args.Showing += Args_Showing_ChonKH;
+            args.Caption = "Default Text";
+            args.Buttons = new DialogResult[] { DialogResult.OK, DialogResult.Cancel };
+
+
+            switch (XtraDialog.Show(args))
+            {
+                case DialogResult.OK:
+                    khachHang = chonKhachHang.LayKhachHangDaChon();
+
+
+                    txtMaKH.EditValue = khachHang.MaKH;
+                    txtTenKH.EditValue = khachHang.TenKH;
+                    txtLoaiKH.EditValue = BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenKH;
+                    txtSDT.EditValue = khachHang.SDT;
+                    txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
+
+                    HoaDonBUS.UpdateKhachHang(hoaDon.MaHoaDon, khachHang.MaKH);
+                    break;
+                case DialogResult.Cancel:
+
+
+                    break;
+                default:
+                    break;
+            }
         }
+
+        private void Args_Showing_ChonKH(object sender, XtraMessageShowingArgs e)
+        {
+            e.Form.Text = "Chọn khách hàng";
+            e.Buttons[DialogResult.OK].Text = "Chọn";
+            e.Buttons[DialogResult.Cancel].Text = "Hủy bỏ";
+        }
+        public void UpdateOnPageChange()
+        {
+            this.RefreshDataBinding(phong, thuePhong);
+        }
+
     }
 }

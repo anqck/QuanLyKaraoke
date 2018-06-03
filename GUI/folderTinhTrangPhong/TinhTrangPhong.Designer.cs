@@ -243,7 +243,6 @@
             this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl2.Position = 6;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);
@@ -781,6 +780,7 @@
             // thongTinChiTietNhieuPhong1
             // 
             this.thongTinChiTietNhieuPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.thongTinChiTietNhieuPhong1.goBackHome = null;
             this.thongTinChiTietNhieuPhong1.Location = new System.Drawing.Point(0, 0);
             this.thongTinChiTietNhieuPhong1.Name = "thongTinChiTietNhieuPhong1";
             this.thongTinChiTietNhieuPhong1.Size = new System.Drawing.Size(1110, 662);

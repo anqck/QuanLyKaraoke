@@ -70,6 +70,7 @@
             this.TabControl.Name = "TabControl";
             this.TabControl.Size = new System.Drawing.Size(996, 625);
             this.TabControl.TabIndex = 1;
+            this.TabControl.SelectedPageChanging += new DevExpress.XtraTab.TabPageChangingEventHandler(this.TabControl_SelectedPageChanging);
             // 
             // ThongTinChiTietNhieuPhong
             // 

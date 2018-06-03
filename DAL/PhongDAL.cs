@@ -127,5 +127,9 @@ namespace DAL
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong WHERE quanlykaraoke.phong.MaPhong = '"+maPhong+"';");
             return new PhongDTO((int)dt.Rows[0]["MaPhong"], dt.Rows[0]["TenPhong"].ToString(), (int)dt.Rows[0]["MaLoaiPhong"], dt.Rows[0]["Tang"].ToString(), dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangPhong"]);
         }
+        public static int DemSoLuongPhong(int maTinhTrangPhong)
+        {
+            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*)  FROM quanlykaraoke.phong WHERE phong.MaTinhTrangPhong = '"+maTinhTrangPhong+"';").Rows[0][0]);
+        }
     }
 }

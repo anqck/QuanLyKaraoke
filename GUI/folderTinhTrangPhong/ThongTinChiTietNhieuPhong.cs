@@ -16,7 +16,11 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class ThongTinChiTietNhieuPhong : DevExpress.XtraEditors.XtraUserControl
     {
+        public Action goBackHome { get; set; }
         private HoaDonDTO hoaDon;
+
+        private Action goToThanhToan;
+        private ThuePhongDTO thuePhongDTO;
 
         public ThongTinChiTietNhieuPhong()
         {
@@ -34,6 +38,9 @@ namespace GUI.folderTinhTrangPhong
         }
         public void RefreshDataBinding(ThuePhongDTO thuePhongDTO,Action goToThanhToan)
         {
+            this.goToThanhToan = goToThanhToan;
+            this.thuePhongDTO = thuePhongDTO;
+
             TabControl.TabPages.Clear();
 
             this.hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhongDTO.MaHoaDon);
@@ -122,6 +129,22 @@ namespace GUI.folderTinhTrangPhong
         {
             ((ThongTinChiTietPhong)TabControl.SelectedTabPage.Controls[0]).UpdateTime();
         }
-  
+
+        private void TabControl_SelectedPageChanging(object sender, TabPageChangingEventArgs e)
+        {
+            ((ThongTinChiTietPhong)e.Page.Controls[0]).UpdateOnPageChange();
+        }
+        public void OnXoaPhong()
+        {
+            if (HoaDonBUS.DemSoLuongThuePhong(hoaDon.MaHoaDon) == 0)
+            {
+                goBackHome();
+            }
+            else
+            {
+                RefreshDataBinding(thuePhongDTO, goToThanhToan);
+            }
+
+        }
     }
 }
