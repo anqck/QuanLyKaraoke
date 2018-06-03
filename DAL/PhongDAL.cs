@@ -89,6 +89,27 @@ namespace DAL
                 return false;
             }
         }
+        public static bool CapNhatThongTinPhong(PhongDTO phongDTO)
+        {
+            try
+            {
+          
+                StringBuilder strSQL = new StringBuilder("UPDATE quanlykaraoke.phong SET TenPhong='$1', MaTinhTrangPhong='$2', MaLoaiPhong='$3', GhiChu='$4', Tang = '$5' WHERE MaPhong= '$0' ");
+                strSQL.Replace("$0", phongDTO.MaPhong.ToString());
+                strSQL.Replace("$1", phongDTO.TenPhong.ToString());
+                strSQL.Replace("$2", phongDTO.MaTinhTrangPhong.ToString());
+                strSQL.Replace("$3", phongDTO.MaLoaiPhong.ToString());
+                strSQL.Replace("$4", phongDTO.GhiChu.ToString());
+                strSQL.Replace("$5", phongDTO.Tang.ToString());
+                DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
+
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
 
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong()
         {

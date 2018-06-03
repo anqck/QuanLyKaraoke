@@ -29,14 +29,14 @@ namespace GUI.folderDichVu
             {
                 dichVuDTO = DichVuBUS.LayThongTinDichVu(maDV);
 
-
-
                 //Lấy tất cả loại phòng vào cmb
                 listLoaiDichVu = LoaiDichVuBUS.LayTatCaLoaiDichVu_List();
+
                 //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
                 if (listLoaiDichVu.Count == 0)
                 {
                     //BÌNH
+                    XtraMessageBox.Show("Cần thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK);
                 }
 
                 cmbLoaiDV.Properties.Items.Clear();
@@ -58,10 +58,6 @@ namespace GUI.folderDichVu
 
                 ValidateChildren();
 
-
-
-
-
             }
             catch (Exception x)
             {
@@ -78,7 +74,13 @@ namespace GUI.folderDichVu
 
         bool ThongBaoHuyKoLuuDichVu()
         {
-            return true;
+
+            //Bình
+            if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật dịch vụ ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                return true;
+            }
+            return false;
         }
         private void wbntSuadichvu_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
@@ -91,14 +93,14 @@ namespace GUI.folderDichVu
 
                     if (txtDonVi.Text == "")
                         return;
-
-
-                    //Lưu thông tinh
+                    
+                    //Lưu thông tin
+                        
                     if (DichVuBUS.CapNhatThongTinDichVu(new DichVuDTO(Convert.ToInt32(txtMaDV.Text), txtTenDV.Text, Convert.ToDouble(txtDonGia.EditValue), txtDonVi.Text, (pictureEdit1.Image), listLoaiDichVu[cmbLoaiDV.SelectedIndex].MaLoaiDV)))
                     {
                         //Thông báo thành công
                         //BÌNH
-
+                        XtraMessageBox.Show("Cập nhật dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK);
 
                         actionBack();
                     }
@@ -106,6 +108,7 @@ namespace GUI.folderDichVu
                     {
                         //Thông báo thất bại
                         //BÌNH
+                        XtraMessageBox.Show("Cập nhật dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK);
                     }
                     break;
                 case "Hủy":
@@ -176,6 +179,12 @@ namespace GUI.folderDichVu
             g.Dispose();
 
             return (Image)b;
+        }
+
+        private void windowsUIButtonPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            if (ThongBaoHuyKoLuuDichVu())
+                actionBack();
         }
     }
 }

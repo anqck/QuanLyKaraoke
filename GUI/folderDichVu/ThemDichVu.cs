@@ -44,6 +44,7 @@ namespace GUI.folderDichVu
             if (listLoaiDichVu.Count == 0)
             {
                 //BÌNH
+                XtraMessageBox.Show("Cần thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK);
             }
 
             cmbLoaiDV.Properties.Items.Clear();
@@ -78,14 +79,15 @@ namespace GUI.folderDichVu
                     {
                         //Thông báo thành công
                         //BÌNH
+                        XtraMessageBox.Show("Thêm dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK);
 
-                       
                         actionBack();
                     }
                     else
                     {
                         //Thông báo thất bại
                         //BÌNH
+                        XtraMessageBox.Show("Thêm dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK);
                     }
                     break;
                 case "Hủy":
@@ -116,7 +118,11 @@ namespace GUI.folderDichVu
         private bool ThongBaoHuyKoLuuDichVu()
         {
             //Bình
-            return true;
+            if (XtraMessageBox.Show("Bạn có chắc hủy thêm dịch vụ ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                return true;
+            }
+            return false;
         }
 
 

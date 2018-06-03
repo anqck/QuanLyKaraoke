@@ -13,6 +13,7 @@ namespace GUI.folderNhanVien
 {
     public partial class NhanVien : DevExpress.XtraEditors.XtraUserControl
     {
+        DataTable nhanVien;
         public NhanVien()
         {
             InitializeComponent();
@@ -39,6 +40,30 @@ namespace GUI.folderNhanVien
         private void windowsUIButtonPanel2_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
             this.NhanVienPagecontrol.SelectedPage = PageNhanvien;
+        }
+        public void RefreshDataBinding()
+        {
+
+            try
+            {
+               // gridControl1.DataSource = khachHang = BUS.KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+
+               // tileControl2.SelectedItem = tileAll;
+
+                //grpLoaiDichVu.Items.Clear();
+                //foreach (LoaiDichVuDTO loaiDV in BUS.LoaiDichVuBUS.LayTatCaLoaiDichVu_List())
+                // {
+                //    grpLoaiDichVu.Items.Add(NewTileItem(loaiDV.TenDV.ToString()));
+                //
+                // }
+
+
+
+            }
+            catch (Exception x)
+            {
+
+            }
         }
     }
 }

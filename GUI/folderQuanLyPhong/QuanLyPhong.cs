@@ -13,37 +13,59 @@ namespace GUI.folderQuanLyPhong
 {
     public partial class QuanLyPhong : DevExpress.XtraEditors.XtraUserControl
     {
+        DataTable phong;
         public QuanLyPhong()
         {
             InitializeComponent();
-
+            themPhongMoi1.actionBack = GoToHomePage;
+            suaPhong1.actionBack = GoToHomePage;
         }
-
+        void GoToHomePage()
+        {
+            this.QuanlyPagecontrol.SelectedPage = PageQuanly;
+        }
         private void wbntTinhtrangphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
-            if (e.Button.Equals(wbntQuanlyphong.Buttons[0]))
+            
+            switch (e.Button.Properties.Tag.ToString())
             {
-                QuanlyPagecontrol.SelectedPage = PageThemphongmoi;
-                themPhongMoi1.Initialize();
-            }
-            if (e.Button.Equals(wbntQuanlyphong.Buttons[2]))
-            {
-                QuanlyPagecontrol.SelectedPage = PageSuaphong;
-            }
+                case "Thêm phòng":
+                    themPhongMoi1.Initialize();
+                    QuanlyPagecontrol.SelectedPage = PageThemphongmoi;
+                    break;
+                case "Sửa phòng":
+                    // suaKhachHang3.RefreshDataBinding((int)khachHang.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaKH"]);
+                    suaPhong1.RefreshDataBinding((int)phong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaPhong"]);
+                    QuanlyPagecontrol.SelectedPage = PageSuaphong;
+                    break;
+                case "Xóa":
+                    //Thông báo xác nhận
+                    //if (XtraMessageBox.Show("Bạn có chắc xóa khách hàng '" + gridView1.GetFocusedRowCellValue(colTenKH).ToString() + "' ?", "Xác nhận", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    //{
 
+                    //    if (BUS.KhachHangBUS.XoaKhachHang((int)gridView1.GetFocusedRowCellValue(colMaKH)))
+                    //    {
+
+                    //        //Thông báo thành công/thất bại
+                    //        XtraMessageBox.Show("Xóa khách hàng thành công!", "Thông báo", MessageBoxButtons.OK);
+                    //        RefreshDataBinding();
+                    //    }
+                    //    else
+                    //        //Thông báo thành công/thất bại
+                    //        XtraMessageBox.Show("Xóa khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK);
+                    //}
+                    break;
+            }
         }
 
-        private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            QuanlyPagecontrol.SelectedPageIndex = 0;
-        }
 
         public void RefreshDataBinding()
         {
         
             try
             {
-                gridControl.DataSource = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+
+                 gridControl.DataSource = phong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
                 
 
                 tileAll.Elements[1].Text = ((DataView)gridView1.DataSource).Count.ToString();
@@ -68,11 +90,7 @@ namespace GUI.folderQuanLyPhong
             QuanlyPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
         }
 
-        private void wbntThemloaiphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
-        {
-            QuanlyPagecontrol.SelectedPageIndex = 0;
-        }
-
+       
 
         #region Types
         private TileItem NewTileItem(String name)
@@ -153,9 +171,9 @@ namespace GUI.folderQuanLyPhong
 
         #endregion
 
-        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        private void QuanlyPagecontrol_SelectedPageChanging(object sender, DevExpress.XtraBars.Navigation.SelectedPageChangingEventArgs e)
         {
-            QuanlyPagecontrol.SelectedPageIndex = 0;
+            RefreshDataBinding();
         }
     }
 }

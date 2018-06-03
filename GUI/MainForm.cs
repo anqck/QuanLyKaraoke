@@ -932,7 +932,7 @@ namespace GUI
                     break;
                 case "menuNhanvien":
                     PageControl.SelectedPage = pageNhanvien;
-                    //khachHang1.RefreshDataBinding();
+                    nhanVien1.RefreshDataBinding();
                    // khachHang1.GoToPage(0);
                     break;
                 case "menuDichvu":

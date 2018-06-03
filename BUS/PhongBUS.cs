@@ -24,6 +24,10 @@ namespace BUS
         {
             return DAL.PhongDAL.LuuThongTinPhong(phongDTO);
         }
+        public static bool CapNhatThongTinPhong(PhongDTO phongDTO)
+        {
+            return DAL.PhongDAL.CapNhatThongTinPhong(phongDTO);
+        }
 
         public static bool CapNhatTinhTrangPhong(PhongDTO phong, int maTinhTrangPhong)
         {
