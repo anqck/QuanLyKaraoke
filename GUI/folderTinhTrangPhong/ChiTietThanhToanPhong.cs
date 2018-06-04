@@ -29,7 +29,8 @@ namespace GUI.folderTinhTrangPhong
 
         Dictionary<int, DichVuPhongDTO> listKhuyenMai;
 
-        double TongTien ;
+        double TongTienGio ;
+
 
         public Action CalcTongTienAction { get; set; }
         public WindowsUIButton ButtonXoaDichVu { get; set; }
@@ -49,6 +50,8 @@ namespace GUI.folderTinhTrangPhong
             txtGioVao.Time = thuePhong.GioThuePhong;
             txtGioRa.Time = (thuePhong.GioTraPhong == DateTime.MinValue) ?DateTime.Now : thuePhong.GioTraPhong;
 
+            thuePhong.GioTraPhong = txtGioRa.Time;
+
             listKhuyenMai = new Dictionary<int, DichVuPhongDTO>();
 
             RefreshDataBindingTienGio();
@@ -65,12 +68,12 @@ namespace GUI.folderTinhTrangPhong
                 if (ngay.ngay.date.Day == khachHangDTO.NgaySinh.Day && ngay.ngay.date.Month == khachHangDTO.NgaySinh.Month && khachHangDTO.MaKH != 0)
                 {
                     
-                    if (TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat > loaiKhachHang.SoTienGiamGiaSinhNhat_Max)
-                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGiaSinhNhat_Max);
-                    else if ((TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat < loaiKhachHang.SoTienGiamGiaSinhNhat_Min))
-                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGiaSinhNhat_Min);
+                    if (TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat > loaiKhachHang.SoTienGiamGiaSinhNhat_Max)
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGiaSinhNhat_Max);
+                    else if ((TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat < loaiKhachHang.SoTienGiamGiaSinhNhat_Min))
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGiaSinhNhat_Min);
                     else
-                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, TongTien * loaiKhachHang.PhanTramGiamGiaSinhNhat);
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -(TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat));
 
                     if (dichVuPhongDTO.DonGia != 0)
                         listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
@@ -80,12 +83,12 @@ namespace GUI.folderTinhTrangPhong
             }
 
             //KM Loại KH
-            if (TongTien * loaiKhachHang.PhanTramGiamGia > loaiKhachHang.SoTienGiamGia_Max)
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count+1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGia_Max);
-            else if ((TongTien * loaiKhachHang.PhanTramGiamGia < loaiKhachHang.SoTienGiamGia_Min))
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGia_Min);
+            if (TongTienGio * loaiKhachHang.PhanTramGiamGia > loaiKhachHang.SoTienGiamGia_Max)
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count+1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGia_Max);
+            else if ((TongTienGio * loaiKhachHang.PhanTramGiamGia < loaiKhachHang.SoTienGiamGia_Min))
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGia_Min);
             else
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, TongTien * loaiKhachHang.PhanTramGiamGia);
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0,- (TongTienGio * loaiKhachHang.PhanTramGiamGia));
 
             if(dichVuPhongDTO.DonGia != 0 && khachHangDTO.MaKH != 0)
                 listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
@@ -126,10 +129,10 @@ namespace GUI.folderTinhTrangPhong
             tienGio.Columns.Add(new DataColumn("GioBD", typeof(double)));
             tienGio.Columns.Add(new DataColumn("Phong"));
 
-            TongTien = 0;
+            TongTienGio = 0;
             foreach (DTO.ThongTinThanhToanTheoNgay ngay in ThanhToanBUS.TinhTienThuePhong(thuePhong, txtGioRa.Time).listThongTin)
             {
-                TongTien += ngay.TongThanhTien;
+                TongTienGio += ngay.TongThanhTien;
                 foreach (LoaiPhongDTO.DonGiaTheoKhoangThoiGian dongia in ngay.listDonGiaTheoKhoangThoiGian)
                 {
                     DataRow dr = tienGio.NewRow();
@@ -147,7 +150,7 @@ namespace GUI.folderTinhTrangPhong
             }
 
             txtTienGio.Properties.DataSource = tienGio;
-            txtTienGio.Properties.NullText = TongTien.ToString("###,###,###,##0 VNĐ");
+            txtTienGio.Properties.NullText = TongTienGio.ToString("###,###,###,##0 VNĐ");
         }
 
         internal void AddButtonXoaDichVu(WindowsUIButton windowsUIButton)
@@ -274,7 +277,7 @@ namespace GUI.folderTinhTrangPhong
 
         internal void CapNhatThongTinThuePhong()
         {
-            ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(thuePhong.MaThuePhong, thuePhong.MaPhong, txtGioVao.Time, txtGioRa.Time, thuePhong.MaHoaDon, TongTien));
+            ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(thuePhong.MaThuePhong, thuePhong.MaPhong, txtGioVao.Time, txtGioRa.Time, thuePhong.MaHoaDon, TongTienGio));
         }
 
         private void txtTienGio_Properties_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
@@ -302,17 +305,18 @@ namespace GUI.folderTinhTrangPhong
             
         }
 
+        
         private void gridView1_CustomDrawFooterCell(object sender, DevExpress.XtraGrid.Views.Grid.FooterCellCustomDrawEventArgs e)
         {
             GridSummaryItem summary = e.Info.SummaryItem;
             // Obtain the total summary's value. 
-            txtTongTienPhong.EditValue = TongTien + Convert.ToDouble(summary.SummaryValue);
+            txtTongTienPhong.EditValue =  TongTienGio + Convert.ToDouble(summary.SummaryValue);
+
 
 
 
         }
-
-       
+  
         public double GetTongTienKhuyenMai()
         {
             double res = 0;
@@ -341,7 +345,7 @@ namespace GUI.folderTinhTrangPhong
 
         public double GetTongTienGio()
         {
-            return TongTien;
+            return TongTienGio;
         }
         public void ThemDichVu()
         {
