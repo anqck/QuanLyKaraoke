@@ -69,11 +69,11 @@ namespace GUI.folderTinhTrangPhong
                 {
                     
                     if (TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat > loaiKhachHang.SoTienGiamGiaSinhNhat_Max)
-                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGiaSinhNhat_Max);
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGiaSinhNhat_Max);
                     else if ((TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat < loaiKhachHang.SoTienGiamGiaSinhNhat_Min))
-                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGiaSinhNhat_Min);
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGiaSinhNhat_Min);
                     else
-                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat);
+                        dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -(TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat));
 
                     if (dichVuPhongDTO.DonGia != 0)
                         listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
@@ -84,11 +84,11 @@ namespace GUI.folderTinhTrangPhong
 
             //KM Loại KH
             if (TongTienGio * loaiKhachHang.PhanTramGiamGia > loaiKhachHang.SoTienGiamGia_Max)
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count+1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGia_Max);
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count+1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGia_Max);
             else if ((TongTienGio * loaiKhachHang.PhanTramGiamGia < loaiKhachHang.SoTienGiamGia_Min))
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, loaiKhachHang.SoTienGiamGia_Min);
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGia_Min);
             else
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, TongTienGio * loaiKhachHang.PhanTramGiamGia);
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0,- (TongTienGio * loaiKhachHang.PhanTramGiamGia));
 
             if(dichVuPhongDTO.DonGia != 0 && khachHangDTO.MaKH != 0)
                 listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);

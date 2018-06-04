@@ -16,7 +16,7 @@ namespace GUI.folderTinhTrangPhong
             InitializeComponent();
         }
 
-        public void BindingData(DataSet dsHoaDon, KhachHangDTO khachHang, HoaDonDTO hoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
+        public void BindingData(DataSet dsHoaDon, KhachHangDTO khachHang, HoaDonDTO hoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc, string ghiChu)
         {
             DataSource = dsHoaDon;
             DataMember = "thuephong";
@@ -84,12 +84,15 @@ namespace GUI.folderTinhTrangPhong
 
             lbTenKH.Text= khachHang.TenKH;
             lbLoaiKH.Text=BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenLoaiKH;
-            lbDiemTichLuy.Text = khachHang.DiemTichLuy.ToString();
+            lbDiemTichLuy.Text = khachHang.DiemTichLuy.ToString("###,###,##0");
 
-            lbTienHoaDon.Text = (TongTienDichVu + TongTienGio).ToString("###,###,##0 VNĐ");
+            xrTableCell15.Text = (TongTienGio).ToString("###,###,##0 VNĐ");
+            lbTienHoaDon.Text = (TongTienDichVu ).ToString("###,###,##0 VNĐ");
             lbTienKhuyenMai.Text = TongTienKhuyenMai.ToString("###,###,##0 VNĐ");
-            lbThanhTien.Text = (TongTienDichVu + TongTienGio + TongTienKhuyenMai - hoaDon.TienTraTruoc).ToString("###,###,##0 VNĐ");
+            lbThanhTien.Text = TienTraTruoc.ToString("###,###,##0 VNĐ");
+            lbTongThanhTien.Text = (TongTienDichVu + TongTienGio + TongTienKhuyenMai - TienTraTruoc).ToString("###,###,##0 VNĐ");
 
+            xrTableCell18.Text = ghiChu;
         }
 
     }

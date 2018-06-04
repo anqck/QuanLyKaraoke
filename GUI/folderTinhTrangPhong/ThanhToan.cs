@@ -249,7 +249,7 @@ namespace GUI.folderTinhTrangPhong
             hoaDon.NgayThanhToan = txtNgayThanhToan.Time;
             hoaDon.SoTienKhuyenMai = (double)txtTongTienKhuyenMai.EditValue;
 
-            reportHoaDon.BindingData(dsHoaDon, khachHang,hoaDon,TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue));
+            reportHoaDon.BindingData(dsHoaDon, khachHang,hoaDon,TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue),memoEdit1.Text);
             
 
             reportHoaDon.CreateDocument();
@@ -314,6 +314,7 @@ namespace GUI.folderTinhTrangPhong
             HoaDonBUS.CapNhatTienTraTruoc(hoaDon, Convert.ToDouble(txtTienTraTruoc.EditValue));
             CalcTongTien_UpdateHoaDon();
         }
+
     }
 
 
