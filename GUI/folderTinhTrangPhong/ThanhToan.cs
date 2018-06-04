@@ -26,6 +26,7 @@ namespace GUI.folderTinhTrangPhong
 
         reportHoaDon reportHoaDon;
 
+       
         public Action goBackHome { get; set; }
 
        
@@ -47,10 +48,13 @@ namespace GUI.folderTinhTrangPhong
 
             txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
             txtNgayThanhToan.Time = DateTime.Now;
+            hoaDon.NgayThanhToan = DateTime.Now;
 
             dsHoaDon = new DataSet();
             dsHoaDon.Tables.Add(HoaDonBUS.LayThongTinHoaDon_DataTable(hoaDon.MaHoaDon));
-            dsHoaDon.Tables.Add(HoaDonBUS.LayTatCaCacThuePhong_DataTable(hoaDon.MaHoaDon));
+            dsHoaDon.Tables.Add(HoaDonBUS.LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(hoaDon.MaHoaDon));
+            dsHoaDon.Tables[1].Columns.Add(new DataColumn("TienPhong",typeof(double)));
+            dsHoaDon.Tables[1].Columns.Add(new DataColumn("TienGioTamTinh", typeof(double)));
             dsHoaDon.Relations.Add("Danh sách thuê phòng", dsHoaDon.Tables[0].Columns["MaHoaDon"], dsHoaDon.Tables[1].Columns["MaHoaDon"]);
 
 
@@ -66,7 +70,7 @@ namespace GUI.folderTinhTrangPhong
                 chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
                 chiTietThanhToanPhongThanhToan.RefreshDataBinding(listThuePhong[i], khachHang);
                 dsHoaDon.Tables[1].Rows[i]["GioTraPhong"] = chiTietThanhToanPhongThanhToan.thuePhong.GioTraPhong;
-
+                
 
 
                 //thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
@@ -188,21 +192,37 @@ namespace GUI.folderTinhTrangPhong
             dsDichVuPhong.Tables.Clear();
            
 
-            foreach (DevExpress.XtraLayout.LayoutControlGroup layoutGroup in this.tabbedControlGroup1.TabPages)
+            for(int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
             {
-                TongTienGio += ((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienGio();
-                TongTienKhuyenMai+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienKhuyenMai();
-                TongTienDichVu+=((ChiTietThanhToanPhong)layoutGroup.Tag).GetTongTienDichVu();
+                TongTienGio += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienGio();
+                TongTienKhuyenMai += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienKhuyenMai();
+                TongTienDichVu += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienDichVu();
 
-                dsDichVuPhong.Tables.Add(((ChiTietThanhToanPhong)layoutGroup.Tag).GetDichVuPhong_DataTable());
-
-
+                dsHoaDon.Tables[1].Rows[i]["TienPhong"] = TongTienGio + TongTienDichVu +TongTienKhuyenMai;
+                
+                dsDichVuPhong.Tables.Add(((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetDichVuPhong_DataTable());
             }
+          
 
             DataTable MergedDataTable = new DataTable("dichvuphong");
-            for (int i =0; i < dsDichVuPhong.Tables.Count;i++)
+            MergedDataTable.Merge(dsDichVuPhong.Tables[0]);
+            for (int i =1; i < dsDichVuPhong.Tables.Count;i++)
             {
-                MergedDataTable.Merge(dsDichVuPhong.Tables[i]);
+                foreach(DataRow dr in dsDichVuPhong.Tables[i].Rows)
+                {
+                    DataRow row = MergedDataTable.NewRow();
+                    row["MaDVP"] = MergedDataTable.Rows.Count;
+                    row["MaThuePhong"] = dr["MaThuePhong"];
+                    row["MaDV"] = dr["MaDV"];
+                    row["ThoiGian"] = dr["ThoiGian"];
+                    row["SoLuong"] = dr["SoLuong"];
+                    row["Gia"] = dr["Gia"];
+                    row["TenDV"] = dr["TenDV"];
+                    row["DonVi"] = dr["DonVi"];
+                    row["colType"] = dr["colType"];
+                    MergedDataTable.Rows.Add(row);
+                    
+                }                
             }
 
             if (dsHoaDon.Tables.Count == 3)
@@ -213,7 +233,7 @@ namespace GUI.folderTinhTrangPhong
 
             }
             dsHoaDon.Tables.Add(MergedDataTable);
-            dsHoaDon.Relations.Add("Danh sách dịch vụ thuê phòng", dsHoaDon.Tables[1].Columns["MaThuePhong"], dsHoaDon.Tables[2].Columns["MaThuePhong"]);
+            dsHoaDon.Relations.Add("chitietdichvu", dsHoaDon.Tables[1].Columns["MaThuePhong"], dsHoaDon.Tables[2].Columns["MaThuePhong"]);
 
 
 

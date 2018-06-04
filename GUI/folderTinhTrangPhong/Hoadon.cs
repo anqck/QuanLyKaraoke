@@ -19,37 +19,61 @@ namespace GUI.folderTinhTrangPhong
         public void BindingData(DataSet dsHoaDon, KhachHangDTO khachHang, HoaDonDTO hoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
         {
             DataSource = dsHoaDon;
-            DataMember = "dichvuphong";
+            DataMember = "thuephong";
 
-            //MaDV, ThoiGian,SoLuong,Gia, TenDV, TenLDV
+            lbNgayThanhToan.Text = hoaDon.NgayThanhToan.ToString("dd/MM/yyyy HH:mm:ss");
 
+            GroupHeader1.GroupFields.Clear();
+            
 
-
+            GroupHeader1.GroupUnion = GroupUnion.WithFirstDetail;
             GroupHeader1.GroupFields.Add(new GroupField("MaThuePhong"));
-            GroupHeader2.GroupFields.Add(new GroupField("colType"));
+
+            //GroupHeader1.GroupFields.Add(new GroupField("thuephong.MaThuePhong"));
+            //GroupHeader1.GroupFields.Add(new GroupField("thuephong.GioThuePhong"));
+        
 
             //Group Header 1
-            xrLabel3.DataBindings.Add("Text", null, "MaThuePhong");
-            lbTenPhong.DataBindings.Add("Text", null, "TenPhong");
+            xrLabel3.DataBindings.Add("Text", null, "thuephong.MaThuePhong");
+            lbTenPhong.DataBindings.Add("Text", null, "thuephong.TenPhong");
+            lbMaPhong.DataBindings.Add("Text", null, "thuephong.MaPhong");
+            lbLoaiPhong.DataBindings.Add("Text", null, "thuephong.TenLoaiPhong");
             lbGioVao.DataBindings.Add("Text", null, "thuephong.GioThuePhong");
             lbGioRa.DataBindings.Add("Text", null, "thuephong.GioTraPhong");
+            lbTienphong.DataBindings.Add("Text", null, "thuephong.TienPhong");
 
             //Group Header 2
             lbLoaiDichVu.DataBindings.Add("Text", null, "colType");
 
 
             //Detail
-            lbTenDV.DataBindings.Add("Text", null, "dichvuphong.TenDV");
-            lbDonViTinh.DataBindings.Add("Text", null, "dichvuphong.DonVi");
-            lbSoLuong.DataBindings.Add("Text", null, "dichvuphong.SoLuong");
-            lbDonGia.DataBindings.Add("Text", null, "dichvuphong.Gia");
-            lbTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "SoLuong*Gia"));
+            
+
+            string detailDataMember = string.Format("{0}.{1}", dsHoaDon.Tables[1].TableName,   dsHoaDon.Relations[1].RelationName);
+            DetailReport.DataSource = dsHoaDon;
+            DetailReport.DataMember = detailDataMember;
+
+            GroupHeader3.GroupFields.Clear();
+            GroupHeader3.GroupFields.Add(new GroupField(  "colType"));
+
+            lbLoaiDichVu.DataBindings.Add("Text", null, detailDataMember + ".colType");
+
+            xrTableCell4.DataBindings.Add("Text", null, detailDataMember + ".TenDV");
+            xrTableCell6.DataBindings.Add("Text", null, detailDataMember + ".DonVi");
+            xrTableCell8.DataBindings.Add("Text", null,  detailDataMember + ".SoLuong");
+            xrTableCell12.DataBindings.Add("Text", null, detailDataMember + ".Gia");
+
+            //lbTenDV.DataBindings.Add("Text", null, detailDataMember+".TenDV");
+            //lbDonViTinh.DataBindings.Add("Text", null, "dichvuphong.DonVi");
+            //lbSoLuong.DataBindings.Add("Text", null, "dichvuphong.SoLuong");
+            //lbDonGia.DataBindings.Add("Text", null, "dichvuphong.Gia");
+            xrTableCell13.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text",   detailDataMember + ".SoLuong * " + detailDataMember + ".Gia"));
 
             //Group Footer 2
-            lbTongTienDV_Type.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "sumSum(SoLuong*Gia)"));
+            lbTongTienDV_Type.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "sumSum( " + detailDataMember + ".SoLuong * " + detailDataMember + ".Gia)"));
 
             //Group Footer 1
-            lbTongTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "sumSum(SoLuong*Gia)"));
+            lbTongTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "sumSum( " + detailDataMember + ".SoLuong * " + detailDataMember + ".Gia)"));
             //lbTongTienDV.DataBindings.Add("Text", null, "Sum(SoLuong)");
 
             // lbTienDV.DataBindings.Add("Text", null, (Convert.ToInt32(lbDonGia.Text)* Convert.ToInt32(lbSoLuong.Text)).ToString() );
@@ -62,9 +86,9 @@ namespace GUI.folderTinhTrangPhong
             lbLoaiKH.Text=BUS.LoaiKhachHangBUS.LayLoaiKhachHang(khachHang).TenLoaiKH;
             lbDiemTichLuy.Text = khachHang.DiemTichLuy.ToString();
 
-            lbTienHoaDon.Text = (TongTienDichVu + TongTienGio).ToString();
-            lbTienKhuyenMai.Text = TongTienKhuyenMai.ToString();
-            lbThanhTien.Text = (TongTienDichVu + TongTienGio - TongTienKhuyenMai).ToString();
+            lbTienHoaDon.Text = (TongTienDichVu + TongTienGio).ToString("###,###,##0 VNĐ");
+            lbTienKhuyenMai.Text = TongTienKhuyenMai.ToString("###,###,##0 VNĐ");
+            lbThanhTien.Text = (TongTienDichVu + TongTienGio + TongTienKhuyenMai - hoaDon.TienTraTruoc).ToString("###,###,##0 VNĐ");
 
         }
 

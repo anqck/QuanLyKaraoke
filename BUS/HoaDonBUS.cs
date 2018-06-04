@@ -35,9 +35,9 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaCacThuePhong(maHoaDon);
         }
-        public static DataTable LayTatCaCacThuePhong_DataTable(int maHoaDon)
+        public static DataTable LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(int maHoaDon)
         {
-            return DAL.HoaDonDAL.LayTatCaCacThuePhong_DataTable(maHoaDon);
+            return DAL.HoaDonDAL.LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(maHoaDon);
         }
         public static bool CapNhatHoaDonDaThanhToan(HoaDonDTO hoaDonDTO)
         {

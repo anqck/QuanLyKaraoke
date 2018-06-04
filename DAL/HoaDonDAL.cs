@@ -94,9 +94,11 @@ namespace DAL
             
 
         }
-        public static DataTable LayTatCaCacThuePhong_DataTable(int maHoaDon)
+        public static DataTable LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(int maHoaDon)
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT * FROM  thuephong WHERE thuephong.MaHoaDon = '" + maHoaDon.ToString() + "';");
+            DataTable res = DAL.DataProvider.ExecuseQuery("SELECT * FROM  thuephong, phong,loaiphong WHERE thuephong.MaHoaDon = '" + maHoaDon.ToString() + "' AND thuephong.MaPhong = phong.MaPhong AND loaiphong.MaLP = phong.MaLoaiPhong;");
+            res.TableName = "thuephong";
+            return res;
         }
         public static bool CapNhatHoaDonDaThanhToan(HoaDonDTO hoaDonDTO)
         {
