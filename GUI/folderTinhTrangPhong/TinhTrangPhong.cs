@@ -481,7 +481,11 @@ namespace GUI.TinhTrangPhong
         }
         void OnClickBtnChuyenPhong(object sender, EventArgs e)
         {
-            FlyoutDialog.Show(this.FindForm(), new ChuyenPhong());
+
+            DisplayChuyenPhongWithSelectedTile();
+
+
+
         }
 
         private void wbntThemphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -580,6 +584,30 @@ namespace GUI.TinhTrangPhong
 
 
             this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
+        }
+
+        void DisplayChuyenPhongWithSelectedTile(ThuePhongDTO thuePhong = null)
+        {
+            //DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString(), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
+            ThuePhongDTO thuePhongDto;
+            
+            if (thuePhong == null)
+
+                thuePhongDto = listPhongDangThue[(int)danhSachPhong.Rows[tileView1.GetFocusedDataSourceRowIndex()]["MaPhong"]];
+            else
+                thuePhongDto = thuePhong;
+
+            ChuyenPhong formChuyenPhong = new ChuyenPhong(thuePhongDto);
+            if (FlyoutDialog.Show(this.FindForm(), formChuyenPhong) == DialogResult.OK)
+            {
+                DisplayTinhTrangPhongWithSelectedTile(formChuyenPhong.GetThuePhongMoi());
+            }
+            else
+            {
+
+            }
+
+            //this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
         }
     }
 }

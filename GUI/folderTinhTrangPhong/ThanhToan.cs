@@ -221,7 +221,7 @@ namespace GUI.folderTinhTrangPhong
             txtTongTienDichVu.EditValue = TongTienDichVu;
             txtTongTienThanhToan.EditValue = TongTienGio + TongTienKhuyenMai + TongTienDichVu - Convert.ToDouble(txtTienTraTruoc.EditValue);
 
-            reportHoaDon.BindingData(MergedDataTable,khachHang, TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue));
+            reportHoaDon.BindingData(MergedDataTable,hoaDon,khachHang, TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue));
             reportHoaDon.CreateDocument();
             documentViewer1.DocumentSource = reportHoaDon;
         }

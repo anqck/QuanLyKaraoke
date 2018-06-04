@@ -16,6 +16,7 @@ namespace DTO
         public int MaLoaiKH { get; set; }
         public double DiemTichLuy { get; set; }
 
+
         public DateTime NgaySinh { get; set; }
         public KhachHangDTO()
         {

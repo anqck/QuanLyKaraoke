@@ -95,6 +95,7 @@ namespace GUI.folderTinhTrangPhong
             switch(e.Button.Properties.Tag.ToString())
             {
                 case "Hủy":
+
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
                 case "Thuê":

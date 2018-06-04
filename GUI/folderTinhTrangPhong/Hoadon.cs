@@ -5,6 +5,7 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Data;
 using DevExpress.XtraReports.Configuration;
+using DTO;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -15,7 +16,7 @@ namespace GUI.folderTinhTrangPhong
             InitializeComponent();
         }
 
-        public void BindingData(DataTable dsHoaDon, double TongTienGio,double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
+        public void BindingData(DataTable dsHoaDon,HoaDonDTO hoadon,KhachHangDTO khachHang, double TongTienGio,double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
         {
             DataSource = dsHoaDon;
             DataMember = "dichvuphong";

@@ -117,7 +117,7 @@ namespace DAL
         }
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung()
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP AND (phong.MaTinhTrangPhong = '0' OR phong.MaTinhTrangPhong = '1' OR phong.MaTinhTrangPhong = '2');");
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP AND (phong.MaTinhTrangPhong = '0' OR phong.MaTinhTrangPhong = '1' OR phong.MaTinhTrangPhong = '4');");
         }
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan()
         {
@@ -168,6 +168,12 @@ namespace DAL
         public static int DemSoLuongPhong(int maTinhTrangPhong)
         {
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*)  FROM quanlykaraoke.phong WHERE phong.MaTinhTrangPhong = '"+maTinhTrangPhong+"';").Rows[0][0]);
+        }
+        public static bool CapNhatGhiChu(int maPhong, string strGhiChu)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE phong SET phong.GhiChu = '" + strGhiChu + "'  WHERE phong.MaPhong = '" + maPhong + "';");
+
+            return true;
         }
     }
 }

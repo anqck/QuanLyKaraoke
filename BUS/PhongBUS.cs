@@ -61,5 +61,10 @@ namespace BUS
             return DAL.PhongDAL.LayTatCaTinhTrangPhong_List();
         }
 
+        public static bool CapNhatGhiChu(int maPhong, string strGhiChu)
+        {
+            return DAL.PhongDAL.CapNhatGhiChu( maPhong,  strGhiChu);
+        }
+
     }
 }

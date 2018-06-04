@@ -83,6 +83,7 @@ namespace GUI.folderTinhTrangPhong
                 txtSDT.EditValue = khachHang.SDT;
                 txtDiemTichLuy.EditValue = khachHang.DiemTichLuy;
 
+
                 txtNgayGioVao.EditValue = thuePhong.GioThuePhong.ToString("dd-MM-yyyy hh:mm:ss");
                 txtGioTraPhong.EditValue = (thuePhong.GioTraPhong == DateTime.MinValue) ? "Chưa có" : thuePhong.GioTraPhong.ToString("dd-MM-yyyy hh:mm:ss");
                 txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
@@ -151,15 +152,23 @@ namespace GUI.folderTinhTrangPhong
                         RefreshDataBindingDichVuPhong();
                     }
                     break;
+                case "Chuyển Phòng":
+                    ChuyenPhong formChuyenPhong = new ChuyenPhong(thuePhong);
+                    if (FlyoutDialog.Show(this.FindForm(), formChuyenPhong) == DialogResult.OK)
+                    {
+                        OnThueThemPhongSuccess();
+                    }
+
+                    break;
                 case "Xóa Dịch Vụ":
-                    if (XtraMessageBox.Show("Bạn có chắc muốn xóa dịch vụ '" + dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["TenDV"] + "' ?", "Xác nhận", MessageBoxButtons.YesNo,MessageBoxIcon.Exclamation) == DialogResult.Yes)
+                    if (XtraMessageBox.Show("Bạn có chắc muốn xóa dịch vụ '" + dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["TenDV"] + "' ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.Yes)
                     {
                         DichVuPhongBUS.XoaDichVuPhong((int)dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaDVP"]);
 
 
                         RefreshDataBindingDichVuPhong();
                     }
-                   
+
                     break;
                 case "Hủy Phòng":
 
