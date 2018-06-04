@@ -49,6 +49,8 @@ namespace GUI.folderTinhTrangPhong
             txtGioVao.Time = thuePhong.GioThuePhong;
             txtGioRa.Time = (thuePhong.GioTraPhong == DateTime.MinValue) ?DateTime.Now : thuePhong.GioTraPhong;
 
+            thuePhong.GioTraPhong = txtGioRa.Time;
+
             listKhuyenMai = new Dictionary<int, DichVuPhongDTO>();
 
             RefreshDataBindingTienGio();
