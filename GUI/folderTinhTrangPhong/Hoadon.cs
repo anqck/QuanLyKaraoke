@@ -15,7 +15,7 @@ namespace GUI.folderTinhTrangPhong
             InitializeComponent();
         }
 
-        public void BindingData(DataTable dsHoaDon, double TongTienGio,double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
+        public void BindingData(DataTable dsHoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
         {
             DataSource = dsHoaDon;
             DataMember = "dichvuphong";
@@ -29,11 +29,21 @@ namespace GUI.folderTinhTrangPhong
 
             //Group Header
             xrLabel3.DataBindings.Add("Text", null, "MaThuePhong");
-
+            lbTenPhong.DataBindings.Add("Text", null, "TenPhong");
 
             //Detail
-            detailTenDV.DataBindings.Add("Text", null, "TenDV");
-          
+            lbTenDV.DataBindings.Add("Text", null, "TenDV");
+            lbDonVi.DataBindings.Add("Text", null, "DonVi");
+            lbSoLuong.DataBindings.Add("Text", null, "SoLuong");
+            lbDonGia.DataBindings.Add("Text", null, "Gia");
+            
+            // lbTienDV.DataBindings.Add("Text", null, (Convert.ToInt32(lbDonGia.Text)* Convert.ToInt32(lbSoLuong.Text)).ToString() );
+
+
+            ///lbTenKH.DataBindings.Add("Text", dsHoaDon, dsHoaDon.Columns["TenKhachHang"].Caption);
+            // lbLoaiKH.DataBindings.Add("Text", dsHoaDon, dsHoaDon.Columns["LoaiKhachHang"].Caption);
+            //lbDiemTichLuy.DataBindings.Add("Text", dsHoaDon, dsHoaDon.Columns["DiemTichLuy"].Caption);
+
         }
 
     }
