@@ -57,6 +57,7 @@
     <Compile Include="LoaiKhachHangDAL.cs" />
     <Compile Include="LoaiPhongDAL.cs" />
     <Compile Include="NgayLeDAL.cs" />
+    <Compile Include="NhanVienDAL.cs" />
     <Compile Include="PhongDAL.cs" />
     <Compile Include="DataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

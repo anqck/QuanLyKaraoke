@@ -33,8 +33,6 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.NhanVienPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageNhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -49,14 +47,16 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.wbntNhanvien = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.PageThemnhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.wbntBackThemNV = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.themNhanVien1 = new GUI.folderNhanVien.ThemNhanVien();
             this.PageSuanhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.windowsUIButtonPanel2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.suaNhanVien1 = new GUI.folderNhanVien.SuaNhanVien();
             ((System.ComponentModel.ISupportInitialize)(this.NhanVienPagecontrol)).BeginInit();
             this.NhanVienPagecontrol.SuspendLayout();
@@ -89,6 +89,7 @@
             this.NhanVienPagecontrol.Size = new System.Drawing.Size(980, 617);
             this.NhanVienPagecontrol.TabIndex = 6;
             this.NhanVienPagecontrol.Text = "navigationFrame1";
+            this.NhanVienPagecontrol.SelectedPageChanging += new DevExpress.XtraBars.Navigation.SelectedPageChangingEventHandler(this.NhanVienPagecontrol_SelectedPageChanging);
             // 
             // PageNhanvien
             // 
@@ -228,20 +229,24 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.ColumnFilterButton.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gridView1.Appearance.ColumnFilterButton.Options.UseFont = true;
-            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.HeaderPanel.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gridView1.Appearance.HeaderPanel.ForeColor = System.Drawing.Color.Gray;
             this.gridView1.Appearance.HeaderPanel.Options.UseFont = true;
             this.gridView1.Appearance.HeaderPanel.Options.UseForeColor = true;
-            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView1.Appearance.Row.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.ColumnPanelRowHeight = 50;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn4});
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6,
+            this.gridColumn7,
+            this.gridColumn8});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
@@ -251,35 +256,78 @@
             this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
-            this.gridView1.RowHeight = 40;
+            this.gridView1.RowHeight = 100;
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "Mã nhân viên";
+            this.gridColumn1.FieldName = "MaNhanVien";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 129;
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "Tên nhân viên";
+            this.gridColumn2.FieldName = "TenNhanVien";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 135;
             // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Địa chỉ";
+            this.gridColumn3.FieldName = "DiaChi";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 2;
+            this.gridColumn3.Width = 127;
             // 
             // gridColumn4
             // 
             this.gridColumn4.Caption = "Số điện thoại";
+            this.gridColumn4.FieldName = "SDT";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 127;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Tên đăng nhập";
+            this.gridColumn5.FieldName = "TenDangNhap";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.Width = 142;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Mật khẩu";
+            this.gridColumn6.FieldName = "MatKhau";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            this.gridColumn6.Width = 103;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "Loại tài khoản";
+            this.gridColumn7.FieldName = "TenLoaiTaiKhoan";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
+            this.gridColumn7.Width = 146;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "Hình ảnh";
+            this.gridColumn8.FieldName = "HinhAnh";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 7;
             // 
             // labelTitle
             // 
@@ -300,8 +348,8 @@
             // 
             this.wbntNhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntNhanvien.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm nhân viên", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa nhân viên", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm nhân viên", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm nhân viên", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa nhân viên", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Sửa nhân viên", -1, false)});
             this.wbntNhanvien.Controls.Add(this.searchControl1);
             this.wbntNhanvien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntNhanvien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -330,26 +378,13 @@
             // PageThemnhanvien
             // 
             this.PageThemnhanvien.Caption = "PageThemnhanvien";
-            this.PageThemnhanvien.Controls.Add(this.wbntBackThemNV);
             this.PageThemnhanvien.Controls.Add(this.themNhanVien1);
             this.PageThemnhanvien.Name = "PageThemnhanvien";
             this.PageThemnhanvien.Size = new System.Drawing.Size(980, 617);
             // 
-            // wbntBackThemNV
-            // 
-            this.wbntBackThemNV.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions3.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.wbntBackThemNV.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.wbntBackThemNV.Location = new System.Drawing.Point(3, 3);
-            this.wbntBackThemNV.Name = "wbntBackThemNV";
-            this.wbntBackThemNV.Size = new System.Drawing.Size(56, 58);
-            this.wbntBackThemNV.TabIndex = 3;
-            this.wbntBackThemNV.Text = "windowsUIButtonPanel2";
-            this.wbntBackThemNV.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntBackThemKH_ButtonClick);
-            // 
             // themNhanVien1
             // 
+            this.themNhanVien1.actionBack = null;
             this.themNhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.themNhanVien1.Location = new System.Drawing.Point(0, 0);
             this.themNhanVien1.Name = "themNhanVien1";
@@ -359,26 +394,13 @@
             // PageSuanhanvien
             // 
             this.PageSuanhanvien.Caption = "PageSuanhanvien";
-            this.PageSuanhanvien.Controls.Add(this.windowsUIButtonPanel2);
             this.PageSuanhanvien.Controls.Add(this.suaNhanVien1);
             this.PageSuanhanvien.Name = "PageSuanhanvien";
             this.PageSuanhanvien.Size = new System.Drawing.Size(980, 617);
             // 
-            // windowsUIButtonPanel2
-            // 
-            this.windowsUIButtonPanel2.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions4.ImageUri.Uri = "hybriddemo_back%20button;Svg";
-            this.windowsUIButtonPanel2.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
-            this.windowsUIButtonPanel2.Location = new System.Drawing.Point(3, 3);
-            this.windowsUIButtonPanel2.Name = "windowsUIButtonPanel2";
-            this.windowsUIButtonPanel2.Size = new System.Drawing.Size(56, 58);
-            this.windowsUIButtonPanel2.TabIndex = 3;
-            this.windowsUIButtonPanel2.Text = "windowsUIButtonPanel2";
-            this.windowsUIButtonPanel2.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel2_ButtonClick);
-            // 
             // suaNhanVien1
             // 
+            this.suaNhanVien1.actionBack = null;
             this.suaNhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.suaNhanVien1.Location = new System.Drawing.Point(0, 0);
             this.suaNhanVien1.Name = "suaNhanVien1";
@@ -422,9 +444,7 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntNhanvien;
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageThemnhanvien;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntBackThemNV;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSuanhanvien;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel2;
         private ThemNhanVien themNhanVien1;
         private SuaNhanVien suaNhanVien1;
         private DevExpress.XtraGrid.GridControl gridControl1;
@@ -433,5 +453,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
     }
 }
