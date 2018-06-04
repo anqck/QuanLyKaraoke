@@ -34,9 +34,19 @@ namespace GUI.folderTinhTrangPhong
             //Detail
             lbTenDV.DataBindings.Add("Text", null, "TenDV");
             lbDonVi.DataBindings.Add("Text", null, "DonVi");
+            
+            //lbSoLuong.DataBindings.Add(new  Binding("EditValue", bindingSource1, "CreationDate"));
             lbSoLuong.DataBindings.Add("Text", null, "SoLuong");
             lbDonGia.DataBindings.Add("Text", null, "Gia");
-            
+
+           // ExpressionBinding expressionBinding = ;
+            //lbTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Value", "SoLuong*Gia"));
+            lbTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "SoLuong*Gia"));
+
+
+            lbTongTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "sumSum(SoLuong*Gia)"));
+            //lbTongTienDV.DataBindings.Add("Text", null, "Sum(SoLuong)");
+
             // lbTienDV.DataBindings.Add("Text", null, (Convert.ToInt32(lbDonGia.Text)* Convert.ToInt32(lbSoLuong.Text)).ToString() );
 
 

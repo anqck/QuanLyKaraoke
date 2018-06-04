@@ -33,6 +33,7 @@
             this.detailTable = new DevExpress.XtraReports.UI.XRTable();
             this.detailTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.lbTenDV = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lbSoLuong = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbDonVi = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbDonGia = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbTienDV = new DevExpress.XtraReports.UI.XRTableCell();
@@ -42,6 +43,9 @@
             this.thankYouLabel = new DevExpress.XtraReports.UI.XRLabel();
             this.xrLine1 = new DevExpress.XtraReports.UI.XRLine();
             this.GroupFooter1 = new DevExpress.XtraReports.UI.GroupFooterBand();
+            this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
+            this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
+            this.lbTongTienDV = new DevExpress.XtraReports.UI.XRTableCell();
             this.totalTable = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
             this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
@@ -53,25 +57,6 @@
             this.totalCaption = new DevExpress.XtraReports.UI.XRTableCell();
             this.total = new DevExpress.XtraReports.UI.XRTableCell();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
-            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
-            this.headerTable = new DevExpress.XtraReports.UI.XRTable();
-            this.headerTableRow = new DevExpress.XtraReports.UI.XRTableRow();
-            this.productDesctiptionCaption = new DevExpress.XtraReports.UI.XRTableCell();
-            this.quantityCaption = new DevExpress.XtraReports.UI.XRTableCell();
-            this.unitPriceCaption = new DevExpress.XtraReports.UI.XRTableCell();
-            this.lineTotalCaption = new DevExpress.XtraReports.UI.XRTableCell();
-            this.baseControlStyle = new DevExpress.XtraReports.UI.XRControlStyle();
-            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
-            this.vendorLogo = new DevExpress.XtraReports.UI.XRPictureBox();
-            this.vendorTable = new DevExpress.XtraReports.UI.XRTable();
-            this.vendorNameRow = new DevExpress.XtraReports.UI.XRTableRow();
-            this.vendorName = new DevExpress.XtraReports.UI.XRTableCell();
-            this.vendorPhoneRow = new DevExpress.XtraReports.UI.XRTableRow();
-            this.vendorPhone = new DevExpress.XtraReports.UI.XRTableCell();
-            this.vendorEmailRow = new DevExpress.XtraReports.UI.XRTableRow();
-            this.vendorEmail = new DevExpress.XtraReports.UI.XRTableCell();
-            this.vendorWebsiteRow = new DevExpress.XtraReports.UI.XRTableRow();
-            this.vendorWebsite = new DevExpress.XtraReports.UI.XRTableCell();
             this.invoiceInfoTable = new DevExpress.XtraReports.UI.XRTable();
             this.invoiceInfoTableRow1 = new DevExpress.XtraReports.UI.XRTableRow();
             this.invoiceLabel = new DevExpress.XtraReports.UI.XRTableCell();
@@ -87,6 +72,26 @@
             this.lbGioVao = new DevExpress.XtraReports.UI.XRTableCell();
             this.invoiceDate = new DevExpress.XtraReports.UI.XRTableCell();
             this.lbTienphong = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrLabel3 = new DevExpress.XtraReports.UI.XRLabel();
+            this.headerTable = new DevExpress.XtraReports.UI.XRTable();
+            this.headerTableRow = new DevExpress.XtraReports.UI.XRTableRow();
+            this.productDesctiptionCaption = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.quantityCaption = new DevExpress.XtraReports.UI.XRTableCell();
+            this.unitPriceCaption = new DevExpress.XtraReports.UI.XRTableCell();
+            this.lineTotalCaption = new DevExpress.XtraReports.UI.XRTableCell();
+            this.baseControlStyle = new DevExpress.XtraReports.UI.XRControlStyle();
+            this.ReportHeader = new DevExpress.XtraReports.UI.ReportHeaderBand();
+            this.vendorLogo = new DevExpress.XtraReports.UI.XRPictureBox();
+            this.vendorTable = new DevExpress.XtraReports.UI.XRTable();
+            this.vendorNameRow = new DevExpress.XtraReports.UI.XRTableRow();
+            this.vendorName = new DevExpress.XtraReports.UI.XRTableCell();
+            this.vendorPhoneRow = new DevExpress.XtraReports.UI.XRTableRow();
+            this.vendorPhone = new DevExpress.XtraReports.UI.XRTableCell();
+            this.vendorEmailRow = new DevExpress.XtraReports.UI.XRTableRow();
+            this.vendorEmail = new DevExpress.XtraReports.UI.XRTableCell();
+            this.vendorWebsiteRow = new DevExpress.XtraReports.UI.XRTableRow();
+            this.vendorWebsite = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             this.xrTable1 = new DevExpress.XtraReports.UI.XRTable();
             this.invoiceDateRow = new DevExpress.XtraReports.UI.XRTableRow();
@@ -100,19 +105,14 @@
             this.lbTenKH = new DevExpress.XtraReports.UI.XRTableCell();
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.ReportFooter = new DevExpress.XtraReports.UI.ReportFooterBand();
-            this.lbSoLuong = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
-            this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
-            this.xrTableRow3 = new DevExpress.XtraReports.UI.XRTableRow();
-            this.lbTongTienDV = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceInfoTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.headerTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceInfoTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerTable)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
             // Detail
@@ -166,6 +166,19 @@
             this.lbTenDV.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
             this.lbTenDV.Weight = 0.81200048123445945D;
             // 
+            // lbSoLuong
+            // 
+            this.lbSoLuong.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
+            this.lbSoLuong.Name = "lbSoLuong";
+            this.lbSoLuong.Padding = new DevExpress.XtraPrinting.PaddingInfo(20, 0, 10, 0, 100F);
+            this.lbSoLuong.StylePriority.UseBorders = false;
+            this.lbSoLuong.StylePriority.UsePadding = false;
+            this.lbSoLuong.StylePriority.UseTextAlignment = false;
+            this.lbSoLuong.Text = "lbSoLuong";
+            this.lbSoLuong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
+            this.lbSoLuong.TextFormatString = "{0:#.00}";
+            this.lbSoLuong.Weight = 0.406006871836603D;
+            // 
             // lbDonVi
             // 
             this.lbDonVi.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
@@ -194,15 +207,13 @@
             this.lbDonGia.StylePriority.UseTextAlignment = false;
             this.lbDonGia.Text = "giá";
             this.lbDonGia.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lbDonGia.TextFormatString = "{0:$0.00}";
+            this.lbDonGia.TextFormatString = "{0:###,###,##0 VNĐ}";
             this.lbDonGia.Weight = 0.40600490267381018D;
             // 
             // lbTienDV
             // 
             this.lbTienDV.Borders = ((DevExpress.XtraPrinting.BorderSide)(((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Right) 
             | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lbTienDV.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "[ReportItems].[lbSoLuong].[Text]")});
             this.lbTienDV.Name = "lbTienDV";
             this.lbTienDV.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 5, 0, 100F);
             this.lbTienDV.RowSpan = 2;
@@ -214,7 +225,7 @@
             this.lbTienDV.StylePriority.UseTextAlignment = false;
             this.lbTienDV.Text = "$0.00";
             this.lbTienDV.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lbTienDV.TextFormatString = "{0:$0.00}";
+            this.lbTienDV.TextFormatString = "{0:###,###,##0 VNĐ}";
             this.lbTienDV.Weight = 0.97096013905044687D;
             // 
             // TopMargin
@@ -279,6 +290,39 @@
             this.GroupFooter1.KeepTogether = true;
             this.GroupFooter1.Name = "GroupFooter1";
             this.GroupFooter1.StyleName = "baseControlStyle";
+            // 
+            // xrTable2
+            // 
+            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(524.1044F, 0F);
+            this.xrTable2.Name = "xrTable2";
+            this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.xrTableRow3});
+            this.xrTable2.SizeF = new System.Drawing.SizeF(245.5807F, 30F);
+            // 
+            // xrTableRow3
+            // 
+            this.xrTableRow3.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.lbTongTienDV});
+            this.xrTableRow3.Name = "xrTableRow3";
+            this.xrTableRow3.Weight = 1D;
+            // 
+            // lbTongTienDV
+            // 
+            this.lbTongTienDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(183)))), ((int)(((byte)(222)))));
+            this.lbTongTienDV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTongTienDV.ForeColor = System.Drawing.Color.White;
+            this.lbTongTienDV.Name = "lbTongTienDV";
+            this.lbTongTienDV.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbTongTienDV.StylePriority.UseBackColor = false;
+            this.lbTongTienDV.StylePriority.UseFont = false;
+            this.lbTongTienDV.StylePriority.UseForeColor = false;
+            this.lbTongTienDV.StylePriority.UseTextAlignment = false;
+            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
+            this.lbTongTienDV.Summary = xrSummary1;
+            this.lbTongTienDV.Text = "lbTongTienDV";
+            this.lbTongTienDV.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lbTongTienDV.TextFormatString = "{0:###,###,##0 VNĐ}";
+            this.lbTongTienDV.Weight = 2.4558068847656251D;
             // 
             // totalTable
             // 
@@ -443,194 +487,6 @@
             this.GroupHeader1.Name = "GroupHeader1";
             this.GroupHeader1.RepeatEveryPage = true;
             this.GroupHeader1.StyleName = "baseControlStyle";
-            // 
-            // xrLabel3
-            // 
-            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(616.0426F, 43.29593F);
-            this.xrLabel3.Name = "xrLabel3";
-            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
-            this.xrLabel3.Text = "xrLabel3";
-            // 
-            // headerTable
-            // 
-            this.headerTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(183)))), ((int)(((byte)(222)))));
-            this.headerTable.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
-            this.headerTable.ForeColor = System.Drawing.Color.White;
-            this.headerTable.LocationFloat = new DevExpress.Utils.PointFloat(9.998926F, 113.6538F);
-            this.headerTable.Name = "headerTable";
-            this.headerTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.headerTableRow});
-            this.headerTable.SizeF = new System.Drawing.SizeF(759.6862F, 39.6795F);
-            this.headerTable.StylePriority.UseBackColor = false;
-            this.headerTable.StylePriority.UseFont = false;
-            this.headerTable.StylePriority.UseForeColor = false;
-            this.headerTable.StylePriority.UsePadding = false;
-            // 
-            // headerTableRow
-            // 
-            this.headerTableRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.productDesctiptionCaption,
-            this.xrTableCell3,
-            this.quantityCaption,
-            this.unitPriceCaption,
-            this.lineTotalCaption});
-            this.headerTableRow.Name = "headerTableRow";
-            this.headerTableRow.Weight = 11.5D;
-            // 
-            // productDesctiptionCaption
-            // 
-            this.productDesctiptionCaption.Name = "productDesctiptionCaption";
-            this.productDesctiptionCaption.Padding = new DevExpress.XtraPrinting.PaddingInfo(20, 0, 0, 0, 100F);
-            this.productDesctiptionCaption.StylePriority.UseBackColor = false;
-            this.productDesctiptionCaption.StylePriority.UseFont = false;
-            this.productDesctiptionCaption.StylePriority.UseForeColor = false;
-            this.productDesctiptionCaption.StylePriority.UsePadding = false;
-            this.productDesctiptionCaption.StylePriority.UseTextAlignment = false;
-            this.productDesctiptionCaption.Text = "Tên dịch vụ";
-            this.productDesctiptionCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.productDesctiptionCaption.Weight = 0.53953359853305471D;
-            // 
-            // quantityCaption
-            // 
-            this.quantityCaption.Name = "quantityCaption";
-            this.quantityCaption.StylePriority.UseBackColor = false;
-            this.quantityCaption.StylePriority.UseFont = false;
-            this.quantityCaption.StylePriority.UseForeColor = false;
-            this.quantityCaption.StylePriority.UseTextAlignment = false;
-            this.quantityCaption.Text = "Đơn vị";
-            this.quantityCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.quantityCaption.Weight = 0.26976666586162318D;
-            // 
-            // unitPriceCaption
-            // 
-            this.unitPriceCaption.Name = "unitPriceCaption";
-            this.unitPriceCaption.StylePriority.UseBackColor = false;
-            this.unitPriceCaption.StylePriority.UseFont = false;
-            this.unitPriceCaption.StylePriority.UseForeColor = false;
-            this.unitPriceCaption.StylePriority.UseTextAlignment = false;
-            this.unitPriceCaption.Text = "Giá";
-            this.unitPriceCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.unitPriceCaption.Weight = 0.26976690211988713D;
-            // 
-            // lineTotalCaption
-            // 
-            this.lineTotalCaption.Name = "lineTotalCaption";
-            this.lineTotalCaption.StylePriority.UseBackColor = false;
-            this.lineTotalCaption.StylePriority.UseFont = false;
-            this.lineTotalCaption.StylePriority.UseForeColor = false;
-            this.lineTotalCaption.StylePriority.UseTextAlignment = false;
-            this.lineTotalCaption.Text = "Tổng ";
-            this.lineTotalCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lineTotalCaption.Weight = 0.64431858766090233D;
-            // 
-            // baseControlStyle
-            // 
-            this.baseControlStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            this.baseControlStyle.Name = "baseControlStyle";
-            this.baseControlStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            // 
-            // ReportHeader
-            // 
-            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.vendorLogo,
-            this.vendorTable,
-            this.xrLabel2,
-            this.xrTable1,
-            this.customerTable,
-            this.xrLabel1});
-            this.ReportHeader.HeightF = 235F;
-            this.ReportHeader.Name = "ReportHeader";
-            // 
-            // vendorLogo
-            // 
-            this.vendorLogo.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.TopRight;
-            this.vendorLogo.LocationFloat = new DevExpress.Utils.PointFloat(591.9971F, 9.536743E-06F);
-            this.vendorLogo.Name = "vendorLogo";
-            this.vendorLogo.SizeF = new System.Drawing.SizeF(168F, 80F);
-            this.vendorLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
-            this.vendorLogo.StylePriority.UseBorders = false;
-            this.vendorLogo.StylePriority.UsePadding = false;
-            // 
-            // vendorTable
-            // 
-            this.vendorTable.BorderColor = System.Drawing.Color.Gray;
-            this.vendorTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendorTable.LocationFloat = new DevExpress.Utils.PointFloat(557.6221F, 79.99999F);
-            this.vendorTable.Name = "vendorTable";
-            this.vendorTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.vendorNameRow,
-            this.vendorPhoneRow,
-            this.vendorEmailRow,
-            this.vendorWebsiteRow});
-            this.vendorTable.SizeF = new System.Drawing.SizeF(202.3752F, 85.00001F);
-            this.vendorTable.StylePriority.UseBorderColor = false;
-            this.vendorTable.StylePriority.UseFont = false;
-            // 
-            // vendorNameRow
-            // 
-            this.vendorNameRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.vendorName});
-            this.vendorNameRow.Name = "vendorNameRow";
-            this.vendorNameRow.Weight = 0.999999988262511D;
-            // 
-            // vendorName
-            // 
-            this.vendorName.CanShrink = true;
-            this.vendorName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.vendorName.Name = "vendorName";
-            this.vendorName.StylePriority.UseFont = false;
-            this.vendorName.StylePriority.UseTextAlignment = false;
-            this.vendorName.Text = "KARAOKE LANGF";
-            this.vendorName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.vendorName.Weight = 3D;
-            // 
-            // vendorPhoneRow
-            // 
-            this.vendorPhoneRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.vendorPhone});
-            this.vendorPhoneRow.Name = "vendorPhoneRow";
-            this.vendorPhoneRow.Weight = 0.7999999929574797D;
-            // 
-            // vendorPhone
-            // 
-            this.vendorPhone.CanShrink = true;
-            this.vendorPhone.Name = "vendorPhone";
-            this.vendorPhone.StylePriority.UseBorders = false;
-            this.vendorPhone.StylePriority.UseTextAlignment = false;
-            this.vendorPhone.Text = "+84981389693";
-            this.vendorPhone.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.vendorPhone.Weight = 3D;
-            // 
-            // vendorEmailRow
-            // 
-            this.vendorEmailRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.vendorEmail});
-            this.vendorEmailRow.Name = "vendorEmailRow";
-            this.vendorEmailRow.Weight = 0.79999999295747959D;
-            // 
-            // vendorEmail
-            // 
-            this.vendorEmail.Name = "vendorEmail";
-            this.vendorEmail.StylePriority.UseTextAlignment = false;
-            this.vendorEmail.Text = "KaraokeLangf@gmail.com";
-            this.vendorEmail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.vendorEmail.Weight = 3D;
-            // 
-            // vendorWebsiteRow
-            // 
-            this.vendorWebsiteRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.vendorWebsite});
-            this.vendorWebsiteRow.Name = "vendorWebsiteRow";
-            this.vendorWebsiteRow.Weight = 0.80000014554537557D;
-            // 
-            // vendorWebsite
-            // 
-            this.vendorWebsite.Name = "vendorWebsite";
-            this.vendorWebsite.StylePriority.UseTextAlignment = false;
-            this.vendorWebsite.Text = "KaraokeLangf.vn";
-            this.vendorWebsite.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
-            this.vendorWebsite.Weight = 3D;
             // 
             // invoiceInfoTable
             // 
@@ -832,6 +688,204 @@
             this.lbTienphong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopCenter;
             this.lbTienphong.Weight = 0.98658792324960942D;
             // 
+            // xrLabel3
+            // 
+            this.xrLabel3.LocationFloat = new DevExpress.Utils.PointFloat(616.0426F, 43.29593F);
+            this.xrLabel3.Name = "xrLabel3";
+            this.xrLabel3.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel3.SizeF = new System.Drawing.SizeF(100F, 23F);
+            this.xrLabel3.Text = "xrLabel3";
+            // 
+            // headerTable
+            // 
+            this.headerTable.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(183)))), ((int)(((byte)(222)))));
+            this.headerTable.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold);
+            this.headerTable.ForeColor = System.Drawing.Color.White;
+            this.headerTable.LocationFloat = new DevExpress.Utils.PointFloat(9.998926F, 113.6538F);
+            this.headerTable.Name = "headerTable";
+            this.headerTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.headerTableRow});
+            this.headerTable.SizeF = new System.Drawing.SizeF(759.6862F, 39.6795F);
+            this.headerTable.StylePriority.UseBackColor = false;
+            this.headerTable.StylePriority.UseFont = false;
+            this.headerTable.StylePriority.UseForeColor = false;
+            this.headerTable.StylePriority.UsePadding = false;
+            // 
+            // headerTableRow
+            // 
+            this.headerTableRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.productDesctiptionCaption,
+            this.xrTableCell3,
+            this.quantityCaption,
+            this.unitPriceCaption,
+            this.lineTotalCaption});
+            this.headerTableRow.Name = "headerTableRow";
+            this.headerTableRow.Weight = 11.5D;
+            // 
+            // productDesctiptionCaption
+            // 
+            this.productDesctiptionCaption.Name = "productDesctiptionCaption";
+            this.productDesctiptionCaption.Padding = new DevExpress.XtraPrinting.PaddingInfo(20, 0, 0, 0, 100F);
+            this.productDesctiptionCaption.StylePriority.UseBackColor = false;
+            this.productDesctiptionCaption.StylePriority.UseFont = false;
+            this.productDesctiptionCaption.StylePriority.UseForeColor = false;
+            this.productDesctiptionCaption.StylePriority.UsePadding = false;
+            this.productDesctiptionCaption.StylePriority.UseTextAlignment = false;
+            this.productDesctiptionCaption.Text = "Tên dịch vụ";
+            this.productDesctiptionCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.productDesctiptionCaption.Weight = 0.53953359853305471D;
+            // 
+            // xrTableCell3
+            // 
+            this.xrTableCell3.Name = "xrTableCell3";
+            this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(20, 0, 0, 0, 100F);
+            this.xrTableCell3.StylePriority.UsePadding = false;
+            this.xrTableCell3.StylePriority.UseTextAlignment = false;
+            this.xrTableCell3.Text = "Số lượng";
+            this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
+            this.xrTableCell3.Weight = 0.26976710358267897D;
+            // 
+            // quantityCaption
+            // 
+            this.quantityCaption.Name = "quantityCaption";
+            this.quantityCaption.StylePriority.UseBackColor = false;
+            this.quantityCaption.StylePriority.UseFont = false;
+            this.quantityCaption.StylePriority.UseForeColor = false;
+            this.quantityCaption.StylePriority.UseTextAlignment = false;
+            this.quantityCaption.Text = "Đơn vị";
+            this.quantityCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.quantityCaption.Weight = 0.26976666586162318D;
+            // 
+            // unitPriceCaption
+            // 
+            this.unitPriceCaption.Name = "unitPriceCaption";
+            this.unitPriceCaption.StylePriority.UseBackColor = false;
+            this.unitPriceCaption.StylePriority.UseFont = false;
+            this.unitPriceCaption.StylePriority.UseForeColor = false;
+            this.unitPriceCaption.StylePriority.UseTextAlignment = false;
+            this.unitPriceCaption.Text = "Giá";
+            this.unitPriceCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.unitPriceCaption.Weight = 0.26976690211988713D;
+            // 
+            // lineTotalCaption
+            // 
+            this.lineTotalCaption.Name = "lineTotalCaption";
+            this.lineTotalCaption.StylePriority.UseBackColor = false;
+            this.lineTotalCaption.StylePriority.UseFont = false;
+            this.lineTotalCaption.StylePriority.UseForeColor = false;
+            this.lineTotalCaption.StylePriority.UseTextAlignment = false;
+            this.lineTotalCaption.Text = "Tổng ";
+            this.lineTotalCaption.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
+            this.lineTotalCaption.Weight = 0.64431858766090233D;
+            // 
+            // baseControlStyle
+            // 
+            this.baseControlStyle.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            this.baseControlStyle.Name = "baseControlStyle";
+            this.baseControlStyle.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            // 
+            // ReportHeader
+            // 
+            this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.vendorLogo,
+            this.vendorTable,
+            this.xrLabel2,
+            this.xrTable1,
+            this.customerTable,
+            this.xrLabel1});
+            this.ReportHeader.HeightF = 235F;
+            this.ReportHeader.Name = "ReportHeader";
+            // 
+            // vendorLogo
+            // 
+            this.vendorLogo.ImageAlignment = DevExpress.XtraPrinting.ImageAlignment.TopRight;
+            this.vendorLogo.LocationFloat = new DevExpress.Utils.PointFloat(591.9971F, 9.536743E-06F);
+            this.vendorLogo.Name = "vendorLogo";
+            this.vendorLogo.SizeF = new System.Drawing.SizeF(168F, 80F);
+            this.vendorLogo.Sizing = DevExpress.XtraPrinting.ImageSizeMode.Squeeze;
+            this.vendorLogo.StylePriority.UseBorders = false;
+            this.vendorLogo.StylePriority.UsePadding = false;
+            // 
+            // vendorTable
+            // 
+            this.vendorTable.BorderColor = System.Drawing.Color.Gray;
+            this.vendorTable.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vendorTable.LocationFloat = new DevExpress.Utils.PointFloat(557.6221F, 79.99999F);
+            this.vendorTable.Name = "vendorTable";
+            this.vendorTable.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
+            this.vendorNameRow,
+            this.vendorPhoneRow,
+            this.vendorEmailRow,
+            this.vendorWebsiteRow});
+            this.vendorTable.SizeF = new System.Drawing.SizeF(202.3752F, 85.00001F);
+            this.vendorTable.StylePriority.UseBorderColor = false;
+            this.vendorTable.StylePriority.UseFont = false;
+            // 
+            // vendorNameRow
+            // 
+            this.vendorNameRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.vendorName});
+            this.vendorNameRow.Name = "vendorNameRow";
+            this.vendorNameRow.Weight = 0.999999988262511D;
+            // 
+            // vendorName
+            // 
+            this.vendorName.CanShrink = true;
+            this.vendorName.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.vendorName.Name = "vendorName";
+            this.vendorName.StylePriority.UseFont = false;
+            this.vendorName.StylePriority.UseTextAlignment = false;
+            this.vendorName.Text = "KARAOKE LANGF";
+            this.vendorName.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.vendorName.Weight = 3D;
+            // 
+            // vendorPhoneRow
+            // 
+            this.vendorPhoneRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.vendorPhone});
+            this.vendorPhoneRow.Name = "vendorPhoneRow";
+            this.vendorPhoneRow.Weight = 0.7999999929574797D;
+            // 
+            // vendorPhone
+            // 
+            this.vendorPhone.CanShrink = true;
+            this.vendorPhone.Name = "vendorPhone";
+            this.vendorPhone.StylePriority.UseBorders = false;
+            this.vendorPhone.StylePriority.UseTextAlignment = false;
+            this.vendorPhone.Text = "+84981389693";
+            this.vendorPhone.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.vendorPhone.Weight = 3D;
+            // 
+            // vendorEmailRow
+            // 
+            this.vendorEmailRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.vendorEmail});
+            this.vendorEmailRow.Name = "vendorEmailRow";
+            this.vendorEmailRow.Weight = 0.79999999295747959D;
+            // 
+            // vendorEmail
+            // 
+            this.vendorEmail.Name = "vendorEmail";
+            this.vendorEmail.StylePriority.UseTextAlignment = false;
+            this.vendorEmail.Text = "KaraokeLangf@gmail.com";
+            this.vendorEmail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.vendorEmail.Weight = 3D;
+            // 
+            // vendorWebsiteRow
+            // 
+            this.vendorWebsiteRow.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
+            this.vendorWebsite});
+            this.vendorWebsiteRow.Name = "vendorWebsiteRow";
+            this.vendorWebsiteRow.Weight = 0.80000014554537557D;
+            // 
+            // vendorWebsite
+            // 
+            this.vendorWebsite.Name = "vendorWebsite";
+            this.vendorWebsite.StylePriority.UseTextAlignment = false;
+            this.vendorWebsite.Text = "KaraokeLangf.vn";
+            this.vendorWebsite.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleRight;
+            this.vendorWebsite.Weight = 3D;
+            // 
             // xrLabel2
             // 
             this.xrLabel2.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
@@ -956,62 +1010,6 @@
             this.ReportFooter.HeightF = 147.2417F;
             this.ReportFooter.Name = "ReportFooter";
             // 
-            // lbSoLuong
-            // 
-            this.lbSoLuong.Borders = ((DevExpress.XtraPrinting.BorderSide)((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Bottom)));
-            this.lbSoLuong.Name = "lbSoLuong";
-            this.lbSoLuong.Padding = new DevExpress.XtraPrinting.PaddingInfo(20, 0, 10, 0, 100F);
-            this.lbSoLuong.StylePriority.UseBorders = false;
-            this.lbSoLuong.StylePriority.UsePadding = false;
-            this.lbSoLuong.StylePriority.UseTextAlignment = false;
-            this.lbSoLuong.Text = "lbSoLuong";
-            this.lbSoLuong.TextAlignment = DevExpress.XtraPrinting.TextAlignment.BottomLeft;
-            this.lbSoLuong.Weight = 0.406006871836603D;
-            // 
-            // xrTableCell3
-            // 
-            this.xrTableCell3.Name = "xrTableCell3";
-            this.xrTableCell3.Padding = new DevExpress.XtraPrinting.PaddingInfo(20, 0, 0, 0, 100F);
-            this.xrTableCell3.StylePriority.UsePadding = false;
-            this.xrTableCell3.StylePriority.UseTextAlignment = false;
-            this.xrTableCell3.Text = "Số lượng";
-            this.xrTableCell3.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleLeft;
-            this.xrTableCell3.Weight = 0.26976710358267897D;
-            // 
-            // xrTable2
-            // 
-            this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(524.1044F, 0F);
-            this.xrTable2.Name = "xrTable2";
-            this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
-            this.xrTableRow3});
-            this.xrTable2.SizeF = new System.Drawing.SizeF(245.5807F, 30F);
-            // 
-            // xrTableRow3
-            // 
-            this.xrTableRow3.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
-            this.lbTongTienDV});
-            this.xrTableRow3.Name = "xrTableRow3";
-            this.xrTableRow3.Weight = 1D;
-            // 
-            // lbTongTienDV
-            // 
-            this.lbTongTienDV.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(74)))), ((int)(((byte)(183)))), ((int)(((byte)(222)))));
-            this.lbTongTienDV.ExpressionBindings.AddRange(new DevExpress.XtraReports.UI.ExpressionBinding[] {
-            new DevExpress.XtraReports.UI.ExpressionBinding("BeforePrint", "Text", "sumSum([ReportItems].[lbTienDV].[Value])")});
-            this.lbTongTienDV.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTongTienDV.ForeColor = System.Drawing.Color.White;
-            this.lbTongTienDV.Name = "lbTongTienDV";
-            this.lbTongTienDV.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.lbTongTienDV.StylePriority.UseBackColor = false;
-            this.lbTongTienDV.StylePriority.UseFont = false;
-            this.lbTongTienDV.StylePriority.UseForeColor = false;
-            this.lbTongTienDV.StylePriority.UseTextAlignment = false;
-            xrSummary1.Running = DevExpress.XtraReports.UI.SummaryRunning.Group;
-            this.lbTongTienDV.Summary = xrSummary1;
-            this.lbTongTienDV.Text = "lbTongTienDV";
-            this.lbTongTienDV.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
-            this.lbTongTienDV.Weight = 2.4558068847656251D;
-            // 
             // reportHoaDon
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -1028,13 +1026,13 @@
             this.baseControlStyle});
             this.Version = "17.2";
             ((System.ComponentModel.ISupportInitialize)(this.detailTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.totalTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.invoiceInfoTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.headerTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.vendorTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.invoiceInfoTable)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerTable)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }
