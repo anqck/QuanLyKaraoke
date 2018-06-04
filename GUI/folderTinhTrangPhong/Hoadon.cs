@@ -5,6 +5,7 @@ using System.ComponentModel;
 using DevExpress.XtraReports.UI;
 using System.Data;
 using DevExpress.XtraReports.Configuration;
+using DTO;
 
 namespace GUI.folderTinhTrangPhong
 {
@@ -15,7 +16,7 @@ namespace GUI.folderTinhTrangPhong
             InitializeComponent();
         }
 
-        public void BindingData(DataTable dsHoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
+        public void BindingData(DataTable dsHoaDon,KhachHangDTO khachHang,HoaDonDTO hoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc)
         {
             DataSource = dsHoaDon;
             DataMember = "dichvuphong";
@@ -23,27 +24,29 @@ namespace GUI.folderTinhTrangPhong
             //MaDV, ThoiGian,SoLuong,Gia, TenDV, TenLDV
 
 
-            GroupField groupField = new GroupField("MaThuePhong");
-            GroupHeader1.GroupFields.Add(groupField);
+        
+            GroupHeader1.GroupFields.Add(new GroupField("MaThuePhong"));
+            GroupHeader2.GroupFields.Add(new GroupField("colType"));
 
-
-            //Group Header
+            //Group Header 1
             xrLabel3.DataBindings.Add("Text", null, "MaThuePhong");
             lbTenPhong.DataBindings.Add("Text", null, "TenPhong");
 
+            //Group Header 2
+            lbLoaiDichVu.DataBindings.Add("Text", null, "colType");
+           
+
             //Detail
             lbTenDV.DataBindings.Add("Text", null, "TenDV");
-            lbDonVi.DataBindings.Add("Text", null, "DonVi");
-            
-            //lbSoLuong.DataBindings.Add(new  Binding("EditValue", bindingSource1, "CreationDate"));
+            lbDonViTinh.DataBindings.Add("Text", null, "DonVi");
             lbSoLuong.DataBindings.Add("Text", null, "SoLuong");
-            lbDonGia.DataBindings.Add("Text", null, "Gia");
-
-           // ExpressionBinding expressionBinding = ;
-            //lbTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Value", "SoLuong*Gia"));
+            lbDonGia.DataBindings.Add("Text", null, "Gia");                  
             lbTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "SoLuong*Gia"));
 
+            //Group Footer 2
+            lbTongTienDV_Type.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "sumSum(SoLuong*Gia)"));
 
+            //Group Footer 1
             lbTongTienDV.ExpressionBindings.Add(new ExpressionBinding("BeforePrint", "Text", "sumSum(SoLuong*Gia)"));
             //lbTongTienDV.DataBindings.Add("Text", null, "Sum(SoLuong)");
 
