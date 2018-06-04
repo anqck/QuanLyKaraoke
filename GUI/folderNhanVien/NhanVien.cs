@@ -65,5 +65,11 @@ namespace GUI.folderNhanVien
 
             }
         }
+        internal void GoToPage_WithoutAnimation(int v)
+        {
+            NhanVienPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            NhanVienPagecontrol.SelectedPageIndex = v;
+            NhanVienPagecontrol.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
     }
 }

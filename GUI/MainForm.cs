@@ -40,7 +40,6 @@ namespace GUI
              
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
@@ -55,6 +54,7 @@ namespace GUI
             DevExpress.XtraEditors.TileItemElement tileItemElement10 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
@@ -88,6 +88,7 @@ namespace GUI
             this.tileBarItem6 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.menuHoaDon = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.menuBaocao = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.menuHeThong = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.PageControl = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.pageTinhtrangphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.tinhTrangPhong1 = new GUI.TinhTrangPhong.TinhTrangPhong();
@@ -112,14 +113,17 @@ namespace GUI
             this.timHoaDon1 = new GUI.folderHoaDon.TimHoaDon();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer();
             this.lbTimedate = new System.Windows.Forms.Label();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
+            this.pageHeThong = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.heThong1 = new GUI.folderHeThong.HeThong();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -144,11 +148,13 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
+            this.pageHeThong.SuspendLayout();
             this.SuspendLayout();
             // 
             // bntHome
@@ -187,7 +193,7 @@ namespace GUI
             this.Doc.LookAndFeel.SkinName = "Office 2010 Blue";
             this.Doc.LookAndFeel.Style = DevExpress.LookAndFeel.LookAndFeelStyle.Flat;
             this.Doc.Name = "Doc";
-            this.Doc.Size = new System.Drawing.Size(1637, 40);
+            this.Doc.Size = new System.Drawing.Size(1798, 40);
             this.Doc.TabIndex = 3;
             this.Doc.Text = "tileNavPane1";
             // 
@@ -241,7 +247,7 @@ namespace GUI
             this.MenuBar.ItemSize = 80;
             this.MenuBar.Location = new System.Drawing.Point(0, 40);
             this.MenuBar.Margin = new System.Windows.Forms.Padding(2, 2, 5, 0);
-            this.MenuBar.MaxId = 13;
+            this.MenuBar.MaxId = 14;
             this.MenuBar.MaximumSize = new System.Drawing.Size(0, 150);
             this.MenuBar.MinimumSize = new System.Drawing.Size(117, 0);
             this.MenuBar.Name = "MenuBar";
@@ -250,7 +256,7 @@ namespace GUI
             this.MenuBar.SelectedItem = this.menuTinhtrangphong;
             this.MenuBar.SelectionBorderWidth = 2;
             this.MenuBar.SelectionColorMode = DevExpress.XtraBars.Navigation.SelectionColorMode.UseItemBackColor;
-            this.MenuBar.Size = new System.Drawing.Size(1637, 147);
+            this.MenuBar.Size = new System.Drawing.Size(1798, 147);
             this.MenuBar.TabIndex = 4;
             this.MenuBar.TabStop = false;
             this.MenuBar.Text = "tileBar";
@@ -266,6 +272,7 @@ namespace GUI
             this.GroupMenu.Items.Add(this.menuDichvu);
             this.GroupMenu.Items.Add(this.menuHoaDon);
             this.GroupMenu.Items.Add(this.menuBaocao);
+            this.GroupMenu.Items.Add(this.menuHeThong);
             this.GroupMenu.Name = "GroupMenu";
             this.GroupMenu.Text = "GROUP GÌ ĐÓ";
             // 
@@ -534,6 +541,15 @@ namespace GUI
             this.menuBaocao.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuBaocao.Name = "menuBaocao";
             // 
+            // menuHeThong
+            // 
+            this.menuHeThong.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement14.Text = "Hệ thống";
+            this.menuHeThong.Elements.Add(tileItemElement14);
+            this.menuHeThong.Id = 13;
+            this.menuHeThong.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.menuHeThong.Name = "menuHeThong";
+            // 
             // PageControl
             // 
             this.PageControl.Appearance.BackColor = System.Drawing.Color.White;
@@ -548,6 +564,7 @@ namespace GUI
             this.PageControl.Controls.Add(this.pageLoaikhachhang);
             this.PageControl.Controls.Add(this.pageLoaiphong);
             this.PageControl.Controls.Add(this.pageHoadon);
+            this.PageControl.Controls.Add(this.pageHeThong);
             this.PageControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PageControl.Location = new System.Drawing.Point(0, 187);
             this.PageControl.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
@@ -562,9 +579,10 @@ namespace GUI
             this.pageLoaikhachhang,
             this.pageLoaidichvu,
             this.pageLoaiphong,
-            this.pageHoadon});
+            this.pageHoadon,
+            this.pageHeThong});
             this.PageControl.SelectedPage = this.pageTinhtrangphong;
-            this.PageControl.Size = new System.Drawing.Size(1637, 633);
+            this.PageControl.Size = new System.Drawing.Size(1798, 633);
             this.PageControl.TabIndex = 5;
             this.PageControl.Text = "navigationFrame";
             this.PageControl.TransitionAnimationProperties.FrameCount = 5000;
@@ -578,7 +596,7 @@ namespace GUI
             this.pageTinhtrangphong.Controls.Add(this.tileBarDropDownKhachhang);
             this.pageTinhtrangphong.Controls.Add(this.tinhTrangPhong1);
             this.pageTinhtrangphong.Name = "pageTinhtrangphong";
-            this.pageTinhtrangphong.Size = new System.Drawing.Size(1637, 633);
+            this.pageTinhtrangphong.Size = new System.Drawing.Size(1798, 633);
             // 
             // tinhTrangPhong1
             // 
@@ -589,7 +607,7 @@ namespace GUI
             this.tinhTrangPhong1.Margin = new System.Windows.Forms.Padding(5);
             this.tinhTrangPhong1.Name = "tinhTrangPhong1";
             this.tinhTrangPhong1.Padding = new System.Windows.Forms.Padding(3);
-            this.tinhTrangPhong1.Size = new System.Drawing.Size(1637, 633);
+            this.tinhTrangPhong1.Size = new System.Drawing.Size(1798, 633);
             this.tinhTrangPhong1.TabIndex = 0;
             this.tinhTrangPhong1.Load += new System.EventHandler(this.tinhTrangPhong1_Load);
             // 
@@ -598,14 +616,15 @@ namespace GUI
             this.pageQuanlyphong.Caption = "pageQuanlyphong";
             this.pageQuanlyphong.Controls.Add(this.quanLyPhong1);
             this.pageQuanlyphong.Name = "pageQuanlyphong";
-            this.pageQuanlyphong.Size = new System.Drawing.Size(1637, 633);
+            this.pageQuanlyphong.Size = new System.Drawing.Size(1798, 633);
             // 
             // quanLyPhong1
             // 
             this.quanLyPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.quanLyPhong1.goToQuanLyLoaiPhong = null;
             this.quanLyPhong1.Location = new System.Drawing.Point(0, 0);
             this.quanLyPhong1.Name = "quanLyPhong1";
-            this.quanLyPhong1.Size = new System.Drawing.Size(1637, 633);
+            this.quanLyPhong1.Size = new System.Drawing.Size(1798, 633);
             this.quanLyPhong1.TabIndex = 0;
             // 
             // pageKhachhang
@@ -613,14 +632,15 @@ namespace GUI
             this.pageKhachhang.Caption = "pageKhachhang";
             this.pageKhachhang.Controls.Add(this.khachHang1);
             this.pageKhachhang.Name = "pageKhachhang";
-            this.pageKhachhang.Size = new System.Drawing.Size(1637, 633);
+            this.pageKhachhang.Size = new System.Drawing.Size(1798, 633);
             // 
             // khachHang1
             // 
             this.khachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.khachHang1.goToLoaiKhachHang = null;
             this.khachHang1.Location = new System.Drawing.Point(0, 0);
             this.khachHang1.Name = "khachHang1";
-            this.khachHang1.Size = new System.Drawing.Size(1637, 633);
+            this.khachHang1.Size = new System.Drawing.Size(1798, 633);
             this.khachHang1.TabIndex = 0;
             // 
             // pageNhanvien
@@ -628,14 +648,14 @@ namespace GUI
             this.pageNhanvien.Caption = "pageNhanvien";
             this.pageNhanvien.Controls.Add(this.nhanVien1);
             this.pageNhanvien.Name = "pageNhanvien";
-            this.pageNhanvien.Size = new System.Drawing.Size(1637, 633);
+            this.pageNhanvien.Size = new System.Drawing.Size(1798, 633);
             // 
             // nhanVien1
             // 
             this.nhanVien1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.nhanVien1.Location = new System.Drawing.Point(0, 0);
             this.nhanVien1.Name = "nhanVien1";
-            this.nhanVien1.Size = new System.Drawing.Size(1637, 633);
+            this.nhanVien1.Size = new System.Drawing.Size(1798, 633);
             this.nhanVien1.TabIndex = 0;
             // 
             // pageDichvu
@@ -643,14 +663,14 @@ namespace GUI
             this.pageDichvu.Caption = "pageDichvu";
             this.pageDichvu.Controls.Add(this.dichVu1);
             this.pageDichvu.Name = "pageDichvu";
-            this.pageDichvu.Size = new System.Drawing.Size(1637, 633);
+            this.pageDichvu.Size = new System.Drawing.Size(1798, 633);
             // 
             // dichVu1
             // 
             this.dichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dichVu1.Location = new System.Drawing.Point(0, 0);
             this.dichVu1.Name = "dichVu1";
-            this.dichVu1.Size = new System.Drawing.Size(1637, 633);
+            this.dichVu1.Size = new System.Drawing.Size(1798, 633);
             this.dichVu1.TabIndex = 0;
             // 
             // pageBaocao
@@ -659,7 +679,7 @@ namespace GUI
             this.pageBaocao.Controls.Add(this.filterControl1);
             this.pageBaocao.Controls.Add(this.buttonEdit2);
             this.pageBaocao.Name = "pageBaocao";
-            this.pageBaocao.Size = new System.Drawing.Size(1637, 633);
+            this.pageBaocao.Size = new System.Drawing.Size(1798, 633);
             // 
             // filterControl1
             // 
@@ -680,7 +700,7 @@ namespace GUI
             this.buttonEdit2.Properties.Appearance.Options.UseFont = true;
             this.buttonEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit2.Size = new System.Drawing.Size(1637, 152);
+            this.buttonEdit2.Size = new System.Drawing.Size(1798, 152);
             this.buttonEdit2.TabIndex = 0;
             // 
             // pageLoaidichvu
@@ -688,14 +708,14 @@ namespace GUI
             this.pageLoaidichvu.Caption = "pageLoaidichvu";
             this.pageLoaidichvu.Controls.Add(this.loaiDichVu1);
             this.pageLoaidichvu.Name = "pageLoaidichvu";
-            this.pageLoaidichvu.Size = new System.Drawing.Size(1637, 633);
+            this.pageLoaidichvu.Size = new System.Drawing.Size(1798, 633);
             // 
             // loaiDichVu1
             // 
             this.loaiDichVu1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loaiDichVu1.Location = new System.Drawing.Point(0, 0);
             this.loaiDichVu1.Name = "loaiDichVu1";
-            this.loaiDichVu1.Size = new System.Drawing.Size(1637, 633);
+            this.loaiDichVu1.Size = new System.Drawing.Size(1798, 633);
             this.loaiDichVu1.TabIndex = 0;
             // 
             // pageLoaikhachhang
@@ -703,14 +723,15 @@ namespace GUI
             this.pageLoaikhachhang.Caption = "pageLoaikhachhang";
             this.pageLoaikhachhang.Controls.Add(this.loaiKhachHang1);
             this.pageLoaikhachhang.Name = "pageLoaikhachhang";
-            this.pageLoaikhachhang.Size = new System.Drawing.Size(1637, 633);
+            this.pageLoaikhachhang.Size = new System.Drawing.Size(1798, 633);
             // 
             // loaiKhachHang1
             // 
             this.loaiKhachHang1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loaiKhachHang1.goToKhachHang = null;
             this.loaiKhachHang1.Location = new System.Drawing.Point(0, 0);
             this.loaiKhachHang1.Name = "loaiKhachHang1";
-            this.loaiKhachHang1.Size = new System.Drawing.Size(1637, 633);
+            this.loaiKhachHang1.Size = new System.Drawing.Size(1798, 633);
             this.loaiKhachHang1.TabIndex = 0;
             // 
             // pageLoaiphong
@@ -718,14 +739,15 @@ namespace GUI
             this.pageLoaiphong.Caption = "pageLoaiphong";
             this.pageLoaiphong.Controls.Add(this.loaiPhong1);
             this.pageLoaiphong.Name = "pageLoaiphong";
-            this.pageLoaiphong.Size = new System.Drawing.Size(1637, 633);
+            this.pageLoaiphong.Size = new System.Drawing.Size(1798, 633);
             // 
             // loaiPhong1
             // 
             this.loaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.loaiPhong1.goToQuanLyPhong = null;
             this.loaiPhong1.Location = new System.Drawing.Point(0, 0);
             this.loaiPhong1.Name = "loaiPhong1";
-            this.loaiPhong1.Size = new System.Drawing.Size(1637, 633);
+            this.loaiPhong1.Size = new System.Drawing.Size(1798, 633);
             this.loaiPhong1.TabIndex = 0;
             // 
             // pageHoadon
@@ -733,14 +755,14 @@ namespace GUI
             this.pageHoadon.Caption = "pageHoadon";
             this.pageHoadon.Controls.Add(this.timHoaDon1);
             this.pageHoadon.Name = "pageHoadon";
-            this.pageHoadon.Size = new System.Drawing.Size(1637, 633);
+            this.pageHoadon.Size = new System.Drawing.Size(1798, 633);
             // 
             // timHoaDon1
             // 
             this.timHoaDon1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.timHoaDon1.Location = new System.Drawing.Point(0, 0);
             this.timHoaDon1.Name = "timHoaDon1";
-            this.timHoaDon1.Size = new System.Drawing.Size(1637, 633);
+            this.timHoaDon1.Size = new System.Drawing.Size(1798, 633);
             this.timHoaDon1.TabIndex = 0;
             // 
             // windowsUIButtonPanel1
@@ -770,7 +792,7 @@ namespace GUI
             this.searchControl.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Repository.ClearButton(),
             new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl.Size = new System.Drawing.Size(315, 22);
+            this.searchControl.Size = new System.Drawing.Size(315, 30);
             this.searchControl.TabIndex = 1;
             // 
             // timer1
@@ -786,7 +808,7 @@ namespace GUI
             this.lbTimedate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.lbTimedate.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimedate.ForeColor = System.Drawing.Color.White;
-            this.lbTimedate.Location = new System.Drawing.Point(1254, 5);
+            this.lbTimedate.Location = new System.Drawing.Point(1415, 5);
             this.lbTimedate.Name = "lbTimedate";
             this.lbTimedate.Size = new System.Drawing.Size(233, 32);
             this.lbTimedate.TabIndex = 7;
@@ -796,25 +818,28 @@ namespace GUI
             // 
             this.layoutControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.layoutControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(232)))), ((int)(((byte)(232)))));
-            this.layoutControl1.Controls.Add(this.pictureBox1);
-            this.layoutControl1.Location = new System.Drawing.Point(1327, 40);
+            this.layoutControl1.Controls.Add(this.pictureEdit1);
+            this.layoutControl1.Location = new System.Drawing.Point(1488, 40);
             this.layoutControl1.Name = "layoutControl1";
             this.layoutControl1.Root = this.layoutControlGroup1;
             this.layoutControl1.Size = new System.Drawing.Size(310, 145);
             this.layoutControl1.TabIndex = 8;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // pictureBox1
+            // pictureEdit1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(189, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(118, 92);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
+            this.pictureEdit1.EditValue = ((object)(resources.GetObject("pictureEdit1.EditValue")));
+            this.pictureEdit1.Location = new System.Drawing.Point(183, 3);
+            this.pictureEdit1.Name = "pictureEdit1";
+            this.pictureEdit1.Properties.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.pictureEdit1.Properties.Appearance.Options.UseBackColor = true;
+            this.pictureEdit1.Properties.OptionsMask.MaskType = DevExpress.XtraEditors.Controls.PictureEditMaskType.Circle;
+            this.pictureEdit1.Properties.ReadOnly = true;
+            this.pictureEdit1.Properties.ShowCameraMenuItem = DevExpress.XtraEditors.Controls.CameraMenuItemVisibility.Auto;
+            this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Squeeze;
+            this.pictureEdit1.Size = new System.Drawing.Size(124, 92);
+            this.pictureEdit1.StyleController = this.layoutControl1;
+            this.pictureEdit1.TabIndex = 5;
             // 
             // layoutControlGroup1
             // 
@@ -838,10 +863,10 @@ namespace GUI
             this.layoutControlItem1.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem1.AppearanceItemCaption.Options.UseTextOptions = true;
             this.layoutControlItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.layoutControlItem1.Control = this.pictureBox1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(186, 0);
+            this.layoutControlItem1.Control = this.pictureEdit1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(180, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(124, 122);
+            this.layoutControlItem1.Size = new System.Drawing.Size(130, 122);
             this.layoutControlItem1.Text = "TAN PHAT";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Bottom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(76, 20);
@@ -851,7 +876,7 @@ namespace GUI
             this.emptySpaceItem1.AllowHotTrack = false;
             this.emptySpaceItem1.Location = new System.Drawing.Point(0, 0);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(186, 145);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(180, 145);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // simpleLabelItem1
@@ -863,15 +888,31 @@ namespace GUI
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseForeColor = true;
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseTextOptions = true;
             this.simpleLabelItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.simpleLabelItem1.Location = new System.Drawing.Point(186, 122);
+            this.simpleLabelItem1.Location = new System.Drawing.Point(180, 122);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
-            this.simpleLabelItem1.Size = new System.Drawing.Size(124, 23);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(130, 23);
             this.simpleLabelItem1.Text = "Nhân viên";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(76, 17);
             // 
+            // pageHeThong
+            // 
+            this.pageHeThong.Controls.Add(this.heThong1);
+            this.pageHeThong.Name = "pageHeThong";
+            this.pageHeThong.Size = new System.Drawing.Size(1798, 633);
+            // 
+            // heThong1
+            // 
+            this.heThong1.Appearance.BackColor = System.Drawing.Color.White;
+            this.heThong1.Appearance.Options.UseBackColor = true;
+            this.heThong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.heThong1.Location = new System.Drawing.Point(0, 0);
+            this.heThong1.Name = "heThong1";
+            this.heThong1.Size = new System.Drawing.Size(1798, 633);
+            this.heThong1.TabIndex = 0;
+            // 
             // MainForm
             // 
-            this.ClientSize = new System.Drawing.Size(1637, 820);
+            this.ClientSize = new System.Drawing.Size(1798, 820);
             this.Controls.Add(this.layoutControl1);
             this.Controls.Add(this.lbTimedate);
             this.Controls.Add(this.PageControl);
@@ -904,11 +945,13 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
+            this.pageHeThong.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -938,7 +981,8 @@ namespace GUI
                 case "menuNhanvien":
                     PageControl.SelectedPage = pageNhanvien;
                     nhanVien1.RefreshDataBinding();
-                   // khachHang1.GoToPage(0);
+                    nhanVien1.GoToPage_WithoutAnimation(0);
+                    // khachHang1.GoToPage(0);
                     break;
                 case "menuDichvu":
                     PageControl.SelectedPage = pageDichvu;
@@ -950,10 +994,16 @@ namespace GUI
                    // khachHang1.RefreshDataBinding();
                    // khachHang1.GoToPage(0);
                     break;
+                case "menuHeThong":
+                    
+                    heThong1.RefreshDataBinding();
+                    heThong1.GoToPage_WithoutAnimation(0);
+                    PageControl.SelectedPage = pageHeThong;
+                    break;
                 case "menuHoaDon":
                     DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
                     timHoaDon1.RefreshDataBinding();
-                  
+                    timHoaDon1.GoToPage_WithoutAnimation(0);
                     PageControl.SelectedPage = pageHoadon;
                     DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
                     // khachHang1.RefreshDataBinding();

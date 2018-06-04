@@ -222,5 +222,11 @@ namespace GUI.folderHoaDon
         {
             navigationFrame1.SelectedPage = navigationPage1;
         }
+        internal void GoToPage_WithoutAnimation(int v)
+        {
+            navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            navigationFrame1.SelectedPageIndex = v;
+            navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
     }
 }

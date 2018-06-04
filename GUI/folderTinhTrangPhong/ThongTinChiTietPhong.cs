@@ -308,7 +308,7 @@ namespace GUI.folderTinhTrangPhong
 
         private void txtGhiChu_EditValueChanged(object sender, EventArgs e)
         {
-            HoaDonBUS.UpdateGhiChu(hoaDon.MaHoaDon,txtGhiChu.Text);
+            HoaDonBUS.CapNhatGhiChu(hoaDon.MaHoaDon,txtGhiChu.Text);
         }
 
         private void simpleButton2_Click(object sender, EventArgs e)

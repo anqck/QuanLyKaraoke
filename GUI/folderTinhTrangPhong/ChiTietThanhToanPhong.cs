@@ -397,10 +397,14 @@ namespace GUI.folderTinhTrangPhong
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
-            if (gridView1.RowCount == 0 ) 
-                ButtonXoaDichVu.Visible = false;
-            else
-                ButtonXoaDichVu.Visible = true;
+            if(ButtonXoaDichVu!= null)
+            {
+                if (gridView1.RowCount == 0)
+                    ButtonXoaDichVu.Visible = false;
+                else
+                    ButtonXoaDichVu.Visible = true;
+            }
+           
         }
         public void LuuKhuyenMai()
         {

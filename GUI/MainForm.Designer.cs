@@ -62,7 +62,6 @@
         private DevExpress.XtraEditors.FilterControl filterControl1;
         private System.Windows.Forms.Label lbTimedate;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
@@ -70,6 +69,11 @@
         private DevExpress.XtraBars.Navigation.TileBarItem menuHoaDon;
         private DevExpress.XtraBars.Navigation.NavigationPage pageHoadon;
         private folderHoaDon.TimHoaDon timHoaDon1;
+        private DevExpress.XtraEditors.PictureEdit pictureEdit1;
+        private DevExpress.Utils.Behaviors.BehaviorManager behaviorManager1;
+        private DevExpress.XtraBars.Navigation.TileBarItem menuHeThong;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageHeThong;
+        private folderHeThong.HeThong heThong1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }

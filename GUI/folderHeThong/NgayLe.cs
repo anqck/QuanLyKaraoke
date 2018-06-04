@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DevExpress.XtraEditors;
 
-namespace GUI.folderTinhTrangPhong
+namespace GUI.folderHeThong
 {
-    public partial class XemPhong : UserControl
+    public partial class NgayLe : XtraUserControl
     {
-        public XemPhong()
+        public NgayLe()
         {
             InitializeComponent();
         }

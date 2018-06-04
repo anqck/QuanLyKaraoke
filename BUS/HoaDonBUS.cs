@@ -55,7 +55,7 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang();
         }
-        public static bool UpdateGhiChu(int maHoaDon,string strGhiChu)
+        public static bool CapNhatGhiChu(int maHoaDon,string strGhiChu)
         {
             return DAL.HoaDonDAL.UpdateGhiChu(maHoaDon, strGhiChu);
         }

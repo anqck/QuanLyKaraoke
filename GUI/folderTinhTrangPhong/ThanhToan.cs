@@ -45,9 +45,7 @@ namespace GUI.folderTinhTrangPhong
             this.thuePhong = thuePhongDTO;
             this.khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
 
-            txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
-            txtNgayThanhToan.Time = DateTime.Now;
-
+        
             //dsHoaDon = new DataSet();
             //dsHoaDon.Tables.Add(HoaDonBUS.LayThongTinHoaDon_DataTable(hoaDon.MaHoaDon));
             //dsHoaDon.Tables.Add(HoaDonBUS.LayTatCaCacThuePhong_DataTable(hoaDon.MaHoaDon));
@@ -104,8 +102,19 @@ namespace GUI.folderTinhTrangPhong
             }
             this.tabbedControlGroup1.SelectedTabPageIndex = 0;
 
-            txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
             CalcTongTien_UpdateHoaDon();
+
+            txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
+            txtNgayThanhToan.Time = DateTime.Now;
+            txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
+            txtMaKhachHang.EditValue = khachHang.MaKH;
+            txtTenKhachHang.EditValue = khachHang.TenKH;
+            txtGhiChu.EditValue = hoaDon.GhiChu;
+
+            txtTienTraTruoc.ReadOnly = false;
+            txtGhiChu.ReadOnly = false;
+
+            
         }
 
         public void RefreshDataBinding_ReadOnly(HoaDonDTO hoaDonDTO)
@@ -117,14 +126,11 @@ namespace GUI.folderTinhTrangPhong
             //dsHoaDon.Tables.Add(HoaDonBUS.LayThongTinHoaDon_DataTable(hoaDon.MaHoaDon));
             //dsHoaDon.Tables.Add(HoaDonBUS.LayTatCaCacThuePhong_DataTable(hoaDon.MaHoaDon));
 
-            txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
-            txtNgayThanhToan.Time = DateTime.Now;
-            txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
+           
 
-            txtTienTraTruoc.ReadOnly = true;
             wbntQuanlyphong.Buttons[0].Properties.Visible = false;
             wbntQuanlyphong.Buttons[1].Properties.Visible = false;
-            wbntQuanlyphong.Buttons[2].Properties.Visible = false;
+            wbntQuanlyphong.Buttons[2].Properties.Visible = false;      
             wbntQuanlyphong.Buttons[4].Properties.Visible = false;
 
             this.tabbedControlGroup1.Clear();
@@ -135,7 +141,7 @@ namespace GUI.folderTinhTrangPhong
                 DevExpress.XtraLayout.LayoutControlGroup layoutGrp = new DevExpress.XtraLayout.LayoutControlGroup();
                 DevExpress.XtraLayout.LayoutControlItem layoutItem = new DevExpress.XtraLayout.LayoutControlItem();
                 chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien_UpdateHoaDon;
-                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
+                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu(null);
 
 
                 chiTietThanhToanPhongThanhToan.RefreshDataBinding_ReadOnly(thuePhong);
@@ -177,6 +183,16 @@ namespace GUI.folderTinhTrangPhong
             this.tabbedControlGroup1.SelectedTabPageIndex = 0;
 
             CalcTongTien_UpdateHoaDon();
+
+            txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
+            txtNgayThanhToan.Time = DateTime.Now;
+            txtTienTraTruoc.EditValue = hoaDon.TienTraTruoc;
+            txtMaKhachHang.EditValue = khachHang.MaKH;
+            txtTenKhachHang.EditValue = khachHang.TenKH;
+            txtGhiChu.EditValue = hoaDon.GhiChu;
+
+            txtTienTraTruoc.ReadOnly = true;
+            txtGhiChu.ReadOnly = true;
         }
 
 
@@ -287,6 +303,11 @@ namespace GUI.folderTinhTrangPhong
             
             HoaDonBUS.CapNhatTienTraTruoc(hoaDon, Convert.ToDouble(txtTienTraTruoc.EditValue));
             CalcTongTien_UpdateHoaDon();
+        }
+
+        private void txtGhiChu_EditValueChanged(object sender, EventArgs e)
+        {
+            HoaDonBUS.CapNhatGhiChu(hoaDon.MaHoaDon, txtGhiChu.EditValue.ToString());
         }
     }
 
