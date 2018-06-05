@@ -40,6 +40,7 @@ namespace GUI
              
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
@@ -101,8 +102,6 @@ namespace GUI
             this.pageDichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.dichVu1 = new GUI.folderDichVu.DichVu();
             this.pageBaocao = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
             this.pageLoaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.loaiDichVu1 = new GUI.folderDichVu.LoaiDichVu();
             this.pageLoaikhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -111,9 +110,11 @@ namespace GUI
             this.loaiPhong1 = new GUI.folderQuanLyPhong.LoaiPhong();
             this.pageHoadon = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.timHoaDon1 = new GUI.folderHoaDon.TimHoaDon();
+            this.pageHeThong = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.heThong1 = new GUI.folderHeThong.HeThong();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl = new DevExpress.XtraEditors.SearchControl();
-            this.timer1 = new System.Windows.Forms.Timer();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbTimedate = new System.Windows.Forms.Label();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.pictureEdit1 = new DevExpress.XtraEditors.PictureEdit();
@@ -121,9 +122,8 @@ namespace GUI
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager();
-            this.pageHeThong = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.heThong1 = new GUI.folderHeThong.HeThong();
+            this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.baoCao1 = new GUI.folderBaoCao.BaoCao();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarDropDownContainer1)).BeginInit();
             this.tileBarDropDownContainer1.SuspendLayout();
@@ -139,11 +139,11 @@ namespace GUI
             this.pageNhanvien.SuspendLayout();
             this.pageDichvu.SuspendLayout();
             this.pageBaocao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).BeginInit();
             this.pageLoaidichvu.SuspendLayout();
             this.pageLoaikhachhang.SuspendLayout();
             this.pageLoaiphong.SuspendLayout();
             this.pageHoadon.SuspendLayout();
+            this.pageHeThong.SuspendLayout();
             this.windowsUIButtonPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
@@ -154,7 +154,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).BeginInit();
-            this.pageHeThong.SuspendLayout();
             this.SuspendLayout();
             // 
             // bntHome
@@ -676,32 +675,9 @@ namespace GUI
             // pageBaocao
             // 
             this.pageBaocao.Caption = "pageBaocao";
-            this.pageBaocao.Controls.Add(this.filterControl1);
-            this.pageBaocao.Controls.Add(this.buttonEdit2);
+            this.pageBaocao.Controls.Add(this.baoCao1);
             this.pageBaocao.Name = "pageBaocao";
             this.pageBaocao.Size = new System.Drawing.Size(1798, 633);
-            // 
-            // filterControl1
-            // 
-            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.filterControl1.Location = new System.Drawing.Point(418, 237);
-            this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(509, 297);
-            this.filterControl1.TabIndex = 1;
-            this.filterControl1.Text = "filterControl1";
-            // 
-            // buttonEdit2
-            // 
-            this.buttonEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonEdit2.EditValue = "báo cáo";
-            this.buttonEdit2.Location = new System.Drawing.Point(0, 0);
-            this.buttonEdit2.Name = "buttonEdit2";
-            this.buttonEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEdit2.Properties.Appearance.Options.UseFont = true;
-            this.buttonEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit2.Size = new System.Drawing.Size(1798, 152);
-            this.buttonEdit2.TabIndex = 0;
             // 
             // pageLoaidichvu
             // 
@@ -764,6 +740,23 @@ namespace GUI
             this.timHoaDon1.Name = "timHoaDon1";
             this.timHoaDon1.Size = new System.Drawing.Size(1798, 633);
             this.timHoaDon1.TabIndex = 0;
+            // 
+            // pageHeThong
+            // 
+            this.pageHeThong.Caption = "pageHeThong";
+            this.pageHeThong.Controls.Add(this.heThong1);
+            this.pageHeThong.Name = "pageHeThong";
+            this.pageHeThong.Size = new System.Drawing.Size(1798, 633);
+            // 
+            // heThong1
+            // 
+            this.heThong1.Appearance.BackColor = System.Drawing.Color.White;
+            this.heThong1.Appearance.Options.UseBackColor = true;
+            this.heThong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.heThong1.Location = new System.Drawing.Point(0, 0);
+            this.heThong1.Name = "heThong1";
+            this.heThong1.Size = new System.Drawing.Size(1798, 633);
+            this.heThong1.TabIndex = 0;
             // 
             // windowsUIButtonPanel1
             // 
@@ -894,21 +887,13 @@ namespace GUI
             this.simpleLabelItem1.Text = "Nhân viên";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(76, 17);
             // 
-            // pageHeThong
+            // baoCao1
             // 
-            this.pageHeThong.Controls.Add(this.heThong1);
-            this.pageHeThong.Name = "pageHeThong";
-            this.pageHeThong.Size = new System.Drawing.Size(1798, 633);
-            // 
-            // heThong1
-            // 
-            this.heThong1.Appearance.BackColor = System.Drawing.Color.White;
-            this.heThong1.Appearance.Options.UseBackColor = true;
-            this.heThong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.heThong1.Location = new System.Drawing.Point(0, 0);
-            this.heThong1.Name = "heThong1";
-            this.heThong1.Size = new System.Drawing.Size(1798, 633);
-            this.heThong1.TabIndex = 0;
+            this.baoCao1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.baoCao1.Location = new System.Drawing.Point(0, 0);
+            this.baoCao1.Name = "baoCao1";
+            this.baoCao1.Size = new System.Drawing.Size(1798, 633);
+            this.baoCao1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -936,11 +921,11 @@ namespace GUI
             this.pageNhanvien.ResumeLayout(false);
             this.pageDichvu.ResumeLayout(false);
             this.pageBaocao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).EndInit();
             this.pageLoaidichvu.ResumeLayout(false);
             this.pageLoaikhachhang.ResumeLayout(false);
             this.pageLoaiphong.ResumeLayout(false);
             this.pageHoadon.ResumeLayout(false);
+            this.pageHeThong.ResumeLayout(false);
             this.windowsUIButtonPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.searchControl.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
@@ -951,7 +936,6 @@ namespace GUI
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.behaviorManager1)).EndInit();
-            this.pageHeThong.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

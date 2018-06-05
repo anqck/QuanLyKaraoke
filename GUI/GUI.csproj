@@ -122,6 +122,30 @@
     <Compile Include="FilterControlDialog.Designer.cs">
       <DependentUpon>FilterControlDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderBaoCao\BaoCao.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderBaoCao\BaoCao.Designer.cs">
+      <DependentUpon>BaoCao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderBaoCao\DoanhThuDichVuTheoNam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderBaoCao\DoanhThuDichVuTheoNam.Designer.cs">
+      <DependentUpon>DoanhThuDichVuTheoNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderBaoCao\DoanhThuNam.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderBaoCao\DoanhThuNam.Designer.cs">
+      <DependentUpon>DoanhThuNam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderBaoCao\DoanhThuThang.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderBaoCao\DoanhThuThang.Designer.cs">
+      <DependentUpon>DoanhThuThang.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderDichVu\ChonDichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,10 +200,10 @@
     <Compile Include="folderHeThong\NgayLe.Designer.cs">
       <DependentUpon>NgayLe.cs</DependentUpon>
     </Compile>
-    <Compile Include="folderHoaDon\TimHoaDon.cs">
+    <Compile Include="folderBaoCao\TimHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="folderHoaDon\TimHoaDon.Designer.cs">
+    <Compile Include="folderBaoCao\TimHoaDon.Designer.cs">
       <DependentUpon>TimHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="folderKhachHang\ChonKhachHang.cs">
@@ -388,6 +412,18 @@
       <DependentUpon>FilterControlDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderBaoCao\BaoCao.resx">
+      <DependentUpon>BaoCao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderBaoCao\DoanhThuDichVuTheoNam.resx">
+      <DependentUpon>DoanhThuDichVuTheoNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderBaoCao\DoanhThuNam.resx">
+      <DependentUpon>DoanhThuNam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderBaoCao\DoanhThuThang.resx">
+      <DependentUpon>DoanhThuThang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ChonDichVu.resx">
       <DependentUpon>ChonDichVu.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -422,7 +458,7 @@
     <EmbeddedResource Include="folderHeThong\NgayLe.resx">
       <DependentUpon>NgayLe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="folderHoaDon\TimHoaDon.resx">
+    <EmbeddedResource Include="folderBaoCao\TimHoaDon.resx">
       <DependentUpon>TimHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderKhachHang\ChonKhachHang.resx">

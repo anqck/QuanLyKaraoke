@@ -35,7 +35,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage pageDichvu;
         private folderDichVu.DichVu dichVu1;
         private DevExpress.XtraBars.Navigation.NavigationPage pageBaocao;
-        private DevExpress.XtraEditors.ButtonEdit buttonEdit2;
         private DevExpress.XtraBars.Navigation.TileBar tileBar1;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup2;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem1;
@@ -59,7 +58,6 @@
         private folderKhachHang.LoaiKhachHang loaiKhachHang1;
         private folderDichVu.LoaiDichVu loaiDichVu1;
         private folderQuanLyPhong.LoaiPhong loaiPhong1;
-        private DevExpress.XtraEditors.FilterControl filterControl1;
         private System.Windows.Forms.Label lbTimedate;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
@@ -74,6 +72,7 @@
         private DevExpress.XtraBars.Navigation.TileBarItem menuHeThong;
         private DevExpress.XtraBars.Navigation.NavigationPage pageHeThong;
         private folderHeThong.HeThong heThong1;
+        private folderBaoCao.BaoCao baoCao1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }

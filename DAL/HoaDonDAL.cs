@@ -45,6 +45,47 @@ namespace DAL
 
         }
 
+        public static Dictionary<int, double> GetTongDoanhThuTheoThang(DateTime dateTime)
+        {
+            Dictionary<int, double> res = new Dictionary<int, double>();
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT month(NgayThanhToan)as Thang, SUM(TongTienThanhToan) as TongTien FROM hoadon WHERE NgayThanhToan is not nULL  and year(NgayThanhToan) = '" + dateTime.Year + "' GROUP BY month(NgayThanhToan);");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add((int)row["Thang"], (double)row["TongTien"]);
+            }
+
+            return res;
+        }
+
+        public static Dictionary<int, double> GetTongDoanhThuTheoNgay(DateTime dateTime)
+        {
+            Dictionary<int, double> res = new Dictionary<int, double>();
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT day(NgayThanhToan), SUM(TongTienThanhToan) FROM hoadon WHERE NgayThanhToan is not nULL  and MONTH(NgayThanhToan) = '" + dateTime.Month + "' GROUP BY day(NgayThanhToan);");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add((int)row["day(NgayThanhToan)"], (double)row["SUM(TongTienThanhToan)"]);
+            }
+
+            return res;
+        }
+
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(DateTime dateTime)
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL AND MONTH(NgayThanhToan) = '" + dateTime.Month + "' AND YEAR(NgayThanhToan) = '" + dateTime.Year + "' ;");
+        }
+
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(int nam)
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT month(NgayThanhToan) as Thang, count(TongTienThanhToan) as TongSoHoaDon, Max(TongTienThanhToan) as HoaDonDacNhat,sum(SoTienKhuyenMai)as TongTienKhuyenMai, sum(TongTienThanhToan) as TongTienThanhToan FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL and year(NgayThanhToan) = "+ nam+" group by month(NgayThanhToan)");
+        }
+
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan()
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL;");
+        }
+
         public static bool UpdateGhiChu(int maHoaDon, string strGhiChu)
         {
             DataProvider.ExecuseNonQuery("UPDATE hoadon SET hoadon.GhiChu = '" + strGhiChu + "'  WHERE hoadon.MaHoaDon = '" + maHoaDon + "';");

@@ -31,10 +31,36 @@ namespace BUS
             return DAL.HoaDonDAL.LayThongTinHoaDonDangThue(maHoaDon);
         }
 
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(DateTime dateTime)
+        {
+            return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang_DaThanhToan(dateTime);
+        }
+
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(int nam)
+        {
+            return HoaDonDAL.LayTatCaCacHoaDon_KhachHang_DaThanhToan(nam);
+        }
+
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan()
+        {
+            return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang_DaThanhToan();
+        }
+
         public static List<ThuePhongDTO> LayTatCaCacThuePhong(int maHoaDon)
         {
             return DAL.HoaDonDAL.LayTatCaCacThuePhong(maHoaDon);
         }
+
+        public static Dictionary<int, double> GetTongDoanhThuTheoNgay(DateTime dateTime)
+        {
+            return DAL.HoaDonDAL.GetTongDoanhThuTheoNgay(dateTime);
+        }
+
+        public static Dictionary<int, double> GetTongDoanhThuTheoThang(DateTime dateTime)
+        {
+            return DAL.HoaDonDAL.GetTongDoanhThuTheoThang(dateTime);
+        }
+
         public static DataTable LayTatCaCacThuePhong_DataTable(int maHoaDon)
         {
             return DAL.HoaDonDAL.LayTatCaCacThuePhong_DataTable(maHoaDon);
@@ -55,7 +81,7 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang();
         }
-        public static bool CapNhatGhiChu(int maHoaDon,string strGhiChu)
+        public static bool CapNhatGhiChu(int maHoaDon, string strGhiChu)
         {
             return DAL.HoaDonDAL.UpdateGhiChu(maHoaDon, strGhiChu);
         }
@@ -72,9 +98,13 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaDichVu_Phong_DichVuPhong();
         }
-        public static Dictionary<int,double>  GetTongDoanhThuTheoThang(int Nam)
+        public static Dictionary<int, double> GetTongDoanhThuTheoThang(int Nam)
         {
             return DAL.HoaDonDAL.GetTongDoanhThuTheoThang(Nam);
+        }
+        public static Dictionary<int, double> GetTongDoanhThuTheoNam()
+        {
+            return DAL.HoaDonDAL.GetTongDoanhThuTheoNam();
         }
         public static bool CapNhatTienTraTruoc(HoaDonDTO hoaDonDTO, double tienTraTruoc)
         {

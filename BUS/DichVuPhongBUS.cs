@@ -41,5 +41,13 @@ namespace BUS
         {
             return DichVuPhongDAL.XoaDichVuPhong(maDVP);
         }
+        public static Dictionary<int, double> GetTongDoanhThuTheoThang(DateTime dateTime)
+        {
+            return DichVuPhongDAL.GetTongDoanhThuTheoThang( dateTime);
+        }
+        public static DataTable LayTatCaCacDichVu_TrongThang(DateTime dateTime)
+        {
+            return DichVuPhongDAL.LayTatCaCacDichVu_TrongThang(dateTime);
+        }
     }
 }
