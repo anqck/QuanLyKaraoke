@@ -36,7 +36,7 @@ namespace GUI.folderKhachHang
 
             if (listLoaiKH.Count == 0)
             {
-                //BÌNH
+    
                 XtraMessageBox.Show("Cần thêm loại khách hàng trước!", "Thông báo", MessageBoxButtons.OK);
             }
 
@@ -72,7 +72,7 @@ namespace GUI.folderKhachHang
                     if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToDouble(txtDiemTichLuy.EditValue),  txtNgaySinh.DateTime)))
                     {
                         //Thông báo thành công
-                        //BÌNH
+                        
                         XtraMessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         actionBack();
 
@@ -80,7 +80,7 @@ namespace GUI.folderKhachHang
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                       
                         XtraMessageBox.Show("Thêm khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 

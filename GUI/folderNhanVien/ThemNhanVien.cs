@@ -75,7 +75,7 @@ namespace GUI.folderNhanVien
                     if (NhanVienBUS.LuuThongTinNhanVien(new NhanVienDTO(Convert.ToInt32(txtMaNhanVien.Text), txtTenNhanVien.Text,txtDiaChi.Text, txtSDT.Text,txtTenDangNhap.Text,txtMatKhau.Text, listLoaiTaiKhoan[cmbLoaiTaiKhoan.SelectedIndex].MaLoaiTaiKhoan, resizeImage(pictureEdit1.Image))))
                     {
                         //Thông báo thành công
-                        //BÌNH
+                      
                         XtraMessageBox.Show("Thêm nhân viên thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         actionBack();
@@ -83,7 +83,7 @@ namespace GUI.folderNhanVien
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                        
                         XtraMessageBox.Show("Thêm nhân viên thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;

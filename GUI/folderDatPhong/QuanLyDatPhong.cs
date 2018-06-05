@@ -80,6 +80,11 @@ namespace GUI.folderDatPhong
         {
             switch(e.Button.Properties.Tag.ToString())
             {
+                case "Chi Tiết Đặt Phòng":
+                    if(schedulerControl1.SelectedAppointments.Count > 0)    
+                        (this.ParentForm as MainForm).HienThiThongTinDatPhong(int.Parse(schedulerControl1.SelectedAppointments[0].Subject));
+
+                    break;
                 case "Hiển Thị Dạng Bảng":
                     navigationFrame1.SelectedPage = navigationPage2;
                     break;
@@ -91,6 +96,30 @@ namespace GUI.folderDatPhong
             navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             navigationFrame1.SelectedPageIndex = v;
             navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
+
+        private void gridViewDatPhong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            if (e.FocusedRowHandle < 0)
+                windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
+            else
+                windowsUIButtonPanel1.Buttons[0].Properties.Visible = true;
+        }
+
+        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+           
+            switch (e.Button.Properties.Tag.ToString())
+            {
+                case "Chi Tiết Đặt Phòng":
+                   
+                        (this.ParentForm as MainForm).HienThiThongTinDatPhong((int)dtDatPhong.Rows[gridViewDatPhong.GetFocusedDataSourceRowIndex()]["MaDatPhong"]);
+
+                    break;
+                case "Hiển Thị Dạng Biểu Đồ":
+                    navigationFrame1.SelectedPage = navigationPage1;
+                    break;
+            }
         }
 
         public void GoToHomePage()
@@ -115,7 +144,7 @@ namespace GUI.folderDatPhong
 
             if (hitInfo.HitTest == DevExpress.XtraScheduler.Drawing.SchedulerHitTest.AppointmentContent)
             {
-                (this.ParentForm as MainForm).HienThiThongTinDatPhong((int)schedulerControl1.SelectedAppointments[0].StatusKey);
+                (this.ParentForm as MainForm).HienThiThongTinDatPhong(int.Parse(schedulerControl1.SelectedAppointments[0].Subject));
             }
         }
     }

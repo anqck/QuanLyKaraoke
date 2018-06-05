@@ -23,6 +23,12 @@ namespace BUS
         {
             return NhanVienDAL.LayTatCaNhanVien_LoaiTaiKhoan();
         }
+
+        public static NhanVienDTO XacThucNhanVien(string taiKhoan, string matKhau)
+        {
+            return NhanVienDAL.XacThucNhanVien(taiKhoan, matKhau);
+        }
+
         public static DataTable LayTatCaLoaiTaiKhoan()
         {
             return NhanVienDAL.LayTatCaLoaiTaiKhoan();

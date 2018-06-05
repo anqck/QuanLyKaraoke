@@ -38,7 +38,7 @@ namespace GUI.folderKhachHang
                 //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
                 if (listLoaiKH.Count == 0)
                 {
-                    //BÌNH
+            
                     XtraMessageBox.Show("Cần thêm loại khách hàng trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 

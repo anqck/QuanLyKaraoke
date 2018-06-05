@@ -18,5 +18,17 @@ namespace BUS
         {
             return DAL.ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue();
         }
+
+        public static void SetTyLeQuyDoiDiemTien(double i)
+        {
+            DAL.ThamSoDAL.SetTyLeQuyDoiDiemTien(i);
+
+        }
+
+        public static void SetKhoangThoiGianToiThieuGiuaHaiLanThue(int i)
+        {
+            DAL.ThamSoDAL.SetKhoangThoiGianToiThieuGiuaHaiLanThue(i);
+
+        }
     }
 }

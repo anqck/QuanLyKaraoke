@@ -20,5 +20,17 @@ namespace DAL
             return int.Parse(DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.thamso WHERE MaThamSo = '1';").Rows[0]["GiaTri"].ToString());
 
         }
+
+        public static void SetTyLeQuyDoiDiemTien(double i)
+        {
+           DataProvider.ExecuseNonQuery("UPDATE quanlykaraoke.thamso SET GiaTri = '" + i + "' WHERE MaThamSo = '0';");
+
+        }
+
+        public static void SetKhoangThoiGianToiThieuGiuaHaiLanThue(int i)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE quanlykaraoke.thamso SET GiaTri = '" + i + "' WHERE MaThamSo = '1';");
+
+        }
     }
 }

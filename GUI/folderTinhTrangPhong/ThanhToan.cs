@@ -298,9 +298,8 @@ namespace GUI.folderTinhTrangPhong
             txtTongTienDichVu.EditValue = TongTienDichVu;
             txtTongTienThanhToan.EditValue = TongTienGio + TongTienKhuyenMai + TongTienDichVu - Convert.ToDouble(txtTienTraTruoc.EditValue);
 
-            //Nhân viên
-            //BÌNH
-            hoaDon.MaNhanVienThanhToan = 0;
+    
+            hoaDon.MaNhanVienThanhToan = (this.ParentForm as MainForm).nhanVien.MaNhanVien;
             hoaDon.TongTienThanhToan = (double)txtTongTienThanhToan.EditValue;
             hoaDon.NgayThanhToan = txtNgayThanhToan.Time;
             hoaDon.SoTienKhuyenMai = (double)txtTongTienKhuyenMai.EditValue;

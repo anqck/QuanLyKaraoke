@@ -115,6 +115,16 @@ namespace DAL
             return res;
         }
 
+        public static NhanVienDTO XacThucNhanVien(string taiKhoan, string matKhau)
+        {
+            DataTable dt= DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.NhanVien WHERE TenDangNhap = '"+ taiKhoan+ "' AND MatKhau = '"+ matKhau + "';");
+            if (dt.Rows.Count == 0)
+                return null;
+            else
+                return new NhanVienDTO((int)dt.Rows[0]["MaNhanVien"], dt.Rows[0]["TenNhanVien"].ToString(), dt.Rows[0]["DiaChi"].ToString(), dt.Rows[0]["SDT"].ToString(), dt.Rows[0]["TenDangNhap"].ToString(), dt.Rows[0]["MatKhau"].ToString(), (int)dt.Rows[0]["MaLoaiTaiKhoan"], (byte[])dt.Rows[0]["HinhAnh"]);
+
+        }
+
         public static DataTable LayTatCaNhanVien_LoaiTaiKhoan()
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.NhanVien, quanlykaraoke.loaitaikhoan where quanlykaraoke.NhanVien.MaLoaiTaiKhoan = quanlykaraoke.loaitaikhoan.MaLoaiTaiKhoan ;");
@@ -127,8 +137,8 @@ namespace DAL
         public static NhanVienDTO LayNhanVien(int MaNhanVien)
         {
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.NhanVien WHERE MaNhanVien = '" + MaNhanVien.ToString() + "';");
-
             return new NhanVienDTO((int)dt.Rows[0]["MaNhanVien"], dt.Rows[0]["TenNhanVien"].ToString(), dt.Rows[0]["DiaChi"].ToString(), dt.Rows[0]["SDT"].ToString(), dt.Rows[0]["TenDangNhap"].ToString(), dt.Rows[0]["MatKhau"].ToString(), (int)dt.Rows[0]["MaLoaiTaiKhoan"], (byte[])dt.Rows[0]["HinhAnh"]);
+
 
         }
         public static bool CapNhatThongTinNhanVien(NhanVienDTO NhanVienDTO)

@@ -57,8 +57,8 @@ namespace GUI.folderTinhTrangPhong
             switch (e.Button.Properties.Tag.ToString())
             {
                 case "Đặt":
-                    //BÌNH Nhân viên
-                    DatPhongDTO datPhong = new DatPhongDTO(DatPhongBUS.PhatSinhMaDatPhong(), txtGioVao.Time, Convert.ToDouble(txtTienTraTruoc.EditValue), 0, khachHang.MaKH, txtGhiChu.EditValue.ToString(), 1);
+                   
+                    DatPhongDTO datPhong = new DatPhongDTO(DatPhongBUS.PhatSinhMaDatPhong(), txtGioVao.Time, Convert.ToDouble(txtTienTraTruoc.EditValue), (this.ParentForm.Owner as MainForm).nhanVien.MaNhanVien, khachHang.MaKH, txtGhiChu.EditValue.ToString(), 1);
                     DatPhongBUS.LuuThongTinDatPhong(datPhong);
 
                     foreach(PhongDTO phong in selectedPhong.Values)

@@ -35,6 +35,8 @@ namespace GUI.folderHeThong
              
             }
 
+            txtNgayVao.EditValue = ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue();
+            txtTienTraTruoc.EditValue = ThamSoBUS.QuyDoiDiem(1);
         }
 
         internal void GoToPage_WithoutAnimation(int v)
@@ -58,6 +60,27 @@ namespace GUI.folderHeThong
         private void txtNgayLe_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
             txtNgayLe.Text = "Danh sách ngày lễ";
+        }
+
+        private void txtNgayVao_Properties_EditValueChanged(object sender, EventArgs e)
+        {
+            ThamSoBUS.SetKhoangThoiGianToiThieuGiuaHaiLanThue(Convert.ToInt32(txtNgayVao.EditValue));
+        }
+
+        private void txtTienTraTruoc_EditValueChanged(object sender, EventArgs e)
+        {
+            ThamSoBUS.SetTyLeQuyDoiDiemTien(Convert.ToDouble(txtTienTraTruoc.EditValue));
+        }
+
+        private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
+        {
+            switch(e.Button.Properties.Tag.ToString())
+            {
+                case "Mặc định":
+                    txtNgayVao.EditValue = 240;
+                    txtTienTraTruoc.EditValue = 100;
+                break;
+            }
         }
     }
 }

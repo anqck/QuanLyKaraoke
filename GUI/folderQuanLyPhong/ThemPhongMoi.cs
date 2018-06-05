@@ -38,7 +38,7 @@ namespace GUI.folderQuanLyPhong
                     if (PhongBUS.LuuThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong, cmbTang.Text, txtGhiChu.Text, 0)) )
                     {
                         //Thông báo thành công
-                        //BÌNH
+                        
                         XtraMessageBox.Show("Thêm phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         actionBack();
 
@@ -46,7 +46,7 @@ namespace GUI.folderQuanLyPhong
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                       
                         XtraMessageBox.Show("Thêm phòng thất bại!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
                     }
 
@@ -64,7 +64,7 @@ namespace GUI.folderQuanLyPhong
 
         private bool ThongBaoHuyThemPhong()
         {
-            //Bình
+        
             if (XtraMessageBox.Show("Bạn có chắc hủy thêm phòng ?", "Xác nhận", MessageBoxButtons.OKCancel,MessageBoxIcon.Information) == DialogResult.OK)
             {
                 return true;

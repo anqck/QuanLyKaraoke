@@ -28,19 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.NhanVienPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageNhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
-            this.tileControl2 = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem2 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem9 = new DevExpress.XtraEditors.TileItem();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -61,8 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.NhanVienPagecontrol)).BeginInit();
             this.NhanVienPagecontrol.SuspendLayout();
             this.PageNhanvien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).BeginInit();
-            this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.wbntNhanvien.SuspendLayout();
@@ -94,135 +83,19 @@
             // PageNhanvien
             // 
             this.PageNhanvien.Caption = "PageNhanvien";
-            this.PageNhanvien.Controls.Add(this.splitContainerControl);
+            this.PageNhanvien.Controls.Add(this.gridControl1);
             this.PageNhanvien.Controls.Add(this.labelTitle);
             this.PageNhanvien.Controls.Add(this.wbntNhanvien);
             this.PageNhanvien.Name = "PageNhanvien";
             this.PageNhanvien.Size = new System.Drawing.Size(980, 617);
             // 
-            // splitContainerControl
-            // 
-            this.splitContainerControl.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
-            this.splitContainerControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerControl.IsSplitterFixed = true;
-            this.splitContainerControl.Location = new System.Drawing.Point(0, 37);
-            this.splitContainerControl.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
-            this.splitContainerControl.Name = "splitContainerControl";
-            this.splitContainerControl.Panel1.Controls.Add(this.tileControl2);
-            this.splitContainerControl.Panel1.MinSize = 300;
-            this.splitContainerControl.Panel1.Text = "Panel1";
-            this.splitContainerControl.Panel2.Appearance.BackColor = System.Drawing.Color.White;
-            this.splitContainerControl.Panel2.Appearance.BackColor2 = System.Drawing.Color.White;
-            this.splitContainerControl.Panel2.Appearance.BorderColor = System.Drawing.Color.White;
-            this.splitContainerControl.Panel2.Appearance.Options.UseBackColor = true;
-            this.splitContainerControl.Panel2.Appearance.Options.UseBorderColor = true;
-            this.splitContainerControl.Panel2.Controls.Add(this.gridControl1);
-            this.splitContainerControl.Panel2.Text = "Panel2";
-            this.splitContainerControl.Size = new System.Drawing.Size(980, 500);
-            this.splitContainerControl.SplitterPosition = 125;
-            this.splitContainerControl.TabIndex = 8;
-            this.splitContainerControl.Text = "splitContainerControl1";
-            // 
-            // tileControl2
-            // 
-            this.tileControl2.AllowDrag = false;
-            this.tileControl2.AllowDragTilesBetweenGroups = false;
-            this.tileControl2.AllowDrop = true;
-            this.tileControl2.AllowItemHover = true;
-            this.tileControl2.AllowSelectedItem = true;
-            this.tileControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tileControl2.Groups.Add(this.tileGroup1);
-            this.tileControl2.ItemPadding = new System.Windows.Forms.Padding(15, 8, 15, 8);
-            this.tileControl2.Location = new System.Drawing.Point(0, 0);
-            this.tileControl2.MaxId = 9;
-            this.tileControl2.Name = "tileControl2";
-            this.tileControl2.RowCount = 10;
-            this.tileControl2.SelectedItem = this.tileItem2;
-            this.tileControl2.Size = new System.Drawing.Size(300, 500);
-            this.tileControl2.TabIndex = 2;
-            this.tileControl2.Text = "tileControl2";
-            // 
-            // tileGroup1
-            // 
-            this.tileGroup1.Items.Add(this.tileItem2);
-            this.tileGroup1.Items.Add(this.tileItem3);
-            this.tileGroup1.Items.Add(this.tileItem9);
-            this.tileGroup1.Name = "tileGroup1";
-            this.tileGroup1.Text = "tileGroup1";
-            // 
-            // tileItem2
-            // 
-            this.tileItem2.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
-            this.tileItem2.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Gray;
-            this.tileItem2.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem2.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Gray;
-            this.tileItem2.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem2.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem2.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem2.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem2.AppearanceItem.Selected.BackColor = System.Drawing.Color.RoyalBlue;
-            this.tileItem2.AppearanceItem.Selected.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem2.AppearanceItem.Selected.ForeColor = System.Drawing.Color.White;
-            this.tileItem2.AppearanceItem.Selected.Options.UseBackColor = true;
-            this.tileItem2.AppearanceItem.Selected.Options.UseFont = true;
-            this.tileItem2.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement1.Text = "tileItem2";
-            this.tileItem2.Elements.Add(tileItemElement1);
-            this.tileItem2.Id = 5;
-            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem2.Name = "tileItem2";
-            // 
-            // tileItem3
-            // 
-            this.tileItem3.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
-            this.tileItem3.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Gray;
-            this.tileItem3.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem3.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Gray;
-            this.tileItem3.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem3.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem3.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem3.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem3.AppearanceItem.Selected.BackColor = System.Drawing.Color.RoyalBlue;
-            this.tileItem3.AppearanceItem.Selected.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem3.AppearanceItem.Selected.ForeColor = System.Drawing.Color.White;
-            this.tileItem3.AppearanceItem.Selected.Options.UseBackColor = true;
-            this.tileItem3.AppearanceItem.Selected.Options.UseFont = true;
-            this.tileItem3.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement2.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement2);
-            this.tileItem3.Id = 7;
-            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem3.Name = "tileItem3";
-            // 
-            // tileItem9
-            // 
-            this.tileItem9.AppearanceItem.Normal.BackColor = System.Drawing.Color.White;
-            this.tileItem9.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Gray;
-            this.tileItem9.AppearanceItem.Normal.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem9.AppearanceItem.Normal.ForeColor = System.Drawing.Color.Gray;
-            this.tileItem9.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem9.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem9.AppearanceItem.Normal.Options.UseFont = true;
-            this.tileItem9.AppearanceItem.Normal.Options.UseForeColor = true;
-            this.tileItem9.AppearanceItem.Selected.BackColor = System.Drawing.Color.RoyalBlue;
-            this.tileItem9.AppearanceItem.Selected.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tileItem9.AppearanceItem.Selected.ForeColor = System.Drawing.Color.White;
-            this.tileItem9.AppearanceItem.Selected.Options.UseBackColor = true;
-            this.tileItem9.AppearanceItem.Selected.Options.UseFont = true;
-            this.tileItem9.AppearanceItem.Selected.Options.UseForeColor = true;
-            tileItemElement3.Text = "tileItem9";
-            this.tileItem9.Elements.Add(tileItemElement3);
-            this.tileItem9.Id = 8;
-            this.tileItem9.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem9.Name = "tileItem9";
-            // 
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.Location = new System.Drawing.Point(0, 37);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(674, 500);
+            this.gridControl1.Size = new System.Drawing.Size(980, 500);
             this.gridControl1.TabIndex = 13;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -418,8 +291,6 @@
             this.NhanVienPagecontrol.ResumeLayout(false);
             this.PageNhanvien.ResumeLayout(false);
             this.PageNhanvien.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl)).EndInit();
-            this.splitContainerControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.wbntNhanvien.ResumeLayout(false);
@@ -434,12 +305,6 @@
 
         private DevExpress.XtraBars.Navigation.NavigationFrame NhanVienPagecontrol;
         private DevExpress.XtraBars.Navigation.NavigationPage PageNhanvien;
-        protected DevExpress.XtraEditors.SplitContainerControl splitContainerControl;
-        private DevExpress.XtraEditors.TileControl tileControl2;
-        private DevExpress.XtraEditors.TileGroup tileGroup1;
-        private DevExpress.XtraEditors.TileItem tileItem2;
-        private DevExpress.XtraEditors.TileItem tileItem3;
-        private DevExpress.XtraEditors.TileItem tileItem9;
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntNhanvien;
         private DevExpress.XtraEditors.SearchControl searchControl1;

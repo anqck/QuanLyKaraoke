@@ -163,8 +163,8 @@ namespace GUI.folderDatPhong
             }
            
             //Phát sinh hóa đơn
-            //BÌNH
-            HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), 0, Double.NaN, datPhong.SoTienDatTruoc, DateTime.MinValue, Double.NaN, datPhong.GhiChu, khachHang.MaKH, datPhong.MaDatPhong);
+
+            HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), (this.ParentForm as MainForm).nhanVien.MaNhanVien, Double.NaN, datPhong.SoTienDatTruoc, DateTime.MinValue, Double.NaN, datPhong.GhiChu, khachHang.MaKH, datPhong.MaDatPhong);
             HoaDonBUS.LuuThongTinHoaDon(hoaDon);
 
             ThuePhongDTO tp = null;

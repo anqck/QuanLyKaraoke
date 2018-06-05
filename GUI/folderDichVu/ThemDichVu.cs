@@ -77,7 +77,7 @@ namespace GUI.folderDichVu
                     if(DichVuBUS.LuuThongTinDichVu(new DichVuDTO(Convert.ToInt32(txtMaDV.Text),txtTenDichVu.Text, Convert.ToDouble(txtDonGia.EditValue), txtDonVi.Text, resizeImage(pictureEdit1.Image), listLoaiDichVu[cmbLoaiDV.SelectedIndex].MaLoaiDV)))
                     {
                         //Thông báo thành công
-                        //BÌNH
+                 
                         XtraMessageBox.Show("Thêm dịch vụ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         actionBack();
@@ -85,7 +85,7 @@ namespace GUI.folderDichVu
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                    
                         XtraMessageBox.Show("Thêm dịch vụ thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;

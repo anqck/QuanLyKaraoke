@@ -36,7 +36,7 @@ namespace GUI.folderQuanLyPhong
 
             if (listLoaiPhong.Count == 0)
             {
-                //BÌNH
+              
                 XtraMessageBox.Show("Cần thêm loại phòng trước!", "Thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
 
@@ -92,8 +92,8 @@ namespace GUI.folderQuanLyPhong
             //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
             if (listLoaiPhong.Count == 0)
             {
-                //BÌNH
-                XtraMessageBox.Show("Cần thêm các tầng trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
+                XtraMessageBox.Show("Cần thêm loại phòng trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             foreach (string tang in listTang)
@@ -118,7 +118,7 @@ namespace GUI.folderQuanLyPhong
         }
         private bool ThongBaoHuySuaPhong()
         {
-            //Bình
+           
             if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 return true;
@@ -139,7 +139,7 @@ namespace GUI.folderQuanLyPhong
                     if (PhongBUS.CapNhatThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, (int)((GUI.MyComboBoxItem)cmbLoaiPhong.SelectedItem).Tag, cmbTang.Text, txtGhiChu.Text, (int)((GUI.MyComboBoxItem)cmbTinhTrangPhong.SelectedItem).Tag)))
                     {
                         //Thông báo thành công
-                        //BÌNH
+                       
                         XtraMessageBox.Show("Cập nhật phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         actionBack();
 
@@ -147,7 +147,7 @@ namespace GUI.folderQuanLyPhong
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                        
                         XtraMessageBox.Show("Cập nhật phòng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 

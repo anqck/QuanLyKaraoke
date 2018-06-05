@@ -49,7 +49,7 @@ namespace GUI.folderKhachHang
                     if (LoaiKhachHangBUS.CapNhatThongTinLoaiKhachHang(new DTO.LoaiKhachHangDTO(loaiKhachHangDTO.MaLoaiKH, txtTenLoaiKhachHang.Text, Convert.ToInt32(txtSoDiemDeDatDuoc.EditValue), Convert.ToDouble(txtPhanTramGiamGia.EditValue), Convert.ToDouble(txtSoTienGiamGia_Min.EditValue), Convert.ToDouble(txtSoTienGiamGia_Max.EditValue), Convert.ToDouble(txtPhanTramGiamGiaSinhNhat.EditValue), Convert.ToDouble(txtSoTienGiamGiaSinhNhat_Min.EditValue), Convert.ToDouble(txtSoTienGiamGiaSinhNhat_Max.EditValue))))
                     {
                         //Thông báo thành công
-                        //BÌNH
+                    
                         XtraMessageBox.Show("Sửa loại khách hàng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         actionBack();
@@ -57,7 +57,7 @@ namespace GUI.folderKhachHang
                     else
                     {
                         //Thông báo thất bại
-                        //BÌNH
+                     
                         XtraMessageBox.Show("Sửa loại khách hàng thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;

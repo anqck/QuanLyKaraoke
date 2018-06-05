@@ -15,9 +15,23 @@ namespace GUI
 {
     public partial class MainForm : DevExpress.XtraEditors.XtraForm
     {
+        public DTO.NhanVienDTO nhanVien { get; }
         public MainForm()
         {
+            
+
+
+
+
             InitializeComponent();
+
+            Login frmLogin = new Login();
+            frmLogin.ShowDialog();
+
+            if (frmLogin.nhanVien == null)
+                this.Close();
+            else
+                nhanVien = frmLogin.nhanVien;
 
             tinhTrangPhong1.RefreshDataBinding();
 

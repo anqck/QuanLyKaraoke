@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
-            this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
@@ -50,6 +47,7 @@
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ngayLe1 = new GUI.folderHeThong.NgayLe();
+            this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
@@ -107,20 +105,6 @@
             this.simpleLabelItem1.Size = new System.Drawing.Size(1022, 71);
             this.simpleLabelItem1.Text = "THAM SỐ";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(208, 65);
-            // 
-            // windowsUIButtonPanel1
-            // 
-            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Lưu", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Lưu", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Mặc định", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Mặc định", -1, false)});
-            this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 533);
-            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
-            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1069, 61);
-            this.windowsUIButtonPanel1.TabIndex = 17;
-            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             // 
             // layoutControl1
             // 
@@ -193,6 +177,7 @@
             this.txtTienTraTruoc.Size = new System.Drawing.Size(615, 34);
             this.txtTienTraTruoc.StyleController = this.layoutControl1;
             this.txtTienTraTruoc.TabIndex = 14;
+            this.txtTienTraTruoc.EditValueChanged += new System.EventHandler(this.txtTienTraTruoc_EditValueChanged);
             // 
             // simpleButton1
             // 
@@ -241,6 +226,7 @@
             this.txtNgayVao.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
             this.txtNgayVao.Properties.Mask.EditMask = "##0 phút";
             this.txtNgayVao.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtNgayVao.Properties.EditValueChanged += new System.EventHandler(this.txtNgayVao_Properties_EditValueChanged);
             this.txtNgayVao.Size = new System.Drawing.Size(615, 34);
             this.txtNgayVao.StyleController = this.layoutControl1;
             this.txtNgayVao.TabIndex = 7;
@@ -356,6 +342,18 @@
             this.ngayLe1.Size = new System.Drawing.Size(1069, 594);
             this.ngayLe1.TabIndex = 0;
             // 
+            // windowsUIButtonPanel1
+            // 
+            this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Mặc định", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Mặc định", -1, false)});
+            this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 533);
+            this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
+            this.windowsUIButtonPanel1.Size = new System.Drawing.Size(1069, 61);
+            this.windowsUIButtonPanel1.TabIndex = 17;
+            this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
+            this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
+            // 
             // HeThong
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -392,7 +390,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
         private DevExpress.XtraLayout.LayoutControlGroup Root;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraEditors.SpinEdit txtTienTraTruoc;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
@@ -408,5 +405,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.ComboBoxEdit txtNgayLe;
         private DevExpress.XtraEditors.SpinEdit txtNgayVao;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
     }
 }

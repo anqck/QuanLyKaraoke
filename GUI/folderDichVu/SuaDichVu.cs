@@ -35,7 +35,7 @@ namespace GUI.folderDichVu
                 //Nếu không có loại phòng, thông báo cần tạo loại phòng trước
                 if (listLoaiDichVu.Count == 0)
                 {
-                    //BÌNH
+              
                     XtraMessageBox.Show("Cần thêm loại dịch vụ trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
