@@ -113,8 +113,6 @@ namespace GUI
             this.pageDichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.dichVu1 = new GUI.folderDichVu.DichVu();
             this.pageBaocao = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.filterControl1 = new DevExpress.XtraEditors.FilterControl();
-            this.buttonEdit2 = new DevExpress.XtraEditors.ButtonEdit();
             this.pageLoaidichvu = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.loaiDichVu1 = new GUI.folderDichVu.LoaiDichVu();
             this.pageLoaikhachhang = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -137,6 +135,7 @@ namespace GUI
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
+            this.baoCao1 = new GUI.folderBaoCao.BaoCao();
             this.tileBar4 = new DevExpress.XtraBars.Navigation.TileBar();
             this.timerNotify = new System.Windows.Forms.Timer(this.components);
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
@@ -157,7 +156,6 @@ namespace GUI
             this.pageNhanvien.SuspendLayout();
             this.pageDichvu.SuspendLayout();
             this.pageBaocao.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).BeginInit();
             this.pageLoaidichvu.SuspendLayout();
             this.pageLoaikhachhang.SuspendLayout();
             this.pageLoaiphong.SuspendLayout();
@@ -791,32 +789,9 @@ namespace GUI
             // pageBaocao
             // 
             this.pageBaocao.Caption = "pageBaocao";
-            this.pageBaocao.Controls.Add(this.filterControl1);
-            this.pageBaocao.Controls.Add(this.buttonEdit2);
+            this.pageBaocao.Controls.Add(this.baoCao1);
             this.pageBaocao.Name = "pageBaocao";
             this.pageBaocao.Size = new System.Drawing.Size(1798, 633);
-            // 
-            // filterControl1
-            // 
-            this.filterControl1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.filterControl1.Location = new System.Drawing.Point(418, 237);
-            this.filterControl1.Name = "filterControl1";
-            this.filterControl1.Size = new System.Drawing.Size(509, 297);
-            this.filterControl1.TabIndex = 1;
-            this.filterControl1.Text = "filterControl1";
-            // 
-            // buttonEdit2
-            // 
-            this.buttonEdit2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonEdit2.EditValue = "báo cáo";
-            this.buttonEdit2.Location = new System.Drawing.Point(0, 0);
-            this.buttonEdit2.Name = "buttonEdit2";
-            this.buttonEdit2.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonEdit2.Properties.Appearance.Options.UseFont = true;
-            this.buttonEdit2.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton()});
-            this.buttonEdit2.Size = new System.Drawing.Size(1798, 152);
-            this.buttonEdit2.TabIndex = 0;
             // 
             // pageLoaidichvu
             // 
@@ -1059,6 +1034,11 @@ namespace GUI
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("bbcda021-85e1-4f65-be88-feda0ef80a40", null, "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
                     "ncididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
                     "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+            this.baoCao1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.baoCao1.Location = new System.Drawing.Point(0, 0);
+            this.baoCao1.Name = "baoCao1";
+            this.baoCao1.Size = new System.Drawing.Size(1798, 633);
+            this.baoCao1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -1088,7 +1068,6 @@ namespace GUI
             this.pageNhanvien.ResumeLayout(false);
             this.pageDichvu.ResumeLayout(false);
             this.pageBaocao.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.buttonEdit2.Properties)).EndInit();
             this.pageLoaidichvu.ResumeLayout(false);
             this.pageLoaikhachhang.ResumeLayout(false);
             this.pageLoaiphong.ResumeLayout(false);
