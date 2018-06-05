@@ -122,6 +122,24 @@
     <Compile Include="FilterControlDialog.Designer.cs">
       <DependentUpon>FilterControlDialog.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderDatPhong\QuanLyDatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDatPhong\QuanLyDatPhong.Designer.cs">
+      <DependentUpon>QuanLyDatPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderDatPhong\ThongTinChiTietDatNhieuPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDatPhong\ThongTinChiTietDatNhieuPhong.Designer.cs">
+      <DependentUpon>ThongTinChiTietDatNhieuPhong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="folderDatPhong\ThongTinChiTietDatPhong.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDatPhong\ThongTinChiTietDatPhong.Designer.cs">
+      <DependentUpon>ThongTinChiTietDatPhong.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderDichVu\ChonDichVu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -345,6 +363,7 @@
       <DependentUpon>TraCuuThuePhong.cs</DependentUpon>
     </Compile>
     <Compile Include="Localizer\VietnameseDXMessageBoxLocalizer.cs" />
+    <Compile Include="Localizer\VietnameseSchedulerLocalizer.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -368,6 +387,12 @@
     </Compile>
     <Compile Include="Localizer\VietnameseEditorsLocalizer.cs" />
     <Compile Include="Localizer\VietnameseGridLocalizer.cs" />
+    <Compile Include="ReportViewer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportViewer.Designer.cs">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -387,6 +412,15 @@
     <EmbeddedResource Include="FilterControlDialog.resx">
       <DependentUpon>FilterControlDialog.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDatPhong\QuanLyDatPhong.resx">
+      <DependentUpon>QuanLyDatPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDatPhong\ThongTinChiTietDatNhieuPhong.resx">
+      <DependentUpon>ThongTinChiTietDatNhieuPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDatPhong\ThongTinChiTietDatPhong.resx">
+      <DependentUpon>ThongTinChiTietDatPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDichVu\ChonDichVu.resx">
       <DependentUpon>ChonDichVu.cs</DependentUpon>
@@ -542,6 +576,9 @@
     </Compile>
     <EmbeddedResource Include="folderTinhTrangPhong\TinhTrangPhong.resx">
       <DependentUpon>TinhTrangPhong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportViewer.resx">
+      <DependentUpon>ReportViewer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SplashScreen1.resx">
       <DependentUpon>SplashScreen1.cs</DependentUpon>

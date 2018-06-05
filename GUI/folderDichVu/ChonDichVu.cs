@@ -157,7 +157,7 @@ namespace GUI.folderDichVu
                 if (!e.Visible&& searchControl1.Text !="")
                     return;
 
-                 e.Visible = listSelectedRow.ContainsKey((int)gridView2.GetRowCellValue(e.ListSourceRow, colMaDichVu));
+                 e.Visible = listSelectedRow.ContainsKey((int)dataSource.Rows[e.ListSourceRow]["MaDV"]);
                   e.Handled = true;           
 
                    

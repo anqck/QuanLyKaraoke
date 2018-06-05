@@ -26,6 +26,8 @@ namespace GUI.folderTinhTrangPhong
 
         reportHoaDon reportHoaDon;
 
+        bool ReadOnlyMode;
+
        
         public Action goBackHome { get; set; }
 
@@ -42,6 +44,13 @@ namespace GUI.folderTinhTrangPhong
         }
         public void RefreshDataBinding(ThuePhongDTO thuePhongDTO)
         {
+            ReadOnlyMode = false;
+
+            wbntQuanlyphong.Buttons[0].Properties.Visible = true;
+            wbntQuanlyphong.Buttons[1].Properties.Visible = true;
+            wbntQuanlyphong.Buttons[2].Properties.Visible = true;
+            wbntQuanlyphong.Buttons[4].Properties.Visible = true;
+
             this.hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhongDTO.MaHoaDon);
             this.thuePhong = thuePhongDTO;
             this.khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
@@ -49,6 +58,7 @@ namespace GUI.folderTinhTrangPhong
             txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
             txtNgayThanhToan.Time = DateTime.Now;
             hoaDon.NgayThanhToan = DateTime.Now;
+            
 
             dsHoaDon = new DataSet();
             dsHoaDon.Tables.Add(HoaDonBUS.LayThongTinHoaDon_DataTable(hoaDon.MaHoaDon));
@@ -100,7 +110,7 @@ namespace GUI.folderTinhTrangPhong
                 layoutGrp.Name = "layoutControlGroup2";
                 layoutGrp.OptionsItemText.TextToControlDistance = 4;
                 layoutGrp.Size = new System.Drawing.Size(873, 420);
-                layoutGrp.Text = PhongBUS.LayThongTinPhong(thuePhong.MaPhong).TenPhong;
+                layoutGrp.Text = PhongBUS.LayThongTinPhong(listThuePhong[i].MaPhong).TenPhong;
                 layoutGrp.Tag = chiTietThanhToanPhongThanhToan;
 
 
@@ -121,11 +131,13 @@ namespace GUI.folderTinhTrangPhong
             txtTienTraTruoc.ReadOnly = false;
             txtGhiChu.ReadOnly = false;
 
-            
+
+
         }
 
         public void RefreshDataBinding_ReadOnly(HoaDonDTO hoaDonDTO)
         {
+            ReadOnlyMode = true;
             this.hoaDon = hoaDonDTO;       
             this.khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
 
@@ -140,19 +152,34 @@ namespace GUI.folderTinhTrangPhong
             wbntQuanlyphong.Buttons[2].Properties.Visible = false;      
             wbntQuanlyphong.Buttons[4].Properties.Visible = false;
 
-            this.tabbedControlGroup1.Clear();
-            foreach (ThuePhongDTO thuePhong in HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon))
-            {
+            txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
+            txtNgayThanhToan.Time = DateTime.Now;
+            hoaDon.NgayThanhToan = DateTime.Now;
 
+
+            dsHoaDon = new DataSet();
+            dsHoaDon.Tables.Add(HoaDonBUS.LayThongTinHoaDon_DataTable(hoaDon.MaHoaDon));
+            dsHoaDon.Tables.Add(HoaDonBUS.LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(hoaDon.MaHoaDon));
+            dsHoaDon.Tables[1].Columns.Add(new DataColumn("TienPhong", typeof(double)));
+            dsHoaDon.Tables[1].Columns.Add(new DataColumn("TienGioTamTinh", typeof(double)));
+            dsHoaDon.Relations.Add("Danh sách thuê phòng", dsHoaDon.Tables[0].Columns["MaHoaDon"], dsHoaDon.Tables[1].Columns["MaHoaDon"]);
+
+
+
+            this.tabbedControlGroup1.Clear();
+            List<ThuePhongDTO> listThuePhong = HoaDonBUS.LayTatCaCacThuePhong(hoaDonDTO.MaHoaDon);
+            for (int i = 0; i < listThuePhong.Count; i++)
+            {
                 ChiTietThanhToanPhong chiTietThanhToanPhongThanhToan = new ChiTietThanhToanPhong();
                 DevExpress.XtraLayout.LayoutControlGroup layoutGrp = new DevExpress.XtraLayout.LayoutControlGroup();
                 DevExpress.XtraLayout.LayoutControlItem layoutItem = new DevExpress.XtraLayout.LayoutControlItem();
                 chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien_UpdateHoaDon;
-                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu(null);
+                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
+                chiTietThanhToanPhongThanhToan.RefreshDataBinding_ReadOnly(listThuePhong[i]);
+                dsHoaDon.Tables[1].Rows[i]["GioTraPhong"] = chiTietThanhToanPhongThanhToan.thuePhong.GioTraPhong;
 
 
-                chiTietThanhToanPhongThanhToan.RefreshDataBinding_ReadOnly(thuePhong);
-                chiTietThanhToanPhongThanhToan.GetTongTienGio();
+
                 //thongTinChiTietPhong.SetActionThanhToanButton(goToThanhToan);
                 //DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
 
@@ -180,13 +207,13 @@ namespace GUI.folderTinhTrangPhong
                 layoutGrp.Name = "layoutControlGroup2";
                 layoutGrp.OptionsItemText.TextToControlDistance = 4;
                 layoutGrp.Size = new System.Drawing.Size(873, 420);
-                layoutGrp.Text = PhongBUS.LayThongTinPhong(thuePhong.MaPhong).TenPhong;
+                layoutGrp.Text = PhongBUS.LayThongTinPhong(listThuePhong[i].MaPhong).TenPhong;
                 layoutGrp.Tag = chiTietThanhToanPhongThanhToan;
 
 
                 this.tabbedControlGroup1.AddTabPage(layoutGrp);
-
             }
+
             this.tabbedControlGroup1.SelectedTabPageIndex = 0;
 
             CalcTongTien_UpdateHoaDon();
@@ -224,24 +251,35 @@ namespace GUI.folderTinhTrangPhong
 
             DataTable MergedDataTable = new DataTable("dichvuphong");
             MergedDataTable.Merge(dsDichVuPhong.Tables[0]);
-            for (int i =1; i < dsDichVuPhong.Tables.Count;i++)
+            if (!ReadOnlyMode) //ReadOnly Mode
             {
-                foreach(DataRow dr in dsDichVuPhong.Tables[i].Rows)
+                for (int i = 1; i < dsDichVuPhong.Tables.Count; i++)
                 {
-                    DataRow row = MergedDataTable.NewRow();
-                    row["MaDVP"] = MergedDataTable.Rows.Count;
-                    row["MaThuePhong"] = dr["MaThuePhong"];
-                    row["MaDV"] = dr["MaDV"];
-                    row["ThoiGian"] = dr["ThoiGian"];
-                    row["SoLuong"] = dr["SoLuong"];
-                    row["Gia"] = dr["Gia"];
-                    row["TenDV"] = dr["TenDV"];
-                    row["DonVi"] = dr["DonVi"];
-                    row["colType"] = dr["colType"];
-                    MergedDataTable.Rows.Add(row);
-                    
-                }                
+                    foreach (DataRow dr in dsDichVuPhong.Tables[i].Rows)
+                    {
+                        DataRow row = MergedDataTable.NewRow();
+                        row["MaDVP"] = MergedDataTable.Rows.Count;
+                        row["MaThuePhong"] = dr["MaThuePhong"];
+                        row["MaDV"] = dr["MaDV"];
+                        row["ThoiGian"] = dr["ThoiGian"];
+                        row["SoLuong"] = dr["SoLuong"];
+                        row["Gia"] = dr["Gia"];
+                        row["TenDV"] = dr["TenDV"];
+                        row["DonVi"] = dr["DonVi"];
+                        row["colType"] = dr["colType"];
+                        MergedDataTable.Rows.Add(row);
+
+                    }
+                }
             }
+            else
+            {
+                for (int i = 1; i < dsDichVuPhong.Tables.Count; i++)
+                {
+                    MergedDataTable.Merge(dsDichVuPhong.Tables[i]);
+                }
+            }
+            
 
             if (dsHoaDon.Tables.Count == 3)
             {
@@ -267,7 +305,7 @@ namespace GUI.folderTinhTrangPhong
             hoaDon.NgayThanhToan = txtNgayThanhToan.Time;
             hoaDon.SoTienKhuyenMai = (double)txtTongTienKhuyenMai.EditValue;
 
-            reportHoaDon.BindingData(dsHoaDon, khachHang,hoaDon,TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue),memoEdit1.Text);
+            reportHoaDon.BindingData(dsHoaDon, khachHang,hoaDon,TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue),txtGhiChu.Text);
             
 
             reportHoaDon.CreateDocument();
@@ -318,6 +356,13 @@ namespace GUI.folderTinhTrangPhong
                     goBackHome();
 
                     break;
+                case "In hóa đơn":
+       
+                    XtraDialogArgs args = new XtraDialogArgs(caption: "Chọn dịch vụ", content: new ReportViewer(reportHoaDon), buttons: new DialogResult[] { DialogResult.OK });
+                    XtraDialog.Show(args);
+
+                   // DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(),new ReportViewer(reportHoaDon));
+                    break;
             }
         }
 
@@ -336,7 +381,8 @@ namespace GUI.folderTinhTrangPhong
         private void txtGhiChu_EditValueChanged(object sender, EventArgs e)
         {
             HoaDonBUS.CapNhatGhiChu(hoaDon.MaHoaDon, txtGhiChu.EditValue.ToString());
-   
+            CalcTongTien_UpdateHoaDon();
+
         }
     }
 

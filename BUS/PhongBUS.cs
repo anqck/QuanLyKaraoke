@@ -52,6 +52,8 @@ namespace BUS
         {
             return DAL.PhongDAL.LayThongTinPhong(maPhong);
         }
+
+       
         public static int DemSoLuongPhong(int maTinhTrangPhong)
         {
             return DAL.PhongDAL.DemSoLuongPhong(maTinhTrangPhong);
@@ -64,6 +66,14 @@ namespace BUS
         public static bool CapNhatGhiChu(int maPhong, string strGhiChu)
         {
             return DAL.PhongDAL.CapNhatGhiChu( maPhong,  strGhiChu);
+        }
+
+        public static TinhTrangPhongDTO LayTinhTrangPhong(int maTinhTrangPhong)
+        {
+
+            return DAL.PhongDAL.LayTinhTrangPhong(maTinhTrangPhong);
+
+
         }
 
     }

@@ -19,10 +19,13 @@ namespace GUI.folderTinhTrangPhong
         //private Action<ThuePhongDTO> onThuePhongSuccess;
         ThuePhongDTO phongCu, phongMoi;
         DataTable dtPhong;
+         ChiTietDatPhongDTO chiTietDatPhong;
 
         public ChuyenPhong()
         {
             InitializeComponent();
+
+            chiTietDatPhong = null;
         }
         public ChuyenPhong(ThuePhongDTO phongCu) : this()
         {
@@ -30,7 +33,7 @@ namespace GUI.folderTinhTrangPhong
 
            // this.onThuePhongSuccess = onThuePhongSuccess;      
 
-            RefreshDataBinding();
+            RefreshDataBinding_ChuyenPhong();
 
 
             ValidateChildren();
@@ -38,7 +41,17 @@ namespace GUI.folderTinhTrangPhong
 
         }
 
-        private void RefreshDataBinding()
+        public ChuyenPhong(ChiTietDatPhongDTO chiTietDatPhong) :this()
+        {
+            this.chiTietDatPhong = chiTietDatPhong;
+
+            RefreshDataBinding_ChuyenDatPhong();
+
+
+            ValidateChildren();
+        }
+
+        private void RefreshDataBinding_ChuyenPhong()
         {
             PhongDTO phongDto =PhongBUS.LayThongTinPhong(phongCu.MaPhong);
 
@@ -53,16 +66,21 @@ namespace GUI.folderTinhTrangPhong
             txtPhong.Properties.ValueMember = "MaPhong";
 
         }
-
-        private void txtPhong_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        void RefreshDataBinding_ChuyenDatPhong()
         {
+            PhongDTO phongDto = PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong);
 
+            txtLoaiPhong_Old.EditValue = LoaiPhongBUS.LayLoaiPhong(phongDto).TenLoaiPhong;
+            txtMaPhong_Old.EditValue = phongDto.MaPhong;
+            txtTang_Old.EditValue = phongDto.Tang;
+            txtTenPhong_Old.EditValue = phongDto.TenPhong;
+            txtGhiChu_Old.EditValue = phongDto.GhiChu;
+
+            txtPhong.Properties.DataSource = dtPhong = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+            txtPhong.Properties.DisplayMember = "TenPhong";
+            txtPhong.Properties.ValueMember = "MaPhong";
         }
 
-        private void txtPhong_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
-        {
-
-        }
 
         private void txtPhong_Properties_Validating(object sender, CancelEventArgs e)
         {
@@ -115,12 +133,21 @@ namespace GUI.folderTinhTrangPhong
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
                 case "Chuyển":
-                    ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(phongCu.MaThuePhong, phongCu.MaPhong, phongCu.GioThuePhong, DateTime.Now, phongCu.MaHoaDon, Double.NaN));
-                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 0);
+                    if(chiTietDatPhong == null)
+                    {
+                        ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(phongCu.MaThuePhong, phongCu.MaPhong, phongCu.GioThuePhong, DateTime.Now, phongCu.MaHoaDon, Double.NaN));
+                        PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 0);
 
-                    phongMoi = new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(),(int)txtMaPhong.EditValue,DateTime.Now,DateTime.MinValue, phongCu.MaHoaDon, Double.NaN);
-                    ThuePhongBUS.LuuThongTinThuePhong(phongMoi);
-                    PhongBUS.CapNhatTinhTrangPhong(phongMoi.MaPhong, 1);
+                        phongMoi = new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), (int)txtMaPhong.EditValue, DateTime.Now, DateTime.MinValue, phongCu.MaHoaDon, Double.NaN);
+                        ThuePhongBUS.LuuThongTinThuePhong(phongMoi);
+                        PhongBUS.CapNhatTinhTrangPhong(phongMoi.MaPhong, 1);
+
+                        
+                    }
+                    else
+                    {
+                        ChiTietDatPhongBUS.CapNhatThongTinDatPhong(new ChiTietDatPhongDTO(chiTietDatPhong.MaChiTietDatPhong, (int)txtMaPhong.EditValue,chiTietDatPhong.MaDatPhong));
+                    }
 
                     ((FlyoutDialog)this.Parent).DialogResult = DialogResult.OK;
                     ((FlyoutDialog)this.Parent).Hide();

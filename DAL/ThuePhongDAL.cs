@@ -41,6 +41,21 @@ namespace DAL
             }
         }
 
+        public static Dictionary<int, PhongDTO> LayCacPhongDangSapDuocDat(int khoangThoiGian)
+        {
+            Dictionary<int, PhongDTO> res = new Dictionary<int, PhongDTO>();
+
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong BETWEEN '"+DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff")+ "' AND '" + DateTime.Now.AddMinutes(khoangThoiGian).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
+            foreach (DataRow row in dt.Rows)
+            {
+                PhongDTO phongDTO = PhongDAL.LayThongTinPhong((int)row["MaPhong"]);
+                if(!res.ContainsKey(phongDTO.MaPhong))
+                    res.Add(phongDTO.MaPhong, phongDTO);
+            }
+
+            return res;
+        }
+
         public static bool XoaCacDichVuPhong(ThuePhongDTO thuePhongDTO)
         {
             DAL.DataProvider.ExecuseNonQuery("DELETE FROM dichvuphong WHERE dichvuphong.MaThuePhong = '"+thuePhongDTO.MaThuePhong+"';");

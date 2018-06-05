@@ -15,11 +15,15 @@ namespace GUI.folderKhachHang
     public partial class ChonKhachHang : DevExpress.XtraEditors.XtraUserControl
     {
         DataTable gridDataSource; 
-        public ChonKhachHang()
+        public ChonKhachHang(bool VisibleVangLai = true)
         {
             InitializeComponent();
 
             gridDataSource = BUS.KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+
+            if (!VisibleVangLai)
+                gridDataSource.Rows.RemoveAt(0);
+
             gridControl1.DataSource = gridDataSource;
 
      

@@ -64,7 +64,6 @@
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
         private DevExpress.XtraBars.Navigation.TileBarItem menuHoaDon;
         private DevExpress.XtraBars.Navigation.NavigationPage pageHoadon;
@@ -74,6 +73,19 @@
         private DevExpress.XtraBars.Navigation.TileBarItem menuHeThong;
         private DevExpress.XtraBars.Navigation.NavigationPage pageHeThong;
         private folderHeThong.HeThong heThong1;
+        private DevExpress.XtraBars.Navigation.TileBarDropDownContainer tileBarManHinhChinh;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar3;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup4;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem7;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem8;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar4;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar5;
+        private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup5;
+        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem9;
+        private DevExpress.XtraBars.Navigation.NavigationPage pageDatphong;
+        private folderDatPhong.QuanLyDatPhong quanLyDatPhong1;
+        private System.Windows.Forms.Timer timerNotify;
+        private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }

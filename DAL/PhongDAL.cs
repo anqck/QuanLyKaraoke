@@ -154,7 +154,16 @@ namespace DAL
             return res;
         }
 
+        public static TinhTrangPhongDTO LayTinhTrangPhong(int maTinhTrangPhong)
+        {
+            
 
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.tinhtrangphong WHERE quanlykaraoke.tinhtrangphong.MaTinhTrangPhong = '"+maTinhTrangPhong+"';");
+        
+               return new TinhTrangPhongDTO(Convert.ToInt32(dt.Rows[0]["MaTinhTrangPhong"]), dt.Rows[0]["TinhTrangPhong"].ToString());
+            
+
+        }
 
         public static void LuuPhongMoi(PhongDTO phong)
         {

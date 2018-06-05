@@ -111,7 +111,7 @@ namespace GUI.folderTinhTrangPhong
 
                     
                     //Phát sinh hóa đơn
-                    HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), -1, Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "", khachHang.MaKH);
+                    HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), -1, Double.NaN, Convert.ToDouble(txtTienTraTruoc.EditValue), DateTime.MinValue, Double.NaN, "", khachHang.MaKH,-1);
                     HoaDonBUS.LuuThongTinHoaDon(hoaDon);
 
                     ThuePhongDTO tp = null;
@@ -263,7 +263,9 @@ namespace GUI.folderTinhTrangPhong
                 selectedPhong.Remove((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]);
             else if (e.Action == CollectionChangeAction.Add)
             {
-                if(!selectedPhong.Keys.Contains((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]))
+                if (e.ControllerRow == -1)
+                    return;
+                if (!selectedPhong.Keys.Contains((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]))
                     selectedPhong.Add((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], new PhongDTO((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], dtPhong.Rows[e.ControllerRow]["TenPhong"].ToString(), (int)dtPhong.Rows[e.ControllerRow]["MaLP"]));
 
             }

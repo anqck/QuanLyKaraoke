@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors.Controls;
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,13 +24,7 @@ namespace GUI
                 case StringId.FilterCriteriaToStringBetween: return "Giữa";
 
                 // ... 
-                case StringId.NavigatorTextStringFormat: return "Zeile {0} von {1}";
-                case StringId.PictureEditMenuCut: return "Ausschneiden";
-                case StringId.PictureEditMenuCopy: return "Kopieren";
-                case StringId.PictureEditMenuPaste: return "Einfugen";
-                case StringId.PictureEditMenuDelete: return "Loschen";
-                case StringId.PictureEditMenuLoad: return "Laden";
-                case StringId.PictureEditMenuSave: return "Speichern";
+               
                 case StringId.FilterClauseLess: return "Nhỏ hơn";
                 case StringId.FilterClauseBeginsWith: return "Bắt đầu với";
                 case StringId.FilterEditorTabVisual: return "Trực quan";

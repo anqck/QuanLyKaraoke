@@ -38,5 +38,9 @@ namespace BUS
         {
             return DAL.NgayLeDAL.XoaNgayLe(maNgayLe);
         }
+        public static bool KiemTraNgayLeTonTai(DateTime dt)
+        {
+            return DAL.NgayLeDAL.KiemTraNgayLeTonTai(dt);
+        }
     }
 }

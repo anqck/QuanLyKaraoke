@@ -19,6 +19,8 @@ namespace GUI.folderHeThong
         public HeThong()
         {
             InitializeComponent();
+
+            ngayLe1.actionBack = GoToHomePage;
         }
         public void RefreshDataBinding()
         {
@@ -42,9 +44,20 @@ namespace GUI.folderHeThong
             navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
         }
 
+        internal void GoToHomePage()
+        {
+            navigationFrame1.SelectedPageIndex = 0;
+           
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            ngayLe1.RefeshDataBinding();
             navigationFrame1.SelectedPageIndex = 1;
+        }
+
+        private void txtNgayLe_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            txtNgayLe.Text = "Danh sách ngày lễ";
         }
     }
 }

@@ -37,18 +37,18 @@
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.txtNgayLe = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.txtNgayVao = new DevExpress.XtraEditors.SpinEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtNgayLe = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txtNgayVao = new DevExpress.XtraEditors.SpinEdit();
             this.ngayLe1 = new GUI.folderHeThong.NgayLe();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
@@ -56,18 +56,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLe.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLe.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl2
@@ -194,6 +194,57 @@
             this.txtTienTraTruoc.StyleController = this.layoutControl1;
             this.txtTienTraTruoc.TabIndex = 14;
             // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(898, 16);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(138, 37);
+            this.simpleButton1.StyleController = this.layoutControl1;
+            this.simpleButton1.TabIndex = 15;
+            this.simpleButton1.Text = "Chỉnh sửa";
+            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
+            // 
+            // txtNgayLe
+            // 
+            this.txtNgayLe.Location = new System.Drawing.Point(421, 16);
+            this.txtNgayLe.Name = "txtNgayLe";
+            this.txtNgayLe.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtNgayLe.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtNgayLe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgayLe.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
+            this.txtNgayLe.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgayLe.Properties.EditFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
+            this.txtNgayLe.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgayLe.Properties.NullText = "Danh sách ngày lễ";
+            this.txtNgayLe.Properties.PopupSizeable = true;
+            this.txtNgayLe.Size = new System.Drawing.Size(464, 34);
+            this.txtNgayLe.StyleController = this.layoutControl1;
+            this.txtNgayLe.TabIndex = 7;
+            this.txtNgayLe.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtNgayLe_CustomDisplayText);
+            // 
+            // txtNgayVao
+            // 
+            this.txtNgayVao.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.txtNgayVao.Location = new System.Drawing.Point(421, 59);
+            this.txtNgayVao.Name = "txtNgayVao";
+            this.txtNgayVao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgayVao.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
+            this.txtNgayVao.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgayVao.Properties.EditFormat.FormatString = "##0 phút";
+            this.txtNgayVao.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtNgayVao.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.txtNgayVao.Properties.Mask.EditMask = "##0 phút";
+            this.txtNgayVao.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtNgayVao.Size = new System.Drawing.Size(615, 34);
+            this.txtNgayVao.StyleController = this.layoutControl1;
+            this.txtNgayVao.TabIndex = 7;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -256,6 +307,15 @@
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(384, 28);
             // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.simpleButton1;
+            this.layoutControlItem3.Location = new System.Drawing.Point(865, 0);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(144, 43);
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem3.TextVisible = false;
+            // 
             // navigationFrame1
             // 
             this.navigationFrame1.Controls.Add(this.navigationPage1);
@@ -287,67 +347,9 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(1069, 594);
             // 
-            // simpleButton1
-            // 
-            this.simpleButton1.Location = new System.Drawing.Point(898, 16);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(138, 37);
-            this.simpleButton1.StyleController = this.layoutControl1;
-            this.simpleButton1.TabIndex = 15;
-            this.simpleButton1.Text = "Chỉnh sửa";
-            this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.simpleButton1;
-            this.layoutControlItem3.Location = new System.Drawing.Point(865, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(144, 43);
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem3.TextVisible = false;
-            // 
-            // txtNgayLe
-            // 
-            this.txtNgayLe.Location = new System.Drawing.Point(421, 16);
-            this.txtNgayLe.Name = "txtNgayLe";
-            this.txtNgayLe.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtNgayLe.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtNgayLe.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgayLe.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
-            this.txtNgayLe.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNgayLe.Properties.EditFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
-            this.txtNgayLe.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNgayLe.Properties.NullText = "Danh sách ngày lễ";
-            this.txtNgayLe.Properties.PopupSizeable = true;
-            this.txtNgayLe.Size = new System.Drawing.Size(464, 34);
-            this.txtNgayLe.StyleController = this.layoutControl1;
-            this.txtNgayLe.TabIndex = 7;
-            // 
-            // txtNgayVao
-            // 
-            this.txtNgayVao.EditValue = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
-            this.txtNgayVao.Location = new System.Drawing.Point(421, 59);
-            this.txtNgayVao.Name = "txtNgayVao";
-            this.txtNgayVao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgayVao.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
-            this.txtNgayVao.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNgayVao.Properties.EditFormat.FormatString = "##0 phút";
-            this.txtNgayVao.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtNgayVao.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
-            this.txtNgayVao.Properties.Mask.EditMask = "##0 phút";
-            this.txtNgayVao.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtNgayVao.Size = new System.Drawing.Size(615, 34);
-            this.txtNgayVao.StyleController = this.layoutControl1;
-            this.txtNgayVao.TabIndex = 7;
-            // 
             // ngayLe1
             // 
+            this.ngayLe1.actionBack = null;
             this.ngayLe1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ngayLe1.Location = new System.Drawing.Point(0, 0);
             this.ngayLe1.Name = "ngayLe1";
@@ -369,18 +371,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtTienTraTruoc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLe.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayLe.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

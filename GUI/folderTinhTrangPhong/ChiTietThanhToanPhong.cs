@@ -45,6 +45,9 @@ namespace GUI.folderTinhTrangPhong
        
         public void RefreshDataBinding(ThuePhongDTO thuePhongDTO, KhachHangDTO khachHangDTO)
         {
+            txtTienGio.ReadOnly = false;
+            gridView1.OptionsBehavior.ReadOnly = false;
+
             this.thuePhong = thuePhongDTO;
 
             txtGioVao.Time = thuePhong.GioThuePhong;
@@ -59,15 +62,16 @@ namespace GUI.folderTinhTrangPhong
 
              loaiKhachHang = LoaiKhachHangBUS.LayLoaiKhachHang(khachHangDTO);
 
+
             DichVuPhongDTO dichVuPhongDTO;
             //Kiểm tra các ngày đặt biệt
             foreach (DTO.ThongTinThanhToanTheoNgay ngay in ThanhToanBUS.TinhTienThuePhong(thuePhong, DateTime.Now).listThongTin)
             {
-                
+
                 //Sinh nhật
                 if (ngay.ngay.date.Day == khachHangDTO.NgaySinh.Day && ngay.ngay.date.Month == khachHangDTO.NgaySinh.Month && khachHangDTO.MaKH != 0)
                 {
-                    
+
                     if (TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat > loaiKhachHang.SoTienGiamGiaSinhNhat_Max)
                         dichVuPhongDTO = new DichVuPhongDTO(-1, thuePhong.MaThuePhong, 1, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGiaSinhNhat_Max);
                     else if ((TongTienGio * loaiKhachHang.PhanTramGiamGiaSinhNhat < loaiKhachHang.SoTienGiamGiaSinhNhat_Min))
@@ -79,33 +83,35 @@ namespace GUI.folderTinhTrangPhong
                         listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
                 }
 
-             
+
             }
 
             //KM Loại KH
             if (TongTienGio * loaiKhachHang.PhanTramGiamGia > loaiKhachHang.SoTienGiamGia_Max)
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count+1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGia_Max);
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGia_Max);
             else if ((TongTienGio * loaiKhachHang.PhanTramGiamGia < loaiKhachHang.SoTienGiamGia_Min))
                 dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -loaiKhachHang.SoTienGiamGia_Min);
             else
-                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0,- (TongTienGio * loaiKhachHang.PhanTramGiamGia));
+                dichVuPhongDTO = new DichVuPhongDTO(-(listKhuyenMai.Count + 1), thuePhong.MaThuePhong, 2, DateTime.Now, 1.0, -(TongTienGio * loaiKhachHang.PhanTramGiamGia));
 
-            if(dichVuPhongDTO.DonGia != 0 && khachHangDTO.MaKH != 0)
+            if (dichVuPhongDTO.DonGia != 0 && khachHangDTO.MaKH != 0)
                 listKhuyenMai.Add(dichVuPhongDTO.MaDVP, dichVuPhongDTO);
 
             RefreshDataBindingDichVuPhong();
 
-
-
-
         }
+      
         public void RefreshDataBinding_ReadOnly(ThuePhongDTO thuePhong)
         {
             this.thuePhong = thuePhong;
 
             txtGioVao.Time = thuePhong.GioThuePhong;
             txtGioRa.Time = (thuePhong.GioTraPhong == DateTime.MinValue) ? DateTime.Now : thuePhong.GioTraPhong;
-            //txtTienGio.EditValue = (double)thuePhong
+            txtTienGio.Properties.NullText = thuePhong.TienGio.ToString("###,###,##0 VNĐ");
+            TongTienGio = thuePhong.TienGio;
+
+            txtTienGio.ReadOnly = true;
+            gridView1.OptionsBehavior.ReadOnly = true; 
 
             dichVuPhong = DichVuPhongBUS.LayTatCaDichVuPhong_DichVu(thuePhong);
             dichVuPhong.Columns.Add(new DataColumn("colType"));

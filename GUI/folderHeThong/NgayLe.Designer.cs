@@ -31,6 +31,8 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtMaPhong = new DevExpress.XtraEditors.TextEdit();
             this.txtTenPhong = new DevExpress.XtraEditors.TextEdit();
@@ -48,16 +50,16 @@
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaNgayLe = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenNgayLe = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.wbntSuaphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colMaNgayLe = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenNgayLe = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaPhong.Properties)).BeginInit();
@@ -77,12 +79,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-            this.wbntEmpty.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            this.wbntEmpty.SuspendLayout();
             this.SuspendLayout();
             // 
             // layoutControl1
@@ -327,6 +329,63 @@
             this.layoutControl2.TabIndex = 13;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(16, 70);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(974, 432);
+            this.gridControl1.TabIndex = 4;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.ColumnPanelRowHeight = 40;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colMaNgayLe,
+            this.colTenNgayLe});
+            this.gridView1.DetailHeight = 450;
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.RowHeight = 35;
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
+            // 
+            // colMaNgayLe
+            // 
+            this.colMaNgayLe.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaNgayLe.AppearanceCell.Options.UseFont = true;
+            this.colMaNgayLe.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaNgayLe.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colMaNgayLe.AppearanceHeader.Options.UseFont = true;
+            this.colMaNgayLe.AppearanceHeader.Options.UseForeColor = true;
+            this.colMaNgayLe.Caption = "Mã Ngày Lễ";
+            this.colMaNgayLe.FieldName = "MaNgayLe";
+            this.colMaNgayLe.Name = "colMaNgayLe";
+            this.colMaNgayLe.Visible = true;
+            this.colMaNgayLe.VisibleIndex = 0;
+            // 
+            // colTenNgayLe
+            // 
+            this.colTenNgayLe.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenNgayLe.AppearanceCell.Options.UseFont = true;
+            this.colTenNgayLe.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenNgayLe.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colTenNgayLe.AppearanceHeader.Options.UseFont = true;
+            this.colTenNgayLe.AppearanceHeader.Options.UseForeColor = true;
+            this.colTenNgayLe.Caption = "Ngày";
+            this.colTenNgayLe.DisplayFormat.FormatString = "dd - MM";
+            this.colTenNgayLe.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colTenNgayLe.FieldName = "NgayLe";
+            this.colTenNgayLe.Name = "colTenNgayLe";
+            this.colTenNgayLe.Visible = true;
+            this.colTenNgayLe.VisibleIndex = 1;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -356,6 +415,15 @@
             this.simpleLabelItem1.Text = "QUẢN LÝ NGÀY LỄ";
             this.simpleLabelItem1.TextSize = new System.Drawing.Size(243, 38);
             // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.Control = this.gridControl1;
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 54);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(980, 438);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem7.TextVisible = false;
+            // 
             // wbntEmpty
             // 
             this.wbntEmpty.BackColor = System.Drawing.Color.White;
@@ -381,14 +449,17 @@
             this.windowsUIButtonPanel1.Size = new System.Drawing.Size(66, 58);
             this.windowsUIButtonPanel1.TabIndex = 2;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel2";
+            this.windowsUIButtonPanel1.Click += new System.EventHandler(this.windowsUIButtonPanel1_Click);
             // 
             // wbntSuaphong
             // 
             this.wbntSuaphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntSuaphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Lưu", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Lưu", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm Ngày Lễ", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm Ngày Lễ", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa Ngày Lễ", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Sửa Ngày Lễ", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Ngày Lễ", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Ngày Lễ", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Trở Lại", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Trở Lại", -1, false)});
             this.wbntSuaphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntSuaphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntSuaphong.ForeColor = System.Drawing.Color.White;
@@ -397,69 +468,7 @@
             this.wbntSuaphong.Size = new System.Drawing.Size(1072, 80);
             this.wbntSuaphong.TabIndex = 15;
             this.wbntSuaphong.Text = "windowsUIButtonPanel1";
-            // 
-            // gridControl1
-            // 
-            this.gridControl1.Location = new System.Drawing.Point(16, 70);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(974, 432);
-            this.gridControl1.TabIndex = 4;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.ColumnPanelRowHeight = 40;
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaNgayLe,
-            this.colTenNgayLe});
-            this.gridView1.DetailHeight = 450;
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsBehavior.Editable = false;
-            this.gridView1.OptionsBehavior.ReadOnly = true;
-            this.gridView1.OptionsCustomization.AllowGroup = false;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
-            this.gridView1.OptionsView.ShowIndicator = false;
-            this.gridView1.RowHeight = 35;
-            // 
-            // layoutControlItem7
-            // 
-            this.layoutControlItem7.Control = this.gridControl1;
-            this.layoutControlItem7.Location = new System.Drawing.Point(0, 54);
-            this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(980, 438);
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem7.TextVisible = false;
-            // 
-            // colMaNgayLe
-            // 
-            this.colMaNgayLe.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colMaNgayLe.AppearanceCell.Options.UseFont = true;
-            this.colMaNgayLe.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colMaNgayLe.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colMaNgayLe.AppearanceHeader.Options.UseFont = true;
-            this.colMaNgayLe.AppearanceHeader.Options.UseForeColor = true;
-            this.colMaNgayLe.Caption = "Mã Ngày Lễ";
-            this.colMaNgayLe.FieldName = "MaNgayLe";
-            this.colMaNgayLe.Name = "colMaNgayLe";
-            this.colMaNgayLe.Visible = true;
-            this.colMaNgayLe.VisibleIndex = 0;
-            // 
-            // colTenNgayLe
-            // 
-            this.colTenNgayLe.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTenNgayLe.AppearanceCell.Options.UseFont = true;
-            this.colTenNgayLe.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTenNgayLe.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colTenNgayLe.AppearanceHeader.Options.UseFont = true;
-            this.colTenNgayLe.AppearanceHeader.Options.UseForeColor = true;
-            this.colTenNgayLe.Caption = "Ngày";
-            this.colTenNgayLe.FieldName = "NgayLe";
-            this.colTenNgayLe.Name = "colTenNgayLe";
-            this.colTenNgayLe.Visible = true;
-            this.colTenNgayLe.VisibleIndex = 1;
+            this.wbntSuaphong.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntSuaphong_ButtonClick);
             // 
             // NgayLe
             // 
@@ -489,12 +498,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-            this.wbntEmpty.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            this.wbntEmpty.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

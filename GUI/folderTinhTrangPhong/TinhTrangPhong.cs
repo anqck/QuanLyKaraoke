@@ -18,6 +18,8 @@ namespace GUI.TinhTrangPhong
     public partial class TinhTrangPhong : DevExpress.XtraEditors.XtraUserControl
     {
         Dictionary<int,ThuePhongDTO> listPhongDangThue;
+        Dictionary<int, PhongDTO> listPhongSapDuocDat;
+
         DataTable danhSachPhong;
         private List<int> checkedRows;
         public TinhTrangPhong()
@@ -48,7 +50,9 @@ namespace GUI.TinhTrangPhong
             colCheck.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             tileView1.ColumnSet.CheckedColumn = colCheck;
 
-            
+            listPhongSapDuocDat = new Dictionary<int, PhongDTO>();
+
+
         }
 
              
@@ -70,8 +74,9 @@ namespace GUI.TinhTrangPhong
 
                 //Tính giờ
                 listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
+               
 
-                
+
 
                 tileAll.Elements[1].Text = danhSachPhong.Rows.Count.ToString();
                 tileAvailable.Elements[1].Text = PhongBUS.DemSoLuongPhong(0).ToString();
@@ -575,13 +580,13 @@ namespace GUI.TinhTrangPhong
         {
             //DTO.PhongDTO phongDTO = new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang").ToString(), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"));
 
-
+            DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
             if (thuePhong == null)
 
                 thanhToan1.RefreshDataBinding(listPhongDangThue[(int)danhSachPhong.Rows[tileView1.GetFocusedDataSourceRowIndex()]["MaPhong"]]);
             else
                 thanhToan1.RefreshDataBinding(thuePhong);
-
+            DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
 
             this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
         }
@@ -608,6 +613,12 @@ namespace GUI.TinhTrangPhong
             }
 
             //this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
+        }
+        public void UpdateTimeNotify()
+        {
+            //Dictionary<int,PhongDTO> temp = BUS.ThuePhongBUS.LayCacPhongDangSapDuocDat(3000);
+            //(this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
+            MessageBox.Show("Notification #2 Clicked");
         }
     }
 }

@@ -35,7 +35,7 @@ namespace GUI
 
             DevExpress.XtraGrid.Localization.GridLocalizer.Active = new VietnameseGridLocalizer();
             DevExpress.XtraEditors.Controls.Localizer.Active = new VietnameseEditorsLocalizer();
-          
+            DevExpress.XtraScheduler.Localization.SchedulerLocalizer.Active = new VietnameseSchedulerLocalizer();
 
 
             Application.Run(new MainForm());

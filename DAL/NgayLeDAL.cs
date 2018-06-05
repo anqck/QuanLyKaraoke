@@ -12,13 +12,21 @@ namespace DAL
     {
         public static int PhatSinhMaNgayLe()
         {
-
-            return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.ngayle;").Rows[0][0]);
+            DataTable dt = DataProvider.ExecuseQuery("SELECT quanlykaraoke.ngayle.MaNgayLe FROM quanlykaraoke.ngayle ORDER BY quanlykaraoke.ngayle.MaNgayLe DESC LIMIT 1;");
+            if (dt.Rows.Count == 0)
+                return 1;
+            else
+                return Convert.ToInt32(dt.Rows[0][0]) + 1;
         }
 
         public static DataTable LayTatCaNgayLe_DataTable()
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.ngayle;");
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.ngayle ;");
+        }
+        public static bool KiemTraNgayLeTonTai(DateTime dt)
+        {
+            
+           return (DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.ngayle WHERE NgayLe = '" + dt.ToString("yyyy-MM-dd") + "' ;").Rows.Count >= 1);
         }
 
         public static List<NgayLeDTO> LayTatCaNgayLe_List()
@@ -38,7 +46,7 @@ namespace DAL
         }
         public static bool SuaNgayLe(NgayLeDTO ngayLe)
         {
-            DAL.DataProvider.ExecuseNonQuery("UPDATE SET ngayle.NgayLe = '" + ngayLe.NgayLe.ToString("yyyy-MM-dd") + "','" + ngayLe.NgayLe.ToString("yyyy-MM-dd") + "' WHERE ngayle.MaNgayLe = '" + ngayLe.MaNgayLe + "' ;");
+            DAL.DataProvider.ExecuseNonQuery("UPDATE ngayle SET ngayle.NgayLe = '" + ngayLe.NgayLe.ToString("yyyy-MM-dd") + "' WHERE ngayle.MaNgayLe = '" + ngayLe.MaNgayLe + "' ;");
             return true;
         }
         public static bool XoaNgayLe(int maNgayLe)

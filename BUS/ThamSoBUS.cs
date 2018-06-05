@@ -13,5 +13,10 @@ namespace BUS
             return DAL.ThamSoDAL.GetTyLeQuyDoiDiemTien()*TongTien;
 
         }
+
+        public static int LayKhoangThoiGianToiThieuGiuaHaiLanThue()
+        {
+            return DAL.ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue();
+        }
     }
 }

@@ -2,8 +2,10 @@
 using DevExpress.XtraBars.Docking2010;
 using DevExpress.XtraBars.Docking2010.Customization;
 using DevExpress.XtraEditors;
+using DevExpress.XtraScheduler;
 using DTO;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -30,19 +32,11 @@ namespace GUI.folderTinhTrangPhong
             khachHang = null;
             thuePhong = null;
 
-        }
-
-        private void simpleButton1_Click(object sender, EventArgs e)
-        {
+            schedulerControl1.GoToToday();
 
         }
 
-
-        public void InitializeControl()
-        {
-
-
-        }
+  
         void RefreshDataBindingDichVuPhong()
         {
             dichVuPhong = DichVuPhongBUS.LayTatCaDichVuPhong_DichVu(thuePhong);
@@ -62,12 +56,16 @@ namespace GUI.folderTinhTrangPhong
             txtLoaiPhong.EditValue = BUS.LoaiPhongBUS.LayLoaiPhong(phongDTO).TenLoaiPhong;
             txtTang.EditValue = phongDTO.Tang;
 
-          
+            RefreshDataBindingDatPhong();
 
             //Phòng trống
             if (thuePhongDTO == null)
             {
                 DisplayControlForRented(false);
+                for(int i = 0; i< wbntQuanlyphong.Buttons.Count; i++)
+                {
+                    wbntQuanlyphong.Buttons[i].Properties.Visible = false;
+                }
             }
             else
             {
@@ -107,7 +105,32 @@ namespace GUI.folderTinhTrangPhong
             
         }
 
-    
+        private void RefreshDataBindingDatPhong()
+        {
+
+            schedulerControl1.Storage.Appointments.Clear();
+
+            List<DatPhongDTO> listDatPhong = DatPhongBUS.LayTatCaCacDatPhong(phong.MaPhong);
+            foreach(DatPhongDTO datPhong in listDatPhong)
+            {
+                
+                Appointment apt = schedulerControl1.Storage.CreateAppointment(AppointmentType.Normal);
+                apt.Start = datPhong.ThoiGianDatPhong;
+                apt.Duration = TimeSpan.FromMinutes(ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue());
+                apt.Subject = "Đặt phòng";
+                apt.StatusKey = datPhong.MaDatPhong;
+                apt.Description = "Khách hàng: " + KhachHangBUS.LayKhachHang(datPhong.MaKH).TenKH + "\nTiền trả trước: "+ datPhong.SoTienDatTruoc.ToString("###,###,##0 VNĐ") + "\nGhi chú: " + datPhong.GhiChu;
+                
+                if (datPhong.MaTinhTrangDatPhong == 1)
+                    apt.LabelId = 3;
+                else if (datPhong.MaTinhTrangDatPhong == 2)
+                    apt.LabelId = 2;
+                else if(datPhong.MaTinhTrangDatPhong == 3)
+                    apt.LabelId = 1;
+                 
+                schedulerControl1.Storage.Appointments.Add(apt);
+            }
+        }
 
         private void DisplayControlForRented(bool dangDuocThue)
         {
@@ -360,6 +383,23 @@ namespace GUI.folderTinhTrangPhong
 
             HoaDonBUS.CapNhatTienTraTruoc(hoaDon, Convert.ToDouble(txtTienTraTruoc.EditValue));
  
+        }
+
+        private void schedulerControl1_EditAppointmentFormShowing(object sender, AppointmentFormEventArgs e)
+        {
+            
+        }
+
+        private void schedulerControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            System.Drawing.Point pos = new System.Drawing.Point(e.X, e.Y);
+            DevExpress.XtraScheduler.Drawing.SchedulerViewInfoBase viewInfo = schedulerControl1.ActiveView.ViewInfo;
+            DevExpress.XtraScheduler.Drawing.SchedulerHitInfo hitInfo = viewInfo.CalcHitInfo(pos, false);
+
+            if (hitInfo.HitTest == DevExpress.XtraScheduler.Drawing.SchedulerHitTest.AppointmentContent)
+            {
+                (this.ParentForm as MainForm).HienThiThongTinDatPhong((int)schedulerControl1.SelectedAppointments[0].StatusKey);
+            }
         }
     }
 }

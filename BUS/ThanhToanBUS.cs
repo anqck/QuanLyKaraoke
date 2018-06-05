@@ -52,9 +52,18 @@ namespace BUS
                
             }
 
-
+            List<NgayLeDTO> listNgayLe = NgayLeBUS.LayTatCaNgayLe_List();
             for(int i = 0; i < listNgay.Count; i++)
             {
+                foreach(NgayLeDTO ngayLe in listNgayLe)
+                {
+                    if (listNgay[i].date.Day == ngayLe.NgayLe.Day && listNgay[i].date.Month == ngayLe.NgayLe.Month)
+                    {
+                        listNgay[i].Thu = "Ngày lễ";
+                        break;
+                    }
+                }
+                
                 res.Add(TinhTienTheoNgay(listNgay[i], maLoaiPhong));
                 thongTinThanhToan.TongThanhTien += res[i].TongThanhTien;
             }

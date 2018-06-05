@@ -151,7 +151,12 @@ namespace GUI.folderHoaDon
             switch(e.Button.Properties.Tag.ToString())
             {
                 case "Xem Hóa Đơn":
-                    thanhToan1.RefreshDataBinding_ReadOnly(HoaDonBUS.LayThongTinHoaDon((int)dtHoaDon.Rows[gridViewHoaDon.GetFocusedDataSourceRowIndex()]["MaHoaDon"]));
+                    DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
+                    if (dtHoaDon.Rows[gridViewHoaDon.GetFocusedDataSourceRowIndex()]["TongTienThanhToan"].ToString() != "")
+                        thanhToan1.RefreshDataBinding_ReadOnly(HoaDonBUS.LayThongTinHoaDon((int)dtHoaDon.Rows[gridViewHoaDon.GetFocusedDataSourceRowIndex()]["MaHoaDon"]));
+                    else
+                        thanhToan1.RefreshDataBinding(HoaDonBUS.LayTatCaCacThuePhong((int)dtHoaDon.Rows[gridViewHoaDon.GetFocusedDataSourceRowIndex()]["MaHoaDon"])[0]);
+                    DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
                     navigationFrame1.SelectedPage = navigationPage2;
                     break;
                 case "Bộ Lọc":
@@ -221,6 +226,7 @@ namespace GUI.folderHoaDon
         public void GoBackHome()
         {
             navigationFrame1.SelectedPage = navigationPage1;
+            RefreshDataBinding();
         }
         internal void GoToPage_WithoutAnimation(int v)
         {

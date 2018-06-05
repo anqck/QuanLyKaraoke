@@ -18,9 +18,10 @@ namespace DTO
         public double TienTraTruoc { get; set; }
         public string GhiChu { get; set; }
         public int MaKH { get; set; }
+        public int MaDatPhong { get; set; }
 
 
-        public HoaDonDTO(int maHoaDon, int maNhanVienThanhToan, double tongTienThanhToan, double tienTraTruoc, DateTime ngayThanhToan, double soTienKhuyenMai, string ghiChu, int maKH)
+        public HoaDonDTO(int maHoaDon, int maNhanVienThanhToan, double tongTienThanhToan, double tienTraTruoc, DateTime ngayThanhToan, double soTienKhuyenMai, string ghiChu, int maKH, int maDatPhong)
         {
             MaHoaDon = maHoaDon;
             MaNhanVienThanhToan = maNhanVienThanhToan;
@@ -30,6 +31,7 @@ namespace DTO
             GhiChu = ghiChu;
             MaKH = maKH;
             TienTraTruoc = tienTraTruoc;
+            MaDatPhong = maDatPhong;
 
         }
     }
