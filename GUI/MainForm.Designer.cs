@@ -84,6 +84,7 @@
         private folderDatPhong.QuanLyDatPhong quanLyDatPhong1;
         private System.Windows.Forms.Timer timerNotify;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
+        private folderBaoCao.BaoCao baoCao1;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }

@@ -29,6 +29,8 @@ namespace GUI
 
             khachHang1.goToLoaiKhachHang = GoToHomeLoaiKhachHang;
             loaiKhachHang1.goToKhachHang = GoToHomeKhachHang;
+
+            baoCao1.Init();
         }
 
 
@@ -135,10 +137,10 @@ namespace GUI
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.behaviorManager1 = new DevExpress.Utils.Behaviors.BehaviorManager(this.components);
-            this.baoCao1 = new GUI.folderBaoCao.BaoCao();
             this.tileBar4 = new DevExpress.XtraBars.Navigation.TileBar();
             this.timerNotify = new System.Windows.Forms.Timer(this.components);
             this.toastNotificationsManager1 = new DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager(this.components);
+            this.baoCao1 = new GUI.folderBaoCao.BaoCao();
             ((System.ComponentModel.ISupportInitialize)(this.Doc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tileBarManHinhChinh)).BeginInit();
             this.tileBarManHinhChinh.SuspendLayout();
@@ -1034,6 +1036,9 @@ namespace GUI
             new DevExpress.XtraBars.ToastNotifications.ToastNotification("bbcda021-85e1-4f65-be88-feda0ef80a40", null, "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
                     "ncididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
                     "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+            // 
+            // baoCao1
+            // 
             this.baoCao1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.baoCao1.Location = new System.Drawing.Point(0, 0);
             this.baoCao1.Name = "baoCao1";
@@ -1259,6 +1264,13 @@ namespace GUI
         public DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager GeToastNotifications()
         {
             return toastNotificationsManager1;
+        }
+
+        public void HienThiThongTinPhong(DTO.ThuePhongDTO dto)
+        {
+            tinhTrangPhong1.RefreshDataBinding();
+            tinhTrangPhong1.HienThiThongTinPhong(dto);
+            PageControl.SelectedPage = pageTinhtrangphong;
         }
     }
 }

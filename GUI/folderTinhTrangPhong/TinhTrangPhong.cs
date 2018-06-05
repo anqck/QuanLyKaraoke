@@ -620,5 +620,17 @@ namespace GUI.TinhTrangPhong
             //(this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
             MessageBox.Show("Notification #2 Clicked");
         }
+        public void HienThiThongTinPhong(ThuePhongDTO dto)
+        {
+            DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
+           
+                thongTinChiTietNhieuPhong1.RefreshDataBinding(dto, DisplayThanhToanPhongWithSelectedTile);
+
+            
+
+
+            DevExpress.XtraSplashScreen.SplashScreenManager.CloseForm();
+            this.TinhtrangPagecontrol.SelectedPage = PageXemphong;
+        }
     }
 }

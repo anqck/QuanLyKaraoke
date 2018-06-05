@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DTO;
 using BUS;
+using DevExpress.XtraTab;
 
 namespace GUI.folderDatPhong
 {
@@ -81,7 +82,7 @@ namespace GUI.folderDatPhong
                 xtraTab.Name = thongTinChiTietDatPhong.phong.MaPhong.ToString();
                 xtraTab.Size = new System.Drawing.Size(989, 591);
                 xtraTab.Text = thongTinChiTietDatPhong.phong.TenPhong;
-                xtraTab.Tag = thongTinChiTietDatPhong.phong.MaPhong;
+                xtraTab.Tag = thongTinChiTietDatPhong;
                 // 
                 this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] { xtraTab });
             }
@@ -147,6 +148,45 @@ namespace GUI.folderDatPhong
             this.RefreshDataBinding(datPhong.MaDatPhong);
 
            
+        }
+        public void NhanPhong()
+        {
+            foreach (ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
+            {
+                PhongDTO phongDto =PhongBUS.LayThongTinPhong(chiTiet.MaPhong);
+                if (phongDto.MaTinhTrangPhong == 1)
+                {
+                    XtraMessageBox.Show("Phòng " + phongDto.TenPhong + " đang được sử dụng nên không thể nhận được!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+                   
+                }
+            }
+           
+            //Phát sinh hóa đơn
+            //BÌNH
+            HoaDonDTO hoaDon = new HoaDonDTO(HoaDonBUS.PhatSinhMaHoaDon(), 0, Double.NaN, datPhong.SoTienDatTruoc, DateTime.MinValue, Double.NaN, datPhong.GhiChu, khachHang.MaKH, datPhong.MaDatPhong);
+            HoaDonBUS.LuuThongTinHoaDon(hoaDon);
+
+            ThuePhongDTO tp = null;
+            
+            
+            foreach (ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
+            {
+               
+
+            }
+
+            
+            foreach (XtraTabPage xtraTab in this.TabControl.TabPages)
+            {
+                tp = new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), (xtraTab.Tag as ThongTinChiTietDatPhong).chiTietDatPhong.MaPhong, DateTime.Now, DateTime.MinValue, hoaDon.MaHoaDon, double.NaN);
+                ThuePhongBUS.LuuThongTinThuePhong(tp);
+                PhongBUS.CapNhatTinhTrangPhong((xtraTab.Tag as ThongTinChiTietDatPhong).chiTietDatPhong.MaPhong, 1);
+
+
+                (xtraTab.Tag as ThongTinChiTietDatPhong).LuuThongTinDichVuPhong(tp);
+            }
+            (this.ParentForm as MainForm).HienThiThongTinPhong(tp);
         }
     }
 }

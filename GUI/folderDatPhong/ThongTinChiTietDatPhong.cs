@@ -17,7 +17,7 @@ namespace GUI.folderDatPhong
 {
     public partial class ThongTinChiTietDatPhong : XtraUserControl
     {
-        ChiTietDatPhongDTO chiTietDatPhong;
+        public ChiTietDatPhongDTO chiTietDatPhong;
         public PhongDTO phong { get; set; }
         DataTable dichVuPhong;
 
@@ -140,6 +140,16 @@ namespace GUI.folderDatPhong
                     }
 
                     break;
+                case "Nhận Phòng":
+
+                    //Thông báo xác nhận
+                    if (XtraMessageBox.Show("Xác nhận nhận đặt phòng?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+                        (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).NhanPhong();
+                    break;
                 case "Hủy Phòng":
 
                     //Thông báo xác nhận
@@ -176,6 +186,15 @@ namespace GUI.folderDatPhong
         {
             e.Buttons[DialogResult.OK].Text = "Chọn";
             e.Buttons[DialogResult.Cancel].Text = "Hủy bỏ";
+        }
+   
+        public void LuuThongTinDichVuPhong(ThuePhongDTO tp)
+        {
+            foreach (DataRow dr in dichVuPhong.Rows)
+            {
+                DichVuPhongBUS.LuuThongTinDichVuPhong(new DichVuPhongDTO(DichVuPhongBUS.PhatSinhMaDichVuPhong(), tp.MaThuePhong, (int)dr["MaDichVu"], DateTime.Now, (double)dr["SoLuong"],(double) dr["Gia"]));
+
+            }
         }
     }
 }

@@ -5,12 +5,16 @@
         public BaoCao()
         {
             InitializeComponent();
+
             Gotohomepage();
+
+        }
+        public void Init()
+        {
             doanhThuNam1.iInit();
             doanhThuThang1.iInit();
             doanhThuDichVuTheoNam1.iInit();
         }
-
         private void wbntBaoCao_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
         {
 

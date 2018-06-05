@@ -32,6 +32,7 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -49,6 +50,7 @@
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.txtTinhTrangPhong = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtTenPhong = new DevExpress.XtraEditors.TextEdit();
+            this.txtTang = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -57,7 +59,6 @@
             this.l5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.l = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtTang = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
@@ -69,6 +70,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTinhTrangPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhong.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -77,7 +79,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.l5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.l)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTang.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // wbntQuanlyphong
@@ -88,7 +89,9 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Dịch Vụ", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Dịch Vụ", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Chuyển Phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Chuyển Phòng", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy Phòng", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy Phòng", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy Phòng", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy Phòng", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Nhận Phòng", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Nhận Phòng", -1, false)});
             this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
@@ -346,6 +349,22 @@
             this.txtTenPhong.StyleController = this.layoutControl1;
             this.txtTenPhong.TabIndex = 3;
             // 
+            // txtTang
+            // 
+            this.txtTang.Location = new System.Drawing.Point(139, 208);
+            this.txtTang.Name = "txtTang";
+            this.txtTang.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTang.Properties.Appearance.Options.UseFont = true;
+            this.txtTang.Properties.Appearance.Options.UseTextOptions = true;
+            this.txtTang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.txtTang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtTang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtTang.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtTang.Properties.ReadOnly = true;
+            this.txtTang.Size = new System.Drawing.Size(247, 34);
+            this.txtTang.StyleController = this.layoutControl1;
+            this.txtTang.TabIndex = 3;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -438,22 +457,6 @@
             this.layoutControlItem3.Text = "Ghi chú";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(110, 16);
             // 
-            // txtTang
-            // 
-            this.txtTang.Location = new System.Drawing.Point(139, 208);
-            this.txtTang.Name = "txtTang";
-            this.txtTang.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTang.Properties.Appearance.Options.UseFont = true;
-            this.txtTang.Properties.Appearance.Options.UseTextOptions = true;
-            this.txtTang.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
-            this.txtTang.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtTang.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtTang.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtTang.Properties.ReadOnly = true;
-            this.txtTang.Size = new System.Drawing.Size(247, 34);
-            this.txtTang.StyleController = this.layoutControl1;
-            this.txtTang.TabIndex = 3;
-            // 
             // ThongTinChiTietDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -476,6 +479,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTinhTrangPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenPhong.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -484,7 +488,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.l5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.l)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTang.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

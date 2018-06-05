@@ -119,5 +119,9 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayThongTinHoaDon_DataTable(maHoaDon);
         }
+        public static DataTable LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(int maHoaDon)
+        {
+            return DAL.HoaDonDAL.LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(maHoaDon);
+        }
     }
 }
