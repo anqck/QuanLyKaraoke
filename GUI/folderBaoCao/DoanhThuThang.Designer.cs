@@ -66,17 +66,17 @@
             this.rightLayoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.chartControl = new DevExpress.XtraCharts.ChartControl();
             this.datepickerThang = new DevExpress.XtraEditors.DateEdit();
+            this.bntIn = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.colTinhTrangHoaDon = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.bntIn = new DevExpress.XtraEditors.SimpleButton();
-            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewChiTietHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.GridControlHoaDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewHoaDon)).BeginInit();
@@ -109,10 +109,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // gridViewChiTietHoaDon
@@ -236,7 +236,7 @@
             this.GridControlHoaDon.Name = "GridControlHoaDon";
             this.GridControlHoaDon.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repositoryItemTextEdit1});
-            this.GridControlHoaDon.Size = new System.Drawing.Size(584, 530);
+            this.GridControlHoaDon.Size = new System.Drawing.Size(584, 522);
             this.GridControlHoaDon.TabIndex = 5;
             this.GridControlHoaDon.Tag = "GridHoaDon";
             this.GridControlHoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -315,6 +315,7 @@
             this.colNhanVien.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colNhanVien.AppearanceHeader.Options.UseFont = true;
             this.colNhanVien.Caption = "Nhân viên thanh toán";
+            this.colNhanVien.FieldName = "TenNhanVien";
             this.colNhanVien.Name = "colNhanVien";
             this.colNhanVien.Visible = true;
             this.colNhanVien.VisibleIndex = 3;
@@ -409,7 +410,7 @@
             this.splitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2;
             this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl1.IsSplitterFixed = true;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 96);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 104);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
@@ -417,7 +418,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.rightLayoutControl);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1227, 536);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1227, 528);
             this.splitContainerControl1.SplitterPosition = 551;
             this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -432,7 +433,7 @@
             this.leftLayoutControl.Name = "leftLayoutControl";
             this.leftLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(572, 445, 450, 350);
             this.leftLayoutControl.Root = this.layoutControlGroup3;
-            this.leftLayoutControl.Size = new System.Drawing.Size(590, 536);
+            this.leftLayoutControl.Size = new System.Drawing.Size(590, 528);
             this.leftLayoutControl.TabIndex = 0;
             this.leftLayoutControl.Text = "layoutControl3";
             // 
@@ -444,7 +445,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup3.Name = "Root";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(590, 536);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(590, 528);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem1
@@ -452,7 +453,7 @@
             this.layoutControlItem1.Control = this.GridControlHoaDon;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(590, 536);
+            this.layoutControlItem1.Size = new System.Drawing.Size(590, 528);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -468,7 +469,7 @@
             this.rightLayoutControl.Name = "rightLayoutControl";
             this.rightLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1004, 445, 450, 350);
             this.rightLayoutControl.Root = this.layoutControlGroup2;
-            this.rightLayoutControl.Size = new System.Drawing.Size(551, 536);
+            this.rightLayoutControl.Size = new System.Drawing.Size(551, 528);
             this.rightLayoutControl.TabIndex = 0;
             this.rightLayoutControl.Text = "layoutControl2";
             // 
@@ -536,7 +537,7 @@
         series3,
         series4};
             this.chartControl.SeriesTemplate.View = doughnutSeriesView2;
-            this.chartControl.Size = new System.Drawing.Size(545, 490);
+            this.chartControl.Size = new System.Drawing.Size(545, 482);
             this.chartControl.TabIndex = 6;
             // 
             // datepickerThang
@@ -559,6 +560,19 @@
             this.datepickerThang.TabIndex = 11;
             this.datepickerThang.EditValueChanged += new System.EventHandler(this.datepickerThang_EditValueChanged);
             // 
+            // bntIn
+            // 
+            this.bntIn.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntIn.Appearance.Options.UseFont = true;
+            this.bntIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.bntIn.Location = new System.Drawing.Point(446, 3);
+            this.bntIn.Name = "bntIn";
+            this.bntIn.Size = new System.Drawing.Size(102, 27);
+            this.bntIn.StyleController = this.rightLayoutControl;
+            this.bntIn.TabIndex = 12;
+            this.bntIn.Text = "In báo cáo";
+            this.bntIn.Click += new System.EventHandler(this.bntIn_Click);
+            // 
             // layoutControlGroup2
             // 
             this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
@@ -571,7 +585,7 @@
             this.layoutControlItem5});
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(551, 536);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(551, 528);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem3
@@ -580,7 +594,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(421, 1);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(551, 496);
+            this.layoutControlItem3.Size = new System.Drawing.Size(551, 488);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -616,6 +630,15 @@
             this.layoutControlItem2.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem2.TextVisible = false;
             // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.bntIn;
+            this.layoutControlItem5.Location = new System.Drawing.Point(443, 0);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(108, 40);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem5.TextVisible = false;
+            // 
             // layoutControlGroup1
             // 
             this.layoutControlGroup1.AppearanceGroup.BackColor = System.Drawing.Color.White;
@@ -634,7 +657,7 @@
             // simpleLabelItem1
             // 
             this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 34.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 37.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLabelItem1.AppearanceItemCaption.FontSizeDelta = 3;
             this.simpleLabelItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Gray;
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
@@ -642,17 +665,17 @@
             this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 0, 8, 10);
-            this.simpleLabelItem1.Size = new System.Drawing.Size(1227, 94);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(1227, 102);
             this.simpleLabelItem1.Text = "Báo cáo doanh thu theo tháng";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(766, 76);
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(836, 84);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.splitContainerControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 94);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 102);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 2, 2);
-            this.layoutControlItem4.Size = new System.Drawing.Size(1227, 540);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1227, 532);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -666,28 +689,6 @@
             this.colTinhTrangHoaDon.FieldName = "colTinhTrangHoaDon";
             this.colTinhTrangHoaDon.Name = "colTinhTrangHoaDon";
             this.colTinhTrangHoaDon.UnboundType = DevExpress.Data.UnboundColumnType.String;
-            // 
-            // bntIn
-            // 
-            this.bntIn.Appearance.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntIn.Appearance.Options.UseFont = true;
-            this.bntIn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.bntIn.Location = new System.Drawing.Point(446, 3);
-            this.bntIn.Name = "bntIn";
-            this.bntIn.Size = new System.Drawing.Size(102, 27);
-            this.bntIn.StyleController = this.rightLayoutControl;
-            this.bntIn.TabIndex = 12;
-            this.bntIn.Text = "In báo cáo";
-            this.bntIn.Click += new System.EventHandler(this.bntIn_Click);
-            // 
-            // layoutControlItem5
-            // 
-            this.layoutControlItem5.Control = this.bntIn;
-            this.layoutControlItem5.Location = new System.Drawing.Point(443, 0);
-            this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(108, 40);
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem5.TextVisible = false;
             // 
             // DoanhThuThang
             // 
@@ -728,10 +729,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }

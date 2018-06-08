@@ -18,7 +18,7 @@ namespace GUI.TinhTrangPhong
     public partial class TinhTrangPhong : DevExpress.XtraEditors.XtraUserControl
     {
         Dictionary<int,ThuePhongDTO> listPhongDangThue;
-        Dictionary<int, PhongDTO> listPhongSapDuocDat;
+        Dictionary<int, PhongDTO> listDanhSachPhongDangDat, listPhongSapDuocDat;
 
         DataTable danhSachPhong;
         private List<int> checkedRows;
@@ -44,13 +44,15 @@ namespace GUI.TinhTrangPhong
             btnThanhToan = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thanh toán"];
             btnThanhToan.Click += OnClickBtnThanhToan;
 
+            btnXemDatPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Xem thông tin đặt phòng"];
+            btnXemDatPhong.Click += OnClickBtnXemDatPhong;
+
 
             checkedRows = new List<int>();
             var colCheck = tileView1.Columns.AddVisible("Check");
             colCheck.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             tileView1.ColumnSet.CheckedColumn = colCheck;
 
-            listPhongSapDuocDat = new Dictionary<int, PhongDTO>();
 
 
         }
@@ -68,8 +70,7 @@ namespace GUI.TinhTrangPhong
 
         public void RefreshDataBinding()
         {
-            try
-            {
+          
                 gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung();
 
                 //Tính giờ
@@ -99,12 +100,10 @@ namespace GUI.TinhTrangPhong
 
                 DisplayBottomButtonWithSelectedTile();
 
+                listPhongSapDuocDat = new Dictionary<int, PhongDTO>();
+                listDanhSachPhongDangDat = PhongBUS.LayCacPhongDangDuocDat();
 
-            }
-            catch (Exception x)
-            {
-
-            }
+          
         }
 
         internal void GoToPage(int v)
@@ -278,12 +277,21 @@ namespace GUI.TinhTrangPhong
             if (e.Column.FieldName == "colThoiGianThue")
             {
                 if (e.IsGetData)
+                
                     if (listPhongDangThue.ContainsKey((int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]) && (int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaTinhTrangPhong"] == 1)
                     {
                         e.Value = ToCustomString((DateTime.Now - listPhongDangThue[(int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]].GioThuePhong));
                     }
                     else
                         e.Value = "";
+
+                if (e.IsSetData) ;
+            }
+            else if (e.Column.FieldName == "TinhTrangPhong")
+            {
+                if (e.IsGetData)
+                    e.Value = danhSachPhong.Rows[e.ListSourceRowIndex]["TinhTrangPhong"];
+               
 
                 if (e.IsSetData) ;
             }
@@ -319,7 +327,7 @@ namespace GUI.TinhTrangPhong
 
                         foreach (int idx in checkedRows)
                         {
-                            if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0)
+                            if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đã đặt trước") == 0)
                             {
                                 btnXemPhong.Visible = false;
                                 wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
@@ -330,7 +338,7 @@ namespace GUI.TinhTrangPhong
                                 btnChuyenPhong.Visible = false;
                                 btnThanhToan.Visible = false;
                                 break;
-                            }
+                            }             
                             else
                             {
                                 btnXemPhong.Visible = false;
@@ -357,7 +365,7 @@ namespace GUI.TinhTrangPhong
                             tileView1.FocusedRowHandle = -1;
                             foreach (int idx in checkedRows)
                             {
-                                if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0)
+                                if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đã đặt trước") == 0)
                                 {
                                     btnXemPhong.Visible = false;
                                     wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
@@ -424,6 +432,20 @@ namespace GUI.TinhTrangPhong
                     wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
                     btnChuyenPhong.Visible = false;
                     btnThanhToan.Visible = false;
+                    btnXemDatPhong.Visible = false;
+
+                    break;
+                case "Đã đặt trước":
+                    btnXemPhong.Visible = true;
+                    wbntTinhtrangphong.Buttons[1].Properties.Visible = true;
+                    btnDatPhong.Visible = true;
+
+                    btnThuePhong.Visible = false;
+
+                    wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
+                    btnChuyenPhong.Visible = false;
+                    btnThanhToan.Visible = false;
+                    btnXemDatPhong.Visible = true;
 
                     break;
                 case "Đang sử dụng":
@@ -436,6 +458,7 @@ namespace GUI.TinhTrangPhong
                     wbntTinhtrangphong.Buttons[4].Properties.Visible = true;
                     btnChuyenPhong.Visible = true;
                     btnThanhToan.Visible = true;
+                    btnXemDatPhong.Visible = false;
 
                     break;
                 default:
@@ -504,7 +527,13 @@ namespace GUI.TinhTrangPhong
             DisplayThanhToanPhongWithSelectedTile();
         }
 
-        
+
+        void OnClickBtnXemDatPhong(object sender, EventArgs e)
+        {
+
+
+            (ParentForm as MainForm).HienThiThongTinDatPhong(DatPhongBUS.LayThongTinThuePhongCuaPhongDangDat((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), DateTime.Now));
+        }
         #endregion
 
         #region CallBack
@@ -522,21 +551,7 @@ namespace GUI.TinhTrangPhong
 
         void DisplayTinhTrangPhongWithSelectedTile(ThuePhongDTO thuePhong = null)
         {
-            
-            //if (checkedRows.Count != 0)
-            //{
-            //    phongDTO =new DTO.PhongDTO((int)danhSachPhong.Rows[checkedRows[0]]["MaPhong"], danhSachPhong.Rows[checkedRows[0]]["TenPhong"].ToString(), (int)danhSachPhong.Rows[checkedRows[0]]["MaLoaiPhong"]);
-                
-
-            //}
-            //else
-            //{
-            //    phongDTO =
-
-
-            //}
-
-           
+                       
 
             DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
             if(thuePhong == null)
@@ -582,7 +597,6 @@ namespace GUI.TinhTrangPhong
 
             DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
             if (thuePhong == null)
-
                 thanhToan1.RefreshDataBinding(listPhongDangThue[(int)danhSachPhong.Rows[tileView1.GetFocusedDataSourceRowIndex()]["MaPhong"]]);
             else
                 thanhToan1.RefreshDataBinding(thuePhong);
@@ -616,14 +630,45 @@ namespace GUI.TinhTrangPhong
         }
         public void UpdateTimeNotify()
         {
-            //Dictionary<int,PhongDTO> temp = BUS.ThuePhongBUS.LayCacPhongDangSapDuocDat(3000);
+            Dictionary<int,PhongDTO> tempSapDat = BUS.ThuePhongBUS.LayCacPhongDangSapDuocDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
+            Dictionary<int, DatPhongDTO> tempDatPhongHetHanDat = BUS.DatPhongBUS.LayCacDatPhongDangHetHanDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
+
+            if (listDanhSachPhongDangDat == null)
+                return;
+            foreach(PhongDTO phong in tempSapDat.Values)
+            {
+                if (!listDanhSachPhongDangDat.ContainsKey(phong.MaPhong))
+                {
+                    if(phong.MaTinhTrangPhong == 0)
+                        BUS.PhongBUS.CapNhatTinhTrangPhong(phong.MaPhong, 4);
+                }            
+         
+            }
+
+            
+            foreach(DatPhongDTO datPhong in tempDatPhongHetHanDat.Values)
+            {
+                foreach(ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
+                {
+                    if (listDanhSachPhongDangDat.ContainsKey(chiTiet.MaPhong))
+                    {
+                       if(PhongBUS.LayThongTinPhong(chiTiet.MaPhong).MaTinhTrangPhong == 4)
+                            BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 0);
+
+                    }
+                    DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTiet.MaDatPhong);
+                }
+            }
+
+          
+
+            RefreshDataBinding();
             //(this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
-            MessageBox.Show("Notification #2 Clicked");
+            //MessageBox.Show("Notification #2 Clicked");
         }
         public void HienThiThongTinPhong(ThuePhongDTO dto)
         {
-            DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));
-           
+            DevExpress.XtraSplashScreen.SplashScreenManager.ShowForm(typeof(WaitForm1));           
                 thongTinChiTietNhieuPhong1.RefreshDataBinding(dto, DisplayThanhToanPhongWithSelectedTile);
 
             

@@ -35,6 +35,7 @@ namespace GUI.folderHeThong
              
             }
 
+            spinEdit1.EditValue = ThamSoBUS.LayKhoangThoiGianChoDatPhong();
             txtNgayVao.EditValue = ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue();
             txtTienTraTruoc.EditValue = ThamSoBUS.QuyDoiDiem(1);
         }
@@ -65,6 +66,7 @@ namespace GUI.folderHeThong
         private void txtNgayVao_Properties_EditValueChanged(object sender, EventArgs e)
         {
             ThamSoBUS.SetKhoangThoiGianToiThieuGiuaHaiLanThue(Convert.ToInt32(txtNgayVao.EditValue));
+            spinEdit1.Properties.MaxValue = Convert.ToDecimal(txtNgayVao.EditValue);
         }
 
         private void txtTienTraTruoc_EditValueChanged(object sender, EventArgs e)
@@ -81,6 +83,11 @@ namespace GUI.folderHeThong
                     txtTienTraTruoc.EditValue = 100;
                 break;
             }
+        }
+
+        private void spinEdit1_Properties_EditValueChanged(object sender, EventArgs e)
+        {
+            ThamSoBUS.SetKhoangThoiGianChoDatPhong(Convert.ToInt32(spinEdit1.EditValue));
         }
     }
 }

@@ -117,7 +117,7 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2,
             this.repositoryItemTextEdit3});
-            this.GridControlHoaDon.Size = new System.Drawing.Size(468, 461);
+            this.GridControlHoaDon.Size = new System.Drawing.Size(468, 455);
             this.GridControlHoaDon.TabIndex = 6;
             this.GridControlHoaDon.Tag = "GridHoaDon";
             this.GridControlHoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -182,7 +182,7 @@
             this.gridColumn9.AppearanceCell.Options.UseFont = true;
             this.gridColumn9.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridColumn9.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn9.Caption = "Hóa đơn đắc nhất";
+            this.gridColumn9.Caption = "Hóa đơn đắt nhất";
             this.gridColumn9.ColumnEdit = this.repositoryItemTextEdit1;
             this.gridColumn9.FieldName = "HoaDonDacNhat";
             this.gridColumn9.Name = "gridColumn9";
@@ -253,7 +253,7 @@
             this.splitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2;
             this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl1.IsSplitterFixed = true;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 116);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 122);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
@@ -261,7 +261,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.rightLayoutControl);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1111, 467);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1111, 461);
             this.splitContainerControl1.SplitterPosition = 551;
             this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -276,7 +276,7 @@
             this.leftLayoutControl.Name = "leftLayoutControl";
             this.leftLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(572, 445, 450, 350);
             this.leftLayoutControl.Root = this.layoutControlGroup3;
-            this.leftLayoutControl.Size = new System.Drawing.Size(474, 467);
+            this.leftLayoutControl.Size = new System.Drawing.Size(474, 461);
             this.leftLayoutControl.TabIndex = 0;
             this.leftLayoutControl.Text = "layoutControl3";
             // 
@@ -288,7 +288,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup3.Name = "Root";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(474, 467);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(474, 461);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem1
@@ -296,7 +296,7 @@
             this.layoutControlItem1.Control = this.GridControlHoaDon;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(474, 467);
+            this.layoutControlItem1.Size = new System.Drawing.Size(474, 461);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -312,7 +312,7 @@
             this.rightLayoutControl.Name = "rightLayoutControl";
             this.rightLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1004, 445, 450, 350);
             this.rightLayoutControl.Root = this.layoutControlGroup2;
-            this.rightLayoutControl.Size = new System.Drawing.Size(551, 467);
+            this.rightLayoutControl.Size = new System.Drawing.Size(551, 461);
             this.rightLayoutControl.TabIndex = 0;
             this.rightLayoutControl.Text = "layoutControl2";
             // 
@@ -379,7 +379,7 @@
         series3,
         series4};
             this.chartControl.SeriesTemplate.View = doughnutSeriesView2;
-            this.chartControl.Size = new System.Drawing.Size(545, 421);
+            this.chartControl.Size = new System.Drawing.Size(545, 415);
             this.chartControl.TabIndex = 6;
             // 
             // datepickerNam
@@ -428,7 +428,7 @@
             this.emptySpaceItem2});
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(551, 467);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(551, 461);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem3
@@ -437,7 +437,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(421, 1);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(551, 427);
+            this.layoutControlItem3.Size = new System.Drawing.Size(551, 421);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -499,7 +499,7 @@
             // simpleLabelItem1
             // 
             this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 43.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 46.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLabelItem1.AppearanceItemCaption.FontSizeDelta = 3;
             this.simpleLabelItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Gray;
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
@@ -507,17 +507,17 @@
             this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 0, 8, 10);
-            this.simpleLabelItem1.Size = new System.Drawing.Size(1111, 114);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(1111, 120);
             this.simpleLabelItem1.Text = "Báo cáo doanh thu theo năm";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(926, 96);
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(988, 102);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.splitContainerControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 114);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 120);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 2, 2);
-            this.layoutControlItem4.Size = new System.Drawing.Size(1111, 471);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1111, 465);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 

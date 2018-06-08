@@ -82,7 +82,7 @@ namespace DAL
         public static Dictionary<int, double> GetTongDoanhThuTheoThang(DateTime dateTime)
         {
             Dictionary<int, double> res = new Dictionary<int, double>();
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT month(ThoiGian) as Thang, Sum(Gia*SoLuong) as TongTien FROM  dichvuphong where year(ThoiGian) = '"+ dateTime.Year+"'  group by year(ThoiGian)");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT month(ThoiGian) as Thang, Sum(Gia*SoLuong) as TongTien FROM  dichvuphong where year(ThoiGian) = '"+ dateTime.Year+"'  group by month(ThoiGian)");
 
             foreach (DataRow row in dt.Rows)
             {
@@ -91,11 +91,16 @@ namespace DAL
 
             return res;
         }
-        public static DataTable LayTatCaCacDichVu_TrongThang(DateTime dateTime)
+        public static DataTable LayThongKeTatCaCacDichVu_TrongThang(DateTime dateTime)
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT month(ThoiGian) as Thang,Sum(SoLuong) as TongSoDichVu ,Sum(Gia*SoLuong) as TongTienDichVu FROM  dichvuphong where year(ThoiGian) = '"+ dateTime.Year+"'  group by year(ThoiGian) ");
+            return DAL.DataProvider.ExecuseQuery("SELECT convert(Month(ThoiGian) ,decimal ) as Thang,Sum(SoLuong) as TongSoDichVu ,Sum(Gia*SoLuong) as TongTienDichVu FROM  dichvuphong where year(ThoiGian) = '" + dateTime.Year+"'  group by month(ThoiGian) ");
         }
-        
+        public static DataTable LayTatCaCacDichVu_TrongNam(DateTime dateTime)
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT convert(Month(ThoiGian) ,decimal ) as Thang,TenDV,Gia,SoLuong,ThoiGian, SoLuong*Gia as ThanhTien, MaHoaDon FROM dichvu, dichvuphong, thuephong WHERE dichvuphong.MaDV = dichvu.MaDV AND dichvuphong.MaThuePhong = thuephong.MaThuePhong  AND year(ThoiGian) = '" + dateTime.Year+"';");
+
+        }
+
 
     }
 }

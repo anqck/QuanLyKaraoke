@@ -45,9 +45,14 @@ namespace BUS
         {
             return DichVuPhongDAL.GetTongDoanhThuTheoThang( dateTime);
         }
-        public static DataTable LayTatCaCacDichVu_TrongThang(DateTime dateTime)
+        public static DataTable LayThongKeTatCaCacDichVu_TrongThang(DateTime dateTime)
         {
-            return DichVuPhongDAL.LayTatCaCacDichVu_TrongThang(dateTime);
+            return DichVuPhongDAL.LayThongKeTatCaCacDichVu_TrongThang(dateTime);
+        }
+
+        public static DataTable LayTatCaCacDichVu_TrongNam(DateTime dateTime)
+        {
+            return DichVuPhongDAL.LayTatCaCacDichVu_TrongNam(dateTime);
         }
     }
 }

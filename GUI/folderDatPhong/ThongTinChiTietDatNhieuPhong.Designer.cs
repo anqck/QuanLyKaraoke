@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.TabControl = new DevExpress.XtraTab.XtraTabControl();
             this.wbntEmpty = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
@@ -146,9 +146,9 @@
             // wbntBackThemKH
             // 
             this.wbntBackThemKH.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions7.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions2.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntBackThemKH.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntBackThemKH.Dock = System.Windows.Forms.DockStyle.Top;
             this.wbntBackThemKH.Location = new System.Drawing.Point(0, 0);
             this.wbntBackThemKH.Name = "wbntBackThemKH";
@@ -384,10 +384,10 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtTinhTrangDat.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtTinhTrangDat.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtTinhTrangDat.Properties.ReadOnly = true;
             this.txtTinhTrangDat.Size = new System.Drawing.Size(156, 34);
             this.txtTinhTrangDat.StyleController = this.layoutControl1;
             this.txtTinhTrangDat.TabIndex = 3;
+            this.txtTinhTrangDat.SelectedIndexChanged += new System.EventHandler(this.txtTinhTrangDat_SelectedIndexChanged);
             // 
             // layoutControlGroup1
             // 

@@ -133,7 +133,10 @@ namespace DAL
         public static LoaiKhachHangDTO LayLoaiKhachHangCoTheDatDuoc(KhachHangDTO khachHang)
         {
             DataTable resLoaiKH = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaikhachhang WHERE SoDiemDeDatDuoc < '"+ khachHang .DiemTichLuy+ "' ORDER BY SoDiemDeDatDuoc DESC LIMIT 1;");
-            return new LoaiKhachHangDTO(Convert.ToInt32(resLoaiKH.Rows[0]["MaLoaiKH"]), resLoaiKH.Rows[0]["TenLoaiKH"].ToString(), (int)resLoaiKH.Rows[0]["SoDiemDeDatDuoc"], (double)resLoaiKH.Rows[0]["PhanTramGiamGia"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiThieu"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiDa"], (double)resLoaiKH.Rows[0]["PhanTramGiamGia_SinhNhat"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiThieu_SinhNhat"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiDa_SinhNhat"]);
+            if (resLoaiKH.Rows.Count != 0)
+                return new LoaiKhachHangDTO(Convert.ToInt32(resLoaiKH.Rows[0]["MaLoaiKH"]), resLoaiKH.Rows[0]["TenLoaiKH"].ToString(), (int)resLoaiKH.Rows[0]["SoDiemDeDatDuoc"], (double)resLoaiKH.Rows[0]["PhanTramGiamGia"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiThieu"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiDa"], (double)resLoaiKH.Rows[0]["PhanTramGiamGia_SinhNhat"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiThieu_SinhNhat"], (double)resLoaiKH.Rows[0]["SoTienGiamGiaToiDa_SinhNhat"]);
+            else
+                return null;
         }
         public static bool CapNhatLoaiKhachHang(int maKH, int maLoaiKH)
         {

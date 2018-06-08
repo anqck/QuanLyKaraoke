@@ -77,9 +77,9 @@ namespace BUS
         {
             return DAL.HoaDonDAL.DemSoLuongThuePhong(maHoaDon);
         }
-        public static DataTable LayTatCaCacHoaDon_KhachHang()
+        public static DataTable LayTatCaCacHoaDon_KhachHang_NhanVien()
         {
-            return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang();
+            return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang_NhanVien();
         }
         public static bool CapNhatGhiChu(int maHoaDon, string strGhiChu)
         {
@@ -123,5 +123,13 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(maHoaDon);
         }
+        public static DataTable LayTatCaDichVu_Phong_DichVuPhong_DaThanhToan(DateTime dateTime)
+        {
+            return DAL.HoaDonDAL.LayTatCaDichVu_Phong_DichVuPhong_DaThanhToan(dateTime);
+        }
+
+
+
+    
     }
 }

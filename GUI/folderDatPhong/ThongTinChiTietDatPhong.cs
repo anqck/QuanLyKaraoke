@@ -179,7 +179,19 @@ namespace GUI.folderDatPhong
                     //((ThongTinChiTietNhieuPhong)Parent.Parent.Parent).OnXoaPhong();
 
                     break;
-           
+                case "Hủy Đặt Phòng":
+
+                    //Thông báo xác nhận
+                    if (XtraMessageBox.Show("Bạn có chắc hủy đặt phòng này ?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+
+                    DatPhongBUS.CapNhatTinhTrangDatPhong(3,chiTietDatPhong.MaDatPhong);
+                    (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
+                    break;
+
             }
         }
         private void Args_Showing(object sender, XtraMessageShowingArgs e)

@@ -76,5 +76,18 @@ namespace BUS
         {
             return DAL.DatPhongDAL.XoaDatPhong(maDatPhong);
         }
+        public static void CapNhatTinhTrangDatPhong(int value,int MaDatPhong)
+        {
+            DAL.DatPhongDAL.CapNhatTinhTrangDatPhong(value, MaDatPhong);
+        }
+        public static Dictionary<int, DatPhongDTO> LayCacDatPhongDangHetHanDat(int khoangThoiGian)
+        {
+            return DAL.DatPhongDAL.LayCacDatPhongDangHetHanDat(khoangThoiGian);
+          
+        }
+        public static DatPhongDTO LayThongTinThuePhongCuaPhongDangDat(int maPhong, DateTime now)
+        {
+            return DAL.DatPhongDAL.LayThongTinThuePhongCuaPhongDangDat(maPhong, now);
+        }
     }
 }

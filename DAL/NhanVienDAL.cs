@@ -231,6 +231,10 @@ namespace DAL
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM NhanVien;");
         }
-       
+        public static string LayLoaiNhanVien(int maLoaiTaiKhoan)
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT TenLoaiTaiKhoan FROM loaitaikhoan WHERE MaLoaiTaiKhoan = '"+maLoaiTaiKhoan+"';").Rows[0][0].ToString();
+        }
+
     }
 }

@@ -51,5 +51,9 @@ namespace BUS
         {
             return NhanVienDAL.LayTatCaNhanVien_DataTable();
         }
+        public static string LayLoaiNhanVien(int maLoaiTaiKhoan)
+        {
+            return NhanVienDAL.LayLoaiNhanVien(maLoaiTaiKhoan);
+        }
     }
 }

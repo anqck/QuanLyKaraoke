@@ -75,6 +75,10 @@ namespace BUS
 
 
         }
+        public static Dictionary<int, PhongDTO> LayCacPhongDangDuocDat()
+        {
+            return DAL.PhongDAL.LayCacPhongDangDuocDat();
+        }
 
     }
 }

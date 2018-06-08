@@ -19,6 +19,12 @@ namespace BUS
             return DAL.ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue();
         }
 
+        public static int LayKhoangThoiGianChoDatPhong()
+        {
+            return DAL.ThamSoDAL.LayKhoangThoiGianChoDatPhong();
+        }
+
+
         public static void SetTyLeQuyDoiDiemTien(double i)
         {
             DAL.ThamSoDAL.SetTyLeQuyDoiDiemTien(i);
@@ -28,6 +34,12 @@ namespace BUS
         public static void SetKhoangThoiGianToiThieuGiuaHaiLanThue(int i)
         {
             DAL.ThamSoDAL.SetKhoangThoiGianToiThieuGiuaHaiLanThue(i);
+
+        }
+
+        public static void SetKhoangThoiGianChoDatPhong(int i)
+        {
+            DAL.ThamSoDAL.SetKhoangThoiGianChoDatPhong(i);
 
         }
     }

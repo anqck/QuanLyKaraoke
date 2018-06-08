@@ -45,9 +45,11 @@
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.ngayLe1 = new GUI.folderHeThong.NgayLe();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
+            this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.ngayLe1 = new GUI.folderHeThong.NgayLe();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
@@ -66,6 +68,8 @@
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl2
@@ -125,6 +129,7 @@
             this.layoutControl1.Controls.Add(this.simpleButton1);
             this.layoutControl1.Controls.Add(this.txtNgayLe);
             this.layoutControl1.Controls.Add(this.txtNgayVao);
+            this.layoutControl1.Controls.Add(this.spinEdit1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 87);
@@ -156,7 +161,7 @@
             0,
             0,
             0});
-            this.txtTienTraTruoc.Location = new System.Drawing.Point(421, 99);
+            this.txtTienTraTruoc.Location = new System.Drawing.Point(421, 139);
             this.txtTienTraTruoc.Name = "txtTienTraTruoc";
             this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
@@ -240,7 +245,8 @@
             this.layoutControlItem2,
             this.emptySpaceItem1,
             this.layoutControlItem1,
-            this.layoutControlItem3});
+            this.layoutControlItem3,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(30, 30, 13, 13);
@@ -264,7 +270,7 @@
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem2.Control = this.txtTienTraTruoc;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 83);
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 123);
             this.layoutControlItem2.Name = "layoutControlItem2";
             this.layoutControlItem2.Size = new System.Drawing.Size(1009, 40);
             this.layoutControlItem2.Text = "Tỷ lệ quy đổi điểm khách hàng";
@@ -274,9 +280,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 123);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 163);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1009, 297);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1009, 257);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -326,22 +332,6 @@
             this.navigationPage1.Name = "navigationPage1";
             this.navigationPage1.Size = new System.Drawing.Size(1069, 594);
             // 
-            // navigationPage2
-            // 
-            this.navigationPage2.Caption = "navigationPage2";
-            this.navigationPage2.Controls.Add(this.ngayLe1);
-            this.navigationPage2.Name = "navigationPage2";
-            this.navigationPage2.Size = new System.Drawing.Size(1069, 594);
-            // 
-            // ngayLe1
-            // 
-            this.ngayLe1.actionBack = null;
-            this.ngayLe1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ngayLe1.Location = new System.Drawing.Point(0, 0);
-            this.ngayLe1.Name = "ngayLe1";
-            this.ngayLe1.Size = new System.Drawing.Size(1069, 594);
-            this.ngayLe1.TabIndex = 0;
-            // 
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
@@ -353,6 +343,65 @@
             this.windowsUIButtonPanel1.TabIndex = 17;
             this.windowsUIButtonPanel1.Text = "windowsUIButtonPanel1";
             this.windowsUIButtonPanel1.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.windowsUIButtonPanel1_ButtonClick);
+            // 
+            // navigationPage2
+            // 
+            this.navigationPage2.Caption = "navigationPage2";
+            this.navigationPage2.Controls.Add(this.ngayLe1);
+            this.navigationPage2.Name = "navigationPage2";
+            this.navigationPage2.Size = new System.Drawing.Size(1069, 594);
+            // 
+            // spinEdit1
+            // 
+            this.spinEdit1.EditValue = new decimal(new int[] {
+            0,
+            0,
+            0,
+            0});
+            this.spinEdit1.Location = new System.Drawing.Point(421, 99);
+            this.spinEdit1.Name = "spinEdit1";
+            this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spinEdit1.Properties.Appearance.Options.UseFont = true;
+            this.spinEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.spinEdit1.Properties.DisplayFormat.FormatString = "##0 phút";
+            this.spinEdit1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.spinEdit1.Properties.EditFormat.FormatString = "##0 phút";
+            this.spinEdit1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.spinEdit1.Properties.EditValueChangedFiringMode = DevExpress.XtraEditors.Controls.EditValueChangedFiringMode.Default;
+            this.spinEdit1.Properties.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.spinEdit1.Properties.Mask.EditMask = "##0 phút";
+            this.spinEdit1.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.spinEdit1.Properties.EditValueChanged += new System.EventHandler(this.spinEdit1_Properties_EditValueChanged);
+            this.spinEdit1.Size = new System.Drawing.Size(615, 34);
+            this.spinEdit1.StyleController = this.layoutControl1;
+            this.spinEdit1.TabIndex = 14;
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem5.Control = this.spinEdit1;
+            this.layoutControlItem5.CustomizationFormText = "Tỷ lệ quy đổi điểm khách hàng";
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 83);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(1009, 40);
+            this.layoutControlItem5.Text = "Thời gian chờ phòng đặt";
+            this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(384, 28);
+            // 
+            // ngayLe1
+            // 
+            this.ngayLe1.actionBack = null;
+            this.ngayLe1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ngayLe1.Location = new System.Drawing.Point(0, 0);
+            this.ngayLe1.Name = "ngayLe1";
+            this.ngayLe1.Size = new System.Drawing.Size(1069, 594);
+            this.ngayLe1.TabIndex = 0;
             // 
             // HeThong
             // 
@@ -381,6 +430,8 @@
             this.navigationFrame1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -406,5 +457,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit txtNgayLe;
         private DevExpress.XtraEditors.SpinEdit txtNgayVao;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
+        private DevExpress.XtraEditors.SpinEdit spinEdit1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
     }
 }

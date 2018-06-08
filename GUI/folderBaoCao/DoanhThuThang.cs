@@ -35,18 +35,18 @@ namespace GUI.folderBaoCao
             dtHoaDon.TableName = "hoadon";
 
 
-            dtChiTietHoaDon = HoaDonBUS.LayTatCaDichVu_Phong_DichVuPhong();
-            dtChiTietHoaDon.TableName = "chitiethoadon";
+           // dtChiTietHoaDon = HoaDonBUS.LayTatCaDichVu_Phong_DichVuPhong_DaThanhToan(datepickerThang.DateTime);
+            //dtChiTietHoaDon.TableName = "chitiethoadon";
 
             dsHoaDon = new DataSet();
             dsHoaDon.Tables.Add(dtHoaDon);
-            dsHoaDon.Tables.Add(dtChiTietHoaDon);
+            //dsHoaDon.Tables.Add(dtChiTietHoaDon);
 
 
-            //dsHoaDon.Relations.Add("Thông tin chi tiết hóa đơn", dsHoaDon.Tables["hoadon"].Columns["MaHoaDon"], dsHoaDon.Tables["chitiethoadon"].Columns["MaHoaDon"]);
+           // dsHoaDon.Relations.Add("Thông tin chi tiết hóa đơn", dsHoaDon.Tables["hoadon"].Columns["MaHoaDon"], dsHoaDon.Tables["chitiethoadon"].Columns["MaHoaDon"]);
 
             GridControlHoaDon.DataSource = dsHoaDon.Tables["hoadon"];
-            // GridControlHoaDon.LevelTree.Nodes.Add("Thông tin chi tiết hóa đơn", gridViewChiTietHoaDon);
+             GridControlHoaDon.LevelTree.Nodes.Add("Thông tin chi tiết hóa đơn", gridViewChiTietHoaDon);
 
             chartControl.Series[1].Points.Clear();
             Dictionary<int, double> doanhThuThang = HoaDonBUS.GetTongDoanhThuTheoNgay(datepickerThang.DateTime);

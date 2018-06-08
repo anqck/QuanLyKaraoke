@@ -73,6 +73,7 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.colMaPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTenPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.TileViewColumn();
@@ -146,6 +147,7 @@
             this.colTinhTrangPhong.Caption = "colTinhTrangPhong";
             this.colTinhTrangPhong.FieldName = "TinhTrangPhong";
             this.colTinhTrangPhong.Name = "colTinhTrangPhong";
+            this.colTinhTrangPhong.UnboundType = DevExpress.Data.UnboundColumnType.String;
             this.colTinhTrangPhong.Visible = true;
             this.colTinhTrangPhong.VisibleIndex = 2;
             // 
@@ -243,7 +245,7 @@
             this.tileControl2.MaxId = 11;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl2.Position = 5;
+            this.tileControl2.Position = 6;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);
@@ -700,7 +702,8 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Đặt phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Chuyển phòng", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Chuyển phòng", 2, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thanh toán", 2, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thanh toán", 2, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xem thông tin đặt phòng", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xem thông tin đặt phòng", -1, false)});
             this.wbntTinhtrangphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntTinhtrangphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntTinhtrangphong.ForeColor = System.Drawing.Color.White;
@@ -768,9 +771,9 @@
             // wbntThemphong
             // 
             this.wbntThemphong.BackColor = System.Drawing.Color.White;
-            windowsUIButtonImageOptions6.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions7.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntThemphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntThemphong.Location = new System.Drawing.Point(3, 3);
             this.wbntThemphong.Name = "wbntThemphong";
             this.wbntThemphong.Size = new System.Drawing.Size(56, 58);
@@ -789,9 +792,9 @@
             // 
             // wbntBack
             // 
-            windowsUIButtonImageOptions7.ImageUri.Uri = "hybriddemo_back%20button;Svg";
+            windowsUIButtonImageOptions8.ImageUri.Uri = "hybriddemo_back%20button;Svg";
             this.wbntBack.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, null, -1, false)});
             this.wbntBack.Location = new System.Drawing.Point(3, 3);
             this.wbntBack.Name = "wbntBack";
             this.wbntBack.Size = new System.Drawing.Size(56, 58);
@@ -863,7 +866,7 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageXemphong;
         private DevExpress.XtraGrid.Columns.TileViewColumn colThoiGianThue;
         private DevExpress.XtraGrid.Columns.TileViewColumn colMaTinhTrangPhong;
-        private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong,btnXemPhong, btnDatPhong, btnChuyenPhong, btnThanhToan;
+        private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong,btnXemPhong, btnDatPhong, btnChuyenPhong, btnThanhToan, btnXemDatPhong;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntThemphong;
         private folderTinhTrangPhong.ThanhToan thanhToan1;
         private folderTinhTrangPhong.ThongTinChiTietNhieuPhong thongTinChiTietNhieuPhong1;

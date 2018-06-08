@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.XYDiagram xyDiagram3 = new DevExpress.XtraCharts.XYDiagram();
-            DevExpress.XtraCharts.Legend legend3 = new DevExpress.XtraCharts.Legend();
-            DevExpress.XtraCharts.Series series9 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.DoughnutSeriesLabel doughnutSeriesLabel3 = new DevExpress.XtraCharts.DoughnutSeriesLabel();
-            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView5 = new DevExpress.XtraCharts.DoughnutSeriesView();
-            DevExpress.XtraCharts.Series series10 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel3 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
-            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView3 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
-            DevExpress.XtraCharts.Series series11 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.Series series12 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView6 = new DevExpress.XtraCharts.DoughnutSeriesView();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
+            DevExpress.XtraCharts.Legend legend1 = new DevExpress.XtraCharts.Legend();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.DoughnutSeriesLabel doughnutSeriesLabel1 = new DevExpress.XtraCharts.DoughnutSeriesLabel();
+            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView1 = new DevExpress.XtraCharts.DoughnutSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.SideBySideBarSeriesLabel sideBySideBarSeriesLabel1 = new DevExpress.XtraCharts.SideBySideBarSeriesLabel();
+            DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView1 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
+            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.Series series4 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.DoughnutSeriesView doughnutSeriesView2 = new DevExpress.XtraCharts.DoughnutSeriesView();
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.leftLayoutControl = new DevExpress.XtraLayout.LayoutControl();
@@ -65,6 +66,12 @@
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.simpleLabelItem1 = new DevExpress.XtraLayout.SimpleLabelItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl)).BeginInit();
             this.layoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerControl1)).BeginInit();
@@ -81,16 +88,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.rightLayoutControl)).BeginInit();
             this.rightLayoutControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datepickerNam.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datepickerNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
@@ -102,6 +109,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl
@@ -124,7 +132,7 @@
             this.splitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel2;
             this.splitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.splitContainerControl1.IsSplitterFixed = true;
-            this.splitContainerControl1.Location = new System.Drawing.Point(0, 97);
+            this.splitContainerControl1.Location = new System.Drawing.Point(0, 105);
             this.splitContainerControl1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerControl1.Name = "splitContainerControl1";
             this.splitContainerControl1.Padding = new System.Windows.Forms.Padding(40, 0, 40, 0);
@@ -132,7 +140,7 @@
             this.splitContainerControl1.Panel1.Text = "Panel1";
             this.splitContainerControl1.Panel2.Controls.Add(this.rightLayoutControl);
             this.splitContainerControl1.Panel2.Text = "Panel2";
-            this.splitContainerControl1.Size = new System.Drawing.Size(1386, 638);
+            this.splitContainerControl1.Size = new System.Drawing.Size(1386, 630);
             this.splitContainerControl1.SplitterPosition = 551;
             this.splitContainerControl1.TabIndex = 9;
             this.splitContainerControl1.Text = "splitContainerControl1";
@@ -147,13 +155,17 @@
             this.leftLayoutControl.Name = "leftLayoutControl";
             this.leftLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(572, 445, 450, 350);
             this.leftLayoutControl.Root = this.layoutControlGroup3;
-            this.leftLayoutControl.Size = new System.Drawing.Size(749, 638);
+            this.leftLayoutControl.Size = new System.Drawing.Size(749, 630);
             this.leftLayoutControl.TabIndex = 0;
             this.leftLayoutControl.Text = "layoutControl3";
             // 
             // GridControlHoaDon
             // 
             this.GridControlHoaDon.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
+            gridLevelNode1.LevelTemplate = this.gridView1;
+            gridLevelNode1.RelationName = "Level1";
+            this.GridControlHoaDon.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode1});
             this.GridControlHoaDon.Location = new System.Drawing.Point(3, 3);
             this.GridControlHoaDon.MainView = this.gridViewHoaDon;
             this.GridControlHoaDon.Margin = new System.Windows.Forms.Padding(4);
@@ -162,11 +174,12 @@
             this.repositoryItemTextEdit1,
             this.repositoryItemTextEdit2,
             this.repositoryItemTextEdit3});
-            this.GridControlHoaDon.Size = new System.Drawing.Size(743, 632);
+            this.GridControlHoaDon.Size = new System.Drawing.Size(743, 624);
             this.GridControlHoaDon.TabIndex = 6;
             this.GridControlHoaDon.Tag = "GridHoaDon";
             this.GridControlHoaDon.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewHoaDon});
+            this.gridViewHoaDon,
+            this.gridView1});
             // 
             // gridViewHoaDon
             // 
@@ -256,7 +269,7 @@
             this.layoutControlItem1});
             this.layoutControlGroup3.Name = "Root";
             this.layoutControlGroup3.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup3.Size = new System.Drawing.Size(749, 638);
+            this.layoutControlGroup3.Size = new System.Drawing.Size(749, 630);
             this.layoutControlGroup3.TextVisible = false;
             // 
             // layoutControlItem1
@@ -264,7 +277,7 @@
             this.layoutControlItem1.Control = this.GridControlHoaDon;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(749, 638);
+            this.layoutControlItem1.Size = new System.Drawing.Size(749, 630);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
             // 
@@ -280,23 +293,23 @@
             this.rightLayoutControl.Name = "rightLayoutControl";
             this.rightLayoutControl.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(1004, 445, 450, 350);
             this.rightLayoutControl.Root = this.layoutControlGroup2;
-            this.rightLayoutControl.Size = new System.Drawing.Size(551, 638);
+            this.rightLayoutControl.Size = new System.Drawing.Size(551, 630);
             this.rightLayoutControl.TabIndex = 0;
             this.rightLayoutControl.Text = "layoutControl2";
             // 
             // chartControl
             // 
             this.chartControl.BorderOptions.Visibility = DevExpress.Utils.DefaultBoolean.False;
-            xyDiagram3.AxisX.AutoScaleBreaks.MaxCount = 12;
-            xyDiagram3.AxisX.QualitativeScaleOptions.AutoGrid = false;
-            xyDiagram3.AxisX.Title.Text = "Tháng";
-            xyDiagram3.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram3.AxisX.VisibleInPanesSerializable = "-1";
-            xyDiagram3.AxisY.Label.TextPattern = "{V:###,###,###,###}";
-            xyDiagram3.AxisY.Title.Text = "VNĐ";
-            xyDiagram3.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
-            xyDiagram3.AxisY.VisibleInPanesSerializable = "-1";
-            this.chartControl.Diagram = xyDiagram3;
+            xyDiagram1.AxisX.AutoScaleBreaks.MaxCount = 12;
+            xyDiagram1.AxisX.QualitativeScaleOptions.AutoGrid = false;
+            xyDiagram1.AxisX.Title.Text = "Tháng";
+            xyDiagram1.AxisX.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisX.VisibleInPanesSerializable = "-1";
+            xyDiagram1.AxisY.Label.TextPattern = "{V:###,###,###,###}";
+            xyDiagram1.AxisY.Title.Text = "VNĐ";
+            xyDiagram1.AxisY.Title.Visibility = DevExpress.Utils.DefaultBoolean.True;
+            xyDiagram1.AxisY.VisibleInPanesSerializable = "-1";
+            this.chartControl.Diagram = xyDiagram1;
             this.chartControl.Legend.AlignmentHorizontal = DevExpress.XtraCharts.LegendAlignmentHorizontal.Center;
             this.chartControl.Legend.AlignmentVertical = DevExpress.XtraCharts.LegendAlignmentVertical.BottomOutside;
             this.chartControl.Legend.BackColor = System.Drawing.Color.Transparent;
@@ -306,48 +319,48 @@
             this.chartControl.Legend.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.chartControl.Legend.Name = "Default Legend";
             this.chartControl.Legend.Title.Text = "Doanh thu theo tháng";
-            legend3.Name = "Legend1";
-            legend3.Title.Text = "AAA";
-            legend3.Visibility = DevExpress.Utils.DefaultBoolean.False;
+            legend1.Name = "Legend1";
+            legend1.Title.Text = "AAA";
+            legend1.Visibility = DevExpress.Utils.DefaultBoolean.False;
             this.chartControl.Legends.AddRange(new DevExpress.XtraCharts.Legend[] {
-            legend3});
+            legend1});
             this.chartControl.Location = new System.Drawing.Point(3, 43);
             this.chartControl.Margin = new System.Windows.Forms.Padding(4);
             this.chartControl.Name = "chartControl";
-            series9.ArgumentDataMember = "Name";
-            doughnutSeriesLabel3.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
-            doughnutSeriesLabel3.Font = new System.Drawing.Font("Segoe UI", 9.75F);
-            doughnutSeriesLabel3.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
-            doughnutSeriesLabel3.TextPattern = "${V:n}";
-            series9.Label = doughnutSeriesLabel3;
-            series9.LegendName = "Legend1";
-            series9.LegendTextPattern = "{A}";
-            series9.Name = "Series 1";
-            doughnutSeriesView5.HoleRadiusPercent = 56;
-            series9.View = doughnutSeriesView5;
-            series9.Visible = false;
-            series10.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
-            series10.CrosshairLabelPattern = "{A}:{V:###,###,##0 VNĐ}";
-            sideBySideBarSeriesLabel3.TextPattern = "{V:###,###,##0 VNĐ}";
-            series10.Label = sideBySideBarSeriesLabel3;
-            series10.LegendName = "Legend1";
-            series10.LegendTextPattern = "{V:###,###,##0 VNĐ}";
-            series10.Name = "Doanh thu theo tháng";
-            series10.SeriesPointsSortingKey = DevExpress.XtraCharts.SeriesPointKey.Value_1;
-            series10.ToolTipPointPattern = "{V:###,###.### VNĐ}";
-            sideBySideBarSeriesView3.BarWidth = 0.7D;
-            series10.View = sideBySideBarSeriesView3;
-            series11.Name = "Hóa đơn";
-            series11.Visible = false;
-            series12.Name = "Doanh thu theo thuê phòng";
-            series12.Visible = false;
+            series1.ArgumentDataMember = "Name";
+            doughnutSeriesLabel1.EnableAntialiasing = DevExpress.Utils.DefaultBoolean.True;
+            doughnutSeriesLabel1.Font = new System.Drawing.Font("Segoe UI", 9.75F);
+            doughnutSeriesLabel1.Position = DevExpress.XtraCharts.PieSeriesLabelPosition.Inside;
+            doughnutSeriesLabel1.TextPattern = "${V:n}";
+            series1.Label = doughnutSeriesLabel1;
+            series1.LegendName = "Legend1";
+            series1.LegendTextPattern = "{A}";
+            series1.Name = "Series 1";
+            doughnutSeriesView1.HoleRadiusPercent = 56;
+            series1.View = doughnutSeriesView1;
+            series1.Visible = false;
+            series2.ArgumentScaleType = DevExpress.XtraCharts.ScaleType.Qualitative;
+            series2.CrosshairLabelPattern = "{A}:{V:###,###,##0 VNĐ}";
+            sideBySideBarSeriesLabel1.TextPattern = "{V:###,###,##0 VNĐ}";
+            series2.Label = sideBySideBarSeriesLabel1;
+            series2.LegendName = "Legend1";
+            series2.LegendTextPattern = "{V:###,###,##0 VNĐ}";
+            series2.Name = "Doanh thu theo tháng";
+            series2.SeriesPointsSortingKey = DevExpress.XtraCharts.SeriesPointKey.Value_1;
+            series2.ToolTipPointPattern = "{V:###,###.### VNĐ}";
+            sideBySideBarSeriesView1.BarWidth = 0.7D;
+            series2.View = sideBySideBarSeriesView1;
+            series3.Name = "Hóa đơn";
+            series3.Visible = false;
+            series4.Name = "Doanh thu theo thuê phòng";
+            series4.Visible = false;
             this.chartControl.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series9,
-        series10,
-        series11,
-        series12};
-            this.chartControl.SeriesTemplate.View = doughnutSeriesView6;
-            this.chartControl.Size = new System.Drawing.Size(545, 592);
+        series1,
+        series2,
+        series3,
+        series4};
+            this.chartControl.SeriesTemplate.View = doughnutSeriesView2;
+            this.chartControl.Size = new System.Drawing.Size(545, 584);
             this.chartControl.TabIndex = 6;
             // 
             // datepickerNam
@@ -396,7 +409,7 @@
             this.emptySpaceItem2});
             this.layoutControlGroup2.Name = "Root";
             this.layoutControlGroup2.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 0, 0);
-            this.layoutControlGroup2.Size = new System.Drawing.Size(551, 638);
+            this.layoutControlGroup2.Size = new System.Drawing.Size(551, 630);
             this.layoutControlGroup2.TextVisible = false;
             // 
             // layoutControlItem3
@@ -405,7 +418,7 @@
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 40);
             this.layoutControlItem3.MinSize = new System.Drawing.Size(421, 1);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(551, 598);
+            this.layoutControlItem3.Size = new System.Drawing.Size(551, 590);
             this.layoutControlItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
@@ -467,7 +480,7 @@
             // simpleLabelItem1
             // 
             this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 34.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 37.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLabelItem1.AppearanceItemCaption.FontSizeDelta = 3;
             this.simpleLabelItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Gray;
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
@@ -475,19 +488,108 @@
             this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 0, 8, 10);
-            this.simpleLabelItem1.Size = new System.Drawing.Size(1386, 95);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(1386, 103);
             this.simpleLabelItem1.Text = "Báo cáo doanh thu dịch vụ theo năm";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(949, 77);
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(1025, 85);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.splitContainerControl1;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 95);
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 103);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Padding = new DevExpress.XtraLayout.Utils.Padding(0, 0, 2, 2);
-            this.layoutControlItem4.Size = new System.Drawing.Size(1386, 642);
+            this.layoutControlItem4.Size = new System.Drawing.Size(1386, 634);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
+            // 
+            // gridView1
+            // 
+            this.gridView1.ColumnPanelRowHeight = 50;
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridColumn2,
+            this.gridColumn3,
+            this.gridColumn4,
+            this.gridColumn5,
+            this.gridColumn6});
+            this.gridView1.GridControl = this.GridControlHoaDon;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
+            this.gridView1.RowHeight = 40;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn2.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn2.Caption = "Mã hóa đơn";
+            this.gridColumn2.FieldName = "MaHoaDon";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 0;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn3.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn3.Caption = "Tên dịch vụ";
+            this.gridColumn3.FieldName = "TenDV";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 1;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn4.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn4.Caption = "Giá";
+            this.gridColumn4.DisplayFormat.FormatString = "###,###,##0 VNĐ";
+            this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn4.FieldName = "Gia";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 2;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn5.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn5.Caption = "Số lượng";
+            this.gridColumn5.FieldName = "SoLuong";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 3;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn6.AppearanceCell.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridColumn6.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.gridColumn6.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn6.AppearanceHeader.Options.UseForeColor = true;
+            this.gridColumn6.Caption = "Thành tiền";
+            this.gridColumn6.DisplayFormat.FormatString = "###,###,##0 VNĐ";
+            this.gridColumn6.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn6.FieldName = "ThanhTien";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 4;
             // 
             // DoanhThuDichVuTheoNam
             // 
@@ -511,16 +613,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rightLayoutControl)).EndInit();
             this.rightLayoutControl.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(xyDiagram3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datepickerNam.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datepickerNam.Properties)).EndInit();
@@ -533,6 +635,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -565,5 +668,11 @@
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.SimpleLabelItem simpleLabelItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
     }
 }

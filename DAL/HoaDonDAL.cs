@@ -74,7 +74,7 @@ namespace DAL
 
         public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(DateTime dateTime)
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL AND MONTH(NgayThanhToan) = '" + dateTime.Month + "' AND YEAR(NgayThanhToan) = '" + dateTime.Year + "' ;");
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang, nhanvien WHERE hoadon.MaKH = khachhang.MaKH AND hoadon.MaNhanVienThanhToan = nhanvien.MaNhanVien AND TongTienThanhToan IS NOT NULL AND MONTH(NgayThanhToan) = '" + dateTime.Month + "' AND YEAR(NgayThanhToan) = '" + dateTime.Year + "' ;");
         }
 
         public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(int nam)
@@ -105,9 +105,9 @@ namespace DAL
             return true;
         }
 
-        public static DataTable LayTatCaCacHoaDon_KhachHang()
+        public static DataTable LayTatCaCacHoaDon_KhachHang_NhanVien()
         {
-           return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH;");
+           return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang, nhanvien WHERE hoadon.MaKH = khachhang.MaKH AND (nhanvien.MaNhanVien = hoadon.MaNhanVienThanhToan OR hoadon.MaNhanVienThanhToan is null) GROUP BY MaHoaDon;");
         }
 
         public static DataTable LayThongTinHoaDon_DataTable(int maHoaDon)
@@ -204,6 +204,11 @@ namespace DAL
             return new HoaDonDTO((int)dt.Rows[0]["MaHoaDon"], (dt.Rows[0]["MaNhanVienThanhToan"].ToString() == "") ? (-1) : ((int)dt.Rows[0]["MaNhanVienThanhToan"]), (dt.Rows[0]["TongTienThanhToan"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["TienTraTruoc"]), (dt.Rows[0]["TienTraTruoc"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["TienTraTruoc"]), (dt.Rows[0]["NgayThanhToan"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(dt.Rows[0]["NgayThanhToan"].ToString()), (dt.Rows[0]["SoTienKhuyenMai"].ToString() == "") ? (-1) : ((double)dt.Rows[0]["SoTienKhuyenMai"]), dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaKH"], (dt.Rows[0]["MaDatPhong"].ToString() == "") ? (-1) : ((int)dt.Rows[0]["MaDatPhong"]));
 
         }
+        public static DataTable LayTatCaDichVu_Phong_DichVuPhong_DaThanhToan(DateTime dateTime)
+        {
+            return DataProvider.ExecuseQuery("SELECT thuephong.MaHoaDon, dichvu.TenDV, dichvuphong.ThoiGian, dichvuphong.SoLuong, dichvuphong.Gia, phong.TenPhong, dichvu.MaLDV FROM thuephong, dichvuphong, phong, dichvu WHERE thuephong.MaThuePhong = dichvuphong.MaThuePhong AND thuephong.MaPhong = phong.MaPhong AND dichvuphong.MaDV = dichvu.MaDV AND MONTH(NgayThanhToan) = '6' AND YEAR(NgayThanhToan) = '2018' ;");
+        }
+      
 
 
     }

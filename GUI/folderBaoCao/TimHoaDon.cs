@@ -35,7 +35,7 @@ namespace GUI.folderHoaDon
 
         public void RefreshDataBinding()
         {
-            dtHoaDon = HoaDonBUS.LayTatCaCacHoaDon_KhachHang();
+            dtHoaDon = HoaDonBUS.LayTatCaCacHoaDon_KhachHang_NhanVien();
             dtHoaDon.TableName = "hoadon";
 
 

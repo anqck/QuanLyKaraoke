@@ -147,5 +147,12 @@ namespace GUI.folderDatPhong
                 (this.ParentForm as MainForm).HienThiThongTinDatPhong(int.Parse(schedulerControl1.SelectedAppointments[0].Subject));
             }
         }
+        public void HienThiThongTinDatPhong(DatPhongDTO dto)
+        {
+            thongTinChiTietDatNhieuPhong1.RefreshDataBinding(dto.MaDatPhong);
+            navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
+            navigationFrame1.SelectedPageIndex = 2;
+            navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.True;
+        }
     }
 }

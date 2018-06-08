@@ -57,6 +57,8 @@ namespace GUI.folderDatPhong
             txtDiaChi.EditValue = khachHang.DiaChi;
             txtNgaySinh.EditValue = khachHang.NgaySinh;
 
+            txtTenNhanVien.EditValue = NhanVienBUS.LayNhanVien(datPhong.MaNhanVien).TenNhanVien;
+
             this.TabControl.TabPages.Clear();
             foreach (ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
             {
@@ -169,12 +171,6 @@ namespace GUI.folderDatPhong
 
             ThuePhongDTO tp = null;
             
-            
-            foreach (ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
-            {
-               
-
-            }
 
             
             foreach (XtraTabPage xtraTab in this.TabControl.TabPages)
@@ -186,7 +182,15 @@ namespace GUI.folderDatPhong
 
                 (xtraTab.Tag as ThongTinChiTietDatPhong).LuuThongTinDichVuPhong(tp);
             }
+
+            DatPhongBUS.CapNhatTinhTrangDatPhong(2, datPhong.MaDatPhong);
             (this.ParentForm as MainForm).HienThiThongTinPhong(tp);
+        }
+
+        private void txtTinhTrangDat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DatPhongBUS.CapNhatTinhTrangDatPhong((int)(txtTinhTrangDat.SelectedItem as MyComboBoxItem).Tag, datPhong.MaDatPhong);
+            RefreshData();
         }
     }
 }

@@ -15,6 +15,9 @@ namespace GUI
 {
     public partial class Login : DevExpress.XtraEditors.XtraForm
     {
+        public static Login loginFrm = new Login();
+
+
         public NhanVienDTO nhanVien { get; set; }
         public Login()
         {
@@ -26,6 +29,9 @@ namespace GUI
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            if (txtTenDangNhap.EditValue == null || txtMatKhau.EditValue == null)
+                return;
+
              nhanVien = NhanVienBUS.XacThucNhanVien(txtTenDangNhap.EditValue.ToString(), txtMatKhau.EditValue.ToString());
             if (nhanVien == null)
                 XtraMessageBox.Show("Tài khoản hoặc mật khẩu không đúng!", "Lỗi!", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);

@@ -16,7 +16,7 @@ namespace GUI.folderBaoCao
     {
         DataSet dsHoaDon;
         DataTable dtHoaDon;
-        DataTable dtChiTietHoaDon;
+        DataTable dtChiTietDichVu;
         public DoanhThuDichVuTheoNam()
         {
             InitializeComponent();
@@ -28,21 +28,20 @@ namespace GUI.folderBaoCao
         }
         public void RefreshDataBinding()
         {
-            dtHoaDon = DichVuPhongBUS.LayTatCaCacDichVu_TrongThang(datepickerNam.DateTime);
+            dtHoaDon = DichVuPhongBUS.LayThongKeTatCaCacDichVu_TrongThang(datepickerNam.DateTime);
             dtHoaDon.TableName = "hoadon";
 
+            dtChiTietDichVu = DichVuPhongBUS.LayTatCaCacDichVu_TrongNam(datepickerNam.DateTime);
+            dtChiTietDichVu.TableName = "chitiet";
 
-          
-
-            dsHoaDon = new DataSet();
+              dsHoaDon = new DataSet();
             dsHoaDon.Tables.Add(dtHoaDon);
-          
+            dsHoaDon.Tables.Add(dtChiTietDichVu);
 
-
-            //dsHoaDon.Relations.Add("Thông tin chi tiết hóa đơn", dsHoaDon.Tables["hoadon"].Columns["MaHoaDon"], dsHoaDon.Tables["chitiethoadon"].Columns["MaHoaDon"]);
+            dsHoaDon.Relations.Add("Thông tin chi tiết", dsHoaDon.Tables["hoadon"].Columns["Thang"], dsHoaDon.Tables["chitiet"].Columns["Thang"]);
 
             GridControlHoaDon.DataSource = dsHoaDon.Tables["hoadon"];
-            // GridControlHoaDon.LevelTree.Nodes.Add("Thông tin chi tiết hóa đơn", gridViewChiTietHoaDon);
+             GridControlHoaDon.LevelTree.Nodes.Add("Thông tin chi tiết", gridView1);
 
 
             chartControl.Series[1].Points.Clear();

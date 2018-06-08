@@ -250,15 +250,24 @@ namespace GUI.folderTinhTrangPhong
           
 
             DataTable MergedDataTable = new DataTable("dichvuphong");
+                    
             MergedDataTable.Merge(dsDichVuPhong.Tables[0]);
+
             if (!ReadOnlyMode) //ReadOnly Mode
             {
+                MergedDataTable.Columns.Add(new DataColumn("MaTemp"));
+                for (int i = 0; i < MergedDataTable.Rows.Count; i++)
+                {
+                    MergedDataTable.Rows[i]["MaTemp"] = i;
+                }
+                MergedDataTable.PrimaryKey = new DataColumn[] { MergedDataTable.Columns["MaTemp"] };
                 for (int i = 1; i < dsDichVuPhong.Tables.Count; i++)
                 {
                     foreach (DataRow dr in dsDichVuPhong.Tables[i].Rows)
                     {
                         DataRow row = MergedDataTable.NewRow();
-                        row["MaDVP"] = MergedDataTable.Rows.Count;
+                        row["MaTemp"] = MergedDataTable.Rows.Count;
+                        row["MaDVP"] = dr["MaDVP"];
                         row["MaThuePhong"] = dr["MaThuePhong"];
                         row["MaDV"] = dr["MaDV"];
                         row["ThoiGian"] = dr["ThoiGian"];
@@ -343,12 +352,16 @@ namespace GUI.folderTinhTrangPhong
                         khachHang.DiemTichLuy = khachHang.DiemTichLuy + ThamSoBUS.QuyDoiDiem((double)txtTongTienThanhToan.EditValue);
 
                         LoaiKhachHangDTO loaiKhachHangCoThe = KhachHangBUS.LayLoaiKhachHangCoTheDatDuoc(khachHang);
-                        if (khachHang.MaLoaiKH != loaiKhachHangCoThe.MaLoaiKH)
+                        if(loaiKhachHangCoThe!= null)
                         {
-                            KhachHangBUS.CapNhatLoaiKhachHang(khachHang.MaKH, loaiKhachHangCoThe.MaLoaiKH);
-                            XtraMessageBox.Show("Khách hàng được cập nhật lên loại '" + loaiKhachHangCoThe.TenLoaiKH + "'! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            if (khachHang.MaLoaiKH != loaiKhachHangCoThe.MaLoaiKH)
+                            {
+                                KhachHangBUS.CapNhatLoaiKhachHang(khachHang.MaKH, loaiKhachHangCoThe.MaLoaiKH);
+                                XtraMessageBox.Show("Khách hàng được cập nhật lên loại '" + loaiKhachHangCoThe.TenLoaiKH + "'! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                            }
                         }
+                       
                     }
                     
 

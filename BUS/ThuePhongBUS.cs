@@ -30,6 +30,8 @@ namespace BUS
             return DAL.ThuePhongDAL.LayThongTinPhongDangDuocThue();
         }
 
+
+
         public static bool LuuThongTinThuePhong(ThuePhongDTO thuePhongDTO)
         {
             return DAL.ThuePhongDAL.LuuThongTinThuePhong(thuePhongDTO);
@@ -54,6 +56,11 @@ namespace BUS
         {
             return DAL.ThuePhongDAL.LayCacPhongDangSapDuocDat(khoangThoiGian);
         }
+        public static Dictionary<int, PhongDTO> LayCacPhongDangHetHanDat(int khoangThoiGian)
+        {
+            return DAL.ThuePhongDAL.LayCacPhongDangHetHanDat(khoangThoiGian);
+        }
+       
 
 
     }

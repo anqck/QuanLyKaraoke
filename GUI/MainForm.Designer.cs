@@ -43,7 +43,6 @@
         private DevExpress.XtraBars.Navigation.TileBar tileBarDropDownQuanlyphong;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup1;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem3;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem4;
         private DevExpress.XtraBars.Navigation.TileBarDropDownContainer tileBarDropDownDichvu;
         private DevExpress.XtraBars.Navigation.TileBar tileBar2;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup3;
@@ -75,7 +74,6 @@
         private DevExpress.XtraBars.Navigation.TileBar tileBar3;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup4;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem7;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem8;
         private DevExpress.XtraBars.Navigation.TileBar tileBar4;
         private DevExpress.XtraBars.Navigation.TileBar tileBar5;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup5;
@@ -85,6 +83,8 @@
         private System.Windows.Forms.Timer timerNotify;
         private DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager toastNotificationsManager1;
         private folderBaoCao.BaoCao baoCao1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }
