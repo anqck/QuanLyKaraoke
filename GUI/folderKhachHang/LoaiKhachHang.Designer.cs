@@ -108,6 +108,7 @@
             // 
             // gridViewKhachHang
             // 
+            this.gridViewKhachHang.ColumnPanelRowHeight = 50;
             this.gridViewKhachHang.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaKH,
             this.colTenKH,
@@ -124,9 +125,14 @@
             this.gridViewKhachHang.OptionsCustomization.AllowSort = false;
             this.gridViewKhachHang.OptionsMenu.EnableColumnMenu = false;
             this.gridViewKhachHang.OptionsView.ShowGroupPanel = false;
+            this.gridViewKhachHang.RowHeight = 40;
             // 
             // colMaKH
             // 
+            this.colMaKH.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaKH.AppearanceCell.Options.UseFont = true;
+            this.colMaKH.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaKH.AppearanceHeader.Options.UseFont = true;
             this.colMaKH.Caption = "Mã Khách Hàng";
             this.colMaKH.FieldName = "MaKH";
             this.colMaKH.Name = "colMaKH";
@@ -135,6 +141,10 @@
             // 
             // colTenKH
             // 
+            this.colTenKH.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenKH.AppearanceCell.Options.UseFont = true;
+            this.colTenKH.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenKH.AppearanceHeader.Options.UseFont = true;
             this.colTenKH.Caption = "Tên Khách Hàng";
             this.colTenKH.FieldName = "TenKH";
             this.colTenKH.Name = "colTenKH";
@@ -143,6 +153,10 @@
             // 
             // colCMND
             // 
+            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceCell.Options.UseFont = true;
+            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceHeader.Options.UseFont = true;
             this.colCMND.Caption = "CMND";
             this.colCMND.FieldName = "CMND";
             this.colCMND.Name = "colCMND";
@@ -151,6 +165,10 @@
             // 
             // colSDT
             // 
+            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceCell.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceHeader.Options.UseFont = true;
             this.colSDT.Caption = "SĐT";
             this.colSDT.FieldName = "SDT";
             this.colSDT.Name = "colSDT";
@@ -159,6 +177,10 @@
             // 
             // colDiaChi
             // 
+            this.colDiaChi.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDiaChi.AppearanceCell.Options.UseFont = true;
+            this.colDiaChi.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDiaChi.AppearanceHeader.Options.UseFont = true;
             this.colDiaChi.Caption = "Địa Chỉ";
             this.colDiaChi.FieldName = "DiaChi";
             this.colDiaChi.Name = "colDiaChi";
@@ -167,6 +189,10 @@
             // 
             // colDiemTichLuy
             // 
+            this.colDiemTichLuy.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDiemTichLuy.AppearanceCell.Options.UseFont = true;
+            this.colDiemTichLuy.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colDiemTichLuy.AppearanceHeader.Options.UseFont = true;
             this.colDiemTichLuy.Caption = "Điểm Tích Lũy";
             this.colDiemTichLuy.FieldName = "DiemTichLuy";
             this.colDiemTichLuy.Name = "colDiemTichLuy";
@@ -175,6 +201,10 @@
             // 
             // colTongTienTichLuy
             // 
+            this.colTongTienTichLuy.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTongTienTichLuy.AppearanceCell.Options.UseFont = true;
+            this.colTongTienTichLuy.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTongTienTichLuy.AppearanceHeader.Options.UseFont = true;
             this.colTongTienTichLuy.Caption = "Tổng Tiền Tích Lũy";
             this.colTongTienTichLuy.DisplayFormat.FormatString = "###,###,##0 VNĐ";
             this.colTongTienTichLuy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -250,7 +280,7 @@
             this.colTenLoaiKH.AppearanceHeader.Options.UseFont = true;
             this.colTenLoaiKH.AppearanceHeader.Options.UseForeColor = true;
             this.colTenLoaiKH.Caption = "Tên Loại Khách Hàng";
-            this.colTenLoaiKH.FieldName = "TenPhong";
+            this.colTenLoaiKH.FieldName = "TenLoaiKH";
             this.colTenLoaiKH.Name = "colTenLoaiKH";
             this.colTenLoaiKH.Visible = true;
             this.colTenLoaiKH.VisibleIndex = 1;
