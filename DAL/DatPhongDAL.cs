@@ -21,7 +21,7 @@ namespace DAL
 
         public static DataTable LayCacPhongConTrongTrongThoiGian(DateTime time, int khoangThoiGianToiThieu)
         {
-            return DataProvider.ExecuseQuery("SELECT * FROM loaiphong, phong WHERE loaiphong.MaLP = phong.MaLoaiPhong AND phong.MaPhong NOT IN (SELECT MaPhong FROM datphong, chitietdatphong WHERE MaTinhTrangPhong <> 1 AND datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong BETWEEN '" + time.AddMinutes(-khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + time.AddMinutes(khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "');");
+            return DataProvider.ExecuseQuery("SELECT * FROM loaiphong, phong WHERE loaiphong.MaLP = phong.MaLoaiPhong AND phong.MaPhong NOT IN (SELECT MaPhong FROM datphong, chitietdatphong WHERE MaTinhTrangPhong <> 1 AND datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong BETWEEN '" + time.AddMinutes(-khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + time.AddMinutes(khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "') AND MaTinhTrangPhong <> 2;");
 
         }
 

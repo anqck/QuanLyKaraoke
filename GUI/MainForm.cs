@@ -47,6 +47,8 @@ namespace GUI
 
             }
 
+
+            toastNotificationsManager1.ShowNotification(toastNotificationsManager1.Notifications[0]);
             PhanQuyenTruyCap();
             
 
@@ -1059,9 +1061,9 @@ namespace GUI
             this.toastNotificationsManager1.ApplicationId = "0cf87b7f-7445-4e2d-a81b-179f23ef6aaa";
             this.toastNotificationsManager1.ApplicationName = "GUI";
             this.toastNotificationsManager1.Notifications.AddRange(new DevExpress.XtraBars.ToastNotifications.IToastNotificationProperties[] {
-            new DevExpress.XtraBars.ToastNotifications.ToastNotification("bbcda021-85e1-4f65-be88-feda0ef80a40", null, "Pellentesque lacinia tellus eget volutpat", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
+            new DevExpress.XtraBars.ToastNotifications.ToastNotification("bbcda021-85e1-4f65-be88-feda0ef80a40", null, "Pellentesque lacinia tellus eget volutpat a", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
                     "ncididunt ut labore et dolore magna aliqua.", "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor i" +
-                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.Text01)});
+                    "ncididunt ut labore et dolore magna aliqua.", DevExpress.XtraBars.ToastNotifications.ToastNotificationSound.Default, DevExpress.XtraBars.ToastNotifications.ToastNotificationDuration.Long, DevExpress.XtraBars.ToastNotifications.ToastNotificationTemplate.ImageAndText04)});
             // 
             // MainForm
             // 
@@ -1343,6 +1345,7 @@ namespace GUI
             {
                 menuNhanvien.Visible = false;
                 menuHeThong.Visible = false;
+                menuBaocao.Visible = false;
                 tileBar3.Visible = false;
                 tileBar2.Visible = false;
                 tileBarDropDownQuanlyphong.Visible = false;
@@ -1352,6 +1355,7 @@ namespace GUI
             {
                 menuNhanvien.Visible = true;
                 menuHeThong.Visible = true;
+                menuBaocao.Visible = true;
                 tileBar3.Visible = true;
                 tileBar2.Visible = true;
                 tileBarDropDownQuanlyphong.Visible = true;

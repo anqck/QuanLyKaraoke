@@ -193,7 +193,7 @@ namespace DAL
 
             foreach(DataRow dr in dt.Rows)
             {
-                dsPhong.Add((int)dt.Rows[0]["MaPhong"], new PhongDTO((int)dr["MaPhong"], dr["TenPhong"].ToString(), (int)dr["MaLoaiPhong"], dr["Tang"].ToString(), dr["GhiChu"].ToString(), (int)dr["MaTinhTrangPhong"]));
+                dsPhong.Add((int)dr["MaPhong"], new PhongDTO((int)dr["MaPhong"], dr["TenPhong"].ToString(), (int)dr["MaLoaiPhong"], dr["Tang"].ToString(), dr["GhiChu"].ToString(), (int)dr["MaTinhTrangPhong"]));
             }
             return dsPhong;   
         }

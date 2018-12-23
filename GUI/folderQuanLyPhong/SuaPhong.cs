@@ -119,7 +119,7 @@ namespace GUI.folderQuanLyPhong
         private bool ThongBaoHuySuaPhong()
         {
            
-            if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật khách hàng ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+            if (XtraMessageBox.Show("Bạn có chắc hủy cập nhật phòng ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
             {
                 return true;
             }

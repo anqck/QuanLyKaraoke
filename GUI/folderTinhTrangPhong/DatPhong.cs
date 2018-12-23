@@ -43,7 +43,7 @@ namespace GUI.folderTinhTrangPhong
             txtKhachHang.Properties.ValueMember = "MaKH";
 
             dataSource_KhachHang = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
-            dataSource_KhachHang.Rows.RemoveAt(0);
+            //dataSource_KhachHang.Rows.RemoveAt(0);
 
             txtKhachHang.Properties.DataSource = dataSource_KhachHang;
             khachHang = KhachHangBUS.LayTatCaKhachHang()[0];

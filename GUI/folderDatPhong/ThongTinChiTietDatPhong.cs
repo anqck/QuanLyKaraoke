@@ -187,8 +187,14 @@ namespace GUI.folderDatPhong
                         return;
                     }
 
+                    //BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 0);
 
                     DatPhongBUS.CapNhatTinhTrangDatPhong(3,chiTietDatPhong.MaDatPhong);
+
+                    foreach(ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
+                    {
+                        PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
+                    }
                     (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
                     break;
 

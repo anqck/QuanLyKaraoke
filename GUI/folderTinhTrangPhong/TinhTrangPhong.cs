@@ -70,8 +70,9 @@ namespace GUI.TinhTrangPhong
 
         public void RefreshDataBinding()
         {
-          
-                gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung();
+            
+
+            gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung();
 
                 //Tính giờ
                 listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
