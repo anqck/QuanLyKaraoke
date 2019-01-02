@@ -383,6 +383,12 @@ namespace GUI.folderTinhTrangPhong
         }
         public void XoaDichVu()
         {
+            if(gridView1.RowCount == 0)
+            {
+                XtraMessageBox.Show("Không có dịch vụ/Khuyến mãi nào được chọn", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+                
             if (XtraMessageBox.Show("Bạn có chắc muốn xóa dịch vụ/khuyến mãi " + dichVuPhong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["TenDV"] + "' ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
             {
                 return;

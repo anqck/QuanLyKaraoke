@@ -89,5 +89,6 @@ namespace BUS
         {
             return DAL.DatPhongDAL.LayThongTinThuePhongCuaPhongDangDat(maPhong, now);
         }
+        
     }
 }

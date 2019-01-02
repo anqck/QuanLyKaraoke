@@ -123,6 +123,8 @@ namespace GUI.folderDatPhong
                     break;
                 case "Chuyển Phòng":
                     ChuyenPhong formChuyenPhong = new ChuyenPhong(chiTietDatPhong);
+
+
                     if (FlyoutDialog.Show(this.FindForm(), formChuyenPhong) == DialogResult.OK)
                     {
                         XtraMessageBox.Show("Chuyển phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -156,6 +158,11 @@ namespace GUI.folderDatPhong
                     if (XtraMessageBox.Show("Bạn có chắc hủy phòng đã đặt này ?", "Xác nhận", MessageBoxButtons.YesNo) == DialogResult.No)
                     {
                         return;
+                    }
+
+                    if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 4)
+                    {
+                        PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 0);
                     }
 
 

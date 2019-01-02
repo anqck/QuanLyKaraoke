@@ -46,7 +46,6 @@
         private DevExpress.XtraBars.Navigation.TileBarDropDownContainer tileBarDropDownDichvu;
         private DevExpress.XtraBars.Navigation.TileBar tileBar2;
         private DevExpress.XtraBars.Navigation.TileBarGroup tileBarGroup3;
-        private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem5;
         private DevExpress.XtraBars.Navigation.TileBarItem tileBarItem6;
         private System.Windows.Forms.Timer timer1;
         private System.ComponentModel.IContainer components;

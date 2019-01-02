@@ -22,9 +22,14 @@ namespace GUI.folderTinhTrangPhong
 
         private KhachHangDTO khachHang;
 
-        public DatPhong()
+
+        private Action<DatPhongDTO> onDatPhongSuccess;
+
+        public DatPhong(Action<DatPhongDTO> onDatPhongSuccess)
         {
             InitializeComponent();
+
+            this.onDatPhongSuccess = onDatPhongSuccess;
 
             selectedPhong = new Dictionary<int, PhongDTO>();
             khachHang = null;
@@ -68,6 +73,9 @@ namespace GUI.folderTinhTrangPhong
                     
 
                     XtraMessageBox.Show("Đặt phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    onDatPhongSuccess(datPhong);
+
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
                 case "Hủy":
@@ -191,9 +199,14 @@ namespace GUI.folderTinhTrangPhong
         {
             if(txtGioVao.Time < DateTime.Now)
             {
-                
+                (sender as TimeEdit).ErrorText = "Thời gian đặt không được nhỏ hơn thời gian hiện tại";
                 e.Cancel = true;
 
+            }
+            else
+
+            {
+                (sender as TimeEdit).ErrorText = "";
             }
         }
     }

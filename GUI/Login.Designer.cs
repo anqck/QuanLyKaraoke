@@ -72,7 +72,7 @@
             this.simpleButton1.LookAndFeel.UseDefaultLookAndFeel = false;
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(368, 56);
-            this.simpleButton1.TabIndex = 3;
+            this.simpleButton1.TabIndex = 2;
             this.simpleButton1.Text = "Đăng nhập";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
@@ -93,7 +93,7 @@
             this.txtTenDangNhap.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
             this.txtTenDangNhap.Properties.NullText = "Tên đăng nhập";
             this.txtTenDangNhap.Size = new System.Drawing.Size(368, 36);
-            this.txtTenDangNhap.TabIndex = 4;
+            this.txtTenDangNhap.TabIndex = 0;
             // 
             // labelControl2
             // 
@@ -150,7 +150,7 @@
             this.txtMatKhau.Properties.NullText = "xxxxxxx";
             this.txtMatKhau.Properties.UseSystemPasswordChar = true;
             this.txtMatKhau.Size = new System.Drawing.Size(368, 36);
-            this.txtMatKhau.TabIndex = 5;
+            this.txtMatKhau.TabIndex = 1;
             // 
             // textEdit3
             // 

@@ -76,7 +76,7 @@ namespace GUI.folderTinhTrangPhong
             txtTenPhong_Old.EditValue = phongDto.TenPhong;
             txtGhiChu_Old.EditValue = phongDto.GhiChu;
 
-            txtPhong.Properties.DataSource = dtPhong = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong();
+            txtPhong.Properties.DataSource = dtPhong = DatPhongBUS.LayCacPhongConTrongTrongThoiGian(DatPhongBUS.LayThongTinDatPhong(chiTietDatPhong.MaDatPhong).ThoiGianDatPhong, ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue()); 
             txtPhong.Properties.DisplayMember = "TenPhong";
             txtPhong.Properties.ValueMember = "MaPhong";
         }
@@ -146,7 +146,12 @@ namespace GUI.folderTinhTrangPhong
                     }
                     else
                     {
+                        if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 4)
+                        {
+                            PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 0);
+                        }
                         ChiTietDatPhongBUS.CapNhatThongTinDatPhong(new ChiTietDatPhongDTO(chiTietDatPhong.MaChiTietDatPhong, (int)txtMaPhong.EditValue,chiTietDatPhong.MaDatPhong));
+                       
                     }
 
                     ((FlyoutDialog)this.Parent).DialogResult = DialogResult.OK;

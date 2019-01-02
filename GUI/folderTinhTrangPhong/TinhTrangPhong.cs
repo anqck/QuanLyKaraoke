@@ -70,8 +70,8 @@ namespace GUI.TinhTrangPhong
 
         public void RefreshDataBinding()
         {
-            
 
+           
             gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung();
 
                 //Tính giờ
@@ -506,7 +506,7 @@ namespace GUI.TinhTrangPhong
         }
         void OnClickBtnDatPhong(object sender, EventArgs e)
         {
-            FlyoutDialog.Show(this.FindForm(), new DatPhong());
+            FlyoutDialog.Show(this.FindForm(), new DatPhong(OnDatPhongSuccess));
         }
         void OnClickBtnChuyenPhong(object sender, EventArgs e)
         {
@@ -543,8 +543,14 @@ namespace GUI.TinhTrangPhong
             RefreshDataBinding();
 
             DisplayTinhTrangPhongWithSelectedTile(thuePhong);
-
             
+        }
+
+        void OnDatPhongSuccess(DatPhongDTO thuePhong)
+        {
+            RefreshDataBinding();
+
+            UpdateTimeNotify();
         }
 
         #endregion
@@ -636,13 +642,23 @@ namespace GUI.TinhTrangPhong
 
             if (listDanhSachPhongDangDat == null)
                 return;
+
             foreach(PhongDTO phong in tempSapDat.Values)
             {
                 if (!listDanhSachPhongDangDat.ContainsKey(phong.MaPhong))
                 {
                     if(phong.MaTinhTrangPhong == 0)
+                    {
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Header = "THÔNG BÁO PHÒNG SẮP ĐƯỢC ĐẶT";
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body = "Phòng "+ phong.TenPhong +" được đặt trong "+ ThamSoBUS.LayKhoangThoiGianChoDatPhong() + " phút nữa!";
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body2 = "";
+                        (this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
+
                         BUS.PhongBUS.CapNhatTinhTrangPhong(phong.MaPhong, 4);
-                }            
+                    }                      
+
+
+                }          
          
             }
 
@@ -654,7 +670,15 @@ namespace GUI.TinhTrangPhong
                     if (listDanhSachPhongDangDat.ContainsKey(chiTiet.MaPhong))
                     {
                        if(PhongBUS.LayThongTinPhong(chiTiet.MaPhong).MaTinhTrangPhong == 4)
+                        {
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Header = "THÔNG BÁO PHÒNG ĐƯỢC ĐẶT QUÁ THỜI GIAN CHỜ";
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body = "Phòng " + BUS.PhongBUS.LayThongTinPhong(chiTiet.MaPhong).TenPhong + " được đặt quá thời gian chờ nên sẽ chuyển về trạng thái trống và đặt phòng được tự động hủy. ";
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body2 = "";
+                            (this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
+
                             BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 0);
+                        }
+                           
 
                     }
                     DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTiet.MaDatPhong);
@@ -664,7 +688,7 @@ namespace GUI.TinhTrangPhong
           
 
             RefreshDataBinding();
-            //(this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
+            
             //MessageBox.Show("Notification #2 Clicked");
         }
         public void HienThiThongTinPhong(ThuePhongDTO dto)

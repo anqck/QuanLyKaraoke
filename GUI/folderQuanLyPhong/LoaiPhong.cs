@@ -48,10 +48,21 @@ namespace GUI.folderQuanLyPhong
                     LoaiPhongPagecontrol.SelectedPage = PageThemloaiphong;
                     break;
                 case "Sửa Loại Phòng":
+                    if(gridViewLoaiPhong.DataRowCount == 0)
+                    {
+                        XtraMessageBox.Show("Không có loại phòng nào được chọn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
                     suaLoaiPhong1.RefreshDataBinding(new DTO.LoaiPhongDTO((int)dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["MaLP"], dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["TenLoaiPhong"].ToString()));
                     LoaiPhongPagecontrol.SelectedPage = PageSualoaiphong;
                     break;
                 case "Xóa Loại Phòng":
+                    if (gridViewLoaiPhong.DataRowCount == 0)
+                    {
+                        XtraMessageBox.Show("Không có loại phòng nào được chọn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                     //Xác nhận xóa?
                     if (XtraMessageBox.Show("Bạn có chắc muốn xóa loại phòng '" + dtLoaiPhong.Rows[gridViewLoaiPhong.GetFocusedDataSourceRowIndex()]["TenLoaiPhong"].ToString() + "' ?", "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.No)
                         return;

@@ -51,6 +51,12 @@ namespace GUI.folderQuanLyPhong
                     QuanlyPagecontrol.SelectedPage = PageThemphongmoi;
                     break;
                 case "Sửa phòng":
+                    if (gridView1.DataRowCount == 0)
+                    {
+                        XtraMessageBox.Show("Không có phòng nào được chọn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                     // suaKhachHang3.RefreshDataBinding((int)khachHang.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaKH"]);
                     suaPhong1.RefreshDataBinding((int)phong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaPhong"]);
                     QuanlyPagecontrol.SelectedPage = PageSuaphong;

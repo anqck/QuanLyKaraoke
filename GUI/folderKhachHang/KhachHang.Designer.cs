@@ -322,6 +322,8 @@
             // colDiemTichLuy
             // 
             this.colDiemTichLuy.Caption = "Điểm Tích Lũy";
+            this.colDiemTichLuy.DisplayFormat.FormatString = "#0.00";
+            this.colDiemTichLuy.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colDiemTichLuy.FieldName = "DiemTichLuy";
             this.colDiemTichLuy.Name = "colDiemTichLuy";
             this.colDiemTichLuy.Visible = true;
