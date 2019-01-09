@@ -12,8 +12,6 @@ namespace BUS
     {
         public static DataTable LayTatCaKhachHang_LoaiKhachHang()
         {
-
-
             return DAL.KhachHangDAL.LayTatCaKhachHang_LoaiKhachHang();
         }
         public static bool LuuThongTinKH(KhachHangDTO khachHangDTO)

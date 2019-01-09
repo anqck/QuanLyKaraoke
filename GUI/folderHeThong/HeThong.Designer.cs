@@ -50,6 +50,8 @@
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.ngayLe1 = new GUI.folderHeThong.NgayLe();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtNgayVao1 = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
@@ -70,6 +72,8 @@
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl2
@@ -130,6 +134,7 @@
             this.layoutControl1.Controls.Add(this.txtNgayLe);
             this.layoutControl1.Controls.Add(this.txtNgayVao);
             this.layoutControl1.Controls.Add(this.spinEdit1);
+            this.layoutControl1.Controls.Add(this.txtNgayVao1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 87);
@@ -271,12 +276,13 @@
             this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem4,
-            this.layoutControlItem2,
             this.emptySpaceItem1,
             this.layoutControlItem1,
             this.layoutControlItem3,
-            this.layoutControlItem5});
+            this.layoutControlItem5,
+            this.layoutControlItem2,
+            this.layoutControlItem4,
+            this.layoutControlItem6});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(30, 30, 13, 13);
@@ -310,9 +316,9 @@
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 163);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 203);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1009, 257);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1009, 217);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -403,6 +409,36 @@
             this.ngayLe1.Size = new System.Drawing.Size(1069, 594);
             this.ngayLe1.TabIndex = 0;
             // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtNgayVao1;
+            this.layoutControlItem6.CustomizationFormText = "Làm tròn số tiền hát";
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 163);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(1009, 40);
+            this.layoutControlItem6.Text = "Làm tròn số tiền hát";
+            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(461, 17);
+            // 
+            // txtNgayVao1
+            // 
+            this.txtNgayVao1.EditValue = "";
+            this.txtNgayVao1.Location = new System.Drawing.Point(498, 179);
+            this.txtNgayVao1.Name = "txtNgayVao1";
+            this.txtNgayVao1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgayVao1.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
+            this.txtNgayVao1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgayVao1.Properties.EditFormat.FormatString = "##0 phút";
+            this.txtNgayVao1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtNgayVao1.Properties.Items.AddRange(new object[] {
+            "Không",
+            "Năm trăm đồng",
+            "Hàng nghìn"});
+            this.txtNgayVao1.Size = new System.Drawing.Size(538, 34);
+            this.txtNgayVao1.StyleController = this.layoutControl1;
+            this.txtNgayVao1.TabIndex = 7;
+            // 
             // HeThong
             // 
             this.Appearance.BackColor = System.Drawing.Color.White;
@@ -432,6 +468,8 @@
             this.navigationFrame1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -459,5 +497,7 @@
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel windowsUIButtonPanel1;
         private DevExpress.XtraEditors.SpinEdit spinEdit1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
+        private DevExpress.XtraEditors.ComboBoxEdit txtNgayVao1;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
     }
 }

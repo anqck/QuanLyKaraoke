@@ -35,11 +35,11 @@
             this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiemTichLuy = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
-            this.colNgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.windowsUIButtonPanel1.SuspendLayout();
@@ -131,6 +131,16 @@
             this.colDiaChi.Visible = true;
             this.colDiaChi.VisibleIndex = 4;
             // 
+            // colNgaySinh
+            // 
+            this.colNgaySinh.Caption = "Ngày Sinh";
+            this.colNgaySinh.DisplayFormat.FormatString = "dd-MM-yyyy";
+            this.colNgaySinh.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colNgaySinh.FieldName = "NgaySinh";
+            this.colNgaySinh.Name = "colNgaySinh";
+            this.colNgaySinh.Visible = true;
+            this.colNgaySinh.VisibleIndex = 6;
+            // 
             // colDiemTichLuy
             // 
             this.colDiemTichLuy.Caption = "Điểm Tích Lũy";
@@ -174,16 +184,6 @@
             this.searchControl1.Properties.ShowSearchButton = false;
             this.searchControl1.Size = new System.Drawing.Size(909, 34);
             this.searchControl1.TabIndex = 0;
-            // 
-            // colNgaySinh
-            // 
-            this.colNgaySinh.Caption = "Ngày Sinh";
-            this.colNgaySinh.DisplayFormat.FormatString = "dd-MM-yyyy";
-            this.colNgaySinh.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.colNgaySinh.FieldName = "NgaySinh";
-            this.colNgaySinh.Name = "colNgaySinh";
-            this.colNgaySinh.Visible = true;
-            this.colNgaySinh.VisibleIndex = 6;
             // 
             // ChonKhachHang
             // 

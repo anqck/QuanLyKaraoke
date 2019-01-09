@@ -75,16 +75,17 @@ namespace GUI.TinhTrangPhong
             gridControl.DataSource = danhSachPhong = DAL.PhongDAL.LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung();
 
                 //Tính giờ
-                listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
-               
+                listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();              
 
 
 
                 tileAll.Elements[1].Text = danhSachPhong.Rows.Count.ToString();
                 tileAvailable.Elements[1].Text = PhongBUS.DemSoLuongPhong(0).ToString();
                 tileRented.Elements[1].Text = PhongBUS.DemSoLuongPhong(1).ToString();
+                tileSapDat.Elements[1].Text = PhongBUS.DemSoLuongPhong(4).ToString();
 
-                grpLoaiPhong.Items.Clear();
+
+            grpLoaiPhong.Items.Clear();
                 foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable().Rows)
                 {
                     grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
@@ -188,6 +189,13 @@ namespace GUI.TinhTrangPhong
                         strFilterTinhTrangPhong = "[TinhTrangPhong] = 'Đang sử dụng'";
                         tileView1.ActiveFilterString = "(" +strFilterLoaiPhong + ") and " + strFilterTinhTrangPhong;
                  
+                    break;
+                case "tileSapDat":
+                    preSelect = tileSapDat;
+
+                    strFilterTinhTrangPhong = "[TinhTrangPhong] = 'Đã đặt trước'";
+                    tileView1.ActiveFilterString = "(" + strFilterLoaiPhong + ") and " + strFilterTinhTrangPhong;
+
                     break;
                 default:
                    
