@@ -343,7 +343,11 @@ namespace GUI.folderTinhTrangPhong
                     {
                         ((ChiTietThanhToanPhong)layoutGroup.Tag).LuuKhuyenMai();
                         ((ChiTietThanhToanPhong)layoutGroup.Tag).CapNhatThongTinThuePhong();
-                        PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong,0);
+
+                        if(ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                            PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong,5);
+                        else
+                            PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 0);
                     }
 
                     if(khachHang.MaLoaiKH != 0)

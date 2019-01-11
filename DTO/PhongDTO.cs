@@ -14,6 +14,7 @@ namespace DTO
         public string Tang { get; set; }
         public string GhiChu { get; set; }
         public int MaTinhTrangPhong { get; set; }
+        public int SucChua { get; set; }
         public PhongDTO()
         {
             MaPhong = -1;
@@ -22,6 +23,7 @@ namespace DTO
             Tang = "";
             GhiChu = "";
             MaTinhTrangPhong = -1;
+            SucChua = -1;
         }
 
         public PhongDTO(int maPhong, string tenPhong, int maLoaiPhong)
@@ -32,8 +34,9 @@ namespace DTO
             Tang = "";
             GhiChu = "";
             MaTinhTrangPhong = -1;
+            SucChua = -1;
         }
-        public PhongDTO(int maPhong, string tenPhong, int maLoaiPhong, string tang,string ghiChu, int maTinhTrangPhong)
+        public PhongDTO(int maPhong, string tenPhong, int maLoaiPhong, string tang,string ghiChu, int maTinhTrangPhong, int sucChua)
         {
             MaPhong = maPhong;
             TenPhong = tenPhong;
@@ -41,6 +44,7 @@ namespace DTO
             Tang = tang;
             GhiChu = ghiChu;
             MaTinhTrangPhong = maTinhTrangPhong;
+            SucChua = sucChua;
         }
     }
 }

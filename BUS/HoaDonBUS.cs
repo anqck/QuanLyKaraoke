@@ -35,10 +35,14 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang_DaThanhToan(dateTime);
         }
-
-        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(int nam)
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan_TheoNam(DateTime dateTime)
         {
-            return HoaDonDAL.LayTatCaCacHoaDon_KhachHang_DaThanhToan(nam);
+            return DAL.HoaDonDAL.LayTatCaCacHoaDon_KhachHang_DaThanhToan_TheoNam(dateTime);
+        }
+
+        public static DataTable LayDoanhThuTheoNam(int nam)
+        {
+            return HoaDonDAL.LayDoanhThuTheoNam(nam);
         }
 
         public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan()

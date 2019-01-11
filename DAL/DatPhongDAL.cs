@@ -65,6 +65,13 @@ namespace DAL
             DataProvider.ExecuseNonQuery(stringBuilder.ToString());
             return true;
         }
+
+        public static DataTable LayTatCaCacDatPhongTrongTuongLai(int maPhong)
+        {
+            return DataProvider.ExecuseQuery("SELECT datphong.MaDatPhong, datphong.ThoiGianDatPhong, datphong.MaTinhTrangDatPhong FROM quanlykaraoke.datphong, quanlykaraoke.chitietdatphong WHERE quanlykaraoke.datphong.MaDatPhong = quanlykaraoke.chitietdatphong.MaDatPhong AND quanlykaraoke.datphong.ThoiGianDatPhong > now() AND datphong.MaTinhTrangDatPhong = '1' AND MaPhong = '" + maPhong+"';");
+
+        }
+
         public static DataTable LayTatCaDatPhong_ChiTietDatPhong_DataTable()
         {
             return DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong;");   

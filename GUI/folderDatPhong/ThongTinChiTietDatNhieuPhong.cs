@@ -62,7 +62,7 @@ namespace GUI.folderDatPhong
             this.TabControl.TabPages.Clear();
             foreach (ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
             {
-                ThongTinChiTietDatPhong thongTinChiTietDatPhong = new ThongTinChiTietDatPhong();
+                ThongTinChiTietDatPhong thongTinChiTietDatPhong = new ThongTinChiTietDatPhong(datPhong);
                 thongTinChiTietDatPhong.RefreshDataBinding(chiTiet);
                 DevExpress.XtraTab.XtraTabPage xtraTab = new DevExpress.XtraTab.XtraTabPage();
 
@@ -161,6 +161,24 @@ namespace GUI.folderDatPhong
                     XtraMessageBox.Show("Phòng " + phongDto.TenPhong + " đang được sử dụng nên không thể nhận được!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;
                    
+                }
+                else if (phongDto.MaTinhTrangPhong == 5 || phongDto.MaTinhTrangPhong == 6)
+                {
+                    XtraMessageBox.Show("Phòng " + phongDto.TenPhong + " đang chờ dọn dẹp! Hãy dọn dẹp trước khi nhận phòng", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+
+                }
+                else if (phongDto.MaTinhTrangPhong == 2)
+                {
+                    XtraMessageBox.Show("Phòng " + phongDto.TenPhong + " đang sửa chữa! Vui lòng chuyển đặt phòng sang phòng khác hoặc chuyển tình trạng phòng sang bình thường!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+
+                }
+                else if (phongDto.MaTinhTrangPhong == 3)
+                {
+                    XtraMessageBox.Show("Phòng " + phongDto.TenPhong + " đã bị xóa, không thể nhận phòng! Vui lòng chuyển đặt phòng sang phòng khác! ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    return;
+
                 }
             }
            

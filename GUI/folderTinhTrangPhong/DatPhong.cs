@@ -48,7 +48,7 @@ namespace GUI.folderTinhTrangPhong
             txtKhachHang.Properties.ValueMember = "MaKH";
 
             dataSource_KhachHang = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
-            //dataSource_KhachHang.Rows.RemoveAt(0);
+            dataSource_KhachHang.Rows.RemoveAt(0);
 
             txtKhachHang.Properties.DataSource = dataSource_KhachHang;
             khachHang = KhachHangBUS.LayTatCaKhachHang()[0];
@@ -89,6 +89,7 @@ namespace GUI.folderTinhTrangPhong
         private void gridLookUpEdit1View_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             int idxSelected = gridLookUpEdit1View.GetFocusedDataSourceRowIndex();
+            if(idxSelected >=0)
             khachHang = new KhachHangDTO((int)dataSource_KhachHang.Rows[idxSelected]["MaKH"], dataSource_KhachHang.Rows[idxSelected]["TenKH"].ToString(), dataSource_KhachHang.Rows[idxSelected]["CMND"].ToString(), dataSource_KhachHang.Rows[idxSelected]["SDT"].ToString(), dataSource_KhachHang.Rows[idxSelected]["DiaChi"].ToString(), (int)dataSource_KhachHang.Rows[idxSelected]["MaLoaiKH"], (double)dataSource_KhachHang.Rows[idxSelected]["DiemTichLuy"], (dataSource_KhachHang.Rows[0]["NgaySinh"].ToString() == "") ? (DateTime.MinValue) : ((DateTime)dataSource_KhachHang.Rows[0]["NgaySinh"]));
 
 

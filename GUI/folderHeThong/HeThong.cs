@@ -38,6 +38,11 @@ namespace GUI.folderHeThong
             spinEdit1.EditValue = ThamSoBUS.LayKhoangThoiGianChoDatPhong();
             txtNgayVao.EditValue = ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue();
             txtTienTraTruoc.EditValue = ThamSoBUS.QuyDoiDiem(1);
+
+            if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                cbChoDonDep.SelectedIndex = 0;
+            else
+                cbChoDonDep.SelectedIndex = 1;
         }
 
         internal void GoToPage_WithoutAnimation(int v)
@@ -88,6 +93,14 @@ namespace GUI.folderHeThong
         private void spinEdit1_Properties_EditValueChanged(object sender, EventArgs e)
         {
             ThamSoBUS.SetKhoangThoiGianChoDatPhong(Convert.ToInt32(spinEdit1.EditValue));
+        }
+
+        private void cbChoDonDep_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbChoDonDep.SelectedIndex == 0)
+                ThamSoBUS.SetKChuyenSangChoDonDepSauKhiThanhToan(true);
+            else if (cbChoDonDep.SelectedIndex == 1)
+                ThamSoBUS.SetKChuyenSangChoDonDepSauKhiThanhToan(false);
         }
     }
 }

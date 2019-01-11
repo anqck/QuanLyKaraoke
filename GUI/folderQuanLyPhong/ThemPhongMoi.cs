@@ -35,7 +35,7 @@ namespace GUI.folderQuanLyPhong
                         return;
 
                     //Lưu thông tinh
-                    if (PhongBUS.LuuThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong, cmbTang.Text, txtGhiChu.Text, 0)) )
+                    if (PhongBUS.LuuThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, listLoaiPhong[cmbLoaiPhong.SelectedIndex].MaLoaiPhong, cmbTang.Text, txtGhiChu.Text, 0,Convert.ToInt32(txtSucChua.Value))) )
                     {
                         //Thông báo thành công
                         

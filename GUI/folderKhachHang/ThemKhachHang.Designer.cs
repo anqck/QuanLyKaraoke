@@ -374,7 +374,7 @@
             this.layoutControlItem8.OptionsPrint.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem8.Size = new System.Drawing.Size(468, 52);
             this.layoutControlItem8.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlItem8.Text = "CMND";
+            this.layoutControlItem8.Text = "Email";
             this.layoutControlItem8.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem8.TextSize = new System.Drawing.Size(150, 31);

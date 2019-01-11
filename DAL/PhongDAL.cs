@@ -117,7 +117,7 @@ namespace DAL
         }
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong_KhaDung()
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP AND (phong.MaTinhTrangPhong = '0' OR phong.MaTinhTrangPhong = '1' OR phong.MaTinhTrangPhong = '4');");
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong, quanlykaraoke.tinhtrangphong,quanlykaraoke.loaiphong where quanlykaraoke.phong.MaTinhTrangPhong = quanlykaraoke.tinhtrangphong.MaTinhTrangPhong and quanlykaraoke.phong.MaLoaiPhong = quanlykaraoke.loaiphong.MaLP AND (phong.MaTinhTrangPhong = '0' OR phong.MaTinhTrangPhong = '1' OR phong.MaTinhTrangPhong = '4'  OR phong.MaTinhTrangPhong = '5' OR phong.MaTinhTrangPhong = '6');");
         }
         public static DataTable LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan()
         {
@@ -172,7 +172,7 @@ namespace DAL
         public static PhongDTO LayThongTinPhong(int maPhong)
         {
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong WHERE quanlykaraoke.phong.MaPhong = '"+maPhong+"';");
-            return new PhongDTO((int)dt.Rows[0]["MaPhong"], dt.Rows[0]["TenPhong"].ToString(), (int)dt.Rows[0]["MaLoaiPhong"], dt.Rows[0]["Tang"].ToString(), dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangPhong"]);
+            return new PhongDTO((int)dt.Rows[0]["MaPhong"], dt.Rows[0]["TenPhong"].ToString(), (int)dt.Rows[0]["MaLoaiPhong"], dt.Rows[0]["Tang"].ToString(), dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangPhong"], (int)dt.Rows[0]["SucChua"]);
         }
         public static int DemSoLuongPhong(int maTinhTrangPhong)
         {
@@ -188,12 +188,12 @@ namespace DAL
         {
             Dictionary<int, PhongDTO> dsPhong = new Dictionary<int, PhongDTO>();
 
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong WHERE quanlykaraoke.phong.MaTinhTrangPhong = '4';");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.phong WHERE quanlykaraoke.phong.MaTinhTrangPhong = '4' OR quanlykaraoke.phong.MaTinhTrangPhong = '6';");
 
 
             foreach(DataRow dr in dt.Rows)
             {
-                dsPhong.Add((int)dr["MaPhong"], new PhongDTO((int)dr["MaPhong"], dr["TenPhong"].ToString(), (int)dr["MaLoaiPhong"], dr["Tang"].ToString(), dr["GhiChu"].ToString(), (int)dr["MaTinhTrangPhong"]));
+                dsPhong.Add((int)dr["MaPhong"], new PhongDTO((int)dr["MaPhong"], dr["TenPhong"].ToString(), (int)dr["MaLoaiPhong"], dr["Tang"].ToString(), dr["GhiChu"].ToString(), (int)dr["MaTinhTrangPhong"], (int)dr["SucChua"]));
             }
             return dsPhong;   
         }

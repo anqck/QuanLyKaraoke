@@ -18,12 +18,26 @@ namespace GUI.folderDatPhong
     public partial class ThongTinChiTietDatPhong : XtraUserControl
     {
         public ChiTietDatPhongDTO chiTietDatPhong;
+        DatPhongDTO datPhong;
         public PhongDTO phong { get; set; }
         DataTable dichVuPhong;
 
-        public ThongTinChiTietDatPhong()
+        public ThongTinChiTietDatPhong(DatPhongDTO datPhongDTO)
         {
             InitializeComponent();
+            datPhong = datPhongDTO;
+
+            if (datPhongDTO.MaTinhTrangDatPhong != 1)
+            {
+                wbntQuanlyphong.Buttons.Clear();
+                //wbntQuanlyphong.Buttons["Thêm Dịch Vụ"].Properties.Visible = false;
+                //wbntQuanlyphong.Buttons["Xóa Dịch Vụ"].Properties.Visible = false;
+                //wbntQuanlyphong.Buttons["Đặt Thêm Phòng"].Properties.Visible = false;
+                //wbntQuanlyphong.Buttons["Chuyển Phòng"].Properties.Visible = false;
+                //wbntQuanlyphong.Buttons["Hủy Phòng"].Properties.Visible = false;
+                //wbntQuanlyphong.Buttons["Hủy Đặt Phòng"].Properties.Visible = false;
+                //wbntQuanlyphong.Buttons["Nhận Phòng"].Properties.Visible = false;
+            }
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -93,10 +107,11 @@ namespace GUI.folderDatPhong
             dichVuPhong = DichVuDatPhongBUS.LayTatCaDichVuDatPhong_DichVu_LoaiDV(chiTietDatPhong);
             gridControl1.DataSource = dichVuPhong;
 
+            if(wbntQuanlyphong.Buttons.Count != 0)
             if (gridView1.RowCount == 0)
-                wbntQuanlyphong.Buttons[1].Properties.Visible = false;
+                wbntQuanlyphong.Buttons["Xóa Dịch Vụ"].Properties.Visible = false;
             else
-                wbntQuanlyphong.Buttons[1].Properties.Visible = true;
+                wbntQuanlyphong.Buttons["Xóa Dịch Vụ"].Properties.Visible = true;
         }
 
         private void wbntQuanlyphong_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -160,19 +175,37 @@ namespace GUI.folderDatPhong
                         return;
                     }
 
+                    //Hủy đặt phòng
+                    if (DatPhongBUS.DemSoLuongChiTietDatPhong(chiTietDatPhong.MaDatPhong) == 1)
+                    {
+                        DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTietDatPhong.MaDatPhong);
+
+                        foreach (ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
+                        {
+                            if(PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4)
+                                PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
+                            else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6)
+                                PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 5);
+                        }
+                    (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
+                        return;
+                    }
+
+                    //Hủy phòng
                     if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 4)
                     {
                         PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 0);
                     }
-
+                    else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 6)
+                        PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 5);
 
 
                     DatPhongBUS.XoaCacDichVuDatPhong(chiTietDatPhong);
                     DatPhongBUS.XoaDatChiTietDatPhong(chiTietDatPhong);
-                    if (DatPhongBUS.DemSoLuongChiTietDatPhong(chiTietDatPhong.MaDatPhong) == 0)
-                    {
-                        DatPhongBUS.XoaDatPhong(chiTietDatPhong.MaDatPhong);
-                    }
+                    //if (DatPhongBUS.DemSoLuongChiTietDatPhong(chiTietDatPhong.MaDatPhong) == 0)
+                    //{
+                    //    DatPhongBUS.XoaDatPhong(chiTietDatPhong.MaDatPhong);
+                    //}
                     XtraMessageBox.Show("Xóa đặt phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
 
@@ -200,7 +233,10 @@ namespace GUI.folderDatPhong
 
                     foreach(ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
                     {
-                        PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
+                        if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4)
+                            PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
+                        else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6)
+                            PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 5);
                     }
                     (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
                     break;

@@ -23,6 +23,7 @@ namespace GUI.folderDatPhong
         {
             InitializeComponent();
 
+            schedulerControl1.GoToToday();
             thongTinChiTietDatNhieuPhong1.goToHome = GoToHomePage;
         }
         public void RefreshDataBinding()

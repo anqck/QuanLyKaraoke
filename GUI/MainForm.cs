@@ -90,6 +90,7 @@ namespace GUI
             DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
@@ -127,6 +128,7 @@ namespace GUI
             this.tileBarItem6 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.menuHoaDon = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.menuBaocao = new DevExpress.XtraBars.Navigation.TileBarItem();
+            this.menuKhuyenMai = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.menuHeThong = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.tileBarItem2 = new DevExpress.XtraBars.Navigation.TileBarItem();
             this.PageControl = new DevExpress.XtraBars.Navigation.NavigationFrame();
@@ -295,11 +297,12 @@ namespace GUI
             this.MenuBar.ItemSize = 80;
             this.MenuBar.Location = new System.Drawing.Point(0, 40);
             this.MenuBar.Margin = new System.Windows.Forms.Padding(2, 2, 5, 0);
-            this.MenuBar.MaxId = 14;
+            this.MenuBar.MaxId = 15;
             this.MenuBar.MaximumSize = new System.Drawing.Size(0, 150);
             this.MenuBar.MinimumSize = new System.Drawing.Size(117, 0);
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Padding = new System.Windows.Forms.Padding(30, 10, 0, 0);
+            this.MenuBar.Position = 16;
             this.MenuBar.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
             this.MenuBar.SelectedItem = this.menuTinhtrangphong;
             this.MenuBar.SelectionBorderWidth = 2;
@@ -320,6 +323,7 @@ namespace GUI
             this.GroupMenu.Items.Add(this.menuDichvu);
             this.GroupMenu.Items.Add(this.menuHoaDon);
             this.GroupMenu.Items.Add(this.menuBaocao);
+            this.GroupMenu.Items.Add(this.menuKhuyenMai);
             this.GroupMenu.Items.Add(this.menuHeThong);
             this.GroupMenu.Name = "GroupMenu";
             this.GroupMenu.Text = "MENU";
@@ -632,11 +636,24 @@ namespace GUI
             this.menuBaocao.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuBaocao.Name = "menuBaocao";
             // 
+            // menuKhuyenMai
+            // 
+            this.menuKhuyenMai.AppearanceItem.Normal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.menuKhuyenMai.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 9F);
+            this.menuKhuyenMai.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.menuKhuyenMai.AppearanceItem.Normal.Options.UseFont = true;
+            this.menuKhuyenMai.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            tileItemElement13.Text = "Chương trình khuyến mãi";
+            this.menuKhuyenMai.Elements.Add(tileItemElement13);
+            this.menuKhuyenMai.Id = 14;
+            this.menuKhuyenMai.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
+            this.menuKhuyenMai.Name = "menuKhuyenMai";
+            // 
             // menuHeThong
             // 
             this.menuHeThong.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
-            tileItemElement13.Text = "Hệ thống";
-            this.menuHeThong.Elements.Add(tileItemElement13);
+            tileItemElement14.Text = "Hệ thống";
+            this.menuHeThong.Elements.Add(tileItemElement14);
             this.menuHeThong.Id = 13;
             this.menuHeThong.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuHeThong.Name = "menuHeThong";

@@ -84,6 +84,7 @@
         private folderBaoCao.BaoCao baoCao1;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
+        private DevExpress.XtraBars.Navigation.TileBarItem menuKhuyenMai;
 
 #pragma warning restore CS0436 // Type conflicts with imported type
     }

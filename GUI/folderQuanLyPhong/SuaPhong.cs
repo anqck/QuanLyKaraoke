@@ -19,16 +19,22 @@ namespace GUI.folderQuanLyPhong
         PhongDTO phongDTO;
         List<LoaiPhongDTO> listLoaiPhong;
         List<TinhTrangPhongDTO> listTinhTrangPhong;
+
+        DataTable dtDatPhong;
         public SuaPhong()
         {
             InitializeComponent();
+
+
 
         }
         internal void RefreshDataBinding(int maPhong)
         {
             //lay phong truyen vao
             phongDTO = BUS.PhongBUS.LayThongTinPhong(maPhong);
-            
+
+
+            dtDatPhong = DatPhongBUS.LayTatCaCacDatPhongTrongTuongLai(phongDTO.MaPhong);
 
             //Lấy tất cả loại phòng vào cmb
             listLoaiPhong = LoaiPhongBUS.LayTatCaLoaiPhong_List();
@@ -58,7 +64,7 @@ namespace GUI.folderQuanLyPhong
             listTinhTrangPhong = PhongBUS.LayTatCaTinhTrangPhong_List();
             //combobox tinh trang phong
             cmbTinhTrangPhong.Properties.Items.Clear();
-            if (phongDTO.MaTinhTrangPhong == 1 || phongDTO.MaTinhTrangPhong == 4)
+            if (phongDTO.MaTinhTrangPhong == 1 || phongDTO.MaTinhTrangPhong == 4 ||  phongDTO.MaTinhTrangPhong == 6)
             {
                 cmbTinhTrangPhong.Enabled = false;
                 foreach (TinhTrangPhongDTO tinhtrang in listTinhTrangPhong)
@@ -75,7 +81,7 @@ namespace GUI.folderQuanLyPhong
                 cmbTinhTrangPhong.Enabled = true;
                 foreach (TinhTrangPhongDTO tinhtrang in listTinhTrangPhong)
                 {
-                    if (tinhtrang.MaTinhTrangPhong == 1|| tinhtrang.MaTinhTrangPhong == 4)
+                    if (tinhtrang.MaTinhTrangPhong == 1|| tinhtrang.MaTinhTrangPhong == 4 || tinhtrang.MaTinhTrangPhong == 6)
                         continue;
                     cmbTinhTrangPhong.Properties.Items.Add(new MyComboBoxItem(tinhtrang.TinhTrangPhong, tinhtrang.MaTinhTrangPhong));
                     if (tinhtrang.MaTinhTrangPhong == phongDTO.MaTinhTrangPhong)
@@ -135,8 +141,11 @@ namespace GUI.folderQuanLyPhong
                     if (txtTenPhong.Text == "")
                         return;
 
+                   
+
+
                     //Lưu thông tinh
-                    if (PhongBUS.CapNhatThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, (int)((GUI.MyComboBoxItem)cmbLoaiPhong.SelectedItem).Tag, cmbTang.Text, txtGhiChu.Text, (int)((GUI.MyComboBoxItem)cmbTinhTrangPhong.SelectedItem).Tag)))
+                    if (PhongBUS.CapNhatThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, (int)((GUI.MyComboBoxItem)cmbLoaiPhong.SelectedItem).Tag, cmbTang.Text, txtGhiChu.Text, (int)((GUI.MyComboBoxItem)cmbTinhTrangPhong.SelectedItem).Tag,5)))
                     {
                         //Thông báo thành công
                        
@@ -193,6 +202,40 @@ namespace GUI.folderQuanLyPhong
                 if (KiemTraHopLeCacGiaTriNhapVao())
                     wbntSuaphong.Buttons[0].Properties.Enabled = true;
             }
+        }
+
+        private void cmbTinhTrangPhong_Properties_EditValueChanging(object sender, DevExpress.XtraEditors.Controls.ChangingEventArgs e)
+        {
+            if (e.OldValue == null)
+                return;
+
+            if (e.NewValue.ToString() == "Đã xóa")
+                if (dtDatPhong.Rows.Count > 0)
+                {
+                    String chiTietDatPhong = "";
+                    foreach (DataRow row in dtDatPhong.Rows)
+                    {
+                        chiTietDatPhong += "(" + row["MaDatPhong"] + " | " + row["ThoiGianDatPhong"] + ") ";
+                    }
+                    XtraMessageBox.Show("Phòng này còn " + dtDatPhong.Rows.Count + " đặt phòng trong tương lai. Vui lòng chuyển các đặt phòng sang phòng khác trước khi chuyển sang tình trạng đã xóa. \nChi tiết đặt phòng (Mã đặt phòng| Thời gian đặt): " + chiTietDatPhong, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    e.Cancel = true;
+                    cmbTinhTrangPhong.Refresh();
+                }
+                else if (e.NewValue.ToString() == "Đã xóa")
+                {
+                    if (dtDatPhong.Rows.Count > 0)
+                    {
+                        String chiTietDatPhong = "";
+                        foreach (DataRow row in dtDatPhong.Rows)
+                        {
+                            chiTietDatPhong += "(" + row["MaDatPhong"] + " | " + row["ThoiGianDatPhong"] + ") ";
+                        }
+                        XtraMessageBox.Show("Phòng này còn " + dtDatPhong.Rows.Count + " đặt phòng trong tương lai. Vui lòng chuyển các đặt phòng sang phòng khác trước khi chuyển sang tình trạng đã xóa. \nChi tiết đặt phòng (Mã đặt phòng| Thời gian đặt): " + chiTietDatPhong, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        e.Cancel = true;
+                        cmbTinhTrangPhong.Refresh();
+                    }
+                }
+
         }
     }
 }

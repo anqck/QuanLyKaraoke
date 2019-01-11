@@ -10,9 +10,9 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 
-namespace GUI.folderQuanLyPhong
+namespace GUI.folderKhuyenMai
 {
-    public partial class QuanLyPhong : DevExpress.XtraEditors.XtraUserControl
+    public partial class QuanLyKhuyenMai : DevExpress.XtraEditors.XtraUserControl
     {
         DataTable phong;
 
@@ -21,11 +21,9 @@ namespace GUI.folderQuanLyPhong
 
         public Action goToQuanLyLoaiPhong { get; set; }
 
-        public QuanLyPhong()
+        public QuanLyKhuyenMai()
         {
             InitializeComponent();
-            themPhongMoi1.actionBack = GoToHomePage;
-            suaPhong1.actionBack = GoToHomePage;
 
             tileControl2.SelectedItem = tileAll;
         }
@@ -46,8 +44,7 @@ namespace GUI.folderQuanLyPhong
                         XtraMessageBox.Show("Cần phải thêm loại phòng trước!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-
-                    themPhongMoi1.Initialize();
+                    
                     QuanlyPagecontrol.SelectedPage = PageThemphongmoi;
                     break;
                 case "Sửa phòng":
@@ -56,9 +53,7 @@ namespace GUI.folderQuanLyPhong
                         XtraMessageBox.Show("Không có phòng nào được chọn", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         return;
                     }
-
-                    // suaKhachHang3.RefreshDataBinding((int)khachHang.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaKH"]);
-                    suaPhong1.RefreshDataBinding((int)phong.Rows[gridView1.GetFocusedDataSourceRowIndex()]["MaPhong"]);
+                    
                     QuanlyPagecontrol.SelectedPage = PageSuaphong;
                     break;
                 case "Bộ lọc":
@@ -119,7 +114,7 @@ namespace GUI.folderQuanLyPhong
                
 
                 grpLoaiPhong.Items.Clear();
-                foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable_GroupByName().Rows)
+                foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable().Rows)
                 {
                     grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
                 }

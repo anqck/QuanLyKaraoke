@@ -15,6 +15,11 @@ namespace BUS
             return DAL.LoaiPhongDAL.PhatSinhMaLoaiPhong();
         }
 
+        public static DataTable LayTatCaLoaiPhong_DataTable_GroupByName()
+        {
+            return DAL.LoaiPhongDAL.LayTatCaLoaiPhong_DataTable_GroupByName();
+        }
+
         public static DataTable LayTatCaLoaiPhong_DataTable()
         {
             return DAL.LoaiPhongDAL.LayTatCaLoaiPhong_DataTable();
@@ -44,6 +49,11 @@ namespace BUS
         public static bool XoaDonGiaPhong(int maLoaiPhong)
         {
             return DAL.LoaiPhongDAL.XoaDonGiaPhong(maLoaiPhong);
+        }
+
+        public static bool CapNhatLoaiPhong(LoaiPhongDTO loaiPhongDTO)
+        {
+            return DAL.LoaiPhongDAL.CapNhatLoaiPhong(loaiPhongDTO);
         }
     }
 }

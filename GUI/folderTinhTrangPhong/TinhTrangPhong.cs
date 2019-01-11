@@ -21,6 +21,7 @@ namespace GUI.TinhTrangPhong
         Dictionary<int, PhongDTO> listDanhSachPhongDangDat, listPhongSapDuocDat;
 
         DataTable danhSachPhong;
+        DataTable dtLoaiPhong;
         private List<int> checkedRows;
         public TinhTrangPhong()
         {
@@ -34,6 +35,9 @@ namespace GUI.TinhTrangPhong
 
             btnXemPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Xem phòng"];
             btnXemPhong.Click += OnClickBtnXemPhong;
+
+            btnDonDep = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Đã dọn dẹp"];
+            btnDonDep.Click += OnClickBtnDonDep;
 
             btnDatPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Đặt phòng"];
             btnDatPhong.Click += OnClickBtnDatPhong;
@@ -82,15 +86,45 @@ namespace GUI.TinhTrangPhong
                 tileAll.Elements[1].Text = danhSachPhong.Rows.Count.ToString();
                 tileAvailable.Elements[1].Text = PhongBUS.DemSoLuongPhong(0).ToString();
                 tileRented.Elements[1].Text = PhongBUS.DemSoLuongPhong(1).ToString();
-                tileSapDat.Elements[1].Text = PhongBUS.DemSoLuongPhong(4).ToString();
+                tileSapDat.Elements[1].Text = (PhongBUS.DemSoLuongPhong(4) + PhongBUS.DemSoLuongPhong(6)).ToString();
+                tileDonDep.Elements[1].Text = (PhongBUS.DemSoLuongPhong(5) + PhongBUS.DemSoLuongPhong(6)).ToString();
 
 
-            grpLoaiPhong.Items.Clear();
-                foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable().Rows)
+            dtLoaiPhong = BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable_GroupByName();
+
+            if(dtLoaiPhong.Rows.Count == grpLoaiPhong.Items.Count)
+            {
+                bool flagSame = true;
+                for(int i = 0; i < grpLoaiPhong.Items.Count; i ++)
                 {
+                    if(dtLoaiPhong.Rows[i]["TenLoaiPhong"].ToString() != grpLoaiPhong.Items[i].Name)
+                    {
+                        flagSame = false;
+                        break;
+                    }
+                }
+                if(!flagSame)
+                {
+                    grpLoaiPhong.Items.Clear();
+                    foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable_GroupByName().Rows)
+                    {
+                        grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
+
+                    }
+                }
+            }
+            else
+            {
+                grpLoaiPhong.Items.Clear();
+                foreach (DataRow row in BUS.LoaiPhongBUS.LayTatCaLoaiPhong_DataTable_GroupByName().Rows)
+                {                    
                     grpLoaiPhong.Items.Add(NewTileItem(row["TenLoaiPhong"].ToString()));
 
                 }
+            }
+                
+               
+
 
                 List<String> listLoaiPhongChecked = new List<string>();
                 foreach (TileItem i in grpLoaiPhong.Items)
@@ -98,7 +132,17 @@ namespace GUI.TinhTrangPhong
                     if (i.Checked)
                         listLoaiPhongChecked.Add(i.Name);
                 }
+
+            if (listLoaiPhongChecked.Count != 0)
+            {
                 strFilterLoaiPhong = BUS.TinhTrangPhongBUS.GetFilterString_LoaiPhong(listLoaiPhongChecked);
+               
+            }
+            else
+            {
+                strFilterLoaiPhong = "[TenLoaiPhong] = null";
+            }
+            //strFilterLoaiPhong = BUS.TinhTrangPhongBUS.GetFilterString_LoaiPhong(listLoaiPhongChecked);
 
                 DisplayBottomButtonWithSelectedTile();
 
@@ -172,7 +216,7 @@ namespace GUI.TinhTrangPhong
                     }
                     else
                     {
-                        tileView1.ActiveFilterEnabled = false;
+                        //tileView1.ActiveFilterEnabled = false;
                     }
                     preSelect = tileAll;
                     break;
@@ -193,7 +237,14 @@ namespace GUI.TinhTrangPhong
                 case "tileSapDat":
                     preSelect = tileSapDat;
 
-                    strFilterTinhTrangPhong = "[TinhTrangPhong] = 'Đã đặt trước'";
+                    strFilterTinhTrangPhong = "[TinhTrangPhong] = 'Đã đặt trước' or [TinhTrangPhong] = 'Chờ dọn dẹp - Đã đặt trước'";
+                    tileView1.ActiveFilterString = "(" + strFilterLoaiPhong + ") and " + strFilterTinhTrangPhong;
+
+                    break;
+                case "tileDonDep":
+                    preSelect = tileDonDep;
+
+                    strFilterTinhTrangPhong = "[TinhTrangPhong] = 'Chờ dọn dẹp' or [TinhTrangPhong] = 'Chờ dọn dẹp - Đã đặt trước'";
                     tileView1.ActiveFilterString = "(" + strFilterLoaiPhong + ") and " + strFilterTinhTrangPhong;
 
                     break;
@@ -336,7 +387,7 @@ namespace GUI.TinhTrangPhong
 
                         foreach (int idx in checkedRows)
                         {
-                            if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đã đặt trước") == 0)
+                            if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đã đặt trước") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Chờ dọn dẹp") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Chờ dọn dẹp - Đã đặt trước") == 0)
                             {
                                 btnXemPhong.Visible = false;
                                 wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
@@ -374,7 +425,7 @@ namespace GUI.TinhTrangPhong
                             tileView1.FocusedRowHandle = -1;
                             foreach (int idx in checkedRows)
                             {
-                                if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đã đặt trước") == 0)
+                                if (danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đang sử dụng") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Đã đặt trước") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Chờ dọn dẹp") == 0 || danhSachPhong.Rows[idx]["TinhTrangPhong"].ToString().CompareTo("Chờ dọn dẹp - Đã đặt trước") == 0)
                                 {
                                     btnXemPhong.Visible = false;
                                     wbntTinhtrangphong.Buttons[1].Properties.Visible = false;
@@ -442,6 +493,7 @@ namespace GUI.TinhTrangPhong
                     btnChuyenPhong.Visible = false;
                     btnThanhToan.Visible = false;
                     btnXemDatPhong.Visible = false;
+                    btnDonDep.Visible = false;
 
                     break;
                 case "Đã đặt trước":
@@ -455,6 +507,7 @@ namespace GUI.TinhTrangPhong
                     btnChuyenPhong.Visible = false;
                     btnThanhToan.Visible = false;
                     btnXemDatPhong.Visible = true;
+                    btnDonDep.Visible = false;
 
                     break;
                 case "Đang sử dụng":
@@ -468,7 +521,34 @@ namespace GUI.TinhTrangPhong
                     btnChuyenPhong.Visible = true;
                     btnThanhToan.Visible = true;
                     btnXemDatPhong.Visible = false;
+                    btnDonDep.Visible = false;
 
+                    break;
+                case "Chờ dọn dẹp":
+                    btnXemPhong.Visible = true;
+                    wbntTinhtrangphong.Buttons[1].Properties.Visible = true;
+                    btnDatPhong.Visible = true;
+
+                    btnThuePhong.Visible = false;
+
+                    wbntTinhtrangphong.Buttons[4].Properties.Visible = true;
+                    btnChuyenPhong.Visible = false;
+                    btnThanhToan.Visible = false;
+                    btnXemDatPhong.Visible = false;
+                    btnDonDep.Visible = true;
+                    break;
+                case "Chờ dọn dẹp - Đã đặt trước":
+                    btnXemPhong.Visible = true;
+                    wbntTinhtrangphong.Buttons[1].Properties.Visible = true;
+                    btnDatPhong.Visible = true;
+
+                    btnThuePhong.Visible = false;
+
+                    wbntTinhtrangphong.Buttons[4].Properties.Visible = true;
+                    btnChuyenPhong.Visible = false;
+                    btnThanhToan.Visible = false;
+                    btnXemDatPhong.Visible = true;
+                    btnDonDep.Visible = true;
                     break;
                 default:
                     break;
@@ -539,9 +619,26 @@ namespace GUI.TinhTrangPhong
 
         void OnClickBtnXemDatPhong(object sender, EventArgs e)
         {
-
-
+            
             (ParentForm as MainForm).HienThiThongTinDatPhong(DatPhongBUS.LayThongTinThuePhongCuaPhongDangDat((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), DateTime.Now));
+        }
+        void OnClickBtnDonDep(object sender, EventArgs e)
+        {
+            if (XtraMessageBox.Show("Xác nhận đã dọn dẹp phòng " + tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong") + " ?", "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                if (tileView1.GetFocusedRowCellValue(colTinhTrangPhong).ToString() == "Chờ dọn dẹp")
+                {
+                    BUS.PhongBUS.CapNhatTinhTrangPhong((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), 0);
+                    RefreshDataBinding();
+                }
+                else if (tileView1.GetFocusedRowCellValue(colTinhTrangPhong).ToString() == "Chờ dọn dẹp - Đã đặt trước")
+                {
+                    BUS.PhongBUS.CapNhatTinhTrangPhong((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), 4);
+                    RefreshDataBinding();
+                }
+
+
+            }
         }
         #endregion
 
@@ -575,7 +672,7 @@ namespace GUI.TinhTrangPhong
                     thongTinChiTietNhieuPhong1.RefreshDataBinding(listPhongDangThue[(int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong")], DisplayThanhToanPhongWithSelectedTile);
 
                 else
-                    thongTinChiTietNhieuPhong1.RefreshDataBinding(new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong")), DisplayThanhToanPhongWithSelectedTile);
+                    thongTinChiTietNhieuPhong1.RefreshDataBinding(new DTO.PhongDTO((int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "TenPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaLoaiPhong"), (string)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "Tang"), tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "GhiChu").ToString(), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "MaTinhTrangPhong"), (int)tileView1.GetRowCellValue(tileView1.GetSelectedRows()[0], "SucChua")), DisplayThanhToanPhongWithSelectedTile);
 
                 
             }
@@ -643,6 +740,12 @@ namespace GUI.TinhTrangPhong
 
             //this.TinhtrangPagecontrol.SelectedPage = PageThanhtoan;
         }
+
+        private void tileItem10_ItemClick(object sender, TileItemEventArgs e)
+        {
+
+        }
+
         public void UpdateTimeNotify()
         {
             Dictionary<int,PhongDTO> tempSapDat = BUS.ThuePhongBUS.LayCacPhongDangSapDuocDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
@@ -663,7 +766,16 @@ namespace GUI.TinhTrangPhong
                         (this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
 
                         BUS.PhongBUS.CapNhatTinhTrangPhong(phong.MaPhong, 4);
-                    }                      
+                    }            
+                    else if (phong.MaTinhTrangPhong == 5)
+                    {
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Header = "THÔNG BÁO PHÒNG SẮP ĐƯỢC ĐẶT";
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body = "Phòng " + phong.TenPhong + " được đặt trong " + ThamSoBUS.LayKhoangThoiGianChoDatPhong() + " phút nữa! Phòng vẫn đang trong trạng thái chờ dọn dẹp!";
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body2 = "";
+                        (this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
+
+                        BUS.PhongBUS.CapNhatTinhTrangPhong(phong.MaPhong, 6);
+                    }
 
 
                 }          
@@ -686,7 +798,16 @@ namespace GUI.TinhTrangPhong
 
                             BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 0);
                         }
-                           
+                       else if (PhongBUS.LayThongTinPhong(chiTiet.MaPhong).MaTinhTrangPhong == 6)
+                        {
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Header = "THÔNG BÁO PHÒNG ĐƯỢC ĐẶT QUÁ THỜI GIAN CHỜ";
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body = "Phòng " + BUS.PhongBUS.LayThongTinPhong(chiTiet.MaPhong).TenPhong + " được đặt quá thời gian chờ nên sẽ chuyển về trạng thái trống và đặt phòng được tự động hủy. ";
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body2 = "";
+                            (this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
+
+                            BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 5);
+                        }
+
 
                     }
                     DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTiet.MaDatPhong);

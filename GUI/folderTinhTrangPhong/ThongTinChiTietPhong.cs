@@ -33,7 +33,8 @@ namespace GUI.folderTinhTrangPhong
             thuePhong = null;
 
             schedulerControl1.GoToToday();
-
+            
+            
         }
 
   
@@ -43,9 +44,9 @@ namespace GUI.folderTinhTrangPhong
             gridControl1.DataSource = dichVuPhong;
 
             if (gridView1.RowCount == 0)
-                wbntQuanlyphong.Buttons[1].Properties.Visible = false;
+                wbntQuanlyphong.Buttons["Xóa Dịch Vụ"].Properties.Visible = false;
             else
-                wbntQuanlyphong.Buttons[1].Properties.Visible = true;
+                wbntQuanlyphong.Buttons["Xóa Dịch Vụ"].Properties.Visible = true;
         }
         public void RefreshDataBinding(PhongDTO phongDTO, ThuePhongDTO thuePhongDTO = null)
         {
@@ -97,7 +98,10 @@ namespace GUI.folderTinhTrangPhong
                 else //Phòng đã được trả
                 {
                     txtSoGio.EditValue = ToCustomString((thuePhong.GioTraPhong - thuePhong.GioThuePhong));
+                    wbntQuanlyphong.Buttons["Chuyển Phòng"].Properties.Visible = false;
+                    wbntQuanlyphong.Buttons["Trả Phòng"].Properties.Visible = false;
                 }
+
 
                 RefreshDataBindingDichVuPhong();
             }          

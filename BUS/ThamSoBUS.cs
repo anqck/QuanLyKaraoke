@@ -24,6 +24,17 @@ namespace BUS
             return DAL.ThamSoDAL.LayKhoangThoiGianChoDatPhong();
         }
 
+        public static bool LayChuyenSangChoDonDepSauKhiThanhToan()
+        {
+            return DAL.ThamSoDAL.LayChuyenSangChoDonDepSauKhiThanhToan();
+
+        }
+
+        public static void SetKChuyenSangChoDonDepSauKhiThanhToan(bool b)
+        {
+            DAL.ThamSoDAL.SetKChuyenSangChoDonDepSauKhiThanhToan(b);
+
+        }
 
         public static void SetTyLeQuyDoiDiemTien(double i)
         {

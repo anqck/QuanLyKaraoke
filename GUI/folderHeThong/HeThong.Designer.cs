@@ -38,20 +38,22 @@
             this.txtNgayLe = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtNgayVao = new DevExpress.XtraEditors.SpinEdit();
             this.spinEdit1 = new DevExpress.XtraEditors.SpinEdit();
+            this.txtNgayVao1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.cbChoDonDep = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ngayLe1 = new GUI.folderHeThong.NgayLe();
-            this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.txtNgayVao1 = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
@@ -61,19 +63,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayLe.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).BeginInit();
             this.navigationFrame1.SuspendLayout();
             this.navigationPage1.SuspendLayout();
             this.navigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbChoDonDep.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             this.SuspendLayout();
             // 
             // layoutControl2
@@ -135,11 +139,12 @@
             this.layoutControl1.Controls.Add(this.txtNgayVao);
             this.layoutControl1.Controls.Add(this.spinEdit1);
             this.layoutControl1.Controls.Add(this.txtNgayVao1);
+            this.layoutControl1.Controls.Add(this.cbChoDonDep);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.layoutControl1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.Location = new System.Drawing.Point(0, 87);
             this.layoutControl1.Name = "layoutControl1";
-            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(707, 357, 812, 500);
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(707, 360, 812, 500);
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.BackColor = System.Drawing.Color.LightGray;
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControl1.OptionsPrint.AppearanceGroupCaption.Options.UseBackColor = true;
@@ -166,7 +171,7 @@
             0,
             0,
             0});
-            this.txtTienTraTruoc.Location = new System.Drawing.Point(498, 139);
+            this.txtTienTraTruoc.Location = new System.Drawing.Point(532, 179);
             this.txtTienTraTruoc.Name = "txtTienTraTruoc";
             this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
@@ -184,7 +189,7 @@
             0});
             this.txtTienTraTruoc.Properties.Mask.EditMask = "1,000 VNĐ = ###,##0.00 Điểm";
             this.txtTienTraTruoc.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtTienTraTruoc.Size = new System.Drawing.Size(538, 34);
+            this.txtTienTraTruoc.Size = new System.Drawing.Size(504, 34);
             this.txtTienTraTruoc.StyleController = this.layoutControl1;
             this.txtTienTraTruoc.TabIndex = 14;
             this.txtTienTraTruoc.EditValueChanged += new System.EventHandler(this.txtTienTraTruoc_EditValueChanged);
@@ -201,7 +206,7 @@
             // 
             // txtNgayLe
             // 
-            this.txtNgayLe.Location = new System.Drawing.Point(498, 16);
+            this.txtNgayLe.Location = new System.Drawing.Point(532, 16);
             this.txtNgayLe.Name = "txtNgayLe";
             this.txtNgayLe.Properties.Appearance.Options.UseTextOptions = true;
             this.txtNgayLe.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -213,7 +218,7 @@
             this.txtNgayLe.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtNgayLe.Properties.NullText = "Danh sách ngày lễ";
             this.txtNgayLe.Properties.PopupSizeable = true;
-            this.txtNgayLe.Size = new System.Drawing.Size(387, 34);
+            this.txtNgayLe.Size = new System.Drawing.Size(353, 34);
             this.txtNgayLe.StyleController = this.layoutControl1;
             this.txtNgayLe.TabIndex = 7;
             this.txtNgayLe.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtNgayLe_CustomDisplayText);
@@ -225,7 +230,7 @@
             0,
             0,
             0});
-            this.txtNgayVao.Location = new System.Drawing.Point(498, 59);
+            this.txtNgayVao.Location = new System.Drawing.Point(532, 99);
             this.txtNgayVao.Name = "txtNgayVao";
             this.txtNgayVao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -237,7 +242,7 @@
             this.txtNgayVao.Properties.Mask.EditMask = "##0 phút";
             this.txtNgayVao.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtNgayVao.Properties.EditValueChanged += new System.EventHandler(this.txtNgayVao_Properties_EditValueChanged);
-            this.txtNgayVao.Size = new System.Drawing.Size(538, 34);
+            this.txtNgayVao.Size = new System.Drawing.Size(504, 34);
             this.txtNgayVao.StyleController = this.layoutControl1;
             this.txtNgayVao.TabIndex = 7;
             // 
@@ -248,7 +253,7 @@
             0,
             0,
             0});
-            this.spinEdit1.Location = new System.Drawing.Point(498, 99);
+            this.spinEdit1.Location = new System.Drawing.Point(532, 139);
             this.spinEdit1.Name = "spinEdit1";
             this.spinEdit1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinEdit1.Properties.Appearance.Options.UseFont = true;
@@ -267,9 +272,28 @@
             this.spinEdit1.Properties.Mask.EditMask = "##0 phút";
             this.spinEdit1.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.spinEdit1.Properties.EditValueChanged += new System.EventHandler(this.spinEdit1_Properties_EditValueChanged);
-            this.spinEdit1.Size = new System.Drawing.Size(538, 34);
+            this.spinEdit1.Size = new System.Drawing.Size(504, 34);
             this.spinEdit1.StyleController = this.layoutControl1;
             this.spinEdit1.TabIndex = 14;
+            // 
+            // txtNgayVao1
+            // 
+            this.txtNgayVao1.EditValue = "";
+            this.txtNgayVao1.Location = new System.Drawing.Point(532, 219);
+            this.txtNgayVao1.Name = "txtNgayVao1";
+            this.txtNgayVao1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.txtNgayVao1.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
+            this.txtNgayVao1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.txtNgayVao1.Properties.EditFormat.FormatString = "##0 phút";
+            this.txtNgayVao1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtNgayVao1.Properties.Items.AddRange(new object[] {
+            "Không",
+            "Năm trăm đồng",
+            "Hàng nghìn"});
+            this.txtNgayVao1.Size = new System.Drawing.Size(504, 34);
+            this.txtNgayVao1.StyleController = this.layoutControl1;
+            this.txtNgayVao1.TabIndex = 7;
             // 
             // layoutControlGroup1
             // 
@@ -282,43 +306,20 @@
             this.layoutControlItem5,
             this.layoutControlItem2,
             this.layoutControlItem4,
-            this.layoutControlItem6});
+            this.layoutControlItem6,
+            this.layoutControlItem7});
             this.layoutControlGroup1.Name = "Root";
             this.layoutControlGroup1.OptionsItemText.TextToControlDistance = 4;
             this.layoutControlGroup1.Padding = new DevExpress.XtraLayout.Utils.Padding(30, 30, 13, 13);
             this.layoutControlGroup1.Size = new System.Drawing.Size(1069, 446);
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // layoutControlItem4
-            // 
-            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem4.Control = this.txtNgayVao;
-            this.layoutControlItem4.Location = new System.Drawing.Point(0, 43);
-            this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(1009, 40);
-            this.layoutControlItem4.Text = "Khoảng thời gian tối thiểu giữa hay lần đặt đang chờ";
-            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(461, 28);
-            // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
-            this.layoutControlItem2.Control = this.txtTienTraTruoc;
-            this.layoutControlItem2.Location = new System.Drawing.Point(0, 123);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(1009, 40);
-            this.layoutControlItem2.Text = "Tỷ lệ quy đổi điểm khách hàng";
-            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(461, 28);
-            // 
             // emptySpaceItem1
             // 
             this.emptySpaceItem1.AllowHotTrack = false;
-            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 203);
+            this.emptySpaceItem1.Location = new System.Drawing.Point(0, 243);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(1009, 217);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(1009, 177);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
             // layoutControlItem1
@@ -333,7 +334,7 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(865, 43);
             this.layoutControlItem1.Text = "Ngày lễ";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(461, 28);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(495, 28);
             // 
             // layoutControlItem3
             // 
@@ -350,12 +351,47 @@
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem5.Control = this.spinEdit1;
             this.layoutControlItem5.CustomizationFormText = "Tỷ lệ quy đổi điểm khách hàng";
-            this.layoutControlItem5.Location = new System.Drawing.Point(0, 83);
+            this.layoutControlItem5.Location = new System.Drawing.Point(0, 123);
             this.layoutControlItem5.Name = "layoutControlItem5";
             this.layoutControlItem5.Size = new System.Drawing.Size(1009, 40);
             this.layoutControlItem5.Text = "Thời gian thông báo phòng đặt";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(461, 28);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(495, 28);
+            // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem2.Control = this.txtTienTraTruoc;
+            this.layoutControlItem2.Location = new System.Drawing.Point(0, 163);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(1009, 40);
+            this.layoutControlItem2.Text = "Tỷ lệ quy đổi điểm khách hàng";
+            this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(495, 28);
+            // 
+            // layoutControlItem4
+            // 
+            this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.Control = this.txtNgayVao;
+            this.layoutControlItem4.Location = new System.Drawing.Point(0, 83);
+            this.layoutControlItem4.Name = "layoutControlItem4";
+            this.layoutControlItem4.Size = new System.Drawing.Size(1009, 40);
+            this.layoutControlItem4.Text = "Khoảng thời gian tối thiểu giữa hay lần đặt đang chờ";
+            this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(495, 28);
+            // 
+            // layoutControlItem6
+            // 
+            this.layoutControlItem6.Control = this.txtNgayVao1;
+            this.layoutControlItem6.CustomizationFormText = "Làm tròn số tiền hát";
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 203);
+            this.layoutControlItem6.Name = "layoutControlItem6";
+            this.layoutControlItem6.Size = new System.Drawing.Size(1009, 40);
+            this.layoutControlItem6.Text = "Làm tròn số tiền hát";
+            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(495, 17);
             // 
             // navigationFrame1
             // 
@@ -400,6 +436,40 @@
             this.navigationPage2.Name = "navigationPage2";
             this.navigationPage2.Size = new System.Drawing.Size(1069, 594);
             // 
+            // cbChoDonDep
+            // 
+            this.cbChoDonDep.EditValue = "";
+            this.cbChoDonDep.Location = new System.Drawing.Point(532, 59);
+            this.cbChoDonDep.Name = "cbChoDonDep";
+            this.cbChoDonDep.Properties.Appearance.Options.UseTextOptions = true;
+            this.cbChoDonDep.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
+            this.cbChoDonDep.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbChoDonDep.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
+            this.cbChoDonDep.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.cbChoDonDep.Properties.EditFormat.FormatString = "##0 phút";
+            this.cbChoDonDep.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.cbChoDonDep.Properties.Items.AddRange(new object[] {
+            "Có",
+            "Không"});
+            this.cbChoDonDep.Size = new System.Drawing.Size(504, 34);
+            this.cbChoDonDep.StyleController = this.layoutControl1;
+            this.cbChoDonDep.TabIndex = 7;
+            this.cbChoDonDep.SelectedIndexChanged += new System.EventHandler(this.cbChoDonDep_SelectedIndexChanged);
+            // 
+            // layoutControlItem7
+            // 
+            this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.Control = this.cbChoDonDep;
+            this.layoutControlItem7.CustomizationFormText = "Chuyển sang trạng thái \'Chờ dọn dẹp\' sau khi thanh toán";
+            this.layoutControlItem7.Location = new System.Drawing.Point(0, 43);
+            this.layoutControlItem7.Name = "layoutControlItem7";
+            this.layoutControlItem7.Size = new System.Drawing.Size(1009, 40);
+            this.layoutControlItem7.Text = "Chuyển sang trạng thái \'Chờ dọn dẹp\' sau khi thanh toán";
+            this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(495, 28);
+            // 
             // ngayLe1
             // 
             this.ngayLe1.actionBack = null;
@@ -408,36 +478,6 @@
             this.ngayLe1.Name = "ngayLe1";
             this.ngayLe1.Size = new System.Drawing.Size(1069, 594);
             this.ngayLe1.TabIndex = 0;
-            // 
-            // layoutControlItem6
-            // 
-            this.layoutControlItem6.Control = this.txtNgayVao1;
-            this.layoutControlItem6.CustomizationFormText = "Làm tròn số tiền hát";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 163);
-            this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(1009, 40);
-            this.layoutControlItem6.Text = "Làm tròn số tiền hát";
-            this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(461, 17);
-            // 
-            // txtNgayVao1
-            // 
-            this.txtNgayVao1.EditValue = "";
-            this.txtNgayVao1.Location = new System.Drawing.Point(498, 179);
-            this.txtNgayVao1.Name = "txtNgayVao1";
-            this.txtNgayVao1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtNgayVao1.Properties.DisplayFormat.FormatString = "dd/MM/yyyy hh:mm:ss tt";
-            this.txtNgayVao1.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
-            this.txtNgayVao1.Properties.EditFormat.FormatString = "##0 phút";
-            this.txtNgayVao1.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtNgayVao1.Properties.Items.AddRange(new object[] {
-            "Không",
-            "Năm trăm đồng",
-            "Hàng nghìn"});
-            this.txtNgayVao1.Size = new System.Drawing.Size(538, 34);
-            this.txtNgayVao1.StyleController = this.layoutControl1;
-            this.txtNgayVao1.TabIndex = 7;
             // 
             // HeThong
             // 
@@ -457,19 +497,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayLe.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spinEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationFrame1)).EndInit();
             this.navigationFrame1.ResumeLayout(false);
             this.navigationPage1.ResumeLayout(false);
             this.navigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayVao1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbChoDonDep.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -499,5 +541,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
         private DevExpress.XtraEditors.ComboBoxEdit txtNgayVao1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
+        private DevExpress.XtraEditors.ComboBoxEdit cbChoDonDep;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
     }
 }
