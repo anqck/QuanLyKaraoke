@@ -302,7 +302,6 @@ namespace GUI
             this.MenuBar.MinimumSize = new System.Drawing.Size(117, 0);
             this.MenuBar.Name = "MenuBar";
             this.MenuBar.Padding = new System.Windows.Forms.Padding(30, 10, 0, 0);
-            this.MenuBar.Position = 16;
             this.MenuBar.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.None;
             this.MenuBar.SelectedItem = this.menuTinhtrangphong;
             this.MenuBar.SelectionBorderWidth = 2;
@@ -648,6 +647,7 @@ namespace GUI
             this.menuKhuyenMai.Id = 14;
             this.menuKhuyenMai.ItemSize = DevExpress.XtraBars.Navigation.TileBarItemSize.Wide;
             this.menuKhuyenMai.Name = "menuKhuyenMai";
+            this.menuKhuyenMai.Visible = false;
             // 
             // menuHeThong
             // 
