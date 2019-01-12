@@ -150,6 +150,10 @@ namespace GUI.folderTinhTrangPhong
             switch (XtraDialog.Show(args))
             {
                 case DialogResult.OK:
+                    
+                    dataSource_KhachHang = KhachHangBUS.LayTatCaKhachHang_LoaiKhachHang();
+                    txtKhachHang.Properties.DataSource = dataSource_KhachHang;
+
                     khachHang = chonKhachHang.LayKhachHangDaChon();
                     txtKhachHang.EditValue = khachHang.MaKH;
 
@@ -263,7 +267,7 @@ namespace GUI.folderTinhTrangPhong
                 selectedPhong.Remove((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]);
             else if (e.Action == CollectionChangeAction.Add)
             {
-                if (e.ControllerRow == -1)
+                if (e.ControllerRow < 0)
                     return;
                 if (!selectedPhong.Keys.Contains((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]))
                     selectedPhong.Add((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], new PhongDTO((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], dtPhong.Rows[e.ControllerRow]["TenPhong"].ToString(), (int)dtPhong.Rows[e.ControllerRow]["MaLP"]));

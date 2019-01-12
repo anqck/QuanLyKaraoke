@@ -180,7 +180,7 @@
             this.colTenPhong.Caption = "Tên Phòng";
             this.colTenPhong.FieldName = "TenPhong";
             this.colTenPhong.Name = "colTenPhong";
-            this.colTenPhong.SortMode = DevExpress.XtraGrid.ColumnSortMode.Value;
+            this.colTenPhong.SortMode = DevExpress.XtraGrid.ColumnSortMode.DisplayText;
             this.colTenPhong.Visible = true;
             this.colTenPhong.VisibleIndex = 1;
             // 
@@ -533,7 +533,8 @@
             this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
             this.tileView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTang, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTenPhong, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colTenPhong, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSucChua, DevExpress.Data.ColumnSortOrder.Ascending)});
             tableColumnDefinition1.Length.Value = 29D;
             tableColumnDefinition2.Length.Value = 130D;
             tableColumnDefinition3.Length.Value = 160D;

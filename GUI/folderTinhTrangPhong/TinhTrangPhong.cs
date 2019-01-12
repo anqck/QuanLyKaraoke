@@ -749,7 +749,8 @@ namespace GUI.TinhTrangPhong
         public void UpdateTimeNotify()
         {
             Dictionary<int,PhongDTO> tempSapDat = BUS.ThuePhongBUS.LayCacPhongDangSapDuocDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
-            Dictionary<int, DatPhongDTO> tempDatPhongHetHanDat = BUS.DatPhongBUS.LayCacDatPhongDangHetHanDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
+            //Dictionary<int, PhongDTO> tempSapDat = BUS.ThuePhongBUS.LayCacPhongDangSapDuocDat(-5);
+            Dictionary<int, DatPhongDTO> tempDatPhongHetHanDat = BUS.DatPhongBUS.LayCacDatPhongDangHetHanDat(ThamSoBUS.LayKhoangThoiGianTuDongHuyDatPhong());
 
             if (listDanhSachPhongDangDat == null)
                 return;

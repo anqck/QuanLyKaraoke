@@ -27,6 +27,12 @@ namespace DAL
 
         }
 
+        public static int LayKhoangThoiGianTuDongHuyDatPhong()
+        {
+            return int.Parse(DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.thamso WHERE MaThamSo = '4';").Rows[0]["GiaTri"].ToString());
+
+        }
+
 
         public static bool LayChuyenSangChoDonDepSauKhiThanhToan()
         {
@@ -43,6 +49,12 @@ namespace DAL
         public static void SetKhoangThoiGianToiThieuGiuaHaiLanThue(int i)
         {
             DataProvider.ExecuseNonQuery("UPDATE quanlykaraoke.thamso SET GiaTri = '" + i + "' WHERE MaThamSo = '1';");
+
+        }
+
+        public static void SetKhoangThoiGianTuDongHuyDatPhong(int i)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE quanlykaraoke.thamso SET GiaTri = '" + i + "' WHERE MaThamSo = '4';");
 
         }
 

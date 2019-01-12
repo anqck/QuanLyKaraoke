@@ -70,6 +70,7 @@
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.thongTinChiTietDatNhieuPhong1 = new GUI.folderDatPhong.ThongTinChiTietDatNhieuPhong();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewThongTinChiTietDatPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDatPhong)).BeginInit();
@@ -132,10 +133,10 @@
             gridLevelNode1.RelationName = "ThongTinChiTietDatPhong";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(3, 98);
+            this.gridControl1.Location = new System.Drawing.Point(3, 106);
             this.gridControl1.MainView = this.gridViewDatPhong;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1388, 570);
+            this.gridControl1.Size = new System.Drawing.Size(1388, 562);
             this.gridControl1.TabIndex = 11;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDatPhong,
@@ -151,10 +152,13 @@
             this.colTenKH,
             this.colTenNhanVien,
             this.colGhiCh,
-            this.colTinhTrangDatPhong});
+            this.colTinhTrangDatPhong,
+            this.colSDT});
             this.gridViewDatPhong.GridControl = this.gridControl1;
             this.gridViewDatPhong.GroupCount = 1;
             this.gridViewDatPhong.GroupRowHeight = 40;
+            this.gridViewDatPhong.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "MaDatPhong", null, "Số lương = ##0")});
             this.gridViewDatPhong.Name = "gridViewDatPhong";
             this.gridViewDatPhong.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridViewDatPhong.OptionsView.ShowGroupPanel = false;
@@ -209,7 +213,7 @@
             this.colSoTienTraTruoc.FieldName = "SoTienDatTruoc";
             this.colSoTienTraTruoc.Name = "colSoTienTraTruoc";
             this.colSoTienTraTruoc.Visible = true;
-            this.colSoTienTraTruoc.VisibleIndex = 2;
+            this.colSoTienTraTruoc.VisibleIndex = 4;
             // 
             // colTenKH
             // 
@@ -223,7 +227,7 @@
             this.colTenKH.FieldName = "TenKH";
             this.colTenKH.Name = "colTenKH";
             this.colTenKH.Visible = true;
-            this.colTenKH.VisibleIndex = 3;
+            this.colTenKH.VisibleIndex = 2;
             // 
             // colTenNhanVien
             // 
@@ -237,7 +241,7 @@
             this.colTenNhanVien.FieldName = "TenNhanVien";
             this.colTenNhanVien.Name = "colTenNhanVien";
             this.colTenNhanVien.Visible = true;
-            this.colTenNhanVien.VisibleIndex = 4;
+            this.colTenNhanVien.VisibleIndex = 6;
             // 
             // colGhiCh
             // 
@@ -309,7 +313,7 @@
             // 
             this.schedulerControl1.DataStorage = this.schedulerStorage1;
             this.schedulerControl1.GroupType = DevExpress.XtraScheduler.SchedulerGroupType.Resource;
-            this.schedulerControl1.Location = new System.Drawing.Point(8, 98);
+            this.schedulerControl1.Location = new System.Drawing.Point(8, 106);
             this.schedulerControl1.Name = "schedulerControl1";
             this.schedulerControl1.OptionsCustomization.AllowAppointmentCopy = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.schedulerControl1.OptionsCustomization.AllowAppointmentCreate = DevExpress.XtraScheduler.UsedAppointmentType.None;
@@ -319,7 +323,7 @@
             this.schedulerControl1.OptionsCustomization.AllowAppointmentEdit = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.schedulerControl1.OptionsCustomization.AllowAppointmentMultiSelect = false;
             this.schedulerControl1.OptionsCustomization.AllowAppointmentResize = DevExpress.XtraScheduler.UsedAppointmentType.None;
-            this.schedulerControl1.Size = new System.Drawing.Size(1383, 570);
+            this.schedulerControl1.Size = new System.Drawing.Size(1383, 562);
             this.schedulerControl1.Start = new System.DateTime(2018, 6, 5, 0, 0, 0, 0);
             this.schedulerControl1.TabIndex = 11;
             this.schedulerControl1.Text = "schedulerControl1";
@@ -375,7 +379,7 @@
             // simpleLabelItem1
             // 
             this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 37.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLabelItem1.AppearanceItemCaption.FontSizeDelta = 3;
             this.simpleLabelItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Gray;
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
@@ -383,17 +387,17 @@
             this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 0, 8, 10);
-            this.simpleLabelItem1.Size = new System.Drawing.Size(1394, 95);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(1394, 103);
             this.simpleLabelItem1.Text = "ĐẶT PHÒNG";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(324, 77);
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(352, 85);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.schedulerControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 95);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 103);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(111, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1394, 576);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1394, 568);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 16);
@@ -464,7 +468,7 @@
             // simpleLabelItem2
             // 
             this.simpleLabelItem2.AllowHotTrack = false;
-            this.simpleLabelItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 37.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLabelItem2.AppearanceItemCaption.FontSizeDelta = 3;
             this.simpleLabelItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Gray;
             this.simpleLabelItem2.AppearanceItemCaption.Options.UseFont = true;
@@ -472,16 +476,16 @@
             this.simpleLabelItem2.Location = new System.Drawing.Point(0, 0);
             this.simpleLabelItem2.Name = "simpleLabelItem1";
             this.simpleLabelItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 0, 8, 10);
-            this.simpleLabelItem2.Size = new System.Drawing.Size(1394, 95);
+            this.simpleLabelItem2.Size = new System.Drawing.Size(1394, 103);
             this.simpleLabelItem2.Text = "ĐẶT PHÒNG";
-            this.simpleLabelItem2.TextSize = new System.Drawing.Size(324, 77);
+            this.simpleLabelItem2.TextSize = new System.Drawing.Size(352, 85);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.gridControl1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 95);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 103);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1394, 576);
+            this.layoutControlItem8.Size = new System.Drawing.Size(1394, 568);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -508,6 +512,20 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(1394, 41);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // colSDT
+            // 
+            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceCell.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colSDT.AppearanceHeader.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Options.UseForeColor = true;
+            this.colSDT.Caption = "Số Điện Thoại";
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 3;
             // 
             // QuanLyDatPhong
             // 
@@ -609,5 +627,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
         private ThongTinChiTietDatNhieuPhong thongTinChiTietDatNhieuPhong1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSDT;
     }
 }

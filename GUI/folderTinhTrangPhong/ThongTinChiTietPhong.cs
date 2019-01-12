@@ -72,6 +72,15 @@ namespace GUI.folderTinhTrangPhong
             {
                 DisplayControlForRented(true);
 
+                if (HoaDonBUS.LayThongTinHoaDon(thuePhongDTO.MaHoaDon).MaDatPhong == -1)
+                {
+                    wbntQuanlyphong.Buttons[7].Properties.Visible = false;
+                    wbntQuanlyphong.Buttons["Thông tin đặt phòng"].Properties.Visible = false;
+                }
+                    
+                else
+                    wbntQuanlyphong.Buttons["Thông tin đặt phòng"].Properties.Visible = true;
+
                 thuePhong = thuePhongDTO;
                 hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhong.MaHoaDon);
                 khachHang = BUS.KhachHangBUS.LayKhachHang(hoaDon.MaKH);
@@ -244,6 +253,11 @@ namespace GUI.folderTinhTrangPhong
                 case "Thanh Toán":
                     goToThanhToan(thuePhong);
                     break;
+                case "Thông tin đặt phòng":
+                    (this.ParentForm as MainForm).HienThiThongTinDatPhong(HoaDonBUS.LayThongTinHoaDon(thuePhong.MaHoaDon).MaDatPhong);
+                    break;
+                   
+
                 case "Thuê Thêm Phòng":
                     FlyoutDialog.Show(this.FindForm(), new ThemPhongVaoHoaDon(hoaDon, OnThueThemPhongSuccess));
                     break;

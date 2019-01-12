@@ -27,7 +27,7 @@ namespace DAL
 
         public static DataTable LayTatCaDatPhong_TinhTrangPhong_KhachHang_NhanVien_DataTable()
         {
-            return DataProvider.ExecuseQuery("SELECT MaDatPhong, ThoiGianDatPhong, datphong.SoTienDatTruoc,khachhang.TenKH,TenNhanVien,GhiChu,TinhTrangDatPhong FROM datphong, tinhtrangdatphong, khachhang, nhanvien WHERE datphong.MaTinhTrangDatPhong = tinhtrangdatphong.MaTinhTrangDatPhong AND datphong.MaNhanVien = nhanvien.MaNhanVien AND datphong.MaKH = khachhang.MaKH  ;");
+            return DataProvider.ExecuseQuery("SELECT MaDatPhong, ThoiGianDatPhong, datphong.SoTienDatTruoc,khachhang.TenKH,khachhang.SDT,TenNhanVien,GhiChu,TinhTrangDatPhong FROM datphong, tinhtrangdatphong, khachhang, nhanvien WHERE datphong.MaTinhTrangDatPhong = tinhtrangdatphong.MaTinhTrangDatPhong AND datphong.MaNhanVien = nhanvien.MaNhanVien AND datphong.MaKH = khachhang.MaKH  ;");
 
         }
 
