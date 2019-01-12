@@ -241,6 +241,9 @@ namespace GUI.folderDatPhong
                     (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
                     break;
 
+                    case "In phiếu đặt":
+                    break;
+
             }
         }
         private void Args_Showing(object sender, XtraMessageShowingArgs e)
