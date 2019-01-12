@@ -266,6 +266,12 @@
     <Compile Include="folderKhachHang\ThemLoaiKhachHang.Designer.cs">
       <DependentUpon>ThemLoaiKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderKhuyenMai\QuanLyKhuyenMai.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderKhuyenMai\QuanLyKhuyenMai.Designer.cs">
+      <DependentUpon>QuanLyKhuyenMai.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderNhanVien\NhanVien.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -522,6 +528,10 @@
       <DependentUpon>ThemLoaiKhachHang.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="folderKhuyenMai\QuanLyKhuyenMai.resx">
+      <DependentUpon>QuanLyKhuyenMai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="folderNhanVien\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -660,6 +670,7 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

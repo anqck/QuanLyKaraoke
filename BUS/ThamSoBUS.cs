@@ -24,6 +24,22 @@ namespace BUS
             return DAL.ThamSoDAL.LayKhoangThoiGianChoDatPhong();
         }
 
+        public static int LayKhoangThoiGianTuDongHuyDatPhong()
+        {
+            return DAL.ThamSoDAL.LayKhoangThoiGianTuDongHuyDatPhong();
+        }
+
+        public static bool LayChuyenSangChoDonDepSauKhiThanhToan()
+        {
+            return DAL.ThamSoDAL.LayChuyenSangChoDonDepSauKhiThanhToan();
+
+        }
+
+        public static void SetKChuyenSangChoDonDepSauKhiThanhToan(bool b)
+        {
+            DAL.ThamSoDAL.SetKChuyenSangChoDonDepSauKhiThanhToan(b);
+
+        }
 
         public static void SetTyLeQuyDoiDiemTien(double i)
         {
@@ -31,6 +47,10 @@ namespace BUS
 
         }
 
+        public static void SetKhoangThoiGianTuDongHuyDatPhong(int i)
+        {
+            DAL.ThamSoDAL.SetKhoangThoiGianTuDongHuyDatPhong(i);
+        }
         public static void SetKhoangThoiGianToiThieuGiuaHaiLanThue(int i)
         {
             DAL.ThamSoDAL.SetKhoangThoiGianToiThieuGiuaHaiLanThue(i);
@@ -40,6 +60,25 @@ namespace BUS
         public static void SetKhoangThoiGianChoDatPhong(int i)
         {
             DAL.ThamSoDAL.SetKhoangThoiGianChoDatPhong(i);
+
+        }
+
+        //static double Round(double value, int digits)
+        //{
+        //    if (digits >= 0) return Math.Round(value, digits);
+
+        //    double n = Math.Pow(10, -digits);
+        //    return Math.Round(value / n, 0) * n;
+        //}
+        static long RoundingTo(long myNum, long roundTo)
+        {
+            if (roundTo <= 0) return myNum;
+            return (myNum + roundTo / 2) / roundTo * roundTo;
+        }
+
+        public static double GetSoTienLamTron(double soTien)
+        {
+            return RoundingTo(Convert.ToInt64(soTien), 500);
 
         }
     }

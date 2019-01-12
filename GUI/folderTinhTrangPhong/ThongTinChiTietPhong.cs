@@ -33,7 +33,8 @@ namespace GUI.folderTinhTrangPhong
             thuePhong = null;
 
             schedulerControl1.GoToToday();
-
+            
+            
         }
 
   
@@ -43,9 +44,9 @@ namespace GUI.folderTinhTrangPhong
             gridControl1.DataSource = dichVuPhong;
 
             if (gridView1.RowCount == 0)
-                wbntQuanlyphong.Buttons[1].Properties.Visible = false;
+                wbntQuanlyphong.Buttons["Xóa Dịch Vụ"].Properties.Visible = false;
             else
-                wbntQuanlyphong.Buttons[1].Properties.Visible = true;
+                wbntQuanlyphong.Buttons["Xóa Dịch Vụ"].Properties.Visible = true;
         }
         public void RefreshDataBinding(PhongDTO phongDTO, ThuePhongDTO thuePhongDTO = null)
         {
@@ -70,6 +71,15 @@ namespace GUI.folderTinhTrangPhong
             else
             {
                 DisplayControlForRented(true);
+
+                if (HoaDonBUS.LayThongTinHoaDon(thuePhongDTO.MaHoaDon).MaDatPhong == -1)
+                {
+                    wbntQuanlyphong.Buttons[7].Properties.Visible = false;
+                    wbntQuanlyphong.Buttons["Thông tin đặt phòng"].Properties.Visible = false;
+                }
+                    
+                else
+                    wbntQuanlyphong.Buttons["Thông tin đặt phòng"].Properties.Visible = true;
 
                 thuePhong = thuePhongDTO;
                 hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhong.MaHoaDon);
@@ -97,7 +107,10 @@ namespace GUI.folderTinhTrangPhong
                 else //Phòng đã được trả
                 {
                     txtSoGio.EditValue = ToCustomString((thuePhong.GioTraPhong - thuePhong.GioThuePhong));
+                    wbntQuanlyphong.Buttons["Chuyển Phòng"].Properties.Visible = false;
+                    wbntQuanlyphong.Buttons["Trả Phòng"].Properties.Visible = false;
                 }
+
 
                 RefreshDataBindingDichVuPhong();
             }          
@@ -240,6 +253,11 @@ namespace GUI.folderTinhTrangPhong
                 case "Thanh Toán":
                     goToThanhToan(thuePhong);
                     break;
+                case "Thông tin đặt phòng":
+                    (this.ParentForm as MainForm).HienThiThongTinDatPhong(HoaDonBUS.LayThongTinHoaDon(thuePhong.MaHoaDon).MaDatPhong);
+                    break;
+                   
+
                 case "Thuê Thêm Phòng":
                     FlyoutDialog.Show(this.FindForm(), new ThemPhongVaoHoaDon(hoaDon, OnThueThemPhongSuccess));
                     break;

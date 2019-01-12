@@ -89,6 +89,10 @@ namespace BUS
         {
             return DAL.DatPhongDAL.LayThongTinThuePhongCuaPhongDangDat(maPhong, now);
         }
-        
+        public static DataTable LayTatCaCacDatPhongTrongTuongLai(int maPhong)
+        {
+            return DAL.DatPhongDAL.LayTatCaCacDatPhongTrongTuongLai(maPhong);
+        }
+
     }
 }

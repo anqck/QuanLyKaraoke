@@ -77,9 +77,14 @@ namespace DAL
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang, nhanvien WHERE hoadon.MaKH = khachhang.MaKH AND hoadon.MaNhanVienThanhToan = nhanvien.MaNhanVien AND TongTienThanhToan IS NOT NULL AND MONTH(NgayThanhToan) = '" + dateTime.Month + "' AND YEAR(NgayThanhToan) = '" + dateTime.Year + "' ;");
         }
 
-        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan(int nam)
+        public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan_TheoNam(DateTime dateTime)
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT month(NgayThanhToan) as Thang, count(TongTienThanhToan) as TongSoHoaDon, Max(TongTienThanhToan) as HoaDonDacNhat,sum(SoTienKhuyenMai)as TongTienKhuyenMai, sum(TongTienThanhToan) as TongTienThanhToan FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL and year(NgayThanhToan) = "+ nam+" group by month(NgayThanhToan)");
+            return DAL.DataProvider.ExecuseQuery("SELECT MaHoaDon,TongTienThanhToan,NgayThanhToan,khachhang.MaKH,TenKH,nhanvien.TenNhanVien,SoTienKhuyenMai, convert(month(NgayThanhToan),decimal) as Month FROM hoadon, khachhang, nhanvien WHERE hoadon.MaKH = khachhang.MaKH AND hoadon.MaNhanVienThanhToan = nhanvien.MaNhanVien AND TongTienThanhToan IS NOT NULL AND YEAR(NgayThanhToan) = '" + dateTime.Year + "' ;");
+        }
+
+        public static DataTable LayDoanhThuTheoNam(int nam)
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT convert(month(NgayThanhToan),decimal) as Thang, count(TongTienThanhToan) as TongSoHoaDon, Max(TongTienThanhToan) as HoaDonDacNhat,sum(SoTienKhuyenMai)as TongTienKhuyenMai, sum(TongTienThanhToan) as TongTienThanhToan FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL and year(NgayThanhToan) = " + nam+" group by month(NgayThanhToan)");
         }
 
         public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan()

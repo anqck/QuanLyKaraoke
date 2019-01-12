@@ -16,9 +16,14 @@ namespace DAL
             return Convert.ToInt32(DataProvider.ExecuseQuery("SELECT Count(*) + 1 FROM quanlykaraoke.loaiphong;").Rows[0][0]);
         }
 
+        public static DataTable LayTatCaLoaiPhong_DataTable_GroupByName()
+        {
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong GROUP BY TenLoaiPhong;");
+        }
+
         public static DataTable LayTatCaLoaiPhong_DataTable()
         {
-            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong;");
+            return DAL.DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.loaiphong ;");
         }
 
         public static List<LoaiPhongDTO> LayTatCaLoaiPhong_List()
@@ -51,6 +56,13 @@ namespace DAL
                 return false;
             }
         }
+
+        public static bool CapNhatLoaiPhong(LoaiPhongDTO loaiPhongDTO)
+        {
+            DAL.DataProvider.ExecuseNonQuery("UPDATE loaiphong SET TenLoaiPhong = '"+loaiPhongDTO.TenLoaiPhong+"' WHERE MaLP = '"+loaiPhongDTO.MaLoaiPhong+"';");
+            return true;
+        }
+
         public static bool ThemLoaiPhong(int maLoaiPhong, string strTenLoaiPhong)
         {
             DAL.DataProvider.ExecuseNonQuery("INSERT INTO loaiphong(MaLP,TenLoaiPhong) VALUES ('"+maLoaiPhong.ToString()+"','"+ strTenLoaiPhong + "');");

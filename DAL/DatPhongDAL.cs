@@ -27,7 +27,7 @@ namespace DAL
 
         public static DataTable LayTatCaDatPhong_TinhTrangPhong_KhachHang_NhanVien_DataTable()
         {
-            return DataProvider.ExecuseQuery("SELECT MaDatPhong, ThoiGianDatPhong, datphong.SoTienDatTruoc,khachhang.TenKH,TenNhanVien,GhiChu,TinhTrangDatPhong FROM datphong, tinhtrangdatphong, khachhang, nhanvien WHERE datphong.MaTinhTrangDatPhong = tinhtrangdatphong.MaTinhTrangDatPhong AND datphong.MaNhanVien = nhanvien.MaNhanVien AND datphong.MaKH = khachhang.MaKH  ;");
+            return DataProvider.ExecuseQuery("SELECT MaDatPhong, ThoiGianDatPhong, datphong.SoTienDatTruoc,khachhang.TenKH,khachhang.SDT,TenNhanVien,GhiChu,TinhTrangDatPhong FROM datphong, tinhtrangdatphong, khachhang, nhanvien WHERE datphong.MaTinhTrangDatPhong = tinhtrangdatphong.MaTinhTrangDatPhong AND datphong.MaNhanVien = nhanvien.MaNhanVien AND datphong.MaKH = khachhang.MaKH  ;");
 
         }
 
@@ -65,6 +65,13 @@ namespace DAL
             DataProvider.ExecuseNonQuery(stringBuilder.ToString());
             return true;
         }
+
+        public static DataTable LayTatCaCacDatPhongTrongTuongLai(int maPhong)
+        {
+            return DataProvider.ExecuseQuery("SELECT datphong.MaDatPhong, datphong.ThoiGianDatPhong, datphong.MaTinhTrangDatPhong FROM quanlykaraoke.datphong, quanlykaraoke.chitietdatphong WHERE quanlykaraoke.datphong.MaDatPhong = quanlykaraoke.chitietdatphong.MaDatPhong AND quanlykaraoke.datphong.ThoiGianDatPhong > now() AND datphong.MaTinhTrangDatPhong = '1' AND MaPhong = '" + maPhong+"';");
+
+        }
+
         public static DataTable LayTatCaDatPhong_ChiTietDatPhong_DataTable()
         {
             return DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong;");   

@@ -16,7 +16,7 @@ namespace BUSTest
         {
             DAL.DataProvider.InitalizeConnection();
 
-            PhongDTO phongDto = new PhongDTO(PhongBUS.PhatSinhMaPhong(), "abc", 1,"Tầng 1","",1);
+            PhongDTO phongDto = new PhongDTO(PhongBUS.PhatSinhMaPhong(), "abc", 1,"Tầng 1","",1,15);
             PhongBUS.LuuThongTinPhong(phongDto);
 
 

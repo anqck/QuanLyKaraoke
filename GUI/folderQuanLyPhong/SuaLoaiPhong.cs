@@ -135,6 +135,8 @@ namespace GUI.folderQuanLyPhong
                         txtTenLoaiPhong.ErrorText = "Tên loại phòng không được để trống";
                         return;
                     }
+                    if (txtTenLoaiPhong.Text != loaiPhong.TenLoaiPhong)
+                        LoaiPhongBUS.CapNhatLoaiPhong(new LoaiPhongDTO(loaiPhong.MaLoaiPhong, txtTenLoaiPhong.Text));
 
                     DonGia_LoaiPhongBUS.XoaCacDonGiaPhong(loaiPhong);
 
@@ -192,7 +194,7 @@ namespace GUI.folderQuanLyPhong
                     goToHomeLoaiPhong();
                     break;
                 case "Hủy":
-                    if (XtraMessageBox.Show("Bạn có muốn thoát khỏi thêm phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+                    if (XtraMessageBox.Show("Bạn có muốn thoát khỏi sửa loại phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                         goToHomeLoaiPhong();
                     break;
 
@@ -202,7 +204,7 @@ namespace GUI.folderQuanLyPhong
 
         private void wbntBack_themloaiphong_Click(object sender, EventArgs e)
         {
-            if (XtraMessageBox.Show("Bạn có muốn thoát khỏi thêm phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
+            if (XtraMessageBox.Show("Bạn có muốn thoát khỏi sửa loại phòng (Mọi thông tin chưa được lưu sẽ mất) ?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 goToHomeLoaiPhong();
         }
     }

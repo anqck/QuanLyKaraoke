@@ -31,11 +31,11 @@ namespace GUI.folderBaoCao
         }
         public void RefreshDataBinding()
         {
-            dtHoaDon = HoaDonBUS.LayTatCaCacHoaDon_KhachHang_DaThanhToan(datepickerNam.DateTime.Year);
+            dtHoaDon = HoaDonBUS.LayDoanhThuTheoNam(datepickerNam.DateTime.Year);
             dtHoaDon.TableName = "hoadon";
 
 
-            dtChiTietHoaDon = HoaDonBUS.LayTatCaDichVu_Phong_DichVuPhong();
+            dtChiTietHoaDon = HoaDonBUS.LayTatCaCacHoaDon_KhachHang_DaThanhToan_TheoNam(datepickerNam.DateTime);
             dtChiTietHoaDon.TableName = "chitiethoadon";
 
             dsHoaDon = new DataSet();
@@ -43,7 +43,7 @@ namespace GUI.folderBaoCao
             dsHoaDon.Tables.Add(dtChiTietHoaDon);
 
 
-            //dsHoaDon.Relations.Add("Thông tin chi tiết hóa đơn", dsHoaDon.Tables["hoadon"].Columns["MaHoaDon"], dsHoaDon.Tables["chitiethoadon"].Columns["MaHoaDon"]);
+            dsHoaDon.Relations.Add("Thông tin chi tiết ", dsHoaDon.Tables["hoadon"].Columns["Thang"], dsHoaDon.Tables["chitiethoadon"].Columns["Month"]);
 
             GridControlHoaDon.DataSource = dsHoaDon.Tables["hoadon"];
             // GridControlHoaDon.LevelTree.Nodes.Add("Thông tin chi tiết hóa đơn", gridViewChiTietHoaDon);

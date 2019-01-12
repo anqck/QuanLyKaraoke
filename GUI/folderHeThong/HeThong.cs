@@ -31,13 +31,24 @@ namespace GUI.folderHeThong
             foreach (NgayLeDTO ngayLe in listNgayLe)
             {
 
-                txtNgayLe.Properties.Items.Add(new MyComboBoxItem(ngayLe.NgayLe.ToString("dd/MM/yyyy"), ngayLe.MaNgayLe));
+                txtNgayLe.Properties.Items.Add(new MyComboBoxItem(ngayLe.NgayLe.ToString("dd - MM"), ngayLe.MaNgayLe));
              
             }
 
-            spinEdit1.EditValue = ThamSoBUS.LayKhoangThoiGianChoDatPhong();
+            spinThongBaoDatPhong.EditValue = ThamSoBUS.LayKhoangThoiGianChoDatPhong();
+
+            spinHuyDatPhong.EditValue = ThamSoBUS.LayKhoangThoiGianTuDongHuyDatPhong();
+            spinHuyDatPhong.Properties.MaxValue = Convert.ToDecimal(spinThongBaoDatPhong.EditValue);
+
             txtNgayVao.EditValue = ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue();
             txtTienTraTruoc.EditValue = ThamSoBUS.QuyDoiDiem(1);
+
+            if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                cbChoDonDep.SelectedIndex = 0;
+            else
+                cbChoDonDep.SelectedIndex = 1;
+
+            ThamSoBUS.GetSoTienLamTron(521234);
         }
 
         internal void GoToPage_WithoutAnimation(int v)
@@ -66,7 +77,7 @@ namespace GUI.folderHeThong
         private void txtNgayVao_Properties_EditValueChanged(object sender, EventArgs e)
         {
             ThamSoBUS.SetKhoangThoiGianToiThieuGiuaHaiLanThue(Convert.ToInt32(txtNgayVao.EditValue));
-            spinEdit1.Properties.MaxValue = Convert.ToDecimal(txtNgayVao.EditValue);
+            spinHuyDatPhong.Properties.MaxValue = Convert.ToDecimal(txtNgayVao.EditValue);
         }
 
         private void txtTienTraTruoc_EditValueChanged(object sender, EventArgs e)
@@ -85,9 +96,22 @@ namespace GUI.folderHeThong
             }
         }
 
-        private void spinEdit1_Properties_EditValueChanged(object sender, EventArgs e)
+        private void spinThongBaoDatPhong_Properties_EditValueChanged(object sender, EventArgs e)
         {
-            ThamSoBUS.SetKhoangThoiGianChoDatPhong(Convert.ToInt32(spinEdit1.EditValue));
+            ThamSoBUS.SetKhoangThoiGianChoDatPhong(Convert.ToInt32(spinHuyDatPhong.EditValue));
+        }
+
+        private void spinHuyDatPhong_Properties_EditValueChanged(object sender, EventArgs e)
+        {
+            ThamSoBUS.SetKhoangThoiGianTuDongHuyDatPhong(Convert.ToInt32(spinThongBaoDatPhong.EditValue));
+        }
+
+        private void cbChoDonDep_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbChoDonDep.SelectedIndex == 0)
+                ThamSoBUS.SetKChuyenSangChoDonDepSauKhiThanhToan(true);
+            else if (cbChoDonDep.SelectedIndex == 1)
+                ThamSoBUS.SetKChuyenSangChoDonDepSauKhiThanhToan(false);
         }
     }
 }

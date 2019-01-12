@@ -1,6 +1,6 @@
-﻿namespace GUI.folderQuanLyPhong
+﻿namespace GUI.folderKhuyenMai
 {
-    partial class QuanLyPhong
+    partial class QuanLyKhuyenMai
     {
         /// <summary> 
         /// Required designer variable.
@@ -45,7 +45,7 @@
             this.grpLoaiPhong = new DevExpress.XtraEditors.TileGroup();
             this.gridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaKhuyenMai = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,10 +53,7 @@
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.PageThemphongmoi = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.themPhongMoi1 = new GUI.folderQuanLyPhong.ThemPhongMoi();
             this.PageSuaphong = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.suaPhong1 = new GUI.folderQuanLyPhong.SuaPhong();
-            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
             colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.QuanlyPagecontrol)).BeginInit();
             this.QuanlyPagecontrol.SuspendLayout();
@@ -65,8 +62,6 @@
             this.splitContainerControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.PageThemphongmoi.SuspendLayout();
-            this.PageSuaphong.SuspendLayout();
             this.SuspendLayout();
             // 
             // colLoaiPhong
@@ -75,7 +70,7 @@
             colLoaiPhong.FieldName = "TenLoaiPhong";
             colLoaiPhong.Name = "colLoaiPhong";
             colLoaiPhong.Visible = true;
-            colLoaiPhong.VisibleIndex = 5;
+            colLoaiPhong.VisibleIndex = 4;
             colLoaiPhong.Width = 190;
             // 
             // QuanlyPagecontrol
@@ -244,9 +239,8 @@
             this.gridView1.Appearance.Row.Options.UseFont = true;
             this.gridView1.ColumnPanelRowHeight = 50;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMaPhong,
+            this.colMaKhuyenMai,
             this.colTenPhong,
-            this.colSucChua,
             this.colTang,
             this.colTinhTrangPhong,
             colLoaiPhong,
@@ -265,17 +259,17 @@
             this.gridView1.RowHeight = 40;
             this.gridView1.ColumnFilterChanged += new System.EventHandler(this.gridView1_ColumnFilterChanged);
             // 
-            // colMaPhong
+            // colMaKhuyenMai
             // 
-            this.colMaPhong.AppearanceCell.Options.UseTextOptions = true;
-            this.colMaPhong.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colMaPhong.Caption = "Mã Phòng";
-            this.colMaPhong.FieldName = "MaPhong";
-            this.colMaPhong.MaxWidth = 110;
-            this.colMaPhong.Name = "colMaPhong";
-            this.colMaPhong.Visible = true;
-            this.colMaPhong.VisibleIndex = 0;
-            this.colMaPhong.Width = 110;
+            this.colMaKhuyenMai.AppearanceCell.Options.UseTextOptions = true;
+            this.colMaKhuyenMai.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colMaKhuyenMai.Caption = "Mã Phòng";
+            this.colMaKhuyenMai.FieldName = "MaKhuyenMai";
+            this.colMaKhuyenMai.MaxWidth = 110;
+            this.colMaKhuyenMai.Name = "colMaKhuyenMai";
+            this.colMaKhuyenMai.Visible = true;
+            this.colMaKhuyenMai.VisibleIndex = 0;
+            this.colMaKhuyenMai.Width = 110;
             // 
             // colTenPhong
             // 
@@ -292,7 +286,7 @@
             this.colTang.FieldName = "Tang";
             this.colTang.Name = "colTang";
             this.colTang.Visible = true;
-            this.colTang.VisibleIndex = 3;
+            this.colTang.VisibleIndex = 2;
             // 
             // colTinhTrangPhong
             // 
@@ -300,7 +294,7 @@
             this.colTinhTrangPhong.FieldName = "TinhTrangPhong";
             this.colTinhTrangPhong.Name = "colTinhTrangPhong";
             this.colTinhTrangPhong.Visible = true;
-            this.colTinhTrangPhong.VisibleIndex = 4;
+            this.colTinhTrangPhong.VisibleIndex = 3;
             this.colTinhTrangPhong.Width = 177;
             // 
             // colGhiChu
@@ -309,7 +303,7 @@
             this.colGhiChu.FieldName = "GhiChu";
             this.colGhiChu.Name = "colGhiChu";
             this.colGhiChu.Visible = true;
-            this.colGhiChu.VisibleIndex = 6;
+            this.colGhiChu.VisibleIndex = 5;
             this.colGhiChu.Width = 277;
             // 
             // labelTitle
@@ -350,49 +344,21 @@
             // PageThemphongmoi
             // 
             this.PageThemphongmoi.Caption = "PageThemphongmoi";
-            this.PageThemphongmoi.Controls.Add(this.themPhongMoi1);
             this.PageThemphongmoi.Name = "PageThemphongmoi";
             this.PageThemphongmoi.Size = new System.Drawing.Size(1280, 820);
-            // 
-            // themPhongMoi1
-            // 
-            this.themPhongMoi1.actionBack = null;
-            this.themPhongMoi1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.themPhongMoi1.Location = new System.Drawing.Point(0, 0);
-            this.themPhongMoi1.Name = "themPhongMoi1";
-            this.themPhongMoi1.Size = new System.Drawing.Size(1280, 820);
-            this.themPhongMoi1.TabIndex = 5;
             // 
             // PageSuaphong
             // 
             this.PageSuaphong.Caption = "PageSuaphong";
-            this.PageSuaphong.Controls.Add(this.suaPhong1);
             this.PageSuaphong.Name = "PageSuaphong";
             this.PageSuaphong.Size = new System.Drawing.Size(1280, 820);
             // 
-            // suaPhong1
-            // 
-            this.suaPhong1.actionBack = null;
-            this.suaPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.suaPhong1.Location = new System.Drawing.Point(0, 0);
-            this.suaPhong1.Name = "suaPhong1";
-            this.suaPhong1.Size = new System.Drawing.Size(1280, 820);
-            this.suaPhong1.TabIndex = 5;
-            // 
-            // colSucChua
-            // 
-            this.colSucChua.Caption = "Sức Chứa";
-            this.colSucChua.FieldName = "SucChua";
-            this.colSucChua.Name = "colSucChua";
-            this.colSucChua.Visible = true;
-            this.colSucChua.VisibleIndex = 2;
-            // 
-            // QuanLyPhong
+            // QuanLyKhuyenMai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.QuanlyPagecontrol);
-            this.Name = "QuanLyPhong";
+            this.Name = "QuanLyKhuyenMai";
             this.Size = new System.Drawing.Size(1280, 820);
             ((System.ComponentModel.ISupportInitialize)(this.QuanlyPagecontrol)).EndInit();
             this.QuanlyPagecontrol.ResumeLayout(false);
@@ -402,8 +368,6 @@
             this.splitContainerControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.PageThemphongmoi.ResumeLayout(false);
-            this.PageSuaphong.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -417,9 +381,9 @@
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntQuanlyphong;
         private DevExpress.XtraBars.Navigation.NavigationPage PageThemphongmoi;
-        private ThemPhongMoi themPhongMoi1;
+
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMaPhong;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaKhuyenMai;
         private DevExpress.XtraGrid.Columns.GridColumn colTenPhong;
         private DevExpress.XtraGrid.Columns.GridColumn colTinhTrangPhong;
         private DevExpress.XtraGrid.Columns.GridColumn colGhiChu;
@@ -427,10 +391,9 @@
         private DevExpress.XtraEditors.TileGroup grpMacDinh;
         private DevExpress.XtraEditors.TileGroup grpLoaiPhong;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSuaphong;
-        private SuaPhong suaPhong1;
+
         private DevExpress.XtraGrid.Columns.GridColumn colTang;
         private DevExpress.XtraEditors.TileItem tileAll;
         private DevExpress.XtraEditors.TileItem tileFilter;
-        private DevExpress.XtraGrid.Columns.GridColumn colSucChua;
     }
 }

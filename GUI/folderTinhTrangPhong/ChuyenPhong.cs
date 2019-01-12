@@ -150,6 +150,10 @@ namespace GUI.folderTinhTrangPhong
                         {
                             PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 0);
                         }
+                        else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 6)
+                        {
+                            PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 5);
+                        }
                         ChiTietDatPhongBUS.CapNhatThongTinDatPhong(new ChiTietDatPhongDTO(chiTietDatPhong.MaChiTietDatPhong, (int)txtMaPhong.EditValue,chiTietDatPhong.MaDatPhong));
                        
                     }

@@ -29,7 +29,6 @@ namespace GUI
         public FilterControlDialog(GridControl source,string ActiveFilterString) :this()
         {
             
-
             filterEditorControl1.SourceControl = source;
             filterEditorControl1.FilterString = ActiveFilterString;
 
