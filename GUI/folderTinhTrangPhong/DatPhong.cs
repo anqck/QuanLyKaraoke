@@ -51,7 +51,8 @@ namespace GUI.folderTinhTrangPhong
             dataSource_KhachHang.Rows.RemoveAt(0);
 
             txtKhachHang.Properties.DataSource = dataSource_KhachHang;
-            khachHang = KhachHangBUS.LayTatCaKhachHang()[0];
+
+            khachHang = KhachHangBUS.LayTatCaKhachHang()[1];
             txtKhachHang.EditValue = 1;
 
 
