@@ -175,28 +175,30 @@ namespace GUI.folderDatPhong
                         return;
                     }
 
+
+                    Dictionary<int, DatPhongDTO> tempSapDat_1 = BUS.DatPhongBUS.LayCacDatPhongDangSapDuocDatVaDangDuocDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
                     //Hủy đặt phòng
                     if (DatPhongBUS.DemSoLuongChiTietDatPhong(chiTietDatPhong.MaDatPhong) == 1)
                     {
-                        DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTietDatPhong.MaDatPhong);
-
                         foreach (ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
                         {
-                            if(PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4)
+                            if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4 && tempSapDat_1.ContainsKey(dp.MaDatPhong))
                                 PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
-                            else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6)
+                            else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6 && tempSapDat_1.ContainsKey(dp.MaDatPhong))
                                 PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 5);
                         }
-                    (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
-                        return;
+
+                        DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTietDatPhong.MaDatPhong);
+                        (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
+                        break;
                     }
 
                     //Hủy phòng
-                    if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 4)
+                    if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 4 && tempSapDat_1.ContainsKey(chiTietDatPhong.MaDatPhong))
                     {
                         PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 0);
                     }
-                    else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 6)
+                    else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 6 && tempSapDat_1.ContainsKey(chiTietDatPhong.MaDatPhong))
                         PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 5);
 
 
@@ -229,15 +231,19 @@ namespace GUI.folderDatPhong
 
                     //BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 0);
 
-                    DatPhongBUS.CapNhatTinhTrangDatPhong(3,chiTietDatPhong.MaDatPhong);
+                    
 
-                    foreach(ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
+                    Dictionary<int, DatPhongDTO> tempSapDat = BUS.DatPhongBUS.LayCacDatPhongDangSapDuocDatVaDangDuocDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
+
+                    foreach (ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
                     {
-                        if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4)
+                        if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4 && tempSapDat.ContainsKey(dp.MaDatPhong))
                             PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
-                        else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6)
+                        else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6 && tempSapDat.ContainsKey(dp.MaDatPhong))
                             PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 5);
                     }
+
+                    DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTietDatPhong.MaDatPhong);
                     (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
                     break;
 

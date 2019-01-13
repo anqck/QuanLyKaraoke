@@ -45,7 +45,7 @@ namespace DAL
         {
             Dictionary<int, PhongDTO> res = new Dictionary<int, PhongDTO>();
 
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE MaTinhTrangDatPhong = '1' AND datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong BETWEEN '"+DateTime.Now.AddHours(-ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue()).ToString("yyyy-MM-dd HH:mm:ss.fff")+ "' AND '" + DateTime.Now.AddMinutes(khoangThoiGian ).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE MaTinhTrangDatPhong = '1' AND datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong BETWEEN '"+DateTime.Now.AddMinutes(-ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue()).ToString("yyyy-MM-dd HH:mm:ss.fff")+ "' AND '" + DateTime.Now.AddMinutes(khoangThoiGian ).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
             foreach (DataRow row in dt.Rows)
             {
                 PhongDTO phongDTO = PhongDAL.LayThongTinPhong((int)row["MaPhong"]);
@@ -55,6 +55,9 @@ namespace DAL
 
             return res;
         }
+
+       
+
         public static Dictionary<int, PhongDTO> LayCacPhongDangHetHanDat(int khoangThoiGian)
         {
             Dictionary<int, PhongDTO> res = new Dictionary<int, PhongDTO>();
@@ -69,6 +72,8 @@ namespace DAL
 
             return res;
         }
+
+
 
         public static bool XoaCacDichVuPhong(ThuePhongDTO thuePhongDTO)
         {
@@ -85,6 +90,7 @@ namespace DAL
                 foreach (DataRow row in dt.Rows)
                 {
                     ThuePhongDTO thuePhongDTO = new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()), (row["GioTraPhong"].ToString()=="") ?(DateTime.MinValue):DateTime.Parse(row["GioTraPhong"].ToString()),(int)row["MaHoaDon"], (dt.Rows[0]["TienGio"].ToString() == "") ? (Double.NaN) : ((double)dt.Rows[0]["TienGio"]));
+
 
                     res.Add(thuePhongDTO.MaPhong,thuePhongDTO);
                 }

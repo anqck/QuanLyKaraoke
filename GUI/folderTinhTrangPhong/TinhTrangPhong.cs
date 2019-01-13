@@ -19,6 +19,8 @@ namespace GUI.TinhTrangPhong
     {
         Dictionary<int,ThuePhongDTO> listPhongDangThue;
         Dictionary<int, PhongDTO> listDanhSachPhongDangDat, listPhongSapDuocDat;
+        Dictionary<int, ChiTietDatPhongDTO> listChiTietDatPhong;
+        Dictionary<int, DateTime> listThoiGianDat; //MaDatPhong , ThoiGian
 
         DataTable danhSachPhong;
         DataTable dtLoaiPhong;
@@ -149,7 +151,13 @@ namespace GUI.TinhTrangPhong
                 listPhongSapDuocDat = new Dictionary<int, PhongDTO>();
                 listDanhSachPhongDangDat = PhongBUS.LayCacPhongDangDuocDat();
 
-          
+                listThoiGianDat = new Dictionary<int, DateTime>();
+            foreach(PhongDTO phong in listDanhSachPhongDangDat.Values)
+            {
+                listThoiGianDat.Add(phong.MaPhong, DatPhongBUS.LayThongTinThuePhongCuaPhongDangDat(phong.MaPhong, DateTime.Now).ThoiGianDatPhong);
+            }
+
+
         }
 
         internal void GoToPage(int v)
@@ -347,6 +355,34 @@ namespace GUI.TinhTrangPhong
 
                 if (e.IsSetData) ;
             }
+            if (e.Column.FieldName == "colThoiGianDat")
+            {
+                if (e.IsGetData)
+
+                    if (listThoiGianDat.ContainsKey((int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]) && ((int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaTinhTrangPhong"] == 4 || (int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaTinhTrangPhong"] == 6 || (int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaTinhTrangPhong"] == 7))
+                    {
+                        if(DateTime.Now > listThoiGianDat[(int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]])
+                        {
+                            e.Value = ToCustomString((DateTime.Now - listThoiGianDat[(int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]]));
+                           
+                            //this.tileView1.TileTemplate[11].Appearance.Normal.ForeColor = Color.Blue;
+                        }
+                        else
+                        {
+                            e.Value = ToCustomString((listThoiGianDat[(int)((DataView)tileView1.DataSource)[e.ListSourceRowIndex]["MaPhong"]] - DateTime.Now));
+                            //this.tileView1.TileTemplate[11].Appearance.Normal.ForeColor = Color.Red;
+                        }
+                         
+
+                        //this.tileView1.TileTemplate[11];
+                            
+                    }
+                    else
+                        e.Value = "";
+
+                if (e.IsSetData) ;
+            }
+
             else if (e.Column.FieldName == "TinhTrangPhong")
             {
                 if (e.IsGetData)
@@ -397,6 +433,8 @@ namespace GUI.TinhTrangPhong
                                 wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
                                 btnChuyenPhong.Visible = false;
                                 btnThanhToan.Visible = false;
+
+                                btnDonDep.Visible = false;
                                 break;
                             }             
                             else
@@ -410,6 +448,7 @@ namespace GUI.TinhTrangPhong
                                 wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
                                 btnChuyenPhong.Visible = false;
                                 btnThanhToan.Visible = false;
+                                btnDonDep.Visible = false;
 
                             }
                         }
@@ -435,6 +474,7 @@ namespace GUI.TinhTrangPhong
                                     wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
                                     btnChuyenPhong.Visible = false;
                                     btnThanhToan.Visible = false;
+                                    btnDonDep.Visible = false;
                                     break;
                                 }
                                 else
@@ -448,6 +488,7 @@ namespace GUI.TinhTrangPhong
                                     wbntTinhtrangphong.Buttons[4].Properties.Visible = false;
                                     btnChuyenPhong.Visible = false;
                                     btnThanhToan.Visible = false;
+                                    btnDonDep.Visible = false;
 
                                 }
                             }
@@ -595,6 +636,8 @@ namespace GUI.TinhTrangPhong
         void OnClickBtnDatPhong(object sender, EventArgs e)
         {
             FlyoutDialog.Show(this.FindForm(), new DatPhong(OnDatPhongSuccess));
+
+
         }
         void OnClickBtnChuyenPhong(object sender, EventArgs e)
         {
@@ -656,6 +699,8 @@ namespace GUI.TinhTrangPhong
             RefreshDataBinding();
 
             UpdateTimeNotify();
+
+            (ParentForm as MainForm).HienThiThongTinDatPhong(thuePhong);
         }
 
         #endregion
@@ -746,6 +791,36 @@ namespace GUI.TinhTrangPhong
 
         }
 
+        private void tileView1_ItemCustomize(object sender, DevExpress.XtraGrid.Views.Tile.TileViewItemCustomizeEventArgs e)
+        {
+          
+            //    if(e.Item["TinhTrangPhong"].ToString() == "Đã đặt trước")
+            //{
+                if (listThoiGianDat.ContainsKey((int)tileView1.GetRowCellValue(e.RowHandle, colMaPhong)) && ((int)tileView1.GetRowCellValue(e.RowHandle, colMaTinhTrangPhong) == 4 || (int)tileView1.GetRowCellValue(e.RowHandle, colMaTinhTrangPhong) == 6 || (int)tileView1.GetRowCellValue(e.RowHandle, colMaTinhTrangPhong) == 7))
+                {
+                  
+
+                if (DateTime.Now > listThoiGianDat[(int)tileView1.GetRowCellValue(e.RowHandle, colMaPhong) ])
+                    {
+                            e.Item["colThoiGianDat"].Appearance.Normal.ForeColor = Color.Red;
+                     }
+                    else
+
+                {
+                    e.Item["colThoiGianDat"].Appearance.Normal.ForeColor = Color.Blue;
+                }
+
+                }
+                       
+            
+            //    else
+            //{
+
+            //}
+                    
+            
+        }
+
         public void UpdateTimeNotify()
         {
             Dictionary<int,PhongDTO> tempSapDat = BUS.ThuePhongBUS.LayCacPhongDangSapDuocDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
@@ -755,10 +830,21 @@ namespace GUI.TinhTrangPhong
             if (listDanhSachPhongDangDat == null)
                 return;
 
+
+
             foreach(PhongDTO phong in tempSapDat.Values)
             {
                 if (!listDanhSachPhongDangDat.ContainsKey(phong.MaPhong))
                 {
+                    if(!listThoiGianDat.ContainsKey(phong.MaPhong))
+                    {
+                        listThoiGianDat.Add(phong.MaPhong, DatPhongBUS.LayThongTinThuePhongCuaPhongDangDat(phong.MaPhong,DateTime.Now).ThoiGianDatPhong);
+                    }
+                    else
+                    {
+
+                    }
+
                     if(phong.MaTinhTrangPhong == 0)
                     {
                         (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Header = "THÔNG BÁO PHÒNG SẮP ĐƯỢC ĐẶT";
@@ -788,6 +874,11 @@ namespace GUI.TinhTrangPhong
             {
                 foreach(ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
                 {
+                    if (listThoiGianDat.ContainsKey(chiTiet.MaPhong))
+                    {
+                        listThoiGianDat.Remove(chiTiet.MaPhong);
+                    }
+
                     if (listDanhSachPhongDangDat.ContainsKey(chiTiet.MaPhong))
                     {
                        if(PhongBUS.LayThongTinPhong(chiTiet.MaPhong).MaTinhTrangPhong == 4)

@@ -53,11 +53,11 @@ namespace BUS
         }
         public static void UpdateKhachHang(int maDatPhong, int maKH)
         {
-             DAL.DatPhongDAL.UpdateKhachHang(maDatPhong, maKH);
+            DAL.DatPhongDAL.UpdateKhachHang(maDatPhong, maKH);
         }
         public static List<ChiTietDatPhongDTO> LayTatCaCacChiTietDatPhong(int maDatPhong)
         {
-            return DAL.DatPhongDAL.LayTatCaCacChiTietDatPhong( maDatPhong);
+            return DAL.DatPhongDAL.LayTatCaCacChiTietDatPhong(maDatPhong);
         }
 
         public static void XoaCacDichVuDatPhong(ChiTietDatPhongDTO chiTietDatPhong)
@@ -76,14 +76,14 @@ namespace BUS
         {
             return DAL.DatPhongDAL.XoaDatPhong(maDatPhong);
         }
-        public static void CapNhatTinhTrangDatPhong(int value,int MaDatPhong)
+        public static void CapNhatTinhTrangDatPhong(int value, int MaDatPhong)
         {
             DAL.DatPhongDAL.CapNhatTinhTrangDatPhong(value, MaDatPhong);
         }
         public static Dictionary<int, DatPhongDTO> LayCacDatPhongDangHetHanDat(int khoangThoiGian)
         {
             return DAL.DatPhongDAL.LayCacDatPhongDangHetHanDat(khoangThoiGian);
-          
+
         }
         public static DatPhongDTO LayThongTinThuePhongCuaPhongDangDat(int maPhong, DateTime now)
         {
@@ -94,5 +94,16 @@ namespace BUS
             return DAL.DatPhongDAL.LayTatCaCacDatPhongTrongTuongLai(maPhong);
         }
 
+        public static Dictionary<int, DatPhongDTO> LayCacDatPhongDangSapDuocDatVaDangDuocDat(int khoangThoiGian)
+        {
+            return DAL.DatPhongDAL.LayCacDatPhongDangSapDuocDatVaDangDuocDat(khoangThoiGian);
+
+        }
+
+        public static Dictionary<int, ChiTietDatPhongDTO> LayCacChiTietDatPhongDangSapDuocDatVaDangDuocDat(int khoangThoiGian)
+        {
+            return DAL.DatPhongDAL.LayCacChiTietDatPhongDangSapDuocDatVaDangDuocDat(khoangThoiGian);
+
+        }
     }
 }

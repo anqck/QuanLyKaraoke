@@ -95,6 +95,7 @@
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement20 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement21 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement22 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
+            DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement23 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
@@ -117,6 +118,7 @@
             this.colThoiGianThue = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colGrpImg = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.colSucChua = new DevExpress.XtraGrid.Columns.TileViewColumn();
+            this.colThoiGianDat = new DevExpress.XtraGrid.Columns.TileViewColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.tileControl1 = new DevExpress.XtraEditors.TileControl();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -230,6 +232,15 @@
             this.colSucChua.Name = "colSucChua";
             this.colSucChua.Visible = true;
             this.colSucChua.VisibleIndex = 8;
+            // 
+            // colThoiGianDat
+            // 
+            this.colThoiGianDat.Caption = "Thời Gian Đặt";
+            this.colThoiGianDat.FieldName = "colThoiGianDat";
+            this.colThoiGianDat.Name = "colThoiGianDat";
+            this.colThoiGianDat.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.colThoiGianDat.Visible = true;
+            this.colThoiGianDat.VisibleIndex = 9;
             // 
             // labelTitle
             // 
@@ -521,7 +532,8 @@
             this.colThoiGianThue,
             this.colMaTinhTrangPhong,
             this.colGrpImg,
-            this.colSucChua});
+            this.colSucChua,
+            this.colThoiGianDat});
             this.tileView1.ColumnSet.GroupColumn = this.colTang;
             this.tileView1.FocusBorderColor = System.Drawing.Color.White;
             this.tileView1.GridControl = this.gridControl;
@@ -835,6 +847,15 @@
             tileViewItemElement22.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement22.Text = "Sức chứa: ";
             tileViewItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
+            tileViewItemElement23.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            tileViewItemElement23.Appearance.Normal.Options.UseFont = true;
+            tileViewItemElement23.Column = this.colThoiGianDat;
+            tileViewItemElement23.ColumnIndex = 1;
+            tileViewItemElement23.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement23.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement23.RowIndex = 4;
+            tileViewItemElement23.Text = "colThoiGianDat";
+            tileViewItemElement23.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             this.tileView1.TileTemplate.Add(tileViewItemElement12);
             this.tileView1.TileTemplate.Add(tileViewItemElement13);
             this.tileView1.TileTemplate.Add(tileViewItemElement14);
@@ -846,8 +867,10 @@
             this.tileView1.TileTemplate.Add(tileViewItemElement20);
             this.tileView1.TileTemplate.Add(tileViewItemElement21);
             this.tileView1.TileTemplate.Add(tileViewItemElement22);
+            this.tileView1.TileTemplate.Add(tileViewItemElement23);
             this.tileView1.ItemDoubleClick += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemDoubleClick);
             this.tileView1.ItemPress += new DevExpress.XtraGrid.Views.Tile.TileViewItemClickEventHandler(this.tileView1_ItemPress);
+            this.tileView1.ItemCustomize += new DevExpress.XtraGrid.Views.Tile.TileViewItemCustomizeEventHandler(this.tileView1_ItemCustomize);
             this.tileView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.tileView1_SelectionChanged);
             this.tileView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.tileView1_FocusedRowChanged);
             this.tileView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.tileView1_CustomUnboundColumnData);
@@ -1194,5 +1217,6 @@
         private DevExpress.XtraEditors.TileItem tileItem11;
         private DevExpress.XtraEditors.TileItem tileDonDep;
         private DevExpress.XtraGrid.Columns.TileViewColumn colSucChua;
+        private DevExpress.XtraGrid.Columns.TileViewColumn colThoiGianDat;
     }
 }

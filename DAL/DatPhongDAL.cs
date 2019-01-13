@@ -156,5 +156,31 @@ namespace DAL
             
         
         }
+
+        public static Dictionary<int, DatPhongDTO> LayCacDatPhongDangSapDuocDatVaDangDuocDat(int khoangThoiGian)
+        {
+            Dictionary<int, DatPhongDTO> res = new Dictionary<int, DatPhongDTO>();
+
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong WHERE MaTinhTrangDatPhong = '1'  AND ThoiGianDatPhong BETWEEN '" + DateTime.Now.AddMinutes(-ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue()).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + DateTime.Now.AddMinutes(khoangThoiGian).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add((int)row["MaDatPhong"], new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"]));
+            }
+
+            return res;
+        }
+
+        public static Dictionary<int, ChiTietDatPhongDTO> LayCacChiTietDatPhongDangSapDuocDatVaDangDuocDat(int khoangThoiGian)
+        {
+            Dictionary<int, ChiTietDatPhongDTO> res = new Dictionary<int, ChiTietDatPhongDTO>();
+
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND MaTinhTrangDatPhong = '1'  AND ThoiGianDatPhong BETWEEN '" + DateTime.Now.AddMinutes(-ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue()).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + DateTime.Now.AddMinutes(khoangThoiGian).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
+            foreach (DataRow row in dt.Rows)
+            {
+                res.Add((int)row["MaChiTietDatPhong"], new ChiTietDatPhongDTO((int)row["MaChiTietDatPhong"], (int)row["MaPhong"], (int)row["MaDatPhong"]));
+            }
+
+            return res;
+        }
     }
 }

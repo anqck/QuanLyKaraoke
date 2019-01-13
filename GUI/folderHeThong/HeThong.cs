@@ -98,12 +98,12 @@ namespace GUI.folderHeThong
 
         private void spinThongBaoDatPhong_Properties_EditValueChanged(object sender, EventArgs e)
         {
-            ThamSoBUS.SetKhoangThoiGianChoDatPhong(Convert.ToInt32(spinHuyDatPhong.EditValue));
+            ThamSoBUS.SetKhoangThoiGianChoDatPhong(Convert.ToInt32(spinThongBaoDatPhong.EditValue));
         }
 
         private void spinHuyDatPhong_Properties_EditValueChanged(object sender, EventArgs e)
         {
-            ThamSoBUS.SetKhoangThoiGianTuDongHuyDatPhong(Convert.ToInt32(spinThongBaoDatPhong.EditValue));
+            ThamSoBUS.SetKhoangThoiGianTuDongHuyDatPhong(Convert.ToInt32(spinHuyDatPhong.EditValue));
         }
 
         private void cbChoDonDep_SelectedIndexChanged(object sender, EventArgs e)
