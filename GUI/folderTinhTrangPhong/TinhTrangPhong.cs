@@ -383,10 +383,24 @@ namespace GUI.TinhTrangPhong
                 if (e.IsSetData) ;
             }
 
-            else if (e.Column.FieldName == "TinhTrangPhong")
+            else if (e.Column.FieldName == "TinhTrangPhong1")
             {
                 if (e.IsGetData)
+                {
                     e.Value = danhSachPhong.Rows[e.ListSourceRowIndex]["TinhTrangPhong"];
+                    //switch((int)danhSachPhong.Rows[e.ListSourceRowIndex]["MaTinhTrangPhong"])
+                    //{
+                    //    case 0: e.Value = "Còn trống"; break;
+                    //    case 1: e.Value = "Đang sử dụng"; break;
+                    //    case 2: e.Value = "Đang sửa chữa"; break;
+                    //    case 3: e.Value = "Đã xóa"; break;
+                    //    case 4: e.Value = "Đã đặt trước"; break;
+                    //    case 5: e.Value = "Chờ dọn dẹp"; break;
+                    //    case 6: e.Value = "Chờ dọn dẹp - Đã đặt trước"; break;
+                    //    case 7: e.Value = "Đang sử dung<br>Đã đặt trước"; break;
+                    //}
+                }
+                    
                
 
                 if (e.IsSetData) ;
@@ -863,6 +877,15 @@ namespace GUI.TinhTrangPhong
 
                         BUS.PhongBUS.CapNhatTinhTrangPhong(phong.MaPhong, 6);
                     }
+                    else if (phong.MaTinhTrangPhong == 1)
+                    {
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Header = "THÔNG BÁO PHÒNG SẮP ĐƯỢC ĐẶT";
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body = "Phòng " + phong.TenPhong + " được đặt trong " + ThamSoBUS.LayKhoangThoiGianChoDatPhong() + " phút nữa! Phòng vẫn đang trong trạng thái chờ dọn dẹp!";
+                        (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body2 = "";
+                        (this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
+
+                        BUS.PhongBUS.CapNhatTinhTrangPhong(phong.MaPhong, 7);
+                    }
 
 
                 }          
@@ -899,7 +922,15 @@ namespace GUI.TinhTrangPhong
 
                             BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 5);
                         }
+                        else if (PhongBUS.LayThongTinPhong(chiTiet.MaPhong).MaTinhTrangPhong == 7)
+                        {
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Header = "THÔNG BÁO PHÒNG ĐƯỢC ĐẶT QUÁ THỜI GIAN CHỜ";
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body = "Phòng " + BUS.PhongBUS.LayThongTinPhong(chiTiet.MaPhong).TenPhong + " được đặt quá thời gian chờ nên sẽ chuyển về trạng thái trống và đặt phòng được tự động hủy. ";
+                            (this.ParentForm as MainForm).GeToastNotifications().Notifications[0].Body2 = "";
+                            (this.ParentForm as MainForm).GeToastNotifications().ShowNotification((this.ParentForm as MainForm).GeToastNotifications().Notifications[0]);
 
+                            BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 1);
+                        }
 
                     }
                     DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTiet.MaDatPhong);
