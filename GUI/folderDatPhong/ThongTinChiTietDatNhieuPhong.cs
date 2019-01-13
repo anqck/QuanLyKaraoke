@@ -156,7 +156,7 @@ namespace GUI.folderDatPhong
             foreach (ChiTietDatPhongDTO chiTiet in DatPhongBUS.LayTatCaCacChiTietDatPhong(datPhong.MaDatPhong))
             {
                 PhongDTO phongDto =PhongBUS.LayThongTinPhong(chiTiet.MaPhong);
-                if (phongDto.MaTinhTrangPhong == 1)
+                if (phongDto.MaTinhTrangPhong == 1 || phongDto.MaTinhTrangPhong == 7)
                 {
                     XtraMessageBox.Show("Phòng " + phongDto.TenPhong + " đang được sử dụng nên không thể nhận được!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     return;

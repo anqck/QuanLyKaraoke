@@ -96,7 +96,6 @@ namespace DAL
                 }
 
                 return res;
-
         
         }
 

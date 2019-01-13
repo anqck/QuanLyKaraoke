@@ -1,2 +1,0 @@
-D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUSTest\bin\Debug\DevExpress.XtraBars.v17.2.dll
-D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUSTest\obj\Debug\BUSTest.pdb

@@ -73,13 +73,14 @@ namespace DAL
         {
             try
             {
-                StringBuilder strSQL = new StringBuilder("INSERT INTO quanlykaraoke.phong (MaPhong, TenPhong, MaTinhTrangPhong, MaLoaiPhong, GhiChu, Tang) VALUES('$0','$1','$2','$3','$4','$5')");
+                StringBuilder strSQL = new StringBuilder("INSERT INTO quanlykaraoke.phong (MaPhong, TenPhong, MaTinhTrangPhong, MaLoaiPhong, GhiChu, Tang, SucChua) VALUES('$0','$1','$2','$3','$4','$5','$6')");
                 strSQL.Replace("$0", phongDTO.MaPhong.ToString());
                 strSQL.Replace("$1", phongDTO.TenPhong.ToString());
                 strSQL.Replace("$2", phongDTO.MaTinhTrangPhong.ToString());
                 strSQL.Replace("$3", phongDTO.MaLoaiPhong.ToString());
                 strSQL.Replace("$4", phongDTO.GhiChu.ToString());
                 strSQL.Replace("$5", phongDTO.Tang.ToString());
+                strSQL.Replace("$6", phongDTO.SucChua.ToString());
                 DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
 
                 return true;
@@ -94,13 +95,14 @@ namespace DAL
             try
             {
           
-                StringBuilder strSQL = new StringBuilder("UPDATE quanlykaraoke.phong SET TenPhong='$1', MaTinhTrangPhong='$2', MaLoaiPhong='$3', GhiChu='$4', Tang = '$5' WHERE MaPhong= '$0' ");
+                StringBuilder strSQL = new StringBuilder("UPDATE quanlykaraoke.phong SET TenPhong='$1', MaTinhTrangPhong='$2', MaLoaiPhong='$3', GhiChu='$4', Tang = '$5', SucChua = '$6' WHERE MaPhong= '$0' ");
                 strSQL.Replace("$0", phongDTO.MaPhong.ToString());
                 strSQL.Replace("$1", phongDTO.TenPhong.ToString());
                 strSQL.Replace("$2", phongDTO.MaTinhTrangPhong.ToString());
                 strSQL.Replace("$3", phongDTO.MaLoaiPhong.ToString());
                 strSQL.Replace("$4", phongDTO.GhiChu.ToString());
                 strSQL.Replace("$5", phongDTO.Tang.ToString());
+                strSQL.Replace("$6", phongDTO.SucChua.ToString());
                 DAL.DataProvider.ExecuseNonQuery(strSQL.ToString());
 
                 return true;

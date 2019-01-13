@@ -242,7 +242,21 @@ namespace GUI.folderTinhTrangPhong
                     
 
                     ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(thuePhong.MaThuePhong,thuePhong.MaPhong,thuePhong.GioThuePhong, DateTime.Now,thuePhong.MaHoaDon,Double.NaN));
-                    PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 0);
+                    switch (PhongBUS.LayThongTinPhong(thuePhong.MaPhong).MaTinhTrangPhong)
+                    {
+                        case 1:
+                            if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                                PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 5);
+                            else
+                                PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 0);
+                            break;
+                        case 7:
+                            if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                                PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 6);
+                            else
+                                PhongBUS.CapNhatTinhTrangPhong(thuePhong.MaPhong, 4);
+                            break;
+                    }
 
                     //Thông báo thành công
                     XtraMessageBox.Show("Trả phòng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);

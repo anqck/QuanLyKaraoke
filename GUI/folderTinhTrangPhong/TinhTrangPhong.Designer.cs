@@ -191,9 +191,9 @@
             this.colTinhTrangPhong.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.colTinhTrangPhong.AppearanceHeader.Options.UseFont = true;
             this.colTinhTrangPhong.Caption = "colTinhTrangPhong";
-            this.colTinhTrangPhong.FieldName = "TinhTrangPhong";
+            this.colTinhTrangPhong.FieldName = "TinhTrangPhong1";
             this.colTinhTrangPhong.Name = "colTinhTrangPhong";
-            this.colTinhTrangPhong.UnboundType = DevExpress.Data.UnboundColumnType.String;
+            this.colTinhTrangPhong.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.colTinhTrangPhong.Visible = true;
             this.colTinhTrangPhong.VisibleIndex = 2;
             // 
@@ -792,7 +792,7 @@
             tileViewItemElement16.Column = this.colTinhTrangPhong;
             tileViewItemElement16.ColumnIndex = 2;
             tileViewItemElement16.ImageOptions.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement16.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileViewItemElement16.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.NoScale;
             tileViewItemElement16.RowIndex = 2;
             tileViewItemElement16.StretchHorizontal = true;
             tileViewItemElement16.StretchVertical = true;
@@ -847,7 +847,7 @@
             tileViewItemElement22.ImageOptions.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement22.Text = "Sức chứa: ";
             tileViewItemElement22.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
-            tileViewItemElement23.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 8F, System.Drawing.FontStyle.Bold);
+            tileViewItemElement23.Appearance.Normal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
             tileViewItemElement23.Appearance.Normal.Options.UseFont = true;
             tileViewItemElement23.Column = this.colThoiGianDat;
             tileViewItemElement23.ColumnIndex = 1;

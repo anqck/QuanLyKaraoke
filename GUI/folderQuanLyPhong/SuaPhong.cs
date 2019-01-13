@@ -64,7 +64,7 @@ namespace GUI.folderQuanLyPhong
             listTinhTrangPhong = PhongBUS.LayTatCaTinhTrangPhong_List();
             //combobox tinh trang phong
             cmbTinhTrangPhong.Properties.Items.Clear();
-            if (phongDTO.MaTinhTrangPhong == 1 || phongDTO.MaTinhTrangPhong == 4 ||  phongDTO.MaTinhTrangPhong == 6)
+            if (phongDTO.MaTinhTrangPhong == 1 || phongDTO.MaTinhTrangPhong == 4 ||  phongDTO.MaTinhTrangPhong == 6 || phongDTO.MaTinhTrangPhong == 7)
             {
                 cmbTinhTrangPhong.Enabled = false;
                 foreach (TinhTrangPhongDTO tinhtrang in listTinhTrangPhong)
@@ -145,7 +145,7 @@ namespace GUI.folderQuanLyPhong
 
 
                     //Lưu thông tinh
-                    if (PhongBUS.CapNhatThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, (int)((GUI.MyComboBoxItem)cmbLoaiPhong.SelectedItem).Tag, cmbTang.Text, txtGhiChu.Text, (int)((GUI.MyComboBoxItem)cmbTinhTrangPhong.SelectedItem).Tag,5)))
+                    if (PhongBUS.CapNhatThongTinPhong(new PhongDTO(int.Parse(txtMaPhong.Text), txtTenPhong.Text, (int)((GUI.MyComboBoxItem)cmbLoaiPhong.SelectedItem).Tag, cmbTang.Text, txtGhiChu.Text, (int)((GUI.MyComboBoxItem)cmbTinhTrangPhong.SelectedItem).Tag,Convert.ToInt32(spinSucChua.Value))))
                     {
                         //Thông báo thành công
                        

@@ -151,8 +151,11 @@ namespace DAL
         public static DatPhongDTO LayThongTinThuePhongCuaPhongDangDat(int maPhong, DateTime now)
         {
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND MaPhong = '"+maPhong+ "' AND MaTinhTrangDatPhong = '1'  AND ThoiGianDatPhong BETWEEN '" + now.AddMinutes(-ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue()).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + now.AddMinutes(ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue()).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
-            
-               return new DatPhongDTO((int)dt.Rows[0]["MaDatPhong"], DateTime.Parse(dt.Rows[0]["ThoiGianDatPhong"].ToString()), (double)dt.Rows[0]["SoTienDatTruoc"], (int)dt.Rows[0]["MaNhanVien"], (int)dt.Rows[0]["MaKH"], dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangDatPhong"]);
+
+            if (dt.Rows.Count == 0)
+                return null;
+            else
+                return new DatPhongDTO((int)dt.Rows[0]["MaDatPhong"], DateTime.Parse(dt.Rows[0]["ThoiGianDatPhong"].ToString()), (double)dt.Rows[0]["SoTienDatTruoc"], (int)dt.Rows[0]["MaNhanVien"], (int)dt.Rows[0]["MaKH"], dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangDatPhong"]);
             
         
         }

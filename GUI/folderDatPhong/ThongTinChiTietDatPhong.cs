@@ -186,6 +186,8 @@ namespace GUI.folderDatPhong
                                 PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
                             else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6 && tempSapDat_1.ContainsKey(dp.MaDatPhong))
                                 PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 5);
+                            else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 7 && tempSapDat_1.ContainsKey(dp.MaDatPhong))
+                                PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 1);
                         }
 
                         DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTietDatPhong.MaDatPhong);
@@ -200,7 +202,8 @@ namespace GUI.folderDatPhong
                     }
                     else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 6 && tempSapDat_1.ContainsKey(chiTietDatPhong.MaDatPhong))
                         PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 5);
-
+                    else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 7 && tempSapDat_1.ContainsKey(chiTietDatPhong.MaDatPhong))
+                        PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 1);
 
                     DatPhongBUS.XoaCacDichVuDatPhong(chiTietDatPhong);
                     DatPhongBUS.XoaDatChiTietDatPhong(chiTietDatPhong);
@@ -241,6 +244,8 @@ namespace GUI.folderDatPhong
                             PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
                         else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6 && tempSapDat.ContainsKey(dp.MaDatPhong))
                             PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 5);
+                        else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 7 && tempSapDat.ContainsKey(dp.MaDatPhong))
+                            PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 1);
                     }
 
                     DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTietDatPhong.MaDatPhong);

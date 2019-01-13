@@ -663,6 +663,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Note todo.txt" />
+    <None Include="Resources\controng.png" />
+    <None Include="Resources\clean_book.png" />
+    <None Include="Resources\bookng.png" />
+    <None Include="Resources\using.png" />
+    <None Include="Resources\clean.png" />
+    <None Include="Resources\used book.png" />
     <None Include="Resources\singleIcon.png" />
     <None Include="Resources\grpIcon.png" />
     <None Include="Resources\No_Image_Available.png" />

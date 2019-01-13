@@ -180,7 +180,7 @@
             0,
             0,
             0});
-            this.txtTienTraTruoc.Location = new System.Drawing.Point(532, 219);
+            this.txtTienTraTruoc.Location = new System.Drawing.Point(765, 219);
             this.txtTienTraTruoc.Name = "txtTienTraTruoc";
             this.txtTienTraTruoc.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTienTraTruoc.Properties.Appearance.Options.UseFont = true;
@@ -198,7 +198,7 @@
             0});
             this.txtTienTraTruoc.Properties.Mask.EditMask = "1,000 VNĐ = ###,##0.00 Điểm";
             this.txtTienTraTruoc.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtTienTraTruoc.Size = new System.Drawing.Size(504, 34);
+            this.txtTienTraTruoc.Size = new System.Drawing.Size(271, 34);
             this.txtTienTraTruoc.StyleController = this.layoutControl1;
             this.txtTienTraTruoc.TabIndex = 14;
             this.txtTienTraTruoc.EditValueChanged += new System.EventHandler(this.txtTienTraTruoc_EditValueChanged);
@@ -215,7 +215,7 @@
             // 
             // txtNgayLe
             // 
-            this.txtNgayLe.Location = new System.Drawing.Point(532, 16);
+            this.txtNgayLe.Location = new System.Drawing.Point(765, 16);
             this.txtNgayLe.Name = "txtNgayLe";
             this.txtNgayLe.Properties.Appearance.Options.UseTextOptions = true;
             this.txtNgayLe.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -227,7 +227,7 @@
             this.txtNgayLe.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.txtNgayLe.Properties.NullText = "Danh sách ngày lễ";
             this.txtNgayLe.Properties.PopupSizeable = true;
-            this.txtNgayLe.Size = new System.Drawing.Size(353, 34);
+            this.txtNgayLe.Size = new System.Drawing.Size(120, 34);
             this.txtNgayLe.StyleController = this.layoutControl1;
             this.txtNgayLe.TabIndex = 7;
             this.txtNgayLe.CustomDisplayText += new DevExpress.XtraEditors.Controls.CustomDisplayTextEventHandler(this.txtNgayLe_CustomDisplayText);
@@ -239,7 +239,7 @@
             0,
             0,
             0});
-            this.txtNgayVao.Location = new System.Drawing.Point(532, 99);
+            this.txtNgayVao.Location = new System.Drawing.Point(765, 99);
             this.txtNgayVao.Name = "txtNgayVao";
             this.txtNgayVao.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -251,7 +251,7 @@
             this.txtNgayVao.Properties.Mask.EditMask = "##0 phút";
             this.txtNgayVao.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtNgayVao.Properties.EditValueChanged += new System.EventHandler(this.txtNgayVao_Properties_EditValueChanged);
-            this.txtNgayVao.Size = new System.Drawing.Size(504, 34);
+            this.txtNgayVao.Size = new System.Drawing.Size(271, 34);
             this.txtNgayVao.StyleController = this.layoutControl1;
             this.txtNgayVao.TabIndex = 7;
             // 
@@ -262,7 +262,7 @@
             0,
             0,
             0});
-            this.spinHuyDatPhong.Location = new System.Drawing.Point(532, 179);
+            this.spinHuyDatPhong.Location = new System.Drawing.Point(765, 179);
             this.spinHuyDatPhong.Name = "spinHuyDatPhong";
             this.spinHuyDatPhong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinHuyDatPhong.Properties.Appearance.Options.UseFont = true;
@@ -286,7 +286,7 @@
             0,
             0});
             this.spinHuyDatPhong.Properties.EditValueChanged += new System.EventHandler(this.spinThongBaoDatPhong_Properties_EditValueChanged);
-            this.spinHuyDatPhong.Size = new System.Drawing.Size(504, 34);
+            this.spinHuyDatPhong.Size = new System.Drawing.Size(271, 34);
             this.spinHuyDatPhong.StyleController = this.layoutControl1;
             toolTipTitleItem1.Text = "Chuyển các đặt phòng sang trạng thái Hủy khi không ai nhận và tình trạng phòng Đã" +
     " được đặt -> Có sẵn sau n phút (1 <= n < khoảng thời gian tối thiểu giữa 2 lần đ" +
@@ -299,7 +299,7 @@
             // txtNgayVao1
             // 
             this.txtNgayVao1.EditValue = "";
-            this.txtNgayVao1.Location = new System.Drawing.Point(532, 259);
+            this.txtNgayVao1.Location = new System.Drawing.Point(765, 259);
             this.txtNgayVao1.Name = "txtNgayVao1";
             this.txtNgayVao1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -311,14 +311,14 @@
             "Không",
             "Năm trăm đồng",
             "Hàng nghìn"});
-            this.txtNgayVao1.Size = new System.Drawing.Size(504, 34);
+            this.txtNgayVao1.Size = new System.Drawing.Size(271, 34);
             this.txtNgayVao1.StyleController = this.layoutControl1;
             this.txtNgayVao1.TabIndex = 7;
             // 
             // cbChoDonDep
             // 
             this.cbChoDonDep.EditValue = "";
-            this.cbChoDonDep.Location = new System.Drawing.Point(532, 59);
+            this.cbChoDonDep.Location = new System.Drawing.Point(765, 59);
             this.cbChoDonDep.Name = "cbChoDonDep";
             this.cbChoDonDep.Properties.Appearance.Options.UseTextOptions = true;
             this.cbChoDonDep.Properties.Appearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
@@ -331,7 +331,7 @@
             this.cbChoDonDep.Properties.Items.AddRange(new object[] {
             "Có",
             "Không"});
-            this.cbChoDonDep.Size = new System.Drawing.Size(504, 34);
+            this.cbChoDonDep.Size = new System.Drawing.Size(271, 34);
             this.cbChoDonDep.StyleController = this.layoutControl1;
             this.cbChoDonDep.TabIndex = 7;
             this.cbChoDonDep.SelectedIndexChanged += new System.EventHandler(this.cbChoDonDep_SelectedIndexChanged);
@@ -343,7 +343,7 @@
             0,
             0,
             0});
-            this.spinThongBaoDatPhong.Location = new System.Drawing.Point(532, 139);
+            this.spinThongBaoDatPhong.Location = new System.Drawing.Point(765, 139);
             this.spinThongBaoDatPhong.Name = "spinThongBaoDatPhong";
             this.spinThongBaoDatPhong.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.spinThongBaoDatPhong.Properties.Appearance.Options.UseFont = true;
@@ -361,7 +361,7 @@
             0,
             0,
             0});
-            this.spinThongBaoDatPhong.Size = new System.Drawing.Size(504, 34);
+            this.spinThongBaoDatPhong.Size = new System.Drawing.Size(271, 34);
             this.spinThongBaoDatPhong.StyleController = this.layoutControl1;
             toolTipTitleItem2.Text = "Thông báo phòng sắp được đặt và chuyển các phòng sắp được đặt sang trạng thái chờ" +
     " đặt phòng";
@@ -410,7 +410,7 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(865, 43);
             this.layoutControlItem1.Text = "Ngày lễ";
             this.layoutControlItem1.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(495, 28);
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(728, 28);
             // 
             // layoutControlItem3
             // 
@@ -432,7 +432,7 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(1009, 40);
             this.layoutControlItem5.Text = "Tự động hủy đặt phòng sau";
             this.layoutControlItem5.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem5.TextSize = new System.Drawing.Size(495, 28);
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(728, 28);
             // 
             // layoutControlItem2
             // 
@@ -444,7 +444,7 @@
             this.layoutControlItem2.Size = new System.Drawing.Size(1009, 40);
             this.layoutControlItem2.Text = "Tỷ lệ quy đổi điểm khách hàng";
             this.layoutControlItem2.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(495, 28);
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(728, 28);
             // 
             // layoutControlItem4
             // 
@@ -454,9 +454,9 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 83);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(1009, 40);
-            this.layoutControlItem4.Text = "Khoảng thời gian tối thiểu giữa hay lần đặt đang chờ";
+            this.layoutControlItem4.Text = "Khoảng thời gian tối thiểu giữa hai lần đặt đang chờ";
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem4.TextSize = new System.Drawing.Size(495, 28);
+            this.layoutControlItem4.TextSize = new System.Drawing.Size(728, 28);
             // 
             // layoutControlItem6
             // 
@@ -467,20 +467,21 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(1009, 40);
             this.layoutControlItem6.Text = "Làm tròn số tiền hát";
             this.layoutControlItem6.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem6.TextSize = new System.Drawing.Size(495, 17);
+            this.layoutControlItem6.TextSize = new System.Drawing.Size(728, 17);
             // 
             // layoutControlItem7
             // 
-            this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem7.Control = this.cbChoDonDep;
             this.layoutControlItem7.CustomizationFormText = "Chuyển sang trạng thái \'Chờ dọn dẹp\' sau khi thanh toán";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 43);
             this.layoutControlItem7.Name = "layoutControlItem7";
             this.layoutControlItem7.Size = new System.Drawing.Size(1009, 40);
-            this.layoutControlItem7.Text = "Chuyển sang trạng thái \'Chờ dọn dẹp\' sau khi thanh toán";
+            this.layoutControlItem7.Text = "Chuyển sang trạng thái \'Chờ dọn dẹp\' sau khi thanh toán, trả phòng, chuyển phòng " +
+    "đang thuê";
             this.layoutControlItem7.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem7.TextSize = new System.Drawing.Size(495, 28);
+            this.layoutControlItem7.TextSize = new System.Drawing.Size(728, 23);
             // 
             // layoutControlItem8
             // 
@@ -493,7 +494,7 @@
             this.layoutControlItem8.Size = new System.Drawing.Size(1009, 40);
             this.layoutControlItem8.Text = "Thông báo chờ phòng đặt trước";
             this.layoutControlItem8.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem8.TextSize = new System.Drawing.Size(495, 28);
+            this.layoutControlItem8.TextSize = new System.Drawing.Size(728, 28);
             // 
             // navigationFrame1
             // 

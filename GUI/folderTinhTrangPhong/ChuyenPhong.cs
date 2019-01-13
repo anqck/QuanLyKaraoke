@@ -133,10 +133,25 @@ namespace GUI.folderTinhTrangPhong
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
                 case "Chuyển":
-                    if(chiTietDatPhong == null)
+                    if(chiTietDatPhong == null) //Chuyển phong đang thuê
                     {
                         ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(phongCu.MaThuePhong, phongCu.MaPhong, phongCu.GioThuePhong, DateTime.Now, phongCu.MaHoaDon, Double.NaN));
-                        PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 0);
+                        switch(PhongBUS.LayThongTinPhong(phongCu.MaPhong).MaTinhTrangPhong)
+                        {
+                            case 1:
+                                if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 5);
+                                else
+                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 0);
+                                break;
+                            case 7:
+                                if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 6);
+                                else
+                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 4);
+                                break;
+                        }
+                        
 
                         phongMoi = new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), (int)txtMaPhong.EditValue, DateTime.Now, DateTime.MinValue, phongCu.MaHoaDon, Double.NaN);
                         ThuePhongBUS.LuuThongTinThuePhong(phongMoi);
@@ -144,7 +159,7 @@ namespace GUI.folderTinhTrangPhong
 
                         
                     }
-                    else
+                    else //Chuyển phòng đặt
                     {
                         if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 4)
                         {
@@ -153,6 +168,10 @@ namespace GUI.folderTinhTrangPhong
                         else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 6)
                         {
                             PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 5);
+                        }
+                        else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 7)
+                        {
+                            PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 1);
                         }
                         ChiTietDatPhongBUS.CapNhatThongTinDatPhong(new ChiTietDatPhongDTO(chiTietDatPhong.MaChiTietDatPhong, (int)txtMaPhong.EditValue,chiTietDatPhong.MaDatPhong));
                        

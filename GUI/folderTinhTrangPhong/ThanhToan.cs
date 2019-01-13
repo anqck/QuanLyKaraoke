@@ -77,7 +77,7 @@ namespace GUI.folderTinhTrangPhong
                 DevExpress.XtraLayout.LayoutControlGroup layoutGrp = new DevExpress.XtraLayout.LayoutControlGroup();
                 DevExpress.XtraLayout.LayoutControlItem layoutItem = new DevExpress.XtraLayout.LayoutControlItem();
                 chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien_UpdateHoaDon;
-                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
+                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1],ReadOnlyMode);
                 chiTietThanhToanPhongThanhToan.RefreshDataBinding(listThuePhong[i], khachHang);
                 dsHoaDon.Tables[1].Rows[i]["GioTraPhong"] = chiTietThanhToanPhongThanhToan.thuePhong.GioTraPhong;
                 
@@ -174,7 +174,7 @@ namespace GUI.folderTinhTrangPhong
                 DevExpress.XtraLayout.LayoutControlGroup layoutGrp = new DevExpress.XtraLayout.LayoutControlGroup();
                 DevExpress.XtraLayout.LayoutControlItem layoutItem = new DevExpress.XtraLayout.LayoutControlItem();
                 chiTietThanhToanPhongThanhToan.CalcTongTienAction = CalcTongTien_UpdateHoaDon;
-                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1]);
+                chiTietThanhToanPhongThanhToan.AddButtonXoaDichVu((WindowsUIButton)wbntQuanlyphong.Buttons[1],ReadOnlyMode);
                 chiTietThanhToanPhongThanhToan.RefreshDataBinding_ReadOnly(listThuePhong[i]);
                 dsHoaDon.Tables[1].Rows[i]["GioTraPhong"] = chiTietThanhToanPhongThanhToan.thuePhong.GioTraPhong;
 
@@ -344,10 +344,21 @@ namespace GUI.folderTinhTrangPhong
                         ((ChiTietThanhToanPhong)layoutGroup.Tag).LuuKhuyenMai();
                         ((ChiTietThanhToanPhong)layoutGroup.Tag).CapNhatThongTinThuePhong();
 
-                        if(ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
-                            PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong,5);
-                        else
-                            PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 0);
+                        switch (PhongBUS.LayThongTinPhong(thuePhong.MaPhong).MaTinhTrangPhong)
+                        {
+                            case 1:
+                                if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                                    PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 5);
+                                else
+                                    PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 0);
+                                break;
+                            case 7:
+                                if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
+                                    PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 6);
+                                else
+                                    PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 4);
+                                break;
+                        }
                     }
 
                     if(khachHang.MaLoaiKH != 0)

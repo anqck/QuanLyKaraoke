@@ -150,6 +150,9 @@ namespace GUI.folderDatPhong
         }
         public void HienThiThongTinDatPhong(DatPhongDTO dto)
         {
+            if (dto == null)
+                return;
+
             thongTinChiTietDatNhieuPhong1.RefreshDataBinding(dto.MaDatPhong);
             navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             navigationFrame1.SelectedPageIndex = 2;

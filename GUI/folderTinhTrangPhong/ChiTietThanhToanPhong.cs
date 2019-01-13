@@ -30,10 +30,12 @@ namespace GUI.folderTinhTrangPhong
         Dictionary<int, DichVuPhongDTO> listKhuyenMai;
 
         double TongTienGio ;
-
+        bool ReadOnly = false;
 
         public Action CalcTongTienAction { get; set; }
         public WindowsUIButton ButtonXoaDichVu { get; set; }
+
+
         public ChiTietThanhToanPhong()
         {
             InitializeComponent();
@@ -159,10 +161,10 @@ namespace GUI.folderTinhTrangPhong
             txtTienGio.Properties.NullText = TongTienGio.ToString("###,###,###,##0 VNĐ");
         }
 
-        internal void AddButtonXoaDichVu(WindowsUIButton windowsUIButton)
+        internal void AddButtonXoaDichVu(WindowsUIButton windowsUIButton,bool ReadOnlyMode)
         {
             ButtonXoaDichVu = windowsUIButton;
-          
+            ReadOnly = ReadOnlyMode;
         }
 
         void RefreshDataBindingDichVuPhong()
@@ -415,7 +417,7 @@ namespace GUI.folderTinhTrangPhong
         {
             if(ButtonXoaDichVu!= null)
             {
-                if (gridView1.RowCount == 0)
+                if (gridView1.RowCount == 0 || ReadOnly)
                     ButtonXoaDichVu.Visible = false;
                 else
                     ButtonXoaDichVu.Visible = true;
