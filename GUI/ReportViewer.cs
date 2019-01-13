@@ -9,12 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using GUI.folderTinhTrangPhong;
+using GUI.folderDatPhong;
 
 namespace GUI
 {
     public partial class ReportViewer : XtraUserControl
     {
         private reportHoaDon reportHoaDon;
+        private PhieuDatPhong phieudatphong;
 
         public ReportViewer()
         {
@@ -26,6 +28,14 @@ namespace GUI
             this.reportHoaDon = reportHoaDon;
             //reportHoaDon.CreateDocument();
             documentViewer1.DocumentSource = reportHoaDon;
+            documentViewer1.Zoom = 0.83f;
+        }
+
+        public ReportViewer(PhieuDatPhong phieudatphong) : this()
+        {
+            this.phieudatphong = phieudatphong;
+            //reportHoaDon.CreateDocument();
+            documentViewer1.DocumentSource = phieudatphong;
             documentViewer1.Zoom = 0.83f;
         }
     }

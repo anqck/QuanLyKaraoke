@@ -9,6 +9,7 @@ namespace DTO
     public class DatPhongDTO
     {
         public int MaDatPhong { get; set; }
+        public DateTime NgayLapPhieuDat { get; set; }
 
         public DateTime ThoiGianDatPhong { get; set; }
 

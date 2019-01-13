@@ -37,6 +37,12 @@ namespace BUS
         {
             return DAL.DatPhongDAL.LayTatCaDatPhong_TinhTrangPhong_KhachHang_NhanVien_DataTable();
         }
+
+        public static DataTable LayThongTinDatPhong_table(int maDatPhong)
+        {
+            return DAL.DatPhongDAL.LayThongTinDatPhong_table(maDatPhong);
+        }
+
         public static DataTable LayTatCaDatPhong_ChiTietDatPhong_DataTable()
         {
             return DAL.DatPhongDAL.LayTatCaDatPhong_ChiTietDatPhong_DataTable();
@@ -58,6 +64,10 @@ namespace BUS
         public static List<ChiTietDatPhongDTO> LayTatCaCacChiTietDatPhong(int maDatPhong)
         {
             return DAL.DatPhongDAL.LayTatCaCacChiTietDatPhong( maDatPhong);
+        }
+        public static DataTable LayTatCaCacChiTietDatPhong_table(int maDatPhong)
+        {
+            return DAL.DatPhongDAL.LayTatCaCacChiTietDatPhong_table(maDatPhong);
         }
 
         public static void XoaCacDichVuDatPhong(ChiTietDatPhongDTO chiTietDatPhong)

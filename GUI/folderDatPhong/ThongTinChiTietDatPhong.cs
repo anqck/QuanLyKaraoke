@@ -22,8 +22,11 @@ namespace GUI.folderDatPhong
         public PhongDTO phong { get; set; }
         DataTable dichVuPhong;
 
+  
         public ThongTinChiTietDatPhong(DatPhongDTO datPhongDTO)
         {
+
+
             InitializeComponent();
             datPhong = datPhongDTO;
 
@@ -129,7 +132,7 @@ namespace GUI.folderDatPhong
                     {
                         foreach (int dichVu_Key in chonDichVu.GetSelectedDichVu().Keys)
                         {
-                            DichVuDatPhongBUS.LuuThongTinDichVuDatPhong(new DichVuDatPhongDTO(DichVuDatPhongBUS.PhatSinhMaDichVuPhong(),  dichVu_Key,  chonDichVu.GetSelectedDichVu()[dichVu_Key], DichVuBUS.LayThongTinDichVu(dichVu_Key).DonGia,chiTietDatPhong.MaChiTietDatPhong));
+                            DichVuDatPhongBUS.LuuThongTinDichVuDatPhong(new DichVuDatPhongDTO(DichVuDatPhongBUS.PhatSinhMaDichVuPhong(), dichVu_Key, chonDichVu.GetSelectedDichVu()[dichVu_Key], DichVuBUS.LayThongTinDichVu(dichVu_Key).DonGia, chiTietDatPhong.MaChiTietDatPhong));
                             //DichVuBUS.LayThongTinDichVu(dichVu_Key);
                         }
 
@@ -182,7 +185,7 @@ namespace GUI.folderDatPhong
 
                         foreach (ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
                         {
-                            if(PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4)
+                            if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4)
                                 PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
                             else if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 6)
                                 PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 5);
@@ -229,9 +232,9 @@ namespace GUI.folderDatPhong
 
                     //BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 0);
 
-                    DatPhongBUS.CapNhatTinhTrangDatPhong(3,chiTietDatPhong.MaDatPhong);
+                    DatPhongBUS.CapNhatTinhTrangDatPhong(3, chiTietDatPhong.MaDatPhong);
 
-                    foreach(ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
+                    foreach (ChiTietDatPhongDTO dp in DatPhongBUS.LayTatCaCacChiTietDatPhong(chiTietDatPhong.MaDatPhong))
                     {
                         if (PhongBUS.LayThongTinPhong(dp.MaPhong).MaTinhTrangPhong == 4)
                             PhongBUS.CapNhatTinhTrangPhong(dp.MaPhong, 0);
@@ -241,9 +244,12 @@ namespace GUI.folderDatPhong
                     (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
                     break;
 
-                    case "In phiếu đặt":
-                    break;
-
+                case "In phiếu đặt":
+                    {
+      
+                        (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).InPhieuDat();
+                        break;
+                    }
             }
         }
         private void Args_Showing(object sender, XtraMessageShowingArgs e)

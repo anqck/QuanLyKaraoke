@@ -25,9 +25,15 @@ namespace BUS
             return DAL.ChiTietDatPhongDAL.LayTatCaChiTietDatPhong_DataTable();
 
         }
+      
         public static void CapNhatThongTinDatPhong(ChiTietDatPhongDTO chiTietDatPhongDTO)
         {
              DAL.ChiTietDatPhongDAL.CapNhatThongTinDatPhong(chiTietDatPhongDTO);
+        }
+
+        public static DataTable LayTatCaChiTietDatPhong_DataTable(int maDatPhong)
+        {
+            return DAL.ChiTietDatPhongDAL.LayTatCaChiTietDatPhong_DataTable(maDatPhong);
         }
     }
 }

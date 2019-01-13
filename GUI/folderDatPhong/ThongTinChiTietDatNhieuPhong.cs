@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DTO;
 using BUS;
 using DevExpress.XtraTab;
+using DevExpress.Office.Utils;
 
 namespace GUI.folderDatPhong
 {
@@ -209,6 +210,16 @@ namespace GUI.folderDatPhong
         {
             DatPhongBUS.CapNhatTinhTrangDatPhong((int)(txtTinhTrangDat.SelectedItem as MyComboBoxItem).Tag, datPhong.MaDatPhong);
             RefreshData();
+        }
+
+        private PhieuDatPhong reportPhieudatphong;
+        public void InPhieuDat()
+        {
+            reportPhieudatphong = new PhieuDatPhong();
+            reportPhieudatphong.BindingData(  datPhong,  khachHang);
+
+            XtraDialogArgs phieudatphong = new XtraDialogArgs(caption: "Phiếu đặt phòng", content: new ReportViewer(reportPhieudatphong), buttons: new DialogResult[] { DialogResult.OK });
+            XtraDialog.Show(phieudatphong);
         }
     }
 }
