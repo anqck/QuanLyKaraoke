@@ -146,6 +146,12 @@
     <Compile Include="folderBaoCao\DoanhThuThang.Designer.cs">
       <DependentUpon>DoanhThuThang.cs</DependentUpon>
     </Compile>
+    <Compile Include="folderDatPhong\ChuyenGio.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="folderDatPhong\ChuyenGio.Designer.cs">
+      <DependentUpon>ChuyenGio.cs</DependentUpon>
+    </Compile>
     <Compile Include="folderDatPhong\PhieuDatPhong.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -460,6 +466,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="folderBaoCao\DoanhThuThang.resx">
       <DependentUpon>DoanhThuThang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="folderDatPhong\ChuyenGio.resx">
+      <DependentUpon>ChuyenGio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="folderDatPhong\PhieuDatPhong.resx">
       <DependentUpon>PhieuDatPhong.cs</DependentUpon>
