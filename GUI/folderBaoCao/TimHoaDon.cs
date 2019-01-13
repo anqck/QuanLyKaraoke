@@ -75,18 +75,18 @@ namespace GUI.folderHoaDon
 
             
 
-                Dictionary < int, double > doanhThuThang = HoaDonBUS.GetTongDoanhThuTheoThang(DateTime.Now.Year);
-            for (int i = 1; i <= 12; i++)
-            {
-                if(doanhThuThang.ContainsKey(i))
-                {
-                    chartControl.Series[1].Points.Add(new DevExpress.XtraCharts.SeriesPoint("Tháng " +i, doanhThuThang[i]));
-                }
-                else
-                {
-                    chartControl.Series[1].Points.Add(new DevExpress.XtraCharts.SeriesPoint("Tháng " + i, 0));
-                }
-            }
+            //    Dictionary < int, double > doanhThuThang = HoaDonBUS.GetTongDoanhThuTheoThang(DateTime.Now.Year);
+            //for (int i = 1; i <= 12; i++)
+            //{
+            //    if(doanhThuThang.ContainsKey(i))
+            //    {
+            //        chartControl.Series[1].Points.Add(new DevExpress.XtraCharts.SeriesPoint("Tháng " +i, doanhThuThang[i]));
+            //    }
+            //    else
+            //    {
+            //        chartControl.Series[1].Points.Add(new DevExpress.XtraCharts.SeriesPoint("Tháng " + i, 0));
+            //    }
+            //}
 
             //rangeControl1.SelectAll();
             gridViewHoaDon.ActiveFilterString = "";

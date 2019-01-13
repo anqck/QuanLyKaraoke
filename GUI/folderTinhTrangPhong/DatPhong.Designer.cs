@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.windowsUIButtonPanel1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
             this.Root = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -39,10 +39,11 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.bntChonKH = new DevExpress.XtraEditors.SimpleButton();
             this.txtKhachHang = new DevExpress.XtraEditors.GridLookUpEdit();
@@ -60,7 +61,7 @@
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaLP = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
@@ -85,8 +86,8 @@
             // windowsUIButtonPanel1
             // 
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Đặt", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Đặt", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy", -1, false)});
             this.windowsUIButtonPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(0, 609);
             this.windowsUIButtonPanel1.Name = "windowsUIButtonPanel1";
@@ -200,7 +201,8 @@
             this.colLoaiPhong,
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.colMaLP});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
@@ -236,6 +238,22 @@
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 2;
             // 
+            // colSucChua
+            // 
+            this.colSucChua.Caption = "Sức Chứa";
+            this.colSucChua.FieldName = "SucChua";
+            this.colSucChua.Name = "colSucChua";
+            this.colSucChua.Visible = true;
+            this.colSucChua.VisibleIndex = 3;
+            // 
+            // colLoaiPhong
+            // 
+            this.colLoaiPhong.Caption = "Loại phòng";
+            this.colLoaiPhong.FieldName = "TenLoaiPhong";
+            this.colLoaiPhong.Name = "colLoaiPhong";
+            this.colLoaiPhong.Visible = true;
+            this.colLoaiPhong.VisibleIndex = 4;
+            // 
             // gridColumn3
             // 
             this.gridColumn3.Caption = "Tình trạng phòng";
@@ -248,7 +266,7 @@
             this.gridColumn4.FieldName = "Tang";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
+            this.gridColumn4.VisibleIndex = 4;
             // 
             // gridColumn5
             // 
@@ -256,15 +274,7 @@
             this.gridColumn5.FieldName = "GhiChu";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 6;
-            // 
-            // colLoaiPhong
-            // 
-            this.colLoaiPhong.Caption = "Loại phòng";
-            this.colLoaiPhong.FieldName = "TenLoaiPhong";
-            this.colLoaiPhong.Name = "colLoaiPhong";
-            this.colLoaiPhong.Visible = true;
-            this.colLoaiPhong.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             // 
             // txtGhiChu
             // 
@@ -515,13 +525,11 @@
             this.layoutControlItem7.Text = "Ngày giờ đặt";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(117, 28);
             // 
-            // colSucChua
+            // colMaLP
             // 
-            this.colSucChua.Caption = "Sức Chứa";
-            this.colSucChua.FieldName = "SucChua";
-            this.colSucChua.Name = "colSucChua";
-            this.colSucChua.Visible = true;
-            this.colSucChua.VisibleIndex = 3;
+            this.colMaLP.Caption = "gridColumn6";
+            this.colMaLP.FieldName = "MaLP";
+            this.colMaLP.Name = "colMaLP";
             // 
             // DatPhong
             // 
@@ -590,5 +598,6 @@
         private DevExpress.XtraEditors.TimeEdit txtGioVao;
         private DevExpress.XtraGrid.Columns.GridColumn colLoaiPhong;
         private DevExpress.XtraGrid.Columns.GridColumn colSucChua;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaLP;
     }
 }

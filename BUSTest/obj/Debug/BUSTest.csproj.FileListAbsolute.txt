@@ -1,0 +1,4 @@
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUSTest\bin\Debug\DevExpress.Spreadsheet.v17.2.Core.dll
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUSTest\bin\Debug\DevExpress.Spreadsheet.v17.2.Core.xml
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUSTest\bin\Debug\DevExpress.Xpo.v17.2.xml
+D:\GitHub\QuanLyKaraoke\QuanLyKaraoke\BUSTest\bin\Debug\es\DevExpress.Spreadsheet.v17.2.Core.resources.dll

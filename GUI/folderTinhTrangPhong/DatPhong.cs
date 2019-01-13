@@ -153,13 +153,14 @@ namespace GUI.folderTinhTrangPhong
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
         {
             if (e.Action == CollectionChangeAction.Remove)
-                selectedPhong.Remove((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]);
+                
+                selectedPhong.Remove((int)gridView1.GetRowCellValue(e.ControllerRow, gridColumn1));
             else if (e.Action == CollectionChangeAction.Add)
             {
                 if (e.ControllerRow < 0)
                     return;
-                if (!selectedPhong.Keys.Contains((int)dtPhong.Rows[e.ControllerRow]["MaPhong"]))
-                    selectedPhong.Add((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], new PhongDTO((int)dtPhong.Rows[e.ControllerRow]["MaPhong"], dtPhong.Rows[e.ControllerRow]["TenPhong"].ToString(), (int)dtPhong.Rows[e.ControllerRow]["MaLP"]));
+                if (!selectedPhong.Keys.Contains((int)gridView1.GetRowCellValue(e.ControllerRow, gridColumn1)))
+                    selectedPhong.Add((int)gridView1.GetRowCellValue(e.ControllerRow, gridColumn1), new PhongDTO((int)gridView1.GetRowCellValue(e.ControllerRow, gridColumn1), gridView1.GetRowCellValue(e.ControllerRow, gridColumn2).ToString(), (int)gridView1.GetRowCellValue(e.ControllerRow, colMaLP)));
 
             }
         }

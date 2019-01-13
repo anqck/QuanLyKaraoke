@@ -34,10 +34,21 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtPhong = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.bntChonKH = new DevExpress.XtraEditors.SimpleButton();
             this.txtKhachHang = new DevExpress.XtraEditors.GridLookUpEdit();
             this.gridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colMaKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
             this.txtGioVao = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -57,22 +68,13 @@
             this.colTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCheck = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
-            this.colMaKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaLP = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPhong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).BeginInit();
@@ -89,7 +91,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // repositoryItemCheckEdit2
@@ -167,7 +168,8 @@
             this.colSucChua,
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn5});
+            this.gridColumn5,
+            this.colMaLP});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.GroupCount = 2;
             this.gridView1.Name = "gridView1";
@@ -186,6 +188,59 @@
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSucChua, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "Mã phòng";
+            this.gridColumn1.FieldName = "MaPhong";
+            this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.Visible = true;
+            this.gridColumn1.VisibleIndex = 1;
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "Tên phòng";
+            this.gridColumn2.FieldName = "TenPhong";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 2;
+            // 
+            // colSucChua
+            // 
+            this.colSucChua.Caption = "Sức Chứa";
+            this.colSucChua.FieldName = "SucChua";
+            this.colSucChua.Name = "colSucChua";
+            this.colSucChua.Visible = true;
+            this.colSucChua.VisibleIndex = 3;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "Tình trạng phòng";
+            this.gridColumn3.FieldName = "TinhTrangPhong";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 3;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "Tầng";
+            this.gridColumn4.FieldName = "Tang";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 5;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "Ghi chú";
+            this.gridColumn5.FieldName = "GhiChu";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
             // 
             // txtGhiChu
             // 
@@ -241,6 +296,70 @@
             this.gridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
             this.gridLookUpEdit1View.RowHeight = 40;
             this.gridLookUpEdit1View.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridLookUpEdit1View_FocusedRowChanged);
+            // 
+            // colMaKhachHang
+            // 
+            this.colMaKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaKhachHang.AppearanceCell.Options.UseFont = true;
+            this.colMaKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colMaKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colMaKhachHang.AppearanceHeader.Options.UseFont = true;
+            this.colMaKhachHang.AppearanceHeader.Options.UseForeColor = true;
+            this.colMaKhachHang.Caption = "Mã Khách Hàng";
+            this.colMaKhachHang.FieldName = "MaKH";
+            this.colMaKhachHang.Name = "colMaKhachHang";
+            this.colMaKhachHang.OptionsColumn.AllowEdit = false;
+            this.colMaKhachHang.Visible = true;
+            this.colMaKhachHang.VisibleIndex = 0;
+            this.colMaKhachHang.Width = 100;
+            // 
+            // colTenKhachHang
+            // 
+            this.colTenKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenKhachHang.AppearanceCell.Options.UseFont = true;
+            this.colTenKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colTenKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colTenKhachHang.AppearanceHeader.Options.UseFont = true;
+            this.colTenKhachHang.AppearanceHeader.Options.UseForeColor = true;
+            this.colTenKhachHang.Caption = "Tên Khách Hàng";
+            this.colTenKhachHang.FieldName = "TenKH";
+            this.colTenKhachHang.Name = "colTenKhachHang";
+            this.colTenKhachHang.OptionsColumn.AllowEdit = false;
+            this.colTenKhachHang.Visible = true;
+            this.colTenKhachHang.VisibleIndex = 1;
+            this.colTenKhachHang.Width = 93;
+            // 
+            // colSDT
+            // 
+            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceCell.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colSDT.AppearanceHeader.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Options.UseForeColor = true;
+            this.colSDT.Caption = "SĐT";
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.OptionsColumn.AllowEdit = false;
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 2;
+            this.colSDT.Width = 93;
+            // 
+            // colCMND
+            // 
+            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceCell.Options.UseFont = true;
+            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colCMND.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colCMND.AppearanceHeader.Options.UseFont = true;
+            this.colCMND.AppearanceHeader.Options.UseForeColor = true;
+            this.colCMND.Caption = "CMND";
+            this.colCMND.FieldName = "CMND";
+            this.colCMND.Name = "colCMND";
+            this.colCMND.OptionsColumn.AllowEdit = false;
+            this.colCMND.Visible = true;
+            this.colCMND.VisibleIndex = 3;
+            this.colCMND.Width = 96;
             // 
             // txtTienTraTruoc
             // 
@@ -471,122 +590,11 @@
             this.colCheck.Visible = true;
             this.colCheck.VisibleIndex = 1;
             // 
-            // gridColumn1
+            // colMaLP
             // 
-            this.gridColumn1.Caption = "Mã phòng";
-            this.gridColumn1.FieldName = "MaPhong";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 1;
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "Tên phòng";
-            this.gridColumn2.FieldName = "TenPhong";
-            this.gridColumn2.Name = "gridColumn2";
-            this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 2;
-            // 
-            // colSucChua
-            // 
-            this.colSucChua.Caption = "Sức Chứa";
-            this.colSucChua.FieldName = "SucChua";
-            this.colSucChua.Name = "colSucChua";
-            this.colSucChua.Visible = true;
-            this.colSucChua.VisibleIndex = 3;
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "Tình trạng phòng";
-            this.gridColumn3.FieldName = "TinhTrangPhong";
-            this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "Tầng";
-            this.gridColumn4.FieldName = "Tang";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 5;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "Ghi chú";
-            this.gridColumn5.FieldName = "GhiChu";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
-            // 
-            // repositoryItemCheckEdit1
-            // 
-            this.repositoryItemCheckEdit1.AutoHeight = false;
-            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
-            // 
-            // colMaKhachHang
-            // 
-            this.colMaKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colMaKhachHang.AppearanceCell.Options.UseFont = true;
-            this.colMaKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colMaKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colMaKhachHang.AppearanceHeader.Options.UseFont = true;
-            this.colMaKhachHang.AppearanceHeader.Options.UseForeColor = true;
-            this.colMaKhachHang.Caption = "Mã Khách Hàng";
-            this.colMaKhachHang.FieldName = "MaKH";
-            this.colMaKhachHang.Name = "colMaKhachHang";
-            this.colMaKhachHang.OptionsColumn.AllowEdit = false;
-            this.colMaKhachHang.Visible = true;
-            this.colMaKhachHang.VisibleIndex = 0;
-            this.colMaKhachHang.Width = 100;
-            // 
-            // colTenKhachHang
-            // 
-            this.colTenKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTenKhachHang.AppearanceCell.Options.UseFont = true;
-            this.colTenKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTenKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colTenKhachHang.AppearanceHeader.Options.UseFont = true;
-            this.colTenKhachHang.AppearanceHeader.Options.UseForeColor = true;
-            this.colTenKhachHang.Caption = "Tên Khách Hàng";
-            this.colTenKhachHang.FieldName = "TenKH";
-            this.colTenKhachHang.Name = "colTenKhachHang";
-            this.colTenKhachHang.OptionsColumn.AllowEdit = false;
-            this.colTenKhachHang.Visible = true;
-            this.colTenKhachHang.VisibleIndex = 1;
-            this.colTenKhachHang.Width = 93;
-            // 
-            // colSDT
-            // 
-            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colSDT.AppearanceCell.Options.UseFont = true;
-            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colSDT.AppearanceHeader.Options.UseFont = true;
-            this.colSDT.AppearanceHeader.Options.UseForeColor = true;
-            this.colSDT.Caption = "SĐT";
-            this.colSDT.FieldName = "SDT";
-            this.colSDT.Name = "colSDT";
-            this.colSDT.OptionsColumn.AllowEdit = false;
-            this.colSDT.Visible = true;
-            this.colSDT.VisibleIndex = 2;
-            this.colSDT.Width = 93;
-            // 
-            // colCMND
-            // 
-            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceCell.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colCMND.AppearanceHeader.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Options.UseForeColor = true;
-            this.colCMND.Caption = "CMND";
-            this.colCMND.FieldName = "CMND";
-            this.colCMND.Name = "colCMND";
-            this.colCMND.OptionsColumn.AllowEdit = false;
-            this.colCMND.Visible = true;
-            this.colCMND.VisibleIndex = 3;
-            this.colCMND.Width = 96;
+            this.colMaLP.Caption = "gridColumn6";
+            this.colMaLP.FieldName = "MaLP";
+            this.colMaLP.Name = "colMaLP";
             // 
             // ThuePhong
             // 
@@ -605,6 +613,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtPhong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridLookUpEdit1View)).EndInit();
@@ -621,7 +630,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Root)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simpleLabelItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -667,5 +675,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraEditors.DateEdit txtGioVao;
         private DevExpress.XtraGrid.Columns.GridColumn colSucChua;
+        private DevExpress.XtraGrid.Columns.GridColumn colMaLP;
     }
 }
