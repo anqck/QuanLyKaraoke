@@ -308,7 +308,7 @@
             this.tileControl2.MaxId = 14;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl2.Position = 6;
+            this.tileControl2.Position = 127;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);

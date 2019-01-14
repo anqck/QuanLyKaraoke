@@ -31,6 +31,13 @@ namespace DAL
             return true;
         }
 
+        public static DataTable LayTatCaChiTietDatPhong_DataTable(int maDatPhong)
+        {
+            DataTable res= DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.chitietdatphong,quanlykaraoke.loaiphong,quanlykaraoke.phong WHERE chitietdatphong.MaPhong=phong.MaPhong AND phong.MaLoaiPhong = loaiphong.MaLP  AND chitietdatphong.MaDatPhong= '"+maDatPhong+"  '  ;");
+            res.TableName = "DsPhongDat";
+            return res;
+        }
+
         public static DataTable LayTatCaChiTietDatPhong_DataTable()
         {
             return DataProvider.ExecuseQuery("SELECT * FROM chitietdatphong ;");

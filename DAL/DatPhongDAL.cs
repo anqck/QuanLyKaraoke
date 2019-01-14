@@ -31,6 +31,14 @@ namespace DAL
 
         }
 
+        public static DataTable LayThongTinDatPhong_table(int maDatPhong)
+        {
+
+            return  DataProvider.ExecuseQuery("SELECT * FROM datphong  WHERE datphong.MaDatPhong  = '" + maDatPhong + "';");
+
+            
+        }
+
         public static List<DatPhongDTO> LayTatCaCacDatPhong(int maPhong)
         {
             List<DatPhongDTO> listDatPhong = new List<DatPhongDTO>();
@@ -39,6 +47,12 @@ namespace DAL
                 listDatPhong.Add(new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"]));
             }
             return listDatPhong;
+
+        }
+
+        public static DataTable LayTatCaCacChiTietDatPhong_table(int maDatPhong)
+        {
+            return DataProvider.ExecuseQuery("SELECT * FROM chitietdatphong WHERE MaDatPhong = '" + maDatPhong + "';");
 
         }
 

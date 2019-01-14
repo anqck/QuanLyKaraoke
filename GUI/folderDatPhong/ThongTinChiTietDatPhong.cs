@@ -22,8 +22,11 @@ namespace GUI.folderDatPhong
         public PhongDTO phong { get; set; }
         DataTable dichVuPhong;
 
+
         public ThongTinChiTietDatPhong(DatPhongDTO datPhongDTO)
         {
+
+
             InitializeComponent();
             datPhong = datPhongDTO;
 
@@ -129,7 +132,7 @@ namespace GUI.folderDatPhong
                     {
                         foreach (int dichVu_Key in chonDichVu.GetSelectedDichVu().Keys)
                         {
-                            DichVuDatPhongBUS.LuuThongTinDichVuDatPhong(new DichVuDatPhongDTO(DichVuDatPhongBUS.PhatSinhMaDichVuPhong(),  dichVu_Key,  chonDichVu.GetSelectedDichVu()[dichVu_Key], DichVuBUS.LayThongTinDichVu(dichVu_Key).DonGia,chiTietDatPhong.MaChiTietDatPhong));
+                            DichVuDatPhongBUS.LuuThongTinDichVuDatPhong(new DichVuDatPhongDTO(DichVuDatPhongBUS.PhatSinhMaDichVuPhong(), dichVu_Key, chonDichVu.GetSelectedDichVu()[dichVu_Key], DichVuBUS.LayThongTinDichVu(dichVu_Key).DonGia, chiTietDatPhong.MaChiTietDatPhong));
                             //DichVuBUS.LayThongTinDichVu(dichVu_Key);
                         }
 
@@ -234,7 +237,7 @@ namespace GUI.folderDatPhong
 
                     //BUS.PhongBUS.CapNhatTinhTrangPhong(chiTiet.MaPhong, 0);
 
-                    
+
 
                     Dictionary<int, DatPhongDTO> tempSapDat = BUS.DatPhongBUS.LayCacDatPhongDangSapDuocDatVaDangDuocDat(ThamSoBUS.LayKhoangThoiGianChoDatPhong());
 
@@ -252,9 +255,12 @@ namespace GUI.folderDatPhong
                     (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).RefreshData();
                     break;
 
-                    case "In phiếu đặt":
-                    break;
+                case "In phiếu đặt":
+                    {
 
+                        (Parent.Parent.Parent as ThongTinChiTietDatNhieuPhong).InPhieuDat();
+                        break;
+                    }
             }
         }
         private void Args_Showing(object sender, XtraMessageShowingArgs e)
@@ -262,7 +268,7 @@ namespace GUI.folderDatPhong
             e.Buttons[DialogResult.OK].Text = "Chọn";
             e.Buttons[DialogResult.Cancel].Text = "Hủy bỏ";
         }
-   
+
         public void LuuThongTinDichVuPhong(ThuePhongDTO tp)
         {
             foreach (DataRow dr in dichVuPhong.Rows)

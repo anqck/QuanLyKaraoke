@@ -33,6 +33,11 @@ namespace BUS
             return DAL.DichVuDatPhongDAL.XoaDichVuDatPhong(maDVP);
         }
 
+        public static DataTable LayTatCaDichVuDatPhong_DichVu_LoaiDV(int maDatPhong)
+        {
+            return DAL.DichVuDatPhongDAL.LayTatCaDichVuDatPhong_DichVu_LoaiDV(maDatPhong);
+        }
+
         public static DataTable LayTatCaDichVuDatPhong_DichVu_LoaiDV(ChiTietDatPhongDTO chiTietDatPhong)
         {
             return DAL.DichVuDatPhongDAL.LayTatCaDichVuDatPhong_DichVu_LoaiDV(chiTietDatPhong);
