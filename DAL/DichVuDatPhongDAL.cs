@@ -38,7 +38,7 @@ namespace DAL
 
         public static DataTable LayTatCaDichVuDatPhong_DichVu_LoaiDV(int maDatPhong)
         {
-            DataTable res =  DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dichvudatphong,quanlykaraoke.chitietdatphong WHERE quanlykaraoke.dichvudatphong.MaChiTietDatPhong =quanlykaraoke.chitietdatphong.MaChiTietDatPhong AND quanlykaraoke.chitietdatphong.MaDatPhong='"+maDatPhong +" '; ");
+            DataTable res =  DataProvider.ExecuseQuery("SELECT * FROM quanlykaraoke.dichvu,quanlykaraoke.dichvudatphong,quanlykaraoke.chitietdatphong WHERE quanlykaraoke.dichvudatphong.MaChiTietDatPhong =quanlykaraoke.chitietdatphong.MaChiTietDatPhong AND quanlykaraoke.dichvudatphong.MaDichVu = quanlykaraoke.dichvu.MaDV AND quanlykaraoke.chitietdatphong.MaDatPhong='" + maDatPhong +" '; ");
             res.TableName = "dichvu";
             return res;
         }
