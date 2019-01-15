@@ -243,7 +243,7 @@ namespace GUI.folderTinhTrangPhong
                 TongTienKhuyenMai += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienKhuyenMai();
                 TongTienDichVu += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienDichVu();
 
-                dsHoaDon.Tables[1].Rows[i]["TienPhong"] = TongTienGio + TongTienDichVu +TongTienKhuyenMai;
+                dsHoaDon.Tables[1].Rows[i]["TienPhong"] = ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienGio() + ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienDichVu() + ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienKhuyenMai();
                 
                 dsDichVuPhong.Tables.Add(((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetDichVuPhong_DataTable());
             }
