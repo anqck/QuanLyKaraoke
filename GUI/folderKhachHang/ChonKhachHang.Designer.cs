@@ -32,7 +32,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaKH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDiaChi = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colNgaySinh = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -90,7 +90,7 @@
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaKH,
             this.colTenKH,
-            this.colCMND,
+            this.colEmail,
             this.colSDT,
             this.colDiaChi,
             this.colNgaySinh,
@@ -124,13 +124,13 @@
             this.colTenKH.Visible = true;
             this.colTenKH.VisibleIndex = 1;
             // 
-            // colCMND
+            // colEmail
             // 
-            this.colCMND.Caption = "CMND";
-            this.colCMND.FieldName = "CMND";
-            this.colCMND.Name = "colCMND";
-            this.colCMND.Visible = true;
-            this.colCMND.VisibleIndex = 2;
+            this.colEmail.Caption = "Email";
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 2;
             // 
             // colSDT
             // 
@@ -346,7 +346,7 @@
         private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraGrid.Columns.GridColumn colMaKH;
         private DevExpress.XtraGrid.Columns.GridColumn colTenKH;
-        private DevExpress.XtraGrid.Columns.GridColumn colCMND;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
         private DevExpress.XtraGrid.Columns.GridColumn colDiaChi;
         private DevExpress.XtraGrid.Columns.GridColumn colDiemTichLuy;

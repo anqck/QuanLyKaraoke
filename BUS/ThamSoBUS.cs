@@ -10,7 +10,7 @@ namespace BUS
     {
         public static double QuyDoiDiem(double TongTien)
         {
-            return DAL.ThamSoDAL.GetTyLeQuyDoiDiemTien()*TongTien;
+            return DAL.ThamSoDAL.GetTyLeQuyDoiDiemTien()*(TongTien/1000);
 
         }
 

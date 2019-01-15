@@ -136,6 +136,7 @@ namespace GUI.folderTinhTrangPhong
             tienGio.Columns.Add(new DataColumn("SoLuong"));
             tienGio.Columns.Add(new DataColumn("GioBD", typeof(double)));
             tienGio.Columns.Add(new DataColumn("Phong"));
+            tienGio.Columns.Add(new DataColumn("colType"));
 
             TongTienGio = 0;
             foreach (DTO.ThongTinThanhToanTheoNgay ngay in ThanhToanBUS.TinhTienThuePhong(thuePhong, txtGioRa.Time).listThongTin)
@@ -149,11 +150,11 @@ namespace GUI.folderTinhTrangPhong
                     dr["KhoangThoiGian"] = dongia.GioBatDau + " - " + dongia.GioKetThuc;
                     dr["GioBD"] = dongia.GioBatDau.hour * 3600 + dongia.GioBatDau.minute * 60 + dongia.GioBatDau.second;
                     dr["DonGia"] = dongia.DonGia;
-                    dr["SoLuong"] = ThongTinThanhToanTheoNgay.Gio.CalcTimeSpan(dongia.GioBatDau, dongia.GioKetThuc).TotalHours;
+                    dr["SoLuong"] = Math.Round(ThongTinThanhToanTheoNgay.Gio.CalcTimeSpan(dongia.GioBatDau, dongia.GioKetThuc).TotalHours,2);
                     dr["Phong"] = PhongBUS.LayThongTinPhong(thuePhong.MaPhong).TenPhong;
+       
                     tienGio.Rows.Add(dr);
                 }
-
 
             }
 
@@ -161,6 +162,19 @@ namespace GUI.folderTinhTrangPhong
             txtTienGio.Properties.NullText = TongTienGio.ToString("###,###,###,##0 VNĐ");
         }
 
+        public DataTable GetTienGio_DataTable()
+        {
+       
+
+            return tienGio;
+        }
+
+        public ThuePhongDTO GetThuePhong()
+        {
+
+
+            return thuePhong;
+        }
         internal void AddButtonXoaDichVu(WindowsUIButton windowsUIButton,bool ReadOnlyMode)
         {
             ButtonXoaDichVu = windowsUIButton;

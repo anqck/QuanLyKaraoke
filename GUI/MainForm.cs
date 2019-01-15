@@ -64,6 +64,7 @@ namespace GUI
             loaiKhachHang1.goToKhachHang = GoToHomeKhachHang;
 
             baoCao1.Init();
+            tinhTrangPhong1.UpdateTimeNotify();
         }
 
 

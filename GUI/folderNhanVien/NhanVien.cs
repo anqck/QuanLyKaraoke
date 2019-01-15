@@ -8,13 +8,16 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 
 namespace GUI.folderNhanVien
 {
     public partial class NhanVien : DevExpress.XtraEditors.XtraUserControl
     {
         DataTable nhanVien;
-       
+
+        FilterControlDialog filterDialog;
+        String strFilterDialog;
         public NhanVien()
         {
             InitializeComponent();
@@ -48,7 +51,29 @@ namespace GUI.folderNhanVien
                    
                     this.NhanVienPagecontrol.SelectedPage = PageSuanhanvien;
                     break;
-                
+                case "Bộ Lọc":
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction action = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction() { Caption = "BỘ LỌC", Description = "Close the application?" };
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand command1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand() { Text = "Lọc", Result = System.Windows.Forms.DialogResult.Yes };
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand command2 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand() { Text = "Hủy", Result = System.Windows.Forms.DialogResult.No };
+                    action.Commands.Add(command1);
+                    action.Commands.Add(command2);
+                    FlyoutProperties properties = new FlyoutProperties();
+                    properties.ButtonSize = new Size(160, 50);
+                    properties.Style = FlyoutStyle.MessageBox;
+
+                    filterDialog = new FilterControlDialog(gridControl1, gridView1.ActiveFilterString.ToString());
+
+                    if (DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), filterDialog, action, properties) == DialogResult.Yes)
+                    {
+                        if (filterDialog.GetFilterString() == "")
+                            return;
+
+                        gridView1.ActiveFilterString = strFilterDialog = filterDialog.GetFilterString();
+               
+
+                    }
+                    break;
+
             }
 
         }

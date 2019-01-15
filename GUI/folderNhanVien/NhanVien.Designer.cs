@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.NhanVienPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageNhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
@@ -44,7 +45,6 @@
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelTitle = new DevExpress.XtraEditors.LabelControl();
             this.wbntNhanvien = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
-            this.searchControl1 = new DevExpress.XtraEditors.SearchControl();
             this.PageThemnhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.themNhanVien1 = new GUI.folderNhanVien.ThemNhanVien();
             this.PageSuanhanvien = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -54,8 +54,6 @@
             this.PageNhanvien.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            this.wbntNhanvien.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).BeginInit();
             this.PageThemnhanvien.SuspendLayout();
             this.PageSuanhanvien.SuspendLayout();
             this.SuspendLayout();
@@ -97,6 +95,7 @@
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(980, 500);
             this.gridControl1.TabIndex = 13;
+            this.gridControl1.Tag = "gridNhanVien";
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -221,9 +220,10 @@
             // 
             this.wbntNhanvien.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntNhanvien.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm nhân viên", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm nhân viên", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa nhân viên", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Sửa nhân viên", -1, false)});
-            this.wbntNhanvien.Controls.Add(this.searchControl1);
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm nhân viên", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm nhân viên", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa nhân viên", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Sửa nhân viên", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Bộ Lọc", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Bộ Lọc", -1, false)});
             this.wbntNhanvien.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntNhanvien.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntNhanvien.ForeColor = System.Drawing.Color.White;
@@ -233,20 +233,6 @@
             this.wbntNhanvien.TabIndex = 9;
             this.wbntNhanvien.Text = "windowsUIButtonPanel1";
             this.wbntNhanvien.ButtonClick += new DevExpress.XtraBars.Docking2010.ButtonEventHandler(this.wbntDichvu_ButtonClick);
-            // 
-            // searchControl1
-            // 
-            this.searchControl1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.searchControl1.EditValue = "";
-            this.searchControl1.Location = new System.Drawing.Point(709, 22);
-            this.searchControl1.Name = "searchControl1";
-            this.searchControl1.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchControl1.Properties.Appearance.Options.UseFont = true;
-            this.searchControl1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Repository.ClearButton(),
-            new DevExpress.XtraEditors.Repository.SearchButton()});
-            this.searchControl1.Size = new System.Drawing.Size(248, 34);
-            this.searchControl1.TabIndex = 0;
             // 
             // PageThemnhanvien
             // 
@@ -293,8 +279,6 @@
             this.PageNhanvien.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            this.wbntNhanvien.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.searchControl1.Properties)).EndInit();
             this.PageThemnhanvien.ResumeLayout(false);
             this.PageSuanhanvien.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -307,7 +291,6 @@
         private DevExpress.XtraBars.Navigation.NavigationPage PageNhanvien;
         private DevExpress.XtraEditors.LabelControl labelTitle;
         private DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel wbntNhanvien;
-        private DevExpress.XtraEditors.SearchControl searchControl1;
         private DevExpress.XtraBars.Navigation.NavigationPage PageThemnhanvien;
         private DevExpress.XtraBars.Navigation.NavigationPage PageSuanhanvien;
         private ThemNhanVien themNhanVien1;

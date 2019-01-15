@@ -288,7 +288,25 @@ namespace GUI.folderTinhTrangPhong
                     MergedDataTable.Merge(dsDichVuPhong.Tables[i]);
                 }
             }
-            
+            for (int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
+            {
+                foreach (DataRow dr in ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetTienGio_DataTable().Rows)
+                {
+                    DataRow row = MergedDataTable.NewRow();
+                    row["MaTemp"] = MergedDataTable.Rows.Count;
+                    row["MaDVP"] = -1;
+                    row["MaThuePhong"] = ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetThuePhong().MaThuePhong;
+                    row["MaDV"] = -1;
+                    row["ThoiGian"] = DateTime.MinValue;
+                    row["SoLuong"] = dr["SoLuong"];
+                    row["Gia"] = dr["DonGia"];
+                    row["TenDV"] = dr["Ngay"] + " " + dr["KhoangThoiGian"] ;
+                    row["DonVi"] = "Tiền/Giờ";
+                    row["colType"] = "Tiền Giờ";
+                    MergedDataTable.Rows.Add(row);
+
+                }
+            }
 
             if (dsHoaDon.Tables.Count == 3)
             {
@@ -367,7 +385,7 @@ namespace GUI.folderTinhTrangPhong
                         khachHang.DiemTichLuy = khachHang.DiemTichLuy + ThamSoBUS.QuyDoiDiem((double)txtTongTienThanhToan.EditValue);
 
                         LoaiKhachHangDTO loaiKhachHangCoThe = KhachHangBUS.LayLoaiKhachHangCoTheDatDuoc(khachHang);
-                        if(loaiKhachHangCoThe!= null)
+                        if(loaiKhachHangCoThe!= null && loaiKhachHangCoThe.MaLoaiKH != 0)
                         {
                             if (khachHang.MaLoaiKH != loaiKhachHangCoThe.MaLoaiKH)
                             {

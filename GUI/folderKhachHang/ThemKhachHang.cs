@@ -49,7 +49,7 @@ namespace GUI.folderKhachHang
 
             txtNgaySinh.DateTime = DateTime.Now;
             txxtTenKh.Text = "";
-            txxtCMND.Text = "";
+            txxtEmail.Text = "";
             txxtSDT.Text = "";
             txxtDiaChi.Text = "";
             txtDiemTichLuy.EditValue = 0;
@@ -69,7 +69,7 @@ namespace GUI.folderKhachHang
                         return;
 
                     //Lưu thông tinh
-                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtCMND.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToDouble(txtDiemTichLuy.EditValue),  txtNgaySinh.DateTime)))
+                    if (BUS.KhachHangBUS.LuuThongTinKH(new KhachHangDTO(Convert.ToInt32(txxtMaKh.Text), txxtTenKh.Text, txxtEmail.Text, txxtSDT.Text, txxtDiaChi.Text, listLoaiKH[comboBoxloaiKH.SelectedIndex].MaLoaiKH, Convert.ToDouble(txtDiemTichLuy.EditValue),  txtNgaySinh.DateTime)))
                     {
                         //Thông báo thành công
                         

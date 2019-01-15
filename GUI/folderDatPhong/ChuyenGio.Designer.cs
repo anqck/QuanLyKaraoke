@@ -40,7 +40,7 @@
             this.colMaKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -233,29 +233,29 @@
             this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
             this.colSDT.AppearanceHeader.Options.UseFont = true;
             this.colSDT.AppearanceHeader.Options.UseForeColor = true;
-            this.colSDT.Caption = "SĐT";
-            this.colSDT.FieldName = "SDT";
+            this.colSDT.Caption = "Email";
+            this.colSDT.FieldName = "Email";
             this.colSDT.Name = "colSDT";
             this.colSDT.OptionsColumn.AllowEdit = false;
             this.colSDT.Visible = true;
             this.colSDT.VisibleIndex = 2;
             this.colSDT.Width = 93;
             // 
-            // colCMND
+            // colEmail
             // 
-            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceCell.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colCMND.AppearanceHeader.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Options.UseForeColor = true;
-            this.colCMND.Caption = "CMND";
-            this.colCMND.FieldName = "CMND";
-            this.colCMND.Name = "colCMND";
-            this.colCMND.OptionsColumn.AllowEdit = false;
-            this.colCMND.Visible = true;
-            this.colCMND.VisibleIndex = 3;
-            this.colCMND.Width = 96;
+            this.colEmail.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colEmail.AppearanceCell.Options.UseFont = true;
+            this.colEmail.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colEmail.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colEmail.AppearanceHeader.Options.UseFont = true;
+            this.colEmail.AppearanceHeader.Options.UseForeColor = true;
+            this.colEmail.Caption = "Email";
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.OptionsColumn.AllowEdit = false;
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 3;
+            this.colEmail.Width = 96;
             // 
             // layoutControlGroup2
             // 
@@ -528,7 +528,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaKhachHang;
         private DevExpress.XtraGrid.Columns.GridColumn colTenKhachHang;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
-        private DevExpress.XtraGrid.Columns.GridColumn colCMND;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;

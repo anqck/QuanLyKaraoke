@@ -21,7 +21,7 @@ namespace DTO
 
       
 
-        public DatPhongDTO(int maDatPhong, DateTime thoiGianDatPhong, double soTienDatTruoc,int maNhanVien, int maKH, string ghiChu, int maTinhTrangDatPhong)
+        public DatPhongDTO(int maDatPhong, DateTime thoiGianDatPhong, double soTienDatTruoc,int maNhanVien, int maKH, string ghiChu, int maTinhTrangDatPhong, DateTime ngayLapPhieuDat)
         {
             MaDatPhong = maDatPhong;
             ThoiGianDatPhong = thoiGianDatPhong;
@@ -30,6 +30,7 @@ namespace DTO
             MaKH = maKH;
             GhiChu = ghiChu;
             MaTinhTrangDatPhong = maTinhTrangDatPhong;
+            NgayLapPhieuDat = ngayLapPhieuDat;
         }
     }
 }

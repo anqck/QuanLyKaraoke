@@ -47,17 +47,18 @@ namespace GUI.folderDatPhong
             txtTienTraTruoc.EditValue = datPhong.SoTienDatTruoc;
             txtThoiGian.EditValue = datPhong.ThoiGianDatPhong;
             txtGhiChu.EditValue =datPhong.GhiChu;
+            dateNgayLapPhieu.DateTime = datPhong.NgayLapPhieuDat;
             txtTinhTrangDat.EditValue=   DatPhongBUS.LayTinhTrangPhong(datPhong.MaTinhTrangDatPhong).TinhTrangDatPhong;
 
             khachHang = KhachHangBUS.LayKhachHang(datPhong.MaKH);
             txtMaKH.EditValue = khachHang.MaKH;
             txtLoaiKH.EditValue = LoaiKhachHangBUS.LayLoaiKhachHang(khachHang.MaLoaiKH).TenLoaiKH;
-            txtCMND.EditValue = khachHang.CMND;
+            txtEmail.EditValue = khachHang.Email;
             txtSDT.EditValue = khachHang.SDT;
             txtTenKH.EditValue = khachHang.TenKH;
             txtDiaChi.EditValue = khachHang.DiaChi;
             txtNgaySinh.EditValue = khachHang.NgaySinh;
-
+            
             txtTenNhanVien.EditValue = NhanVienBUS.LayNhanVien(datPhong.MaNhanVien).TenNhanVien;
 
             this.TabControl.TabPages.Clear();
@@ -89,6 +90,12 @@ namespace GUI.folderDatPhong
                 // 
                 this.TabControl.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] { xtraTab });
             }
+
+            if(datPhong.MaTinhTrangDatPhong == 3)
+            {
+                txtTienTraTruoc.ReadOnly = true;
+                txtGhiChu.ReadOnly = true;
+            }
         }
 
         private void wbntBackThemKH_Click(object sender, EventArgs e)
@@ -113,7 +120,7 @@ namespace GUI.folderDatPhong
        
                     txtMaKH.EditValue = khachHang.MaKH;
                     txtLoaiKH.EditValue = LoaiKhachHangBUS.LayLoaiKhachHang(khachHang.MaLoaiKH).TenLoaiKH;
-                    txtCMND.EditValue = khachHang.CMND;
+                    txtEmail.EditValue = khachHang.Email;
                     txtSDT.EditValue = khachHang.SDT;
                     txtTenKH.EditValue = khachHang.TenKH;
                     txtDiaChi.EditValue = khachHang.DiaChi;
@@ -220,6 +227,16 @@ namespace GUI.folderDatPhong
 
             XtraDialogArgs phieudatphong = new XtraDialogArgs(caption: "Phiếu đặt phòng", content: new ReportViewer(reportPhieudatphong), buttons: new DialogResult[] { DialogResult.OK });
             XtraDialog.Show(phieudatphong);
+        }
+
+        private void txtTienTraTruoc_EditValueChanged(object sender, EventArgs e)
+        {
+            DatPhongBUS.CapNhatTienTraTruocDatPhong((double)txtTienTraTruoc.Value, datPhong.MaDatPhong);
+        }
+
+        private void txtGhiChu_EditValueChanged(object sender, EventArgs e)
+        {
+            DatPhongBUS.CapNhatGhiChuDatPhong((double)txtTienTraTruoc.Value, datPhong.MaDatPhong);
         }
     }
 }

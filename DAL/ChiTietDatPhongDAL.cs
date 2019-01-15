@@ -40,7 +40,7 @@ namespace DAL
 
         public static DataTable LayTatCaChiTietDatPhong_DataTable()
         {
-            return DataProvider.ExecuseQuery("SELECT * FROM chitietdatphong ;");
+            return DataProvider.ExecuseQuery("SELECT * FROM chitietdatphong, phong WHERE  chitietdatphong.MaPhong = phong.MaPhong;");
 
         }
         public static bool CapNhatThongTinDatPhong(ChiTietDatPhongDTO chiTietDatPhongDTO)

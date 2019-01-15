@@ -196,7 +196,7 @@
             0,
             0,
             0});
-            this.txtTienTraTruoc.Properties.Mask.EditMask = "1,000 VNĐ = ###,##0.00 Điểm";
+            this.txtTienTraTruoc.Properties.Mask.EditMask = "1\\,\\0\\0\\0 VNĐ = ###,##0.00 Điểm";
             this.txtTienTraTruoc.Properties.Mask.UseMaskAsDisplayFormat = true;
             this.txtTienTraTruoc.Size = new System.Drawing.Size(271, 34);
             this.txtTienTraTruoc.StyleController = this.layoutControl1;
@@ -402,6 +402,8 @@
             // 
             this.layoutControlItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem1.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem1.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem1.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem1.Control = this.txtNgayLe;
             this.layoutControlItem1.CustomizationFormText = "Khoảng thời gian giữa hay lần thuê";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
@@ -425,6 +427,8 @@
             // 
             this.layoutControlItem5.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem5.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem5.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem5.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem5.Control = this.spinHuyDatPhong;
             this.layoutControlItem5.CustomizationFormText = "Tỷ lệ quy đổi điểm khách hàng";
             this.layoutControlItem5.Location = new System.Drawing.Point(0, 163);
@@ -438,6 +442,8 @@
             // 
             this.layoutControlItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem2.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem2.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem2.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem2.Control = this.txtTienTraTruoc;
             this.layoutControlItem2.Location = new System.Drawing.Point(0, 203);
             this.layoutControlItem2.Name = "layoutControlItem2";
@@ -450,6 +456,8 @@
             // 
             this.layoutControlItem4.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem4.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem4.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem4.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem4.Control = this.txtNgayVao;
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 83);
             this.layoutControlItem4.Name = "layoutControlItem4";
@@ -460,6 +468,8 @@
             // 
             // layoutControlItem6
             // 
+            this.layoutControlItem6.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem6.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem6.Control = this.txtNgayVao1;
             this.layoutControlItem6.CustomizationFormText = "Làm tròn số tiền hát";
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 243);
@@ -473,6 +483,8 @@
             // 
             this.layoutControlItem7.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.layoutControlItem7.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem7.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem7.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem7.Control = this.cbChoDonDep;
             this.layoutControlItem7.CustomizationFormText = "Chuyển sang trạng thái \'Chờ dọn dẹp\' sau khi thanh toán";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 43);
@@ -487,6 +499,8 @@
             // 
             this.layoutControlItem8.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
+            this.layoutControlItem8.AppearanceItemCaption.Options.UseTextOptions = true;
+            this.layoutControlItem8.AppearanceItemCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Far;
             this.layoutControlItem8.Control = this.spinThongBaoDatPhong;
             this.layoutControlItem8.CustomizationFormText = "Tự động hủy đặt phòng sau";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 123);

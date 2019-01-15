@@ -47,6 +47,7 @@ namespace GUI
 
                     break;
                 case "GridKhachHang":
+                case "gridDatPhong":
                     //Lấy tất cả loại phòng vào cmb
                     List<LoaiKhachHangDTO> listLoaiKhachHang = BUS.LoaiKhachHangBUS.LayTatCaLoaiKhachHang_List();
                     cmbLoaiKH = new RepositoryItemComboBox();
@@ -57,6 +58,8 @@ namespace GUI
                         cmbLoaiKH.Items.Add(new MyComboBoxItem(loaiKH.TenLoaiKH, loaiKH.MaLoaiKH));
                     }
 
+                    break;
+                default:
                     break;
             }
         }

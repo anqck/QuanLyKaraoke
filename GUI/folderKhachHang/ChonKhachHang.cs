@@ -36,7 +36,7 @@ namespace GUI.folderKhachHang
         internal KhachHangDTO LayKhachHangDaChon()
         {
             int idxSelectedRow = gridView1.GetFocusedDataSourceRowIndex();
-            return new KhachHangDTO((int)gridDataSource.Rows[idxSelectedRow]["MaKH"], gridDataSource.Rows[idxSelectedRow]["TenKH"].ToString(), gridDataSource.Rows[idxSelectedRow]["CMND"].ToString(), gridDataSource.Rows[idxSelectedRow]["SDT"].ToString(), gridDataSource.Rows[idxSelectedRow]["DiaChi"].ToString(), (int)gridDataSource.Rows[idxSelectedRow]["MaLoaiKH"], (double)gridDataSource.Rows[idxSelectedRow]["DiemTichLuy"], (gridDataSource.Rows[idxSelectedRow]["NgaySinh"].ToString() == "") ? (DateTime.MinValue) : ((DateTime)gridDataSource.Rows[idxSelectedRow]["NgaySinh"]));
+            return new KhachHangDTO((int)gridDataSource.Rows[idxSelectedRow]["MaKH"], gridDataSource.Rows[idxSelectedRow]["TenKH"].ToString(), gridDataSource.Rows[idxSelectedRow]["Email"].ToString(), gridDataSource.Rows[idxSelectedRow]["SDT"].ToString(), gridDataSource.Rows[idxSelectedRow]["DiaChi"].ToString(), (int)gridDataSource.Rows[idxSelectedRow]["MaLoaiKH"], (double)gridDataSource.Rows[idxSelectedRow]["DiemTichLuy"], (gridDataSource.Rows[idxSelectedRow]["NgaySinh"].ToString() == "") ? (DateTime.MinValue) : ((DateTime)gridDataSource.Rows[idxSelectedRow]["NgaySinh"]));
         }
 
         private void btnThemKH_Click(object sender, EventArgs e)

@@ -90,7 +90,7 @@ namespace BUS
             
             foreach (DonGiaTheoKhoangThoiGian donGia_KhoangTG in res.listDonGiaTheoKhoangThoiGian)
             {
-                res.TongThanhTien += Gio.CalcTimeSpan(donGia_KhoangTG.GioBatDau, donGia_KhoangTG.GioKetThuc).TotalHours * donGia_KhoangTG.DonGia;
+                res.TongThanhTien += Math.Round(Gio.CalcTimeSpan(donGia_KhoangTG.GioBatDau, donGia_KhoangTG.GioKetThuc).TotalHours,2) * donGia_KhoangTG.DonGia;
             }
             res.ngay = ngay;
 

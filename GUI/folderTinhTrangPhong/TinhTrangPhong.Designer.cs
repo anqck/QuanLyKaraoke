@@ -308,7 +308,6 @@
             this.tileControl2.MaxId = 14;
             this.tileControl2.Name = "tileControl2";
             this.tileControl2.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileControl2.Position = 127;
             this.tileControl2.RowCount = 10;
             this.tileControl2.SelectedItem = this.tileAll;
             this.tileControl2.Size = new System.Drawing.Size(300, 544);
@@ -1024,7 +1023,7 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Đặt phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Chuyển phòng", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Chuyển phòng", 2, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thanh toán", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thanh toán", 2, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xem hóa đơn", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thanh toán", 2, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xem thông tin đặt phòng", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xem thông tin đặt phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đã dọn dẹp", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Đã dọn dẹp", -1, false)});
             this.wbntTinhtrangphong.Dock = System.Windows.Forms.DockStyle.Bottom;

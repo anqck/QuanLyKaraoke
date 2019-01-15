@@ -11,6 +11,7 @@ using DevExpress.XtraEditors;
 using DevExpress.XtraScheduler;
 using BUS;
 using DTO;
+using DevExpress.XtraBars.Docking2010.Views.WindowsUI;
 
 namespace GUI.folderDatPhong
 {
@@ -19,12 +20,16 @@ namespace GUI.folderDatPhong
         DataSet dsDatPhong;
         DataTable dtDatPhong,dtChiTietDatPhong, dtDatPhong_ChiTietDatPhong, dtPhong;
 
+        FilterControlDialog filterDialog;
+        String strFilterDialog;
+
         public QuanLyDatPhong()
         {
             InitializeComponent();
 
             schedulerControl1.GoToToday();
             thongTinChiTietDatNhieuPhong1.goToHome = GoToHomePage;
+            
         }
         public void RefreshDataBinding()
         {
@@ -36,7 +41,8 @@ namespace GUI.folderDatPhong
             dsDatPhong.Tables.Add(dtDatPhong);
             dsDatPhong.Tables.Add(dtChiTietDatPhong);
             dsDatPhong.Relations.Add(new DataRelation("thongtinchitietdatphong", dtDatPhong.Columns["MaDatPhong"], dtChiTietDatPhong.Columns["MaDatPhong"]));
-            
+
+            gridControl1.LevelTree.Nodes.Add("thongtinchitietdatphong", gridViewThongTinChiTietDatPhong);
 
             dtDatPhong_ChiTietDatPhong = DatPhongBUS.LayTatCaDatPhong_ChiTietDatPhong_DataTable();
             dtDatPhong_ChiTietDatPhong.Columns.Add("END_DATE");
@@ -102,9 +108,17 @@ namespace GUI.folderDatPhong
         private void gridViewDatPhong_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             if (e.FocusedRowHandle < 0)
+            {
                 windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
+                windowsUIButtonPanel1.Buttons[1].Properties.Visible = false;
+            }
+               
             else
+            {
                 windowsUIButtonPanel1.Buttons[0].Properties.Visible = true;
+                windowsUIButtonPanel1.Buttons[1].Properties.Visible = true;
+            }
+               
         }
 
         private void windowsUIButtonPanel1_ButtonClick(object sender, DevExpress.XtraBars.Docking2010.ButtonEventArgs e)
@@ -120,6 +134,29 @@ namespace GUI.folderDatPhong
                 case "Hiển Thị Dạng Biểu Đồ":
                     navigationFrame1.SelectedPage = navigationPage1;
                     break;
+                case "Bộ Lọc":
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction action = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutAction() { Caption = "BỘ LỌC", Description = "Close the application?" };
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand command1 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand() { Text = "Lọc", Result = System.Windows.Forms.DialogResult.Yes };
+                    DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand command2 = new DevExpress.XtraBars.Docking2010.Views.WindowsUI.FlyoutCommand() { Text = "Hủy", Result = System.Windows.Forms.DialogResult.No };
+                    action.Commands.Add(command1);
+                    action.Commands.Add(command2);
+                    FlyoutProperties properties = new FlyoutProperties();
+                    properties.ButtonSize = new Size(160, 50);
+                    properties.Style = FlyoutStyle.MessageBox;
+
+                    filterDialog = new FilterControlDialog(gridControl1, gridViewDatPhong.ActiveFilterString.ToString());
+
+                    if (DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), filterDialog, action, properties) == DialogResult.Yes)
+                    {
+                        if (filterDialog.GetFilterString() == "")
+                            return;
+
+                        gridViewDatPhong.ActiveFilterString = strFilterDialog = filterDialog.GetFilterString();
+                        
+
+                    }
+
+                    break;
             }
         }
 
@@ -128,6 +165,8 @@ namespace GUI.folderDatPhong
             navigationFrame1.SelectedPageIndex = 0;
             RefreshDataBinding();
         }
+
+       
 
         public void HienThiThongTinDatPhong(int maDatPhong)
         {

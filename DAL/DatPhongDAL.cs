@@ -27,7 +27,7 @@ namespace DAL
 
         public static DataTable LayTatCaDatPhong_TinhTrangPhong_KhachHang_NhanVien_DataTable()
         {
-            return DataProvider.ExecuseQuery("SELECT MaDatPhong, ThoiGianDatPhong, datphong.SoTienDatTruoc,khachhang.TenKH,khachhang.SDT,TenNhanVien,GhiChu,TinhTrangDatPhong FROM datphong, tinhtrangdatphong, khachhang, nhanvien WHERE datphong.MaTinhTrangDatPhong = tinhtrangdatphong.MaTinhTrangDatPhong AND datphong.MaNhanVien = nhanvien.MaNhanVien AND datphong.MaKH = khachhang.MaKH  ;");
+            return DataProvider.ExecuseQuery("SELECT MaDatPhong, ThoiGianDatPhong,NgayLapPhieuDat, datphong.SoTienDatTruoc,khachhang.TenKH,khachhang.SDT,TenNhanVien,GhiChu,TinhTrangDatPhong FROM datphong, tinhtrangdatphong, khachhang, nhanvien WHERE datphong.MaTinhTrangDatPhong = tinhtrangdatphong.MaTinhTrangDatPhong AND datphong.MaNhanVien = nhanvien.MaNhanVien AND datphong.MaKH = khachhang.MaKH  ;");
 
         }
 
@@ -44,7 +44,7 @@ namespace DAL
             List<DatPhongDTO> listDatPhong = new List<DatPhongDTO>();
             foreach(DataRow row in DataProvider.ExecuseQuery("SELECT * FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND chitietdatphong.MaPhong = '"+maPhong+"';").Rows)
             {
-                listDatPhong.Add(new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"]));
+                listDatPhong.Add(new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"], DateTime.Parse(row["NgayLapPhieuDat"].ToString())));
             }
             return listDatPhong;
 
@@ -61,13 +61,13 @@ namespace DAL
 
             DataTable dt = DataProvider.ExecuseQuery("SELECT * FROM datphong  WHERE datphong.MaDatPhong  = '" + maDatPhong + "';");
          
-            return new DatPhongDTO((int)dt.Rows[0]["MaDatPhong"], DateTime.Parse(dt.Rows[0]["ThoiGianDatPhong"].ToString()), (double)dt.Rows[0]["SoTienDatTruoc"], (int)dt.Rows[0]["MaNhanVien"], (int)dt.Rows[0]["MaKH"], dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangDatPhong"]);
+            return new DatPhongDTO((int)dt.Rows[0]["MaDatPhong"], DateTime.Parse(dt.Rows[0]["ThoiGianDatPhong"].ToString()), (double)dt.Rows[0]["SoTienDatTruoc"], (int)dt.Rows[0]["MaNhanVien"], (int)dt.Rows[0]["MaKH"], dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangDatPhong"], DateTime.Parse(dt.Rows[0]["NgayLapPhieuDat"].ToString()));
 
         }
 
         public static bool LuuThongTinDatPhong(DatPhongDTO datPhongDTO)
         {
-            StringBuilder stringBuilder =  new StringBuilder("INSERT INTO `quanlykaraoke`.`datphong` (`MaDatPhong`, `ThoiGianDatPhong`, `SoTienDatTruoc`, `MaNhanVien`, `MaKH`, `GhiChu`, `MaTinhTrangDatPhong`) VALUES ('$0', '$1', '$2', '$3', '$4', '$5', '$6');");
+            StringBuilder stringBuilder =  new StringBuilder("INSERT INTO `quanlykaraoke`.`datphong` (`MaDatPhong`, `ThoiGianDatPhong`, `SoTienDatTruoc`, `MaNhanVien`, `MaKH`, `GhiChu`, `MaTinhTrangDatPhong`,`NgayLapPhieuDat`) VALUES ('$0', '$1', '$2', '$3', '$4', '$5', '$6', '$7');");
             stringBuilder.Replace("$0", datPhongDTO.MaDatPhong.ToString());
             stringBuilder.Replace("$1", datPhongDTO.ThoiGianDatPhong.ToString("yyyy-MM-dd HH:mm:ss.fff"));
             stringBuilder.Replace("$2", datPhongDTO.SoTienDatTruoc.ToString());
@@ -75,6 +75,7 @@ namespace DAL
             stringBuilder.Replace("$4", datPhongDTO.MaKH.ToString());
             stringBuilder.Replace("$5", datPhongDTO.GhiChu.ToString());
             stringBuilder.Replace("$6", datPhongDTO.MaTinhTrangDatPhong.ToString());
+            stringBuilder.Replace("$7", datPhongDTO.NgayLapPhieuDat.ToString("yyyy-MM-dd HH:mm:ss.fff"));
 
             DataProvider.ExecuseNonQuery(stringBuilder.ToString());
             return true;
@@ -157,7 +158,7 @@ namespace DAL
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong WHERE MaTinhTrangDatPhong = '1'  AND ThoiGianDatPhong <= '" + DateTime.Now.AddMinutes(-khoangThoiGian).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
             foreach (DataRow row in dt.Rows)
             {
-                res.Add((int)row["MaDatPhong"], new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"]));
+                res.Add((int)row["MaDatPhong"], new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"], DateTime.Parse(row["NgayLapPhieuDat"].ToString())));
             }
 
             return res;
@@ -169,7 +170,7 @@ namespace DAL
             if (dt.Rows.Count == 0)
                 return null;
             else
-                return new DatPhongDTO((int)dt.Rows[0]["MaDatPhong"], DateTime.Parse(dt.Rows[0]["ThoiGianDatPhong"].ToString()), (double)dt.Rows[0]["SoTienDatTruoc"], (int)dt.Rows[0]["MaNhanVien"], (int)dt.Rows[0]["MaKH"], dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangDatPhong"]);
+                return new DatPhongDTO((int)dt.Rows[0]["MaDatPhong"], DateTime.Parse(dt.Rows[0]["ThoiGianDatPhong"].ToString()), (double)dt.Rows[0]["SoTienDatTruoc"], (int)dt.Rows[0]["MaNhanVien"], (int)dt.Rows[0]["MaKH"], dt.Rows[0]["GhiChu"].ToString(), (int)dt.Rows[0]["MaTinhTrangDatPhong"], DateTime.Parse(dt.Rows[0]["NgayLapPhieuDat"].ToString()));
             
         
         }
@@ -181,7 +182,7 @@ namespace DAL
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM datphong WHERE MaTinhTrangDatPhong = '1'  AND ThoiGianDatPhong BETWEEN '" + DateTime.Now.AddMinutes(-ThamSoDAL.LayKhoangThoiGianToiThieuGiuaHaiLanThue()).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + DateTime.Now.AddMinutes(khoangThoiGian).ToString("yyyy-MM-dd HH:mm:ss.fff") + "';");
             foreach (DataRow row in dt.Rows)
             {
-                res.Add((int)row["MaDatPhong"], new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"]));
+                res.Add((int)row["MaDatPhong"], new DatPhongDTO((int)row["MaDatPhong"], DateTime.Parse(row["ThoiGianDatPhong"].ToString()), (double)row["SoTienDatTruoc"], (int)row["MaNhanVien"], (int)row["MaKH"], row["GhiChu"].ToString(), (int)row["MaTinhTrangDatPhong"], DateTime.Parse(row["NgayLapPhieuDat"].ToString())));
             }
 
             return res;
@@ -198,6 +199,14 @@ namespace DAL
             }
 
             return res;
+        }
+        public static void CapNhatTienTraTruocDatPhong(double value, int maDatPhong)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE datphong SET SoTienDatTruoc = '" + value + "' WHERE MaDatPhong = '" + maDatPhong + "';");
+        }
+        public static void CapNhatGhiChuDatPhong(double value, int maDatPhong)
+        {
+            DataProvider.ExecuseNonQuery("UPDATE datphong SET GhiChu = '" + value + "' WHERE MaDatPhong = '" + maDatPhong + "';");
         }
     }
 }

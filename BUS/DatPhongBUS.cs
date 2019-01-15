@@ -115,5 +115,14 @@ namespace BUS
             return DAL.DatPhongDAL.LayCacChiTietDatPhongDangSapDuocDatVaDangDuocDat(khoangThoiGian);
 
         }
+
+        public static void CapNhatTienTraTruocDatPhong(double value, int maDatPhong)
+        {
+            DAL.DatPhongDAL.CapNhatTienTraTruocDatPhong(value, maDatPhong);
+        }
+        public static void CapNhatGhiChuDatPhong(double value, int maDatPhong)
+        {
+            DAL.DatPhongDAL.CapNhatGhiChuDatPhong(value, maDatPhong);
+        }
     }
 }

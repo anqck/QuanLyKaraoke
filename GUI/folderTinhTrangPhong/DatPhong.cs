@@ -64,7 +64,7 @@ namespace GUI.folderTinhTrangPhong
             {
                 case "Đặt":
                    
-                    DatPhongDTO datPhong = new DatPhongDTO(DatPhongBUS.PhatSinhMaDatPhong(), txtGioVao.Time, Convert.ToDouble(txtTienTraTruoc.EditValue), (this.ParentForm.Owner as MainForm).nhanVien.MaNhanVien, khachHang.MaKH, txtGhiChu.EditValue.ToString(), 1);
+                    DatPhongDTO datPhong = new DatPhongDTO(DatPhongBUS.PhatSinhMaDatPhong(), txtGioVao.Time, Convert.ToDouble(txtTienTraTruoc.EditValue), (this.ParentForm.Owner as MainForm).nhanVien.MaNhanVien, khachHang.MaKH, txtGhiChu.EditValue.ToString(), 1,DateTime.Now);
                     DatPhongBUS.LuuThongTinDatPhong(datPhong);
 
                     foreach(PhongDTO phong in selectedPhong.Values)
@@ -91,7 +91,7 @@ namespace GUI.folderTinhTrangPhong
         {
             int idxSelected = gridLookUpEdit1View.GetFocusedDataSourceRowIndex();
             if(idxSelected >=0)
-            khachHang = new KhachHangDTO((int)dataSource_KhachHang.Rows[idxSelected]["MaKH"], dataSource_KhachHang.Rows[idxSelected]["TenKH"].ToString(), dataSource_KhachHang.Rows[idxSelected]["CMND"].ToString(), dataSource_KhachHang.Rows[idxSelected]["SDT"].ToString(), dataSource_KhachHang.Rows[idxSelected]["DiaChi"].ToString(), (int)dataSource_KhachHang.Rows[idxSelected]["MaLoaiKH"], (double)dataSource_KhachHang.Rows[idxSelected]["DiemTichLuy"], (dataSource_KhachHang.Rows[0]["NgaySinh"].ToString() == "") ? (DateTime.MinValue) : ((DateTime)dataSource_KhachHang.Rows[0]["NgaySinh"]));
+            khachHang = new KhachHangDTO((int)dataSource_KhachHang.Rows[idxSelected]["MaKH"], dataSource_KhachHang.Rows[idxSelected]["TenKH"].ToString(), dataSource_KhachHang.Rows[idxSelected]["Email"].ToString(), dataSource_KhachHang.Rows[idxSelected]["SDT"].ToString(), dataSource_KhachHang.Rows[idxSelected]["DiaChi"].ToString(), (int)dataSource_KhachHang.Rows[idxSelected]["MaLoaiKH"], (double)dataSource_KhachHang.Rows[idxSelected]["DiemTichLuy"], (dataSource_KhachHang.Rows[0]["NgaySinh"].ToString() == "") ? (DateTime.MinValue) : ((DateTime)dataSource_KhachHang.Rows[0]["NgaySinh"]));
 
 
         }
@@ -149,6 +149,11 @@ namespace GUI.folderTinhTrangPhong
         private void txtGioVao_Properties_EditValueChanged(object sender, EventArgs e)
         {
             txtPhong.Properties.DataSource = dtPhong =  DatPhongBUS.LayCacPhongConTrongTrongThoiGian(txtGioVao.Time, ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue());
+ 
+           
+     
+            selectedPhong.Clear();
+            txtPhong.Refresh();
         }
 
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)

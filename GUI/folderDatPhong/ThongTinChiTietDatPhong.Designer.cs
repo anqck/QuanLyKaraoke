@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions6 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions7 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions8 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions9 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions10 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions11 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions12 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions13 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions14 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions15 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions16 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.wbntQuanlyphong = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -62,6 +62,7 @@
             this.l5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.l = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colDonGiaNiemYet = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemSpinEdit1)).BeginInit();
@@ -88,16 +89,16 @@
             // 
             this.wbntQuanlyphong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntQuanlyphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm Dịch Vụ", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm Dịch Vụ", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Dịch Vụ", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Dịch Vụ", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm Dịch Vụ", true, windowsUIButtonImageOptions9, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm Dịch Vụ", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Dịch Vụ", true, windowsUIButtonImageOptions10, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Dịch Vụ", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt Thêm Phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Đặt Thêm Phòng", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Chuyển Phòng", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Chuyển Phòng", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy Phòng", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy Phòng", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Đặt Thêm Phòng", true, windowsUIButtonImageOptions11, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Đặt Thêm Phòng", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Chuyển Phòng", true, windowsUIButtonImageOptions12, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Chuyển Phòng", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy Phòng", true, windowsUIButtonImageOptions13, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy Phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy Đặt Phòng", true, windowsUIButtonImageOptions6, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy Đặt Phòng", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In phiếu đặt", true, windowsUIButtonImageOptions7, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "In phiếu đặt", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Nhận Phòng", true, windowsUIButtonImageOptions8, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Nhận Phòng", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hủy Đặt Phòng", true, windowsUIButtonImageOptions14, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hủy Đặt Phòng", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("In phiếu đặt", true, windowsUIButtonImageOptions15, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "In phiếu đặt", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Nhận Phòng", true, windowsUIButtonImageOptions16, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Nhận Phòng", -1, false)});
             this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
@@ -142,7 +143,8 @@
             this.colDonVi,
             this.colSoLuong,
             this.colDonGia,
-            this.colThanhTien});
+            this.colThanhTien,
+            this.colDonGiaNiemYet});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.FooterPanelHeight = 40;
             this.gridView1.GridControl = this.gridControl1;
@@ -171,7 +173,7 @@
             this.colTenDichVu.OptionsColumn.ReadOnly = true;
             this.colTenDichVu.Visible = true;
             this.colTenDichVu.VisibleIndex = 0;
-            this.colTenDichVu.Width = 149;
+            this.colTenDichVu.Width = 82;
             // 
             // colLoaiDV
             // 
@@ -182,7 +184,7 @@
             this.colLoaiDV.OptionsColumn.ReadOnly = true;
             this.colLoaiDV.Visible = true;
             this.colLoaiDV.VisibleIndex = 2;
-            this.colLoaiDV.Width = 142;
+            this.colLoaiDV.Width = 78;
             // 
             // colDonVi
             // 
@@ -193,7 +195,7 @@
             this.colDonVi.OptionsColumn.ReadOnly = true;
             this.colDonVi.Visible = true;
             this.colDonVi.VisibleIndex = 1;
-            this.colDonVi.Width = 116;
+            this.colDonVi.Width = 64;
             // 
             // colSoLuong
             // 
@@ -207,7 +209,7 @@
             this.colSoLuong.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.colSoLuong.Visible = true;
             this.colSoLuong.VisibleIndex = 3;
-            this.colSoLuong.Width = 152;
+            this.colSoLuong.Width = 84;
             // 
             // repositoryItemSpinEdit1
             // 
@@ -230,7 +232,7 @@
             this.colDonGia.UnboundType = DevExpress.Data.UnboundColumnType.Object;
             this.colDonGia.Visible = true;
             this.colDonGia.VisibleIndex = 4;
-            this.colDonGia.Width = 269;
+            this.colDonGia.Width = 87;
             // 
             // repositoryItemSpinEdit2
             // 
@@ -260,8 +262,8 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "colThanhTien", "<color=gray>Tổng: </color><br><b>{0:n0} VNĐ</b>")});
             this.colThanhTien.UnboundType = DevExpress.Data.UnboundColumnType.Decimal;
             this.colThanhTien.Visible = true;
-            this.colThanhTien.VisibleIndex = 5;
-            this.colThanhTien.Width = 212;
+            this.colThanhTien.VisibleIndex = 6;
+            this.colThanhTien.Width = 167;
             // 
             // layoutControl1
             // 
@@ -463,6 +465,17 @@
             this.layoutControlItem3.Text = "Ghi chú";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(110, 16);
             // 
+            // colDonGiaNiemYet
+            // 
+            this.colDonGiaNiemYet.Caption = "Đơn Giá Niêm Yết";
+            this.colDonGiaNiemYet.DisplayFormat.FormatString = "###,###,###,##0 VNĐ";
+            this.colDonGiaNiemYet.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.colDonGiaNiemYet.FieldName = "DonGia";
+            this.colDonGiaNiemYet.Name = "colDonGiaNiemYet";
+            this.colDonGiaNiemYet.Visible = true;
+            this.colDonGiaNiemYet.VisibleIndex = 5;
+            this.colDonGiaNiemYet.Width = 56;
+            // 
             // ThongTinChiTietDatPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -526,5 +539,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit txtTenPhong;
         private DevExpress.XtraEditors.TextEdit txtTang;
+        private DevExpress.XtraGrid.Columns.GridColumn colDonGiaNiemYet;
     }
 }

@@ -40,6 +40,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMaLP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.txtGhiChu = new DevExpress.XtraEditors.MemoEdit();
             this.bntChonKH = new DevExpress.XtraEditors.SimpleButton();
@@ -48,7 +49,7 @@
             this.colMaKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colCMND = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
             this.txtGioVao = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -68,7 +69,7 @@
             this.colTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCheck = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMaLP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -237,6 +238,12 @@
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
             // 
+            // colMaLP
+            // 
+            this.colMaLP.Caption = "gridColumn6";
+            this.colMaLP.FieldName = "MaLP";
+            this.colMaLP.Name = "colMaLP";
+            // 
             // repositoryItemCheckEdit1
             // 
             this.repositoryItemCheckEdit1.AutoHeight = false;
@@ -289,7 +296,8 @@
             this.colMaKhachHang,
             this.colTenKhachHang,
             this.colSDT,
-            this.colCMND});
+            this.colEmail,
+            this.colLoaiKhachHang});
             this.gridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridLookUpEdit1View.Name = "gridLookUpEdit1View";
             this.gridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
@@ -345,21 +353,21 @@
             this.colSDT.VisibleIndex = 2;
             this.colSDT.Width = 93;
             // 
-            // colCMND
+            // colEmail
             // 
-            this.colCMND.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceCell.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colCMND.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colCMND.AppearanceHeader.Options.UseFont = true;
-            this.colCMND.AppearanceHeader.Options.UseForeColor = true;
-            this.colCMND.Caption = "CMND";
-            this.colCMND.FieldName = "CMND";
-            this.colCMND.Name = "colCMND";
-            this.colCMND.OptionsColumn.AllowEdit = false;
-            this.colCMND.Visible = true;
-            this.colCMND.VisibleIndex = 3;
-            this.colCMND.Width = 96;
+            this.colEmail.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colEmail.AppearanceCell.Options.UseFont = true;
+            this.colEmail.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colEmail.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colEmail.AppearanceHeader.Options.UseFont = true;
+            this.colEmail.AppearanceHeader.Options.UseForeColor = true;
+            this.colEmail.Caption = "Email";
+            this.colEmail.FieldName = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.OptionsColumn.AllowEdit = false;
+            this.colEmail.Visible = true;
+            this.colEmail.VisibleIndex = 3;
+            this.colEmail.Width = 96;
             // 
             // txtTienTraTruoc
             // 
@@ -590,11 +598,19 @@
             this.colCheck.Visible = true;
             this.colCheck.VisibleIndex = 1;
             // 
-            // colMaLP
+            // colLoaiKhachHang
             // 
-            this.colMaLP.Caption = "gridColumn6";
-            this.colMaLP.FieldName = "MaLP";
-            this.colMaLP.Name = "colMaLP";
+            this.colLoaiKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.colLoaiKhachHang.AppearanceCell.Options.UseFont = true;
+            this.colLoaiKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.colLoaiKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colLoaiKhachHang.AppearanceHeader.Options.UseFont = true;
+            this.colLoaiKhachHang.AppearanceHeader.Options.UseForeColor = true;
+            this.colLoaiKhachHang.Caption = "Tên Loại Khách Hàng";
+            this.colLoaiKhachHang.FieldName = "TenLoaiKH";
+            this.colLoaiKhachHang.Name = "colLoaiKhachHang";
+            this.colLoaiKhachHang.Visible = true;
+            this.colLoaiKhachHang.VisibleIndex = 4;
             // 
             // ThuePhong
             // 
@@ -653,7 +669,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colMaKhachHang;
         private DevExpress.XtraGrid.Columns.GridColumn colTenKhachHang;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
-        private DevExpress.XtraGrid.Columns.GridColumn colCMND;
+        private DevExpress.XtraGrid.Columns.GridColumn colEmail;
         private DevExpress.XtraBars.Docking2010.WindowsUIButton btnThuePhong, btnHuyPhong;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraEditors.SpinEdit txtTienTraTruoc;
@@ -676,5 +692,6 @@
         private DevExpress.XtraEditors.DateEdit txtGioVao;
         private DevExpress.XtraGrid.Columns.GridColumn colSucChua;
         private DevExpress.XtraGrid.Columns.GridColumn colMaLP;
+        private DevExpress.XtraGrid.Columns.GridColumn colLoaiKhachHang;
     }
 }

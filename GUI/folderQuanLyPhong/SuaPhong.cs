@@ -81,7 +81,7 @@ namespace GUI.folderQuanLyPhong
                 cmbTinhTrangPhong.Enabled = true;
                 foreach (TinhTrangPhongDTO tinhtrang in listTinhTrangPhong)
                 {
-                    if (tinhtrang.MaTinhTrangPhong == 1|| tinhtrang.MaTinhTrangPhong == 4 || tinhtrang.MaTinhTrangPhong == 6)
+                    if (tinhtrang.MaTinhTrangPhong == 1|| tinhtrang.MaTinhTrangPhong == 4 || tinhtrang.MaTinhTrangPhong == 6 || tinhtrang.MaTinhTrangPhong == 7)
                         continue;
                     cmbTinhTrangPhong.Properties.Items.Add(new MyComboBoxItem(tinhtrang.TinhTrangPhong, tinhtrang.MaTinhTrangPhong));
                     if (tinhtrang.MaTinhTrangPhong == phongDTO.MaTinhTrangPhong)

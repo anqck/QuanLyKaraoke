@@ -47,7 +47,7 @@ namespace GUI.TinhTrangPhong
             btnChuyenPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Chuyển phòng"];
             btnChuyenPhong.Click += OnClickBtnChuyenPhong;
 
-            btnThanhToan = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Thanh toán"];
+            btnThanhToan = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Xem hóa đơn"];
             btnThanhToan.Click += OnClickBtnThanhToan;
 
             btnXemDatPhong = (DevExpress.XtraBars.Docking2010.WindowsUIButton)wbntTinhtrangphong.Buttons["Xem thông tin đặt phòng"];

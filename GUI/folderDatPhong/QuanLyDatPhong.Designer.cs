@@ -37,19 +37,22 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
+            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions5 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.gridViewThongTinChiTietDatPhong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaChiTietDatPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridViewDatPhong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaDatPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colThoiGianDatPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSoTienTraTruoc = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenKH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colNgayLapPhieuDat = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenNhanVien = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGhiCh = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrangDatPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.navigationFrame1 = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl = new DevExpress.XtraLayout.LayoutControl();
@@ -70,7 +73,6 @@
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.thongTinChiTietDatNhieuPhong1 = new GUI.folderDatPhong.ThongTinChiTietDatNhieuPhong();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewThongTinChiTietDatPhong)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDatPhong)).BeginInit();
@@ -101,9 +103,11 @@
             this.gridViewThongTinChiTietDatPhong.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaChiTietDatPhong,
             this.gridColumn6,
-            this.gridColumn7});
+            this.colTenPhong});
             this.gridViewThongTinChiTietDatPhong.GridControl = this.gridControl1;
             this.gridViewThongTinChiTietDatPhong.Name = "gridViewThongTinChiTietDatPhong";
+            this.gridViewThongTinChiTietDatPhong.OptionsCustomization.AllowGroup = false;
+            this.gridViewThongTinChiTietDatPhong.OptionsView.ShowGroupPanel = false;
             // 
             // colMaChiTietDatPhong
             // 
@@ -115,17 +119,19 @@
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "gridColumn6";
+            this.gridColumn6.Caption = "Mã Phòng";
+            this.gridColumn6.FieldName = "Ma Phong";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 1;
             // 
-            // gridColumn7
+            // colTenPhong
             // 
-            this.gridColumn7.Caption = "gridColumn7";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 2;
+            this.colTenPhong.Caption = "Tên Phòng";
+            this.colTenPhong.FieldName = "TenPhong";
+            this.colTenPhong.Name = "colTenPhong";
+            this.colTenPhong.Visible = true;
+            this.colTenPhong.VisibleIndex = 2;
             // 
             // gridControl1
             // 
@@ -133,11 +139,12 @@
             gridLevelNode1.RelationName = "ThongTinChiTietDatPhong";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode1});
-            this.gridControl1.Location = new System.Drawing.Point(3, 106);
+            this.gridControl1.Location = new System.Drawing.Point(3, 173);
             this.gridControl1.MainView = this.gridViewDatPhong;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(1388, 562);
+            this.gridControl1.Size = new System.Drawing.Size(1388, 495);
             this.gridControl1.TabIndex = 11;
+            this.gridControl1.Tag = "gridDatPhong";
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDatPhong,
             this.gridViewThongTinChiTietDatPhong});
@@ -150,6 +157,7 @@
             this.colThoiGianDatPhong,
             this.colSoTienTraTruoc,
             this.colTenKH,
+            this.colNgayLapPhieuDat,
             this.colTenNhanVien,
             this.colGhiCh,
             this.colTinhTrangDatPhong,
@@ -158,7 +166,7 @@
             this.gridViewDatPhong.GroupCount = 1;
             this.gridViewDatPhong.GroupRowHeight = 40;
             this.gridViewDatPhong.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "MaDatPhong", null, "Số lương = ##0")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Count, "MaDatPhong", null, "")});
             this.gridViewDatPhong.Name = "gridViewDatPhong";
             this.gridViewDatPhong.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridViewDatPhong.OptionsView.ShowGroupPanel = false;
@@ -192,7 +200,7 @@
             this.colThoiGianDatPhong.AppearanceHeader.Options.UseFont = true;
             this.colThoiGianDatPhong.AppearanceHeader.Options.UseForeColor = true;
             this.colThoiGianDatPhong.Caption = "Thời Gian Đặt Phòng";
-            this.colThoiGianDatPhong.DisplayFormat.FormatString = "dd/MM/yyyy";
+            this.colThoiGianDatPhong.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
             this.colThoiGianDatPhong.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colThoiGianDatPhong.FieldName = "ThoiGianDatPhong";
             this.colThoiGianDatPhong.Name = "colThoiGianDatPhong";
@@ -229,6 +237,22 @@
             this.colTenKH.Visible = true;
             this.colTenKH.VisibleIndex = 2;
             // 
+            // colNgayLapPhieuDat
+            // 
+            this.colNgayLapPhieuDat.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.colNgayLapPhieuDat.AppearanceCell.Options.UseFont = true;
+            this.colNgayLapPhieuDat.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.colNgayLapPhieuDat.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colNgayLapPhieuDat.AppearanceHeader.Options.UseFont = true;
+            this.colNgayLapPhieuDat.AppearanceHeader.Options.UseForeColor = true;
+            this.colNgayLapPhieuDat.Caption = "Ngày Lập Phiếu Đặt";
+            this.colNgayLapPhieuDat.DisplayFormat.FormatString = "dd/MM/yyyy HH:mm";
+            this.colNgayLapPhieuDat.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.colNgayLapPhieuDat.FieldName = "NgayLapPhieuDat";
+            this.colNgayLapPhieuDat.Name = "colNgayLapPhieuDat";
+            this.colNgayLapPhieuDat.Visible = true;
+            this.colNgayLapPhieuDat.VisibleIndex = 6;
+            // 
             // colTenNhanVien
             // 
             this.colTenNhanVien.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -241,7 +265,7 @@
             this.colTenNhanVien.FieldName = "TenNhanVien";
             this.colTenNhanVien.Name = "colTenNhanVien";
             this.colTenNhanVien.Visible = true;
-            this.colTenNhanVien.VisibleIndex = 6;
+            this.colTenNhanVien.VisibleIndex = 7;
             // 
             // colGhiCh
             // 
@@ -270,6 +294,20 @@
             this.colTinhTrangDatPhong.Name = "colTinhTrangDatPhong";
             this.colTinhTrangDatPhong.Visible = true;
             this.colTinhTrangDatPhong.VisibleIndex = 6;
+            // 
+            // colSDT
+            // 
+            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceCell.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colSDT.AppearanceHeader.Options.UseFont = true;
+            this.colSDT.AppearanceHeader.Options.UseForeColor = true;
+            this.colSDT.Caption = "Số Điện Thoại";
+            this.colSDT.FieldName = "SDT";
+            this.colSDT.Name = "colSDT";
+            this.colSDT.Visible = true;
+            this.colSDT.VisibleIndex = 3;
             // 
             // navigationFrame1
             // 
@@ -313,7 +351,7 @@
             // 
             this.schedulerControl1.DataStorage = this.schedulerStorage1;
             this.schedulerControl1.GroupType = DevExpress.XtraScheduler.SchedulerGroupType.Resource;
-            this.schedulerControl1.Location = new System.Drawing.Point(8, 106);
+            this.schedulerControl1.Location = new System.Drawing.Point(8, 173);
             this.schedulerControl1.Name = "schedulerControl1";
             this.schedulerControl1.OptionsCustomization.AllowAppointmentCopy = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.schedulerControl1.OptionsCustomization.AllowAppointmentCreate = DevExpress.XtraScheduler.UsedAppointmentType.None;
@@ -323,7 +361,7 @@
             this.schedulerControl1.OptionsCustomization.AllowAppointmentEdit = DevExpress.XtraScheduler.UsedAppointmentType.None;
             this.schedulerControl1.OptionsCustomization.AllowAppointmentMultiSelect = false;
             this.schedulerControl1.OptionsCustomization.AllowAppointmentResize = DevExpress.XtraScheduler.UsedAppointmentType.None;
-            this.schedulerControl1.Size = new System.Drawing.Size(1383, 562);
+            this.schedulerControl1.Size = new System.Drawing.Size(1383, 495);
             this.schedulerControl1.Start = new System.DateTime(2018, 6, 5, 0, 0, 0, 0);
             this.schedulerControl1.TabIndex = 11;
             this.schedulerControl1.Text = "schedulerControl1";
@@ -379,7 +417,7 @@
             // simpleLabelItem1
             // 
             this.simpleLabelItem1.AllowHotTrack = false;
-            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 37.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem1.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 67.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLabelItem1.AppearanceItemCaption.FontSizeDelta = 3;
             this.simpleLabelItem1.AppearanceItemCaption.ForeColor = System.Drawing.Color.Gray;
             this.simpleLabelItem1.AppearanceItemCaption.Options.UseFont = true;
@@ -387,17 +425,17 @@
             this.simpleLabelItem1.Location = new System.Drawing.Point(0, 0);
             this.simpleLabelItem1.Name = "simpleLabelItem1";
             this.simpleLabelItem1.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 0, 8, 10);
-            this.simpleLabelItem1.Size = new System.Drawing.Size(1394, 103);
+            this.simpleLabelItem1.Size = new System.Drawing.Size(1394, 170);
             this.simpleLabelItem1.Text = "ĐẶT PHÒNG";
-            this.simpleLabelItem1.TextSize = new System.Drawing.Size(352, 85);
+            this.simpleLabelItem1.TextSize = new System.Drawing.Size(639, 152);
             // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.schedulerControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 103);
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 170);
             this.layoutControlItem1.MinSize = new System.Drawing.Size(111, 26);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(1394, 568);
+            this.layoutControlItem1.Size = new System.Drawing.Size(1394, 501);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 16);
@@ -430,7 +468,9 @@
             this.windowsUIButtonPanel1.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Chi Tiết Đặt Phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Chi Tiết Đặt Phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hiển Thị Dạng Biểu Đồ", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hiển Thị Dạng Biểu Đồ", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Hiển Thị Dạng Biểu Đồ", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Hiển Thị Dạng Biểu Đồ", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Bộ Lọc", true, windowsUIButtonImageOptions5, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Bộ Lọc", -1, false)});
             this.windowsUIButtonPanel1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.windowsUIButtonPanel1.ForeColor = System.Drawing.Color.White;
             this.windowsUIButtonPanel1.Location = new System.Drawing.Point(3, 674);
@@ -468,7 +508,7 @@
             // simpleLabelItem2
             // 
             this.simpleLabelItem2.AllowHotTrack = false;
-            this.simpleLabelItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 37.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.simpleLabelItem2.AppearanceItemCaption.Font = new System.Drawing.Font("Segoe UI", 67.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.simpleLabelItem2.AppearanceItemCaption.FontSizeDelta = 3;
             this.simpleLabelItem2.AppearanceItemCaption.ForeColor = System.Drawing.Color.Gray;
             this.simpleLabelItem2.AppearanceItemCaption.Options.UseFont = true;
@@ -476,16 +516,16 @@
             this.simpleLabelItem2.Location = new System.Drawing.Point(0, 0);
             this.simpleLabelItem2.Name = "simpleLabelItem1";
             this.simpleLabelItem2.Padding = new DevExpress.XtraLayout.Utils.Padding(40, 0, 8, 10);
-            this.simpleLabelItem2.Size = new System.Drawing.Size(1394, 103);
+            this.simpleLabelItem2.Size = new System.Drawing.Size(1394, 170);
             this.simpleLabelItem2.Text = "ĐẶT PHÒNG";
-            this.simpleLabelItem2.TextSize = new System.Drawing.Size(352, 85);
+            this.simpleLabelItem2.TextSize = new System.Drawing.Size(639, 152);
             // 
             // layoutControlItem8
             // 
             this.layoutControlItem8.Control = this.gridControl1;
-            this.layoutControlItem8.Location = new System.Drawing.Point(0, 103);
+            this.layoutControlItem8.Location = new System.Drawing.Point(0, 170);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(1394, 568);
+            this.layoutControlItem8.Size = new System.Drawing.Size(1394, 501);
             this.layoutControlItem8.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem8.TextVisible = false;
             // 
@@ -512,20 +552,6 @@
             this.emptySpaceItem1.Name = "emptySpaceItem1";
             this.emptySpaceItem1.Size = new System.Drawing.Size(1394, 41);
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // colSDT
-            // 
-            this.colSDT.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colSDT.AppearanceCell.Options.UseFont = true;
-            this.colSDT.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colSDT.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colSDT.AppearanceHeader.Options.UseFont = true;
-            this.colSDT.AppearanceHeader.Options.UseForeColor = true;
-            this.colSDT.Caption = "Số Điện Thoại";
-            this.colSDT.FieldName = "SDT";
-            this.colSDT.Name = "colSDT";
-            this.colSDT.Visible = true;
-            this.colSDT.VisibleIndex = 3;
             // 
             // QuanLyDatPhong
             // 
@@ -624,9 +650,10 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewThongTinChiTietDatPhong;
         private DevExpress.XtraGrid.Columns.GridColumn colMaChiTietDatPhong;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn colTenPhong;
         private DevExpress.XtraBars.Navigation.NavigationPage navigationPage3;
         private ThongTinChiTietDatNhieuPhong thongTinChiTietDatNhieuPhong1;
         private DevExpress.XtraGrid.Columns.GridColumn colSDT;
+        private DevExpress.XtraGrid.Columns.GridColumn colNgayLapPhieuDat;
     }
 }

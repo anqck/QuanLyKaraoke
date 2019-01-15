@@ -37,7 +37,7 @@
             this.txtMaKH = new DevExpress.XtraEditors.TextEdit();
             this.txtTenKH = new DevExpress.XtraEditors.TextEdit();
             this.cmbLoaiKH = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.txtCMND = new DevExpress.XtraEditors.TextEdit();
+            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtDiemtichluy = new DevExpress.XtraEditors.SpinEdit();
@@ -62,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLoaiKH.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiemtichluy.Properties)).BeginInit();
@@ -116,7 +116,7 @@
             this.layoutControl1.Controls.Add(this.txtMaKH);
             this.layoutControl1.Controls.Add(this.txtTenKH);
             this.layoutControl1.Controls.Add(this.cmbLoaiKH);
-            this.layoutControl1.Controls.Add(this.txtCMND);
+            this.layoutControl1.Controls.Add(this.txtEmail);
             this.layoutControl1.Controls.Add(this.txtSDT);
             this.layoutControl1.Controls.Add(this.txtDiaChi);
             this.layoutControl1.Controls.Add(this.txtDiemtichluy);
@@ -171,16 +171,16 @@
             this.cmbLoaiKH.StyleController = this.layoutControl1;
             this.cmbLoaiKH.TabIndex = 8;
             // 
-            // txtCMND
+            // txtEmail
             // 
-            this.txtCMND.Location = new System.Drawing.Point(174, 240);
-            this.txtCMND.Name = "txtCMND";
-            this.txtCMND.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCMND.Properties.Appearance.Options.UseFont = true;
-            this.txtCMND.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.txtCMND.Size = new System.Drawing.Size(260, 40);
-            this.txtCMND.StyleController = this.layoutControl1;
-            this.txtCMND.TabIndex = 6;
+            this.txtEmail.Location = new System.Drawing.Point(174, 240);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txtEmail.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.txtEmail.Size = new System.Drawing.Size(260, 40);
+            this.txtEmail.StyleController = this.layoutControl1;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtSDT
             // 
@@ -298,7 +298,7 @@
             this.layoutControlItem3.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem3.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem3.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem3.Control = this.txtCMND;
+            this.layoutControlItem3.Control = this.txtEmail;
             this.layoutControlItem3.CustomizationFormText = "Tên khách hàng";
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 221);
             this.layoutControlItem3.Name = "layoutControlItem3";
@@ -308,7 +308,7 @@
             this.layoutControlItem3.OptionsPrint.AppearanceItemCaption.Options.UseForeColor = true;
             this.layoutControlItem3.Size = new System.Drawing.Size(427, 52);
             this.layoutControlItem3.Spacing = new DevExpress.XtraLayout.Utils.Padding(3, 3, 3, 3);
-            this.layoutControlItem3.Text = "CMND";
+            this.layoutControlItem3.Text = "Email";
             this.layoutControlItem3.TextAlignMode = DevExpress.XtraLayout.TextAlignModeItem.CustomSize;
             this.layoutControlItem3.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem3.TextSize = new System.Drawing.Size(150, 31);
@@ -504,7 +504,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbLoaiKH.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtCMND.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiemtichluy.Properties)).EndInit();
@@ -539,7 +539,7 @@
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraEditors.ComboBoxEdit cmbLoaiKH;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
-        private DevExpress.XtraEditors.TextEdit txtCMND;
+        private DevExpress.XtraEditors.TextEdit txtEmail;
         private DevExpress.XtraEditors.TextEdit txtSDT;
         private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;

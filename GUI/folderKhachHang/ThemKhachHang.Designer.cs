@@ -36,7 +36,7 @@
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txxtMaKh = new DevExpress.XtraEditors.TextEdit();
             this.txxtTenKh = new DevExpress.XtraEditors.TextEdit();
-            this.txxtCMND = new DevExpress.XtraEditors.TextEdit();
+            this.txxtEmail = new DevExpress.XtraEditors.TextEdit();
             this.txxtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.comboBoxloaiKH = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtDiemTichLuy = new DevExpress.XtraEditors.SpinEdit();
@@ -61,7 +61,7 @@
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txxtMaKh.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtTenKh.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txxtCMND.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txxtEmail.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxloaiKH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiemTichLuy.Properties)).BeginInit();
@@ -115,7 +115,7 @@
             this.layoutControl1.BackColor = System.Drawing.Color.White;
             this.layoutControl1.Controls.Add(this.txxtMaKh);
             this.layoutControl1.Controls.Add(this.txxtTenKh);
-            this.layoutControl1.Controls.Add(this.txxtCMND);
+            this.layoutControl1.Controls.Add(this.txxtEmail);
             this.layoutControl1.Controls.Add(this.txxtDiaChi);
             this.layoutControl1.Controls.Add(this.comboBoxloaiKH);
             this.layoutControl1.Controls.Add(this.txtDiemTichLuy);
@@ -157,16 +157,16 @@
             this.txxtTenKh.TextChanged += new System.EventHandler(this.txxtTenKh_TextChanged);
             this.txxtTenKh.Validating += new System.ComponentModel.CancelEventHandler(this.txxtTenKh_Validating);
             // 
-            // txxtCMND
+            // txxtEmail
             // 
-            this.txxtCMND.Location = new System.Drawing.Point(174, 238);
-            this.txxtCMND.Name = "txxtCMND";
-            this.txxtCMND.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txxtCMND.Properties.Appearance.Options.UseFont = true;
-            this.txxtCMND.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
-            this.txxtCMND.Size = new System.Drawing.Size(301, 40);
-            this.txxtCMND.StyleController = this.layoutControl1;
-            this.txxtCMND.TabIndex = 6;
+            this.txxtEmail.Location = new System.Drawing.Point(174, 238);
+            this.txxtEmail.Name = "txxtEmail";
+            this.txxtEmail.Properties.Appearance.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txxtEmail.Properties.Appearance.Options.UseFont = true;
+            this.txxtEmail.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat;
+            this.txxtEmail.Size = new System.Drawing.Size(301, 40);
+            this.txxtEmail.StyleController = this.layoutControl1;
+            this.txxtEmail.TabIndex = 6;
             // 
             // txxtDiaChi
             // 
@@ -364,7 +364,7 @@
             this.layoutControlItem8.AppearanceItemCaption.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.layoutControlItem8.AppearanceItemCaption.Options.UseFont = true;
             this.layoutControlItem8.AppearanceItemCaption.Options.UseForeColor = true;
-            this.layoutControlItem8.Control = this.txxtCMND;
+            this.layoutControlItem8.Control = this.txxtEmail;
             this.layoutControlItem8.CustomizationFormText = "Tên khách hàng";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 219);
             this.layoutControlItem8.Name = "layoutControlItem8";
@@ -506,7 +506,7 @@
             this.layoutControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txxtMaKh.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtTenKh.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txxtCMND.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txxtEmail.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txxtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxloaiKH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDiemTichLuy.Properties)).EndInit();
@@ -540,7 +540,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.EmptySpaceItem emptySpaceItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
-        private DevExpress.XtraEditors.TextEdit txxtCMND;
+        private DevExpress.XtraEditors.TextEdit txxtEmail;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem8;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraEditors.TextEdit txxtDiaChi;
