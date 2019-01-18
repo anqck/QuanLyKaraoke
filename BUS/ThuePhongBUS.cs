@@ -60,7 +60,11 @@ namespace BUS
         {
             return DAL.ThuePhongDAL.LayCacPhongDangHetHanDat(khoangThoiGian);
         }
-       
+        public static void CapNhatHoaDon(int maThuePhong, int maHoaDon)
+        {
+            DAL.ThuePhongDAL.CapNhatHoaDon(maThuePhong, maHoaDon);
+        }
+
 
 
     }

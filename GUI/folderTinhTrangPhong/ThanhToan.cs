@@ -49,7 +49,8 @@ namespace GUI.folderTinhTrangPhong
             wbntQuanlyphong.Buttons[0].Properties.Visible = true;
             wbntQuanlyphong.Buttons[1].Properties.Visible = true;
             wbntQuanlyphong.Buttons[2].Properties.Visible = true;
-            wbntQuanlyphong.Buttons[4].Properties.Visible = true;
+            wbntQuanlyphong.Buttons[3].Properties.Visible = true;
+            wbntQuanlyphong.Buttons[5].Properties.Visible = true;
 
             this.hoaDon = BUS.HoaDonBUS.LayThongTinHoaDonDangThue(thuePhongDTO.MaHoaDon);
             this.thuePhong = thuePhongDTO;
@@ -150,7 +151,8 @@ namespace GUI.folderTinhTrangPhong
             wbntQuanlyphong.Buttons[0].Properties.Visible = false;
             wbntQuanlyphong.Buttons[1].Properties.Visible = false;
             wbntQuanlyphong.Buttons[2].Properties.Visible = false;      
-            wbntQuanlyphong.Buttons[4].Properties.Visible = false;
+            wbntQuanlyphong.Buttons[3].Properties.Visible = false;
+            wbntQuanlyphong.Buttons[5].Properties.Visible = false;
 
             txtMaHoaDon.Text = hoaDon.MaHoaDon.ToString();
             txtNgayThanhToan.Time = DateTime.Now;
@@ -432,11 +434,145 @@ namespace GUI.folderTinhTrangPhong
 
                     break;
                 case "In hóa đơn":
-       
+
                     XtraDialogArgs args = new XtraDialogArgs(caption: "Chọn dịch vụ", content: new ReportViewer(reportHoaDon), buttons: new DialogResult[] { DialogResult.OK });
                     XtraDialog.Show(args);
 
-                   // DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(),new ReportViewer(reportHoaDon));
+                    // DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(),new ReportViewer(reportHoaDon));
+                    break;
+                case "In hóa đơn tạm tính":
+                    double TongTienGio = 0, TongTienKhuyenMai = 0, TongTienDichVu = 0;
+                    dsDichVuPhong.Tables.Clear();
+
+
+                    for (int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
+                    {
+                        TongTienGio += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienGio();
+                        TongTienKhuyenMai += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienKhuyenMai();
+                        TongTienDichVu += ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienDichVu();
+
+                        dsHoaDon.Tables[1].Rows[i]["TienPhong"] = ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienGio() + ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienDichVu() + ((ChiTietThanhToanPhong)this.tabbedControlGroup1.TabPages[i].Tag).GetTongTienKhuyenMai();
+
+                        dsDichVuPhong.Tables.Add(((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetDichVuPhong_DataTable());
+                    }
+
+
+                    DataTable MergedDataTable = new DataTable("dichvuphong");
+
+                    MergedDataTable.Merge(dsDichVuPhong.Tables[0]);
+
+                    if (!ReadOnlyMode) //ReadOnly Mode
+                    {
+                        MergedDataTable.Columns.Add(new DataColumn("MaTemp"));
+                        for (int i = 0; i < MergedDataTable.Rows.Count; i++)
+                        {
+                            MergedDataTable.Rows[i]["MaTemp"] = i;
+                        }
+                        MergedDataTable.PrimaryKey = new DataColumn[] { MergedDataTable.Columns["MaTemp"] };
+                        for (int i = 1; i < dsDichVuPhong.Tables.Count; i++)
+                        {
+                            foreach (DataRow dr in dsDichVuPhong.Tables[i].Rows)
+                            {
+                                DataRow row = MergedDataTable.NewRow();
+                                row["MaTemp"] = MergedDataTable.Rows.Count;
+                                row["MaDVP"] = dr["MaDVP"];
+                                row["MaThuePhong"] = dr["MaThuePhong"];
+                                row["MaDV"] = dr["MaDV"];
+                                row["ThoiGian"] = dr["ThoiGian"];
+                                row["SoLuong"] = dr["SoLuong"];
+                                row["Gia"] = dr["Gia"];
+                                row["TenDV"] = dr["TenDV"];
+                                row["DonVi"] = dr["DonVi"];
+                                row["colType"] = dr["colType"];
+                                MergedDataTable.Rows.Add(row);
+
+                            }
+                        }
+
+                        for (int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
+                        {
+                            foreach (DataRow dr in ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetTienGio_DataTable().Rows)
+                            {
+                                DataRow row = MergedDataTable.NewRow();
+                                row["MaTemp"] = MergedDataTable.Rows.Count;
+                                row["MaDVP"] = -1;
+                                row["MaThuePhong"] = ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetThuePhong().MaThuePhong;
+                                row["MaDV"] = -1;
+                                row["ThoiGian"] = DateTime.MinValue;
+                                row["SoLuong"] = dr["SoLuong"];
+                                row["Gia"] = dr["DonGia"];
+                                row["TenDV"] = dr["Ngay"] + " " + dr["KhoangThoiGian"];
+                                row["DonVi"] = "VNĐ/Giờ";
+                                row["colType"] = "Tiền Giờ";
+                                MergedDataTable.Rows.Add(row);
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int i = 1; i < dsDichVuPhong.Tables.Count; i++)
+                        {
+                            MergedDataTable.Merge(dsDichVuPhong.Tables[i]);
+                        }
+
+                        MergedDataTable.Columns.Add(new DataColumn("MaTemp"));
+                        for (int i = 0; i < MergedDataTable.Rows.Count; i++)
+                        {
+                            MergedDataTable.Rows[i]["MaTemp"] = i;
+                        }
+                        MergedDataTable.PrimaryKey = new DataColumn[] { MergedDataTable.Columns["MaTemp"] };
+
+                        for (int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
+                        {
+                            foreach (DataRow dr in BUS.TienGio_ThuePhongBUS.LayTienGio_ThuePhong_DataTable(((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetThuePhong().MaThuePhong).Rows)
+                            {
+                                DataRow row = MergedDataTable.NewRow();
+                                row["MaTemp"] = MergedDataTable.Rows.Count;
+                                row["MaDVP"] = -1;
+                                row["MaThuePhong"] = dr["MaThuePhong"];
+                                row["MaDV"] = -1;
+                                row["ThoiGian"] = DateTime.MinValue;
+                                row["SoLuong"] = dr["SoLuong"];
+                                row["Gia"] = dr["DonGia"];
+                                row["TenDV"] = dr["Ngay"] + " " + dr["KhoangThoiGian"];
+                                row["DonVi"] = "VNĐ/Giờ";
+                                row["colType"] = "Tiền Giờ";
+                                MergedDataTable.Rows.Add(row);
+
+                            }
+                        }
+                    }
+
+
+                    if (dsHoaDon.Tables.Count == 3)
+                    {
+                        dsHoaDon.Relations.RemoveAt(1);
+                        dsHoaDon.Tables[2].Constraints.Clear();
+                        dsHoaDon.Tables.RemoveAt(2);
+
+                    }
+                    dsHoaDon.Tables.Add(MergedDataTable);
+                    dsHoaDon.Relations.Add("chitietdichvu", dsHoaDon.Tables[1].Columns["MaThuePhong"], dsHoaDon.Tables[2].Columns["MaThuePhong"]);
+
+
+
+                    txtTongTienGio.EditValue = TongTienGio;
+                    txtTongTienKhuyenMai.EditValue = TongTienKhuyenMai;
+                    txtTongTienDichVu.EditValue = TongTienDichVu;
+                    txtTongTienThanhToan.EditValue = TongTienGio + TongTienKhuyenMai + TongTienDichVu - Convert.ToDouble(txtTienTraTruoc.EditValue);
+
+
+                    hoaDon.MaNhanVienThanhToan = (this.ParentForm as MainForm).nhanVien.MaNhanVien;
+                    hoaDon.TongTienThanhToan = (double)txtTongTienThanhToan.EditValue;
+                    hoaDon.NgayThanhToan = txtNgayThanhToan.Time;
+                    hoaDon.SoTienKhuyenMai = (double)txtTongTienKhuyenMai.EditValue;
+
+                    reportHoaDon HoaDon = new reportHoaDon();
+                    HoaDon.BindingData(dsHoaDon, khachHang, hoaDon, TongTienGio, TongTienKhuyenMai, TongTienDichVu, Convert.ToDouble(txtTienTraTruoc.EditValue), txtGhiChu.Text, true);
+
+                    XtraDialogArgs phieudatphong = new XtraDialogArgs(caption: "Hóa đơn tạm tính", content: new ReportViewer(HoaDon), buttons: new DialogResult[] { DialogResult.OK });
+                    XtraDialog.Show(phieudatphong);
                     break;
             }
         }

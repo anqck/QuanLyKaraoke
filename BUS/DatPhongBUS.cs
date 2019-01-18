@@ -20,6 +20,8 @@ namespace BUS
 
         }
 
+
+
         public static DateTime LayThoiDiemDatPhongGanNhat_Sau(int maPhong, DateTime thoiDiem)
         {
             return DAL.DatPhongDAL.LayThoiDiemDatPhongGanNhat_Sau(maPhong, thoiDiem);

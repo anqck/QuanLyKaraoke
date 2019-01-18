@@ -19,6 +19,7 @@ namespace GUI.folderTinhTrangPhong
         private DataTable dataSource_KhachHang;
         private DataTable dtPhong;
         Dictionary<int, PhongDTO> selectedPhong;
+        Dictionary<int, ThuePhongDTO> listPhongDangThue;
 
         private KhachHangDTO khachHang;
 
@@ -41,6 +42,10 @@ namespace GUI.folderTinhTrangPhong
 
         public void RefreshDataBinding()
         {
+            //Tính giờ
+            listPhongDangThue = BUS.ThuePhongBUS.LayThongTinCacPhongDangDuocThue();
+
+
             txtGioVao.EditValue = DateTime.Now;
             txtGioVao.Time = DateTime.Now;
 
@@ -151,6 +156,7 @@ namespace GUI.folderTinhTrangPhong
              dtPhong =  DatPhongBUS.LayCacPhongConTrongTrongThoiGian(txtGioVao.Time, ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue());
             dtPhong.Columns.Add(new DataColumn("colThoiDiemDatPhongGanNhat_Sau"));
             dtPhong.Columns.Add(new DataColumn("colThoiDiemDatPhongGanNhat_Truoc"));
+            dtPhong.Columns.Add(new DataColumn("colTinhTrangPhong"));
 
             foreach (DataRow r in dtPhong.Rows)
             {
@@ -159,11 +165,18 @@ namespace GUI.folderTinhTrangPhong
 
                 t = DatPhongBUS.LayThoiDiemDatPhongGanNhat_Truoc((int)r["MaPhong"], txtGioVao.Time);
                 r["colThoiDiemDatPhongGanNhat_Truoc"] = t == DateTime.MinValue ? "Không có" : t.ToString("dd/MM/yyyy hh:mm");
+
+                r["colTinhTrangPhong"] = PhongBUS.LayTinhTrangPhong((int)r["MaTinhTrangPhong"]).TinhTrangPhong + " " + (listPhongDangThue.ContainsKey((int)r["MaPhong"])? "("+ToCustomString((DateTime.Now - listPhongDangThue[(int)r["MaPhong"]].GioThuePhong))+")":""); 
             }
             txtPhong.Properties.DataSource = dtPhong;
 
              selectedPhong.Clear();
             txtPhong.Refresh();
+        }
+
+        public string ToCustomString(TimeSpan span)
+        {
+            return string.Format("{0}:{1:D2}:{2:D2}", span.Days * 24 + span.Hours, span.Minutes, span.Seconds);
         }
 
         private void gridView1_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)

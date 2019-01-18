@@ -111,6 +111,10 @@ namespace DAL
             DAL.DataProvider.ExecuseQuery("UPDATE thuephong SET thuephong.GioTraPhong = '"+thuePhongDTO.GioTraPhong.ToString("yyyy-MM-dd HH:mm:ss.fff") + "', thuephong.GioThuePhong = '" + thuePhongDTO.GioThuePhong.ToString("yyyy-MM-dd HH:mm:ss.fff") + "' , thuephong.TienGio = " + ((double.IsNaN(thuePhongDTO.TienGio))?("NULL"):("'" +(thuePhongDTO.TienGio).ToString() +"'")) + " WHERE thuephong.MaThuePhong = '" + thuePhongDTO.MaThuePhong+"'  ;");
             return true;
         }
+        public static void CapNhatHoaDon(int maThuePhong, int maHoaDon)
+        {
+            DAL.DataProvider.ExecuseQuery("UPDATE thuephong SET thuephong.MaHoaDon = '" + maHoaDon .ToString()+ "' WHERE thuephong.MaThuePhong = '" + maThuePhong + "'  ;");
+        }
         public static ThuePhongDTO LayThongTinThuePhong(int maThuePhong)
         {
             DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT * FROM thuephong WHERE thuephong.MaThuePhong = '"+maThuePhong+"';");

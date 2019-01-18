@@ -87,6 +87,11 @@ namespace DAL
             return DAL.DataProvider.ExecuseQuery("SELECT convert(month(NgayThanhToan),decimal) as Thang, count(TongTienThanhToan) as TongSoHoaDon, Max(TongTienThanhToan) as HoaDonDacNhat,sum(SoTienKhuyenMai)as TongTienKhuyenMai, sum(TongTienThanhToan) as TongTienThanhToan FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL and year(NgayThanhToan) = " + nam+" group by month(NgayThanhToan)");
         }
 
+        public static DataTable LayTatCaCacThuePhong_Phong(int maHoaDon)
+        {
+            throw new NotImplementedException();
+        }
+
         public static DataTable LayTatCaCacHoaDon_KhachHang_DaThanhToan()
         {
             return DAL.DataProvider.ExecuseQuery("SELECT * FROM hoadon, khachhang WHERE hoadon.MaKH = khachhang.MaKH AND TongTienThanhToan IS NOT NULL;");
@@ -137,10 +142,11 @@ namespace DAL
                 res.Add(new ThuePhongDTO((int)row["MaThuePhong"], (int)row["MaPhong"], DateTime.Parse(row["GioThuePhong"].ToString()),  (row["GioTraPhong"].ToString() == "") ? (DateTime.MinValue) : DateTime.Parse(row["GioTraPhong"].ToString()), (int)row["MaHoaDon"], (row["TienGio"].ToString() == "") ? (Double.NaN) : ((double)row["TienGio"])));
             }
 
-            return res;
-            
+            return res;            
 
         }
+
+   
         public static DataTable LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(int maHoaDon)
         {
             DataTable res = DAL.DataProvider.ExecuseQuery("SELECT * FROM  thuephong, phong,loaiphong WHERE thuephong.MaHoaDon = '" + maHoaDon.ToString() + "' AND thuephong.MaPhong = phong.MaPhong AND loaiphong.MaLP = phong.MaLoaiPhong;");

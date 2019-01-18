@@ -16,8 +16,14 @@ namespace GUI.folderTinhTrangPhong
             InitializeComponent();
         }
 
-        public void BindingData(DataSet dsHoaDon, KhachHangDTO khachHang, HoaDonDTO hoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc, string ghiChu)
+        public void BindingData(DataSet dsHoaDon, KhachHangDTO khachHang, HoaDonDTO hoaDon, double TongTienGio, double TongTienKhuyenMai, double TongTienDichVu, double TienTraTruoc, string ghiChu, bool isHoaDonTamTinh = false)
         {
+            if(isHoaDonTamTinh)
+            {
+                xrLabel1.Text = "HÓA ĐƠN TẠM TÍNH";
+            
+            }
+
             DataSource = dsHoaDon;
             DataMember = "thuephong";
 

@@ -131,9 +131,10 @@ namespace BUS
         {
             return DAL.HoaDonDAL.LayTatCaDichVu_Phong_DichVuPhong_DaThanhToan(dateTime);
         }
+       
 
 
 
-    
+
     }
 }

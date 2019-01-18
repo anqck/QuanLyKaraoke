@@ -21,7 +21,7 @@ namespace DAL
 
         public static DateTime LayThoiDiemDatPhongGanNhat_Sau(int maPhong, DateTime thoiDiem)
         {
-            DataTable dt = DataProvider.ExecuseQuery("SELECT ThoiGianDatPhong FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong > '" + thoiDiem.ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND MaPhong = '" + maPhong + "' ORDER BY ThoiGianDatPhong ASC LIMIT 1 ;");
+            DataTable dt = DataProvider.ExecuseQuery("SELECT ThoiGianDatPhong FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND MaTinhTrangDatPhong = '1' AND ThoiGianDatPhong > '" + thoiDiem.ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND MaPhong = '" + maPhong + "' ORDER BY ThoiGianDatPhong ASC LIMIT 1 ;");
             if (dt.Rows.Count == 0)
                 return DateTime.MinValue;
             else
@@ -30,7 +30,7 @@ namespace DAL
 
         public static DateTime LayThoiDiemDatPhongGanNhat_Truoc(int maPhong, DateTime thoiDiem)
         {
-            DataTable dt = DataProvider.ExecuseQuery("SELECT ThoiGianDatPhong FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong < '" + thoiDiem.ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND MaPhong = '" + maPhong + "' ORDER BY ThoiGianDatPhong DESC LIMIT 1 ;");
+            DataTable dt = DataProvider.ExecuseQuery("SELECT ThoiGianDatPhong FROM datphong, chitietdatphong WHERE datphong.MaDatPhong = chitietdatphong.MaDatPhong AND MaTinhTrangDatPhong = '1' AND ThoiGianDatPhong < '" + thoiDiem.ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND MaPhong = '" + maPhong + "' ORDER BY ThoiGianDatPhong DESC LIMIT 1 ;");
             if (dt.Rows.Count == 0)
                 return DateTime.MinValue;
             else
@@ -39,8 +39,10 @@ namespace DAL
 
         public static DataTable LayCacPhongConTrongTrongThoiGian(DateTime time, int khoangThoiGianToiThieu)
         {
-            return DataProvider.ExecuseQuery("SELECT * FROM loaiphong, phong WHERE loaiphong.MaLP = phong.MaLoaiPhong AND phong.MaPhong NOT IN (SELECT MaPhong FROM datphong, chitietdatphong WHERE MaTinhTrangDatPhong = 1 AND datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong BETWEEN '" + time.AddMinutes(-khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + time.AddMinutes(khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "') AND MaTinhTrangPhong <> 2;");
+            return DataProvider.ExecuseQuery("SELECT * FROM loaiphong, phong WHERE loaiphong.MaLP = phong.MaLoaiPhong AND phong.MaPhong NOT IN (SELECT MaPhong FROM datphong, chitietdatphong WHERE MaTinhTrangDatPhong = 1 AND datphong.MaDatPhong = chitietdatphong.MaDatPhong AND ThoiGianDatPhong BETWEEN '" + time.AddMinutes(-khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "' AND '" + time.AddMinutes(khoangThoiGianToiThieu).ToString("yyyy-MM-dd HH:mm:ss.fff") + "') AND MaTinhTrangPhong <> 2 AND MaTinhTrangPhong <> 3;");
         }
+
+   
 
         public static DataTable LayTatCaDatPhong_TinhTrangPhong_KhachHang_NhanVien_DataTable()
         {

@@ -16,24 +16,26 @@ namespace GUI.folderTinhTrangPhong
 {
     public partial class TachHoaDon : DevExpress.XtraEditors.XtraUserControl
     {
-        //private Action<ThuePhongDTO> onThuePhongSuccess;
-        ThuePhongDTO phongCu, phongMoi;
-        DataTable dtPhong;
-         ChiTietDatPhongDTO chiTietDatPhong;
+        DataTable dtThuePhong;
+        Dictionary<int, ThuePhongDTO> selectedThuePhong;
+
+        private Action callBackSuccess;
+        HoaDonDTO hoaDon;
 
         public TachHoaDon()
         {
             InitializeComponent();
 
-            chiTietDatPhong = null;
+            
         }
-        public TachHoaDon(ThuePhongDTO phongCu) : this()
+        public TachHoaDon(HoaDonDTO hoaDonDTO, Action callBackSuccess) : this()
         {
-            this.phongCu = phongCu;
+            this.hoaDon = HoaDonBUS.LayThongTinHoaDon(hoaDonDTO.MaHoaDon);
+            this.callBackSuccess = callBackSuccess;
 
-           // this.onThuePhongSuccess = onThuePhongSuccess;      
+            selectedThuePhong = new Dictionary<int, ThuePhongDTO>();
 
-            RefreshDataBinding_ChuyenPhong();
+            RefreshDataBinding();
 
 
             ValidateChildren();
@@ -41,60 +43,52 @@ namespace GUI.folderTinhTrangPhong
 
         }
 
-        public TachHoaDon(ChiTietDatPhongDTO chiTietDatPhong) :this()
+  
+
+        private void RefreshDataBinding()
         {
-            this.chiTietDatPhong = chiTietDatPhong;
+            txtPhong_2.Properties.DataSource = dtThuePhong= HoaDonBUS.LayTatCaCacThuePhong_Phong_LoaiPhong_DataTable(hoaDon.MaHoaDon);
 
-            RefreshDataBinding_ChuyenDatPhong();
+            txtMaHoaDon_Goc.Text = hoaDon.MaHoaDon.ToString();
+            txtTienTraTruoc_Goc.EditValue = hoaDon.TienTraTruoc;
+            txtKhachHang_Goc.Text = KhachHangBUS.LayKhachHang(hoaDon.MaKH).TenKH;
+            txtGhiChu_Goc.Text = hoaDon.GhiChu;
 
+            foreach (DataRow dr in dtThuePhong.Rows)
+            {
+                
+                    txtPhong_Goc.Text += PhongBUS.LayThongTinPhong((int)dr["MaPhong"]).TenPhong;
 
-            ValidateChildren();
+                    txtPhong_Goc.Text += "; ";
+                
+            }
+
+            txtMaHoaDon_1.Text = txtMaHoaDon_Goc.Text;
+            txtTienTraTruoc_1.EditValue = txtTienTraTruoc_Goc.EditValue;
+            txtKhachHang_1.Text = txtKhachHang_Goc.Text;
+            txtGhiChu_1.Text = txtGhiChu_Goc.Text;
+
+            txtMaHoaDon_2.Text = HoaDonBUS.PhatSinhMaHoaDon().ToString();
+            txtKhachHang_2.Text = txtKhachHang_Goc.Text;
+            txtGhiChu_2.Text = txtGhiChu_Goc.Text;
+            txtTienTraTruoc_2.Properties.MaxValue = Convert.ToDecimal(hoaDon.TienTraTruoc);
         }
-
-        private void RefreshDataBinding_ChuyenPhong()
-        {
-            PhongDTO phongDto =PhongBUS.LayThongTinPhong(phongCu.MaPhong);
-
-            txtLoaiPhong_Old.EditValue = LoaiPhongBUS.LayLoaiPhong(phongDto).TenLoaiPhong;
-            txtMaPhong_Old.EditValue = phongDto.MaPhong;
-            txtTang_Old.EditValue = phongDto.Tang;
-            txtTenPhong_Old.EditValue = phongDto.TenPhong;
-            txtGhiChu_Old.EditValue = phongDto.GhiChu;
-
-            txtPhong.Properties.DataSource = dtPhong = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan();
-            txtPhong.Properties.DisplayMember = "TenPhong";
-            txtPhong.Properties.ValueMember = "MaPhong";
-
-        }
-        void RefreshDataBinding_ChuyenDatPhong()
-        {
-            PhongDTO phongDto = PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong);
-
-            txtLoaiPhong_Old.EditValue = LoaiPhongBUS.LayLoaiPhong(phongDto).TenLoaiPhong;
-            txtMaPhong_Old.EditValue = phongDto.MaPhong;
-            txtTang_Old.EditValue = phongDto.Tang;
-            txtTenPhong_Old.EditValue = phongDto.TenPhong;
-            txtGhiChu_Old.EditValue = phongDto.GhiChu;
-
-            txtPhong.Properties.DataSource = dtPhong = DatPhongBUS.LayCacPhongConTrongTrongThoiGian(DatPhongBUS.LayThongTinDatPhong(chiTietDatPhong.MaDatPhong).ThoiGianDatPhong, ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue()); 
-            txtPhong.Properties.DisplayMember = "TenPhong";
-            txtPhong.Properties.ValueMember = "MaPhong";
-        }
+       
 
 
         private void txtPhong_Properties_Validating(object sender, CancelEventArgs e)
         {
-            if(gridView1.GetSelectedRows().Count()==0)
+            if(gridView2.GetSelectedRows().Count()==0)
             {
-                txtPhong.ErrorText = "Không có phòng nào được chọn";
+                txtPhong_1.ErrorText = "Không có phòng nào được chọn";
                 windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
-                txtGhiChu.ReadOnly = true;
+                txtGhiChu_1.ReadOnly = true;
             }
             else
             {
-                txtPhong.ErrorText = "";
+                txtPhong_1.ErrorText = "";
                 windowsUIButtonPanel1.Buttons[0].Properties.Visible = true;
-                txtGhiChu.ReadOnly = true;
+                txtGhiChu_1.ReadOnly = true;
             }
         }
 
@@ -102,13 +96,13 @@ namespace GUI.folderTinhTrangPhong
         {
             ValidateChildren();
 
-            if (gridView1.GetSelectedRows().Count() != 0)
+            if (gridView2.GetSelectedRows().Count() != 0)
             {
-                int sourceIdx = gridView1.GetDataSourceRowIndex(gridView1.GetSelectedRows().ElementAt(0));
-                txtMaPhong.EditValue = dtPhong.Rows[sourceIdx]["MaPhong"];
-                txtLoaiPhong.EditValue = dtPhong.Rows[sourceIdx]["TenLoaiPhong"];
-                txtTang.EditValue = dtPhong.Rows[sourceIdx]["Tang"];
-                txtGhiChu.EditValue = dtPhong.Rows[sourceIdx]["GhiChu"];
+                //int sourceIdx = gridView1.GetDataSourceRowIndex(gridView1.GetSelectedRows().ElementAt(0));
+                //txtMaPhong.EditValue = dtPhong.Rows[sourceIdx]["MaPhong"];
+                //txtLoaiPhong.EditValue = dtPhong.Rows[sourceIdx]["TenLoaiPhong"];
+                //txtTang.EditValue = dtPhong.Rows[sourceIdx]["Tang"];
+                //txtGhiChu.EditValue = dtPhong.Rows[sourceIdx]["GhiChu"];
 
             }
         }
@@ -132,73 +126,30 @@ namespace GUI.folderTinhTrangPhong
                     ((FlyoutDialog)this.Parent).DialogResult = DialogResult.Cancel;
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
-                case "Chuyển":
-                    if(chiTietDatPhong == null) //Chuyển phong đang thuê
+                case "Tách":
+                    //Tạo Hóa Đơn mới
+                    HoaDonBUS.LuuThongTinHoaDon(new HoaDonDTO(Convert.ToInt32(txtMaHoaDon_2.Text), -1, Double.NaN, Convert.ToDouble(txtTienTraTruoc_2.EditValue), DateTime.MinValue, Double.NaN, txtGhiChu_2.Text, hoaDon.MaKH, hoaDon.MaDatPhong));
+
+                    //Cập nhật hóa đơn cũ
+                    HoaDonBUS.CapNhatGhiChu(hoaDon.MaHoaDon, txtGhiChu_1.Text);
+                    HoaDonBUS.CapNhatTienTraTruoc(hoaDon, Convert.ToDouble(txtTienTraTruoc_2.EditValue));
+
+
+                    //Sửa các thuê phòng 
+                    foreach (DataRow dr in dtThuePhong.Rows)
                     {
-                        if (PhongBUS.LayThongTinPhong(phongMoi.MaPhong).MaTinhTrangPhong != 0)
+                        if (selectedThuePhong.ContainsKey((int)dr["MaThuePhong"]))
                         {
-                            XtraMessageBox.Show("Phòng " + PhongBUS.LayThongTinPhong((int)txtMaPhong.EditValue).TenPhong + " hiện không có sẵn! Vui lòng chọn lại phòng khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                            ThuePhongBUS.CapNhatHoaDon((int)dr["MaThuePhong"], Convert.ToInt32(txtMaHoaDon_2.Text));
 
-
-                            txtPhong.Properties.DataSource = dtPhong = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan();
-
-                            txtPhong.EditValue = "";
-                            gridView1.ClearSelection();
-                            txtPhong.Refresh();
-
-                            txtPhong.ErrorText = "Không có phòng nào được chọn";
-                            txtMaPhong.EditValue = "";
-                            txtLoaiPhong.EditValue = "";
-                            txtTang.EditValue = "";
-                            txtGhiChu.EditValue = "";
-                            windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
-                          
-                            return;
-                        }
-
-                        ThuePhongBUS.CapNhatThongTinThuePhong(new ThuePhongDTO(phongCu.MaThuePhong, phongCu.MaPhong, phongCu.GioThuePhong, DateTime.Now, phongCu.MaHoaDon, Double.NaN));
-                        switch(PhongBUS.LayThongTinPhong(phongCu.MaPhong).MaTinhTrangPhong)
-                        {
-                            case 1:
-                                if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
-                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 5);
-                                else
-                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 0);
-                                break;
-                            case 7:
-                                if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
-                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 6);
-                                else
-                                    PhongBUS.CapNhatTinhTrangPhong(phongCu.MaPhong, 4);
-                                break;
                         }
                         
-
-                        phongMoi = new ThuePhongDTO(ThuePhongBUS.PhatSinhMaThuePhong(), (int)txtMaPhong.EditValue, DateTime.Now, DateTime.MinValue, phongCu.MaHoaDon, Double.NaN);
-                        ThuePhongBUS.LuuThongTinThuePhong(phongMoi);
-                        PhongBUS.CapNhatTinhTrangPhong(phongMoi.MaPhong, 1);
-
-                        
+                      
                     }
-                    else //Chuyển phòng đặt
-                    {
-                        if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 4)
-                        {
-                            PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 0);
-                        }
-                        else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 6)
-                        {
-                            PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 5);
-                        }
-                        else if (PhongBUS.LayThongTinPhong(chiTietDatPhong.MaPhong).MaTinhTrangPhong == 7)
-                        {
-                            PhongBUS.CapNhatTinhTrangPhong(chiTietDatPhong.MaPhong, 1);
-                        }
-                        ChiTietDatPhongBUS.CapNhatThongTinDatPhong(new ChiTietDatPhongDTO(chiTietDatPhong.MaChiTietDatPhong, (int)txtMaPhong.EditValue,chiTietDatPhong.MaDatPhong));
-                       
-                    }
+                    XtraMessageBox.Show("Tách hóa đơn thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    ((FlyoutDialog)this.Parent).DialogResult = DialogResult.OK;
+                    callBackSuccess();
+
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
                 default:
@@ -206,9 +157,114 @@ namespace GUI.folderTinhTrangPhong
             }
         }
 
-        public ThuePhongDTO GetThuePhongMoi()
+        private void txtPhong_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
         {
-            return phongMoi;
+            var editor = sender as GridLookUpEdit;
+            var view = editor.Properties.View;
+            var selectedRowsCount = view.GetSelectedRows().Count();
+
+
+
+            e.DisplayText = "";
+
+            if (selectedThuePhong.Count == 0)
+            {
+                windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
+                txtPhong_2.ErrorText = "Không có thuê phòng nào được chọn";
+                return;
+            }
+            else if(selectedThuePhong.Count == dtThuePhong.Rows.Count)
+            {
+                windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
+                txtPhong_1.ErrorText = "Thuê phòng không được rỗng";
+            }
+            else
+            {
+                windowsUIButtonPanel1.Buttons[0].Properties.Visible = true;
+                txtPhong_2.ErrorText = "";
+            }
+
+
+
+            for (int i = 0; i < selectedThuePhong.Values.Count; i++)
+            {
+
+                e.DisplayText += PhongBUS.LayThongTinPhong(selectedThuePhong.Values.ToList()[i].MaPhong).TenPhong;
+                if (i != selectedThuePhong.Values.Count - 1)
+                    e.DisplayText += "; ";
+            }
+
+            txtPhong_1.Text = "";
+
+            foreach (DataRow dr in dtThuePhong.Rows)
+            {
+                if (!selectedThuePhong.ContainsKey((int)dr["MaThuePhong"]))
+                {
+                    txtPhong_1.Text += PhongBUS.LayThongTinPhong((int)dr["MaPhong"]).TenPhong;
+
+                    txtPhong_1.Text += "; ";
+                }
+            }
+
+        }
+
+        private void txtPhong1_Properties_CustomDisplayText(object sender, DevExpress.XtraEditors.Controls.CustomDisplayTextEventArgs e)
+        {
+            foreach (DataRow dr in dtThuePhong.Rows)
+            {
+                if (!selectedThuePhong.ContainsKey((int)dr["MaThuePhong"]))
+                {
+                    e.DisplayText += PhongBUS.LayThongTinPhong((int)dr["MaThuePhong"]).TenPhong;
+                    
+                        e.DisplayText += "; ";
+                }
+            }
+
+        }
+
+        private void txtPhong_Closed(object sender, DevExpress.XtraEditors.Controls.ClosedEventArgs e)
+        {
+            (sender as GridLookUpEdit).LookAndFeel.UpdateStyleSettings();
+
+        }
+
+        private void txtPhong_Properties_Popup(object sender, EventArgs e)
+        {
+            GridLookUpEdit edit = (GridLookUpEdit)sender;
+            for (int i = 0; i < dtThuePhong.Rows.Count; i++)
+            {
+                foreach (ThuePhongDTO phong in selectedThuePhong.Values)
+                {
+                    if (phong.MaThuePhong == (int)gridView2.GetRowCellValue(i, colMaThuePhong))
+                    {
+
+                        edit.Properties.View.SelectRow(i);
+                        break;
+                    }
+                }
+
+            }
+
+        }
+
+        private void gridView2_SelectionChanged(object sender, DevExpress.Data.SelectionChangedEventArgs e)
+        {
+            if (e.Action == CollectionChangeAction.Remove)
+
+                selectedThuePhong.Remove((int)gridView2.GetRowCellValue(e.ControllerRow, colMaThuePhong));
+            else if (e.Action == CollectionChangeAction.Add)
+            {
+                if (e.ControllerRow < 0)
+                    return;
+                if (!selectedThuePhong.Keys.Contains((int)gridView2.GetRowCellValue(e.ControllerRow, colMaThuePhong)))
+                    selectedThuePhong.Add((int)gridView2.GetRowCellValue(e.ControllerRow, colMaThuePhong), new ThuePhongDTO((int)gridView2.GetRowCellValue(e.ControllerRow, colMaThuePhong), (int)gridView2.GetRowCellValue(e.ControllerRow, colMaPhong), DateTime.MinValue, DateTime.MinValue,hoaDon.MaHoaDon,0));
+
+            }
+        }
+
+        private void spinEdit1_Properties_EditValueChanged(object sender, EventArgs e)
+        {
+            txtTienTraTruoc_1.EditValue =   Convert.ToDecimal(txtTienTraTruoc_Goc.EditValue) - Convert.ToDecimal(txtTienTraTruoc_2.EditValue);
         }
     }
 }

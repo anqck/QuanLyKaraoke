@@ -270,7 +270,14 @@ namespace GUI.folderTinhTrangPhong
                 case "Thông tin đặt phòng":
                     (this.ParentForm as MainForm).HienThiThongTinDatPhong(HoaDonBUS.LayThongTinHoaDon(thuePhong.MaHoaDon).MaDatPhong);
                     break;
-                   
+                case "Tách Hóa Đơn":
+                    if(HoaDonBUS.LayTatCaCacThuePhong(hoaDon.MaHoaDon).Count == 1)
+                    {
+                        XtraMessageBox.Show("Hóa đơn chỉ có 1 phòng nên không thể tách!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    FlyoutDialog.Show(this.FindForm(), new TachHoaDon(hoaDon, OnThueThemPhongSuccess));
+                    break;
 
                 case "Thuê Thêm Phòng":
                     FlyoutDialog.Show(this.FindForm(), new ThemPhongVaoHoaDon(hoaDon, OnThueThemPhongSuccess));
