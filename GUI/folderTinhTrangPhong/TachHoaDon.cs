@@ -14,20 +14,20 @@ using BUS;
 
 namespace GUI.folderTinhTrangPhong
 {
-    public partial class ChuyenPhong : DevExpress.XtraEditors.XtraUserControl
+    public partial class TachHoaDon : DevExpress.XtraEditors.XtraUserControl
     {
         //private Action<ThuePhongDTO> onThuePhongSuccess;
         ThuePhongDTO phongCu, phongMoi;
         DataTable dtPhong;
          ChiTietDatPhongDTO chiTietDatPhong;
 
-        public ChuyenPhong()
+        public TachHoaDon()
         {
             InitializeComponent();
 
             chiTietDatPhong = null;
         }
-        public ChuyenPhong(ThuePhongDTO phongCu) : this()
+        public TachHoaDon(ThuePhongDTO phongCu) : this()
         {
             this.phongCu = phongCu;
 
@@ -41,7 +41,7 @@ namespace GUI.folderTinhTrangPhong
 
         }
 
-        public ChuyenPhong(ChiTietDatPhongDTO chiTietDatPhong) :this()
+        public TachHoaDon(ChiTietDatPhongDTO chiTietDatPhong) :this()
         {
             this.chiTietDatPhong = chiTietDatPhong;
 

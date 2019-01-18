@@ -1283,9 +1283,13 @@ namespace GUI
 
         private void timerNotify_Tick(object sender, EventArgs e)
         {
-            tinhTrangPhong1.UpdateTimeNotify();
 
-            
+            NotifyTimer_Tick();
+        }
+
+        public void NotifyTimer_Tick()
+        {
+            tinhTrangPhong1.UpdateTimeNotify();
         }
 
         public DevExpress.XtraBars.ToastNotifications.ToastNotificationsManager GeToastNotifications()

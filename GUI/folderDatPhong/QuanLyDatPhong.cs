@@ -92,10 +92,24 @@ namespace GUI.folderDatPhong
                         (this.ParentForm as MainForm).HienThiThongTinDatPhong(int.Parse(schedulerControl1.SelectedAppointments[0].Subject));
 
                     break;
+                case "Đặt Phòng":
+                    DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), new folderTinhTrangPhong.DatPhong(OnDatPhongSuccess));
+
+                    break;
                 case "Hiển Thị Dạng Bảng":
                     navigationFrame1.SelectedPage = navigationPage2;
                     break;
             }
+        }
+
+        void OnDatPhongSuccess(DatPhongDTO thuePhong)
+        {
+            RefreshDataBinding();
+            HienThiThongTinDatPhong(thuePhong);
+
+        
+
+            (ParentForm as MainForm).NotifyTimer_Tick();
         }
 
         public void GoToPage_WithoutAnimation(int v)
@@ -109,13 +123,11 @@ namespace GUI.folderDatPhong
         {
             if (e.FocusedRowHandle < 0)
             {
-                windowsUIButtonPanel1.Buttons[0].Properties.Visible = false;
                 windowsUIButtonPanel1.Buttons[1].Properties.Visible = false;
             }
                
             else
             {
-                windowsUIButtonPanel1.Buttons[0].Properties.Visible = true;
                 windowsUIButtonPanel1.Buttons[1].Properties.Visible = true;
             }
                
@@ -126,6 +138,10 @@ namespace GUI.folderDatPhong
            
             switch (e.Button.Properties.Tag.ToString())
             {
+                case "Đặt Phòng":
+                    DevExpress.XtraBars.Docking2010.Customization.FlyoutDialog.Show(this.FindForm(), new folderTinhTrangPhong.DatPhong(OnDatPhongSuccess));
+
+                    break;
                 case "Chi Tiết Đặt Phòng":
                    
                         (this.ParentForm as MainForm).HienThiThongTinDatPhong((int)dtDatPhong.Rows[gridViewDatPhong.GetFocusedDataSourceRowIndex()]["MaDatPhong"]);

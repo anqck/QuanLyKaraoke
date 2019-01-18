@@ -103,8 +103,27 @@ namespace GUI.folderTinhTrangPhong
                     if (khachHang == null)
                     {
                         XtraMessageBox.Show("Không có khách hàng nào được chọn!", "Lỗi", MessageBoxButtons.OK);
+
                         return;
                     }
+
+                    //Kiểm tra xem phòng vẫn còn trống không
+                    foreach (PhongDTO phong in selectedPhong.Values)
+                    {
+                        if (PhongBUS.LayThongTinPhong(phong.MaPhong).MaTinhTrangPhong != 0 )
+                        {
+                            XtraMessageBox.Show("Phòng " + phong.TenPhong + " hiện không có sẵn! Vui lòng chọn lại phòng khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+
+                            txtPhong.Properties.DataSource = dtPhong = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan();
+
+
+                            selectedPhong.Clear();
+                            txtPhong.Refresh();
+                            return;
+                        }
+                    
+                     }
 
                     //NOTE Tài khoản thanh toán
                     //BÌNH

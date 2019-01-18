@@ -148,11 +148,21 @@ namespace GUI.folderTinhTrangPhong
 
         private void txtGioVao_Properties_EditValueChanged(object sender, EventArgs e)
         {
-            txtPhong.Properties.DataSource = dtPhong =  DatPhongBUS.LayCacPhongConTrongTrongThoiGian(txtGioVao.Time, ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue());
- 
-           
-     
-            selectedPhong.Clear();
+             dtPhong =  DatPhongBUS.LayCacPhongConTrongTrongThoiGian(txtGioVao.Time, ThamSoBUS.LayKhoangThoiGianToiThieuGiuaHaiLanThue());
+            dtPhong.Columns.Add(new DataColumn("colThoiDiemDatPhongGanNhat_Sau"));
+            dtPhong.Columns.Add(new DataColumn("colThoiDiemDatPhongGanNhat_Truoc"));
+
+            foreach (DataRow r in dtPhong.Rows)
+            {
+                DateTime t = DatPhongBUS.LayThoiDiemDatPhongGanNhat_Sau((int)r["MaPhong"], txtGioVao.Time);
+                r["colThoiDiemDatPhongGanNhat_Sau"] = t == DateTime.MinValue ? "Không có" : t.ToString("dd/MM/yyyy hh:mm") ;
+
+                t = DatPhongBUS.LayThoiDiemDatPhongGanNhat_Truoc((int)r["MaPhong"], txtGioVao.Time);
+                r["colThoiDiemDatPhongGanNhat_Truoc"] = t == DateTime.MinValue ? "Không có" : t.ToString("dd/MM/yyyy hh:mm");
+            }
+            txtPhong.Properties.DataSource = dtPhong;
+
+             selectedPhong.Clear();
             txtPhong.Refresh();
         }
 
@@ -219,6 +229,9 @@ namespace GUI.folderTinhTrangPhong
             {
                 (sender as TimeEdit).ErrorText = "";
             }
+            
         }
+
+     
     }
 }

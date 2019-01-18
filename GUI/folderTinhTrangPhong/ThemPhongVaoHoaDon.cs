@@ -131,13 +131,28 @@ namespace GUI.folderTinhTrangPhong
                     ((FlyoutDialog)this.Parent).Hide();
                     break;
                 case "Thuê":
-                 
+
 
                     //NOTE Tài khoản thanh toán
                     //BÌNH
 
+                    foreach (PhongDTO phong in selectedPhong.Values)
+                    {
+                        if (PhongBUS.LayThongTinPhong(phong.MaPhong).MaTinhTrangPhong != 0)
+                        {
+                            XtraMessageBox.Show("Phòng " + phong.TenPhong + " hiện không có sẵn! Vui lòng chọn lại phòng khác", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-                 
+
+                            txtPhong.Properties.DataSource = dtPhong = PhongBUS.LayTatCaPhong_TinhTrangPhong_LoaiPhong_CoSan();
+
+
+                            selectedPhong.Clear();
+                            txtPhong.Refresh();
+                            return;
+                        }
+
+                    }
+
 
                     ThuePhongDTO tp = null;
                     foreach (PhongDTO phong in selectedPhong.Values)

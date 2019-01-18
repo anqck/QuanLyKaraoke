@@ -34,7 +34,6 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.QuanlyPagecontrol = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageQuanly = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.splitContainerControl = new DevExpress.XtraEditors.SplitContainerControl();
@@ -47,6 +46,7 @@
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMaPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTenPhong = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGhiChu = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +56,6 @@
             this.themPhongMoi1 = new GUI.folderQuanLyPhong.ThemPhongMoi();
             this.PageSuaphong = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.suaPhong1 = new GUI.folderQuanLyPhong.SuaPhong();
-            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
             colLoaiPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.QuanlyPagecontrol)).BeginInit();
             this.QuanlyPagecontrol.SuspendLayout();
@@ -286,6 +285,14 @@
             this.colTenPhong.VisibleIndex = 1;
             this.colTenPhong.Width = 200;
             // 
+            // colSucChua
+            // 
+            this.colSucChua.Caption = "Sức Chứa";
+            this.colSucChua.FieldName = "SucChua";
+            this.colSucChua.Name = "colSucChua";
+            this.colSucChua.Visible = true;
+            this.colSucChua.VisibleIndex = 2;
+            // 
             // colTang
             // 
             this.colTang.Caption = "Tầng";
@@ -334,9 +341,7 @@
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm phòng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa phòng", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Sửa phòng", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Bộ lọc", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Bộ lọc", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Quản lý loại phòng", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Quản lý loại phòng", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Bộ lọc", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Bộ lọc", -1, false)});
             this.wbntQuanlyphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntQuanlyphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntQuanlyphong.ForeColor = System.Drawing.Color.White;
@@ -378,14 +383,6 @@
             this.suaPhong1.Name = "suaPhong1";
             this.suaPhong1.Size = new System.Drawing.Size(1280, 820);
             this.suaPhong1.TabIndex = 5;
-            // 
-            // colSucChua
-            // 
-            this.colSucChua.Caption = "Sức Chứa";
-            this.colSucChua.FieldName = "SucChua";
-            this.colSucChua.Name = "colSucChua";
-            this.colSucChua.Visible = true;
-            this.colSucChua.VisibleIndex = 2;
             // 
             // QuanLyPhong
             // 

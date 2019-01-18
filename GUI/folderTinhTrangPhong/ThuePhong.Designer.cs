@@ -50,6 +50,7 @@
             this.colTenKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSDT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEmail = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtTienTraTruoc = new DevExpress.XtraEditors.SpinEdit();
             this.txtGioVao = new DevExpress.XtraEditors.DateEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -69,7 +70,6 @@
             this.colTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCheck = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLoaiKhachHang = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -172,7 +172,7 @@
             this.gridColumn5,
             this.colMaLP});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
-            this.gridView1.GroupCount = 2;
+            this.gridView1.GroupCount = 1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsCustomization.AllowFilter = false;
@@ -185,8 +185,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.OptionsView.ShowIndicator = false;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn4, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colSucChua, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.gridColumn4, DevExpress.Data.ColumnSortOrder.Ascending)});
             this.gridView1.SelectionChanged += new DevExpress.Data.SelectionChangedEventHandler(this.gridView1_SelectionChanged);
             this.gridView1.CustomUnboundColumnData += new DevExpress.XtraGrid.Views.Base.CustomColumnDataEventHandler(this.gridView1_CustomUnboundColumnData);
             // 
@@ -220,7 +219,7 @@
             this.gridColumn3.FieldName = "TinhTrangPhong";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 3;
+            this.gridColumn3.VisibleIndex = 4;
             // 
             // gridColumn4
             // 
@@ -236,7 +235,7 @@
             this.gridColumn5.FieldName = "GhiChu";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 5;
             // 
             // colMaLP
             // 
@@ -368,6 +367,20 @@
             this.colEmail.Visible = true;
             this.colEmail.VisibleIndex = 3;
             this.colEmail.Width = 96;
+            // 
+            // colLoaiKhachHang
+            // 
+            this.colLoaiKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.colLoaiKhachHang.AppearanceCell.Options.UseFont = true;
+            this.colLoaiKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.colLoaiKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
+            this.colLoaiKhachHang.AppearanceHeader.Options.UseFont = true;
+            this.colLoaiKhachHang.AppearanceHeader.Options.UseForeColor = true;
+            this.colLoaiKhachHang.Caption = "Tên Loại Khách Hàng";
+            this.colLoaiKhachHang.FieldName = "TenLoaiKH";
+            this.colLoaiKhachHang.Name = "colLoaiKhachHang";
+            this.colLoaiKhachHang.Visible = true;
+            this.colLoaiKhachHang.VisibleIndex = 4;
             // 
             // txtTienTraTruoc
             // 
@@ -597,20 +610,6 @@
             this.colCheck.UnboundType = DevExpress.Data.UnboundColumnType.Boolean;
             this.colCheck.Visible = true;
             this.colCheck.VisibleIndex = 1;
-            // 
-            // colLoaiKhachHang
-            // 
-            this.colLoaiKhachHang.AppearanceCell.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.colLoaiKhachHang.AppearanceCell.Options.UseFont = true;
-            this.colLoaiKhachHang.AppearanceHeader.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.colLoaiKhachHang.AppearanceHeader.ForeColor = System.Drawing.Color.Gray;
-            this.colLoaiKhachHang.AppearanceHeader.Options.UseFont = true;
-            this.colLoaiKhachHang.AppearanceHeader.Options.UseForeColor = true;
-            this.colLoaiKhachHang.Caption = "Tên Loại Khách Hàng";
-            this.colLoaiKhachHang.FieldName = "TenLoaiKH";
-            this.colLoaiKhachHang.Name = "colLoaiKhachHang";
-            this.colLoaiKhachHang.Visible = true;
-            this.colLoaiKhachHang.VisibleIndex = 4;
             // 
             // ThuePhong
             // 

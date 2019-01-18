@@ -462,7 +462,7 @@
             this.layoutControlItem4.Location = new System.Drawing.Point(0, 83);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(1009, 40);
-            this.layoutControlItem4.Text = "Khoảng thời gian tối thiểu giữa hai lần đặt đang chờ";
+            this.layoutControlItem4.Text = "Khoảng thời gian tối thiểu giữa hai lần đặt phòng đang chờ đặt";
             this.layoutControlItem4.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem4.TextSize = new System.Drawing.Size(728, 28);
             // 

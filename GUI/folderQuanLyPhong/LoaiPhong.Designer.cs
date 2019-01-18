@@ -33,7 +33,6 @@
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions1 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions2 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions3 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
-            DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions windowsUIButtonImageOptions4 = new DevExpress.XtraBars.Docking2010.WindowsUIButtonImageOptions();
             this.gridViewDonGiaPhong = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colGioBatDau = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colGioKetThuc = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -265,9 +264,7 @@
             this.wbntLoaiphong.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Thêm Loại Phòng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Thêm Loại Dịch Vụ", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Sửa Loại Phòng", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Sửa Loại Dịch Vụ", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Loại Phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Loại Dịch Vụ", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUISeparator(),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Quản Lý Phòng", true, windowsUIButtonImageOptions4, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Quản Lý Phòng", -1, false)});
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Xóa Loại Phòng", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Xóa Loại Dịch Vụ", -1, false)});
             this.wbntLoaiphong.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntLoaiphong.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wbntLoaiphong.ForeColor = System.Drawing.Color.White;
@@ -305,6 +302,7 @@
             this.themLoaiPhong1.Appearance.BackColor = System.Drawing.Color.White;
             this.themLoaiPhong1.Appearance.Options.UseBackColor = true;
             this.themLoaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.themLoaiPhong1.goToHomeLoaiPhong = null;
             this.themLoaiPhong1.Location = new System.Drawing.Point(0, 0);
             this.themLoaiPhong1.Name = "themLoaiPhong1";
             this.themLoaiPhong1.Size = new System.Drawing.Size(977, 601);
@@ -320,6 +318,7 @@
             // suaLoaiPhong1
             // 
             this.suaLoaiPhong1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.suaLoaiPhong1.goToHomeLoaiPhong = null;
             this.suaLoaiPhong1.Location = new System.Drawing.Point(0, 0);
             this.suaLoaiPhong1.Name = "suaLoaiPhong1";
             this.suaLoaiPhong1.Size = new System.Drawing.Size(977, 601);

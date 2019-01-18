@@ -39,6 +39,7 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtGioVao = new DevExpress.XtraEditors.DateEdit();
             this.txtMaHoaDon = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
@@ -55,7 +56,7 @@
             this.colTang = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTinhTrangPhong = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCheck = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSucChua = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -145,7 +146,8 @@
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
-            this.gridColumn6});
+            this.gridColumn6,
+            this.colSucChua});
             this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsCustomization.AllowFilter = false;
@@ -165,7 +167,7 @@
             this.gridColumn1.FieldName = "MaPhong";
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 6;
+            this.gridColumn1.VisibleIndex = 7;
             // 
             // gridColumn2
             // 
@@ -198,6 +200,14 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "Tên loại phòng";
+            this.gridColumn6.FieldName = "TenLoaiPhong";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
             // 
             // txtGioVao
             // 
@@ -382,13 +392,13 @@
             this.colCheck.Visible = true;
             this.colCheck.VisibleIndex = 1;
             // 
-            // gridColumn6
+            // colSucChua
             // 
-            this.gridColumn6.Caption = "Tên loại phòng";
-            this.gridColumn6.FieldName = "TenLoaiPhong";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
+            this.colSucChua.Caption = "Sức Chứa";
+            this.colSucChua.FieldName = "SucChua";
+            this.colSucChua.Name = "colSucChua";
+            this.colSucChua.Visible = true;
+            this.colSucChua.VisibleIndex = 6;
             // 
             // ThemPhongVaoHoaDon
             // 
@@ -450,5 +460,6 @@
         private DevExpress.XtraEditors.DateEdit txtGioVao;
         private DevExpress.XtraEditors.TextEdit txtMaHoaDon;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
+        private DevExpress.XtraGrid.Columns.GridColumn colSucChua;
     }
 }

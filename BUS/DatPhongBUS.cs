@@ -19,6 +19,16 @@ namespace BUS
             return DAL.DatPhongDAL.LayCacPhongConTrongTrongThoiGian(time, khoangThoiGianToiThieu);
 
         }
+
+        public static DateTime LayThoiDiemDatPhongGanNhat_Sau(int maPhong, DateTime thoiDiem)
+        {
+            return DAL.DatPhongDAL.LayThoiDiemDatPhongGanNhat_Sau(maPhong, thoiDiem);
+        }
+
+        public static DateTime LayThoiDiemDatPhongGanNhat_Truoc(int maPhong, DateTime thoiDiem)
+        {
+            return DAL.DatPhongDAL.LayThoiDiemDatPhongGanNhat_Truoc(maPhong, thoiDiem);
+        }
         public static bool LuuThongTinDatPhong(DatPhongDTO datPhongDTO)
         {
             return DAL.DatPhongDAL.LuuThongTinDatPhong(datPhongDTO);
