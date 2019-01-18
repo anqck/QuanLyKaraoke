@@ -34,10 +34,10 @@
             this.wbntBaoCao = new DevExpress.XtraBars.Docking2010.WindowsUIButtonPanel();
             this.BaoCaoPageControl = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.PageDoanhThuThang = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.PageDoanhThuNam = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.PageDoanhthuDV = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.doanhThuThang1 = new GUI.folderBaoCao.DoanhThuThang();
+            this.PageDoanhThuNam = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.doanhThuNam1 = new GUI.folderBaoCao.DoanhThuNam();
+            this.PageDoanhthuDV = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.doanhThuDichVuTheoNam1 = new GUI.folderBaoCao.DoanhThuDichVuTheoNam();
             ((System.ComponentModel.ISupportInitialize)(this.BaoCaoPageControl)).BeginInit();
             this.BaoCaoPageControl.SuspendLayout();
@@ -50,8 +50,8 @@
             // 
             this.wbntBaoCao.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.wbntBaoCao.Buttons.AddRange(new DevExpress.XtraEditors.ButtonPanel.IBaseButton[] {
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Doanh thu tháng", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Doanh thu tháng", -1, false),
-            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Doanh thu năm", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Doanh thu năm", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Doanh thu ngày", true, windowsUIButtonImageOptions1, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Doanh thu tháng", -1, false),
+            new DevExpress.XtraBars.Docking2010.WindowsUIButton("Doanh thu tháng", true, windowsUIButtonImageOptions2, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Doanh thu năm", -1, false),
             new DevExpress.XtraBars.Docking2010.WindowsUIButton("Doanh thu dịch vụ", true, windowsUIButtonImageOptions3, DevExpress.XtraBars.Docking2010.ButtonStyle.PushButton, "", -1, true, null, true, false, true, "Doanh thu dịch vụ", -1, false)});
             this.wbntBaoCao.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.wbntBaoCao.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -88,20 +88,6 @@
             this.PageDoanhThuThang.Name = "PageDoanhThuThang";
             this.PageDoanhThuThang.Size = new System.Drawing.Size(977, 488);
             // 
-            // PageDoanhThuNam
-            // 
-            this.PageDoanhThuNam.Caption = "PageDoanhThuNam";
-            this.PageDoanhThuNam.Controls.Add(this.doanhThuNam1);
-            this.PageDoanhThuNam.Name = "PageDoanhThuNam";
-            this.PageDoanhThuNam.Size = new System.Drawing.Size(977, 488);
-            // 
-            // PageDoanhthuDV
-            // 
-            this.PageDoanhthuDV.Caption = "PageDoanhthuDV";
-            this.PageDoanhthuDV.Controls.Add(this.doanhThuDichVuTheoNam1);
-            this.PageDoanhthuDV.Name = "PageDoanhthuDV";
-            this.PageDoanhthuDV.Size = new System.Drawing.Size(977, 488);
-            // 
             // doanhThuThang1
             // 
             this.doanhThuThang1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -110,6 +96,13 @@
             this.doanhThuThang1.Size = new System.Drawing.Size(977, 488);
             this.doanhThuThang1.TabIndex = 0;
             // 
+            // PageDoanhThuNam
+            // 
+            this.PageDoanhThuNam.Caption = "PageDoanhThuNam";
+            this.PageDoanhThuNam.Controls.Add(this.doanhThuNam1);
+            this.PageDoanhThuNam.Name = "PageDoanhThuNam";
+            this.PageDoanhThuNam.Size = new System.Drawing.Size(977, 488);
+            // 
             // doanhThuNam1
             // 
             this.doanhThuNam1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -117,6 +110,13 @@
             this.doanhThuNam1.Name = "doanhThuNam1";
             this.doanhThuNam1.Size = new System.Drawing.Size(977, 488);
             this.doanhThuNam1.TabIndex = 0;
+            // 
+            // PageDoanhthuDV
+            // 
+            this.PageDoanhthuDV.Caption = "PageDoanhthuDV";
+            this.PageDoanhthuDV.Controls.Add(this.doanhThuDichVuTheoNam1);
+            this.PageDoanhthuDV.Name = "PageDoanhthuDV";
+            this.PageDoanhthuDV.Size = new System.Drawing.Size(977, 488);
             // 
             // doanhThuDichVuTheoNam1
             // 

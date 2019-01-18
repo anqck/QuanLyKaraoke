@@ -41,22 +41,22 @@
 
             if (e.Page == PageDoanhThuNam)
             {
-                wbntBaoCao.Buttons["Doanh thu năm"].Properties.Enabled = false;
-                wbntBaoCao.Buttons["Doanh thu tháng"].Properties.Enabled = true;
+                wbntBaoCao.Buttons["Doanh thu tháng"].Properties.Enabled = false;
+                wbntBaoCao.Buttons["Doanh thu ngày"].Properties.Enabled = true;
                 wbntBaoCao.Buttons["Doanh thu dịch vụ"].Properties.Enabled = true;
                 return;
             }
             if (e.Page == PageDoanhThuThang)
             {
-                wbntBaoCao.Buttons["Doanh thu tháng"].Properties.Enabled = false;
-                wbntBaoCao.Buttons["Doanh thu năm"].Properties.Enabled = true;
+                wbntBaoCao.Buttons["Doanh thu ngày"].Properties.Enabled = false;
+                wbntBaoCao.Buttons["Doanh thu tháng"].Properties.Enabled = true;
                 wbntBaoCao.Buttons["Doanh thu dịch vụ"].Properties.Enabled = true;
                 return;
             }
             if (e.Page == PageDoanhthuDV)
             {
+                wbntBaoCao.Buttons["Doanh thu ngày"].Properties.Enabled = true;
                 wbntBaoCao.Buttons["Doanh thu tháng"].Properties.Enabled = true;
-                wbntBaoCao.Buttons["Doanh thu năm"].Properties.Enabled = true;
                 wbntBaoCao.Buttons["Doanh thu dịch vụ"].Properties.Enabled = false;
                 return;
             }
@@ -64,8 +64,8 @@
         public void Gotohomepage()
         {
             BaoCaoPageControl.SelectedPage = PageDoanhThuThang;
-            wbntBaoCao.Buttons["Doanh thu tháng"].Properties.Enabled = false;
-            wbntBaoCao.Buttons["Doanh thu năm"].Properties.Enabled = true;
+            wbntBaoCao.Buttons["Doanh thu ngày"].Properties.Enabled = false;
+            wbntBaoCao.Buttons["Doanh thu tháng"].Properties.Enabled = true;
             wbntBaoCao.Buttons["Doanh thu dịch vụ"].Properties.Enabled = true;
         }
 
