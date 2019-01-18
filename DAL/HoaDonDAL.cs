@@ -62,7 +62,7 @@ namespace DAL
         public static Dictionary<int, double> GetTongDoanhThuTheoNgay(DateTime dateTime)
         {
             Dictionary<int, double> res = new Dictionary<int, double>();
-            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT day(NgayThanhToan), SUM(TongTienThanhToan) FROM hoadon WHERE NgayThanhToan is not nULL  and MONTH(NgayThanhToan) = '" + dateTime.Month + "' GROUP BY day(NgayThanhToan);");
+            DataTable dt = DAL.DataProvider.ExecuseQuery("SELECT day(NgayThanhToan), SUM(TongTienThanhToan) FROM hoadon WHERE NgayThanhToan is not nULL  and MONTH(NgayThanhToan) = '" + dateTime.Month + "'and YEAR(NgayThanhToan) = '" + dateTime.Year + "' GROUP BY day(NgayThanhToan);");
 
             foreach (DataRow row in dt.Rows)
             {

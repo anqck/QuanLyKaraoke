@@ -280,6 +280,26 @@ namespace GUI.folderTinhTrangPhong
 
                     }
                 }
+
+                for (int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
+                {
+                    foreach (DataRow dr in ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetTienGio_DataTable().Rows)
+                    {
+                        DataRow row = MergedDataTable.NewRow();
+                        row["MaTemp"] = MergedDataTable.Rows.Count;
+                        row["MaDVP"] = -1;
+                        row["MaThuePhong"] = ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetThuePhong().MaThuePhong;
+                        row["MaDV"] = -1;
+                        row["ThoiGian"] = DateTime.MinValue;
+                        row["SoLuong"] = dr["SoLuong"];
+                        row["Gia"] = dr["DonGia"];
+                        row["TenDV"] = dr["Ngay"] + " " + dr["KhoangThoiGian"];
+                        row["DonVi"] = "VNĐ/Giờ";
+                        row["colType"] = "Tiền Giờ";
+                        MergedDataTable.Rows.Add(row);
+
+                    }
+                }
             }
             else
             {
@@ -287,26 +307,35 @@ namespace GUI.folderTinhTrangPhong
                 {
                     MergedDataTable.Merge(dsDichVuPhong.Tables[i]);
                 }
-            }
-            for (int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
-            {
-                foreach (DataRow dr in ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetTienGio_DataTable().Rows)
-                {
-                    DataRow row = MergedDataTable.NewRow();
-                    row["MaTemp"] = MergedDataTable.Rows.Count;
-                    row["MaDVP"] = -1;
-                    row["MaThuePhong"] = ((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetThuePhong().MaThuePhong;
-                    row["MaDV"] = -1;
-                    row["ThoiGian"] = DateTime.MinValue;
-                    row["SoLuong"] = dr["SoLuong"];
-                    row["Gia"] = dr["DonGia"];
-                    row["TenDV"] = dr["Ngay"] + " " + dr["KhoangThoiGian"] ;
-                    row["DonVi"] = "Tiền/Giờ";
-                    row["colType"] = "Tiền Giờ";
-                    MergedDataTable.Rows.Add(row);
 
+                MergedDataTable.Columns.Add(new DataColumn("MaTemp"));
+                for (int i = 0; i < MergedDataTable.Rows.Count; i++)
+                {
+                    MergedDataTable.Rows[i]["MaTemp"] = i;
+                }
+                MergedDataTable.PrimaryKey = new DataColumn[] { MergedDataTable.Columns["MaTemp"] };
+
+                for (int i = 0; i < this.tabbedControlGroup1.TabPages.Count; i++)
+                {
+                    foreach (DataRow dr in BUS.TienGio_ThuePhongBUS.LayTienGio_ThuePhong_DataTable(((ChiTietThanhToanPhong)tabbedControlGroup1.TabPages[i].Tag).GetThuePhong().MaThuePhong).Rows)
+                    {
+                        DataRow row = MergedDataTable.NewRow();
+                        row["MaTemp"] = MergedDataTable.Rows.Count;
+                        row["MaDVP"] = -1;
+                        row["MaThuePhong"] = dr["MaThuePhong"];
+                        row["MaDV"] = -1;
+                        row["ThoiGian"] = DateTime.MinValue;
+                        row["SoLuong"] = dr["SoLuong"];
+                        row["Gia"] = dr["DonGia"];
+                        row["TenDV"] = dr["Ngay"] + " " + dr["KhoangThoiGian"];
+                        row["DonVi"] = "VNĐ/Giờ";
+                        row["colType"] = "Tiền Giờ";
+                        MergedDataTable.Rows.Add(row);
+
+                    }
                 }
             }
+            
 
             if (dsHoaDon.Tables.Count == 3)
             {
@@ -360,6 +389,7 @@ namespace GUI.folderTinhTrangPhong
                     foreach (DevExpress.XtraLayout.LayoutControlGroup layoutGroup in this.tabbedControlGroup1.TabPages)
                     {
                         ((ChiTietThanhToanPhong)layoutGroup.Tag).LuuKhuyenMai();
+                        ((ChiTietThanhToanPhong)layoutGroup.Tag).LuuTienGio();
                         ((ChiTietThanhToanPhong)layoutGroup.Tag).CapNhatThongTinThuePhong();
 
                         switch (PhongBUS.LayThongTinPhong(thuePhong.MaPhong).MaTinhTrangPhong)

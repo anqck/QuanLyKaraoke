@@ -35,7 +35,6 @@ namespace DAL
         {
 
             return  DataProvider.ExecuseQuery("SELECT * FROM datphong  WHERE datphong.MaDatPhong  = '" + maDatPhong + "';");
-
             
         }
 

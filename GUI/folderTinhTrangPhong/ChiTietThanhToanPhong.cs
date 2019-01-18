@@ -447,6 +447,15 @@ namespace GUI.folderTinhTrangPhong
             }
 
         }
+        public void LuuTienGio()
+        {
+           foreach(DataRow r in tienGio.Rows)
+            {
+                TienGio_ThuePhongBUS.LuuTienGio_ThuePhong(new TienGio_ThuePhongDTO(TienGio_ThuePhongBUS.PhatSinhMaTienGio_ThuePhong(), r["Ngay"].ToString(), r["KhoangThoiGian"].ToString(), Convert.ToDouble(r["SoLuong"]), Convert.ToDouble(r["DonGia"]), thuePhong.MaThuePhong));
+            }
+
+
+        }
         public DataTable GetDichVuPhong_DataTable()
         {
             return dichVuPhong;

@@ -60,6 +60,7 @@
     <Compile Include="ThanhToanBUS.cs" />
     <Compile Include="PhongBUS.cs" />
     <Compile Include="ThuePhongBUS.cs" />
+    <Compile Include="TienGio_ThuePhongBUS.cs" />
     <Compile Include="TinhTrangPhongBUS.cs" />
   </ItemGroup>
   <ItemGroup>
