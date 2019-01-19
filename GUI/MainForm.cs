@@ -1358,6 +1358,8 @@ namespace GUI
                 menuNhanvien.Visible = false;
                 menuHeThong.Visible = false;
                 menuBaocao.Visible = false;
+                menuQuanlyphong.Visible = false;
+                menuDichvu.Visible = false;
                 tileBar3.Visible = false;
                 tileBar2.Visible = false;
                 tileBarDropDownQuanlyphong.Visible = false;
@@ -1368,6 +1370,8 @@ namespace GUI
                 menuNhanvien.Visible = true;
                 menuHeThong.Visible = true;
                 menuBaocao.Visible = true;
+                menuQuanlyphong.Visible = true;
+                menuDichvu.Visible = true;
                 tileBar3.Visible = true;
                 tileBar2.Visible = true;
                 tileBarDropDownQuanlyphong.Visible = true;

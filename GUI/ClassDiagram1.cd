@@ -1,0 +1,333 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="GUI.folderBaoCao.BaoCao" Collapsed="true">
+    <Position X="10" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgABAAACAAgAiAAFCgAQACAAAgAAAAAAACAAAAAAA=</HashCode>
+      <FileName>folderBaoCao\BaoCao.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderBaoCao.DoanhThuDichVuTheoNam" Collapsed="true">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAACggCEAAMASCECEAAACiKEEAAAAgzZEAgwggEQ=</HashCode>
+      <FileName>folderBaoCao\DoanhThuDichVuTheoNam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderBaoCao.DoanhThuNam" Collapsed="true">
+    <Position X="8.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAgCAAAMASCACEAAgCiKEEAAAAgzYEAgwggEQ=</HashCode>
+      <FileName>folderBaoCao\DoanhThuNam.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderBaoCao.DoanhThuThang" Collapsed="true">
+    <Position X="13.5" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAFAIAkACEiINACCACEAQgCiKEHCAAAgwYAIgQCAEQ=</HashCode>
+      <FileName>folderBaoCao\DoanhThuThang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderHoaDon.TimHoaDon" Collapsed="true">
+    <Position X="15.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQANAAAkCCFjINACEAKkAAgCyCEHGAQEgwYBJgQUAEA=</HashCode>
+      <FileName>folderBaoCao\TimHoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDatPhong.QuanLyDatPhong" Collapsed="true">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQgFQAAkGLEjIFwCEAqGAAAGiKs3CIQkmwYUMhQEocQ=</HashCode>
+      <FileName>folderDatPhong\QuanLyDatPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDatPhong.ThongTinChiTietDatNhieuPhong" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>jQgAhAAEACAQAAwGwAiiYAkCCUMQAIAAlAMYQIDAkAI=</HashCode>
+      <FileName>folderDatPhong\ThongTinChiTietDatNhieuPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDatPhong.ThongTinChiTietDatPhong" Collapsed="true">
+    <Position X="14.5" Y="3.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>QQEEACDkiCAAAAQCQACCAAASBAIZABAIjQIEAAICCQA=</HashCode>
+      <FileName>folderDatPhong\ThongTinChiTietDatPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDichVu.ChonDichVu" Collapsed="true">
+    <Position X="8.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ZAEAARCACCABAAACgBuhEAAGAAKAAABKiAAACgJEBQA=</HashCode>
+      <FileName>folderDichVu\ChonDichVu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDichVu.DichVu" Collapsed="true">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAUAQCGACCADIBAGgAmGAgHCAAAAABQgCQggAAJECYA=</HashCode>
+      <FileName>folderDichVu\DichVu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDichVu.LoaiDichVu" Collapsed="true">
+    <Position X="11.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgIEAACAACEgABECAACAAgACACgBADgACkAABAIAAxA=</HashCode>
+      <FileName>folderDichVu\LoaiDichVu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDichVu.SuaDichVu" Collapsed="true">
+    <Position X="13.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQJIAEAAACIQBAWCAAiMEAQGIAEAAAAgAAwAAAAIEAg=</HashCode>
+      <FileName>folderDichVu\SuaDichVu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDichVu.SuaLoaiDichVu" Collapsed="true">
+    <Position X="15.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIAAAAACAQAAQCiAiEAACCAAAACAAAEARAAAgAMAA=</HashCode>
+      <FileName>folderDichVu\SuaLoaiDichVu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDichVu.ThemDichVu" Collapsed="true">
+    <Position X="8.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQhIQAAAACAYBQQCAACmAAQGIAEAAAAAADwABBAIEEg=</HashCode>
+      <FileName>folderDichVu\ThemDichVu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderDichVu.ThemLoaiDichVu" Collapsed="true">
+    <Position X="11.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQYIAAAAACASAQUAAACEAAACAAAAAAAAAAQgAAgAFAI=</HashCode>
+      <FileName>folderDichVu\ThemLoaiDichVu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderHeThong.HeThong" Collapsed="true">
+    <Position X="13.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAIBAAADCAIADQDAIiESBACkAEEgAAkgAAAAAwAEIA=</HashCode>
+      <FileName>folderHeThong\HeThong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderHeThong.NgayLe" Collapsed="true">
+    <Position X="10" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAsAgSAwCAQIAQAQAiGAAACBAEIAJAAiAQAAAAAMQA=</HashCode>
+      <FileName>folderHeThong\NgayLe.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderKhachHang.ChonKhachHang" Collapsed="true">
+    <Position X="10" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgACAACACIQQAQAiEAAAGAEgBAIABjECAQBAAAAA=</HashCode>
+      <FileName>folderKhachHang\ChonKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderKhachHang.KhachHang" Collapsed="true">
+    <Position X="15.25" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CCAAAiSEAGlCIRB6ySmCgAGCAIwAAJRBCQCgABBECIw=</HashCode>
+      <FileName>folderKhachHang\KhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderKhachHang.LoaiKhachHang" Collapsed="true">
+    <Position X="8.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IADFCAAEAGECQxACwTGCQIACCIgAQpACCAAAABxECEA=</HashCode>
+      <FileName>folderKhachHang\LoaiKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderKhachHang.SuaKhachHang" Collapsed="true">
+    <Position X="11.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAoAAAACAYAgQGAACmQAECKEVAAIAAAEQAgAAAEYA=</HashCode>
+      <FileName>folderKhachHang\SuaKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderKhachHang.SuaLoaiKhachHang" Collapsed="true">
+    <Position X="13.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAYAEAACCQQECACgAqFIIACAAEAACAQggEAAABEMRA=</HashCode>
+      <FileName>folderKhachHang\SuaLoaiKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderKhachHang.ThemKhachHang" Collapsed="true">
+    <Position X="15.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EQAAAEAAACIQAQQkAACiAAACqAEIAAAgAAQIAgKIEYA=</HashCode>
+      <FileName>folderKhachHang\ThemKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderKhachHang.ThemLoaiKhachHang" Collapsed="true">
+    <Position X="8.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAYAEAACCQQECACgAqFIIACAAEAACAQggEAAABEMQA=</HashCode>
+      <FileName>folderKhachHang\ThemLoaiKhachHang.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderNhanVien.NhanVien" Collapsed="true">
+    <Position X="11.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQAAACCgAKEAIRAGAGCAACACACAAAAQgCBCIAAQEgcA=</HashCode>
+      <FileName>folderNhanVien\NhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderNhanVien.SuaNhanVien" Collapsed="true">
+    <Position X="15.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBIgAAQACAQBAQCRACEUAACIEEAABQAgC5gBAEMEQA=</HashCode>
+      <FileName>folderNhanVien\SuaNhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderNhanVien.ThemNhanVien" Collapsed="true">
+    <Position X="13.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBIgAAQACASBQQARACEQAACIEEAABQAgC4gBAEMEQA=</HashCode>
+      <FileName>folderNhanVien\ThemNhanVien.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderQuanLyPhong.LoaiPhong" Collapsed="true">
+    <Position X="10" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAQCAAGAFiAQABAiAAqAARIDgQQJJCAECAAAFAYAAQI=</HashCode>
+      <FileName>folderQuanLyPhong\LoaiPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderQuanLyPhong.QuanLyPhong" Collapsed="true">
+    <Position X="8.25" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgBQCAUGAAJRACgAGCEAGDIAAgYFAACQBiAAxECIA=</HashCode>
+      <FileName>folderQuanLyPhong\QuanLyPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderQuanLyPhong.SuaLoaiPhong" Collapsed="true">
+    <Position X="11.75" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAIAQCADAQAUQCAACCgAACAECAAAAAACQAAABAgAA=</HashCode>
+      <FileName>folderQuanLyPhong\SuaLoaiPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderQuanLyPhong.SuaPhong" Collapsed="true">
+    <Position X="15.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAGAAQBgOAQAAQCQAiCAAgSJEEAAIAgAAQgAAAAUQA=</HashCode>
+      <FileName>folderQuanLyPhong\SuaPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderQuanLyPhong.ThemLoaiPhong" Collapsed="true">
+    <Position X="13.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAICQCADAQAUQAAACCAAICAEAgAAKAAAQAAABAgAA=</HashCode>
+      <FileName>folderQuanLyPhong\ThemLoaiPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderQuanLyPhong.ThemPhongMoi" Collapsed="true">
+    <Position X="13.5" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAGAAQAACAQAQQAQAiGAAsCJEEABIAggAQAAAAAEAA=</HashCode>
+      <FileName>folderQuanLyPhong\ThemPhongMoi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.TinhTrangPhong.TinhTrangPhong" Collapsed="true">
+    <Position X="10" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BUEhFySYVGTETVgHgA2i8YKHAABKIwQgG0Ag6RDpAiA=</HashCode>
+      <FileName>folderTinhTrangPhong\TinhTrangPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.ChiTietThanhToanPhong" Collapsed="true">
+    <Position X="10" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QYggBCmkACMCQAQCQECAAACeCCNrABQIibIMUEJgREA=</HashCode>
+      <FileName>folderTinhTrangPhong\ChiTietThanhToanPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.ChuyenPhong" Collapsed="true">
+    <Position X="11.75" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AYAKAACgiCFCBCQAYAiHAAADFSlIAABggRYEEEj2gEM=</HashCode>
+      <FileName>folderTinhTrangPhong\ChuyenPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.DatPhong" Collapsed="true">
+    <Position X="10" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iwAIBECoICMCRCQCQEyMAgACAShMYgBggRIAEBAABAA=</HashCode>
+      <FileName>folderTinhTrangPhong\DatPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.TachHoaDon" Collapsed="true">
+    <Position X="11.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBMAkCQEKICaCQCEIunBwCDEQlIAB5ggQYAAAD+hUE=</HashCode>
+      <FileName>folderTinhTrangPhong\TachHoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.ThanhToan" Collapsed="true">
+    <Position X="10" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CQgCBABgEDBQEFQCQBmGAAACSQEwAAAIgAYEAESZMUA=</HashCode>
+      <FileName>folderTinhTrangPhong\ThanhToan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.ThemPhongVaoHoaDon" Collapsed="true">
+    <Position X="8.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AwAIAECgECEABDQCAAiEAgADACBAIAIokBIAEAAFhEA=</HashCode>
+      <FileName>folderTinhTrangPhong\ThemPhongVaoHoaDon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.ThongTinChiTietNhieuPhong" Collapsed="true">
+    <Position X="11.75" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAQEQBCAACCAAACAAAIAABAAAAAAACAAEI=</HashCode>
+      <FileName>folderTinhTrangPhong\ThongTinChiTietNhieuPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.ThongTinChiTietPhong" Collapsed="true">
+    <Position X="13.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SUMFhCCggCEAAQQCUAyCAAEWBUE7AgCpjQQEQVL+jcA=</HashCode>
+      <FileName>folderTinhTrangPhong\ThongTinChiTietPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTinhTrangPhong.ThuePhong" Collapsed="true">
+    <Position X="8.25" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>SwAIBECgMCMCRDQCQEiGAgADAChMIgJgkRKAEBAFBEA=</HashCode>
+      <FileName>folderTinhTrangPhong\ThuePhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTraCuu.TraCuuDatPhong" Collapsed="true">
+    <Position X="15.25" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACAAKADAAQAAACEAAAHAAEAAAAAiAAAAAAAAAA=</HashCode>
+      <FileName>folderTraCuu\TraCuuDatPhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.folderTraCuu.TraCuuThuePhong" Collapsed="true">
+    <Position X="11.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAACAAKADAAQAAACEAAAHAAEAAAAAiAAAAAAAAAA=</HashCode>
+      <FileName>folderTraCuu\TraCuuThuePhong.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.MainForm" Collapsed="true">
+    <Position X="8.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wQQwkNEjMBEFQhQwkijE0YUSCBIUYEBpjIvGZghAxuk=</HashCode>
+      <FileName>MainForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GUI.Login" Collapsed="true">
+    <Position X="15.25" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAADAAAAAAQACAQAACCAAEAAuIAACAQAgEAIQ=</HashCode>
+      <FileName>Login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

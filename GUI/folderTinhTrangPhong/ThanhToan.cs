@@ -397,11 +397,13 @@ namespace GUI.folderTinhTrangPhong
                         switch (PhongBUS.LayThongTinPhong(thuePhong.MaPhong).MaTinhTrangPhong)
                         {
                             case 1:
+                            case 5:
                                 if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
                                     PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 5);
                                 else
                                     PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 0);
                                 break;
+                           
                             case 7:
                                 if (ThamSoBUS.LayChuyenSangChoDonDepSauKhiThanhToan())
                                     PhongBUS.CapNhatTinhTrangPhong(((ChiTietThanhToanPhong)layoutGroup.Tag).thuePhong.MaPhong, 6);

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BUS.DatPhongBUS" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGDIAACIAIhABQQIQAACAoAIAIAGAgACAAAAAAoAA=</HashCode>
+      <FileName>DatPhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.DichVuBUS" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAIAAAAQAAAQAMAAAAAgAAAAhAAAAAAgAAQAAAAA=</HashCode>
+      <FileName>DichVuBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.DichVuDatPhongBUS" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAIAAAACBAA=</HashCode>
+      <FileName>DichVuDatPhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.DichVuPhongBUS" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAIgAAAQABAAAAAAAAAAAAAAAAAAAAAIAAIAQ=</HashCode>
+      <FileName>DichVuPhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.DonGia_LoaiPhongBUS" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAwAAAAAAAAAAAAAAAAAAIAAAAAAAAAEQAAAAA=</HashCode>
+      <FileName>DonGia_LoaiPhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.HoaDonBUS" Collapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBAAAAQAADQiAQUAAAIBAAABASAAAAAmAACgANAAAAA=</HashCode>
+      <FileName>HoaDonBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.KhachHangBUS" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAAACAAAAAABAAAQAAAAAQKFAAAAAAAAAACAAAAA=</HashCode>
+      <FileName>KhachHangBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.LoaiDichVuBUS" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACBAAAAQIAAAAABAAEAAAACAAAAIIAAAAAAAAAAA=</HashCode>
+      <FileName>LoaiDichVuBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.LoaiKhachHangBUS" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAACABABoAAAAAAwAAAAAAAAAAAA=</HashCode>
+      <FileName>LoaiKhachHangBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.LoaiPhongBUS" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAACAAAAEACAIQCAAAAAAAAAAAQQAAA=</HashCode>
+      <FileName>LoaiPhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.NgayLeBUS" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAACAAAAAgAAgAAAABAAAAAAAAAAAAAAAAAAAAABAAQ=</HashCode>
+      <FileName>NgayLeBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.NhanVienBUS" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAQAAAQSAAAAAAAAEAIAgAAAAAAAAIAAAAAAAAgA=</HashCode>
+      <FileName>NhanVienBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.PhongBUS" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gACAAAAAAgAAAQBAAAAAAAABgAgAAAAAAAIMAAAIAAA=</HashCode>
+      <FileName>PhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.ThamSoBUS" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAACIKQBAAAAgABAAAAAAAIAAAAAACAAg=</HashCode>
+      <FileName>ThamSoBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.ThanhToanBUS" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>ThanhToanBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.ThuePhongBUS" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABIBAAAAAAAAAAAAgAAAAIAADIAgAACQAAAAAAgAAA=</HashCode>
+      <FileName>ThuePhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.TienGio_ThuePhongBUS" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAIAAACAAAAA=</HashCode>
+      <FileName>TienGio_ThuePhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BUS.TinhTrangPhongBUS" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>TinhTrangPhongBUS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
